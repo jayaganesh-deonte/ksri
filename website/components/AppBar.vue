@@ -1,87 +1,98 @@
 <template>
-  <v-app-bar id="app-bar" color="primary" height="70">
-    <div class="d-flex mx-auto">
-      <!-- add menu Options -->
-      <div v-for="option in menuOptions" :key="option.name">
-        <v-card
-          :class="{ activeMenu: option.path === activeMenu.path }"
-          rounded="0"
-          elevation="0"
-          height="65"
-          color="transparent"
-          class="d-flex justify-center align-center mx-2 pa-2 appBarMenuItem"
-        >
-          <div class="ma-2 text-subtitle-1 appBarMenuItem">
-            <nuxt-link
-              :to="option.path"
-              style="text-decoration: unset"
-              v-if="!option.children"
-            >
-              {{ option.name }}
-            </nuxt-link>
+  <div>
+    <v-app-bar id="app-bar" color="primary" height="70">
+      <div class="d-flex mx-auto">
+        <!-- add menu Options -->
+        <div v-for="option in menuOptions" :key="option.name">
+          <v-card
+            :class="{ activeMenu: option.path === activeMenu.path }"
+            rounded="0"
+            elevation="0"
+            height="65"
+            color="transparent"
+            class="d-flex justify-center align-center mx-2 pa-2 appBarMenuItem"
+          >
+            <div class="ma-2 text-subtitle-1 appBarMenuItem">
+              <nuxt-link
+                :to="option.path"
+                style="text-decoration: unset"
+                v-if="!option.children"
+              >
+                {{ option.name }}
+              </nuxt-link>
 
-            <!-- open-on-hover -->
-            <v-menu
-              open-on-hover
-              v-else
-              offset-y
-              :close-on-content-click="false"
-            >
-              <template v-slot:activator="{ props }">
-                <div v-bind="props" class="d-flex align-center justify-center">
-                  {{ option.name }}
-                  <v-icon size="x-small" class="mx-1">
-                    mdi-arrow-down-drop-circle</v-icon
+              <!-- open-on-hover -->
+              <v-menu
+                open-on-hover
+                v-else
+                offset-y
+                :close-on-content-click="false"
+                transition="slide-y-transition"
+              >
+                <template v-slot:activator="{ props }">
+                  <div
+                    v-bind="props"
+                    class="d-flex align-center justify-center"
                   >
-                </div>
-              </template>
-              <v-card width="90vw">
-                <v-row no-gutters>
-                  <v-col
-                    v-for="child in option.children"
-                    :key="child.name"
-                    cols="12"
-                    sm="4"
-                  >
-                    <v-card
-                      width="350"
-                      height="150"
-                      elevation="0"
-                      class="ma-2 pa-2 defaultFont d-flex flex-column justify-space-between"
-                      :class="{ activeMenu: child.isActive === true }"
-                      @mouseover="child.isActive = true"
-                      @mouseleave="child.isActive = false"
+                    {{ option.name }}
+                    <v-icon size="x-small" class="mx-1">
+                      mdi-arrow-down-drop-circle</v-icon
                     >
-                      <div>
-                        <div class="d-flex my-2 px-2 align-center">
-                          <v-icon size="small">
-                            mdi-book-open-blank-variant-outline
-                          </v-icon>
-                          <!-- if active set color -->
-                          <div
-                            class="px-2 text-h6 defaultFont font-weight-bold"
-                            :class="`${
-                              child.isActive ? 'text-white' : 'text-primary'
-                            }`"
-                          >
-                            {{ child.name }}
+                  </div>
+                </template>
+                <v-card width="90vw">
+                  <v-row no-gutters>
+                    <v-col
+                      v-for="child in option.children"
+                      :key="child.name"
+                      cols="12"
+                      sm="4"
+                    >
+                      <nuxt-link
+                        :to="child.path"
+                        style="text-decoration: unset"
+                      >
+                        <v-card
+                          width="350"
+                          height="150"
+                          elevation="0"
+                          class="ma-2 pa-2 defaultFont d-flex flex-column justify-space-between"
+                          :class="{ activeMenu: child.isActive === true }"
+                          @mouseover="child.isActive = true"
+                          @mouseleave="child.isActive = false"
+                        >
+                          <div>
+                            <div class="d-flex my-2 px-2 align-center">
+                              <v-icon size="small">
+                                mdi-book-open-blank-variant-outline
+                              </v-icon>
+                              <!-- if active set color -->
+                              <div
+                                class="px-2 text-h6 defaultFont font-weight-bold"
+                                :class="`${
+                                  child.isActive ? 'text-white' : 'text-primary'
+                                }`"
+                              >
+                                {{ child.name }}
+                              </div>
+                            </div>
+                            <div class="px-2 text-body-1 defaultFont">
+                              {{ child.description }}
+                            </div>
                           </div>
-                        </div>
-                        <div class="px-2 text-body-1 defaultFont">
-                          {{ child.description }}
-                        </div>
-                      </div>
-                      <!-- <v-divider class="my-2" /> -->
-                    </v-card>
-                  </v-col>
-                </v-row>
-              </v-card>
-            </v-menu>
-          </div>
-        </v-card>
+                          <!-- <v-divider class="my-2" /> -->
+                        </v-card>
+                      </nuxt-link>
+                    </v-col>
+                  </v-row>
+                </v-card>
+              </v-menu>
+            </div>
+          </v-card>
+        </div>
       </div>
-    </div>
-  </v-app-bar>
+    </v-app-bar>
+  </div>
 </template>
 
 <script setup>
@@ -260,9 +271,32 @@ const menuOptions = reactive([
 
 // get active menu option from url
 const route = useRoute();
-const activeMenu = computed(() => {
-  return menuOptions.find((option) => option.path === route.path);
+
+console.log(route.path);
+
+let activeMenu = reactive({
+  name: "home",
+  path: "/",
 });
+
+const setActiveMenu = () => {
+  menuOptions.forEach((option) => {
+    if (route.path.includes(option.path)) {
+      Object.assign(activeMenu, option);
+      return;
+    }
+  });
+};
+
+setActiveMenu();
+
+// watch route change
+watch(
+  () => route.path,
+  () => {
+    setActiveMenu();
+  }
+);
 </script>
 
 <style scoped>

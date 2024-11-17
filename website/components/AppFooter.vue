@@ -1,6 +1,11 @@
 <template>
   <div>
-    <v-card color="darkGreen" class="d-flex justify-center align-center">
+    <v-card
+      color="darkGreen"
+      class="d-flex justify-center align-center"
+      rounded="0"
+      elevation="0"
+    >
       <v-card
         color="darkGreen"
         class="d-flex flex-wrap appFooter"
