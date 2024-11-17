@@ -1,32 +1,34 @@
 <template>
   <div>
-    <v-card
-      color="primary"
-      class="d-flex flex-wrap appFooter"
-      rounded="0"
-      elevation="0"
-    >
-      <!-- add name and below that all child links -->
+    <v-card color="darkGreen" class="d-flex justify-center align-center">
       <v-card
-        color="transparent"
-        v-for="link in footerLinks.links"
-        :key="link.name"
-        class="d-flex flex-column ma-2 pa-2"
+        color="darkGreen"
+        class="d-flex flex-wrap appFooter"
         rounded="0"
         elevation="0"
       >
-        <div class="text-h6 font-weight-bold text-secondary defaultFont">
-          {{ link.name }}
-        </div>
-        <div v-for="child in link.children" :key="child.name">
-          <nuxt-link
-            :to="child.path"
-            style="text-decoration: unset"
-            class="text-subtitle-1"
-          >
-            {{ child.name }}
-          </nuxt-link>
-        </div>
+        <!-- add name and below that all child links -->
+        <v-card
+          color="transparent"
+          v-for="link in footerLinks.links"
+          :key="link.name"
+          class="d-flex flex-column ma-2 pa-2"
+          rounded="0"
+          elevation="0"
+        >
+          <div class="text-h6 font-weight-bold text-secondary defaultFont">
+            {{ link.name }}
+          </div>
+          <div v-for="child in link.children" :key="child.name">
+            <nuxt-link
+              :to="child.path"
+              style="text-decoration: unset"
+              class="text-subtitle-1"
+            >
+              {{ child.name }}
+            </nuxt-link>
+          </div>
+        </v-card>
       </v-card>
     </v-card>
     <div class="text-center">

@@ -35,33 +35,6 @@
                   >
                 </div>
               </template>
-              <!-- <v-card width="1100" class="d-flex flex-wrap">
-                <div v-for="child in option.children" :key="child.name">
-                  <v-card
-                    width="350"
-                    height="150"
-                    elevation="0"
-                    class="ma-2 pa-2 defaultFont d-flex flex-column justify-space-between"
-                  >
-                    <div>
-                      <div class="d-flex my-2 align-center">
-                        <v-icon size="small"
-                          >mdi-book-open-blank-variant-outline</v-icon
-                        >
-                        <div
-                          class="px-2 text-primary text-h6 defaultFont font-weight-bold"
-                        >
-                          {{ child.name }}
-                        </div>
-                      </div>
-                      <div class="px-2 text-body-2 defaultFont">
-                        {{ child.description }}
-                      </div>
-                    </div>
-                    <v-divider class="my-2" />
-                  </v-card>
-                </div>
-              </v-card> -->
               <v-card width="90vw">
                 <v-row no-gutters>
                   <v-col
@@ -75,23 +48,30 @@
                       height="150"
                       elevation="0"
                       class="ma-2 pa-2 defaultFont d-flex flex-column justify-space-between"
+                      :class="{ activeMenu: child.isActive === true }"
+                      @mouseover="child.isActive = true"
+                      @mouseleave="child.isActive = false"
                     >
                       <div>
-                        <div class="d-flex my-2 align-center">
-                          <v-icon size="small"
-                            >mdi-book-open-blank-variant-outline</v-icon
-                          >
+                        <div class="d-flex my-2 px-2 align-center">
+                          <v-icon size="small">
+                            mdi-book-open-blank-variant-outline
+                          </v-icon>
+                          <!-- if active set color -->
                           <div
-                            class="px-2 text-primary text-h6 defaultFont font-weight-bold"
+                            class="px-2 text-h6 defaultFont font-weight-bold"
+                            :class="`${
+                              child.isActive ? 'text-white' : 'text-primary'
+                            }`"
                           >
                             {{ child.name }}
                           </div>
                         </div>
-                        <div class="px-2 text-body-2 defaultFont">
+                        <div class="px-2 text-body-1 defaultFont">
                           {{ child.description }}
                         </div>
                       </div>
-                      <v-divider class="my-2" />
+                      <!-- <v-divider class="my-2" /> -->
                     </v-card>
                   </v-col>
                 </v-row>
@@ -289,5 +269,6 @@ const activeMenu = computed(() => {
 /* active menu option */
 .activeMenu {
   background-color: #bf641f !important;
+  color: white !important;
 }
 </style>

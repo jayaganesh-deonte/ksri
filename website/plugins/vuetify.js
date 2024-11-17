@@ -11,6 +11,7 @@ const myCustomTheme = {
     primary: "#09341C",
     secondary: "#BF641F",
     accent: "#F0F5F0",
+    darkGreen: "#091F13",
     active: "#7A7369",
     accentRed: "8A2A00",
     error: "#B00020",
