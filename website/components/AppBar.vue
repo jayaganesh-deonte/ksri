@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!$device.isMobile">
     <v-app-bar id="app-bar" color="primary" height="70">
       <div class="d-flex mx-auto">
         <!-- add menu Options -->
@@ -92,6 +92,60 @@
         </div>
       </div>
     </v-app-bar>
+  </div>
+  <div v-else>
+    <v-app-bar id="app-bar" color="primary" height="70">
+      <v-app-bar-nav-icon @click="mobileNavDrawer = !mobileNavDrawer">
+        <v-icon>mdi-menu</v-icon>
+      </v-app-bar-nav-icon>
+      <v-spacer></v-spacer>
+      <v-app-bar-title>KSRI</v-app-bar-title>
+      <v-spacer></v-spacer>
+    </v-app-bar>
+    <!-- nav drawer -->
+    <v-navigation-drawer v-model="mobileNavDrawer" absolute temporary>
+      <v-list nav dense>
+        <!-- for each menu option and its children as sub list and show sub list on click and hide other sub list on click of any other menu option-->
+        <v-list-item
+          v-for="option in menuOptions"
+          :key="option.name"
+          link
+          @click="openChildMenu(option)"
+        >
+          <div>
+            <div v-if="!option.children">
+              <nuxt-link :to="option.path" style="text-decoration: unset">
+                <v-list-item-title>{{ option.name }}</v-list-item-title>
+              </nuxt-link>
+            </div>
+            <div v-else class="d-flex justify-space-between">
+              <v-list-item-title>{{ option.name }}</v-list-item-title>
+              <div v-if="option.children">
+                <v-icon size="x-small" class="mx-1" v-if="option.showChildren">
+                  mdi-arrow-down-drop-circle
+                </v-icon>
+                <v-icon size="x-small" class="mx-1" v-else>
+                  mdi-arrow-right-drop-circle
+                </v-icon>
+              </div>
+            </div>
+          </div>
+          <!-- add sub list -->
+          <div v-if="option.showChildren && option.children">
+            <v-list-item
+              v-for="child in option.children"
+              :key="child.name"
+              link
+              :to="child.path"
+            >
+              <v-list-item-title>{{ child.name }}</v-list-item-title>
+              <v-divider />
+            </v-list-item>
+          </div>
+        </v-list-item>
+        <v-divider></v-divider>
+      </v-list>
+    </v-navigation-drawer>
   </div>
 </template>
 
@@ -297,6 +351,19 @@ watch(
     setActiveMenu();
   }
 );
+
+// mobile nav bar toggle
+let mobileNavDrawer = ref(false);
+
+const openChildMenu = (option) => {
+  option.showChildren = !option.showChildren;
+  // for all menu options hide children
+  menuOptions.forEach((opt) => {
+    if (opt !== option) {
+      opt.showChildren = false;
+    }
+  });
+};
 </script>
 
 <style scoped>
