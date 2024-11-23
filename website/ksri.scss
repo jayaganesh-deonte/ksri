@@ -18,6 +18,11 @@ cursive;
     font-family: $body-font-family !important;
 }
 
+// add text tags with $body-font-family
+* {
+    font-family: $body-font-family !important;
+}
+
 .appBarMenuItem {
     font-family: $body-font-family !important;
     font-weight: 700;
@@ -59,6 +64,13 @@ cursive;
     font-weight: 700;
     font-size: 2rem;
 
+}
+
+.sectionTitle2 {
+    font-family: $body-font-family !important;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #BF641F;
 }
 
 .visionMissionTitle {
