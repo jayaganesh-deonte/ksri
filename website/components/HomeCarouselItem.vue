@@ -4,63 +4,85 @@
       color="transparent"
       height="50%"
       class="d-flex flex-column justify-end"
+      rounded="0"
+      elevation="0"
     >
       <v-card
         rounded="0"
         elevation="0"
-        class="d-flex justify-center align-center carouselHeader"
+        class="d-flex justify-center align-center"
+        :class="`${
+          $device.isMobile
+            ? 'flex-column carouselHeaderMobile'
+            : 'flex-row carouselHeaderDesktop'
+        }`"
       >
-        <v-col cols="4">
+        <div>
           <v-img
             :src="ksriLogo"
             fit
-            width="200"
-            class="ml-auto mr-4"
+            :width="$device.isMobile ? 130 : 200"
+            :class="`${$device.isMobile ? '' : 'ml-auto mr-4'}`"
             @mouseover="changeLogo"
             @mouseleave="changeLogo"
           >
           </v-img>
-        </v-col>
-        <v-col>
-          <v-card-item class="text-h4">
+        </div>
+        <div>
+          <v-card-item>
             <v-card-text
-              class="text-h4 font-weight-bold defaultFont text-gold text-center"
+              class="font-weight-bold defaultFont text-gold text-center"
+              :class="`${$device.isMobile ? 'text-h6' : 'text-h4'}`"
             >
               THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE (KSRI)
             </v-card-text>
           </v-card-item>
-        </v-col>
+        </div>
       </v-card>
     </v-card>
     <v-card
       color="transparent"
       height="50%"
       class="d-flex flex-column justify-center align-center text-white text-center"
+      rounded="0"
+      elevation="0"
     >
       <div style="backdrop-filter: blur(2px)">
-        <div class="text-h3 font-weight-bold defaultFont">
+        <div
+          class="font-weight-bold defaultFont"
+          :class="`${$device.isMobile ? 'text-h6' : 'text-h3'}`"
+        >
           {{ titleText }}
           <br />
           {{ titleTextLine2 }}
         </div>
-        <div class="text-h5 defaultFont pa-4">
+        <div
+          class="defaultFont pa-4"
+          :class="`${$device.isMobile ? 'text-body-1' : 'text-h5'}`"
+        >
           {{ descriptionText }}
-          <br />
+          <br v-if="!$device.isMobile" />
           {{ descriptionTextLine2 }}
         </div>
       </div>
-      <div>
+      <div
+        class="d-flex justify-center align-center"
+        :class="`${$device.isMobile ? 'flex-column ' : 'flex-row'}`"
+      >
         <v-btn
+          width="100%"
           rounded="pill"
           :color="button1Color"
           size="large"
-          class="mr-4"
           @mouseover="changeButtonColorOnHover(1)"
           @mouseleave="resetButtonColor(1)"
+          :class="`${$device.isMobile ? 'mb-2' : 'mr-4'}`"
         >
           {{ buttonText1 }}
         </v-btn>
+
         <v-btn
+          width="100%"
           rounded="pill"
           :color="button2Color"
           size="large"
@@ -122,7 +144,7 @@ export default {
 </script>
 
 <style scoped>
-.carouselHeader {
+.carouselHeaderDesktop {
   opacity: 0.75;
   /* #09341C with 50% height aligned to center*/
   background-color: transparent;
@@ -132,6 +154,19 @@ export default {
     #09341c 30%,
     #09341c 70%,
     transparent 70%
+  );
+}
+
+.carouselHeaderMobile {
+  opacity: 0.75;
+  /* #09341C with 50% height aligned to center*/
+  background-color: transparent;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 50%,
+    #09341c 50%,
+    #09341c 100%,
+    transparent 10%
   );
 }
 </style>

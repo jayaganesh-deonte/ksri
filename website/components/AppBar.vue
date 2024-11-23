@@ -98,9 +98,8 @@
       <v-app-bar-nav-icon @click="mobileNavDrawer = !mobileNavDrawer">
         <v-icon>mdi-menu</v-icon>
       </v-app-bar-nav-icon>
-      <v-spacer></v-spacer>
-      <v-app-bar-title>KSRI</v-app-bar-title>
-      <v-spacer></v-spacer>
+
+      <v-app-bar-title>The KSRI</v-app-bar-title>
     </v-app-bar>
     <!-- nav drawer -->
     <v-navigation-drawer v-model="mobileNavDrawer" absolute temporary>
