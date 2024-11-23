@@ -5,7 +5,7 @@
       :style="`${$device.isMobile ? 'height: 100vh' : 'height: 90vh'}`"
       cycle
       continuous
-      interval="3000"
+      interval="5000"
     >
       <home-carousel-item
         src="https://d30y75l38k1y9.cloudfront.net/home-slide-bg-1.jpg"

@@ -1,5 +1,5 @@
 <template>
-  <v-carousel-item :src="src" cover>
+  <v-carousel-item :src="src" cover class="fade-in">
     <v-card
       color="transparent"
       height="50%"
@@ -49,7 +49,8 @@
     >
       <div style="backdrop-filter: blur(2px)">
         <div
-          class="font-weight-bold defaultFont"
+          class="font-weight-bold defaultFont fade-left"
+          style="--delay: 0.5s"
           :class="`${$device.isMobile ? 'text-h6' : 'text-h3'}`"
         >
           {{ titleText }}
@@ -57,7 +58,8 @@
           {{ titleTextLine2 }}
         </div>
         <div
-          class="defaultFont pa-4"
+          class="defaultFont pa-4 fade-left"
+          style="--delay: 0.8s"
           :class="`${$device.isMobile ? 'text-body-1' : 'text-h5'}`"
         >
           {{ descriptionText }}
@@ -66,7 +68,8 @@
         </div>
       </div>
       <div
-        class="d-flex justify-center align-center"
+        class="d-flex justify-center align-center fade-left"
+        style="--delay: 1s"
         :class="`${$device.isMobile ? 'flex-column ' : 'flex-row'}`"
       >
         <v-btn

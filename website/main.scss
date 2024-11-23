@@ -1,14 +1,14 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
 // $body-font-family: 'Merienda', cursive;
 
 
 @import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-$body-font-family: 'Tinos', serif;
+$body-font-family: 'Tinos',
+serif;
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-$heading-font-family: 'Dancing Script', cursive;
+$heading-font-family: 'Dancing Script',
+cursive;
 
 #app {
     font-family: $body-font-family;
@@ -22,7 +22,7 @@ $heading-font-family: 'Dancing Script', cursive;
     font-family: $body-font-family !important;
     font-weight: 700;
     font-size: 1.1rem !important;
-    
+
     // for anchor tag 
     a {
         color: white;
@@ -35,13 +35,56 @@ $heading-font-family: 'Dancing Script', cursive;
 
 .appFooter {
     font-family: $body-font-family !important;
-    a{
+
+    a {
         color: white;
         font-family: $body-font-family !important;
     }
 }
 
-.v-btn{
+.v-btn {
     font-family: $body-font-family !important;
     font-weight: 700;
+}
+
+
+// animation
+
+.fade-in {
+    animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        background-color: #bf641f;
+    }
+
+    100% {
+        opacity: 1;
+        background-color: transparent;
+    }
+}
+
+
+
+.fade-left {
+    animation: fadeLeft 0.5s;
+    animation-delay: var(--delay);
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+        background-color: #bf641f;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        background-color: transparent;
+    }
 }
