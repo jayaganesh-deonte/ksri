@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     "nuxt-aos",
     "vue3-carousel-nuxt",
     "@nuxt/fonts",
+    "@pinia/nuxt",
   ],
   app: {
     head: {
@@ -61,6 +62,9 @@ export default defineNuxtConfig({
   robots: {
     UserAgent: "*",
     Disallow: "",
+  },
+  alias: {
+    pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs",
   },
   aos: {
     // Global settings:

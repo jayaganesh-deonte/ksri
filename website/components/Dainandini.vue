@@ -1,7 +1,7 @@
 <template>
   <v-card elevation="0" rounded="0" color="primary" class="pa-4">
     <v-row>
-      <v-col cols="12" sm="12" md="12" lg="4">
+      <v-col cols="12" sm="12" md="4" lg="4">
         <v-list-item>
           <template v-slot:prepend>
             <v-img
@@ -14,31 +14,36 @@
           <div class="text-h4 ml-4 defaultFont">Dainandini</div>
         </v-list-item>
         <audio controls>
-          <source
-            src="https://d30y75l38k1y9.cloudfront.net/upload/media/mk-dainandini-2-11-24.mp3"
-          />
+          <source :src="getDainandini.audioFile" />
         </audio>
       </v-col>
       <v-col
         class="text-h6 defaultFont borderLeft pa-4"
         cols="12"
         sm="12"
-        md="12"
+        md="4"
         lg="8"
       >
         <div>
-          अनार्यमार्यवृत्तेन सत्येनानृतवादितम्।
+          {{ getDainandini.sanskritLine1 }}
           <br />
-          रिपुमप्युपकारेण वशीकुर्वन्ति साधव:॥
+          {{ getDainandini.sanskritLine2 }}
         </div>
         <div>
-          Good people win over the bad souls by their good conduct; untruthful
-          with truth and even the enemies by favouring them.
+          {{ getDainandini.description }}
         </div>
       </v-col>
     </v-row>
   </v-card>
 </template>
+
+<script setup>
+import { appStore } from "~/stores/AppStore";
+
+const store = appStore();
+
+const { getDainandini } = storeToRefs(store);
+</script>
 
 <style scoped>
 .borderLeft {
