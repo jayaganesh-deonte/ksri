@@ -47,44 +47,33 @@ cursive;
     font-weight: 700;
 }
 
-
-// animation
-
-.fade-in {
-    animation: fadeIn 3s;
+.sectionTitle {
+    font-family: $body-font-family !important;
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #BF641F;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        background-color: #bf641f;
-    }
+.sectionSubtitle {
+    font-family: $body-font-family !important;
+    font-weight: 700;
+    font-size: 2rem;
 
-    100% {
-        opacity: 1;
-        background-color: transparent;
-    }
 }
 
+.visionMissionTitle {
+    font-family: $body-font-family !important;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #09341C;
 
-
-.fade-left {
-    animation: fadeLeft 0.5s;
-    animation-delay: var(--delay);
-    animation-fill-mode: forwards;
-    opacity: 0;
-}
-
-@keyframes fadeLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(20px);
-        background-color: #bf641f;
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-        background-color: transparent;
+    // add under to the div and align it to center
+    &::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 2px;
+        background-color: #09341C;
+        margin: 10px auto;
     }
 }

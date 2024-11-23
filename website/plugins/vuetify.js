@@ -1,7 +1,8 @@
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
-import "../main.scss";
+import "../ksri.scss";
+import "../ksri-animate.scss";
 
 const myCustomTheme = {
   dark: false,
