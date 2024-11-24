@@ -57,12 +57,14 @@ cursive;
     font-weight: 700;
     font-size: 2.8rem;
     color: #BF641F;
+    text-align: center;
 }
 
 .sectionSubtitle {
     font-family: $body-font-family !important;
     font-weight: 700;
     font-size: 2rem;
+    text-align: center;
 
 }
 
@@ -71,11 +73,14 @@ cursive;
     font-weight: 700;
     font-size: 2rem;
     color: #BF641F;
+    text-align: center;
 }
 
 .sectionSubtitle2 {
     font-family: $body-font-family !important;
     font-size: 1.5rem;
+    // center text
+    text-align: center;
 }
 
 .visionMissionTitle {
@@ -93,4 +98,45 @@ cursive;
         background-color: #09341C;
         margin: 10px auto;
     }
+}
+
+// heading with line before and after
+// .heading-with-line {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 15px;
+//     width: 100%;
+//     max-width: 300px;
+//     margin: 20px auto;
+// }
+
+// .heading-with-line::before,
+// .heading-with-line::after {
+//     content: "";
+//     height: 3px;
+//     background-color: #8b9876;
+//     /* Muted green color similar to image */
+//     flex-grow: 1;
+//     align-self: flex-end;
+// }
+
+.heading-with-line {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding-bottom: 8px;
+}
+
+.heading-with-line::before,
+.heading-with-line::after {
+    content: "";
+    height: 3px;
+    background-color: #8B9876;
+    flex-grow: 0.3;
+    margin-bottom: 6px;
 }
