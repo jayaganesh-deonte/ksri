@@ -1,5 +1,5 @@
 <template>
-  <v-card color="transparent" class="pa-6 socialMediaFooter">
+  <v-card color="transparent" class="pa-2 mt-2">
     <v-card class="pa-1">
       <div
         class="d-flex justify-space-around ma-4"
@@ -55,12 +55,5 @@ const socialMediaLinks = [
 .socialMediaCards:hover {
   /*set #F5F5F5 as background color on hover*/
   background-color: #f5f5f5;
-}
-
-.socialMediaFooter {
-  background-image: url("/img/icons/footer-background-flower.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 </style>

@@ -3,6 +3,11 @@
     <app-bar></app-bar>
     <v-main>
       <slot />
+      <div class="socialMediaFooter">
+        <Dainandini class="mt-12" />
+        <ContactUs class="mt-12" />
+        <SocialMediaLinks class="socialMediaFooter" />
+      </div>
     </v-main>
     <app-footer></app-footer>
   </v-app>
@@ -30,5 +35,11 @@
 
 .hover-line:hover::before {
   height: 50%;
+}
+
+.socialMediaFooter {
+  background-image: url("/img/icons/footer-background-flower.png");
+  background-repeat: repeat;
+  background-size: auto;
 }
 </style>
