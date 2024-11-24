@@ -20,6 +20,9 @@
           class="d-flex flex-column ma-2 pa-2"
           rounded="0"
           elevation="0"
+          data-aos="fade-up"
+          :data-aos-delay="`${footerLinks.links.indexOf(link) * 100}`"
+          :data-aos-duration="`${footerLinks.links.indexOf(link) * 150}`"
         >
           <div class="text-h6 font-weight-bold text-secondary defaultFont">
             {{ link.name }}

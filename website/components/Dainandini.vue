@@ -1,7 +1,7 @@
 <template>
   <v-card elevation="0" rounded="0" color="primary" class="pa-4">
     <v-row>
-      <v-col cols="12" sm="12" md="4" lg="4">
+      <v-col cols="12" sm="12" md="4" lg="4" data-aos="fade-right">
         <v-list-item>
           <template v-slot:prepend>
             <v-img
@@ -23,6 +23,7 @@
         sm="12"
         md="4"
         lg="8"
+        data-aos="fade-left"
       >
         <div>
           {{ getDainandini.sanskritLine1 }}

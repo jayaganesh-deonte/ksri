@@ -1,18 +1,42 @@
 <template>
   <v-card color="primary" rounded="0" elevation="0">
     <v-row align="center" justify="center" class="ma-4">
-      <v-col cols="12" sm="12" md="5" class="d-flex flex-column justify-center">
-        <div class="text-h4 font-weight-bold defaultFont my-4">CONTRIBUTE</div>
-        <div class="text-h6 defaultFont">
+      <v-col
+        cols="12"
+        sm="12"
+        md="5"
+        class="d-flex flex-column justify-center"
+        data-aos="fade-right"
+        data-aos-delay="100"
+      >
+        <div
+          class="text-h4 font-weight-bold defaultFont my-4"
+          data-aos="zoom-out-up"
+          data-aos-delay="200"
+        >
+          CONTRIBUTE
+        </div>
+        <div
+          class="text-h6 defaultFont"
+          data-aos="zoom-out-up"
+          data-aos-delay="250"
+        >
           KSRI will be grateful for contributions and sponsorships for its
           corpus and for its many projects. Any donation will go a long way in
           preserving Sanskrit and Indological Studies.
         </div>
-        <div class="mt-4">
+        <div class="mt-4" data-aos="zoom-out-up" data-aos-delay="300">
           <v-btn rounded="pill" color="secondary">Contribute</v-btn>
         </div>
       </v-col>
-      <v-col cols="12" sm="12" md="5" class="contributeBg">
+      <v-col
+        cols="12"
+        sm="12"
+        md="5"
+        class="contributeBg"
+        data-aos="fade-left"
+        data-aos-delay="100"
+      >
         <v-card color="secondary">
           <v-card-text class="text-h6 defaultFont">
             100% income tax-excempt in India under 25 (i)(iii) of IT Act 1961

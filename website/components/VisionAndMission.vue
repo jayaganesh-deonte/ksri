@@ -1,12 +1,18 @@
 <template>
   <div class="text-center">
-    <div class="sectionTitle">VISION & MISSION</div>
-    <div class="text-h6 defaultFont">
+    <div class="sectionTitle" data-aos="zoom-in">VISION & MISSION</div>
+    <div class="text-h6 defaultFont" data-aos="zoom-in" data-aos-delay="100">
       Kuppuswami Sastri Research Institute Vision and Mission
     </div>
     <!-- add two cards for vision and mission -->
     <v-row class="ma-2">
-      <v-col cols="12" sm="12" md="6">
+      <v-col
+        cols="12"
+        sm="12"
+        md="6"
+        data-aos="fade-right"
+        data-aos-delay="100"
+      >
         <v-card height="100%">
           <div class="d-flex justify-center">
             <v-img src="/img/icons/vision.png" fit></v-img>
@@ -50,7 +56,7 @@
         </v-card>
       </v-col>
 
-      <v-col cols="12" sm="12" md="6">
+      <v-col cols="12" sm="12" md="6" data-aos="fade-left" data-aos-delay="100">
         <v-card height="100%">
           <div class="d-flex justify-center">
             <v-img src="/img/icons/mission.png" fit></v-img>

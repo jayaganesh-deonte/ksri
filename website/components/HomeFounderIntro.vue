@@ -8,15 +8,38 @@
   >
     <v-row>
       <!-- founder image to left and text to right -->
-      <v-col cols="12" sm="12" md="4" lg="4" align="center" justify="center">
+      <v-col
+        cols="12"
+        sm="12"
+        md="4"
+        lg="4"
+        align="center"
+        justify="center"
+        data-aos="fade-right"
+        data-aos-delay="200"
+      >
         <v-img src="/img/founder.png" cover width="250"></v-img>
       </v-col>
       <v-col cols="12" sm="12" md="8" lg="8">
-        <div class="text-h5 defaultFont">Founded in the fond memory of</div>
-        <div class="text-h3 defaultFont mt-1 mb-6">
+        <div
+          class="text-h5 defaultFont"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          Founded in the fond memory of
+        </div>
+        <div
+          class="text-h3 defaultFont mt-1 mb-6"
+          data-aos="fade-left"
+          data-aos-delay="250"
+        >
           Mm. Prof. S. Kuppuswami Sastri
         </div>
-        <div class="defaultFont text-h6">
+        <div
+          class="defaultFont text-h6"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
           Mm. Prof. S. Kuppuswami Sastri was a Sanskrit Scholar of repute in
           India during his time and had devoted his life time to study of
           Sanskrit and Indology. He was a Professor, Editor and Author in
@@ -25,7 +48,7 @@
           India. KSRI was established in 1945 as a fitting tribute to him and
           his contributions to Sanskrit heritage and related Indology.
         </div>
-        <div class="mt-2">
+        <div class="mt-2" data-aos="fade-left" data-aos-delay="350">
           <v-btn rounded="pill" color="primary"> Read More </v-btn>
         </div>
       </v-col>

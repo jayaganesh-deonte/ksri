@@ -2,7 +2,14 @@
   <div class="mx-2">
     <v-card>
       <v-row class="ma-2">
-        <v-col cols="12" sm="12" md="6" class="pa-6">
+        <v-col
+          cols="12"
+          sm="12"
+          md="6"
+          class="pa-6"
+          data-aos="fade-right"
+          data-aos-delay="100"
+        >
           <div class="sectionTitle2">Get in touch with us!</div>
           <div class="text-h6">
             KSRI has always welcome our guest query's any time!
@@ -31,7 +38,14 @@
             </div>
           </div>
         </v-col>
-        <v-col cols="12" sm="12" md="6" class="leftBorder">
+        <v-col
+          cols="12"
+          sm="12"
+          md="6"
+          class="leftBorder"
+          data-aos="fade-left"
+          data-aos-delay="100"
+        >
           <div class="sectionTitle2">Send A Message</div>
           <!-- create form -->
           <v-form>
@@ -40,7 +54,7 @@
                 <!-- add v-checkbox group for Choose a suitable category -->
                 <v-col cols="12" sm="12" md="12">
                   <!-- create check box for messageCategories -->
-                  <v-checkbox-group class="d-flex flex-wrap">
+                  <div class="d-flex flex-wrap">
                     <v-checkbox
                       v-for="(category, index) in messageCategories"
                       :key="index"
@@ -48,7 +62,7 @@
                       v-model="formData.category"
                       :value="category"
                     ></v-checkbox>
-                  </v-checkbox-group>
+                  </div>
                 </v-col>
                 <v-col
                   v-for="(field, index) in formFields"

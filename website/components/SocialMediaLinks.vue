@@ -10,6 +10,9 @@
           :key="link.name"
           class="d-flex align-center socialMediaCards pa-2"
           elevation="0"
+          data-aos="fade-up"
+          :data-aos-delay="`${socialMediaLinks.indexOf(link) * 200}`"
+          :data-aos-duration="`${socialMediaLinks.indexOf(link) * 200}`"
         >
           <v-btn
             :icon="link.icon"
