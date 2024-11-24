@@ -93,7 +93,9 @@
       </div>
     </v-app-bar>
   </div>
-  <div v-else>
+  <span v-else>
+    <!-- nav drawer -->
+
     <v-app-bar id="app-bar" color="primary" height="70">
       <v-app-bar-nav-icon @click="mobileNavDrawer = !mobileNavDrawer">
         <v-icon>mdi-menu</v-icon>
@@ -101,8 +103,7 @@
 
       <v-app-bar-title>The KSRI</v-app-bar-title>
     </v-app-bar>
-    <!-- nav drawer -->
-    <v-navigation-drawer v-model="mobileNavDrawer" absolute temporary>
+    <v-navigation-drawer v-model="mobileNavDrawer" temporary>
       <v-list nav dense>
         <!-- for each menu option and its children as sub list and show sub list on click and hide other sub list on click of any other menu option-->
         <v-list-item
@@ -113,9 +114,9 @@
         >
           <div>
             <div v-if="!option.children">
-              <nuxt-link :to="option.path" style="text-decoration: unset">
-                <v-list-item-title>{{ option.name }}</v-list-item-title>
-              </nuxt-link>
+              <v-list-item :to="option.path" class="pl-0">
+                <v-list-item-title> {{ option.name }}</v-list-item-title>
+              </v-list-item>
             </div>
             <div v-else class="d-flex justify-space-between">
               <v-list-item-title>{{ option.name }}</v-list-item-title>
@@ -145,7 +146,7 @@
         <v-divider></v-divider>
       </v-list>
     </v-navigation-drawer>
-  </div>
+  </span>
 </template>
 
 <script setup>
