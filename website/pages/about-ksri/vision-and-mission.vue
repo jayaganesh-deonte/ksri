@@ -1,3 +1,5 @@
 <template>
-  <div>vision-and-mission</div>
+  <div>
+    <VisionAndMission />
+  </div>
 </template>
