@@ -14,6 +14,7 @@ const myCustomTheme = {
     accent: "#F0F5F0",
     darkGreen: "#091F13",
     accentGreen: "#abbe88",
+    greenBg: "#deefde",
     gold: "#e8be5e",
     active: "#7A7369",
     accentRed: "8A2A00",
