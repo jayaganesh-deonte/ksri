@@ -1,3 +1,80 @@
 <template>
-  <div>milestones</div>
+  <div>
+    <SectionTitle title="Milestones" class="mb-6" />
+
+    <div class="milestones-container mx-2">
+      <MilestoneTile
+        v-for="(milestone, index) in milestones"
+        :key="milestone.year"
+        :year="milestone.year"
+        :title="milestone.title"
+        :description="milestone.description"
+        :isLast="index === milestones.length - 1"
+        class="milestone-item"
+      />
+    </div>
+  </div>
 </template>
+
+<script>
+import MilestoneTile from "./MilestoneTile";
+
+export default {
+  name: "Milestones",
+  components: {
+    MilestoneTile,
+  },
+  data() {
+    return {
+      milestones: [
+        {
+          year: 2015,
+          title: "BHĪMARATHA MAHOTSAVA",
+          description:
+            "The Inauguration of the 70th anniversary celebrations of the Institute was held on 29 th October 2015, Thursday at the Music Academy. Hon'ble Sri E. S. L. Narasimhan, Governor of Andhra Pradesh and Telangana, presided and delivered the Inaugural address. Swami Atmapriyanandaji Maharaj, Vice Chancellor, R.K.M. Vivekananda University, Belur, W.Bengal, delivered the Key Note Address. Hon'ble Justice R. V. Easwaran, Former Judge, Delhi High Court delivered the special address. The Valedictory Function of the 70th Anniversary Celebrations was held on Saturday, 25th February 2017. Sri M.K. Narayanan, (Former, Governor of West Bengal) presided and delivered the Valedictory Address and released Sri Padukasahasram of Sri Vedanta Desika. Sri K. Parasaran (Former Attorney General, Government of India) received the first copy .",
+        },
+        {
+          year: 2004,
+          title: "Diamond Jubilee Function",
+          description:
+            "The Diamond Jubilee Celebration of the Institute was inaugurated on 4th Sept. 2004. Dr. (Mrs.) Kapila Vatsyayan gave the Inaugural Address, Hon'ble Mr. Justice B.N. Srikrishna (Judge, Supreme Court of India, N.Delhi.) delivered Key-note Address, Dr. V.R. Panchamukhi (Tirupathi) & Dr. (Mrs.) Saroja Bhate (Pune) offered Felicitations and Dr. M. Narasimhachari (Chennai) gave the Jubilee Address",
+        },
+        {
+          year: 1996,
+          title: "Golden Jubilee Valedictory Function",
+          description: `The Golden Jubilee Valedictory celebrations were organised on 9 & 10 Aug. 1996. In connection with this celebration, a seminar on "Sanskrit and South Indian Languages" and a Pandita Parishad were also organised. Well-known scholars from India and abroad presented papers on the inter-relationship of Sanskrit with Tamil, Telugu, Malayalam and Kannada languages. The proceedings of the seminar were brought out as Journal of Oriental Research Vol.64-67.
+          Hon'ble Justice Sri C.S.Venkataramaiah (Former Chief Justice of India) gave the Valedictory Address.`,
+        },
+        {
+          year: 1995 - 96,
+          title: "Golden Jubilee Commemoration Lectures",
+          description:
+            "A series of Commemoration lectures to mark the Golden Jubilee was inaugurated by His Holiness Srimad Andavan Swamigal on 1st October 1995. The lecture series ended by July 1996.",
+        },
+        {
+          year: 1994,
+          title: "Golden Jubilee Celebrations-Inauguration",
+          description: `The Golden Jubilee celebrations of the Institute were inaugurated on 30th April 1994. Sri R.Venkataraman, Former President of India who was to inaugurate, could not be present on the inaugural function because of illness. The function was very largely attended by many scholars and prominent citizens of Madras. A Symposium on "Sanskrit & Science" was held on 9th Oct. 1994 presided over by Dr.Raja Ramanna, famous Physicist and Former Union Minister. This function was also very largely attended and appreciated. Many scientists took part in the symposium. On Jan.23, 1995 another seminar was held on "Sanskrit and Medical Science" presided over by Dr.B.Ramamurthi, Neuro Surgeon of international repute. Many doctors presented papers. A unique feature of this function was the Benedictory address given by their Holinesses of Kanchi Mutt during the seminar. C.R. Pattabirama, Former Union Minister inaugurated the function.`,
+        },
+        {
+          year: 1981,
+          title: "Birth Centenary of Prof.S.Kuppuswami Sastri",
+          description: `The Institute commemorated the Birth-centenary of Prof.S.Kuppuswami Sastri in 1981 in a befitting manner in two sessions. Scholars from all over India and foreign working in India including a sizable number of Sri Sastriar' students took active part in the celebrations, the first session of which was held on 19,20 & 21 June 1981 at the Sanskrit College campus.`,
+        },
+        {
+          year: 1971,
+          title: "Silver Jubilee Celebrations",
+          description: `The Silver Jubilee of the Institute was organised on a grand scale with a conference of scholars of Sanskrit and Indology, enaction of Sanskrit Play, release of books etc.`,
+        },
+      ],
+    };
+  },
+};
+</script>
+
+<style scoped>
+.milestone-item {
+  width: 100%;
+  position: relative;
+}
+</style>
