@@ -245,7 +245,7 @@ const menuOptions = reactive([
       //  Governing Body, Faculty
       {
         name: "Governing Body",
-        path: "/ksri-team/governing-body",
+        path: "/ksri-team/",
       },
       {
         name: "Faculty",
