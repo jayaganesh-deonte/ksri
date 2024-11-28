@@ -261,7 +261,7 @@ const menuOptions = reactive([
       // Library In House    Library On Line
       {
         name: "Library In House",
-        path: "/library/library-in-house",
+        path: "/library",
         description:
           "The uniqueness of the Institute's library is that it preserves the precious personal collections of great savants such as Dr.S.Radhakrishnan, Prof. Hiriyanna, Dr.V.Raghavan and others which are hardly available elsewhere.",
       },

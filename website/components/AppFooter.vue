@@ -150,7 +150,7 @@ const footerLinks = reactive({
       children: [
         {
           name: "Library In House",
-          path: "/library/library-in-house",
+          path: "/library",
         },
         {
           name: "Library On Line",

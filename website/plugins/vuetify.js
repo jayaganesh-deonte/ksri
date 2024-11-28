@@ -7,7 +7,7 @@ import "../ksri-animate.scss";
 const myCustomTheme = {
   dark: false,
   colors: {
-    background: "#F9F6F0",
+    background: "#fff",
     surface: "#FFFFFF",
     primary: "#09341C",
     secondary: "#BF641F",
