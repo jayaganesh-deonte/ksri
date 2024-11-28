@@ -30,14 +30,15 @@
 
     <v-card
       class="onlineLibBg d-flex flex-column justify-end my-8"
-      height="50vh"
+      :height="$device.isMobile ? '' : '50vh'"
       data-aos="fade-up"
       data-aos-delay="900"
       rounded="0"
     >
       <v-card
         color="primary pa-4  text-h6 mx-auto"
-        width="50%"
+        :class="$device.isMobile ? 'my-4 text-center' : ''"
+        :width="$device.isMobile ? '80%' : '50%'"
         data-aos="fade-up"
         data-aos-delay="900"
         rounded="0"

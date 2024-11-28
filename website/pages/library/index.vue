@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: white">
+  <div class="mx-2 my-8">
     <div class="text-center mx-4">
       <LibraryHeader />
 
@@ -47,7 +47,8 @@
           Preservation of Manuscripts and Books
         </div>
         <v-card
-          class="mx-6 text-h5 libraryRack d-flex justify-center align-center"
+          class="text-h5 libraryRack d-flex justify-center align-center"
+          :class="$device.isMobile ? '' : 'mx-6'"
           width="100%"
           :height="$device.isMobile ? '' : '70vh'"
           data-aos="fade-up"
@@ -61,6 +62,7 @@
               :width="$device.isMobile ? '' : '70vw'"
               data-aos="fade-right"
               data-aos-delay="900"
+              :class="$device.isMobile ? 'mx-2' : ''"
             >
               The Manuscript collection is being systematically preserved by
               adopting periodical manual cleaning , kept separately in an Air
@@ -68,6 +70,7 @@
             </v-card>
             <v-card
               color="primary my-16 pa-4"
+              :class="$device.isMobile ? 'mx-2' : ''"
               elevation="0"
               rounded="0"
               :width="$device.isMobile ? '' : '70vw'"
@@ -87,7 +90,11 @@
       <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="200">
         Human Resources
       </div>
-      <div class="imageWithTextAlignedToRight" style="height: 50vh">
+      <div
+        class="imageWithTextAlignedToRight"
+        style="height: 50vh"
+        v-if="!$device.isMobile"
+      >
         <div>
           <v-img
             src="https://d30y75l38k1y9.cloudfront.net/upload/grantha-manuscript.jpg"
@@ -113,12 +120,45 @@
           books for further studies.
         </div>
       </div>
+
+      <!-- for mobile: image in bg on 1st card and text in 2nd card aligned to center -->
+      <v-card
+        class="my-4"
+        color="greenBg"
+        elevation="0"
+        data-aos="zoom-in"
+        data-aos-delay="400"
+        v-if="$device.isMobile"
+      >
+        <v-img
+          src="https://d30y75l38k1y9.cloudfront.net/upload/grantha-manuscript.jpg"
+          cover
+        ></v-img>
+        <div
+          class="text-h6 text-start ma-2"
+          data-aos="fade-up"
+          data-aos-delay="900"
+        >
+          The Kuppuswami Sastri Research Institute's Library is a Closed Access
+          system with its own special classification of subjects as it is a
+          special library dealing with books specifically on Sanskrit and
+          Indological studies. The library staff are trained in maintaining and
+          preserving by adopting the new techniques. The academic staff of the
+          Institute help the readers in understanding the texts and suggest
+          books for further studies.
+        </div>
+      </v-card>
     </div>
+
     <div class="mx-2 my-8">
       <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="500">
         Focus on Digitization of Mss. and Rare Books
       </div>
-      <div class="imageWithTextAlignedToRight" style="height: 50vh">
+      <div
+        class="imageWithTextAlignedToRight"
+        style="height: 50vh"
+        v-if="!$device.isMobile"
+      >
         <v-img
           data-aos="fade-right"
           data-aos-delay="900"
@@ -143,6 +183,32 @@
           3000 books published before 1950 on various subjects.
         </v-card>
       </div>
+
+      <!-- for mobile -->
+      <v-card
+        class="my-4"
+        color="greenBg"
+        elevation="0"
+        data-aos="zoom-in"
+        data-aos-delay="400"
+        v-if="$device.isMobile"
+      >
+        <v-img
+          src="https://d30y75l38k1y9.cloudfront.net/upload/library-focus.jpg"
+          cover
+        ></v-img>
+        <div
+          class="text-h6 text-start ma-2"
+          data-aos="fade-up"
+          data-aos-delay="900"
+        >
+          Realising the importance of the collection, the Institute is trying to
+          digitize the old books (70- 100 years old) and the Manuscripts. Under
+          the Millennium Project envisaged by the former President Dr.A.P.J.
+          Abdul Kalam, the Tirumala Tirupati Devasthanam has digitalized nearly
+          3000 books published before 1950 on various subjects.
+        </div>
+      </v-card>
     </div>
 
     <v-card
