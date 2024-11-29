@@ -13,6 +13,18 @@
     >
       <div v-for="button in libraryButtons" :key="button.name">
         <v-btn
+          :color="button.isHovering ? 'secondary' : 'primary'"
+          rounded="pill"
+          variant="flat"
+          class="ma-2"
+          :to="button.path"
+          @mouseover="button.isHovering = true"
+          @mouseleave="button.isHovering = false"
+          v-if="button.name == activeButtonName"
+        >
+          {{ button.name }}
+        </v-btn>
+        <v-btn
           color="primary"
           rounded="pill"
           :variant="button.isHovering ? 'flat' : 'outlined'"
@@ -20,6 +32,7 @@
           :to="button.path"
           @mouseover="button.isHovering = true"
           @mouseleave="button.isHovering = false"
+          v-else
         >
           {{ button.name }}
         </v-btn>
@@ -30,6 +43,11 @@
 </template>
 
 <script setup>
+// props to show active button
+const props = defineProps({
+  activeButtonName: String,
+});
+
 const libraryButtons = reactive([
   {
     name: "KSRI Books",
