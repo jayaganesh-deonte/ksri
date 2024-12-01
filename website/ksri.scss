@@ -109,6 +109,18 @@ cursive;
     }
 }
 
+.horizontalLine {
+    width: var(--line-width, 100%);
+    height: 2px;
+    background-color: #abbe88;
+}
+
+.horizontalLineSecondary {
+    width: var(--line-width, 100%);
+    height: 2px;
+    background-color: #bf641f;
+}
+
 // heading with line before and after
 // .heading-with-line {
 //     display: flex;

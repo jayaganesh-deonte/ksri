@@ -1,0 +1,127 @@
+<template>
+  <v-hover>
+    <template v-slot:default="{ isHovering, props }">
+      <v-card
+        class="ma-1"
+        height="100%"
+        rounded="0"
+        :elevation="isHovering ? 5 : 2"
+        v-bind="props"
+      >
+        <v-card
+          class="pa-2 ma-2 d-flex flex-column justify-space-between"
+          height="100%"
+          elevation="0"
+          rounded="0"
+        >
+          <!-- First Row with Two Columns -->
+          <v-row>
+            <!-- Date Column -->
+            <v-col cols="12" sm="2" class="py-2">
+              <v-card
+                :color="isHovering ? 'secondary' : 'accentGreen'"
+                class="text-white"
+                elevation="0"
+                rounded="0"
+              >
+                <v-card-text class="text-center">
+                  <div class="text-h6">{{ formatDate(event.date)[0] }}</div>
+                  <div class="text-h6">{{ formatDate(event.date)[1] }}</div>
+                  <div class="text-h6">{{ formatDate(event.date)[2] }}</div>
+                </v-card-text>
+              </v-card>
+            </v-col>
+
+            <!-- Title and Details Column -->
+            <v-col cols="12" sm="10" class="py-2">
+              <div
+                class="text-h5 text-start pa-0"
+                :class="isHovering ? 'text-secondary' : 'text-primary'"
+              >
+                {{ event.title }}
+              </div>
+
+              <div
+                class="horizontalLineSecondary"
+                v-if="isHovering"
+                style="--line-width: 15%"
+              ></div>
+              <div
+                class="horizontalLine"
+                v-else
+                style="--line-width: 15%"
+              ></div>
+
+              <div class="text-h6 text-start pa-0 mt-5">
+                {{ event.description }}
+              </div>
+              <v-chip-group class="mt-2">
+                <v-chip
+                  v-for="(category, index) in event.category"
+                  :key="index"
+                  color="primary"
+                  small
+                  class="mr-2"
+                >
+                  {{ category }}
+                </v-chip>
+              </v-chip-group>
+            </v-col>
+          </v-row>
+
+          <!-- Second Row with Read More Button -->
+          <div class="my-4 d-flex align-center">
+            <div class="mx-1">
+              <v-btn
+                :color="isHovering ? 'secondary' : 'primary'"
+                text
+                @click="onReadMore"
+                rounded="pill"
+              >
+                Read More
+              </v-btn>
+            </div>
+
+            <div
+              class="horizontalLineSecondary mx-4"
+              v-if="isHovering"
+              style="--line-width: 100%"
+            ></div>
+            <div
+              class="horizontalLine mx-4"
+              v-else
+              style="--line-width: 100%"
+            ></div>
+          </div>
+        </v-card>
+      </v-card>
+    </template>
+  </v-hover>
+</template>
+
+<script>
+export default {
+  name: "EventCard",
+  props: {
+    event: {
+      type: Object,
+      required: true,
+    },
+  },
+  methods: {
+    formatDate(dateString) {
+      const [day, month, year] = dateString.split("/");
+      const date = new Date(year, month - 1, day);
+
+      const formattedDay = date.getDate();
+      const formattedMonth = date.toLocaleString("en-US", { month: "short" });
+      const formattedYear = date.getFullYear();
+
+      return [formattedDay, formattedMonth, formattedYear];
+    },
+    onReadMore() {
+      this.$emit("read-more", this.event);
+    },
+  },
+};
+</script>
