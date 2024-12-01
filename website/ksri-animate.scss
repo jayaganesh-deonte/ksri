@@ -38,3 +38,57 @@
         background-color: transparent;
     }
 }
+
+.horizontal-line-animate {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.horizontal-line-animate::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #09341c;
+    transform: translateX(-100%);
+    transition: background-color 0.3s ease;
+}
+
+.horizontal-line-animate.show::after {
+    animation: drawLineIn 0.5s ease-in-out forwards;
+}
+
+.horizontal-line-animate.hide::after {
+    animation: drawLineOut 0.5s ease-in-out forwards;
+}
+
+.horizontal-line-animate:hover::after {
+    background-color: #bf641f;
+}
+
+@keyframes drawLineIn {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes drawLineOut {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+        /* Changed from 100% to -100% */
+    }
+}
