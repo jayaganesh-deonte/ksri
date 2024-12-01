@@ -105,7 +105,7 @@
 </template>
 
 <script setup>
-import displayProjects from "./displayProjects.vue";
+import displayProjects from "./components/displayProjects.vue";
 const projects = {
   Completed: [
     {
