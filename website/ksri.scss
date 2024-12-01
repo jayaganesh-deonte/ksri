@@ -113,12 +113,57 @@ cursive;
     width: var(--line-width, 100%);
     height: 2px;
     background-color: #abbe88;
+    transform-origin: left;
+    animation: drawIn 1s ease-in-out forwards;
+}
+
+.horizontalLine::after {
+    content: "";
+    display: block;
+    width: var(--line-width, 100%);
+    height: 2px;
+    background-color: #abbe88;
+    transform-origin: right;
+    animation: drawOut 1s ease-in-out forwards;
 }
 
 .horizontalLineSecondary {
     width: var(--line-width, 100%);
     height: 2px;
     background-color: #bf641f;
+    transform-origin: left;
+    animation: drawIn 1s ease-in-out forwards;
+}
+
+.horizontalLineSecondary::after {
+    content: "";
+    display: block;
+    width: var(--line-width, 100%);
+    height: 2px;
+    background-color: #bf641f;
+    transform-origin: right;
+    animation: drawOut 1s ease-in-out forwards;
+}
+
+
+@keyframes drawIn {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes drawOut {
+    from {
+        transform: scaleX(1);
+    }
+
+    to {
+        transform: scaleX(0);
+    }
 }
 
 // heading with line before and after
