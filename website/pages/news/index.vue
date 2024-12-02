@@ -23,7 +23,8 @@
 </template>
 
 <script setup>
-import NewsCard from "./NewsCard.vue";
+import NewsCard from "~/components/news/NewsCard.vue";
+
 const news = [
   {
     title: `The Pontiff of Uttaradi Mutt visited our institute on 17 October 2024 at 4 p.m. He evinced keen interest in our publications, library and reading some books and palm leaf manuscripts.`,

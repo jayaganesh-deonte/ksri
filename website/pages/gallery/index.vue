@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import galleryCard from "./galleryCard.vue";
+import galleryCard from "~/components/gallery/galleryCard.vue";
 
 const gallery = {
   "KSRI Gallery Collection 1": [

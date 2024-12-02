@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import EventCard from "./eventCard.vue";
+import eventCard from "~/components/events/eventCard.vue";
 
 const events = [
   {
