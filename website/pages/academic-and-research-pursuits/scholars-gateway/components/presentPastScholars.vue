@@ -4,7 +4,9 @@
     <div v-for="course in courses" :key="course.name">
       <div class="my-8">
         <div class="sectionTitle3">{{ course.name }}</div>
-        <div data-aos="fade-up">{{ course.subTitle }}</div>
+        <div class="text-center">
+          <div data-aos="fade-up ">{{ course.subTitle }}</div>
+        </div>
 
         <!-- for supervisors, if students are present for course -->
         <div v-for="supervisor in supervisors" :key="supervisor">
