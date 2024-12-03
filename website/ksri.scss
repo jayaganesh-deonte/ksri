@@ -111,7 +111,7 @@ cursive;
 
 .horizontalLine {
     width: var(--line-width, 100%);
-    height: 2px;
+    height: var(--line-height, 2px);
     background-color: #abbe88;
     transform-origin: left;
     animation: drawIn 1s ease-in-out forwards;
@@ -121,7 +121,7 @@ cursive;
     content: "";
     display: block;
     width: var(--line-width, 100%);
-    height: 2px;
+    height: var(--line-height, 2px);
     background-color: #abbe88;
     transform-origin: right;
     animation: drawOut 1s ease-in-out forwards;
