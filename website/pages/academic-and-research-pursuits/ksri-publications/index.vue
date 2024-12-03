@@ -8,9 +8,11 @@
       </div>
     </div>
     <div class="text-center my-8">
-      <v-btn rounded="pill" variant="outlined" color="primary">
-        List of Book Catalogue
-      </v-btn>
+      <nuxt-link to="/academic-and-research-pursuits/ksri-publications/books">
+        <v-btn rounded="pill" variant="outlined" color="primary">
+          List of Book Catalogue
+        </v-btn>
+      </nuxt-link>
     </div>
     <div class="text-center my-4">
       <div class="text-h6">
@@ -121,7 +123,7 @@
 </template>
 
 <script setup>
-import publicationForSale from "./components/publicationForSale.vue";
+import publicationForSale from "../components/publicationForSale.vue";
 const publicationCommittee = {
   "Research Committee": [
     {
