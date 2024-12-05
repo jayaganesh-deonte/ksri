@@ -2,6 +2,14 @@ import { defineStore } from "pinia";
 
 export const appStore = defineStore("app", {
   state: () => ({
+    isHomeDialogContentPresent: true,
+    homeDialogContent: {
+      title: "Update",
+      description:
+        "KSRI Payment Gateway: Our Kuppuswami Sastri Research Institute has now got its own Payment Gateway!",
+      buttonText: "Visit Website",
+      buttonLink: "/contribute",
+    },
     dainandini: {
       audioFile:
         "https://d30y75l38k1y9.cloudfront.net/upload/media/mk-dainandini-2-11-24.mp3",
@@ -12,6 +20,7 @@ export const appStore = defineStore("app", {
     },
   }),
   getters: {
+    getHomeDialogContent: (state) => state.homeDialogContent,
     getDainandini: (state) => state.dainandini,
   },
   actions: {},
