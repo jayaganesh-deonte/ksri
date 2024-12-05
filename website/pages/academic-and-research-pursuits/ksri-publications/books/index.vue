@@ -11,8 +11,8 @@
     <div class="ma-4" v-if="!showSelectedBookDetails">
       <v-row>
         <v-col
-          v-for="(book, index) in books"
-          :key="book.name"
+          v-for="(book, index) in storeBook.books"
+          :key="book.title"
           cols="12"
           md="4"
           data-aos="fade-up"
@@ -80,6 +80,10 @@
 </template>
 
 <script setup>
+import { bookStore } from "~/stores/bookStore";
+
+const storeBook = bookStore();
+
 const selectedBook = reactive({});
 const showSelectedBookDetails = ref(false);
 
@@ -94,47 +98,6 @@ const resetSelectedBook = () => {
 };
 
 resetSelectedBook();
-
-const books = [
-  {
-    name: "THE JOURNAL OF ORIENTAL RESEARCH MADRAS (Vols. LXXXVIII-XC)",
-    subtitle:
-      "The Kuppuswami Sastri Research Institute, Chennai 4 | 2017 | pp xvii +264",
-    price: "500 INR",
-    imageUrls: [
-      "https://d30y75l38k1y9.cloudfront.net/upload/the-journal-of-oriental-research-madras-2015-uRk.jpg",
-    ],
-    details: `“Quite an interesting aspect of the present issue of the Journal is that it contains articles on several problems connected with our everyday life as well as articles on purely academic topics.
-
-The present issue is very rich, valuable and consequently recommendable”.
-Joy Bhattacharya, Bulletin of the Ramakrishna Mission, Institute of Culture, 2019`,
-  },
-  {
-    name: "THE JOURNAL OF ORIENTAL RESEARCH MADRAS (Vols. XCI)",
-    subtitle:
-      "The Kuppuswami Sastri Research Institute, Chennai 4 | 2018 | pp viii + 234 + 28",
-    price: "500 INR",
-    imageUrls: ["https://d30y75l38k1y9.cloudfront.net/upload/jor-xci.jpg"],
-    details: `“Quite an interesting aspect of the present issue of the Journal is that it contains articles on several problems connected with our everyday life as well as articles on purely academic topics.
-
-The present issue is very rich, valuable and consequently recommendable”.
-Joy Bhattacharya, Bulletin of the Ramakrishna Mission, Institute of Culture, 2019`,
-  },
-  {
-    name: "THE JOURNAL OF ORIENTAL RESEARCH MADRAS (Vols. LXXXVII)",
-    subtitle:
-      "The Kuppuswami Sastri Research Institute, Chennai 4 | 2015 | pp 228",
-    price: "250 INR",
-
-    imageUrls: [
-      "https://d30y75l38k1y9.cloudfront.net/upload/the-journal-of-oriental-research-madras-2017.jpg",
-    ],
-    details: `“Quite an interesting aspect of the present issue of the Journal is that it contains articles on several problems connected with our everyday life as well as articles on purely academic topics.
-
-The present issue is very rich, valuable and consequently recommendable”.
-Joy Bhattacharya, Bulletin of the Ramakrishna Mission, Institute of Culture, 2019`,
-  },
-];
 
 const onViewDetails = (book) => {
   selectedBook.name = book.name;

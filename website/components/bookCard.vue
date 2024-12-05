@@ -25,7 +25,7 @@
             class="text-start pa-0"
             :class="!isHovering ? 'text-secondary' : 'text-primary'"
           >
-            {{ book.name }}
+            {{ book.title }}
           </div>
 
           <div
@@ -51,7 +51,10 @@
           <v-btn
             :color="isHovering ? 'secondary' : 'primary'"
             text
-            @click="onReadMore"
+            :to="
+              '/academic-and-research-pursuits/ksri-publications/books/' +
+              book.id
+            "
             rounded="pill"
             data-aos-delay="200"
           >
@@ -90,7 +93,12 @@ export default {
   },
   methods: {
     onReadMore() {
-      this.$emit("viewDetails", this.book);
+      console.log("Read more clicked for book:", this.book);
+      // navigate to book details page
+      // this.$router.push({
+      //   name: "/academic-and-research-pursuits/ksri-publications/books",
+      //   params: { id: this.book.title },
+      // });
     },
   },
 };
