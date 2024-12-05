@@ -7,7 +7,16 @@
     @mouseover="handleMouseOver"
     @mouseleave="handleMouseLeave"
   >
-    <v-img :src="image.imageUrl" fit />
+    <v-img :src="image.imageUrl" fit>
+      <template v-slot:placeholder>
+        <div class="d-flex align-center justify-center fill-height">
+          <v-progress-circular
+            color="grey-lighten-4"
+            indeterminate
+          ></v-progress-circular>
+        </div>
+      </template>
+    </v-img>
     <div class="text-body-1">
       {{ image.description }}
     </div>

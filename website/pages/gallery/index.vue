@@ -13,8 +13,8 @@
       </v-card>
 
       <!-- display images -->
-      <div class="d-flex flex-row flex-wrap">
-        <div v-for="image in gallery[subsection]" :key="image">
+      <div class="d-flex flex-row flex-wrap justify-center">
+        <div v-for="image in gallery[subsection]" :key="image" class="">
           <galleryCard :image="image" />
         </div>
       </div>
@@ -28,24 +28,265 @@ import galleryCard from "~/components/gallery/galleryCard.vue";
 const gallery = {
   "KSRI Gallery Collection 1": [
     {
-      description: "Golden Jubilee Inauguration - 1994",
       imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/1-J4t.jpg",
+      description: "Golden Jubilee Inauguration  - 1994",
     },
     {
-      description: "Sanskrit and Medical science Seminar - On Jan.23, 1995",
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/2-ej5.jpg",
+      description: "Sanskrit and Science Seminar- 9th Oct. 1994",
+    },
+    {
       imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/3-WNF.jpg",
+      description: "Sanskrit and Medical science Seminar - On Jan.23, 1995",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/4-6GX.jpg",
+      description: "Sanskrit and Medical science Seminar- On Jan.23, 1995",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/5-bBY.jpg",
+      description: "Golden Jubilee Valediction function- 9 & 10 Aug. 1996",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/6-ecK.jpg",
+      description: "Golden Jubilee  Valedictory Function-- 9 & 10 Aug. 1996",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/7-IG2.jpg",
+      description:
+        "Seminar on Saiva Rituals and Philosophy Inauguration – 24.7. 1992",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/8-EF0.jpg",
+      description:
+        "Seminar on Saiva Rituals and Philosophy Valedictory Function- - 26.7.1992",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/9-VxC.jpg",
+      description: "Vaidika Sammelanam, Feb. 1990",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/10-SCT.jpg",
+      description: "Diamond Jubilee Celebrations – 4 sept. 2004",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/11-PUB.jpg",
+      description:
+        "Release of Some aspects of  Drama and Dramaturgy authored by Dr.S.S. Janaki",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/12-YUE.jpg",
+      description:
+        "Release of Astanga Nighantu (Medical Text) ed. by P.V.Sarma, Eng. and Tamil translation by Dr.K.S.ViswanathaSarma",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/13-jZ0.jpg",
+      description:
+        "National Seminar on Religion and Philosophy, Inaugural address by His Excellencey Sri E.S.L. Narasimhan, Gov. of  Chattisgarh . On Dias (L to R) Sri B. Madhavan, Secretary of  the Institute,  Dr.K.K.A. Venkatachari, Founder Director & Prof. (Rtd.) Ananthacharya Indological Research Institute, Mumbai, Prof.M.A. Lakshmi Tatachar, President, The Samskriti Foundation, Melkote, Sri T.V.Ramanathan, Vice President of the Institute.",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/14-6EX.jpg",
+      description:
+        "Dr. Sivamurthi Swami, Sri Taralabalu Jagadguru, Brihanmath, Karnataka, inaugurates the Dr.S.S. Janaki Commemoration. The Swamiji is flanked by Sri B. Madhavan, Secretary of the institute and  Dr. A. Thiruvengadathan .Aug. 2000",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/15-X00.jpg",
+      description:
+        "Swamiji releases Dr..S.S.Janaki Commemoration Volume  of the JOR (Vol.LXVIII-LXX ) and Dr.K.K.Raja, Former Prof. and Head Dept. of Sanskrit, Univ. of Madras receives the First Copy. Aug. 2000.",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/16-6Su.jpg",
+      description:
+        "Dr.V. Raghavan Centenary Celebration & Seminar on Sanskrit Literature. Hon'ble Justice S. Ranganathan, Former Judge, Supreme Court of  India, Presides and delivers the Inaugural Address and releases the Books “Concept of the Beautiful in Sanskrit literature”, “The Mahabharata (condensed) with Eng. Tr.” Srimad Bhagavata (condensed) with Eng. tr. ”. (to his right ) Dr. M.Narasimhachari, Former Prof. And Head, Dept. of Vaishnavism, Univ. of  Madras, receives the first copies and delivers the key-note Address. (to his left) Sri N.Mahalingam receives the copies of the books.Jan. 5. 2009.",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/17-3FA.jpg",
+      description:
+        "Seminar on Sanskrit Literature, Itihasa Session, Chairperson Dr.R.Thyagarajan, Prof. &Head, Dept. of  Sanskrit, Presidency College, flanked by Dr.K.Srinivasan, Prof. & Head, Dept. of  Sanskrit, RKM Vivekananda College, to his right and Dr. K.Sreekantha Sarma, Prof. of  Sahitya, The Madras Sanskrit College. ",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/18-xJ1.jpg",
+      description:
+        "Seminar on Sanskrit Literature, Purana Session, Chairperson Dr. C.S. Radhakrishnan ( second from right on dias), Prof. &Head, Dept. of  Sanskrit, Central University, Pondicherry), to his right are Dr. S.Padmanabhan,  Prof.  of  Sanskrit, Univ. of  Madras and Dr. P. Narasimhan,  Prof.  of  Sanskrit, Univ. of  Madras.",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/19-tw1.jpg",
+      description:
+        "Seminar on Sanskrit Literature, Kavya Session, Chairperson  Dr. N.V. Deviprasad (in the center),  Principal, The Madras Sanskrit College.(to his right are) Dr. R. Ramachandran,  Prof. of  Sanskrit, RKM Vivekananda College and Dr. O.R. Devanathan, lecturer, Dept. of  Sanskrit, Presidency College. (to his left are) Dr. T.V.Vasudeva, Deputy Director, The KSRI and Dr.K.S.Balasubramanian, , Deputy Director, The KSRI.",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/20-t6O.jpg",
+      description:
+        "Seminar on Sanskrit Literature, Kavya Session, Chairperson  Dr. V.Kameswari( second from right) , Director,The  KSRI.(to her right are ) Dr. S. Revathy, Reader, Dept. of  Sanskrit, Univ. of  Madras and Prof. S. Arunasundaram, Dept. of  Vyakarana, , The Madras Sanskrit College.(to her left) Dr. L.Kumaraswamy, Head, Dept. of  Sanskrit, D.G. Vaishnav College. ",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/21.jpg",
+      description:
+        "Seminar on Sanskrit Literature, Valedictory address by Dr. C.S.Sundaram, Former Reader, Dept. Of Sanskrit, University of Madras, President, The Samskrita Ranga.",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/22.jpg",
+      description:
+        "Seminar on Sanskrit Literature, Valedictory function  Dr. C.S.Sundaram, Former Reader, Dept. Of Sanskrit, University of Madras, President, The Samskrita Ranga being honoured by Sri B.Madhavan, Secretary, The KSRI.",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/23.jpg",
+      description:
+        "National Seminar on Religion and Philosophy of Vaishnava Agamas, Valedictory Address by Sri V.N. Venkatanathan, on Dias are Dr. V. Kameswari, Director, The KSRI and Sri B.Madhavan, Secretary, The KSRI.2008",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/24.jpg",
+      description:
+        "Special Address by Sri Rajiv Malhotra, on Dias Dr.V.Kameswari, Director, The KSRI, Sri T.S. Krishna Murthy, President, The KSRI.2016",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/25.jpg",
+      description: "Sanskrit and Science Seminar- 9th Oct. 1994",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/26.jpg",
+      description: "Sanskrit and Medical Science Seminar- 30/01/1995 ",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/27.jpg",
+      description:
+        "Inauguration of the Bhimaratha Mahotsava 70th Anniversary Celebrations at the Music Academy. ",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/28.jpg",
+      description:
+        "Inauguration of the Bhimaratha Mahotsava 70th Anniversary Celebrations at the Music Academy. ",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/29.jpg",
+      description:
+        "Inauguration of the Bhimaratha Mahotsava 70th Anniversary Celebrations at the Music Academy. ",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/30.jpg",
+      description:
+        "Inauguration of the Bhimaratha Mahotsava 70th Anniversary Celebrations at the Music Academy. ",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/32.jpg",
+      description:
+        "Release of the Book - CATURYUGA CALENDER : by Prof.R.Parthasarathy Inauguration of the Bhimaratha Mahotsava 70th Anniversary Celebrations at the Music Academy .  29/10/2015",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/33.jpg",
+      description:
+        "Release of the Book – The Kuppuswami Sastri Memmorial Volume . Inauguration of the Bhimaratha Mahotsava 70th Anniversary Celebrations at the Music Academy.  29/10/2015",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/34.jpg",
+      description:
+        "Release of the Book - DHY¡NABINDU UPANI½AT (Yoga): by Dr.K.S.Balasubramanian, Inauguration of the Bhimaratha Mahotsava 70th Anniversary Celebrations at the Music Academy .  29/10/2015",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/35.jpg",
+      description:
+        "Release of the Book – Siva Temple and Temple Rituals,  Inauguration of the Bhimaratha Mahotsava 70th Anniversary Celebrations at the Music Academy. 29/10/2015",
     },
   ],
   "Memories of KSRI": [
     {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/1.jpg",
       description:
         "Inaugration of the KSRInstitute by S.V.Ramamurthi I.C.S. on 22nd April 1945. L.to R.: K.M.Munshi, Sir.S.V.Ramamurthi, Rt.Hon'ble V.S. Srinivasa Sastri & Dr. S. Radhakrishnan",
-      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/1.jpg",
     },
     {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/2.JPG",
+      description:
+        "H.E. Bishnuram Madhi, Governor of Madras, addressing the Institute's 14th Foundation Day 28 Septemper 1958",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/3.jpg",
       description:
         "H.H. Jaya Chamarajendra Wadiyar, Maharajah of Mysore, at the Institute, seeing the Library. 1st September 1957",
-      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/3.jpg",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/4.jpg",
+      description:
+        "At the Reception to the Members of the Central Sanskrit Board by the K.S.R. Institute and other Sanskrit Institutions. 22nd November 1960",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/5.jpg",
+      description:
+        "17th Foundation Day, K.S.R. Institute with Prof. Nikkam, Vice-Chancellor, Mysore University in Chair. Prof. Hooykaas of SOAS., London, addressing. 21st December 1961",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/6.jpg",
+      description:
+        "Svami Gangesvarananda doing the Pratistha of Veda Bhagavan at the K.S.R.I. on 5th March 1972",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/7.jpg",
+      description:
+        "Prof.P.Thieme of Germany delivering the 28th Foundation Day Address of the K.S.R.I. on 16th December 1973",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/8.JPG",
+      description:
+        "His Holiness Sri Jayendra Sarasvati Sankaracharya of Kanchi Kamakoti Pitha at the K.S.R. Institute on  27th February 1976",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/9.JPG",
+      description:
+        "Dr.J.D.H. Derrett of the School of Oriental & African Studies, University of London, speaking at the 21st Foundation Day of the K.S.R. Institute with Dr. C.P. Ramaswami Aiyar in the Chair. 3rd January 1966",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/10.JPG",
+      description:
+        "Dr.V.Raghavan who presented a Sanskrit Address to H.H. is being given H.H's Prasada. H.H. also inaugurated the Golden Jubilee Celebrations of the Samskrita Academy. 27th February 1976",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/11.jpg",
+      description:
+        "H.E. Prabhudas Patwari, Governor of Tamil Nadu addressing a gathering during Sanskrit day Celebrations. 28th Auguest 1977",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/12.jpg",
+      description:
+        "Dr.Rajendra Prasad, unveiling the portrait of Rt.Hon'ble. V.S.Srinivasa Sastri",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/13.jpg",
+      description:
+        "Inauguration of Birth-Centenary Celebrations of Mm. Kuppuswami Sastri - Dr. Kapila Vatsyayan, Dr. Eliki Zannas, Dr. R.N. Dandekar, Sri S.T.G. Varadacharya. 19th June 1981",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/14.jpg",
+      description:
+        "Concluding Function of Birth Centenary of Mm. Kuppuswami Sastri-Hon'ble Sri R. Venkataraman, Dr.T.M.P. Mahadevan, Dr. C. Sivaramamurthi. 21st June 1981",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/15.jpg",
+      description:
+        "Valedictory Function of Mm. Kuppuswami Sastri Birth-Centenary Function - Prof. Jean Filiozat and Dr.C. Sivaramamurthi. 31st Oct 1981",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/16.jpg",
+      description: "Foundation stone laid for the new block ",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/17.jpg",
+      description:
+        "Seminar on Saiva Rituals and Philosophy 1992. T.V. Venkataraman, Dr. Lalitha Kameswaran, Mr.B. Madhavan",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/18.jpg",
+      description:
+        "Seminar on Sanskrit and Science 1994. Dr. Raja Ramanna Speaks. 9th October 1994",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/19.jpg",
+      description:
+        "Seminar on Vaishnava Agamas, 1989. Sri. Krishnaswami Iyengar, Justice Sri. S. Ranganathan, Mr. B. Madhavan. 17th June 1989",
+    },
+    {
+      imageUrl: "https://d30y75l38k1y9.cloudfront.net/upload/20.jpg",
+      description:
+        "Seminar on Umapathy Sivacarya 1988. Dr. Janaki, T.V. Venkataraman, M.Arunachalam, Dr.Avvai Natarajan. 11th November 1988.",
     },
   ],
 };
