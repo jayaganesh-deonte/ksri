@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!$device.isMobile">
+  <div v-if="$device.isDesktop">
     <v-app-bar id="app-bar" color="primary" height="70">
       <div class="d-flex mx-auto">
         <!-- add menu Options -->
@@ -100,8 +100,9 @@
       <v-app-bar-nav-icon @click="mobileNavDrawer = !mobileNavDrawer">
         <v-icon>mdi-menu</v-icon>
       </v-app-bar-nav-icon>
-
-      <v-app-bar-title>The KSRI</v-app-bar-title>
+      <nuxt-link to="/" style="text-decoration: unset">
+        <v-app-bar-title class="text-white">The KSRI</v-app-bar-title>
+      </nuxt-link>
     </v-app-bar>
     <v-navigation-drawer v-model="mobileNavDrawer" temporary>
       <v-list nav dense>
