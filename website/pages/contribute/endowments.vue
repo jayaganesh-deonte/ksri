@@ -1,6 +1,6 @@
 <template>
   <div class="mx-2" style="background-color: white">
-    <section-title title="Endowments" />
+    <section-title title="Endowments" id="endowments" />
 
     <div
       class="text-center my-8"
@@ -93,10 +93,13 @@
         </v-col>
       </v-row>
     </div>
+
+    <contributeHeader />
   </div>
 </template>
 
 <script setup>
+import contributeHeader from "./contributeHeader.vue";
 const endownments = [
   {
     title: "Dr.M. Narasimhachari Endowment",
@@ -226,6 +229,30 @@ const endownments = [
     topic: "A lecture is organised every year on Sanskrit Literature",
   },
 ];
+
+const scrollTo = () => {
+  const endowments = document.getElementById("endowments");
+  if (endowments) {
+    endowments.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
+// on mounted scroll to id div with id endowments
+onMounted(() => {
+  scrollTo();
+});
+
+// get active menu option from url
+const route = useRoute();
+
+// watch route change scroll to id div with id endowments
+watch(
+  () => route.fullPath,
+  () => {
+    console.log(route.fullPath);
+    scrollTo();
+  }
+);
 </script>
 
 <style scoped>

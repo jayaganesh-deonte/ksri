@@ -1,6 +1,6 @@
 <template>
   <div style="background-color: white" class="ma-4 pa-2">
-    <section-title title="Bank Account Information" />
+    <section-title title="Bank Account Information" id="bank-information" />
     <v-row class="my-4">
       <v-col cols="12" sm="12" md="5" data-aos="fade-right">
         <div class="text-h5 font-weight-bold">
@@ -41,10 +41,14 @@
         </v-list>
       </v-col>
     </v-row>
+
+    <contributeHeader />
   </div>
 </template>
 
 <script setup>
+import contributeHeader from "./contributeHeader.vue";
+
 const bankDetails = {
   "Our Name": "THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE.",
   Bank: "Union Bank of India, Mylapore Branch.",

@@ -26,7 +26,9 @@
           preserving Sanskrit and Indological Studies.
         </div>
         <div class="mt-4" data-aos="zoom-out-up" data-aos-delay="300">
-          <v-btn rounded="pill" color="secondary">Contribute</v-btn>
+          <v-btn rounded="pill" color="secondary" :to="'/contribute/endowments'"
+            >Contribute</v-btn
+          >
         </div>
       </v-col>
       <v-col
@@ -37,17 +39,22 @@
         data-aos="fade-left"
         data-aos-delay="100"
       >
-        <v-card color="secondary">
+        <v-card color="secondary" data-aos="fade-left" data-aos-delay="100">
           <v-card-text class="text-h6 defaultFont">
             100% income tax-excempt in India under 25 (i)(iii) of IT Act 1961
           </v-card-text>
         </v-card>
-        <v-card color="secondary" class="my-4">
+        <v-card
+          color="secondary"
+          class="my-4"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
           <v-card-text class="text-h6 defaultFont">
             Individuals can claim under sec.80 GGA
           </v-card-text>
         </v-card>
-        <v-card color="secondary">
+        <v-card color="secondary" data-aos="fade-left" data-aos-delay="300">
           <v-card-text class="text-h6 defaultFont">
             CSR contributions welcome
           </v-card-text>

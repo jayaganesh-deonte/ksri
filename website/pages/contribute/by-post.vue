@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <section-title title="Contribute By Post" />
+    <section-title title="Contribute By Post" id="by-post" />
     <div class="text-h6 text-center" data-aos="fade-up" data-aos-delay="100">
       Contributions can also be sent by courier or post by making a cheque or
       demand draft in the name of The Kuppuswami Sastri Research Institute
@@ -45,5 +45,10 @@
         </div>
       </v-card>
     </div>
+    <contributeHeader />
   </div>
 </template>
+
+<script setup>
+import contributeHeader from "./contributeHeader.vue";
+</script>

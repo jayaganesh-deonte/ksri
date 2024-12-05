@@ -43,6 +43,15 @@
       © {{ currentYear }} The Kuppuswami Sastri Research Institute All Rights
       Reserved.
     </div>
+    <div class="text-center">
+      Developed by
+      <a
+        href="https://deonte.in/"
+        target="_blank"
+        style="text-decoration: unset"
+        >deonte.in</a
+      >
+    </div>
   </div>
 </template>
 
@@ -104,7 +113,7 @@ const footerLinks = reactive({
       children: [
         {
           name: "Projects & Studies",
-          path: "/academic-and-research-pursuits/projects-and-studies",
+          path: "/academic-and-research-pursuits/",
         },
         {
           name: "Scholars Gateway",

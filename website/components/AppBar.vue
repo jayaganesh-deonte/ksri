@@ -195,7 +195,7 @@ const menuOptions = reactive([
       //  Projects & Studies,  Scholars Gateway,  KSRI Publications, Research Articles, Academic Programs, KSRI Associates, Seminars/Conferences
       {
         name: "Projects & Studies",
-        path: "/academic-and-research-pursuits/projects-and-studies",
+        path: "/academic-and-research-pursuits/",
         description:
           "KSRI pursues many projects in Sanskrit scriptures and writings as well as Indology, to pursue its research objectives.",
       },

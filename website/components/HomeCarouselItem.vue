@@ -72,28 +72,33 @@
         style="--delay: 1s"
         :class="`${$device.isMobile ? 'flex-column ' : 'flex-row'}`"
       >
-        <v-btn
-          width="100%"
-          rounded="pill"
-          :color="button1Color"
-          size="large"
-          @mouseover="changeButtonColorOnHover(1)"
-          @mouseleave="resetButtonColor(1)"
-          :class="`${$device.isMobile ? 'mb-2' : 'mr-4'}`"
-        >
-          {{ buttonText1 }}
-        </v-btn>
+        <div :class="`${$device.isMobile ? 'mb-2' : 'mr-4'}`">
+          <nuxt-link :to="buttonText1Route">
+            <v-btn
+              width="100%"
+              rounded="pill"
+              :color="button1Color"
+              size="large"
+              @mouseover="changeButtonColorOnHover(1)"
+              @mouseleave="resetButtonColor(1)"
+            >
+              {{ buttonText1 }}
+            </v-btn>
+          </nuxt-link>
+        </div>
 
-        <v-btn
-          width="100%"
-          rounded="pill"
-          :color="button2Color"
-          size="large"
-          @mouseover="changeButtonColorOnHover(2)"
-          @mouseleave="resetButtonColor(2)"
-        >
-          {{ buttonText2 }}
-        </v-btn>
+        <nuxt-link :to="buttonText2Route">
+          <v-btn
+            width="100%"
+            rounded="pill"
+            :color="button2Color"
+            size="large"
+            @mouseover="changeButtonColorOnHover(2)"
+            @mouseleave="resetButtonColor(2)"
+          >
+            {{ buttonText2 }}
+          </v-btn>
+        </nuxt-link>
       </div>
     </v-card>
   </v-carousel-item>
@@ -119,6 +124,8 @@ export default {
     descriptionTextLine2: String,
     buttonText1: String,
     buttonText2: String,
+    buttonText1Route: String,
+    buttonText2Route: String,
   },
   methods: {
     changeButtonColorOnHover(buttonNumber) {

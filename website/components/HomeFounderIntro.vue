@@ -49,7 +49,13 @@
           his contributions to Sanskrit heritage and related Indology.
         </div>
         <div class="mt-2" data-aos="fade-left" data-aos-delay="350">
-          <v-btn rounded="pill" color="primary"> Read More </v-btn>
+          <v-btn
+            rounded="pill"
+            color="primary"
+            :to="'/about-ksri/kuppuswami-sastri-profile'"
+          >
+            Read More
+          </v-btn>
         </div>
       </v-col>
     </v-row>

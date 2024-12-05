@@ -1,3 +1,1 @@
-<template>
-  <div>contact-us</div>
-</template>
+<template></template>
