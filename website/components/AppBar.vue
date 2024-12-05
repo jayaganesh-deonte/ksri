@@ -107,19 +107,19 @@
     <v-navigation-drawer v-model="mobileNavDrawer" temporary>
       <v-list nav dense>
         <!-- for each menu option and its children as sub list and show sub list on click and hide other sub list on click of any other menu option-->
-        <v-list-item
-          v-for="option in menuOptions"
-          :key="option.name"
-          link
-          @click="openChildMenu(option)"
-        >
+        <v-list-item v-for="option in menuOptions" :key="option.name" link>
           <div>
             <div v-if="!option.children">
-              <v-list-item :to="option.path" class="pl-0">
+              <v-list-item class="pl-0" @click.native="navigate(option)">
                 <v-list-item-title> {{ option.name }}</v-list-item-title>
+                <div class="horizontalLine" v-if="option.showLine"></div>
               </v-list-item>
             </div>
-            <div v-else class="d-flex justify-space-between">
+            <div
+              v-else
+              class="d-flex justify-space-between"
+              @click="openChildMenu(option)"
+            >
               <v-list-item-title>{{ option.name }}</v-list-item-title>
               <div v-if="option.children">
                 <v-icon size="x-small" class="mx-1" v-if="option.showChildren">
@@ -136,11 +136,10 @@
             <v-list-item
               v-for="child in option.children"
               :key="child.name"
-              link
-              :to="child.path"
+              @click="navigate(child, option)"
             >
               <v-list-item-title>{{ child.name }}</v-list-item-title>
-              <v-divider />
+              <div class="horizontalLine" v-if="child.showLine"></div>
             </v-list-item>
           </div>
         </v-list-item>
@@ -341,6 +340,25 @@ const setActiveMenu = () => {
       return;
     }
   });
+};
+
+const navigate = (option, parent) => {
+  // showLine
+  option.showLine = true;
+
+  //
+  setTimeout(() => {
+    option.showLine = false;
+
+    // if parent
+    if (parent) {
+      parent.showChildren = false;
+    }
+
+    const router = useRouter();
+
+    router.push(option.path);
+  }, 400);
 };
 
 setActiveMenu();
