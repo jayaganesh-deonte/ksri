@@ -600,7 +600,12 @@ export const bookStore = defineStore("book", {
   }),
   actions: {
     getBookById(id) {
-      return this.books.find((book) => book.id === id);
+      // find book from book list if not found return null
+      const book = this.books.find((book) => book.id === id);
+      if (book) {
+        return book;
+      }
+      return null;
     },
   },
 });

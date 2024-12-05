@@ -11,7 +11,27 @@
     <div v-else>
       <!-- display book details -->
       <!-- two cols, 1st col with image as carousel, 2nd col with book details, title, subtitle, price and then details -->
-      <div class="ma-4">
+      <div v-if="bookNotFound" class="d-flex justify-center ma-6">
+        <!-- 404 component -->
+        <div class="d-flex flex-column justify-center align-center">
+          <div class="text-h1 text-secondary">404</div>
+          <div class="text-h4 text-secondary">Book Not Found</div>
+          <div class="text-body-1 text-secondary">
+            The book you are looking for does not exist.
+          </div>
+          <div class="d-flex justify-center ma-4">
+            <v-btn
+              rounded="pill"
+              variant="outlined"
+              color="primary"
+              to="/academic-and-research-pursuits/ksri-publications/books/"
+            >
+              Back to Book Catalogue
+            </v-btn>
+          </div>
+        </div>
+      </div>
+      <div class="ma-4" v-else>
         <div class="d-flex justify-center ma-4">
           <v-btn
             rounded="pill"
@@ -23,7 +43,7 @@
           </v-btn>
         </div>
         <v-row>
-          <v-col cols="12" md="6">
+          <v-col cols="12" md="6" data-aos="fade-right">
             <v-carousel
               hide-delimiters
               hide-delimiter-background
@@ -43,11 +63,27 @@
             class="d-flex flex-column justify-space-around"
           >
             <div>
-              <div class="text-h5 text-secondary">{{ bookInfo.title }}</div>
-              <div class="text-h6">{{ bookInfo.subtitle }}</div>
-              <div class="text-h6 text-secondary">Rs. {{ bookInfo.price }}</div>
+              <div
+                class="text-h5 text-secondary"
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
+                {{ bookInfo.title }}
+              </div>
+              <div class="text-h6" data-aos="fade-left" data-aos-delay="200">
+                {{ bookInfo.subtitle }}
+              </div>
+              <div
+                class="text-h6 text-secondary"
+                data-aos="fade-left"
+                data-aos-delay="300"
+              >
+                Rs. {{ bookInfo.price }}
+              </div>
             </div>
-            <div class="text-body-1">{{ bookInfo.details }}</div>
+            <div class="text-body-1" data-aos="fade-left" data-aos-delay="400">
+              {{ bookInfo.details }}
+            </div>
           </v-col>
         </v-row>
       </div>
@@ -63,9 +99,9 @@ const storeBook = bookStore();
 // get book id from route
 const route = useRoute();
 
-console.log(route.params.id);
-
 const bookInfoFetched = ref(false);
+
+const bookNotFound = ref(false);
 
 const bookInfo = reactive({
   title: "",
@@ -80,12 +116,16 @@ const bookInfo = reactive({
 const getBookInfo = async () => {
   const book = await storeBook.getBookById(route.params.id);
 
-  bookInfo.title = book.title;
-  bookInfo.subtitle = book.subtitle;
-  bookInfo.price = book.price;
-  bookInfo.imageUrls = book.imageUrls;
-  bookInfo.details = book.details;
-  bookInfo.id = book.id;
+  if (book == null) {
+    bookNotFound.value = true;
+  } else {
+    bookInfo.title = book.title;
+    bookInfo.subtitle = book.subtitle;
+    bookInfo.price = book.price;
+    bookInfo.imageUrls = book.imageUrls;
+    bookInfo.details = book.details;
+    bookInfo.id = book.id;
+  }
   bookInfoFetched.value = true;
 };
 
