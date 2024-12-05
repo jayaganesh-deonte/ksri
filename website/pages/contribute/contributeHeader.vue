@@ -11,12 +11,12 @@
       </div>
     </v-card>
 
-    <v-card rounded="0" :height="$device.isMobile ? '' : ''" class="ma-8">
+    <v-card rounded="0" class="ma-4">
       <div class="text-h6 text-center ma-4" data-aos="fade-up">
         Contribution received by Sponsor, Membership, Projects & Corpus
       </div>
       <v-img
-        height="350"
+        :height="$device.isMobile ? '' : '50vh'"
         src="https://d30y75l38k1y9.cloudfront.net/upload/library-racks.jpg"
         cover
         class="d-flex justify-center align-center"
