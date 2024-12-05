@@ -1,0 +1,1523 @@
+import { defineStore } from "pinia";
+
+export const newsStore = defineStore("book", {
+  state: () => ({
+    news: [
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164550.jpg",
+        text: "The Pontiff of Uttaradi Mutt visited our institute on  17 October 2024 at 4 p.m. He evinced keen interest in our publications, library and reading some books and palm leaf manuscripts.",
+        details_page:
+          "https://www.ksri.in/ksri-news/530/the-pontiff-of-uttaradi-mutt--visited-ksri",
+        heading: "The Pontiff of Uttaradi Mutt  visited KSRI",
+        title:
+          "The Pontiff of Uttaradi Mutt visited our institute on  17 October 2024 at 4 p.m. He evinced keen interest in our publications, library and reading some books and palm leaf manuscripts.",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164550.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164550.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164627.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164656.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164708.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164743.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164825.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164923.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_165015.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_165836.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_170200.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/20241018_165952.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/19-TjY.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/18-dNI.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/17-8q4.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/16-ja1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/15-IOD.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/11-zuq.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/12-2Q0.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/13-AJY.jpg",
+        ],
+        id: "b7492fe067ade6e2f769cca291f5eb44659910436717dd5a21715c75d4a92875",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/1-kob.jpg",
+        text: "The 166th Annual Convocation Ceremony was celebrated at the University of Madras on 24/09/2024. The following scholars from the KSRI, received their Ph.D. Degree Certificate from the Hon'ble Tamil Nadu Governor, Mr. R.N. Ravi. \n1.  Dr. S. Madhurambika\n2. Dr. N. Bhuvaneswari \n3. Dr. S.Goda Devi \n4. Dr. K. Srikkanth\n5.  Dr. S. Balakrishnan\n6. Dr. S. Renganayaki \n",
+        details_page:
+          "https://www.ksri.in/ksri-news/526/166th--annual-convocation-of-university-of-madras-",
+        heading: "166th  Annual Convocation of University of Madras ",
+        title:
+          "The 166th Annual Convocation Ceremony was celebrated at the University of Madras on 24/09/2024. The following scholars from the KSRI, received their Ph.D. Degree Certificate from the Hon'ble Tamil Nadu Governor, Mr. R.N. Ravi. \n1.  Dr. S. Madhurambika\n2. Dr. N. Bhuvaneswari \n3. Dr. S.Goda Devi \n4. Dr. K. Srikkanth\n5.  Dr. S. Balakrishnan\n6. Dr. S. Renganayaki \n",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-kob.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-kob.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/2-JEB.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/3-9j7.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/4-gJp.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/5-WuB.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/whatsapp-image-2024-09-24-at-10.04.40-am.jpg",
+          "Asset/images/base/2x1.png",
+        ],
+        id: "af9cb2aac8f4de0c6b8520a8ac32eabdb95c2bdc9c9f8c6c9c69e211c0977929",
+      },
+      {
+        avatarImage: null,
+        text: 'The All India Radio - Akashvani Chennai, invited the faculty of KSRI to deliver radio talks for the "Samskrita Nigazhchi" ( Sanskrit" programme) - a specially curated programme that focuses on bringing to light various hidden treasures of Sanskrit  to the public via the tamil language. This 15-min programme is aired  every tuesday at 2.45pm.\n\nThe details of the talks that were broadcasted are given below:\n 1) Dr. V Yamuna Devi, Deputy Director, The KSRI - 23rd & 30th July, 2024.\na) काव्येषु मङ्गल श्लोकाः - part 1; b) part 2\n2) Dr. P.C.Muralidharan, Asst. Professor, The KSRI. – 20th & 27th August, 2024.\n a) மழையின் கணிப்பு-பராசரரின் பார்வையில்; b) விதையின் பயன்பாடு - பராசரரின் பார்வையில்\n3) Dr. V Annapurna, Research Associate, The KSRI - 17th and 24th September\na)வடமொழியில் இரசாயன நூல்கள் மற்றும் ஆய்வுக்கூட அமைப்பு part ; b) part 2\n\t\n\t\n',
+        details_page:
+          "https://www.ksri.in/ksri-news/524/sanskrit-radio-talks---ksri-faculty-sing-the-praise-(spread-the-colours)-of-sanskrit-at-akashvani-chennai!--",
+        heading:
+          "Sanskrit Radio Talks - KSRI faculty sing the praise (spread the colours) of Sanskrit at Akashvani Chennai!  ",
+        title:
+          'The All India Radio - Akashvani Chennai, invited the faculty of KSRI to deliver radio talks for the "Samskrita Nigazhchi" ( Sanskrit" programme) - a specially curated programme that focuses on bringing to light various hidden treasures of Sanskrit  to the public via the tamil language. This 15-min programme is aired  every tuesday at 2.45pm.\n\nThe details of the talks that were broadcasted are given below:\n 1) Dr. V Yamuna Devi, Deputy Director, The KSRI - 23rd & 30th July, 2024.\na) काव्येषु मङ्गल श्लोकाः - part 1; b) part 2\n2) Dr. P.C.Muralidharan, Asst. Professor, The KSRI. – 20th & 27th August, 2024.\n a) மழையின் கணிப்பு-பராசரரின் பார்வையில்; b) விதையின் பயன்பாடு - பராசரரின் பார்வையில்\n3) Dr. V Annapurna, Research Associate, The KSRI - 17th and 24th September\na)வடமொழியில் இரசாயன நூல்கள் மற்றும் ஆய்வுக்கூட அமைப்பு part ; b) part 2\n\t\n\t\n',
+        heading_image_url: null,
+        images: [],
+        id: "04d4bfcfb49ec39372e141e0906ee0d4d71048f1ac8cb5612cbbf1d685eae89a",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/75th-year-valedictory-function-green-b_page-0001-xy8.jpg",
+        text: 'The Kuppuswami Sastri Research Institute is celebrating its 75th anniversary. To commemorate this milestone the Institute organized various National Workshops, Seminars and Lectures on various subjects like Bhakti, Art& Architecture, Sanskrit Literature, Ancient Indian Mathematics and Astronomy. \nThe Valedictory Function of the 75th Anniversary Celebrations will be celebrated on 13th Sepetember, 2024 at 5.00pm at The Madras Sanskrit College Premises.\n\nDr. N. Gopalaswami IAS(Retd.) will preside over the function and release the book "ŚEṢASAMHITĀ" and honor the prominent donors.\n\nDr. S. Ramaratnam , Chancellor, Jagadguru Kripalu University, Odisha will deliver the Valedictory address.\n',
+        details_page:
+          "https://www.ksri.in/ksri-news/478/75th-anniversary-celebrations----valedictory-function",
+        heading: "75th ANNIVERSARY CELEBRATIONS -  VALEDICTORY FUNCTION",
+        title:
+          'The Kuppuswami Sastri Research Institute is celebrating its 75th anniversary. To commemorate this milestone the Institute organized various National Workshops, Seminars and Lectures on various subjects like Bhakti, Art& Architecture, Sanskrit Literature, Ancient Indian Mathematics and Astronomy. \nThe Valedictory Function of the 75th Anniversary Celebrations will be celebrated on 13th Sepetember, 2024 at 5.00pm at The Madras Sanskrit College Premises.\n\nDr. N. Gopalaswami IAS(Retd.) will preside over the function and release the book "ŚEṢASAMHITĀ" and honor the prominent donors.\n\nDr. S. Ramaratnam , Chancellor, Jagadguru Kripalu University, Odisha will deliver the Valedictory address.\n',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/75th-year-valedictory-function-green-b_page-0001-xy8.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/75th-year-valedictory-function-green-b_page-0001-xy8.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/75th-year-valedictory-function-green-b_page-0002-BH9.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/75th-year-valedictory-function-green-b_page-0003-2Xb.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/75th-year-valedictory-function-green-b_page-0004-YYi.jpg",
+        ],
+        id: "a97fbff04086c6f5bc8a8b6eedb860c50f4bd14f30dab8366f12d829bff03eb2",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/e-invite_seminar-minor-deities-invitation-jpeg-5Wp.jpg",
+        text: 'On 28th of March 2024, Assistant Professors, Dr. V Preethi and Dr. P.C. Muralidharan along with Research Scholar V.R. Srinivasan participated and presented Research articles at the Seminar on "Minor Deities in Indian Art"  organised by the C.P.R. Institute of Indological Research, Chennai. ',
+        details_page:
+          "https://www.ksri.in/ksri-news/473/assistant-professors-and-research-scholars-of-ksri-presented-papers-in-the-seminar-on-",
+        heading:
+          'Assistant Professors and Research Scholars of KSRI presented papers in the Seminar on "Minor Deities in Indian Art"  at the C.P.R.  Centre',
+        title:
+          'On 28th of March 2024, Assistant Professors, Dr. V Preethi and Dr. P.C. Muralidharan along with Research Scholar V.R. Srinivasan participated and presented Research articles at the Seminar on "Minor Deities in Indian Art"  organised by the C.P.R. Institute of Indological Research, Chennai. ',
+        heading_image_url: null,
+        images: [],
+        id: "e66eaa30e95403e9bbcf62c78cb49502b9a6f64b36ff822a57cb82079b6b295f",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/rkm-1.jpg",
+        text: "Dr. V. Preethi, Asst. Prof., Assistant Professor of The KSRI, Chennai, was  a judge for the Annual Intercollegiate  competitions  organised by Sanskrit Department, Ramakrishna Mission Vivekananda College, Chennai on 24th of January 2024.",
+        details_page:
+          "https://www.ksri.in/ksri-news/472/-assistant-professor-of-ksri-was-invited-to-judge-a--competition-at-the-ramakrishna-mission-vivekananda-college,--chennai",
+        heading:
+          " Assistant Professor of KSRI was invited to Judge a  competition at the Ramakrishna Mission Vivekananda College,  Chennai",
+        title:
+          "Dr. V. Preethi, Asst. Prof., Assistant Professor of The KSRI, Chennai, was  a judge for the Annual Intercollegiate  competitions  organised by Sanskrit Department, Ramakrishna Mission Vivekananda College, Chennai on 24th of January 2024.",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/rkm-1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/rkm-1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/rkm-2.jpg",
+        ],
+        id: "419dcba6ca816d86152a5480622d8bbaa3009cf055b36bb8d2e35195d0a533b7",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/kumarasambhava.png",
+        text: 'The Madras Sanskrit college conducted a Two day National Seminar on Kumarasambhavamimamsa on 30th & 31st March 2024. Dr. P.C.Muralidharan, Asst. Prof., KSRI presented a paper titled " Kumārasambhave Rativilāpa"',
+        details_page:
+          "https://www.ksri.in/ksri-news/471/dr.-p.c.muralidharan,-asst.-prof.,-ksri-presented-a-paper-at-the-two-day-national-seminar-on-kumarasambhavamimamsa-",
+        heading:
+          "Dr. P.C.Muralidharan, Asst. Prof., KSRI presented a paper at the Two day National Seminar on Kumarasambhavamimamsa ",
+        title:
+          'The Madras Sanskrit college conducted a Two day National Seminar on Kumarasambhavamimamsa on 30th & 31st March 2024. Dr. P.C.Muralidharan, Asst. Prof., KSRI presented a paper titled " Kumārasambhave Rativilāpa"',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/kumarasambhava.png",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/kumarasambhava.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/kumarasambhava-2.png",
+        ],
+        id: "b09d366cdcce3804f9a1fb45ef319d29eebb41471f7b668bab4d8f13038d9332",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/1-j3Y.jpg",
+        text: 'Ph. D. candidate Mr. S Balakrishnan, under the supervision of Dr. T.V. VASUDEVA, (M.A., Ph.D.), Deputy Director, The KSRI,   defended his thesis on "RATNASAṄGRAHAḤ OF ŚRĪ RAGHUNĀTHĀCĀRYA: CRITICAL EDITION AND STUDY" at the Institute premises on 7th May 2024. ',
+        details_page:
+          "https://www.ksri.in/ksri-news/470/-viva-voce-examination-was-conducted-on-07.05.2024-at-the-ksri",
+        heading:
+          " Viva Voce Examination was conducted on 07.05.2024 at the KSRI",
+        title:
+          'Ph. D. candidate Mr. S Balakrishnan, under the supervision of Dr. T.V. VASUDEVA, (M.A., Ph.D.), Deputy Director, The KSRI,   defended his thesis on "RATNASAṄGRAHAḤ OF ŚRĪ RAGHUNĀTHĀCĀRYA: CRITICAL EDITION AND STUDY" at the Institute premises on 7th May 2024. ',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-j3Y.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-j3Y.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/2-xoU.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/3-wCW.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/4-MSu.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/5-HMM.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/6-EiB.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/7-GOT.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/8-bM6.jpg",
+        ],
+        id: "e9a75fd80afe6fc6cb46ad8a7de5ed04e19fbcfade683e41e71a9ce39267d3c3",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/1-pXn.jpg",
+        text: 'Ph.D. candidate Mrs. S. RENGANAYAKI, under the supervision of Dr. V. Kameswari, Former Director of The KSRI, defended her thesis on "SŪRYA IN SANSKRIT LITERATURE VIS-A-VIS MODERN CONCEPTS" at the Institute premises on May 22, 2024.',
+        details_page:
+          "https://www.ksri.in/ksri-news/469/viva-voce-examination-was-conducted-on-22.05.2024-at-the-ksri",
+        heading:
+          "Viva Voce Examination was conducted on 22.05.2024 at the KSRI",
+        title:
+          'Ph.D. candidate Mrs. S. RENGANAYAKI, under the supervision of Dr. V. Kameswari, Former Director of The KSRI, defended her thesis on "SŪRYA IN SANSKRIT LITERATURE VIS-A-VIS MODERN CONCEPTS" at the Institute premises on May 22, 2024.',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-pXn.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-pXn.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/2-JBr.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/3-lz9.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/4-Ilg.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/5-W0D.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/6-Z3u.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/7-6DF.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/8-0yC.jpg",
+        ],
+        id: "e0293365b943ff994c045712abc98fee6b1eef550377398176b880da929e2109",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/1-R1I.png",
+        text: " On 2nd December 2023, Shri Sanjay Sai Sewa Organisations International, Tamil Nadu Chapter celebrated Sri Sai Puraskar Utsav at RMT Clubhouse Hall, Chennai and awarded VIPS of Excellence in Arts and Philanthrophy. Dr. K. S. Balasubramanian, Director of the KSR Institute received the  'The Sri Sai Puraskar' award. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/467/director-of-the-ksri-was-awarded-'-the-sri-sai-puraskar-'-",
+        heading: "Director of The KSRI was awarded ' The Sri Sai Puraskar ' ",
+        title:
+          " On 2nd December 2023, Shri Sanjay Sai Sewa Organisations International, Tamil Nadu Chapter celebrated Sri Sai Puraskar Utsav at RMT Clubhouse Hall, Chennai and awarded VIPS of Excellence in Arts and Philanthrophy. Dr. K. S. Balasubramanian, Director of the KSR Institute received the  'The Sri Sai Puraskar' award. ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-R1I.png",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-R1I.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/2-Ajp.png",
+        ],
+        id: "1ce82890ddaa22320ed4c666410326570c04d97acca4ca9457dfd9c9b17fad8b",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/sastra-1.jpg",
+        text: 'On 24th January 2024, The Department of Oriental Studies (DOSR), SASTRA University, Thanjavur,  organised a Lecture Series on account of World Philosophy day.  \nDr. V. Yamuna Devi,  Deputy Director of The KSRI was invited as a guest speaker and she  delivered a lecture on " Thoughts of Science and Technology in Indian Philosophical Systems." ',
+        details_page:
+          "https://www.ksri.in/ksri-news/466/-deputy-director-of-the-ksri,-invited-as-a-guest-speaker-by-sastra-university,--thanjavur.",
+        heading:
+          " Deputy Director of The KSRI, invited as a guest speaker by SASTRA University,  Thanjavur.",
+        title:
+          'On 24th January 2024, The Department of Oriental Studies (DOSR), SASTRA University, Thanjavur,  organised a Lecture Series on account of World Philosophy day.  \nDr. V. Yamuna Devi,  Deputy Director of The KSRI was invited as a guest speaker and she  delivered a lecture on " Thoughts of Science and Technology in Indian Philosophical Systems." ',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/sastra-1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/sastra-1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/sastra-2.jpg",
+        ],
+        id: "a675deb76aba0379dd3155cbec8e22fca8b5dd175bc8d6d13367aa53cdfccdd2",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/jbas-1.jpg",
+        text: "The Sanskrit Department of Justice Basheer Ahmed Sayeed College for Women, Chennai conducted a Seminar on 'Nature Preservation - The bygone ways & Ayurveda - The ancient medical Science' on 29th February 2024. Dr. V. Yamuna Devi, Deputy Director of The KSRI delivered the lecture on  'Nature Preservation Methods'.",
+        details_page:
+          "https://www.ksri.in/ksri-news/464/dr.-v.-yamuna-devi,-deputy-director-of-the-ksri-delivered-a-lecture-on--'nature-preservation-methods'--at-the-justice-basheer-ahmed-sayeed-college-for-women",
+        heading:
+          "Dr. V. Yamuna Devi, Deputy Director of The KSRI delivered a lecture on  'Nature Preservation Methods'  at the Justice Basheer Ahmed Sayeed College for Women",
+        title:
+          "The Sanskrit Department of Justice Basheer Ahmed Sayeed College for Women, Chennai conducted a Seminar on 'Nature Preservation - The bygone ways & Ayurveda - The ancient medical Science' on 29th February 2024. Dr. V. Yamuna Devi, Deputy Director of The KSRI delivered the lecture on  'Nature Preservation Methods'.",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/jbas-1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/jbas-1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/jbas-2.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/jbas-3.jpg",
+        ],
+        id: "45a248401f57a6e6cc74894bb41bfc8a743eb30012cb4c9486893acb42359d5a",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/amrita-vidyalaya.jpg",
+        text: 'Amrita Vidyalayam Tamilnadu and Pondicherry  organised a 3 day Annual teacher\'s Cultural Education Camp from 29th April onwards at Amrita Vidyalayam Tiruchirapalli. On 30th April 2024, Dr. V. Yamuna Devi,  Deputy Director of The KSRI  delivered a lecture on "Dharma of every Bharatiya: Sanatana Dharma" ',
+        details_page:
+          "https://www.ksri.in/ksri-news/463/dr.-v.-yamuna-devi,-deputy-director-of-the-ksri,-was-invited-as-a-resource-person-to-enlighten-the-teachers-of-amrita-vidyalayam,-tiruchirapalli-",
+        heading:
+          "Dr. V. Yamuna Devi, Deputy Director of The KSRI, was invited as a resource person to enlighten the teachers of Amrita Vidyalayam, Tiruchirapalli ",
+        title:
+          'Amrita Vidyalayam Tamilnadu and Pondicherry  organised a 3 day Annual teacher\'s Cultural Education Camp from 29th April onwards at Amrita Vidyalayam Tiruchirapalli. On 30th April 2024, Dr. V. Yamuna Devi,  Deputy Director of The KSRI  delivered a lecture on "Dharma of every Bharatiya: Sanatana Dharma" ',
+        heading_image_url: null,
+        images: [],
+        id: "097ca311a060c390ef4bea4e8eb083ab373ae22d84639346f142fa0a36c16e4a",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/val-1.jpg",
+        text: "The valedictory function of the two-day National Seminar on Bhakti Literature in Sanskrit and Tamil was held on 25.11.2023 at 3.30 pm.   Dr C.L. Ramakrishnan, Former Director, Dept. of Vigilance and Anti-corruption, delivered the Valedictory address under Justice N Rajagopala Ayyangar Endowment.  ",
+        details_page:
+          "https://www.ksri.in/ksri-news/462/national-seminar-on-bhakti-literature-in-sanskrit-and-tamil-–-valediction-on-25.11.2023",
+        heading:
+          "National Seminar on Bhakti Literature in Sanskrit and Tamil – Valediction on 25.11.2023",
+        title:
+          "The valedictory function of the two-day National Seminar on Bhakti Literature in Sanskrit and Tamil was held on 25.11.2023 at 3.30 pm.   Dr C.L. Ramakrishnan, Former Director, Dept. of Vigilance and Anti-corruption, delivered the Valedictory address under Justice N Rajagopala Ayyangar Endowment.  ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/val-1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/val-1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/val3.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/val4.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/val6.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/val5.jpg",
+        ],
+        id: "2a82f8284d7634316c90ad9f17021d8fb27956e885b0c13035d4bb3a6c54d791",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/vi.1.jpg",
+        text: "Session VI - Darśanas  -   Prof. R. Sankari Endowment  &\nMm. Prof. S. Kuppuswami  Sastri  and other Endowments\n Dr. Radha Ragunathan,  Director, The Adyar Library Research Centre,  Chennai  Chaired the session. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/461/national-seminar-on-bhakti-literature-in-sanskrit-and-tamil----25.11.2023---session-vi-–--darśanas-–-2:00-pm--to-3:30-pm",
+        heading:
+          "National Seminar on Bhakti Literature In Sanskrit and Tamil  - 25.11.2023 - Session VI –  Darśanas – 2:00 pm  to 3:30 pm",
+        title:
+          "Session VI - Darśanas  -   Prof. R. Sankari Endowment  &\nMm. Prof. S. Kuppuswami  Sastri  and other Endowments\n Dr. Radha Ragunathan,  Director, The Adyar Library Research Centre,  Chennai  Chaired the session. ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.2.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.-3.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.4.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.5.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.6.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.7.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.8.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.9.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.10.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.11.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.12.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.13.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vi.14.jpg",
+        ],
+        id: "378931d31db45cb6e2d01a14cd370f3666e3b3f99961e4e9bb3167a878532ff2",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/v.-9.jpg",
+        text: "Session V -  Gānapatyam, Kaumāram etc.  -   Dr. S. Jayasree Memorial Endowment,   \nSri T.M. Krishnaswamy Iyer and other  Endowments Prof. L. Kumaraswamy, Former Prof. & Head Dept. of Sanskrit, D.G. Vaishnav College, Chennai  Chaired the session. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/438/national-seminar-on-bhakti-literature-in-sanskrit-and-tamil----25.11.2023---session-v-–--gānapatyam,-kaumāram-etc.---–-11:30-am--to-01:00-pm",
+        heading:
+          "National Seminar on Bhakti Literature In Sanskrit and Tamil  - 25.11.2023 - Session V –  Gānapatyam, Kaumāram etc.   – 11:30 am  to 01:00 pm",
+        title:
+          "Session V -  Gānapatyam, Kaumāram etc.  -   Dr. S. Jayasree Memorial Endowment,   \nSri T.M. Krishnaswamy Iyer and other  Endowments Prof. L. Kumaraswamy, Former Prof. & Head Dept. of Sanskrit, D.G. Vaishnav College, Chennai  Chaired the session. ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/v.-9.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/v.-9.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/v.-10.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/v.1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/v.2.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/v.-3.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/v.4.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/v.-5.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/v.-6.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/v.-7.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/v.-8.jpg",
+        ],
+        id: "033f9c0e786910e448a10f261fe131a8eeafd3c6cf959d9d8a743da04e34233f",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-4.1.jpg",
+        text: "Session IV -  Other Deities -   K.A. Lakshmana Sastri Endowment, Smt. Balambal Memorial Endowment and T.V. Nagaraja Iyer Endowment,  Dr. T.N. Aravamudan, Former Principal, Rajah's College, Thiruvaiyaru Chaired the session. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/437/national-seminar-on-bhakti-literature-in-sanskrit-and-tamil----25.11.2023---session-iv-–--other-deities--–-10:00-am--to-11:30-am",
+        heading:
+          "National Seminar on Bhakti Literature In Sanskrit and Tamil  - 25.11.2023 - Session IV –  Other Deities  – 10:00 am  to 11:30 am",
+        title:
+          "Session IV -  Other Deities -   K.A. Lakshmana Sastri Endowment, Smt. Balambal Memorial Endowment and T.V. Nagaraja Iyer Endowment,  Dr. T.N. Aravamudan, Former Principal, Rajah's College, Thiruvaiyaru Chaired the session. ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-4.1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-4.1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-4.2.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-4.3.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-4.4.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-4.5.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-4.6.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-4.7.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-4.8.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-4.9.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-4.10.jpg",
+        ],
+        id: "72bc1576f54569125899b45e83ed4f68c374a0a969b3be7994ab589c8d438403",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-3.1.jpg",
+        text: "Session III -  Śākta and others  Subhadra Memorial Endowment and Bhagirati Ammal  Endowment,  Dr. T.V. Vasudeva, Deputy Director of the KSRI Chaired the session. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/436/national-seminar-on-bhakti-literature-in-sanskrit-and-tamil----24.11.2023---session-iii-–--Śākta-and-others-–-3:30-pm--to-5:00-pm",
+        heading:
+          "National Seminar on Bhakti Literature In Sanskrit and Tamil  - 24.11.2023 - Session III –  Śākta and others – 3:30 pm  to 5:00 pm",
+        title:
+          "Session III -  Śākta and others  Subhadra Memorial Endowment and Bhagirati Ammal  Endowment,  Dr. T.V. Vasudeva, Deputy Director of the KSRI Chaired the session. ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-3.1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-3.1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-3.2.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-3.3.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-3.4.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-3.5.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-3.6.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-3.7.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-3.8.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-3.9.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-3.10.jpg",
+        ],
+        id: "7cc167ebd46825fee4bbaad01bcc101ad95a8ad52b6badcd1cea7632976e4fc6",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.1.jpg",
+        text: "Session II -  Śaiva under Sri Ramakrishna Iyer Memorial Endowment and Sri Anna Subrahmania Iyer Centenary  Endowment,  Dr. G. Suresh, Asst. Prof. of Sāhitya, The Madras Sanskrit College, Chaired the session. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/435/national-seminar-on-bhakti-literature-in-sanskrit-and-tamil----24.11.2023---session-ii-–--Śaiva-–-2:00-pm-to-3:30-pm-",
+        heading:
+          "National Seminar on Bhakti Literature In Sanskrit and Tamil  - 24.11.2023 - Session II –  Śaiva – 2:00 pm to 3:30 pm ",
+        title:
+          "Session II -  Śaiva under Sri Ramakrishna Iyer Memorial Endowment and Sri Anna Subrahmania Iyer Centenary  Endowment,  Dr. G. Suresh, Asst. Prof. of Sāhitya, The Madras Sanskrit College, Chaired the session. ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.3.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.2-rIf.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.4-2ec.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.6.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.7.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.9.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.10.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.11.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.12.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/session-2.13.jpg",
+        ],
+        id: "bb7d7f9cd2b08880d742bf445bb457fc8faf093f7ac81a1277dfc094c50f4313",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/english.jpg",
+        text: "Lectures on the Ramayana by Rt. Hon. V.S. Srinivasa Sastri, published by The Samskrita Academy, are reprinted in connection with the commemoration of Pranapratishtha of Sri Rama at Ayodhya. \nThe copies will be available at the KSRI from the first week of February.  The cost of each copy is Rs. 300/-. The book in Tamil translation, Ramayanaperuraigal is also available. For copies, email: ksrimylapore@gmail.com\nThis will be the best gift for Ramnavami. please hurry! limited copies only!",
+        details_page:
+          "https://www.ksri.in/ksri-news/434/lectures-on-the-ramayana---best-gift-for-the-ramnavami-",
+        heading: "Lectures on The Ramayana - Best gift for the Ramnavami ",
+        title:
+          "Lectures on the Ramayana by Rt. Hon. V.S. Srinivasa Sastri, published by The Samskrita Academy, are reprinted in connection with the commemoration of Pranapratishtha of Sri Rama at Ayodhya. \nThe copies will be available at the KSRI from the first week of February.  The cost of each copy is Rs. 300/-. The book in Tamil translation, Ramayanaperuraigal is also available. For copies, email: ksrimylapore@gmail.com\nThis will be the best gift for Ramnavami. please hurry! limited copies only!",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/english.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/english.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/tamil.jpg",
+        ],
+        id: "7b86b3c5de4fcb1e642d276cb6085c766607b796966c3d10d69a3a3d701697db",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/1-jck.jpg",
+        text: "Due to recent rains, the institute was inundated with water for four days, and the water entered the ground floor of the institute, affecting hundreds of books and journals and a lot of furniture too. Such a calamity has never happened before in the history of the institute. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/432/plight-of-ksri-during-flood---3-to-7-dec.-2023",
+        heading: "Plight of KSRI during flood - 3 to 7 Dec. 2023",
+        title:
+          "Due to recent rains, the institute was inundated with water for four days, and the water entered the ground floor of the institute, affecting hundreds of books and journals and a lot of furniture too. Such a calamity has never happened before in the history of the institute. ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-jck.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-jck.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/2-RiX.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/3-OpP.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/4-KUj.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/5-KaH.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/6-qde.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/7-LXr.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/9-JcL.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/10.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/11-uWY.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/12-rf7.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/13-L1u.jpg",
+        ],
+        id: "13fb142153206f6bd140b6d01a22de82bfc681a9ec58da97b690959be6150ed7",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/bhakti-seminar--1.png",
+        text: 'As a Part of the 75th Anniversary, The KSRI conducted a "National Seminar on Bhakti Literature In Sanskrit and Tamil" on 24th and 25th of November 2023 in collaboration with The Samskrita Academy, Madras.  Dr. R. K. Raghavan, President of the KSRI delivered the Welcome address. Prof. C. R. Anantharaman, Former Prof.  of Sanskrit, Vivekananda College, Tiruvedagam, Madurai recieved the Kombur Ramabhadran Cash Award and  delivered the inaugural address on 24th November 2023 .  ',
+        details_page: "https://www.ksri.in/ksri-news/431/national-seminar-on-",
+        heading:
+          'National Seminar on "Bhakti Literature In Sanskrit and Tamil" – 24th and 25th November 2023',
+        title:
+          'As a Part of the 75th Anniversary, The KSRI conducted a "National Seminar on Bhakti Literature In Sanskrit and Tamil" on 24th and 25th of November 2023 in collaboration with The Samskrita Academy, Madras.  Dr. R. K. Raghavan, President of the KSRI delivered the Welcome address. Prof. C. R. Anantharaman, Former Prof.  of Sanskrit, Vivekananda College, Tiruvedagam, Madurai recieved the Kombur Ramabhadran Cash Award and  delivered the inaugural address on 24th November 2023 .  ',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/bhakti-seminar--1.png",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/bhakti-seminar--1.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/inaguration.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/ina.-mcq.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/inag.-prayer.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/ina.-welcome-address.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/ina.-honouring.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/ina.-honouring-2.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/welcome-address-2.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/book-release-1.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/book-release-2.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/inaugural-address-1.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/inaugural-address-2.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vote-of-thanks.png",
+        ],
+        id: "4e2faf2fd141549f1322bafa2a8214e938647a61b045bc89f88d5e4c920e6e46",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/12-a.jpg",
+        text: 'The Department of Physical Education, Central University of Tamil Nadu, Tiruvarur, organized a "National Workshop cum Lecture Series on Yoga". \nDr. K. S. Balasubramanian, Director of the KSRI, Delivered a talk on "Sahaj Marg System of Raja Yoga" on August 29, 2023',
+        details_page:
+          "https://www.ksri.in/ksri-news/430/dr.-k.-s-balasubramainan,-director-of-the-ksri-spoke-on-",
+        heading:
+          'Dr. K. S Balasubramainan, Director of The KSRI Spoke on "Sahaj Marg System of Raja Yoga" ',
+        title:
+          'The Department of Physical Education, Central University of Tamil Nadu, Tiruvarur, organized a "National Workshop cum Lecture Series on Yoga". \nDr. K. S. Balasubramanian, Director of the KSRI, Delivered a talk on "Sahaj Marg System of Raja Yoga" on August 29, 2023',
+        heading_image_url: null,
+        images: [],
+        id: "1401e8e81d6b257a68650fb727681c28abfc6f2ec5e25018da7b30439feb5723",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/bha.-1-a-bAq.jpg",
+        text: 'As a part of the 75th anniversary, the KSRI will be conducting a two-day "National Seminar on Bhakti Literature in Sanskrit and Tamil" on November 24–25, 2023, in collaboration with the Samskrita Academy, Madras.  ',
+        details_page:
+          "https://www.ksri.in/ksri-news/429/the-ksri-will-be-organizing-a-two-day-national-seminar-on-bhakti-literature-in-sanskrit-and-tamil---–-24th-and-25th-november-2023",
+        heading:
+          "The KSRI will be organizing a Two day National Seminar on Bhakti Literature in Sanskrit and Tamil   – 24th and 25th November 2023",
+        title:
+          'As a part of the 75th anniversary, the KSRI will be conducting a two-day "National Seminar on Bhakti Literature in Sanskrit and Tamil" on November 24–25, 2023, in collaboration with the Samskrita Academy, Madras.  ',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/bha.-1-a-bAq.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/bha.-1-a-bAq.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/bhakti-1b-Pu8.jpg",
+        ],
+        id: "db3f616c2985ed65d6b8c217a59ccb6dd136ea0a4c210ab467cb5f79d01f26c1",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/11-APm.jpg",
+        text: "The Department of Sanskrit at Ethiraj College for Women, Chennai, organized a guest lecture on Bhaktiyoga of Bhagavadgita on October 10, 2023. Dr. K. S. Balasubramainan, Director of the KSRI, gave a talk on the same. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/428/dr.-k.-s-balasubramainan,-director-of-the-ksri-spoke-on-",
+        heading:
+          'Dr. K. S Balasubramainan, Director of The KSRI Spoke on "Bhaktiyoga of Bhagavadgita"',
+        title:
+          "The Department of Sanskrit at Ethiraj College for Women, Chennai, organized a guest lecture on Bhaktiyoga of Bhagavadgita on October 10, 2023. Dr. K. S. Balasubramainan, Director of the KSRI, gave a talk on the same. ",
+        heading_image_url: null,
+        images: [],
+        id: "c0a1e3e1c8e42900454ba0d2f9ff06cc5ec425e0df6b38e026c22c41e7fc83b9",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/1.png",
+        text: 'Sri Vishnu Mohan Foundation, in association with Sunanda Trust, Chennai, has organized a seminar on "Pancha Bhutha" on September 29, 2023. Dr. K. S. Balasubramanian, Director of KSRI, delivered a lecture on "Panchabhuta - Vāyu"  and Dr. T. V. Vasudeva, Deputy Director of KSRI, delivered a lecture on "Panchabhuta-Akasa".',
+        details_page:
+          "https://www.ksri.in/ksri-news/427/director-and-deputy-director-of-ksri-delivered-lectures-at-sri-vishnu-mohan-foundation,-chennai-on-29th-september-2023",
+        heading:
+          "Director and Deputy Director of KSRI delivered lectures at Sri Vishnu Mohan Foundation, Chennai on 29th September 2023",
+        title:
+          'Sri Vishnu Mohan Foundation, in association with Sunanda Trust, Chennai, has organized a seminar on "Pancha Bhutha" on September 29, 2023. Dr. K. S. Balasubramanian, Director of KSRI, delivered a lecture on "Panchabhuta - Vāyu"  and Dr. T. V. Vasudeva, Deputy Director of KSRI, delivered a lecture on "Panchabhuta-Akasa".',
+        heading_image_url: "https://d30y75l38k1y9.cloudfront.net/upload/1.png",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/1.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/2.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/7-J3Z.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/8.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/9.jpg",
+        ],
+        id: "858969c1c52434e14c0c6d6d524f2bad3b1ff6650a4c87c74bfdcafc636784fa",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/tvv-1.jpg",
+        text: "The Department of History, School of Social Sciences & International Studies, Pondicherry University, Puducherry, organized an international seminar on \"Tantric Religion: Philosophy, Literature, Cults, Arts, History, and Continuities\" . Dr. T.V.V. Vasudeva, the Deputy Director of KSRI, chaired Session 5: Tantric, Cults, Traditions, and Practices and delivered a lecture on  'Tantric aspects in Vedic rituals'  on September 26, 2023. This event has been sponsored by the Shripuram Trust, Kerala, the Sri Aurobindo Centre for Advanced Research in Puducherry, and the Ministry of Culture.",
+        details_page:
+          "https://www.ksri.in/ksri-news/426/dr.-t.-v.-vasudeva,-deputy-director-of-ksri-gave-a-lecture-and-chaired-a-session-at-the-international-seminar-on-",
+        heading:
+          'Dr. T. V. Vasudeva, Deputy Director of KSRI gave a lecture and chaired a session at the International Seminar on "Tantric Religion: Philosophy, Literature, Cults, Arts, History & Continuities" on 25t',
+        title:
+          "The Department of History, School of Social Sciences & International Studies, Pondicherry University, Puducherry, organized an international seminar on \"Tantric Religion: Philosophy, Literature, Cults, Arts, History, and Continuities\" . Dr. T.V.V. Vasudeva, the Deputy Director of KSRI, chaired Session 5: Tantric, Cults, Traditions, and Practices and delivered a lecture on  'Tantric aspects in Vedic rituals'  on September 26, 2023. This event has been sponsored by the Shripuram Trust, Kerala, the Sri Aurobindo Centre for Advanced Research in Puducherry, and the Ministry of Culture.",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/tvv-1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/tvv-1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/tvv-2.jpg",
+        ],
+        id: "bcc17c6217eaf9f367a681dbbce425393b0a46a917e8a6f093d4412be3c3e4ff",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/4-qk9.jpg",
+        text: "Madhya Pradesh Chief Minister Shivraj Singh Chouhan unveiled the 108-foot-tall ‘Statue of Oneness' of Adi Shankaracharya at Omkareshwar in the poll-bound on September 21. For this grand event, various institutions were invited from across India. Dr. K. Balasubramanin, Director of the KSRI, attended the same.",
+        details_page:
+          "https://www.ksri.in/ksri-news/425/dr.-k.-s-balasubramainan,-director-of-the-ksri-was-invited-as-one-of-the-vip-for-the-event-",
+        heading:
+          'Dr. K. S Balasubramainan, Director of The KSRI was Invited as one of the VIP for the event " Unveiling the statue of Adi Shankaracharya" at Omkareshwar',
+        title:
+          "Madhya Pradesh Chief Minister Shivraj Singh Chouhan unveiled the 108-foot-tall ‘Statue of Oneness' of Adi Shankaracharya at Omkareshwar in the poll-bound on September 21. For this grand event, various institutions were invited from across India. Dr. K. Balasubramanin, Director of the KSRI, attended the same.",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/4-qk9.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/4-qk9.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/3-QQE.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/5-97b.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/6-V5U.jpg",
+        ],
+        id: "867b4ddcf298bce9f59a77447f6010be20a6b6799a98f0a5d524bc9982e4fea1",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/vy-1.jpg",
+        text: 'Modern Senior Secondary School, Nanganallur  Organised a Guest lecture on the occasion of  Teachers Day on  5th September 2023.  Dr. V. Yamuna Devi,  Deputy Director of The KSRI, Presided as the Chief guest and also delivered a talk on "Teacher student relationship and cultural values"',
+        details_page:
+          "https://www.ksri.in/ksri-news/424/dr.-v.-yamuna-devi,-deputy-director-of-the-ksri-presided-as-a-chief-guest-and-delivered-a-guest-lecture-on--the-occasion-of-teacher's-day",
+        heading:
+          "Dr. V. Yamuna Devi, Deputy Director of The KSRI presided as a Chief guest and delivered a guest lecture on  the occasion of Teacher's Day",
+        title:
+          'Modern Senior Secondary School, Nanganallur  Organised a Guest lecture on the occasion of  Teachers Day on  5th September 2023.  Dr. V. Yamuna Devi,  Deputy Director of The KSRI, Presided as the Chief guest and also delivered a talk on "Teacher student relationship and cultural values"',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/vy-1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/vy-1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vy-2.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vy-3.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vy-6.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vy4.jpg",
+        ],
+        id: "3355f6a1bf12bb09c22520b93a0321d60175f917dde92a7891db2ee9978bbf15",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/invitation-of-national-seminar-on-arts-and-architecture_page_4.jpg",
+        text: "Valedictory function of the two day National Seminar on Arts and Architecture was held on 22nd August 2023 at 3.00 pm.   Dr. C. S. Radhakrishnan, former Professor of Sanskrit, Central University, Puducherry delivered the Valedictory address under Prof. V. Venkatachalam Endowment.  ",
+        details_page:
+          "https://www.ksri.in/ksri-news/423/national-seminar-on-arts-and-architecture-–-valediction-on-22.8.2023",
+        heading:
+          "National Seminar on Arts and Architecture – Valediction on 22.8.2023",
+        title:
+          "Valedictory function of the two day National Seminar on Arts and Architecture was held on 22nd August 2023 at 3.00 pm.   Dr. C. S. Radhakrishnan, former Professor of Sanskrit, Central University, Puducherry delivered the Valedictory address under Prof. V. Venkatachalam Endowment.  ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/invitation-of-national-seminar-on-arts-and-architecture_page_4.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/invitation-of-national-seminar-on-arts-and-architecture_page_4.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1984.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1993.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1994.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1995.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1996.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1998.png",
+        ],
+        id: "ee4a5004bf9e2799a7807fc1a1b3ab2a358ad1ff4caa8889ea8c3289aebb83a8",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/invitation-4.jpg",
+        text: "Session III - Arts under Sundaram Saraswati, N.V. Raghavan and P.K. Subramania Iyer  Endowments.  Dr. V. Kameswari,  Former Director, The KSRI, Chennai   Chaired the session. The following scholars presented their Papers: \n1. Dr. R. Thyagarajan  – Ratna Śāstra (Gemology) \n2. Dr. S. Venugopal  – Sāmudrikā Lakṣaṇam \n3. Dr. V. Yamuna Devi –  Dhātukalā - Metallurgy and Alloy making  \n4. Dr. P.C. Muralidharan  –  Sowing of seeds as gleaned from Kr̥ṣi Parāśara \n5. Dr. S. Murali – Śakuna Śāstra (Omens)",
+        details_page:
+          "https://www.ksri.in/ksri-news/422/22.08.2023---session-iii-–--arts-–-10.30-pm-to-1.30-pm-",
+        heading: "22.08.2023 - Session III –  Arts – 10.30 pm to 1.30 pm ",
+        title:
+          "Session III - Arts under Sundaram Saraswati, N.V. Raghavan and P.K. Subramania Iyer  Endowments.  Dr. V. Kameswari,  Former Director, The KSRI, Chennai   Chaired the session. The following scholars presented their Papers: \n1. Dr. R. Thyagarajan  – Ratna Śāstra (Gemology) \n2. Dr. S. Venugopal  – Sāmudrikā Lakṣaṇam \n3. Dr. V. Yamuna Devi –  Dhātukalā - Metallurgy and Alloy making  \n4. Dr. P.C. Muralidharan  –  Sowing of seeds as gleaned from Kr̥ṣi Parāśara \n5. Dr. S. Murali – Śakuna Śāstra (Omens)",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/invitation-4.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/invitation-4.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1946.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1948.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1949.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1955.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1959.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1963.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1971.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1976.png",
+        ],
+        id: "1bc0793d8bc742b81f63cea4ca2607958e2f722b55693430bc7b159733aab99a",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/img_1922.png",
+        text: "Session II - Arts under Dr. M. Narasimhachari Memorial Endowment,  Sri. Venkatanarayana Iyer  and Smt. Sundarambal Endowments. Dr. R. Thyagarajan Former Prof. & Head, Dept. of Sanskrit, Presidency College, Chennai  Chaired the session. The following scholars presented their Papers: \n1. Dr. Padmaja Suresh – Bharatanāṭyam as a ritual \n2. Dr. T.V. Vasudeva – Mallavidyā  (Wrestling) \n3. Dr. Abhiramasundari  –  Musicology and Practicing Music \n4. Dr. S. Umapathi – Prahelikā (Puzzles and Brain Teasers) ",
+        details_page:
+          "https://www.ksri.in/ksri-news/421/21.08.2023---session-ii-–--arts-–-2.30-pm-to-4.30-pm-",
+        heading: "21.08.2023 - Session II –  Arts – 2.30 pm to 4.30 pm ",
+        title:
+          "Session II - Arts under Dr. M. Narasimhachari Memorial Endowment,  Sri. Venkatanarayana Iyer  and Smt. Sundarambal Endowments. Dr. R. Thyagarajan Former Prof. & Head, Dept. of Sanskrit, Presidency College, Chennai  Chaired the session. The following scholars presented their Papers: \n1. Dr. Padmaja Suresh – Bharatanāṭyam as a ritual \n2. Dr. T.V. Vasudeva – Mallavidyā  (Wrestling) \n3. Dr. Abhiramasundari  –  Musicology and Practicing Music \n4. Dr. S. Umapathi – Prahelikā (Puzzles and Brain Teasers) ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1922.png",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1922.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1927.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1932.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1935.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1938.png",
+        ],
+        id: "48429c2cb1ca0f032c760d092523624fe2a7e4bf1bc22c8056695dd4c49e1f5d",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/img_1901.png",
+        text: "Session I - Architecture under Dr. S. S. Janaki & P. Venkatesa Deksitar Endowments. Dr. Arunasundaram, Principal i/c, The Madras Sanskrit College, Chennai Chaired the session. The following scholars presented their Papers: \n1. Sri. Madhusudanan  Kalaiselvan – Development of Column Orders Pallava and Chola \n2. Dr. Ramadevi Sekhar – Cosmic plan in Micro-scale Hindu Temple \n3. Dr. Vasumati Rajaram – Some Aspects of Town Planning in Ancient India \n4. Dr. K. Vidyuta – Architecture and the Mind ",
+        details_page:
+          "https://www.ksri.in/ksri-news/420/21.08.2023---session-i-–--architecture-–-11.30-am-to-1.30-pm-",
+        heading:
+          "21.08.2023 - Session I –  Architecture – 11.30 am to 1.30 pm ",
+        title:
+          "Session I - Architecture under Dr. S. S. Janaki & P. Venkatesa Deksitar Endowments. Dr. Arunasundaram, Principal i/c, The Madras Sanskrit College, Chennai Chaired the session. The following scholars presented their Papers: \n1. Sri. Madhusudanan  Kalaiselvan – Development of Column Orders Pallava and Chola \n2. Dr. Ramadevi Sekhar – Cosmic plan in Micro-scale Hindu Temple \n3. Dr. Vasumati Rajaram – Some Aspects of Town Planning in Ancient India \n4. Dr. K. Vidyuta – Architecture and the Mind ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1901.png",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1901.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1902.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1904.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1908.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1910.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1914.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/3aea5291-58b4-4608-b0b4-32facdd616ac.jpg",
+        ],
+        id: "66e1962633f74e1edb1c94409a25ff86a8281b3571fdf50aed09839a8b259444",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/invitation-of-national-seminar-on-arts-and-architecture_page_1.jpg",
+        text: 'As a Part of the 75th Anniversary, The KSRI conducted a two day "National Seminar on Arts and Architecture" on 21st and 22nd of August 2023 in collaboration with The Samskrita Academy, Madras.  Dr. R. K. Raghavan, President of the KSRI delivered the Welcome address. Śilpakalāratnam Dr. T. Satyamurthy, Former Superintending Archaeologist, ASI, Chennai, delivered the inaugural address on 21st Augutst 2023 .  ',
+        details_page:
+          "https://www.ksri.in/ksri-news/419/two-day-national-seminar-on-arts-and-architecture-–-21st-and-22nd-august-2023",
+        heading:
+          "Two day National Seminar on Arts and Architecture – 21st and 22nd August 2023",
+        title:
+          'As a Part of the 75th Anniversary, The KSRI conducted a two day "National Seminar on Arts and Architecture" on 21st and 22nd of August 2023 in collaboration with The Samskrita Academy, Madras.  Dr. R. K. Raghavan, President of the KSRI delivered the Welcome address. Śilpakalāratnam Dr. T. Satyamurthy, Former Superintending Archaeologist, ASI, Chennai, delivered the inaugural address on 21st Augutst 2023 .  ',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/invitation-of-national-seminar-on-arts-and-architecture_page_1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/invitation-of-national-seminar-on-arts-and-architecture_page_1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/invitation-of-national-seminar-on-arts-and-architecture_page_2.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1890.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1891-(1).png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1895.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1898.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1899.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img_1900.png",
+        ],
+        id: "5bc1230ad5a61ac8c3117eb1450254d06d4dc8ee2d3490bb97e00341071d4984",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/pcm-sankara-july-21.png",
+        text: 'On 21st of July 2023, Scholars of KSRI participated and presented Research articles at the  International  Seminar on "Samskrita Vangmaye Yogah" organised by the Department of Snaskrit, Sri Sankara Arts and Science College, Enathur, Kanchipuram sponsored by  ICPR, New Delhi.',
+        details_page:
+          "https://www.ksri.in/ksri-news/418/assitant-professors-of-ksri-presented-papers-in-international-seminar-on-",
+        heading:
+          'Assitant Professors of KSRI presented papers in International Seminar on "Samskrita Vangmaye Yogah"',
+        title:
+          'On 21st of July 2023, Scholars of KSRI participated and presented Research articles at the  International  Seminar on "Samskrita Vangmaye Yogah" organised by the Department of Snaskrit, Sri Sankara Arts and Science College, Enathur, Kanchipuram sponsored by  ICPR, New Delhi.',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/pcm-sankara-july-21.png",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/pcm-sankara-july-21.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vp-sankara-21-july.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/preethi-sankara-1.png",
+        ],
+        id: "f13306324cb2ec2e04591cc1930ce9066b1deba5f1f0fc326c7e59855a2c8ed5",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/sankara-invite-1.png",
+        text: "ICPR , Dept. of Sanskrit, Sri Sanskara Arts and Science College, Enathur, Kanchipuram organised an International Seminar on the occasion of  International Yoga Day 2023 on  21st  July 2023.  Dr. K. S Balasubramainan, Director of The KSRI, Presided as the Chief guest and also Session head  of the Seminar. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/417/dr.-k.-s-balasubramainan,-director-of-the-ksri-presided-as-a-chief-guest-for-the-event-",
+        heading:
+          'Dr. K. S Balasubramainan, Director of The KSRI presided as a Chief guest for the event "Samskrita Vangmaye Yogah" ',
+        title:
+          "ICPR , Dept. of Sanskrit, Sri Sanskara Arts and Science College, Enathur, Kanchipuram organised an International Seminar on the occasion of  International Yoga Day 2023 on  21st  July 2023.  Dr. K. S Balasubramainan, Director of The KSRI, Presided as the Chief guest and also Session head  of the Seminar. ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/sankara-invite-1.png",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/sankara-invite-1.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/sankara-invite-2.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/ksb-sir-chief-guest-21-july-a.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/ksb-sir-speech-21-july-23-a.png",
+        ],
+        id: "caf1aa395da41b215e7ac711f7e12426ca685e1985cf23d93506eb868100e510",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/srikkanth-1.jpg",
+        text: 'Mr. K.N Srikkanth, Ph. D. candidate of Dr. K. S. Balasubramanian,  Director, The KSRI,  Defended his thesis on "CRITICAL STUDY  OF PĀṬIGAṆITA OF ŚRIDHARA AND GAṆITATILAKA OF ŚRIPATI"  at the Institute premises on 12th July 2023. ',
+        details_page:
+          "https://www.ksri.in/ksri-news/408/viva-voce-examination-was-conducted-on-12.07.2023-at-the-ksri",
+        heading:
+          "Viva Voce Examination was conducted on 12.07.2023 at the KSRI",
+        title:
+          'Mr. K.N Srikkanth, Ph. D. candidate of Dr. K. S. Balasubramanian,  Director, The KSRI,  Defended his thesis on "CRITICAL STUDY  OF PĀṬIGAṆITA OF ŚRIDHARA AND GAṆITATILAKA OF ŚRIPATI"  at the Institute premises on 12th July 2023. ',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/srikkanth-1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/srikkanth-1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/srikkanth-2.jpg",
+        ],
+        id: "2dfb7dc7ceedd74d500d3086795dff659b0256d80d7af68fc73ad7584b77ac31",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/goda-mam-1a.jpg",
+        text: 'Ms. S. Goda Devi, Ph. D. candidate of Dr. V. Kameswari,  Former Director, The KSRI, Defended her thesis on "KĀŚYAPA SAMHITĀ – TEXT ON VIṢACIKITSĀ : A CRITICAL STUDY "  at the Institute premises on 08th June 2023. ',
+        details_page:
+          "https://www.ksri.in/ksri-news/407/viva-voce-examination-was-conducted-on-08.06.2023-at-the-ksri",
+        heading:
+          "Viva Voce Examination was conducted on 08.06.2023 at the KSRI",
+        title:
+          'Ms. S. Goda Devi, Ph. D. candidate of Dr. V. Kameswari,  Former Director, The KSRI, Defended her thesis on "KĀŚYAPA SAMHITĀ – TEXT ON VIṢACIKITSĀ : A CRITICAL STUDY "  at the Institute premises on 08th June 2023. ',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/goda-mam-1a.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/goda-mam-1a.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/goda-mam-2a.jpg",
+        ],
+        id: "173a1506d4b40195947ec5bd817abca662b46d18962c45110d4b7b1142312de7",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/tvv-1aa.png",
+        text: "Dr. T.V.V. Vasudeva, the Deputy Director of KSRI, delivered a Lecture on  'Granthalipi and utility of modern gadgets' in the two days National Seminar on Manuscripts and Digitization under the auspices of S V Manuscripts Project and Vedic University, Tirupati at the Sri Venkateswara Vedic University on 1st and 2nd July 2023. This event has been published in the local news paper, Tirupati. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/396/deputy-director-of-ksri-gave-a-lecture-at-the-two-days-national--seminar-on-manuscripts-and-digitization--on-1st-and-2nd-july-2023.",
+        heading:
+          "Deputy Director of KSRI gave a lecture at the Two days National  Seminar on Manuscripts and Digitization  on 1st and 2nd July 2023.",
+        title:
+          "Dr. T.V.V. Vasudeva, the Deputy Director of KSRI, delivered a Lecture on  'Granthalipi and utility of modern gadgets' in the two days National Seminar on Manuscripts and Digitization under the auspices of S V Manuscripts Project and Vedic University, Tirupati at the Sri Venkateswara Vedic University on 1st and 2nd July 2023. This event has been published in the local news paper, Tirupati. ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/tvv-1aa.png",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/tvv-1aa.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/tvv-2-aa.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/tvv-5aa.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/tvv-6aa.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/tvv-7aa.png",
+        ],
+        id: "aa51781ade8ff9962a6aeaa9e887ee6dc2d88b8bbc009e6d7f3be6033e3a705f",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-web-new.jpg",
+        text: "75th Anniversary Celebrations of The KSRI was inaugurated  on 24.05.2023 at the The Madras Sanskrit College Premises, Mylapore. Sri T. S. Tirumurti (IFS Retd.) delivered the inaugural address and Dr. Sudha Seshayyan (Former Vice-Chancellor, Dr. MGR Medical University, Chennai) Gave the special address. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/384/75th-anniversary-inauguration-celebrated-on-24.05.2023",
+        heading: "75th Anniversary Inauguration celebrated on 24.05.2023",
+        title:
+          "75th Anniversary Celebrations of The KSRI was inaugurated  on 24.05.2023 at the The Madras Sanskrit College Premises, Mylapore. Sri T. S. Tirumurti (IFS Retd.) delivered the inaugural address and Dr. Sudha Seshayyan (Former Vice-Chancellor, Dr. MGR Medical University, Chennai) Gave the special address. ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-web-new.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-web-new.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/2-web-a-kz7.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/75th-anniv.-invtation-(1)_page-0001-8Ps.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/75th-anniv.-invtation-(1)_page-0003-7N0.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/75th-anniv.-invtation-(1)_page-0002-w4h.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/75th-anniv.-invtation-(1)_page-0004-j2m.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/screenshot-(5)-Cqk.png",
+          "Asset/images/base/2x1.png",
+        ],
+        id: "16f119ff0f52310f2435e90bc087f0284413a8694a0fed9340c9e444895bb027",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/ksb-sir-16-march.jpg",
+        text: 'ICPR , Dept. of Sanskrit, Loyola College and Dept. of Sanskrit, Ethiraj College for Woment, Chennai  Jointly organised a A Series of Periodical Lectures on Indian Philosophy from 3rd February 2023 to 29th March 2023.  Dr. K. S Balasubramainan, Deputy Director of The KSRI, gave a talk on " The Philosophy of Sankhya and Yoga" . ',
+        details_page:
+          "https://www.ksri.in/ksri-news/356/dr.-k.-s-balasubramainan,-deputy-director-of-the-ksri-spoke-on-",
+        heading:
+          'Dr. K. S Balasubramainan, Deputy Director of The KSRI Spoke on "The Philosophy and Sankhya and Yoga"',
+        title:
+          'ICPR , Dept. of Sanskrit, Loyola College and Dept. of Sanskrit, Ethiraj College for Woment, Chennai  Jointly organised a A Series of Periodical Lectures on Indian Philosophy from 3rd February 2023 to 29th March 2023.  Dr. K. S Balasubramainan, Deputy Director of The KSRI, gave a talk on " The Philosophy of Sankhya and Yoga" . ',
+        heading_image_url: null,
+        images: [],
+        id: "6e1196332067214854f346d6a4662772ebedac9ad6d5cbcdeb9956543a5b7792",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/1-a-1.jpg",
+        text: "Ms. N. Bhuvaneswari, Ph. D. candidate of Dr. V. Kameswari, Directer, The KSRI, Defended her thesis on CRITICAL STUDY OF THE PLAY PRASANNARĀGHAVA OF JAYADEVA at the Institute premises on 10th March 2023. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/353/viva-voce-examination-was-conducted-on-10.03.2023-at-the-ksri",
+        heading:
+          "Viva Voce Examination was conducted on 10.03.2023 at the KSRI",
+        title:
+          "Ms. N. Bhuvaneswari, Ph. D. candidate of Dr. V. Kameswari, Directer, The KSRI, Defended her thesis on CRITICAL STUDY OF THE PLAY PRASANNARĀGHAVA OF JAYADEVA at the Institute premises on 10th March 2023. ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-a-1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-a-1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/1-a.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/2-a.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/6.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/5.png",
+        ],
+        id: "75457676b47859807594bdc4da6c1e5406fab0bf27931b7dd66c539391add0d2",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/ppt-1.jpg",
+        text: "Prof. Shrinivasa Varkedi, Vice Chancellor, Central Sanskrit University , New Delhi, Visited The Institute and the library.  A Power Point Presentation of our Institute and its activities were presented to him. He also had a glance of our books published as well as a few rare M.Phil and Ph.D. Dissertations. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/343/hon'ble-vice-chancellor,-central-sanskrit-university-,-new-delhi,-visited-the-kuppuswami-sastri-research-institute-on-8th-january-2023",
+        heading:
+          "Hon'ble Vice Chancellor, Central Sanskrit University , New Delhi, Visited The Kuppuswami Sastri Research Institute on 8th January 2023",
+        title:
+          "Prof. Shrinivasa Varkedi, Vice Chancellor, Central Sanskrit University , New Delhi, Visited The Institute and the library.  A Power Point Presentation of our Institute and its activities were presented to him. He also had a glance of our books published as well as a few rare M.Phil and Ph.D. Dissertations. ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/ppt-1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/ppt-1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/thesis-1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/group-2.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/group-photo-1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/thesis-2.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/ppt-2.jpg",
+        ],
+        id: "46323c8d2b98af2785bde7875be83493d8e39a03e47f30ab79867fafce992c8a",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/ksb-sir-1-a-MHE.jpg",
+        text: 'The Madras Sanskrit College & S.S. V. Patasala, Chennai,   Sri V. Krishnaswami Iyer Sanskrit Education Trust and Veera Subbaiya Swamigal Mutt Trust Jointly organised  a Two day International Seminar on "Sriman Narayaneeyam" on 8th  and 9th of  January 2023.   \nDr. K.S. Balasubramanian, Deputy Director of the KSRI , Chaired the afternoon session on 08.01.2023 and , Dr. T.V. Vasudeva, Deputy Director of The KSRI Chaired the  forenoon session on 09.01.2023.',
+        details_page:
+          "https://www.ksri.in/ksri-news/302/deputy-directors-of-ksri-chaired-the-research-scholars-sessions-at-the--international-seminar-on-",
+        heading:
+          'Deputy Directors of KSRI Chaired the Research Scholars Sessions at the  International Seminar on "Sriman Narayaneeyam"',
+        title:
+          'The Madras Sanskrit College & S.S. V. Patasala, Chennai,   Sri V. Krishnaswami Iyer Sanskrit Education Trust and Veera Subbaiya Swamigal Mutt Trust Jointly organised  a Two day International Seminar on "Sriman Narayaneeyam" on 8th  and 9th of  January 2023.   \nDr. K.S. Balasubramanian, Deputy Director of the KSRI , Chaired the afternoon session on 08.01.2023 and , Dr. T.V. Vasudeva, Deputy Director of The KSRI Chaired the  forenoon session on 09.01.2023.',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/ksb-sir-1-a-MHE.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/ksb-sir-1-a-MHE.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/ksb-sir-2-a-VRg.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vasu-sir-2-k78.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vasu-sir-3-yzj.jpg",
+        ],
+        id: "4255151ebbfe52e8b74bae90fa55e7f64f7d7b7c7cc95a91c14ff0553dd73f64",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/international-seminar-(72-×-36-in",
+        text: 'From 08th to 09th of January 2023, Scholars of KSRI participated and presented Research articles at the Two days International  Seminar on "Sriman- Narayaneeyam" organised by The Madras Sanskrit College & S.S.V. Patasala, Chennai jointly with Central Sanskrit University, New Delhi.',
+        details_page:
+          "https://www.ksri.in/ksri-news/301/assitant-professors-of-ksri-presented-papers-in-international-conference-on-srimannarayaneeyam",
+        heading:
+          "Assitant Professors of KSRI presented papers in International Conference on Srimannarayaneeyam",
+        title:
+          'From 08th to 09th of January 2023, Scholars of KSRI participated and presented Research articles at the Two days International  Seminar on "Sriman- Narayaneeyam" organised by The Madras Sanskrit College & S.S.V. Patasala, Chennai jointly with Central Sanskrit University, New Delhi.',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/international-seminar-(72-×-36-in)-5_page-0001-ymd.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/international-seminar-(72-×-36-in)-5_page-0001-ymd.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vy-1.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/pc-muralidharan-KyL.png",
+          "https://d30y75l38k1y9.cloudfront.net/upload/lavanya-eZf.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/preethi-SAj.jpg",
+        ],
+        id: "3c9e966c4189844b6f4b8cfabd91719ced23d0e3e9ad1eb377ac144d698ade0d",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/invite-resize.jpg",
+        text: "From 09th to 10th of December 2022 Scholars of KSRI has been participated and presented Research articles at the two days International  Seminar on Science and Technology in Sanskrit Texts organised by Assam University along with Samskrita Bharati, Silchar.",
+        details_page:
+          "https://www.ksri.in/ksri-news/300/assitant-professors-of-ksri-presented-papers-in-national-conference",
+        heading:
+          "Assitant Professors of KSRI presented papers in National Conference",
+        title:
+          "From 09th to 10th of December 2022 Scholars of KSRI has been participated and presented Research articles at the two days International  Seminar on Science and Technology in Sanskrit Texts organised by Assam University along with Samskrita Bharati, Silchar.",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/invite-resize.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/invite-resize.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/pr-sc-2-re.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/pr.-sc.-1-re.jpg",
+        ],
+        id: "bf793ca489d337092b393822448ab17bf445259288f5831a47ccf3f5f7f5f943",
+      },
+      {
+        avatarImage: null,
+        text: 'ICPR and Darbhanga Sanskrit University Jointly organised a National Seminar on Vacaspati Misra - His Life and Works from 19th to 21st of  December 2022. Dr. K. S Balasubramainan, Deputy Director of The KSRI, gave a talk on " Contribution of Vacaspati Misra to yoga" (Online).',
+        details_page:
+          "https://www.ksri.in/ksri-news/299/dr.-k.-s-balasubramainan,-deputy-director-of-the-ksri-spoke-on-",
+        heading:
+          'Dr. K. S Balasubramainan, Deputy Director of The KSRI Spoke on "Vacaspati Misra - His Life and Works"',
+        title:
+          'ICPR and Darbhanga Sanskrit University Jointly organised a National Seminar on Vacaspati Misra - His Life and Works from 19th to 21st of  December 2022. Dr. K. S Balasubramainan, Deputy Director of The KSRI, gave a talk on " Contribution of Vacaspati Misra to yoga" (Online).',
+        heading_image_url: null,
+        images: [],
+        id: "eaf0ee23c4b40212bdde453715cc2f5792eebf872ec029626840341dab227df5",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/vy-p1.jpg",
+        text: 'Dr.V. Yamuna Devi, Assistant Professor of The KSRI, Chennai, was  a judge for the competition "75 years of Indian Independence and contribution of Sanskrit Scholars" organised by The Madras Sanskrit College on 14th of October 2022.',
+        details_page:
+          "https://www.ksri.in/ksri-news/298/assistant-professor-of-ksri-was-invited-to-judge-a-competition-at-the-madras-sanskrit-college,-chennai",
+        heading:
+          "Assistant Professor of KSRI was invited to Judge a competition at the Madras Sanskrit College, Chennai",
+        title:
+          'Dr.V. Yamuna Devi, Assistant Professor of The KSRI, Chennai, was  a judge for the competition "75 years of Indian Independence and contribution of Sanskrit Scholars" organised by The Madras Sanskrit College on 14th of October 2022.',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/vy-p1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/vy-p1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/vy-p2.jpg",
+        ],
+        id: "5b37944e7f56fbcb39afc46c24b2d44ea3c65cf67797a28daaf623173fa3b9a4",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/resized-anuvādasaurabham-brochure-2.jpg",
+        text: "Dr. T.V.V. Vasudeva, the Deputy Director of KSRI, delivered a speech on  'My Experience \n in Translation' in a valedictory session of a \"Anuvadhasaurabham\" Three days Residential Workshop on Effective Translation in Indian Languages organised by Chinmaya Vihwa Vidyalaya (Deemed to be University) In Association with Bharatiya Bhasha Samiti, held from 22nd to 24th December 2022.",
+        details_page:
+          "https://www.ksri.in/ksri-news/296/deputy-director-of-ksri-gave-a-talk-at-the-valedictory-session-of-the-3-days-residential-workshop-on-24th-december-2022",
+        heading:
+          "Deputy Director of KSRI gave a talk at the valedictory session of the 3 days Residential Workshop on 24th December 2022",
+        title:
+          "Dr. T.V.V. Vasudeva, the Deputy Director of KSRI, delivered a speech on  'My Experience \n in Translation' in a valedictory session of a \"Anuvadhasaurabham\" Three days Residential Workshop on Effective Translation in Indian Languages organised by Chinmaya Vihwa Vidyalaya (Deemed to be University) In Association with Bharatiya Bhasha Samiti, held from 22nd to 24th December 2022.",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/resized-anuvādasaurabham-brochure-2.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/resized-anuvādasaurabham-brochure-2.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/resized---anuvādasaurabham-brochure-1-oE7.jpg",
+        ],
+        id: "7aa857840be715dc1ea65b6843c5ed51b3161384a0c04df927353c9021918cfa",
+      },
+      {
+        avatarImage: null,
+        text: 'The disciples of  Sri Swaminatha Atreya organised a "Samsmaranotsava" in his memory on 30th November, 2022 at Bharatiya Vidya Bhavan, Mylapore, Chennai. Dr. T.V. Vasudeva, Deputy Director of KSRI, spoke about Sri Swaminatha Atreya.  ',
+        details_page:
+          "https://www.ksri.in/ksri-news/295/dr.-t.v.-vasudeva,-deputy-director-of-the-ksri,-spoke-about-sri-swaminatha-atreya-at-the-bharatiya-vidya-bhavan,-chennai",
+        heading:
+          "Dr. T.V. Vasudeva, Deputy Director of The KSRI, spoke about Sri Swaminatha Atreya at The Bharatiya Vidya Bhavan, Chennai",
+        title:
+          'The disciples of  Sri Swaminatha Atreya organised a "Samsmaranotsava" in his memory on 30th November, 2022 at Bharatiya Vidya Bhavan, Mylapore, Chennai. Dr. T.V. Vasudeva, Deputy Director of KSRI, spoke about Sri Swaminatha Atreya.  ',
+        heading_image_url: null,
+        images: [],
+        id: "6399d3159344c6088bc3fb34b3f87a12a2a76ec50a89daf62e036a0ef793f538",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/",
+        text: 'French Institute of Indology and Rastriya Samskrit Sansthan Jointly organised a International Conference on Surya on 4th November 2022. Dr. T.V. Vasudeva, Deputy Director of The KSRI, Chaired the last session of the Conference and gave a talk on "Surya in Rg. Veda"',
+        details_page:
+          "https://www.ksri.in/ksri-news/294/dr.-t.v.-vasudeva,-deputy-director-of-ksri-chaired-a-session-and-also-gave-a-talk-at-an-international-conference-on-surya",
+        heading:
+          "Dr. T.V. Vasudeva, Deputy Director of KSRI Chaired a Session and also gave a talk at an International conference on Surya",
+        title:
+          'French Institute of Indology and Rastriya Samskrit Sansthan Jointly organised a International Conference on Surya on 4th November 2022. Dr. T.V. Vasudeva, Deputy Director of The KSRI, Chaired the last session of the Conference and gave a talk on "Surya in Rg. Veda"',
+        heading_image_url: null,
+        images: [],
+        id: "ae443a2c585d6ec7a87c9c3745118674ff9784fe3fd332a17577a3ab716b388a",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/invite-new.jpg",
+        text: 'Dr. T.V.V. Vasudeva, the Deputy Director of The KSRI, Chennai, was  a judge for the competition "Free distribution in the elections manifesto is right or wrong" organised by The Madras Sanskrit College on 13th of October 2022.',
+        details_page:
+          "https://www.ksri.in/ksri-news/293/deputy-director-of-ksri-was-invited-to-judge-a-competition-at-the-madras-sanskrit-college,-chennai",
+        heading:
+          "Deputy Director of KSRI was invited to Judge a competition at the Madras Sanskrit College, Chennai",
+        title:
+          'Dr. T.V.V. Vasudeva, the Deputy Director of The KSRI, Chennai, was  a judge for the competition "Free distribution in the elections manifesto is right or wrong" organised by The Madras Sanskrit College on 13th of October 2022.',
+        heading_image_url: null,
+        images: [],
+        id: "6aabe2ef0309dae0b1ecc7c05ad71c7d1c6a89d9e8908554d9e654aa7068710d",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/diary-dual-image.jpg",
+        text: "Ramayana Diary is a unique publication of the Samskrita Academy, Chennai. New Year Gift for All",
+        details_page:
+          "https://www.ksri.in/ksri-news/287/new-year-dairy---ramayana-diary",
+        heading: "New Year Dairy - Ramayana Diary",
+        title:
+          "Ramayana Diary is a unique publication of the Samskrita Academy, Chennai. New Year Gift for All",
+        heading_image_url: null,
+        images: [],
+        id: "f83985806ad83a0fbaf60c6bbc0b240e19a854957b55c6f1bc83776e8a98f393",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/gayathri-m.phil--1.jpg",
+        text: 'Mrs. R. Gayathri, M.Phil. student  of KSRI,  submitted her M.Phil., dissertation under the guidance of Dr. V. Yamuna Devi on "SAMMĀRJANĪ ŚATAKAM  OF ĀSŪRI ĀNANDĀḺVĀR : A CRITICAL STUDY" to the University of Madras on 30.09.2022',
+        details_page:
+          "https://www.ksri.in/ksri-news/245/sammĀrjanĪ-Śatakam--of-ĀsŪri-ĀnandĀḺvĀr-:-a-critical-study---m.phil.,-dissertation-submitted-to-the-university-of-madras",
+        heading:
+          "SAMMĀRJANĪ ŚATAKAM  OF ĀSŪRI ĀNANDĀḺVĀR : A CRITICAL STUDY - M.Phil., Dissertation Submitted to the University of Madras",
+        title:
+          'Mrs. R. Gayathri, M.Phil. student  of KSRI,  submitted her M.Phil., dissertation under the guidance of Dr. V. Yamuna Devi on "SAMMĀRJANĪ ŚATAKAM  OF ĀSŪRI ĀNANDĀḺVĀR : A CRITICAL STUDY" to the University of Madras on 30.09.2022',
+        heading_image_url: null,
+        images: [],
+        id: "6f844ae34a935b625587e7bd273cd406a712f5c0f345cf5521d8b7ad947650d9",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/invitation-CJ4.jpg",
+        text: 'On the Occasion of Mahakavi Kalidasa Day, an online lecture was organized on 6th October 2022 under Sri. Venkatnarayana Iyer and Smt. Sundarambal Endowment. Dr. P.C. Muralidharan delivered a lecture on "Message of Kalidasa" which was followed by the musical rendering of verses from Kalidasa\'s works by Dr. Jayadevi Prakash from KSRI.',
+        details_page:
+          "https://www.ksri.in/ksri-news/243/dr.-p.c.-muralidharan,-assistant-professor-of-ksri-delivered-an-endowment-lecture-under-the-samskrita-academy,-chennai",
+        heading:
+          "Dr. P.C. Muralidharan, Assistant Professor of KSRI delivered an Endowment lecture under the Samskrita Academy, Chennai",
+        title:
+          'On the Occasion of Mahakavi Kalidasa Day, an online lecture was organized on 6th October 2022 under Sri. Venkatnarayana Iyer and Smt. Sundarambal Endowment. Dr. P.C. Muralidharan delivered a lecture on "Message of Kalidasa" which was followed by the musical rendering of verses from Kalidasa\'s works by Dr. Jayadevi Prakash from KSRI.',
+        heading_image_url: null,
+        images: [],
+        id: "cd0dbaa3a45d34850fcb694c273d5d179ddc42d3ef0c7306b71bf235e151f4ba",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/pc-2-ATn.jpg",
+        text: '"SARASVATHA SAMITI", Department of Sanskrit of The M.O.P Vaishnav College for Women organized a guest lecture on 6th October, 2022 and invited  Dr. P.C. Muralidharan, Assistant Professor of KSRI. He delivered a lecture on the Introduction to Vedas.',
+        details_page:
+          "https://www.ksri.in/ksri-news/242/dr.-p.c.-muralidharan,-assistant-professor-of-ksri-delivered-a-guest-lecture-at-m.o.p.-vaishnav-college-for-women",
+        heading:
+          "Dr. P.C. Muralidharan, Assistant Professor of KSRI delivered a guest lecture at M.O.P. Vaishnav College for Women",
+        title:
+          '"SARASVATHA SAMITI", Department of Sanskrit of The M.O.P Vaishnav College for Women organized a guest lecture on 6th October, 2022 and invited  Dr. P.C. Muralidharan, Assistant Professor of KSRI. He delivered a lecture on the Introduction to Vedas.',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/pc-2-ATn.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/pc-2-ATn.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/pc-3-XQA.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/pc-4-gfY.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/whatsapp-image-2022-10-04-at-10.37.01-am-(1)-cxk.jpg",
+        ],
+        id: "022ab822b722631197b6647e796b1aa300ca868b40d71e6b4a2413203b12f40c",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/mop-1.jpg",
+        text: "The Sanskrit Department of M.O.P Vaishnav College had organized the Sanskrit Day Celebration on 25th August 2022. Dr. V. Yamuna Devi, Assistant Professor of  KSRI,  was invited as a chief guest of the day. She delivered a guest lecture and judged the various  events  conducted as a part of the celebration.",
+        details_page:
+          "https://www.ksri.in/ksri-news/240/dr.-v.-yamuna-devi,-assistant-professor-of-ksri-invited-as-a-chief-guest-at-m.o.p.-vaishnav-college-for-women",
+        heading:
+          "Dr. V. Yamuna Devi, Assistant Professor of KSRI invited as a Chief guest at M.O.P. Vaishnav College for Women",
+        title:
+          "The Sanskrit Department of M.O.P Vaishnav College had organized the Sanskrit Day Celebration on 25th August 2022. Dr. V. Yamuna Devi, Assistant Professor of  KSRI,  was invited as a chief guest of the day. She delivered a guest lecture and judged the various  events  conducted as a part of the celebration.",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/mop-1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/mop-1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/mop-2.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/mop-3.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/mop-4-a.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/mop-5.jpg",
+        ],
+        id: "c41fdef56f6db456b8e101ff87f1f7a6671c7b1e9cffdfdc70dc5940f2b0b87f",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/sri-sankara-invite-1_page_1.jpg",
+        text: "As a part of International Yoga Day Celebration, Sri Sankara Arts and Science College, Autonomous,  organised Yoga Demonstration and lecture program sponsored by Indian Council of Philosophical Research (ICPR) on 12.07.2022. Dr. P. C. Muralidharan, gave a talk on Vaishnavism and Patanjala Yoga, Dr. V. Preethi gave a lecture on Natha- Saiva Yoga and Gorakshanatha.",
+        details_page:
+          "https://www.ksri.in/ksri-news/175/assistant-professors-of-ksri-delivered-guest-lectures-at-sri-sankara-arts-and-science-college",
+        heading:
+          "Assistant Professors of KSRI delivered guest lectures at Sri Sankara Arts and Science College",
+        title:
+          "As a part of International Yoga Day Celebration, Sri Sankara Arts and Science College, Autonomous,  organised Yoga Demonstration and lecture program sponsored by Indian Council of Philosophical Research (ICPR) on 12.07.2022. Dr. P. C. Muralidharan, gave a talk on Vaishnavism and Patanjala Yoga, Dr. V. Preethi gave a lecture on Natha- Saiva Yoga and Gorakshanatha.",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/sri-sankara-invite-1_page_1.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/sri-sankara-invite-1_page_1.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/sri-sankara-invite-1_page_2.jpg",
+        ],
+        id: "71471eb1d260cc16d4b8c49e324e81ee1aac1cbf510e230d3a84f0e8e0f32305",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/goda-thesis.jpg",
+        text: 'Goda Devi S., Ph.D. Research Scholar, KSRI,  with the guidance of Dr. V. Kameswari, submitted her Ph.D. thesis on "KĀŚYAPA SAMHITĀ – TEXT ON VIṢACIKITSĀ: A CRITICAL STUDY" to the University of Madras  on 06.07.2022',
+        details_page:
+          "https://www.ksri.in/ksri-news/174/kĀŚyapa-samhitĀ-–-text-on-viṢacikitsĀ:-a-critical-study-–-ph.d.-thesis-submitted-to-the-university-of-madras",
+        heading:
+          "KĀŚYAPA SAMHITĀ – TEXT ON VIṢACIKITSĀ: A CRITICAL STUDY – Ph.D. thesis Submitted to the University of Madras",
+        title:
+          'Goda Devi S., Ph.D. Research Scholar, KSRI,  with the guidance of Dr. V. Kameswari, submitted her Ph.D. thesis on "KĀŚYAPA SAMHITĀ – TEXT ON VIṢACIKITSĀ: A CRITICAL STUDY" to the University of Madras  on 06.07.2022',
+        heading_image_url: null,
+        images: [],
+        id: "9971520e4e403c6e90ac3d6d931a961ac96bfcb102d1b5d86890bc46ee327a4f",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/bhuvana--thesis-1.jpg",
+        text: 'Mrs. Bhuvaneswari, Ph.D. Research Scholar, KSRI,  submitted her Ph.D. thesis under the guidance of Dr. V. Kameswari on "CRITICAL STUDY OF THE PLAY PRASANNARĀGHAVA OF JAYADEVA" to the University of Madras on 17.06.2022',
+        details_page:
+          "https://www.ksri.in/ksri-news/173/critical-study-of-the-play-prasannarĀghava-of-jayadeva---ph.d.-thesis-submitted-to-the-university-of-madras",
+        heading:
+          "CRITICAL STUDY OF THE PLAY PRASANNARĀGHAVA OF JAYADEVA - Ph.D. Thesis Submitted to the University of Madras",
+        title:
+          'Mrs. Bhuvaneswari, Ph.D. Research Scholar, KSRI,  submitted her Ph.D. thesis under the guidance of Dr. V. Kameswari on "CRITICAL STUDY OF THE PLAY PRASANNARĀGHAVA OF JAYADEVA" to the University of Madras on 17.06.2022',
+        heading_image_url: null,
+        images: [],
+        id: "bdc23227174d88754921ba203a1bbdc456eb41bb9fc4a29e91265e02b9fa5ac8",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/convocation.jpg",
+        text: "Dr. V. Preethi, Asst. Professor of KSRI, received her  Ph.D. Degree from the hands of  H'ble Tamil Nadu Governor, Mr. R.N. Ravi at the 164th Annual Convocation of University of Madras, which  was held on 16.05.2022, H'ble  Chief Minister of Tamil Nadu, Mr. M.K. Stalin presided as a Chief guest, ",
+        details_page:
+          "https://www.ksri.in/ksri-news/172/164th-annual-convocation-of-university-of-madras-",
+        heading: "164th Annual Convocation of University of Madras ",
+        title:
+          "Dr. V. Preethi, Asst. Professor of KSRI, received her  Ph.D. Degree from the hands of  H'ble Tamil Nadu Governor, Mr. R.N. Ravi at the 164th Annual Convocation of University of Madras, which  was held on 16.05.2022, H'ble  Chief Minister of Tamil Nadu, Mr. M.K. Stalin presided as a Chief guest, ",
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/convocation.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/convocation.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/img-20220516-wa0011-0l4.jpg",
+        ],
+        id: "c927fb8c8b8c85d73524d4d9d851e6bf958c4f24b3d118dc7c2e85116ce13877",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/ssr-mam-book-1.jpg",
+        text: "The Samskrita Academy, Chennai in collaboration with the National Mission for Manuscripts (NMM) and the Mathematics Department of Sri Chandrasekharendra Saraswati Vishwa Mahavidyalaya, Enathur under the auspices  of the Indian Society for History of Mathematics had organized the Annual Conference on The History and Development of Mathematics from November 27 to 29, 2018. The Proceedings of the conference has been published and brought out this May 2022.  This book has been edited by Dr.  Sita Sundar Ram, Secretary , The Samskrita Academy, Chennai and Dr. V. Ramakalyani,  Project Consultant, HoMI Project, IIT, Gandhinagar & Member, The Samskrita Academy, Chennai.  various National and International scholars as well as students from Mathematics Department of SCSVMV have contributed articles.  ",
+        details_page:
+          "https://www.ksri.in/ksri-news/121/proceedings-of-the-annual-conference-on-the-history-and-development-of-mathematics,--has-been-published-by-national-mission-for-manuscripts",
+        heading:
+          "Proceedings of the Annual Conference on the History and Development of Mathematics,  has been published by National Mission for Manuscripts",
+        title:
+          "The Samskrita Academy, Chennai in collaboration with the National Mission for Manuscripts (NMM) and the Mathematics Department of Sri Chandrasekharendra Saraswati Vishwa Mahavidyalaya, Enathur under the auspices  of the Indian Society for History of Mathematics had organized the Annual Conference on The History and Development of Mathematics from November 27 to 29, 2018. The Proceedings of the conference has been published and brought out this May 2022.  This book has been edited by Dr.  Sita Sundar Ram, Secretary , The Samskrita Academy, Chennai and Dr. V. Ramakalyani,  Project Consultant, HoMI Project, IIT, Gandhinagar & Member, The Samskrita Academy, Chennai.  various National and International scholars as well as students from Mathematics Department of SCSVMV have contributed articles.  ",
+        heading_image_url: null,
+        images: [],
+        id: "222f046dfad6111396b2d0c87824e7d6370798434ef088b4ca85c20395d4e9a2",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/invite.jpg",
+        text: 'MEENAKSHI Academy of Higher Education & Research (Deemed to be University) selected by Morarji Desai National Institute of Yoga (MDNIY), Ministry of Ayush, Govt. of India, New Delhi organized a Webinar for Yoga Mahotsav- 2022 on 28th April 2022. Dr. K. S. Balasubramaniam, Deputy Director of KSRI, delivered a Guest lecture on "Yoga for Total Well- being".\n',
+        details_page:
+          "https://www.ksri.in/ksri-news/109/deputy-director-of-ksri-delivered-a-lecture-on-yoga-at-meenakshi-academy-of-higher-education-and-research,-chennai",
+        heading:
+          "Deputy Director of KSRI delivered a lecture on Yoga at Meenakshi Academy of Higher Education and Research, Chennai",
+        title:
+          'MEENAKSHI Academy of Higher Education & Research (Deemed to be University) selected by Morarji Desai National Institute of Yoga (MDNIY), Ministry of Ayush, Govt. of India, New Delhi organized a Webinar for Yoga Mahotsav- 2022 on 28th April 2022. Dr. K. S. Balasubramaniam, Deputy Director of KSRI, delivered a Guest lecture on "Yoga for Total Well- being".\n',
+        heading_image_url:
+          "https://d30y75l38k1y9.cloudfront.net/upload/invite.jpg",
+        images: [
+          "https://d30y75l38k1y9.cloudfront.net/upload/invite.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/speakers.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/ksb-sir-2.jpg",
+          "https://d30y75l38k1y9.cloudfront.net/upload/meeting.jpg",
+        ],
+        id: "e1dfa3a852475ebcc542487525937960c8ba950f928e1677830ddefa2e467f4f",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/photo-from-preethi.jpg",
+        text: 'The Department of Sanskrit, Dr. MGR-JANAKI College of Arts and Science for Women organised a Guest lecture on 28th March 2022. Dr. V. Yamuna Devi, Assistant Professor, KSRI delivered a lecture on "Sanskrit Literature: Reflection of Life Changes".',
+        details_page:
+          "https://www.ksri.in/ksri-news/108/dr.-v.-yamuna-devi,-assistant-professor-of-ksri,-delivered-a-guest-lecture-at-dr.-mgr-janaki-college-of-arts-and-science-for-women",
+        heading:
+          "Dr. V. Yamuna Devi, Assistant Professor of KSRI, Delivered a guest lecture at Dr. MGR-JANAKI College of Arts and Science for Women",
+        title:
+          'The Department of Sanskrit, Dr. MGR-JANAKI College of Arts and Science for Women organised a Guest lecture on 28th March 2022. Dr. V. Yamuna Devi, Assistant Professor, KSRI delivered a lecture on "Sanskrit Literature: Reflection of Life Changes".',
+        heading_image_url: null,
+        images: [],
+        id: "3d55eaf7cb629cd2af479e15bb5d86901085553c8dc8f0cd1022e424dec23c1b",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/cpr-journal.jpg",
+        text: "The C.P. Ramaswami Aiyar Foundation, had organized the National Conference on The Mahabharata - In Indian Art and Culture from March 14 to 16, 2019. Nearly 20 Scholars from KSRI presented the papers. The Proceedings of the conference has been published during March 2022. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/107/proceedings-of-the-national-conference-on-the-mahabharata,-in-indian-art-and-culture-has-been-published-by-c.p.-r.-institute-of-indological-research",
+        heading:
+          "Proceedings of the National Conference on The Mahabharata, In Indian Art and Culture has been published by C.P. R. Institute of Indological Research",
+        title:
+          "The C.P. Ramaswami Aiyar Foundation, had organized the National Conference on The Mahabharata - In Indian Art and Culture from March 14 to 16, 2019. Nearly 20 Scholars from KSRI presented the papers. The Proceedings of the conference has been published during March 2022. ",
+        heading_image_url: null,
+        images: [],
+        id: "ef1fb35ae30fc092417d889c45f67715b49205c8b5865b86f041e7535d3414fc",
+      },
+      {
+        avatarImage: null,
+        text: "From 26th to 28th February 2022 Scholars of KSRI has been participated and presented Research articles at the three days National  conference on Indian Scientific Heritage organised by Hindu College, Sonipat ",
+        details_page:
+          "https://www.ksri.in/ksri-news/106/scholars-of-ksri-presented-papers-in-national-conference",
+        heading: "Scholars of KSRI presented papers in National Conference",
+        title:
+          "From 26th to 28th February 2022 Scholars of KSRI has been participated and presented Research articles at the three days National  conference on Indian Scientific Heritage organised by Hindu College, Sonipat ",
+        heading_image_url: null,
+        images: [],
+        id: "a4825c40df326e140877cf8d044110aaef29fd05efd29d8f98436aaf19ec40e8",
+      },
+      {
+        avatarImage: null,
+        text: "From 16th March  2022 till 29th April  2022 Dr. K.S. Balasubramaniam, Deputy Director of KSRI has been giving online lectures on Yoga in various national and International Universities.",
+        details_page:
+          "https://www.ksri.in/ksri-news/100/deputy-director-of-ksri-delivered-lectures-on-yoga-at-various--universities",
+        heading:
+          "Deputy Director of KSRI delivered lectures on Yoga at various  Universities",
+        title:
+          "From 16th March  2022 till 29th April  2022 Dr. K.S. Balasubramaniam, Deputy Director of KSRI has been giving online lectures on Yoga in various national and International Universities.",
+        heading_image_url: null,
+        images: [],
+        id: "20d8bee40ae3a2a9cd812be42877bf492f47a7e507f84f343f92cec483d0e3a0",
+      },
+      {
+        avatarImage: null,
+        text: "From March 26-27 2022 till April 17th 2022 Scholars of KSRI have been participationg in various conferences and presenting Research articles.",
+        details_page:
+          "https://www.ksri.in/ksri-news/97/scholars-of-ksri-presenting-papers-in-conferences",
+        heading: "Scholars of KSRI presenting papers in Conferences",
+        title:
+          "From March 26-27 2022 till April 17th 2022 Scholars of KSRI have been participationg in various conferences and presenting Research articles.",
+        heading_image_url: null,
+        images: [],
+        id: "c0fb397665f0ace9a5938d92f467f3e26c22ff56061a20c1fd8f4e01389f5727",
+      },
+      {
+        avatarImage: null,
+        text: 'The  Indic Academy organised the Conference on Hinduism and Environmentalism .\nDr P.C.Muralidharan presented a paper on "Significance of Environment in the practice of Yoga"',
+        details_page:
+          "https://www.ksri.in/ksri-news/66/dr.-p.c.-muralidharan-presented-a-paper-titled-",
+        heading:
+          'Dr. P.C. Muralidharan Presented a paper titled "Significance of Environment in the practice of Yoga"',
+        title:
+          'The  Indic Academy organised the Conference on Hinduism and Environmentalism .\nDr P.C.Muralidharan presented a paper on "Significance of Environment in the practice of Yoga"',
+        heading_image_url: null,
+        images: [],
+        id: "87273eedef8319e39aeb9e3b959d742d260c97b87edbcc4c629cf231c21913e8",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/yogutsav.png",
+        text: "Dr. K.S. Balasubramaniam, Deputy Director of KSRI introduced Daaji's book and spoke on the relevance of ‘Patanjali's Yoga Sutras viz., Ashtanga Yoga on the occasion of \"Yogutsav- Timeless Wisdom\" on 29th January 2022,  organised by Heartfulness, Chennai. The event was presided over by the Hon'ble Governor of Tamil Nadu, Thiru R. N. Ravi who launched the books ‘The Authentic Yoga' and ‘Tales from the Vedas and Upanishads' from Heartfulness. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/50/dr.-k.s.-balasubramaniam,-deputy-director-of-ksri-introduced-daaji's-book-and-gave-a-talk-about-ashtanga-yoga-on-29th-january,-2022,-",
+        heading:
+          'Dr. K.S. Balasubramaniam, Deputy Director of KSRI introduced Daaji\'s book and gave a talk about Ashtanga Yoga on 29th January, 2022, "Yogutsav-Timeless wisdom" organised by Heartfulness, Chennai',
+        title:
+          "Dr. K.S. Balasubramaniam, Deputy Director of KSRI introduced Daaji's book and spoke on the relevance of ‘Patanjali's Yoga Sutras viz., Ashtanga Yoga on the occasion of \"Yogutsav- Timeless Wisdom\" on 29th January 2022,  organised by Heartfulness, Chennai. The event was presided over by the Hon'ble Governor of Tamil Nadu, Thiru R. N. Ravi who launched the books ‘The Authentic Yoga' and ‘Tales from the Vedas and Upanishads' from Heartfulness. ",
+        heading_image_url: null,
+        images: [],
+        id: "ed23616e5f7f916779562f61e5cc0c6ffaef3d3a7dce92526d50893f93eee128",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/jor-92.jpg",
+        text: "The Kuppuswami Sastri  Research Institute is happy in presenting to the world of scholars Volume 92 of the Journal of Oriental Research, Madras, for the year 2019 with twelve articles and more than thirty book reviews. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/44/the-journal-of-oriental-research-madras-volume-92-is-released-and-available-for-sale-",
+        heading:
+          "The Journal of Oriental Research Madras Volume 92 is released and available for sale ",
+        title:
+          "The Kuppuswami Sastri  Research Institute is happy in presenting to the world of scholars Volume 92 of the Journal of Oriental Research, Madras, for the year 2019 with twelve articles and more than thirty book reviews. ",
+        heading_image_url: null,
+        images: [],
+        id: "6339ca6012f87b485ba2b7b3b0c8fab0806a9bdda3b32e1278de16bf73f7b03a",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/img-20220108-wa0023.jpg",
+        text: "Dr. K. S. Balasubramanian and Dr. T.V.V. Vasudeva, the Deputy Directors of KSRI, gave a talk in a Webinar organised by Unione Induista Italiana, Italy for the occasion of Swami Vivekananda Jayanti, International Youth Day on 12th January 2022.",
+        details_page:
+          "https://www.ksri.in/ksri-news/37/deputy-directors-of-ksri-gave-a-talk-in-the-webinar-on-12th-january-2022,--international-youth-day,-organised-by-unione-induista-italiana",
+        heading:
+          "Deputy Directors of KSRI gave a talk in the Webinar on 12th January 2022,  International Youth Day, organised by Unione Induista Italiana",
+        title:
+          "Dr. K. S. Balasubramanian and Dr. T.V.V. Vasudeva, the Deputy Directors of KSRI, gave a talk in a Webinar organised by Unione Induista Italiana, Italy for the occasion of Swami Vivekananda Jayanti, International Youth Day on 12th January 2022.",
+        heading_image_url: null,
+        images: [],
+        id: "c2396fbfa91dad76007b3a9f528ae28f90dc6d7f916f8423c08b7a5282e6aa96",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/osmania-univ-best-paper.jpg",
+        text: " Dr. K. Vidyuta's, (Research Associate, KSRI), paper titled Temple Construction and Maintenance as Purta Dharma was selected as BEST PAPER among all the papers presented in the Three day National Seminar organised by the Sanskrit Academy, Osmania University, Hyderabad",
+        details_page:
+          "https://www.ksri.in/ksri-news/36/dr.-k.-vidyuta-received-best-paper-award-on-three-day-national-seminar-on-सनातनधर्मः-समाजश्रेयः",
+        heading:
+          "Dr. K. Vidyuta received Best Paper Award on Three-Day National Seminar on सनातनधर्मः समाजश्रेयः",
+        title:
+          " Dr. K. Vidyuta's, (Research Associate, KSRI), paper titled Temple Construction and Maintenance as Purta Dharma was selected as BEST PAPER among all the papers presented in the Three day National Seminar organised by the Sanskrit Academy, Osmania University, Hyderabad",
+        heading_image_url: null,
+        images: [],
+        id: "32b99105e979fd2420b869536ebb0c4160fcb99c1830797264cb60be1fb7cd93",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/tempfileforshare_20220113-164624.jpg",
+        text: " Scholars of KSRI presenting papers in the Three day National Conference organised by the Sanskrit Academy, Hyderabad",
+        details_page:
+          "https://www.ksri.in/ksri-news/33/three-day-national-seminar-on-सनातनधर्मः-समाजश्रेयः",
+        heading: "Three-Day National Seminar on सनातनधर्मः समाजश्रेयः",
+        title:
+          " Scholars of KSRI presenting papers in the Three day National Conference organised by the Sanskrit Academy, Hyderabad",
+        heading_image_url: null,
+        images: [],
+        id: "483a6c23d096936725db32ca2425712e45d14f99d3774f0cd4e5cc681e730e24",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/iks-2.png",
+        text: "The Coordinators from the IKS visited KSRI. Representatives of the KSRI attended the interactive discussions at the IIT, Madras.",
+        details_page:
+          "https://www.ksri.in/ksri-news/31/association-with-the-indian-knowledge-systems-(iks),-division---ministry-of-education",
+        heading:
+          "Association with The Indian Knowledge Systems (IKS), Division - Ministry of Education",
+        title:
+          "The Coordinators from the IKS visited KSRI. Representatives of the KSRI attended the interactive discussions at the IIT, Madras.",
+        heading_image_url: null,
+        images: [],
+        id: "2a7ad645d966e5374a0cfc1029ee5fb9d25b1ed4ebc2774c1a6c6568c3f2d872",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/diary.jpg",
+        text: "Ramayana Diary is a unique publication of the Samskrita Academy, Chennai. New Year Gift for All",
+        details_page:
+          "https://www.ksri.in/ksri-news/21/new-year-dairy---ramayana-diary",
+        heading: "New Year Dairy - Ramayana Diary",
+        title:
+          "Ramayana Diary is a unique publication of the Samskrita Academy, Chennai. New Year Gift for All",
+        heading_image_url: null,
+        images: [],
+        id: "f83985806ad83a0fbaf60c6bbc0b240e19a854957b55c6f1bc83776e8a98f393",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/sanatana-dharma-fqr.jpg",
+        text: "Dr. R. Thiagarajan, former Prof. & Head, Dept. of Sanskrit, Presidency College, Chennai has been appointed to hold the Chair w.e.f. Nov. 2021. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/20/sanātana-dharma-chair-instituted-by-sri-c.s.-vaidyanathan-",
+        heading: "Sanātana Dharma Chair instituted by Sri C.S. Vaidyanathan ",
+        title:
+          "Dr. R. Thiagarajan, former Prof. & Head, Dept. of Sanskrit, Presidency College, Chennai has been appointed to hold the Chair w.e.f. Nov. 2021. ",
+        heading_image_url: null,
+        images: [],
+        id: "32c8ea2e87757afb5676afbac6049cc76d6027f89291dacc221974a7f63b66d0",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/new-inv..jpg",
+        text: "Online Lecture by Dr.Sudha Seshayyan on 5th November 2021, Friday at 6.00 p.m. organised by the Samskrita Academy, Chennai. Cisco Webex Meeting number: 1668164397\nPlease copy the below URL in the browser to join online without downloading the App.\nURL: https:/tksr.webex.com/join/KSRI",
+        details_page:
+          "https://www.ksri.in/ksri-news/13/online-lecture-on-karana-para-cidrupa-in-tamil",
+        heading: "Online Lecture on Karana Para Cidrupa in Tamil",
+        title:
+          "Online Lecture by Dr.Sudha Seshayyan on 5th November 2021, Friday at 6.00 p.m. organised by the Samskrita Academy, Chennai. Cisco Webex Meeting number: 1668164397\nPlease copy the below URL in the browser to join online without downloading the App.\nURL: https:/tksr.webex.com/join/KSRI",
+        heading_image_url: null,
+        images: [],
+        id: "c77975c825c518b8f378d051c3c07df8eab20fbbdbb6c04142d5f4488e942f07",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/attn.png",
+        text: "To the kind attention of Scholars!The Kuppuswami Sastri Research Institute is the Sole publisher and Editor of the Journal – “The Journal of Oriental Research” Madras ( ISSN 00223301) , for the past 75 years containing articles in oriental studies, primarily Sanskrit. Our Journal has been recognized as a peer Reviewedd Journal by the UGC. ",
+        details_page:
+          "https://www.ksri.in/ksri-news/11/to-the-kind-attention-of-scholars",
+        heading: "To the kind attention of Scholars",
+        title:
+          "To the kind attention of Scholars!The Kuppuswami Sastri Research Institute is the Sole publisher and Editor of the Journal – “The Journal of Oriental Research” Madras ( ISSN 00223301) , for the past 75 years containing articles in oriental studies, primarily Sanskrit. Our Journal has been recognized as a peer Reviewedd Journal by the UGC. ",
+        heading_image_url: null,
+        images: [],
+        id: "0c7dc75407b4b82e41c52614f9833513d324ce1e5a6cdfac65078ba1ea33e6c3",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/the-indic-academy.jpg",
+        text: "The Indic Academy marks the Guru Purnima on the full moon day of Ashadha masa by honouring 108 Gurus– Academics, Activists, Authors and Artists who have selflessly served the cause of Dharma. \nDr.V. Kameswari, Director, KSRI was one of the Gurus honoured. This event was reported in the Dinamalar newspaper dt. 8.9.2019. ",
+        details_page: "https://www.ksri.in/ksri-news/10/guru-purnima",
+        heading: "Guru Purnima",
+        title:
+          "The Indic Academy marks the Guru Purnima on the full moon day of Ashadha masa by honouring 108 Gurus– Academics, Activists, Authors and Artists who have selflessly served the cause of Dharma. \nDr.V. Kameswari, Director, KSRI was one of the Gurus honoured. This event was reported in the Dinamalar newspaper dt. 8.9.2019. ",
+        heading_image_url: null,
+        images: [],
+        id: "57083f52060c47e83cb3139c4344a9bcceb9fc7107e07bcbeeea33dd61780bda",
+      },
+      {
+        avatarImage: "https://d30y75l38k1y9.cloudfront.net/upload/4lm8t.jpg",
+        text: "शिवरात्रिपूजा\nमहाशिवरात्रिं निमित्तीकृत्य चेन्नैनगरस्य नैके शिवालयेषु आरात्रौ अभिषेकादयः पूजाकार्यक्रमाः आयोजिताः आसन्। कोरोनामहामार्याः कारणेन भक्तानामागमने च निर्बन्धाः आसन् इति च ज्ञायते।तथापि मयूरपुरस्य कपालीश्वरदेवालये तथा अत्रस्थ सप्त-शिव- क्षेत्रेषु च भक्ताः पूजादि कार्यक्रमेषु भागमूढाः इति वार्ता।",
+        details_page: "https://www.ksri.in/ksri-news/9/shivarathri",
+        heading: "Shivarathri",
+        title:
+          "शिवरात्रिपूजा\nमहाशिवरात्रिं निमित्तीकृत्य चेन्नैनगरस्य नैके शिवालयेषु आरात्रौ अभिषेकादयः पूजाकार्यक्रमाः आयोजिताः आसन्। कोरोनामहामार्याः कारणेन भक्तानामागमने च निर्बन्धाः आसन् इति च ज्ञायते।तथापि मयूरपुरस्य कपालीश्वरदेवालये तथा अत्रस्थ सप्त-शिव- क्षेत्रेषु च भक्ताः पूजादि कार्यक्रमेषु भागमूढाः इति वार्ता।",
+        heading_image_url: null,
+        images: [],
+        id: "6d23346aa38cb2d3805b3610ed3b632a29d50e48bf4ca19f8dd94d477bca2acf",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/library-secton.jpg",
+        text: "H.H. Jaya Chamarajendra Wadiyar, Maharajah of Mysore, at the Institure, seeing the Library 1st Sep 1957...",
+        details_page:
+          "https://www.ksri.in/ksri-news/7/h.h.-jaya-chamarajendra-wadiyar",
+        heading: "H.H. Jaya Chamarajendra Wadiyar",
+        title:
+          "H.H. Jaya Chamarajendra Wadiyar, Maharajah of Mysore, at the Institure, seeing the Library 1st Sep 1957...",
+        heading_image_url: null,
+        images: [],
+        id: "74753c3f30f84eae5be1a529dbb1277c1efaa54b6fb8b9cc00d1da1bf2013ba0",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-5.png",
+        text: "Mm. Kuppuswami Sastri Birth-Centenary Function - Prof.Jean Filliozat and Dr. C. Sivaramamurthy -31st Oct 1981..",
+        details_page:
+          "https://www.ksri.in/ksri-news/6/mm.-kuppuswami-sastri-birth-centenary-function",
+        heading: "Mm. Kuppuswami Sastri Birth-Centenary Function",
+        title:
+          "Mm. Kuppuswami Sastri Birth-Centenary Function - Prof.Jean Filliozat and Dr. C. Sivaramamurthy -31st Oct 1981..",
+        heading_image_url: null,
+        images: [],
+        id: "b2d8045e8fb1434892748474791ad4297e292d0ddd3a1a00dd6aa424049435b5",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-7.png",
+        text: "Seminar on Sanskrit and Science 1994-Dr. Raja Ramanna Speaks 9 Oct 1994...",
+        details_page:
+          "https://www.ksri.in/ksri-news/5/seminar-on-sanskrit-and-science",
+        heading: "Seminar on Sanskrit and Science",
+        title:
+          "Seminar on Sanskrit and Science 1994-Dr. Raja Ramanna Speaks 9 Oct 1994...",
+        heading_image_url: null,
+        images: [],
+        id: "b44f62fb527e644ac4875e4d0731b4c670f6139c69f6434ff481951c9e4d7ff9",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-4.png",
+        text: 'Foundation stone laid for the new block "Vimarshini" by Dr.Kapila Vatsyayan...',
+        details_page: "https://www.ksri.in/ksri-news/4/new-block-",
+        heading: 'New block "Vimarshini"',
+        title:
+          'Foundation stone laid for the new block "Vimarshini" by Dr.Kapila Vatsyayan...',
+        heading_image_url: null,
+        images: [],
+        id: "d1b85cafcbfa1e037c924c8b30e231d3d07bfc1a784f5649f3291671c488fa9f",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-2.png",
+        text: "Seminar of Umapathy Sivacarya 1988 - Dr.Janaki, T.V.Venkatraman, M.Arunachalam, Dr.Avvai Natarajan...",
+        details_page:
+          "https://www.ksri.in/ksri-news/3/seminar-of-umapathy-sivacarya",
+        heading: "Seminar of Umapathy Sivacarya",
+        title:
+          "Seminar of Umapathy Sivacarya 1988 - Dr.Janaki, T.V.Venkatraman, M.Arunachalam, Dr.Avvai Natarajan...",
+        heading_image_url: null,
+        images: [],
+        id: "4196f3c6342b99c75666c66456e82bf35338087c4c9fd4d7afcdad5f01c8984a",
+      },
+      {
+        avatarImage:
+          "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-3.png",
+        text: "At the Reception of the Members of the Central Sanskrit Board by the K.S.R. Institute and other Sanskrit Institutions...",
+        details_page:
+          "https://www.ksri.in/ksri-news/2/-members-of-the-central-sanskrit-board",
+        heading: " Members of the Central Sanskrit Board",
+        title:
+          "At the Reception of the Members of the Central Sanskrit Board by the K.S.R. Institute and other Sanskrit Institutions...",
+        heading_image_url: null,
+        images: [],
+        id: "667e7a8e21c0e810048f5db0f009859a32f093bb3da263e6bb3bfa48bb70f28a",
+      },
+    ],
+  }),
+  actions: {
+    getNewsById(id) {
+      const news = this.news.filter((n) => n.id === id);
+      if (news.length > 0) {
+        return news[0];
+      } else {
+        return null;
+      }
+    },
+  },
+});
