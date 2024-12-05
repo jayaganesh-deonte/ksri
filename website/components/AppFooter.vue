@@ -31,7 +31,7 @@
             <nuxt-link
               :to="child.path"
               style="text-decoration: unset"
-              class="text-subtitle-1"
+              class="text-subtitle-1 horizontalLineOnHoverAsUnderline"
             >
               {{ child.name }}
             </nuxt-link>

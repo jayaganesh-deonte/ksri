@@ -323,7 +323,11 @@
       </v-card>
 
       <div class="text-center my-5" data-aos="fade-up" data-aos-delay="900">
-        <v-btn rounded="pill" class="text-secondary" size="large"
+        <v-btn
+          rounded="pill"
+          class="text-secondary"
+          size="large"
+          :to="'/contribute'"
           >Contribute</v-btn
         >
       </div>
