@@ -13,8 +13,6 @@
   </v-app>
 </template>
 
-<script setup></script>
-
 <style>
 .hover-line {
   border: 1px solid black;

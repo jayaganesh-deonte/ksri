@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     "vue3-carousel-nuxt",
     "@nuxt/fonts",
     "@pinia/nuxt",
+    "nuxt-marquee",
   ],
   app: {
     head: {

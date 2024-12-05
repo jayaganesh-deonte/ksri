@@ -1,5 +1,6 @@
 <template>
   <div>
+    <marqueeTexts />
     <HomeCarousel />
     <Dainandini />
     <HomeFounderIntro />
