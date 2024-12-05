@@ -2,14 +2,14 @@
   <div class="libraryHomeCard">
     <v-card class="ma-4 pa-4" elevation="0" rounded="0" color="transparent">
       <v-row>
-        <v-col>
+        <v-col cols="12" md="6" class="d-flex justify-center align-center">
           <!-- libraryImages -->
           <v-carousel
             hide-delimiters
             show-arrows-on-hover
             hide-delimiter-background
             continuous
-            :height="$device.isMobile ? 400 : ''"
+            :height="$device.isMobile ? '' : ''"
           >
             <v-carousel-item
               v-for="imageUrl in libraryImages"
@@ -18,7 +18,7 @@
             ></v-carousel-item>
           </v-carousel>
         </v-col>
-        <v-col>
+        <v-col cols="12" md="6">
           <div
             class="d-flex flex-column justify-space-around"
             style="height: 100%"
