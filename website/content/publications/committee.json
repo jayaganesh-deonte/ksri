@@ -1,0 +1,45 @@
+{
+    "Research Committee": [
+        {
+            "name": "Dr.K. Srinivasan"
+        },
+        {
+            "name": "Dr.V.Kameswari"
+        },
+        {
+            "name": "Dr.K.S.Balasubramanian"
+        },
+        {
+            "name": "Dr.T.V.Vasudeva"
+        },
+        {
+            "name": "Prof. R.Parthasarathy"
+        },
+        {
+            "name": "Dr. Sita Sundar Ram"
+        },
+        {
+            "name": "Dr.V.Yamuna Devi"
+        }
+    ],
+    "Editorial Committee": [
+        {
+            "name": "Dr.V.Kameswari"
+        },
+        {
+            "name": "Dr.K.S.Balasubramanian"
+        },
+        {
+            "name": "Dr.T.V.Vasudeva"
+        },
+        {
+            "name": "Dr.V.Yamuna Devi"
+        },
+        {
+            "name": "Dr.P.C.Muralidharan"
+        },
+        {
+            "name": "Dr.V.Preethi"
+        }
+    ]
+}

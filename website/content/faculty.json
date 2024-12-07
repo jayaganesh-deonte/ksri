@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Dr.V.Kameswari",
+        "designation": "Former Director",
+        "displayImage": "https://d30y75l38k1y9.cloudfront.net/upload/faculty/dr-v-kameswari.jpg",
+        "subtitle": "Areas of Specialisation: Sahitya, Language and Literature, Scientific literature",
+        "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on ancient sciences and varied fields of their interest.",
+        "mobile": "",
+        "email": "",
+        "profile": "https://d30y75l38k1y9.cloudfront.net/upload/media/Dr.V.Kameswari CV.docx"
+    },
+    {
+        "name": "Dr. K.S.Balasubramanian",
+        "designation": "Director",
+        "displayImage": "https://d30y75l38k1y9.cloudfront.net/upload/faculty/dr-k-s-balasubramanian.jpg",
+        "subtitle": "Areas of Specialisation: Yoga, Literature, Philosophy",
+        "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on Yoga and related fields.",
+        "mobile": "9884899716",
+        "mail": "sanskritkannan@yahoo.com",
+        "profile": "https://d30y75l38k1y9.cloudfront.net/upload/media/Dr.K.S.Balasubramanian.docx"
+    },
+    {
+        "name": "Dr. T.V. Vasudeva",
+        "designation": "Deputy Director",
+        "displayImage": "https://d30y75l38k1y9.cloudfront.net/upload/faculty/dr-t.-v.-vasudeva.jpg",
+        "subtitle": "Areas of Specialisation: Advaita, Vyakarana, Manuscriptology, Dharma Sastra.",
+        "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on Advaita, Vyakarana and related fields.",
+        "mobile": "98846 14473",
+        "mail": "renudeva@gmail.com",
+        "profile": "https://d30y75l38k1y9.cloudfront.net/upload/media/Dr.T.V.Vasudeva C .V.doc"
+    },
+    {
+        "name": "Dr. V. Yamuna Devi",
+        "designation": "Deputy Director/Associate Professor",
+        "displayImage": "https://d30y75l38k1y9.cloudfront.net/upload/faculty/dr-v-yamuna-devi.jpg",
+        "subtitle": "Areas of Specialisation: Lexicography, Vyakarana, Literature and Dharma Sastra.",
+        "description": "More than 15 years of teaching and research experience.\nGuided many M.Phil. and Ph.D Research Scholars to work on Ancient Indian Mathematics, Advaita and related fields.",
+        "mobile": "044-24985320",
+        "mail": "ksriphd@gmail.com",
+        "profile": "https://d30y75l38k1y9.cloudfront.net/upload/media/Dr.Yamuna C.V July 2024.pdf"
+    },
+    {
+        "name": "Dr. P.C. Muralidharan",
+        "designation": "Assistant Professor",
+        "displayImage": "https://d30y75l38k1y9.cloudfront.net/upload/faculty/murali.jpg",
+        "subtitle": "Areas of Specialisation: Sahitya, Vaishnavism",
+        "description": "20 years of teaching and research experience.",
+        "mobile": "9840135606",
+        "mail": "pcmuralidharan1981@gmail.com",
+        "profile": ""
+    },
+    {
+        "name": "Dr. V.Preethi",
+        "designation": "Associate Professor",
+        "displayImage": "https://d30y75l38k1y9.cloudfront.net/upload/faculty/preethi.jpg",
+        "subtitle": "Areas of Specialisation: Sahitya, Yoga and Manuscriptology",
+        "description": "More than 13 years of teaching and research experience.",
+        "mobile": "8248630164",
+        "mail": "preethimahesh.krishnan@gmail.com",
+        "profile": "https://d30y75l38k1y9.cloudfront.net/upload/media/Preethi Resume 5. 8. 24.pdf"
+    }
+]

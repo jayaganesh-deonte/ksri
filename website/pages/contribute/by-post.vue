@@ -18,12 +18,12 @@
       >
         <div class="text-h6 font-weight-bold">Send to</div>
         <div class="text-h5 font-weight-bold mb-4">
-          The Kuppuswami Sastri Research Institute,
+          {{ instituteDetails.instituteName }}
         </div>
 
         <div class="text-h6 text-secondary font-weight-bold my-2">Address</div>
         <div class="text-h6 my-2">
-          84, Thiru vi ka Road, Mylapore, Chennai 600 004.
+          {{ instituteDetails.address }}
         </div>
 
         <div
@@ -34,13 +34,13 @@
             <div class="text-secondary font-weight-bold text-h6 mx-4">
               Email
             </div>
-            <div class="text-h6">ksrinst@gmail.com</div>
+            <div class="text-h6">{{ instituteDetails.email }}</div>
           </div>
           <div class="d-flex justify-space-between align-center">
             <div class="text-secondary font-weight-bold text-h6 mx-4">
               Phone
             </div>
-            <div class="text-h6">044-24985320</div>
+            <div class="text-h6">{{ instituteDetails.phone }}</div>
           </div>
         </div>
       </v-card>
@@ -51,4 +51,10 @@
 
 <script setup>
 import contributeHeader from "./contributeHeader.vue";
+
+const instituteDetailsData = await queryContent(
+  "contribute",
+  "bypost"
+).findOne();
+const instituteDetails = instituteDetailsData.body[0];
 </script>

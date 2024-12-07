@@ -49,13 +49,9 @@
 <script setup>
 import contributeHeader from "./contributeHeader.vue";
 
-const bankDetails = {
-  "Our Name": "THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE.",
-  Bank: "Union Bank of India, Mylapore Branch.",
-  "S.B.Account No.": "395702010007408.",
-  "IFSC CODE": "UBIN0539571.",
-  "MICR NO.": "600026009",
-};
+const bankDetailsData = await queryContent("contribute", "bankinfo").findOne();
+
+const bankDetails = bankDetailsData.body[0];
 
 const bankDetailsKeys = Object.keys(bankDetails);
 </script>
