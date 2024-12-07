@@ -1,0 +1,86 @@
+import express, { Request, Response } from "express";
+import { documentClient } from "../db_services/dynamodbClient";
+import {
+  Milestone,
+  MilestoneDDB,
+  fromDynamoDB,
+  toDynamoDB,
+} from "../models/milestones";
+
+export const milestonesRoute = express.Router();
+
+// GET all milestones
+milestonesRoute.get("/milestones", async (req: Request, res: Response) => {
+  try {
+    const params = {
+      TableName: "ksri_admin_master_table",
+      FilterExpression: "entityType = :entityType",
+      ExpressionAttributeValues: {
+        ":entityType": "ENTITYTYPE#MILESTONE",
+      },
+    };
+
+    const { Items } = await documentClient.query(params);
+
+    const milestones =
+      Items?.map((item) => fromDynamoDB(item as MilestoneDDB)) || [];
+
+    res.json(milestones);
+  } catch (error) {
+    console.error("Error fetching milestones:", error);
+    res.status(500).json({ error: "Failed to fetch milestones" });
+  }
+});
+
+// POST create a milestone
+milestonesRoute.post(
+  "/milestones",
+  async (
+    req: Request<Record<string, never>, unknown, Milestone>,
+    res: Response
+  ) => {
+    try {
+      const milestone: Milestone = req.body;
+      const dynamoDBItem = toDynamoDB(milestone);
+
+      await documentClient.put({
+        TableName: "ksri_admin_master_table",
+        Item: dynamoDBItem,
+      });
+      res.status(201).json(milestone);
+    } catch (error) {
+      console.error("Error creating milestone:", error);
+      res.status(500).json({ error: "Failed to create milestone" });
+    }
+  }
+);
+
+// DELETE a milestone
+milestonesRoute.delete(
+  "/milestones/:title/:year",
+  async (req: Request<{ title: string; year: string }>, res: Response) => {
+    try {
+      const { title, year } = req.params;
+
+      // Create the same PK as in the toDynamoDB function
+      const pk = title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+      const sk = `MILESTONE#${year}`;
+
+      await documentClient.delete({
+        TableName: "ksri_admin_master_table",
+        Key: {
+          PK: pk,
+          SK: sk,
+        },
+      });
+
+      res.status(204).send();
+    } catch (error) {
+      console.error("Error deleting milestone:", error);
+      res.status(500).json({ error: "Failed to delete milestone" });
+    }
+  }
+);

@@ -1,7 +1,35 @@
 import express from "express";
-
 import { helloRoute } from "./HelloRoute";
+import { milestonesRoute } from "./milestones";
+import { projectRoute } from "./projects";
+import { traditionalScholarRoute } from "./TraditionalScholarRoute";
+
+import { foreignScholarRoute } from "./foreignScholars";
+import { studentRoute } from "./students";
+
+import { endownmentRoute } from "./contribute/endownments";
+import { eventRoute } from "./events/events";
+
+import { governingBodyMembersRoute } from "./governingBodyMembers";
+import { governingBodyMembersPastRouter } from "./governingBodyMembersPast";
+
+import { articleRoute } from "./library/articles";
+import { bookRoute } from "./library/books";
 
 export const routes = express.Router();
 
 routes.use(helloRoute);
+routes.use(milestonesRoute);
+routes.use(projectRoute);
+routes.use(traditionalScholarRoute);
+routes.use(foreignScholarRoute);
+routes.use(studentRoute);
+
+routes.use(endownmentRoute);
+routes.use(eventRoute);
+
+routes.use(governingBodyMembersRoute);
+routes.use(governingBodyMembersPastRouter);
+
+routes.use(articleRoute);
+routes.use(bookRoute);

@@ -4,4 +4,4 @@ sam init
 
 sam build
 
-sam deploy
+sam deploy --config-env dev

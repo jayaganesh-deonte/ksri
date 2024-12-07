@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+// $body-font-family: 'Merienda', cursive;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+$body-font-family: 'Tinos',
+serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+$heading-font-family: 'Dancing Script',
+cursive;
+
+#app {
+    font-family: $body-font-family;
+}
+
+#app-bar {
+    font-family: $body-font-family !important;
+}
+
+// add text tags with $body-font-family
+* {
+    font-family: $body-font-family !important;
+}
+
+.appBarMenuItem {
+    font-family: $body-font-family !important;
+    font-weight: 700;
+    font-size: 1.1rem !important;
+
+    // for anchor tag 
+    a {
+        color: white;
+    }
+}
+
+.defaultFont {
+    font-family: $body-font-family !important;
+}
+
+.appFooter {
+    font-family: $body-font-family !important;
+
+    a {
+        color: white;
+        font-family: $body-font-family !important;
+    }
+}
+
+.v-btn {
+    font-family: $body-font-family !important;
+    font-weight: 700;
+}
+
+.sectionTitle {
+    font-family: $body-font-family !important;
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #BF641F;
+    text-align: center;
+}
+
+.sectionSubtitle {
+    font-family: $body-font-family !important;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+
+}
+
+.sectionTitle2 {
+    font-family: $body-font-family !important;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #BF641F;
+    text-align: center;
+}
+
+.sectionSubtitle2 {
+    font-family: $body-font-family !important;
+    font-size: 1.5rem;
+    // center text
+    text-align: center;
+}
+
+.sectionTitle3 {
+    font-family: $body-font-family !important;
+    font-size: 1.5rem;
+    color: #BF641F;
+    font-weight: 700;
+    // center text
+    text-align: center;
+}
+
+.visionMissionTitle {
+    font-family: $body-font-family !important;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #09341C;
+
+    // add under to the div and align it to center
+    &::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 2px;
+        background-color: #09341C;
+        margin: 10px auto;
+    }
+}
+
+.horizontalLine {
+    width: var(--line-width, 100%);
+    height: var(--line-height, 2px);
+    background-color: #abbe88;
+    transform-origin: left;
+    animation: drawIn 1s ease-in-out forwards;
+}
+
+.horizontalLine::after {
+    content: "";
+    display: block;
+    width: var(--line-width, 100%);
+    height: var(--line-height, 2px);
+    background-color: #abbe88;
+    transform-origin: right;
+    animation: drawOut 1s ease-in-out forwards;
+}
+
+.horizontalLineSecondary {
+    width: var(--line-width, 100%);
+    height: 2px;
+    background-color: #bf641f;
+    transform-origin: left;
+    animation: drawIn 1s ease-in-out forwards;
+}
+
+.horizontalLineSecondary::after {
+    content: "";
+    display: block;
+    width: var(--line-width, 100%);
+    height: 2px;
+    background-color: #bf641f;
+    transform-origin: right;
+    animation: drawOut 1s ease-in-out forwards;
+}
+
+
+@keyframes drawIn {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes drawOut {
+    from {
+        transform: scaleX(1);
+    }
+
+    to {
+        transform: scaleX(0);
+    }
+}
+
+// heading with line before and after
+// .heading-with-line {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 15px;
+//     width: 100%;
+//     max-width: 300px;
+//     margin: 20px auto;
+// }
+
+// .heading-with-line::before,
+// .heading-with-line::after {
+//     content: "";
+//     height: 3px;
+//     background-color: #8b9876;
+//     /* Muted green color similar to image */
+//     flex-grow: 1;
+//     align-self: flex-end;
+// }
+
+.heading-with-line {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding-bottom: 8px;
+}
+
+.heading-with-line::before,
+.heading-with-line::after {
+    content: "";
+    height: 3px;
+    background-color: #8B9876;
+    flex-grow: 0.3;
+    margin-bottom: 6px;
+}
+
+.horizontalLineOnHoverAsUnderline {
+    position: relative;
+    display: inline-block;
+}
+
+.horizontalLineOnHoverAsUnderline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    /* Adjust this value to control distance from text */
+    width: 100%;
+    height: 1px;
+    /* Match your existing line height */
+    background-color: #abbe88;
+    /* Match your existing line color */
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.horizontalLineOnHoverAsUnderline:hover::after {
+    transform: scaleX(1);
+}
