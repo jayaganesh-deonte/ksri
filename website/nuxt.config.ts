@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@pinia/nuxt",
     "nuxt-marquee",
+    "@nuxt/content",
   ],
   app: {
     head: {

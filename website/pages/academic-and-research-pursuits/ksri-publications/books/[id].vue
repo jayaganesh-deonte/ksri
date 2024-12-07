@@ -94,7 +94,7 @@
 <script setup>
 import { bookStore } from "~/stores/bookStore";
 
-const storeBook = bookStore();
+const storeBook = await bookStore();
 
 // get book id from route
 const route = useRoute();
