@@ -14,6 +14,18 @@
 </template>
 
 <script setup>
+useSeoMeta({
+  title: "Modern Scholars",
+  description:
+    "The Kuppuswami Sastri Research Institute provides ample opportunities for scholars who are interested in higher studies.",
+  ogTitle: "Modern Scholars",
+  ogDescription:
+    "The Kuppuswami Sastri Research Institute provides ample opportunities for scholars who are interested in higher studies.",
+  twitterTitle: "Modern Scholars",
+  twitterDescription:
+    "The Kuppuswami Sastri Research Institute provides ample opportunities for scholars who are interested in higher studies.",
+});
+
 import scholarsHeader from "./scholarsHeader.vue";
 
 import ModernScholars from "./components/ModernScholars.vue";

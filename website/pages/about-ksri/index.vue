@@ -165,6 +165,12 @@
   </div>
 </template>
 
+<script setup>
+useSeoMeta({
+  title: "About KSRI",
+});
+</script>
+
 <style scoped>
 .sectionBody {
   font-size: 1.2em;

@@ -23,6 +23,15 @@
 </template>
 
 <script setup>
+useSeoMeta({
+  title: "Seminars & Conferences",
+  description: "Seminars & Conferences",
+  ogTitle: "Seminars & Conferences",
+  ogDescription: "Seminars & Conferences",
+  twitterTitle: "Seminars & Conferences",
+  twitterDescription: "Seminars & Conferences",
+});
+
 import eventCard from "~/components/events/eventCard.vue";
 
 const events = [

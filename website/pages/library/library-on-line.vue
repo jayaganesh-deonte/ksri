@@ -53,6 +53,19 @@
   </div>
 </template>
 
+<script setup>
+const description =
+  "KSRI has already digitalized the entire collection of palm leaf manuscripts and paper manuscripts. Around 1100 old and rare books have also been digitalized.";
+
+useSeoMeta({
+  title: "KSRI Library Online",
+  description: description,
+  ogTitle: "KSRI Library Online",
+  ogDescription: description,
+  twitterTitle: "KSRI Library Online",
+  twitterDescription: description,
+});
+</script>
 <style scoped>
 .onlineLibBg {
   background-image: url(https://d30y75l38k1y9.cloudfront.net/upload/library-online-fig-1.jpg);

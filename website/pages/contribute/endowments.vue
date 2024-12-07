@@ -99,6 +99,18 @@
 </template>
 
 <script setup>
+const description =
+  "KSRI has been fortunate to have many endowments created by well-wishers, with specific objectives. KSRI carries out these objectives year after year, to honour the pursuits and remembrances of the endowments, from the interest income of the endowed amounts. KSRI invites individuals and organizations to come forward with new endowments, help preserve our tradition and culture, as also serve some higher purpose of satisfaction to the person creating the endowments.";
+
+useSeoMeta({
+  title: "Endowments",
+  description: description,
+  ogTitle: "Endowments",
+  ogDescription: description,
+  twitterTitle: "Endowments",
+  twitterDescription: description,
+});
+
 import contributeHeader from "./contributeHeader.vue";
 const endownmentsData = await queryContent(
   "contribute",

@@ -105,6 +105,14 @@
 </template>
 
 <script setup>
+useSeoMeta({
+  title: "Academic and Research Pursuits",
+  description: "Academic and Research Pursuits of KSRI",
+  ogTitle: "Academic and Research Pursuits",
+  ogDescription: "Academic and Research Pursuits of KSRI",
+  twitterTitle: "Academic and Research Pursuits",
+  twitterDescription: "Academic and Research Pursuits of KSRI",
+});
 import displayProjects from "./components/displayProjects.vue";
 const projects = await queryContent("projects").findOne();
 

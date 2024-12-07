@@ -172,7 +172,19 @@
 </template>
 
 <script setup>
+const description =
+  "Mm. Prof. S. Kuppuswami Sastri was a Sanskrit Scholar of repute in India during his time and had devoted his life time to study of Sanskrit and Indology. He was a Professor, Editor and Author in Sanskrit Language and of Sanskrit heritage in other languages. He was a well know literary figure of yesteryears in India and abroad after India. KSRI was established in 1945 as a fitting tribute to him and his contributions to Sanskrit heritage and related Indology.";
+useSeoMeta({
+  title: "Kuppuswami Sastri Profile",
+  description: description,
+  ogTitle: "Kuppuswami Sastri Profile",
+  ogDescription: description,
+  twitterTitle: "Kuppuswami Sastri Profile",
+  twitterDescription: description,
+});
+
 import EditedAuthoredCard from "./EditedAuthoredCard.vue";
+
 const careerDetails = [
   {
     year: "1936-40",

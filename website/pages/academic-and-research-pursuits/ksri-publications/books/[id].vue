@@ -127,6 +127,15 @@ const getBookInfo = async () => {
     bookInfo.id = book.id;
   }
   bookInfoFetched.value = true;
+
+  useSeoMeta({
+    title: book.title,
+    description: book.subtitle,
+    ogTitle: book.title,
+    ogDescription: book.subtitle,
+    twitterTitle: book.title,
+    twitterDescription: book.subtitle,
+  });
 };
 
 onMounted(() => {

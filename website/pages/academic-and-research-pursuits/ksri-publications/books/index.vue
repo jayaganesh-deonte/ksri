@@ -80,6 +80,18 @@
 </template>
 
 <script setup>
+const description =
+  "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.";
+
+useSeoMeta({
+  title: "Books",
+  description: description,
+  ogTitle: "Books",
+  ogDescription: description,
+  twitterTitle: "Books",
+  twitterDescription: description,
+});
+
 import { bookStore } from "~/stores/bookStore";
 
 const storeBook = await bookStore();

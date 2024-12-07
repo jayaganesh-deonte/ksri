@@ -43,6 +43,18 @@
 </template>
 
 <script setup>
+const description =
+  "KSRI organises many events periodically from its inception till date";
+useSeoMeta({
+  title: "KSRI Events",
+  description: description,
+  ogTitle: "KSRI Events",
+  ogDescription: description,
+  twitterTitle: "KSRI Events",
+  twitterDescription: description,
+  twitterCard: "summary",
+});
+
 import eventCard from "~/components/events/eventCard.vue";
 
 const eventsData = await queryContent("events", "events").findOne();

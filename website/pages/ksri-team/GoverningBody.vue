@@ -17,6 +17,17 @@
   </v-card>
 </template>
 
+<script setup>
+useSeoMeta({
+  title: "Governing Body",
+  description: "Governing Body",
+  ogTitle: "Governing Body",
+  ogDescription: "Governing Body",
+  twitterTitle: "Governing Body",
+  twitterDescription: "Governing Body",
+});
+</script>
+
 <script>
 export default {
   props: {

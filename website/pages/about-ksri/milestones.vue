@@ -17,6 +17,15 @@
 </template>
 
 <script setup>
+useSeoMeta({
+  title: "Milestones",
+  description: "Milestones of KSRI",
+  ogTitle: "Milestones",
+  ogDescription: "Milestones of KSRI",
+  twitterTitle: "Milestones",
+  twitterDescription: "Milestones of KSRI",
+});
+
 // get milestones from content/milestones.json
 const milestonesData = await queryContent("milestones").findOne();
 

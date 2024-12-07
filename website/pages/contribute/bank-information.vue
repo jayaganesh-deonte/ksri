@@ -47,6 +47,15 @@
 </template>
 
 <script setup>
+useSeoMeta({
+  title: "Bank Information",
+  description: "Bank Information",
+  ogTitle: "Bank Information",
+  ogDescription: "Bank Information",
+  twitterTitle: "Bank Information",
+  twitterDescription: "Bank Information",
+});
+
 import contributeHeader from "./contributeHeader.vue";
 
 const bankDetailsData = await queryContent("contribute", "bankinfo").findOne();

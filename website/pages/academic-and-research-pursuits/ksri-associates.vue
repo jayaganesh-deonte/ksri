@@ -39,3 +39,17 @@
     </v-row>
   </div>
 </template>
+
+<script setup>
+useSeoMeta({
+  title: "KSRI Associates",
+  description:
+    "The KSRI is associated with many Indian Organizations & Foreign Universities",
+  ogTitle: "KSRI Associates",
+  ogDescription:
+    "The KSRI is associated with many Indian Organizations & Foreign Universities",
+  twitterTitle: "KSRI Associates",
+  twitterDescription:
+    "The KSRI is associated with many Indian Organizations & Foreign Universities",
+});
+</script>

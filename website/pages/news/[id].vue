@@ -94,6 +94,15 @@ const fetchNews = async () => {
 
     Object.assign(news, response);
     fetchedNews.value = true;
+
+    useSeoMeta({
+      title: news.heading,
+      description: news.text,
+      ogTitle: news.heading,
+      ogDescription: news.text,
+      twitterTitle: news.heading,
+      twitterDescription: news.text,
+    });
   } catch (error) {
     console.error(error);
     newsNotFound.value = true;

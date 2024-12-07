@@ -64,6 +64,18 @@
 </template>
 
 <script setup>
+const description =
+  "The Scholars of KSRI have been actively participating in various Conferences, Seminars and workshops by presenting Reasearch papers on Indology. They are also contributing Research articles to Various Journals on different topics of Indic Knowledge systems. Some of them are -";
+
+useSeoMeta({
+  title: "Research Articles | KSRI",
+  description: description,
+  ogTitle: "Research Articles | KSRI",
+  ogDescription: description,
+  twitterTitle: "Research Articles | KSRI",
+  twitterDescription: description,
+});
+
 const researchArticlesData = await queryContent("researcharticles").findOne();
 
 const researchArticles = researchArticlesData.body;

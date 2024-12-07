@@ -34,6 +34,17 @@
 </template>
 
 <script setup>
+const description =
+  "The uniqueness of the Institute's library is that it preserves the precious personal collections of great savants such as Dr.S.Radhakrishnan, Prof. Hiriyanna, Dr.V.Raghavan and others which are hardly available elsewhere.";
+useSeoMeta({
+  title: "KSRI Books",
+  description: description,
+  ogTitle: "KSRI Books",
+  ogDescription: description,
+  twitterTitle: "KSRI Books",
+  twitterDescription: description,
+});
+
 import LibraryHeader from "../LibraryHeader.vue";
 
 const booksData = await queryContent("library", "books").findOne();

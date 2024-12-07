@@ -50,6 +50,14 @@
 </template>
 
 <script setup>
+useSeoMeta({
+  title: "Contribute By Post",
+  description: "Contribute By Post",
+  ogTitle: "Contribute By Post",
+  ogDescription: "Contribute By Post",
+  twitterTitle: "Contribute By Post",
+});
+
 import contributeHeader from "./contributeHeader.vue";
 
 const instituteDetailsData = await queryContent(

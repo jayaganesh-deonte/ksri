@@ -65,6 +65,15 @@
 </template>
 
 <script setup>
+useSeoMeta({
+  title: "Foreign Scholars | KSR",
+  description: "Foreign Scholars | KSR",
+  ogTitle: "Foreign Scholars | KSR",
+  ogDescription: "Foreign Scholars | KSR",
+  twitterTitle: "Foreign Scholars | KSR",
+  twitterDescription: "Foreign Scholars | KSR",
+});
+
 import scholarsHeader from "./scholarsHeader.vue";
 
 const foreignscholarsData = await queryContent(

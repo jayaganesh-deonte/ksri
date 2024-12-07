@@ -23,6 +23,15 @@
 </template>
 
 <script setup>
+useSeoMeta({
+  title: "KSRI News",
+  description: "KSRI News",
+  ogTitle: "KSRI News",
+  ogDescription: "KSRI News",
+  twitterTitle: "KSRI News",
+  twitterDescription: "KSRI News",
+});
+
 import NewsCard from "~/components/news/NewsCard.vue";
 
 import { newsStore } from "~/stores/newsStore";

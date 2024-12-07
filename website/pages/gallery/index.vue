@@ -23,6 +23,15 @@
 </template>
 
 <script setup>
+useSeoMeta({
+  title: "Gallery",
+  description: "Gallery",
+  ogTitle: "Gallery",
+  ogDescription: "Gallery",
+  twitterTitle: "Gallery",
+  twitterDescription: "Gallery",
+});
+
 import galleryCard from "~/components/gallery/galleryCard.vue";
 
 const galleryData = await queryContent("gallery").findOne();

@@ -123,6 +123,17 @@
 </template>
 
 <script setup>
+const description =
+  "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.";
+useSeoMeta({
+  title: "KSRI Publications",
+  description: description,
+  ogTitle: "KSRI Publications",
+  ogDescription: description,
+  twitterTitle: "KSRI Publications",
+  twitterDescription: description,
+});
+
 import publicationForSale from "../components/publicationForSale.vue";
 const publicationCommittee = await queryContent(
   "publications",

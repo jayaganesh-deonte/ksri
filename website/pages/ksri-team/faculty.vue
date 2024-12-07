@@ -84,6 +84,15 @@
 </template>
 
 <script setup>
+useSeoMeta({
+  title: "Faculty",
+  description: "Faculty",
+  ogTitle: "Faculty",
+  ogDescription: "Faculty",
+  twitterTitle: "Faculty",
+  twitterDescription: "Faculty",
+});
+
 const facultyData = await queryContent("faculty").findOne();
 const faculty = facultyData.body;
 
