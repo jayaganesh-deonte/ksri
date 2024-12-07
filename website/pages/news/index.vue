@@ -15,7 +15,7 @@
           sm="12"
           md="4"
         >
-          <NewsCard :item="item" />
+          <NewsCard :item="item" :index="index" />
         </v-col>
       </v-row>
     </div>
@@ -27,5 +27,5 @@ import NewsCard from "~/components/news/NewsCard.vue";
 
 import { newsStore } from "~/stores/newsStore";
 
-const storeNews = newsStore();
+const storeNews = await newsStore();
 </script>

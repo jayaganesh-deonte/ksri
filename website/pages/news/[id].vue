@@ -66,7 +66,7 @@
 <script setup>
 import { newsStore } from "~/stores/newsStore";
 
-const storeNews = newsStore();
+const storeNews = await newsStore();
 
 const props = defineProps({
   news: {

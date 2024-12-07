@@ -50,6 +50,7 @@
 // props item
 const { item } = defineProps({
   item: Object,
+  index: Number,
 });
 
 let isHovering = ref(false);
