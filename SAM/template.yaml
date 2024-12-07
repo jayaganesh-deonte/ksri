@@ -1,0 +1,442 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: SAM template for KSRI Admin
+Parameters:
+  Prefix:
+    Description: Prefix to be added to resources
+    Type: String
+  UserPoolDomain:
+    Description: domain for hosted ui
+    Type: String
+  useCustomDomainForUi:
+    Type: String
+    AllowedValues:
+      - "true"
+      - "false"
+    Default: "true"
+  UiCustomDomain:
+    Description: domain for ui distribution
+    Type: String
+Conditions:
+  useCustomDomainForUiCondition: !Equals
+    - !Ref useCustomDomainForUi
+    - "true"
+Resources:
+  expressAPI:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${Prefix}_admin_api
+      CodeUri: express-api/
+      Handler: index.handler
+      Timeout: 30
+      MemorySize: 256
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      FunctionUrlConfig:
+        AuthType: NONE
+        Cors:
+          AllowOrigins:
+            - "*"
+          AllowMethods:
+            - "*"
+          AllowHeaders:
+            - "*"
+      ReservedConcurrentExecutions: 5
+      Environment:
+        Variables:
+          DDB_TABLE_NAME: !Ref masterTable
+          POWERTOOLS_SERVICE_NAME: express-api
+          POWERTOOLS_METRICS_NAMESPACE: ksriadmin
+          LOG_LEVEL: INFO
+          USER_POOL_ID: !Ref CognitoUserPool
+          CLIENT_ID: !Ref ProdCognitoUserPoolClient
+          # ALLOWED_URL: !If
+          #   - useCustomDomainForUiCondition
+          #   - !Ref UiCustomDomain
+          #   - !Sub https://${UiDistribution.DomainName}
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref masterTable
+
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        EntryPoints:
+          - index.ts
+
+  masterTable:
+    Type: AWS::DynamoDB::Table
+    DeletionPolicy: Retain
+    Properties:
+      TableName: !Sub ${Prefix}_admin_master_table
+      AttributeDefinitions:
+        - AttributeName: PK
+          AttributeType: S
+        - AttributeName: SK
+          AttributeType: S
+      KeySchema:
+        - AttributeName: PK
+          KeyType: HASH
+        - AttributeName: SK
+          KeyType: RANGE
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+      BillingMode: PAY_PER_REQUEST
+
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: !Sub ${Prefix}-admin-store
+      CorsConfiguration:
+        CorsRules:
+          - AllowedHeaders:
+              - "*"
+            AllowedMethods:
+              - PUT
+              - POST
+              - DELETE
+              - GET
+            AllowedOrigins:
+              - "*"
+            ExposedHeaders: []
+
+  S3BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref S3Bucket
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Action:
+              - s3:GetObject
+            Effect: Allow
+            Resource: !Join
+              - ""
+              - - "arn:aws:s3:::"
+                - !Ref S3Bucket
+                - /*
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Condition:
+              StringEquals:
+                AWS:SourceArn: !Sub arn:aws:cloudfront::${AWS::AccountId}:distribution/${imageDistribution}
+
+  S3BucketForLogs:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: !Sub ${Prefix}-image-distribution-access-logs
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerPreferred
+      AccessControl: AwsExecRead
+      LifecycleConfiguration:
+        Rules:
+          - Id: DeleteOldObjects
+            Status: Enabled
+            ExpirationInDays: 365
+            Prefix: "" # Apply to all objects in the bucket
+
+  imageDistribution:
+    Type: AWS::CloudFront::Distribution
+    DependsOn:
+      - S3Bucket
+      - S3BucketForLogs
+    Properties:
+      DistributionConfig:
+        Origins:
+          - DomainName: !GetAtt S3Bucket.DomainName
+            Id: myS3Origin
+            OriginAccessControlId: !Ref cloudfrontoriginaccessControl
+            S3OriginConfig: {}
+        Enabled: "true"
+        Comment: !Sub image distribution for ${S3Bucket}
+        HttpVersion: http2and3
+        DefaultCacheBehavior:
+          ForwardedValues:
+            QueryString: "false"
+            Cookies:
+              Forward: none
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          TargetOriginId: myS3Origin
+          ViewerProtocolPolicy: redirect-to-https
+        PriceClass: PriceClass_200
+        Logging:
+          IncludeCookies: "false"
+          Bucket: !GetAtt S3BucketForLogs.DomainName
+          Prefix: cloudfront-access-logs/
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: "true"
+
+  cloudfrontoriginaccessControl:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Name: !GetAtt S3Bucket.DomainName
+        OriginAccessControlOriginType: s3
+        SigningBehavior: no-override
+        SigningProtocol: sigv4
+
+  CognitoUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: !Sub ${Prefix}_admin_user_pool
+      AdminCreateUserConfig:
+        AllowAdminCreateUserOnly: true
+      MfaConfiguration: OPTIONAL
+      EnabledMfas:
+        - SOFTWARE_TOKEN_MFA
+
+  CognitoAdminGroup:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      GroupName: !Sub ${Prefix}_admin_group
+      UserPoolId: !Ref CognitoUserPool
+
+  CognitoReadOnlyGroup:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      GroupName: !Sub ${Prefix}_read_only_group
+      UserPoolId: !Ref CognitoUserPool
+
+  CognitoSuperAdminGroup:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      GroupName: !Sub ${Prefix}_super_admin_group
+      UserPoolId: !Ref CognitoUserPool
+
+  CognitoUserPoolDomain:
+    Type: AWS::Cognito::UserPoolDomain
+    Properties:
+      Domain: !Ref UserPoolDomain
+      UserPoolId: !Ref CognitoUserPool
+  CognitoUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: !Sub ${Prefix}_admin_app_client
+      UserPoolId: !Ref CognitoUserPool
+      CallbackURLs:
+        - http://localhost:3000/
+      LogoutURLs:
+        - http://localhost:3000/
+      AllowedOAuthFlowsUserPoolClient: true
+      AllowedOAuthScopes:
+        - email
+        - phone
+        - openid
+        - profile
+        - aws.cognito.signin.user.admin
+      AllowedOAuthFlows:
+        - code
+      SupportedIdentityProviders:
+        - COGNITO
+  UserPoolHostedUI:
+    Type: AWS::Cognito::UserPoolUICustomizationAttachment
+    DependsOn:
+      - CognitoUserPoolDomain
+      - CognitoUserPoolClient
+    Properties:
+      ClientId: !Ref CognitoUserPoolClient
+      UserPoolId: !Ref CognitoUserPool
+      CSS: |-
+        .logo-customizable { max-width: 60%; max-height: 30%; }
+        .banner-customizable { padding: 25px 0px 25px 0px; background-color: #F3F9FA; }
+        .label-customizable { font-weight: 400; }
+        .textDescription-customizable { padding-top: 10px; padding-bottom: 10px; display: block; font-size: 16px; }
+        .idpDescription-customizable { padding-top: 10px; padding-bottom: 10px; display: block; font-size: 16px; }
+        .legalText-customizable { color: #747474; font-size: 11px; }
+        .submitButton-customizable { font-size: 14px; font-weight: bold; margin: 20px 0px 10px 0px; height: 40px; width: 100%; color: #fff; background-color: #5AB55E; }
+        .submitButton-customizable:hover { color: #fff; background-color: #16A583; }
+        .errorMessage-customizable { padding: 5px; font-size: 14px; width: 100%; background: #F5F5F5; border: 2px solid #D64958; color: #D64958; }
+        .inputField-customizable { width: 100%; height: 34px; color: #555; background-color: #fff; border: 1px solid #ccc; }
+        .inputField-customizable:focus { border-color: #66afe9; outline: 0; }
+        .idpButton-customizable { height: 40px; width: 100%; width: 100%; text-align: center; margin-bottom: 15px; color: #fff; background-color: #5bc0de; border-color: #46b8da; }
+        .idpButton-customizable:hover { color: #fff; background-color: #31b0d5; }
+        .socialButton-customizable { border-radius: 2px; height: 40px; margin-bottom: 15px; padding: 1px; text-align: left; width: 100%; }
+        .redirect-customizable { text-align: center; }
+        .passwordCheck-notValid-customizable { color: #DF3312; }
+        .passwordCheck-valid-customizable { color: #19BF00; }
+        .background-customizable { /* background-color: #fff; */ box-shadow: 0px 2px 20px rgba(0, 0, 0, 20%), 0 0 0 10000px white; }
+
+  ProdCognitoUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: !Sub ${Prefix}_prod_app_client
+      UserPoolId: !Ref CognitoUserPool
+      CallbackURLs:
+        - !If
+          - useCustomDomainForUiCondition
+          - !Ref UiCustomDomain
+          - !Sub https://${UiDistribution.DomainName}/
+      LogoutURLs:
+        - !If
+          - useCustomDomainForUiCondition
+          - !Ref UiCustomDomain
+          - !Sub https://${UiDistribution.DomainName}/
+      AllowedOAuthFlowsUserPoolClient: true
+      AllowedOAuthScopes:
+        - email
+        - phone
+        - openid
+        - profile
+        - aws.cognito.signin.user.admin
+      AllowedOAuthFlows:
+        - code
+      SupportedIdentityProviders:
+        - COGNITO
+  ProdUserPoolHostedUI:
+    Type: AWS::Cognito::UserPoolUICustomizationAttachment
+    DependsOn:
+      - CognitoUserPoolDomain
+      - ProdCognitoUserPoolClient
+    Properties:
+      ClientId: !Ref ProdCognitoUserPoolClient
+      UserPoolId: !Ref CognitoUserPool
+      CSS: |-
+        .logo-customizable { max-width: 60%; max-height: 30%; }
+        .banner-customizable { padding: 25px 0px 25px 0px; background-color: #F3F9FA; }
+        .label-customizable { font-weight: 400; }
+        .textDescription-customizable { padding-top: 10px; padding-bottom: 10px; display: block; font-size: 16px; }
+        .idpDescription-customizable { padding-top: 10px; padding-bottom: 10px; display: block; font-size: 16px; }
+        .legalText-customizable { color: #747474; font-size: 11px; }
+        .submitButton-customizable { font-size: 14px; font-weight: bold; margin: 20px 0px 10px 0px; height: 40px; width: 100%; color: #fff; background-color: #5AB55E; }
+        .submitButton-customizable:hover { color: #fff; background-color: #16A583; }
+        .errorMessage-customizable { padding: 5px; font-size: 14px; width: 100%; background: #F5F5F5; border: 2px solid #D64958; color: #D64958; }
+        .inputField-customizable { width: 100%; height: 34px; color: #555; background-color: #fff; border: 1px solid #ccc; }
+        .inputField-customizable:focus { border-color: #66afe9; outline: 0; }
+        .idpButton-customizable { height: 40px; width: 100%; width: 100%; text-align: center; margin-bottom: 15px; color: #fff; background-color: #5bc0de; border-color: #46b8da; }
+        .idpButton-customizable:hover { color: #fff; background-color: #31b0d5; }
+        .socialButton-customizable { border-radius: 2px; height: 40px; margin-bottom: 15px; padding: 1px; text-align: left; width: 100%; }
+        .redirect-customizable { text-align: center; }
+        .passwordCheck-notValid-customizable { color: #DF3312; }
+        .passwordCheck-valid-customizable { color: #19BF00; }
+        .background-customizable { /* background-color: #fff; */ box-shadow: 0px 2px 20px rgba(0, 0, 0, 20%), 0 0 0 10000px white; }
+
+  CognitoIdentityPool:
+    Type: AWS::Cognito::IdentityPool
+    Properties:
+      IdentityPoolName: !Sub ${Prefix}_ksriadmin_identity_pool
+      AllowUnauthenticatedIdentities: false
+      CognitoIdentityProviders:
+        - ClientId: !Ref CognitoUserPoolClient
+          ProviderName: !GetAtt CognitoUserPool.ProviderName
+        - ClientId: !Ref ProdCognitoUserPoolClient
+          ProviderName: !GetAtt CognitoUserPool.ProviderName
+  CognitoIdentityPoolRoleAttachment:
+    Type: AWS::Cognito::IdentityPoolRoleAttachment
+    Properties:
+      IdentityPoolId: !Ref CognitoIdentityPool
+      Roles:
+        authenticated: !GetAtt CognitoAuthRole.Arn
+  CognitoAuthRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub ${Prefix}_admin_CognitoAuthRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: cognito-identity.amazonaws.com
+            Action:
+              - sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                cognito-identity.amazonaws.com:aud: !Ref CognitoIdentityPool
+      Policies:
+        - PolicyName: CognitoAuthPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - mobileanalytics:PutEvents
+                  - cognito-sync:*
+                  - cognito-identity:*
+                Resource: "*"
+              - Effect: Allow
+                Action:
+                  - dynamodb:*
+                Resource:
+                  - !GetAtt masterTable.Arn
+                  - !Sub ${masterTable.Arn}/index/*
+              - Effect: Allow
+                Action:
+                  - s3:*
+                Resource:
+                  - !GetAtt S3Bucket.Arn
+                  - !Sub ${S3Bucket.Arn}/*
+
+  AmplifyApp:
+    Type: AWS::Amplify::App
+    Properties:
+      Name: !Sub ${Prefix}-admin-amplify
+  UiDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+          - ConnectionAttempts: 3
+            ConnectionTimeout: 10
+            CustomOriginConfig:
+              HTTPPort: 80
+              HTTPSPort: 443
+              OriginKeepaliveTimeout: 5
+              OriginProtocolPolicy: https-only
+              OriginReadTimeout: 30
+              OriginSSLProtocols:
+                - TLSv1.2
+            DomainName: !Sub prod.${AmplifyApp.DefaultDomain}
+            Id: uiOrigin
+            OriginPath: ""
+        DefaultCacheBehavior:
+          ForwardedValues:
+            QueryString: "false"
+            Cookies:
+              Forward: none
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          TargetOriginId: uiOrigin
+          ViewerProtocolPolicy: redirect-to-https
+        Comment: !Sub ${Prefix} ksriadmin amplify
+        PriceClass: PriceClass_200
+        Enabled: true
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: true
+Outputs:
+  UserPoolId:
+    Value: !Ref CognitoUserPool
+  LocalAppClientId:
+    Value: !Ref CognitoUserPoolClient
+  ProdAppClientId:
+    Value: !Ref ProdCognitoUserPoolClient
+  IdentityPoolId:
+    Value: !Ref CognitoIdentityPool
+  Domain:
+    Value: !Sub ${CognitoUserPoolDomain}.auth.${AWS::Region}.amazoncognito.com
+  S3Bucket:
+    Value: !Ref S3Bucket
+  DDBName:
+    Value: !Ref masterTable
+  AmplifyApp:
+    Value: !Sub https://prod.${AmplifyApp.DefaultDomain}/
+  UiDistribution:
+    Value: !GetAtt UiDistribution.DomainName
+  imageDistribution:
+    Value: !GetAtt imageDistribution.DomainName
+  expressAPIUrl:
+    Value: !GetAtt expressAPIUrl.FunctionUrl
