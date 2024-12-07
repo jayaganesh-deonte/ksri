@@ -10,7 +10,7 @@
         class="d-flex justify-center my-8"
         :class="$device.isMobile ? 'flex-wrap' : 'flex-row'"
       >
-        <div v-for="(category, index) in eventCategories" :key="index">
+        <div v-for="(category, index) in storeEvents.categories" :key="index">
           <v-btn
             color="primary"
             rounded="pill"
@@ -25,7 +25,7 @@
     </div>
 
     <!-- display events -->
-    <v-row>
+    <v-row v-if="selectedEvents.length > 0">
       <v-col
         v-for="(event, index) in selectedEvents"
         :key="index"
@@ -33,12 +33,13 @@
         sm="12"
         md="6"
         data-aos="fade-up"
-        :data-aos-delay="index * 500"
+        :data-aos-delay="index * 10"
       >
         <!-- create two rows,in 2nd row have a button saying "Read More", in 1st row add two column, 1st col display event date  in format 25 Nov 2025 in 2nd col display event title and subtitle and category-->
         <event-card :event="event" />
       </v-col>
     </v-row>
+    <div v-else class="text-h6">No events found</div>
   </div>
 </template>
 
@@ -57,18 +58,11 @@ useSeoMeta({
 
 import eventCard from "~/components/events/eventCard.vue";
 
-const eventsData = await queryContent("events", "events").findOne();
+import { eventStore } from "~/stores/eventStore";
 
-const events = eventsData.body;
+const storeEvents = await eventStore();
 
-const eventCategoriesData = await queryContent(
-  "events",
-  "categories"
-).findOne();
-
-const eventCategories = eventCategoriesData.body;
-
-// let activeCategory = ref("Upcoming");
+const events = storeEvents.events;
 
 let activeCategory = ref("All");
 

@@ -25,9 +25,10 @@
                 rounded="0"
               >
                 <v-card-text class="text-center">
-                  <div class="text-h6">{{ formatDate(event.date)[0] }}</div>
+                  <!-- <div class="text-h6">{{ formatDate(event.date)[0] }}</div>
                   <div class="text-h6">{{ formatDate(event.date)[1] }}</div>
-                  <div class="text-h6">{{ formatDate(event.date)[2] }}</div>
+                  <div class="text-h6">{{ formatDate(event.date)[2] }}</div> -->
+                  <div class="text-h6">{{ formatDate(event.date) }}</div>
                 </v-card-text>
               </v-card>
             </v-col>
@@ -52,7 +53,7 @@
                 style="--line-width: 15%"
               ></div>
 
-              <div class="text-h6 text-start pa-0 mt-5">
+              <div class="text-start pa-0 mt-5">
                 {{ event.description }}
               </div>
               <v-chip-group class="mt-2">
@@ -77,6 +78,7 @@
                 text
                 @click="onReadMore"
                 rounded="pill"
+                :to="`/events/${event.id}`"
               >
                 Read More
               </v-btn>
@@ -110,14 +112,14 @@ export default {
   },
   methods: {
     formatDate(dateString) {
-      const [day, month, year] = dateString.split("/");
-      const date = new Date(year, month - 1, day);
-
-      const formattedDay = date.getDate();
-      const formattedMonth = date.toLocaleString("en-US", { month: "short" });
-      const formattedYear = date.getFullYear();
-
-      return [formattedDay, formattedMonth, formattedYear];
+      // "2024-10-25"
+      const date = new Date(dateString);
+      // return 25 Oct 2024
+      return date.toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      });
     },
     onReadMore() {
       this.$emit("read-more", this.event);

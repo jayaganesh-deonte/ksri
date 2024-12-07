@@ -1,62 +1,1021 @@
 [
     {
-        "title": "National Seminar on Bhakti Literature In Sanskrit and Tamil - DAY 2",
-        "subTitle": "National Seminar on Bhakti Literature In Sanskrit and Tamil – DAY 2",
-        "description": "As a Part of the 75th Anniversary, The KSRI conducted a National Seminar on Bhakti Literature In Sanskrit and Tamil\" on 24th and 25th of November 2023 in collaboration with The Samskrita Academy, Madras.",
-        "category": [
-            "Seminars"
-        ],
-        "Venue": "Sri Chandrasekharendra Saraswati Mandapam, KSRI",
-        "date": "25/11/2024",
-        "additionalInformation": ""
-    },
-    {
-        "title": "Dr. Lakshmi Kumari and Varun Krishna Endowment",
-        "subTitle": "PĀDUKĀ SAHASRAM OF SRI VEDANTA DESIKA - \"VEDANTA DESIKA DAY\"",
-        "description": "Dr. P.C. Muralidharan (Asst. Prof., The KSRI)",
-        "category": [
-            "Endowment Lectures"
-        ],
-        "date": "24/08/2024",
-        "time": "10:00 AM",
-        "Venue": "Sri Chandrasekharendra Saraswati Madapam, The KSRI",
-        "images": []
-    },
-    {
-        "title": "National Workshop on Ancient Indian Mathematics and Astronomy",
-        "subTitle": "National Workshop on Ancient Indian Mathematics and Astronomy – 26 & 27 of July 2024",
-        "description": "The Kuppuswami Sastri Research Institute is celebrating its 75th anniversary. To commemorate this milestone the institute organized a Two day Workshop Ancient Indian Mathematics and Astronomy on 26th & 27th of July 2024",
-        "Venue": "Sri Chandrasekharendra Saraswati Madapam, The KSRI",
-        "date": "26/07/2024",
-        "additionalInformation": "",
-        "category": [
-            "Workshop"
-        ],
-        "images": []
-    },
-    {
-        "title": "SYNOPSIS PRESENTATION",
-        "subTitle": "Sredhi Vyavahara -Progressions in Ancient Indian Mathematics",
-        "description": "Ph.D. candidate Ms. B. Vijayalakshmi, under the supervision of Dr. V. Yamuna Devi, Deputy Director, The KSRI, submitted her synopsis on \"Sredhi Vyavahara -Progressions in Ancient Indian Mathematics\" at the Institute premises on 20th August 2024.",
-        "category": [
-            "Synopsis",
-            "Viva"
-        ],
-        "Venue": "Sri Chandrasekharendra Saraswati Madapam, The KSRI",
-        "date": "20/08/2024",
-        "additionalInformation": "",
-        "images": []
-    },
-    {
         "title": "NARASIMHACHARI ENDOWMENT - SANSKRIT RECITATION COMPETITION",
-        "subTitle": "NARASIMHACHARI ENDOWMENT - SANSKRIT RECITATION COMPETITION",
-        "description": "Under the Narasimhachari endownment, The Kuppuswami Sastri Research Institute conducted a Sanskrit Sloka recitation Competition on 25th October 2024. Around 40 students from various city schools actively participated in the competition and recited 20 shlokas from either SUBRAMHANYA BHUJANGAM or SAUNDARYA LAHARI.",
+        "subtitle": "NARASIMHACHARI ENDOWMENT 2024 - SANSKRIT RECITATION COMPETITION",
+        "description": "\nUnder the Narasimhachari endownment, The Kuppuswami Sastri Research Institute conducted a Sanskrit Sloka recitation Competition  on 25th October 2024. Around 40 students from various city schools actively participated  in the competition and recited 20 shlokas from either SUBRAMHANYA BHUJANGAM or  SAUNDARYA LAHARI.\n",
         "category": [
             "Events"
         ],
-        "Venue": "Sri Chandrasekharendra Saraswati Madapam, The KSRI",
-        "date": "25/10/2024",
-        "additionalInformation": "",
-        "images": []
+        "venue": "Sri Chandrasekharendra Saraswati Madapam, The KSRI",
+        "date": "2024-10-25",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/whatsapp-image-2024-10-25-at-4.00.17-pm.jpg",
+                "alt": "NARASIMHACHARI ENDOWMENT 2024 - SANSKRIT RECITATION COMPETITION"
+            }
+        ],
+        "id": "-7873923980693135706"
+    },
+    {
+        "title": "TRAYI",
+        "subtitle": "KSRI Faculty members invited as resource persons at TRAYI - A three-day event conducted by The Madras Sanskrit College",
+        "description": "\nOn day 1 Session I of Palm-leaf reading, Dr. T.V. Vasudeva, Dy. Director, The KSRI  delivered a lecture on Introduction of Manuscript & Script Knowledge followed by a theory and practical presentation on Handling & Preserving the manuscripts by Smt. J. Lalitha, Librarian, KSRI, in Session III.\n\nDr. K.S. Balasubramanian, Director, KSRI was invited as the Chief Guest for the Valedictory function of Day 1 of TRAYI and delivered the valedictory address.\n\nEnlightening the traditional Vedic students about Cataloguing in libraries, on Day 3, Session I of TRAYI, Smt. J. Lalitha spoke about Ancient Subject Classification System & Cataloguing Card Entries\n",
+        "category": [
+            "Events"
+        ],
+        "venue": "SRI ABHINAVA VIDYA THEERTHA KRIPA",
+        "date": "2024-10-22",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/whatsapp-image-2024-10-29-at-3.44.00-pm-(1).jpg",
+                "alt": "KSRI Faculty members invited as resource persons at TRAYI - A three-day event conducted by The Madras Sanskrit College"
+            }
+        ],
+        "id": "7674437992099247347"
+    },
+    {
+        "title": "75th ANNIVERSARY CELEBRATIONS -  VALEDICTORY FUNCTION",
+        "subtitle": null,
+        "description": "\nThe Kuppuswami Sastri Research Institute is celebrating its 75th anniversary. To commemorate this milestone the Institute organized various National Workshops, Seminars and Lectures on various subjects like Bhakti, Art& Architecture, Sanskrit Literature, Ancient Indian Mathematics and Astronomy. \nThe Valedictory Function of the 75th Anniversary Celebrations will be celebrated on 13th Sepetember, 2024 at 5.00pm at The Madras Sanskrit College Premises.\n\nDr. N. Gopalaswami IAS(Retd.) will preside over the function and release the book \u015aE\u1e62ASAMHIT\u0100 and honor the prominent donors.\n\nDr. S. Ramaratnam , Chancellor, Jagadguru Kripalu University, Odisha will deliver the Valedictory address.\n",
+        "category": [
+            "Upcoming"
+        ],
+        "venue": "Sri Chandrasekharendra Saraswati Madapam, The KSRI",
+        "date": "2024-09-13",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/75th-year-valedictory-function-green-b_page-0001.jpg",
+                "alt": "75th ANNIVERSARY CELEBRATIONS -  VALEDICTORY FUNCTION"
+            }
+        ],
+        "id": "6271868645783029390"
+    },
+    {
+        "title": "NAVALPAKKAM  MIMISAL  NARASIMHA  PATRACHARIAR  &   JUSTICE N. RAJAGOPALA  AYYANGAR  ENDOWMENTS",
+        "subtitle": "Importance of Jurisprudence\u00a0in an Evolving Society",
+        "description": "\nSpeaker: Hon'ble Thiru. Justice R. Mahadevan  (Judge, Madras High Court)\n\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "Webinar -  https:/tksr.webex.com/join/KSRI",
+        "date": "2021-12-04",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/screenshot-(42).png",
+                "alt": "Importance of Jurisprudence\u00a0in an Evolving Society"
+            }
+        ],
+        "id": "-738354472446867050"
+    },
+    {
+        "title": "Dr. M.Narasimhachari Memorial Endowment",
+        "subtitle": "SUBH\u0100\u1e62ITAN\u012aV\u1fd9  OF  \u015aR\u012a  VED\u0100NTA  DE\u015aIKA",
+        "description": "\n Speaker : Dr. O.R.Devanathan  \n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "https:/tksr.webex.com/join/KSRI at 6.00p.m.",
+        "date": "2021-11-27",
+        "images": [],
+        "id": "758545793426237141"
+    },
+    {
+        "title": "Sri R Srinivasa Tatachari Endowment",
+        "subtitle": "Concept of Trika in Natya Sastra",
+        "description": "\nDr. Padmaja Suresh\n https:/tksr.webex.com/join/KSRI\n6 p.m. on Saturday 20th November 2021.\n",
+        "category": [
+            "Endowment Lectures",
+            "Sri R Srinivasa Tatachari Endowment"
+        ],
+        "venue": "Webinar",
+        "date": "2021-11-20",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/concept-of-trika-in-natya-sastra.png",
+                "alt": "Concept of Trika in Natya Sastra"
+            }
+        ],
+        "id": "1485507701872988326"
+    },
+    {
+        "title": "Chennai and Sanskrit Literature",
+        "subtitle": null,
+        "description": "\nPresenter : Ms. V.Preethi\nSupervisor : Dr. V. Kameswari, Director, The KSRI\n",
+        "category": [
+            "Viva",
+            "Ph.D. Public Viva-voce"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2021-07-14",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/vp-viva.jpg",
+                "alt": "Chennai and Sanskrit Literature"
+            }
+        ],
+        "id": "-6755723975255767171"
+    },
+    {
+        "title": "Sri D. Ramakrishna Iyer Memorial Endowment",
+        "subtitle": "Bhasa and his Ramayana Plays",
+        "description": "\nSpeaker : Ms. V. Lalitha\n",
+        "category": [
+            ",Endowment Lectures",
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2021-04-30",
+        "images": [],
+        "id": "2518372249515734360"
+    },
+    {
+        "title": "Smt. Balambal Memorial Endowment - The Samskrita Academy",
+        "subtitle": null,
+        "description": "\nSpeaker : Lecture by Dr. P.C. Muralidharan \nThis is being organised through Cisco Webex.\n",
+        "category": [
+            "Seminars"
+        ],
+        "venue": "Online",
+        "date": "2021-04-12",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/event-invite.png",
+                "alt": "Smt. Balambal Memorial Endowment - The Samskrita Academy"
+            }
+        ],
+        "id": "9077349833273959901"
+    },
+    {
+        "title": "Smt. Balambal Memorial Endowment - The Samskrita Academy",
+        "subtitle": null,
+        "description": "\nSpeaker : Lecture by Dr. P.C. Muralidharan\nThis is being organised through Cisco Webex.\n",
+        "category": [
+            "Seminars"
+        ],
+        "venue": "Online",
+        "date": "2021-03-12",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/event-invite.png",
+                "alt": "Smt. Balambal Memorial Endowment - The Samskrita Academy"
+            }
+        ],
+        "id": "9077349833273959901"
+    },
+    {
+        "title": "Sri D. Ramakrishna Iyer Memorial Endowment",
+        "subtitle": "Bhasa and his Ramayana Plays",
+        "description": "\nSpeaker : Ms. V. Lalitha\n",
+        "category": [
+            ",Endowment Lectures",
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2021-01-31",
+        "images": [],
+        "id": "2518372249515734360"
+    },
+    {
+        "title": "Sri R. Srinivasa Tatachari Endowment",
+        "subtitle": "Sangitamuktavali In Prayoga",
+        "description": "\nDr. Sujatha Mohan\r\n(Head, Department of Natya, Dr.MGR Janaki College of Arts & Science for Women, Chennai) speaks on Sangitamuktavali In Prayoga\n",
+        "category": [
+            "Sri R. Srinivasa Tatachari Endowment",
+            "Seminars"
+        ],
+        "venue": "Online Event",
+        "date": "2021-01-23",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/sri-r.-srinivasa-tatachari-endowment.png",
+                "alt": "Sangitamuktavali In Prayoga"
+            }
+        ],
+        "id": "-7402571108898167619"
+    },
+    {
+        "title": "Puru\u1e63\u0101rthasudh\u0101nidhi of S\u0101ya\u1e47\u0101c\u0101rya \u2013 A Critical study",
+        "subtitle": null,
+        "description": "\nPresenter: Ms. S. Jayadevi\nSupervisor : Dr. K. S. Balasubramanian, Dy. Director, The KSRI\n",
+        "category": [
+            "Viva",
+            "Ph.D. Public Viva-voce"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-12-28",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/08-ms.-s.-jayadevi_2.jpg",
+                "alt": "Puru\u1e63\u0101rthasudh\u0101nidhi of S\u0101ya\u1e47\u0101c\u0101rya \u2013 A Critical study"
+            }
+        ],
+        "id": "-8795858313578516628"
+    },
+    {
+        "title": "Am\u1e5btasiddhiyoga\u1e25 of Virup\u0101k\u1e63asiddha \u2013 A Critical edition and study",
+        "subtitle": null,
+        "description": "\nPresenter: Ms. S. Anuradha\nSupervisor : Dr. K. S. Balasubramanian, Dy. Director, The KSRI\n",
+        "category": [
+            "Viva",
+            "Ph.D. Public Viva-voce"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-12-10",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/07-ms.-s.-anuradha_2.jpg",
+                "alt": "Am\u1e5btasiddhiyoga\u1e25 of Virup\u0101k\u1e63asiddha \u2013 A Critical edition and study"
+            }
+        ],
+        "id": "-5962680515125877944"
+    },
+    {
+        "title": "The Scope of Sa\u1e45g\u012bta in Sanskrit Dramas",
+        "subtitle": null,
+        "description": "\nPresenter: Ms. K. Vaishnavi Poorna\nSupervisor : Dr. K. S. Balasubramanian, Dy. Director, The KSRI\n",
+        "category": [
+            "Viva",
+            "Ph.D. Public Viva-voce"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-12-09",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/06-ms.-k.-vaishnavi-poorna_2.jpg",
+                "alt": "The Scope of Sa\u1e45g\u012bta in Sanskrit Dramas"
+            }
+        ],
+        "id": "2654474025436511517"
+    },
+    {
+        "title": "Dr P.S. Subrahmanya Sastri Centenary Endowment",
+        "subtitle": "Dhvanyalokamum Tonivilakkum",
+        "description": "\nSpeaker: Dr.S. Umapathi\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-12-05",
+        "images": [],
+        "id": "-5265001111773677194"
+    },
+    {
+        "title": "K\u0101\u015byapa \u015ailpa\u015b\u0101stra on Pr\u0101k\u0101ra, Ma\u1e47\u1e0dapa and Gopura Lak\u1e63a\u1e47a",
+        "subtitle": null,
+        "description": "\nPresenter : Ms. K. Vidyuta\nSupervisor : Dr. T. V. Vasudeva, Dy. Director, The KSRI\n",
+        "category": [
+            "Viva",
+            "Ph.D. Public Viva-voce"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-12-03",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/05-ms.-vidyuta-k._2.jpg",
+                "alt": "K\u0101\u015byapa \u015ailpa\u015b\u0101stra on Pr\u0101k\u0101ra, Ma\u1e47\u1e0dapa and Gopura Lak\u1e63a\u1e47a"
+            }
+        ],
+        "id": "-7963604499950361371"
+    },
+    {
+        "title": "K\u1e63emendra's Satirical Works - A Socio-Cultural study",
+        "subtitle": null,
+        "description": "\nPresenter: Mr. G. Venkataraman\nSupervisor : Dr. T. V. Vasudeva, Dy. Director, The KSRI\n",
+        "category": [
+            "Viva",
+            "Ph.D. Public Viva-voce"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-11-12",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/04-mr.-g.-venkataraman_2.jpg",
+                "alt": "K\u1e63emendra's Satirical Works - A Socio-Cultural study"
+            }
+        ],
+        "id": "-4183206678811631963"
+    },
+    {
+        "title": "Sri R Narasimhachari Endowment",
+        "subtitle": "Sadasiva Brahmendra- His life and works",
+        "description": "\nSpeaker: Dr. K. Srinivasan\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-10-30",
+        "images": [],
+        "id": "-4294941271317777677"
+    },
+    {
+        "title": "P\u0101rij\u0101ta N\u0101\u1e6daka of Kum\u0101ra T\u0101t\u0101c\u0101rya: A Critical Study",
+        "subtitle": null,
+        "description": "\nPresenter: Mr. P. C. Muralidharan\nSupervisor : Dr. K. S. Balasubramanian, Dy. Director, The KSRI\n",
+        "category": [
+            "Viva",
+            "Ph.D. Public Viva-voce"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-10-08",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/03-mr.-p.-c.-muralidharan_2.jpg",
+                "alt": "P\u0101rij\u0101ta N\u0101\u1e6daka of Kum\u0101ra T\u0101t\u0101c\u0101rya: A Critical Study"
+            }
+        ],
+        "id": "-8833856123385377512"
+    },
+    {
+        "title": "J\u012brnoddh\u0101radasaka of Nigamaj\u00f1\u0101na De\u015bika \u2013 Critical edition and study",
+        "subtitle": null,
+        "description": "\nPresenter: Mr. K. Nagarajan\nSupervisor : Dr. K. S. Balasubramanian, Dy. Director, The KSRI\n",
+        "category": [
+            "Viva",
+            "Ph.D. Public Viva-voce"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-10-07",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/02-mr.-k.-nagarajan_2.jpg",
+                "alt": "J\u012brnoddh\u0101radasaka of Nigamaj\u00f1\u0101na De\u015bika \u2013 Critical edition and study"
+            }
+        ],
+        "id": "-7794926681303154285"
+    },
+    {
+        "title": "J\u012bv\u0101nandana of \u0100nadar\u0101yamakhin \u2013 A Critical Study",
+        "subtitle": null,
+        "description": "\nPresenter:  Ms. G. D. Jayalakshmi \nSupervisor : Dr. V. Kameswari, Director, The KSRI \n\n",
+        "category": [
+            "Viva",
+            "Ph.D. Public Viva-voce"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-10-01",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/event-(1).jpg",
+                "alt": "J\u012bv\u0101nandana of \u0100nadar\u0101yamakhin \u2013 A Critical Study"
+            }
+        ],
+        "id": "-1118096673854476664"
+    },
+    {
+        "title": "Sri Sundaram Sarasvathi Endowment",
+        "subtitle": "Indian Epigraphy - Modules and Methodology for Research",
+        "description": "\nSpeaker: Dr.T. Satyamurthy\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-09-26",
+        "images": [],
+        "id": "1985045634064816225"
+    },
+    {
+        "title": "Anna Subrahmania iyer Centenary Endowment",
+        "subtitle": "Anna Subrahmania iyer as a Commentator",
+        "description": "\nSpeaker: Dr. R. Thiagarajan\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-09-19",
+        "images": [],
+        "id": "5428175522872777205"
+    },
+    {
+        "title": "Dr. M. Narasimhachari Memorial Endowment",
+        "subtitle": "Contribution of Kuresa to Sri Vaishnavism",
+        "description": "\nSpeaker: Dr. L. Sampathkumar\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-08-10",
+        "images": [],
+        "id": "-468003516072146144"
+    },
+    {
+        "title": "Dr. S. S. Janaki Commemoration Endowment",
+        "subtitle": "The Contribution of Pandit K.S. Ramaswami Sastri to Manuscripts Studies",
+        "description": "\nSpeaker: Dr Sweta Prajapati\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-07-18",
+        "images": [],
+        "id": "5337489108065954329"
+    },
+    {
+        "title": "Brahmasri Anna Subramanian Lecture Series.",
+        "subtitle": "Arambha Adhikaranam",
+        "description": "\nSpeaker: Dr.K. Srinivasan\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-07-16",
+        "images": [],
+        "id": "4392432863479130630"
+    },
+    {
+        "title": "Navalpakkam Mimisal Narasimha Patrachariar Endowment & Justice N.Rajagopala Ayyangar Endowment",
+        "subtitle": "Vaikhanasa Kalpa Sutra",
+        "description": "\nSpeaker : Dr.S.Muthu\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-02-20",
+        "images": [],
+        "id": "3328021082558658017"
+    },
+    {
+        "title": "Sri K.A. Lakshmana Sastri Endowment",
+        "subtitle": "Brahmavidya",
+        "description": "\nSpeaker: Mm Dr. R Krishnamurthy Sastrigal - 3parts\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2020-02-14",
+        "images": [],
+        "id": "4616247354619501280"
+    },
+    {
+        "title": "Sri R. Srinivasa Tatachari Endowment",
+        "subtitle": "The Stature of Ghatam Through the Ages",
+        "description": "\nSpeaker: Sri Suresh Vaidyanathan\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-12-21",
+        "images": [],
+        "id": "-7402571108898167619"
+    },
+    {
+        "title": "Navalpakkam Mimisal Narasimha Patrachariar Endowment and Justice N.Rajagopala Ayyangar Endowment",
+        "subtitle": "Laws of Manu and Yajnavalkya",
+        "description": "\nSpeaker: Dr.R. Thiagarajan\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-11-30",
+        "images": [],
+        "id": "3042518810981446222"
+    },
+    {
+        "title": "Sri D. Ramakrishna Iyer Memorial Endowment",
+        "subtitle": "Vadavagni and Pralayam",
+        "description": "\nSpeaker : Prof. R. Parthasarathy\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-11-08",
+        "images": [],
+        "id": "2518372249515734360"
+    },
+    {
+        "title": "Sri Kombur Ramabhadran Endowment",
+        "subtitle": "Unique Features of Vaishnava Agamas",
+        "description": "\nSpeaker : Sri Azhisur Srinivasachar\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-10-05",
+        "images": [],
+        "id": "-3229588130356100622"
+    },
+    {
+        "title": "Sri R. Narasimhachari endowment",
+        "subtitle": "Prajapati Vidya",
+        "description": "\nSpeaker: MM. Dr. Mani Dravid\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-09-27",
+        "images": [],
+        "id": "8242589732127178644"
+    },
+    {
+        "title": "Sri Sundaram Sarasvati Endowment",
+        "subtitle": "Sandhis in Dasarupakam",
+        "description": "\nSpeaker : Dr.G. Suresh\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-09-21",
+        "images": [],
+        "id": "2760753711458362081"
+    },
+    {
+        "title": "S.Subbalakshmi Ammal ,  Vidya Shankar, R.V. Easwaran Endowments",
+        "subtitle": "Musical Concert- Sivadarsana through Muthuswami Dikshitra Kritis",
+        "description": "\nSpeaker : Sri R.K. Shriramkumar\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-09-13",
+        "images": [],
+        "id": "1179305531503984947"
+    },
+    {
+        "title": "Dr. P.S. Subrahmanya Sastri Centenary Endowment",
+        "subtitle": "Greatness of Paspasahnika",
+        "description": "\nSpeaker : Dr.S. Arunasundaram\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-08-31",
+        "images": [],
+        "id": "2018214632409721733"
+    },
+    {
+        "title": "Dr.S.S. Janaki Endowment",
+        "subtitle": "Alankarasarvasva of Rajanaka Ruyyaka",
+        "description": "\nSpeaker : Dr. Debajyothi Jena\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-07-29",
+        "images": [],
+        "id": "-2347277694068174849"
+    },
+    {
+        "title": "Dr.M. Narasimhachari Endowment",
+        "subtitle": "The impact of Alvars on Ramanuja",
+        "description": "\nSpeaker : Dr.P. Narasimhan\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-07-27",
+        "images": [],
+        "id": "8349905934819390452"
+    },
+    {
+        "title": "Subhadra Memorial Endowment",
+        "subtitle": "Archaeological Significance of Kanchipuram Region ",
+        "description": "\nSpeaker: Dr. S. Rama Krishna Pisipaty\n\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-06-29",
+        "images": [],
+        "id": "3657945063485461486"
+    },
+    {
+        "title": "Dr.S. Jayashree Memorial Endowment",
+        "subtitle": "Engineering Technology in Valmiki Ramayana",
+        "description": "\nSpeaker : Sri K. Gopalakrishnan\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-04-05",
+        "images": [],
+        "id": "2303972000051793800"
+    },
+    {
+        "title": "Prof. R. Sankari Endowment",
+        "subtitle": "Contribution of Advaita Vedanta to Aesthetic Experience",
+        "description": "\nSpeaker : Dr. Anil Pratap Giri\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-03-30",
+        "images": [],
+        "id": "-4629827984824806135"
+    },
+    {
+        "title": "Sri K.A. Lakshmana Sastri Endowment",
+        "subtitle": "Philosophy Of Tiruvalluvar",
+        "description": "\nSpeaker : Padmabhushan Dr.R.Nagaswami\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2019-03-02",
+        "images": [],
+        "id": "4616247354619501280"
+    },
+    {
+        "title": "Sri. B. Madhavan Lecture Series",
+        "subtitle": "Balarama - The Father of Indian Agriculture",
+        "description": "\nSpeaker : Prof. R. Parthasarathy\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2018-12-29",
+        "images": [],
+        "id": "-1352410855614160585"
+    },
+    {
+        "title": "Sri R. Srinivasa TatachariI Endowment",
+        "subtitle": "Tradition Transition and Transformation in the Kuchipudi Dance Style",
+        "description": "\nSpeaker : Kalaimamani Mrs. Sailaja\n\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2018-11-17",
+        "images": [],
+        "id": "-3095751437784228955"
+    },
+    {
+        "title": "Sri Kombur Ramabhadran Endowment",
+        "subtitle": "Vedanta For Modern World",
+        "description": "\nSpeaker : Mm Dr. R. Krishnamurty Sastrigal\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2018-10-27",
+        "images": [],
+        "id": "-3229588130356100622"
+    },
+    {
+        "title": "Sundaram- Saraswathi Endowment",
+        "subtitle": "Words and Meanings",
+        "description": "\nSpeaker : Dr. S. Umapathi\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2018-09-29",
+        "images": [],
+        "id": "5451945892617281675"
+    },
+    {
+        "title": "Dr.S.S.Janaki Commemoration Endowment",
+        "subtitle": "Temple Architecture as gleaned from the Saivagamas",
+        "description": "\nSpeaker : Dr.G. Sankranarayanan\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2018-07-21",
+        "images": [],
+        "id": "-2859859637306361176"
+    },
+    {
+        "title": "Subadhra Memorial Endowment",
+        "subtitle": "Some Mathematical insights into Sanskrit Prosody and Music",
+        "description": "\nSpeaker : Dr. R. Sridharan\n\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2018-06-22",
+        "images": [],
+        "id": "3413142725509531960"
+    },
+    {
+        "title": "Prof.R. Sankari Endowment",
+        "subtitle": "Contribution of Yajnavalkya to Indian Culture ",
+        "description": "\nSpeaker : Dr. R. Thyagarajan\n",
+        "category": [
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI In-house",
+        "date": "2018-03-17",
+        "images": [],
+        "id": "8344404834935552354"
+    },
+    {
+        "title": "Sanskrit and Tamil Nadu",
+        "subtitle": "70th Year Anniversary of KSRI",
+        "description": "\nSanskrit and Tamil Nadu (70th Year Anniversary of KSRI) - Two day National Seminar\n",
+        "category": [
+            "Two day National Seminar",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "2024",
+        "images": [],
+        "id": "-6821668191393992507"
+    },
+    {
+        "title": "Environmental and Ecological Awareness in Ancient India",
+        "subtitle": "70th Year Anniversary of KSRI",
+        "description": "\nEnvironmental and Ecological Awareness in Ancient India (70th Year Anniversary of KSRI) - Two day National Seminar\n",
+        "category": [
+            "Two day National Seminar",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "2024",
+        "images": [],
+        "id": "-7460055050917723983"
+    },
+    {
+        "title": "Tattvatraya- Jiva- Jagat- Iswara ",
+        "subtitle": "70th Year Anniversary of KSRI",
+        "description": "\nTattvatraya- Jiva- Jagat- Iswara (70th Year Anniversary of KSRI) - Two day National Seminar\n",
+        "category": [
+            "KSRI Seminars",
+            "Endowment Lectures"
+        ],
+        "venue": "KSRI",
+        "date": "2024",
+        "images": [],
+        "id": "6305837770626490183"
+    },
+    {
+        "title": "Dr.V.Raghavan Birth Centenary Celebration",
+        "subtitle": "Sanskrit Literature (Dr.V.Raghavan Birth Centenary Celebration)",
+        "description": "\nSanskrit Literature (Dr.V.Raghavan Birth Centenary Celebration) - Two Day Seminar\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "2024",
+        "images": [],
+        "id": "548174492739266304"
+    },
+    {
+        "title": "Religion and Philosophy of Vaishnava Agamas",
+        "subtitle": null,
+        "description": "\nReligion and Philosophy of Vaishnava Agamas - A three day National Seminar\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "2024",
+        "images": [],
+        "id": "-9156518984500487716"
+    },
+    {
+        "title": "Ancient Indian Scientific Knowledge",
+        "subtitle": null,
+        "description": "\nAncient Indian Scientific Knowledge (Jointly with Samskrita Academy, Chennai)\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "Samskrita Academy, Chennai",
+        "date": "2024",
+        "images": [],
+        "id": "4659362837580038067"
+    },
+    {
+        "title": "Ancient Indian Polity",
+        "subtitle": null,
+        "description": "\nAncient Indian Polity (Jointly with Samskrita Academy, Chennai)\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "Samskrita Academy, Chennai",
+        "date": "2024",
+        "images": [],
+        "id": "-5571601543929432962"
+    },
+    {
+        "title": "Sanskrit & South Indian Languages",
+        "subtitle": "Golden Jubilee Valedictory function",
+        "description": "\nSanskrit & South Indian Languages (during Golden Jubilee Valedictory function).\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "1996",
+        "images": [],
+        "id": "878100917538563473"
+    },
+    {
+        "title": "Sanskrit & Medical Science",
+        "subtitle": "Golden Jubilee of the Institute",
+        "description": "\nSanskrit & Medical Science (in connection with the Golden Jubilee of the Institute).\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "1995",
+        "images": [],
+        "id": "5305943000785230888"
+    },
+    {
+        "title": "Sanskrit & Science",
+        "subtitle": " Golden Jubilee of the Institute",
+        "description": "\nSanskrit & Science (in connection with the Golden Jubilee of the Institute).\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "1994",
+        "images": [],
+        "id": "-7522066584659014010"
+    },
+    {
+        "title": "Saiva Rituals & Philosophy",
+        "subtitle": "Saiva Rituals & Philosophy (Satyamurthi Endowment).",
+        "description": "\nSaiva Rituals & Philosophy (Satyamurthi Endowment) in K.S.R.I\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "1992",
+        "images": [],
+        "id": "8202356083265015817"
+    },
+    {
+        "title": "Vedic Sammelan",
+        "subtitle": null,
+        "description": "\nVedic Sammelan (sponsored by the Rashtriya Veda VidyaPratishthan, New Delhi)\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "New Delhi",
+        "date": "1990",
+        "images": [],
+        "id": "2541084107035030383"
+    },
+    {
+        "title": "Seminar on Vaishnava Agamas",
+        "subtitle": null,
+        "description": "\nSeminar on Vaishnava Agamas, 1989 - Sri. Krishnaswami Iyengar, Justice Sri.S. Ranganathan, Mr.B.Madhavan\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "1989",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/19.jpg",
+                "alt": "Seminar on Vaishnava Agamas"
+            }
+        ],
+        "id": "5260487387090538774"
+    },
+    {
+        "title": "UmapatiSivacarya, His Life, work and Contribution to Saivism",
+        "subtitle": null,
+        "description": "\nUmapatiSivacarya, His Life, work and Contribution to Saivism (Satyamurthi Endowment) at K.S.R.I\n",
+        "category": [
+            "Satyamurthi Endowment",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "1988",
+        "images": [],
+        "id": "-7076659177263847681"
+    },
+    {
+        "title": "Symposium on Temple Arts",
+        "subtitle": null,
+        "description": "\nSymposium on Temple Arts (jointly with the Institute of Traditional Culture)\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "1988",
+        "images": [],
+        "id": "-4438018403829669130"
+    },
+    {
+        "title": "Siva Temple & Temple Rituals",
+        "subtitle": "Siva Temple & Temple Rituals(Satyamurthi Endowment)",
+        "description": "\nSiva Temple & Temple Rituals ( Satyamurthi Endowment) at K.S.R.I.\n",
+        "category": [
+            "Satyamurthi Endowment",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "1983",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
+                "alt": "Siva Temple & Temple Rituals(Satyamurthi Endowment)"
+            }
+        ],
+        "id": "-9075254004525708689"
+    },
+    {
+        "title": "Domestic Vaishnava Rituals",
+        "subtitle": null,
+        "description": "\nDomestic Vaishnava Rituals in Kuppuswami Sastri Research Institute\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "1983",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
+                "alt": "Domestic Vaishnava Rituals"
+            }
+        ],
+        "id": "-7834659151825585338"
+    },
+    {
+        "title": "Birth Centenary Celebrations of Prof.S.KuppuswamiSastri",
+        "subtitle": null,
+        "description": "\nSeminars during Birth Centenary Celebrations of Prof.S.KuppuswamiSastri - on diverse subjects...\n",
+        "category": [
+            "Seminars",
+            "Workshop Event"
+        ],
+        "venue": "KSRI",
+        "date": "1981",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
+                "alt": "Birth Centenary Celebrations of Prof.S.KuppuswamiSastri"
+            }
+        ],
+        "id": "-2254438227831090489"
+    },
+    {
+        "title": "Silver Jubilee celebration",
+        "subtitle": "Seminars during the Silver Jubilee celebration.",
+        "description": "\nKuppuswami Sastri Research Institute Silver Jubilee celebration.\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "1971",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
+                "alt": "Seminars during the Silver Jubilee celebration."
+            }
+        ],
+        "id": "4828942446054493476"
+    },
+    {
+        "title": "Seminar on Arthasastra",
+        "subtitle": "Seminar on Arthasastra - 1967",
+        "description": "\nDr.Friedrich Wilhelm, University of Munich, Dr.V.Raghavan, Sri K.BalasubramaniaIyer, Sri G.HariharaSastri and Dr.K.Ezhuutachan participated.\n",
+        "category": [
+            "Seminar on Arthasastra",
+            "Seminars"
+        ],
+        "venue": "-",
+        "date": "1967",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
+                "alt": "Seminar on Arthasastra - 1967"
+            }
+        ],
+        "id": "7700367171854817884"
+    },
+    {
+        "title": "Ancient Indian Mathematics and Astronomy",
+        "subtitle": "70th Year Anniversary of KSRI - 4 day Workshop",
+        "description": "\nAncient Indian Mathematics and Astronomy (70th Year Anniversary of KSRI) - Four day Workshop\n",
+        "category": [
+            "Workshop",
+            "Workshop Event"
+        ],
+        "venue": "KSRI",
+        "date": "",
+        "images": [],
+        "id": "-1732603928390801093"
+    },
+    {
+        "title": "A Colloquim on Interpretation of Mimamsa Sutras",
+        "subtitle": null,
+        "description": "\nA Colloquim on Interpretation of Mimamsa Sutras at K.S.R.I.\n",
+        "category": [
+            "KSRI Seminars",
+            "Seminars"
+        ],
+        "venue": "KSRI",
+        "date": "",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
+                "alt": "A Colloquim on "
+            }
+        ],
+        "id": "4576401015346089121"
     }
 ]
