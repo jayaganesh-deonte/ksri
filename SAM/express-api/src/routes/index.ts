@@ -18,6 +18,7 @@ import { bookRoute } from "./library/books";
 import { journalRoute } from "./library/journals";
 
 import { publicationBookRoute } from "./publications/book";
+import { publicationsCommitteeRouter } from "./publications/committee";
 
 export const routes = express.Router();
 
@@ -39,3 +40,4 @@ routes.use(bookRoute);
 routes.use(journalRoute);
 
 routes.use(publicationBookRoute);
+routes.use(publicationsCommitteeRouter);
