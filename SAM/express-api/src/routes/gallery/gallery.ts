@@ -81,12 +81,12 @@ galleryRoute.post("/gallery", async (req: Request, res: Response) => {
 // DELETE Gallery Image
 galleryRoute.delete("/gallery", async (req: Request, res: Response) => {
   try {
-    const { imageUrl, collection } = req.body;
+    const { id, collection } = req.body;
     const params = {
       TableName: GALLERY_TABLE,
       Key: {
         PK: collection,
-        SK: imageUrl,
+        SK: id,
       },
     };
     await documentClient.delete(params);
