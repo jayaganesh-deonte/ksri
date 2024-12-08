@@ -28,6 +28,8 @@ import { galleryRoute } from "./gallery/gallery";
 
 import { supervisorRoute } from "./supervisor";
 
+import { researchArticlesRoute } from "./researchArticles";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -57,3 +59,5 @@ routes.use(collectionsRoute);
 routes.use(galleryRoute);
 
 routes.use(supervisorRoute);
+
+routes.use(researchArticlesRoute);
