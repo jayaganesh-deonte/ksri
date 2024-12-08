@@ -9,6 +9,7 @@ import { studentRoute } from "./students";
 
 import { endownmentRoute } from "./contribute/endownments";
 import { eventRoute } from "./events/events";
+import { newsRoute } from "./news";
 
 import { governingBodyMembersRoute } from "./governingBodyMembers";
 import { governingBodyMembersPastRouter } from "./governingBodyMembersPast";
@@ -36,6 +37,7 @@ routes.use(studentRoute);
 
 routes.use(endownmentRoute);
 routes.use(eventRoute);
+routes.use(newsRoute);
 
 routes.use(governingBodyMembersRoute);
 routes.use(governingBodyMembersPastRouter);
