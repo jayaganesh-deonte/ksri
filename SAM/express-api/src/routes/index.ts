@@ -17,6 +17,8 @@ import { articleRoute } from "./library/articles";
 import { bookRoute } from "./library/books";
 import { journalRoute } from "./library/journals";
 
+import { publicationBookRoute } from "./publications/book";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -35,3 +37,5 @@ routes.use(governingBodyMembersPastRouter);
 routes.use(articleRoute);
 routes.use(bookRoute);
 routes.use(journalRoute);
+
+routes.use(publicationBookRoute);
