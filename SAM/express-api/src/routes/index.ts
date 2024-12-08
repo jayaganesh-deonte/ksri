@@ -26,6 +26,8 @@ import { facultyRouter } from "./faculty";
 import { collectionsRoute } from "./gallery/collections";
 import { galleryRoute } from "./gallery/gallery";
 
+import { supervisorRoute } from "./supervisor";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -53,3 +55,5 @@ routes.use(facultyRouter);
 
 routes.use(collectionsRoute);
 routes.use(galleryRoute);
+
+routes.use(supervisorRoute);
