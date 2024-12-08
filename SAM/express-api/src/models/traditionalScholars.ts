@@ -1,5 +1,6 @@
 // Regular TraditionalScholar model for application use
 export interface TraditionalScholar {
+  id: string;
   name: string;
   year?: string; // Optional year
   description: string;
@@ -11,6 +12,7 @@ export interface TraditionalScholarDDB {
   PK: string; // Will be constructed from name
   SK: string; // Consistent identifier
   entityType: string;
+  id: string;
   name: string;
   year?: string;
   description: string;
@@ -20,6 +22,7 @@ export interface TraditionalScholarDDB {
 // Convert DynamoDB record to application model
 export function fromDynamoDB(item: TraditionalScholarDDB): TraditionalScholar {
   return {
+    id: item.id,
     name: item.name,
     year: item.year,
     description: item.description,
@@ -31,8 +34,9 @@ export function fromDynamoDB(item: TraditionalScholarDDB): TraditionalScholar {
 export function toDynamoDB(scholar: TraditionalScholar): TraditionalScholarDDB {
   return {
     PK: scholar.name,
-    SK: scholar.description,
+    SK: scholar.id,
     entityType: "ENTITYTYPE#TRADITIONAL_SCHOLAR",
+    id: scholar.id,
     name: scholar.name,
     year: scholar.year,
     description: scholar.description,
@@ -49,6 +53,7 @@ export function isTraditionalScholarDDB(
     typeof item.PK === "string" &&
     typeof item.SK === "string" &&
     typeof item.entityType === "string" &&
+    typeof item.id === "string" &&
     typeof item.name === "string" &&
     typeof item.description === "string" &&
     typeof item.type === "string"
@@ -59,7 +64,7 @@ export function isTraditionalScholarDDB(
 export function validateTraditionalScholar(
   scholar: Partial<TraditionalScholar>
 ): scholar is TraditionalScholar {
-  if (!scholar.name || !scholar.description) {
+  if (!scholar.id || !scholar.name || !scholar.description) {
     return false;
   }
 

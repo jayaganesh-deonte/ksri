@@ -155,7 +155,7 @@ traditionalScholarRoute.put(
         TableName: TRADITIONAL_SCHOLARS_TABLE,
         Key: {
           PK: updateData.name,
-          SK: updateData.description,
+          SK: updateData.id,
         },
         UpdateExpression: `SET ${updateExpression.join(", ")}`,
         ExpressionAttributeValues: expressionAttributeValues,
@@ -204,8 +204,8 @@ traditionalScholarRoute.delete(
   "/traditional-scholars",
   async (req: Request, res: Response) => {
     try {
-      // get description from body
-      const description = req.body.description;
+      // get id from body
+      const id = req.body.id;
 
       // Create a URL-friendly version of the name
       const pk = req.body.name;
@@ -215,7 +215,7 @@ traditionalScholarRoute.delete(
         TableName: TRADITIONAL_SCHOLARS_TABLE,
         Key: {
           PK: pk,
-          SK: description,
+          SK: id,
         },
         ConditionExpression: "attribute_exists(PK)", // Ensure scholar exists
       });
