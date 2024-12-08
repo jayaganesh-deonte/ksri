@@ -29,7 +29,7 @@
         ]"
         :items-per-page="100"
         expand-on-click
-        item-value="Journal Acc No"
+        item-value="JournalAccNo"
       >
         <template v-slot:expanded-row="{ item }">
           <tr>
@@ -68,11 +68,11 @@ const journals = journalsData.body;
 const journalHeaders = [
   {
     title: "Journal Acc No",
-    key: "Journal Acc No",
+    key: "JournalAccNo",
   },
   {
     title: "Journal Name",
-    key: "Journal Name",
+    key: "JournalName",
   },
   {
     title: "Nationality",

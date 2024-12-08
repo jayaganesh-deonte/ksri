@@ -54,13 +54,13 @@ const articles = articlesData.body;
 const articleHeaders = [
   {
     text: "Title",
-    value: "Title",
+    value: "title",
   },
-  { text: "Author", value: "Author", sortable: false },
-  { text: "Journal", value: "Jounal", sortable: false },
-  { text: "Volume #", value: "Volume #", sortable: false },
-  { text: "Year", value: "Year", sortable: false },
-  { text: "Remarks", value: "Remarks", sortable: false },
+  { text: "Author", value: "author", sortable: false },
+  { text: "Journal", value: "journal", sortable: false },
+  { text: "Volume #", value: "volume", sortable: false },
+  { text: "Year", value: "year", sortable: false },
+  { text: "Remarks", value: "remarks", sortable: false },
 ];
 </script>
 

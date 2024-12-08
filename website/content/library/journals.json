@@ -1,276 +1,276 @@
 [
     {
-        "Journal Acc No": 1,
-        "Journal Name": "JOURNAL OF ASIATIQUE",
+        "JournalAccNo": 1,
+        "JournalName": "JOURNAL OF ASIATIQUE",
         "Nationality": "FOREIGN",
         "subTable": [
             {
-                "Journal Volume #": 1,
-                "Publication Year": 1949,
+                "JournalVolumeNumber#": 1,
+                "PublicationYear": 1949,
                 "Volume": 237,
-                "Journal Volume Number": "1,2"
+                "JournalVolumeNumber": "1,2"
             },
             {
-                "Journal Volume #": 2,
-                "Publication Year": 1950,
+                "JournalVolumeNumber#": 2,
+                "PublicationYear": 1950,
                 "Volume": 238,
-                "Journal Volume Number": 2
+                "JournalVolumeNumber": 2
             },
             {
-                "Journal Volume #": 3,
-                "Publication Year": 1951,
+                "JournalVolumeNumber#": 3,
+                "PublicationYear": 1951,
                 "Volume": 239,
-                "Journal Volume Number": "1,2,3"
+                "JournalVolumeNumber": "1,2,3"
             },
             {
-                "Journal Volume #": 4,
-                "Publication Year": 1952,
+                "JournalVolumeNumber#": 4,
+                "PublicationYear": 1952,
                 "Volume": 240,
-                "Journal Volume Number": "2,3,4"
+                "JournalVolumeNumber": "2,3,4"
             },
             {
-                "Journal Volume #": 5,
-                "Publication Year": 1953,
+                "JournalVolumeNumber#": 5,
+                "PublicationYear": 1953,
                 "Volume": 241,
-                "Journal Volume Number": "1,2,3,4"
+                "JournalVolumeNumber": "1,2,3,4"
             },
             {
-                "Journal Volume #": 6,
-                "Publication Year": 1954,
+                "JournalVolumeNumber#": 6,
+                "PublicationYear": 1954,
                 "Volume": 242,
-                "Journal Volume Number": "2,3,4"
+                "JournalVolumeNumber": "2,3,4"
             },
             {
-                "Journal Volume #": 9,
-                "Publication Year": 1955,
+                "JournalVolumeNumber#": 9,
+                "PublicationYear": 1955,
                 "Volume": 243,
-                "Journal Volume Number": "3,4"
+                "JournalVolumeNumber": "3,4"
             },
             {
-                "Journal Volume #": 10,
-                "Publication Year": 1956,
+                "JournalVolumeNumber#": 10,
+                "PublicationYear": 1956,
                 "Volume": "-",
-                "Journal Volume Number": "-"
+                "JournalVolumeNumber": "-"
             }
         ]
     },
     {
-        "Journal Acc No": 2,
-        "Journal Name": "ARCHIV ORIENTALINI",
+        "JournalAccNo": 2,
+        "JournalName": "ARCHIV ORIENTALINI",
         "Nationality": "FOREIGN",
         "subTable": [
             {
-                "Journal Volume #": 1,
-                "Publication Year": 1949,
+                "JournalVolumeNumber#": 1,
+                "PublicationYear": 1949,
                 "Volume": 237,
-                "Journal Volume Number": "1,2"
+                "JournalVolumeNumber": "1,2"
             },
             {
-                "Journal Volume #": 2,
-                "Publication Year": 1950,
+                "JournalVolumeNumber#": 2,
+                "PublicationYear": 1950,
                 "Volume": 238,
-                "Journal Volume Number": 2
+                "JournalVolumeNumber": 2
             },
             {
-                "Journal Volume #": 3,
-                "Publication Year": 1951,
+                "JournalVolumeNumber#": 3,
+                "PublicationYear": 1951,
                 "Volume": 239,
-                "Journal Volume Number": "1,2,3"
+                "JournalVolumeNumber": "1,2,3"
             },
             {
-                "Journal Volume #": 4,
-                "Publication Year": 1952,
+                "JournalVolumeNumber#": 4,
+                "PublicationYear": 1952,
                 "Volume": 240,
-                "Journal Volume Number": "2,3,4"
+                "JournalVolumeNumber": "2,3,4"
             },
             {
-                "Journal Volume #": 5,
-                "Publication Year": 1953,
+                "JournalVolumeNumber#": 5,
+                "PublicationYear": 1953,
                 "Volume": 241,
-                "Journal Volume Number": "1,2,3,4"
+                "JournalVolumeNumber": "1,2,3,4"
             },
             {
-                "Journal Volume #": 6,
-                "Publication Year": 1954,
+                "JournalVolumeNumber#": 6,
+                "PublicationYear": 1954,
                 "Volume": 242,
-                "Journal Volume Number": "2,3,4"
+                "JournalVolumeNumber": "2,3,4"
             },
             {
-                "Journal Volume #": 9,
-                "Publication Year": 1955,
+                "JournalVolumeNumber#": 9,
+                "PublicationYear": 1955,
                 "Volume": 243,
-                "Journal Volume Number": "3,4"
+                "JournalVolumeNumber": "3,4"
             },
             {
-                "Journal Volume #": 10,
-                "Publication Year": 1956,
+                "JournalVolumeNumber#": 10,
+                "PublicationYear": 1956,
                 "Volume": "-",
-                "Journal Volume Number": "-"
+                "JournalVolumeNumber": "-"
             }
         ]
     },
     {
-        "Journal Acc No": 3,
-        "Journal Name": "ASIAN STUDIES PHILIPINES",
+        "JournalAccNo": 3,
+        "JournalName": "ASIAN STUDIES PHILIPINES",
         "Nationality": "FOREIGN",
         "subTable": [
             {
-                "Journal Volume #": 1,
-                "Publication Year": 1949,
+                "JournalVolumeNumber#": 1,
+                "PublicationYear": 1949,
                 "Volume": 237,
-                "Journal Volume Number": "1,2"
+                "JournalVolumeNumber": "1,2"
             },
             {
-                "Journal Volume #": 2,
-                "Publication Year": 1950,
+                "JournalVolumeNumber#": 2,
+                "PublicationYear": 1950,
                 "Volume": 238,
-                "Journal Volume Number": 2
+                "JournalVolumeNumber": 2
             },
             {
-                "Journal Volume #": 3,
-                "Publication Year": 1951,
+                "JournalVolumeNumber#": 3,
+                "PublicationYear": 1951,
                 "Volume": 239,
-                "Journal Volume Number": "1,2,3"
+                "JournalVolumeNumber": "1,2,3"
             },
             {
-                "Journal Volume #": 4,
-                "Publication Year": 1952,
+                "JournalVolumeNumber#": 4,
+                "PublicationYear": 1952,
                 "Volume": 240,
-                "Journal Volume Number": "2,3,4"
+                "JournalVolumeNumber": "2,3,4"
             },
             {
-                "Journal Volume #": 5,
-                "Publication Year": 1953,
+                "JournalVolumeNumber#": 5,
+                "PublicationYear": 1953,
                 "Volume": 241,
-                "Journal Volume Number": "1,2,3,4"
+                "JournalVolumeNumber": "1,2,3,4"
             },
             {
-                "Journal Volume #": 6,
-                "Publication Year": 1954,
+                "JournalVolumeNumber#": 6,
+                "PublicationYear": 1954,
                 "Volume": 242,
-                "Journal Volume Number": "2,3,4"
+                "JournalVolumeNumber": "2,3,4"
             },
             {
-                "Journal Volume #": 9,
-                "Publication Year": 1955,
+                "JournalVolumeNumber#": 9,
+                "PublicationYear": 1955,
                 "Volume": 243,
-                "Journal Volume Number": "3,4"
+                "JournalVolumeNumber": "3,4"
             },
             {
-                "Journal Volume #": 10,
-                "Publication Year": 1956,
+                "JournalVolumeNumber#": 10,
+                "PublicationYear": 1956,
                 "Volume": "-",
-                "Journal Volume Number": "-"
+                "JournalVolumeNumber": "-"
             }
         ]
     },
     {
-        "Journal Acc No": 4,
-        "Journal Name": "BULLETIN DE I ECOLE FRANCAISE",
+        "JournalAccNo": 4,
+        "JournalName": "BULLETIN DE I ECOLE FRANCAISE",
         "Nationality": "FOREIGN",
         "subTable": [
             {
-                "Journal Volume #": 1,
-                "Publication Year": 1949,
+                "JournalVolumeNumber#": 1,
+                "PublicationYear": 1949,
                 "Volume": 237,
-                "Journal Volume Number": "1,2"
+                "JournalVolumeNumber": "1,2"
             },
             {
-                "Journal Volume #": 2,
-                "Publication Year": 1950,
+                "JournalVolumeNumber#": 2,
+                "PublicationYear": 1950,
                 "Volume": 238,
-                "Journal Volume Number": 2
+                "JournalVolumeNumber": 2
             },
             {
-                "Journal Volume #": 3,
-                "Publication Year": 1951,
+                "JournalVolumeNumber#": 3,
+                "PublicationYear": 1951,
                 "Volume": 239,
-                "Journal Volume Number": "1,2,3"
+                "JournalVolumeNumber": "1,2,3"
             },
             {
-                "Journal Volume #": 4,
-                "Publication Year": 1952,
+                "JournalVolumeNumber#": 4,
+                "PublicationYear": 1952,
                 "Volume": 240,
-                "Journal Volume Number": "2,3,4"
+                "JournalVolumeNumber": "2,3,4"
             },
             {
-                "Journal Volume #": 5,
-                "Publication Year": 1953,
+                "JournalVolumeNumber#": 5,
+                "PublicationYear": 1953,
                 "Volume": 241,
-                "Journal Volume Number": "1,2,3,4"
+                "JournalVolumeNumber": "1,2,3,4"
             },
             {
-                "Journal Volume #": 6,
-                "Publication Year": 1954,
+                "JournalVolumeNumber#": 6,
+                "PublicationYear": 1954,
                 "Volume": 242,
-                "Journal Volume Number": "2,3,4"
+                "JournalVolumeNumber": "2,3,4"
             },
             {
-                "Journal Volume #": 9,
-                "Publication Year": 1955,
+                "JournalVolumeNumber#": 9,
+                "PublicationYear": 1955,
                 "Volume": 243,
-                "Journal Volume Number": "3,4"
+                "JournalVolumeNumber": "3,4"
             },
             {
-                "Journal Volume #": 10,
-                "Publication Year": 1956,
+                "JournalVolumeNumber#": 10,
+                "PublicationYear": 1956,
                 "Volume": "-",
-                "Journal Volume Number": "-"
+                "JournalVolumeNumber": "-"
             }
         ]
     },
     {
-        "Journal Acc No": 5,
-        "Journal Name": "INDIAN AND BUDDHIST STUDIES",
+        "JournalAccNo": 5,
+        "JournalName": "INDIAN AND BUDDHIST STUDIES",
         "Nationality": "FOREIGN",
         "subTable": [
             {
-                "Journal Volume #": 1,
-                "Publication Year": 1949,
+                "JournalVolumeNumber#": 1,
+                "PublicationYear": 1949,
                 "Volume": 237,
-                "Journal Volume Number": "1,2"
+                "JournalVolumeNumber": "1,2"
             },
             {
-                "Journal Volume #": 2,
-                "Publication Year": 1950,
+                "JournalVolumeNumber#": 2,
+                "PublicationYear": 1950,
                 "Volume": 238,
-                "Journal Volume Number": 2
+                "JournalVolumeNumber": 2
             },
             {
-                "Journal Volume #": 3,
-                "Publication Year": 1951,
+                "JournalVolumeNumber#": 3,
+                "PublicationYear": 1951,
                 "Volume": 239,
-                "Journal Volume Number": "1,2,3"
+                "JournalVolumeNumber": "1,2,3"
             },
             {
-                "Journal Volume #": 4,
-                "Publication Year": 1952,
+                "JournalVolumeNumber#": 4,
+                "PublicationYear": 1952,
                 "Volume": 240,
-                "Journal Volume Number": "2,3,4"
+                "JournalVolumeNumber": "2,3,4"
             },
             {
-                "Journal Volume #": 5,
-                "Publication Year": 1953,
+                "JournalVolumeNumber#": 5,
+                "PublicationYear": 1953,
                 "Volume": 241,
-                "Journal Volume Number": "1,2,3,4"
+                "JournalVolumeNumber": "1,2,3,4"
             },
             {
-                "Journal Volume #": 6,
-                "Publication Year": 1954,
+                "JournalVolumeNumber#": 6,
+                "PublicationYear": 1954,
                 "Volume": 242,
-                "Journal Volume Number": "2,3,4"
+                "JournalVolumeNumber": "2,3,4"
             },
             {
-                "Journal Volume #": 9,
-                "Publication Year": 1955,
+                "JournalVolumeNumber#": 9,
+                "PublicationYear": 1955,
                 "Volume": 243,
-                "Journal Volume Number": "3,4"
+                "JournalVolumeNumber": "3,4"
             },
             {
-                "Journal Volume #": 10,
-                "Publication Year": 1956,
+                "JournalVolumeNumber#": 10,
+                "PublicationYear": 1956,
                 "Volume": "-",
-                "Journal Volume Number": "-"
+                "JournalVolumeNumber": "-"
             }
         ]
     }
