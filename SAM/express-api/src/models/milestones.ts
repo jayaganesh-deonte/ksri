@@ -27,14 +27,14 @@ export function fromDynamoDB(item: MilestoneDDB): Milestone {
 // Convert application model to DynamoDB record
 export function toDynamoDB(milestone: Milestone): MilestoneDDB {
   // Create a URL-friendly version of the title for the PK
-  const pk = milestone.title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
+  const pk = milestone.title;
+  // .toLowerCase()
+  // .replace(/[^a-z0-9]+/g, "-")
+  // .replace(/(^-|-$)/g, "");
 
   return {
-    PK: pk,
-    SK: `MILESTONE#${milestone.year}`,
+    PK: milestone.title,
+    SK: `${milestone.year}`,
     entityType: "ENTITYTYPE#MILESTONE",
     year: milestone.year,
     title: milestone.title,
