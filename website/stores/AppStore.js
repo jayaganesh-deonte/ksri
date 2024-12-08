@@ -18,6 +18,16 @@ export const appStore = defineStore("app", {
       description:
         "Good people win over the bad souls by their good conduct; untruthful with truth and even the enemies by favouring them.",
     },
+    marqueeTexts: [
+      {
+        name: "Know about our upcoming events",
+        link: "/events",
+      },
+      {
+        name: "Click here Contribute Now!!!",
+        link: "/contribute",
+      },
+    ],
   }),
   getters: {
     getHomeDialogContent: (state) => state.homeDialogContent,

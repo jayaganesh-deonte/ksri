@@ -1,7 +1,7 @@
 <template>
   <v-system-bar>
     <NuxtMarquee pause-on-hover pause-on-click autoFill>
-      <div v-for="(marqueeText, index) in marqueeTexts" :key="index">
+      <div v-for="(marqueeText, index) in store.marqueeTexts" :key="index">
         <!-- display text and add link to it -->
         <NuxtLink
           :to="marqueeText.link"
@@ -18,14 +18,7 @@
 </template>
 
 <script setup>
-const marqueeTexts = [
-  {
-    name: "Know about our upcoming events",
-    link: "/events",
-  },
-  {
-    name: "Click here Contribute Now!!!",
-    link: "/contribute",
-  },
-];
+import { appStore } from "~/stores/AppStore";
+
+const store = appStore();
 </script>
