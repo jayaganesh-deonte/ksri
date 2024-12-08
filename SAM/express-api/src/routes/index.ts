@@ -15,6 +15,7 @@ import { governingBodyMembersPastRouter } from "./governingBodyMembersPast";
 
 import { articleRoute } from "./library/articles";
 import { bookRoute } from "./library/books";
+import { journalRoute } from "./library/journals";
 
 export const routes = express.Router();
 
@@ -33,3 +34,4 @@ routes.use(governingBodyMembersPastRouter);
 
 routes.use(articleRoute);
 routes.use(bookRoute);
+routes.use(journalRoute);
