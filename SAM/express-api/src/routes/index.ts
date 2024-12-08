@@ -30,6 +30,9 @@ import { supervisorRoute } from "./supervisor";
 
 import { researchArticlesRoute } from "./researchArticles";
 
+import { dainandiniRouter } from "./dainandini";
+import { homeDialogRouter } from "./homeDialog";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -61,3 +64,6 @@ routes.use(galleryRoute);
 routes.use(supervisorRoute);
 
 routes.use(researchArticlesRoute);
+
+routes.use(dainandiniRouter);
+routes.use(homeDialogRouter);
