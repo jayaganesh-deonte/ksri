@@ -428,6 +428,82 @@ Resources:
         Enabled: true
         ViewerCertificate:
           CloudFrontDefaultCertificate: true
+
+  # S3 Bucket for static website hosting
+  StaticWebsiteBucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: !Sub "${Prefix}-static-website"
+      WebsiteConfiguration:
+        IndexDocument: 200.html
+        ErrorDocument: 404.html
+      # PublicAccessBlockConfiguration:
+      #   BlockPublicAcesses: false
+      VersioningConfiguration:
+        Status: Enabled
+
+  # Bucket policy to allow CloudFront access
+  StaticWebsiteBucketPolicy:
+    Type: "AWS::S3::BucketPolicy"
+    Properties:
+      Bucket: !Ref StaticWebsiteBucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Action: "s3:GetObject"
+            Resource: !Sub "${StaticWebsiteBucket.Arn}/*"
+            Condition:
+              StringEquals:
+                "AWS:SourceArn": !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/${CloudFrontDistribution}"
+
+  # CloudFront Origin Access Control
+  CloudFrontOAC:
+    Type: "AWS::CloudFront::OriginAccessControl"
+    Properties:
+      OriginAccessControlConfig:
+        Name: !Sub "${Prefix}-static-website-OAC"
+        Description: "Origin Access Control for S3 static website"
+        SigningBehavior: "always"
+        SigningProtocol: "sigv4"
+        OriginAccessControlOriginType: "s3"
+
+  # CloudFront Distribution
+  CloudFrontDistribution:
+    Type: "AWS::CloudFront::Distribution"
+    Properties:
+      DistributionConfig:
+        Enabled: true
+        DefaultRootObject: 200.html
+        IPV6Enabled: true
+        HttpVersion: http2
+        Origins:
+          - Id: S3Origin
+            DomainName: !GetAtt StaticWebsiteBucket.RegionalDomainName
+            OriginAccessControlId: !Ref CloudFrontOAC
+            S3OriginConfig:
+              OriginAccessIdentity: ""
+        DefaultCacheBehavior:
+          TargetOriginId: S3Origin
+          ViewerProtocolPolicy: redirect-to-https
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          CachedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          Compress: true
+          DefaultTTL: 86400
+          MinTTL: 0
+          MaxTTL: 31536000
+          ForwardedValues:
+            QueryString: false
+            Cookies:
+              Forward: none
 Outputs:
   UserPoolId:
     Value: !Ref CognitoUserPool
@@ -451,3 +527,12 @@ Outputs:
     Value: !GetAtt imageDistribution.DomainName
   expressAPIUrl:
     Value: !GetAtt expressAPIUrl.FunctionUrl
+  WebsiteBucketName:
+    Description: "Name of S3 bucket hosting the website"
+    Value: !Ref StaticWebsiteBucket
+  CloudFrontDomainName:
+    Description: "Domain name of CloudFront distribution"
+    Value: !GetAtt CloudFrontDistribution.DomainName
+  WebsiteURL:
+    Description: "URL of the website"
+    Value: !Sub "https://${CloudFrontDistribution.DomainName}"
