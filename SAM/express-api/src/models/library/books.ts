@@ -36,7 +36,7 @@ export function toDynamoDB(item: Book): BookDDB {
   return {
     PK: item.title,
     SK: item.id,
-    entityType: "ENTITYTYPE#BOOK",
+    entityType: "ENTITYTYPE#LIBRARY#BOOK",
     title: item.title,
     accessionNo: item.accessionNo,
     author: item.author,

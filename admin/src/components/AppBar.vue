@@ -88,5 +88,22 @@ const menuOptions = [
       },
     ],
   },
+  {
+    title: "Library",
+    children: [
+      {
+        title: "Articles",
+        path: "/library-articles",
+      },
+      {
+        title: "Books",
+        path: "/library-books",
+      },
+      {
+        title: "Journals",
+        path: "/library-journals",
+      },
+    ],
+  },
 ];
 </script>

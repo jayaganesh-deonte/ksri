@@ -93,7 +93,7 @@ export function validateArticle(item: Article): boolean {
     typeof item.author === "string" &&
     typeof item.journal === "string" &&
     typeof item.volume === "string" &&
-    typeof item.year === "number" &&
+    typeof item.year === "string" &&
     typeof item.remarks === "string"
   );
 }

@@ -49,16 +49,12 @@ bookRoute.get("/library/books", async (req: Request, res: Response) => {
       TableName: "ksri_admin_master_table",
       KeyConditionExpression: "entityType = :entityType",
       ExpressionAttributeValues: {
-        ":entityType": "ENTITYTYPE#BOOK",
+        ":entityType": "ENTITYTYPE#LIBRARY#BOOK",
       },
       IndexName: "entityTypePK",
     };
     const response = await documentClient.query(params);
-    const books = response.Items?.map((item) => {
-      if (isBookDDB(item)) {
-        return fromDynamoDB(item);
-      }
-    });
+    const books = response.Items?.map((item) => fromDynamoDB(item as BookDDB));
     res.json(books);
   } catch (error) {
     console.error("Error fetching books:", error);

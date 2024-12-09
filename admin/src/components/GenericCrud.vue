@@ -52,6 +52,17 @@
                   :disabled="isEditDisabled(field)"
                 />
 
+                <!-- type number -->
+                <v-text-field
+                  v-else-if="field.type === 'number'"
+                  v-model="editedItem[field.key]"
+                  :label="field.label"
+                  :rules="field.rules"
+                  variant="outlined"
+                  :disabled="isEditDisabled(field)"
+                  :type="field.type"
+                />
+
                 <v-textarea
                   v-else-if="field.type === 'text-area'"
                   v-model="editedItem[field.key]"

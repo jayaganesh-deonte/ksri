@@ -22,6 +22,9 @@ import endowments from "@/views/endowments.vue";
 import governingBodyMembersPast from "@/views/governingBodyMembers/governingBodyMembersPast.vue";
 import governingBodyMembersPresent from "@/views/governingBodyMembers/governingBodyMembersPresent.vue";
 
+import articles from "@/views/library/articles.vue";
+import books from "@/views/library/books.vue";
+
 const routes = [
   {
     path: "/",
@@ -75,6 +78,18 @@ const routes = [
     path: "/governing-body-members",
     name: "governingBodyMembersPresent",
     component: governingBodyMembersPresent,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/library-articles",
+    name: "articles",
+    component: articles,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/library-books",
+    name: "books",
+    component: books,
     meta: { requiresAuth: true },
   },
 ];

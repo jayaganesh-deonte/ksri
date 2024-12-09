@@ -29,6 +29,9 @@ articleRoute.post("/library/articles", async (req: Request, res: Response) => {
     // Convert to DynamoDB format
     const dynamoDBItem = toDynamoDB(articleData);
 
+    // convert dynamoDBItem.year to number
+    dynamoDBItem.year = Number(dynamoDBItem.year);
+
     // Put item in DynamoDB
     await documentClient.put({
       TableName: ARTICLES_TABLE,
