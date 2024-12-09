@@ -11,6 +11,11 @@ import { useAppStore } from "@/stores/app";
 
 import index from "@/views/index.vue";
 import milestone from "@/views/milestone.vue";
+import projects from "@/views/projects.vue";
+
+import traditionalScholars from "@/views/traditionalScholars.vue";
+import foreignScholars from "@/views/foreignScholars.vue";
+import modernScholars from "@/views/modernScholars.vue";
 
 const routes = [
   {
@@ -23,6 +28,30 @@ const routes = [
     path: "/milestone",
     name: "milestone",
     component: milestone,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/projects",
+    name: "projects",
+    component: projects,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/traditional-scholars",
+    name: "traditionalScholars",
+    component: traditionalScholars,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/foreign-scholars",
+    name: "foreignScholars",
+    component: foreignScholars,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/modern-scholars",
+    name: "modernScholars",
+    component: modernScholars,
     meta: { requiresAuth: true },
   },
 ];

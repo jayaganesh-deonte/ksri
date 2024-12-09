@@ -61,6 +61,10 @@ const menuOptions = [
         path: "/traditional-scholars",
       },
       {
+        title: "Foreign Scholars",
+        path: "/foreign-scholars",
+      },
+      {
         title: "Modern Scholars",
         path: "/modern-scholars",
       },

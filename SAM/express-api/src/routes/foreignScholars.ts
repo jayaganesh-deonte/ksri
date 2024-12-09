@@ -51,7 +51,7 @@ foreignScholarRoute.get(
     try {
       const params = {
         TableName: TABLE_NAME,
-        FilterExpression: "entityType = :entityType",
+        KeyConditionExpression: "entityType = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#FOREIGN_SCHOLAR",
         },
@@ -77,12 +77,12 @@ foreignScholarRoute.delete(
   async (req: Request, res: Response) => {
     try {
       // id from body
-      const { id } = req.body;
+      const { name, id } = req.body;
 
       await documentClient.delete({
         TableName: TABLE_NAME,
         Key: {
-          PK: id,
+          PK: name,
           SK: id,
         },
       });
@@ -91,39 +91,6 @@ foreignScholarRoute.delete(
     } catch (error) {
       console.error("Error deleting scholar:", error);
       res.status(500).json({ error: "Failed to delete scholar" });
-    }
-  }
-);
-
-// UPDATE a foreign scholar
-foreignScholarRoute.put(
-  "/foreign-scholars/:id",
-  async (req: Request<{ id: string }>, res: Response) => {
-    try {
-      const { id } = req.params;
-      const updatedScholarData: ForeignScholar = req.body;
-
-      // Validate updated scholar data
-      if (!validateForeignScholar(updatedScholarData)) {
-        return res.status(400).json({
-          error:
-            "Invalid updated scholar data. Ensure name, id and description are present.",
-        });
-      }
-
-      // Convert to DynamoDB format
-      const dynamoDBItem = toDynamoDB(updatedScholarData);
-
-      // Update item in DynamoDB
-      await documentClient.put({
-        TableName: TABLE_NAME,
-        Item: dynamoDBItem,
-      });
-
-      res.status(200).json(updatedScholarData);
-    } catch (error) {
-      console.error("Error updating scholar:", error);
-      res.status(500).json({ error: "Failed to update scholar" });
     }
   }
 );

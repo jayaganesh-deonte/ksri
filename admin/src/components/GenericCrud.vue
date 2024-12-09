@@ -101,6 +101,7 @@ import { ref, onMounted, computed, defineProps, defineEmits } from "vue";
 import { useToast } from "vue-toast-notification";
 import "vue-toast-notification/dist/theme-sugar.css";
 import { inject } from "vue";
+import { ulid } from "ulidx";
 
 const props = defineProps({
   // Configuration for the CRUD component
@@ -119,6 +120,9 @@ const props = defineProps({
   headers: {
     type: Array,
     required: true,
+  },
+  addIdToPayload: {
+    default: false,
   },
 });
 
@@ -243,7 +247,12 @@ const close = () => {
 
 const save = async () => {
   try {
-    const response = await axios.post(props.apiEndpoint, editedItem.value);
+    const payload = { ...editedItem.value };
+    if (props.addIdToPayload && editedIndex.value === -1) {
+      payload.id = ulid();
+    }
+
+    const response = await axios.post(props.apiEndpoint, payload);
 
     if (response.status === 200) {
       $toast.open({
@@ -256,9 +265,9 @@ const save = async () => {
 
       // Emit events for parent component to listen
       if (editedIndex.value === -1) {
-        emit("item-created", editedItem.value);
+        emit("item-created", payload);
       } else {
-        emit("item-updated", editedItem.value);
+        emit("item-updated", payload);
       }
 
       close();
