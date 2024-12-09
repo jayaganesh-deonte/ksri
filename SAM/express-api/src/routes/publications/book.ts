@@ -38,7 +38,7 @@ publicationBookRoute.post(
         Item: dynamoDBItem,
       });
 
-      res.status(201).json({ message: "Book created successfully." });
+      res.status(200).json({ message: "Book created successfully." });
     } catch (error) {
       console.error("Error creating book:", error);
       res.status(500).json({ error: "Failed to create book." });

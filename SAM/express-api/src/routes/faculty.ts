@@ -56,7 +56,7 @@ facultyRouter.post("/faculty", async (req: Request, res: Response) => {
       Item: facultyDDB,
     });
 
-    res.status(201).json(faculty);
+    res.status(200).json(faculty);
   } catch (error) {
     console.error("Error creating faculty:", error);
     res.status(500).json({ error: "Internal Server Error" });

@@ -46,7 +46,7 @@ traditionalScholarRoute.post(
 
       try {
         await documentClient.send(command);
-        res.status(201).json(scholarData);
+        res.status(200).json(scholarData);
       } catch (err) {
         if (
           err instanceof Error &&

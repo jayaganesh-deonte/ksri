@@ -47,7 +47,7 @@ dainandiniRouter.post("/dainandini", async (req: Request, res: Response) => {
       TableName: DAINANDINI_TABLE,
       Item: dainandiniDDB,
     });
-    res.status(201).json(dainandini);
+    res.status(200).json(dainandini);
   } catch (error) {
     console.error("Error creating dainandini:", error);
     res.status(500).json({ error: "Internal Server Error" });

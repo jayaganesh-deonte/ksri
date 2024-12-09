@@ -35,7 +35,7 @@ journalRoute.post("/library/journals", async (req: Request, res: Response) => {
       TableName: JOURNALS_TABLE,
       Item: dynamoDBItem,
     });
-    res.status(201).json({ message: "Journal created successfully" });
+    res.status(200).json({ message: "Journal created successfully" });
   } catch (error) {
     console.error("Error creating journal:", error);
     res.status(500).json({ error: "Failed to create journal" });

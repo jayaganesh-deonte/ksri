@@ -49,7 +49,7 @@ marqueeTextsRouter.post(
         TableName: MARQUEETEXTS_TABLE,
         Item: marqueetextDDB,
       });
-      res.status(201).json(marqueetext);
+      res.status(200).json(marqueetext);
     } catch (error) {
       console.error("Error creating marqueetext:", error);
       res.status(500).json({ error: "Internal Server Error" });

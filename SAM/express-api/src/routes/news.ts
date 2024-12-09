@@ -56,7 +56,7 @@ newsRoute.post("/news", async (req: Request, res: Response) => {
       Item: dynamoDBItem,
     });
 
-    res.status(201).json(news);
+    res.status(200).json(news);
   } catch (error) {
     console.error(error);
     res.status(500).send(error);

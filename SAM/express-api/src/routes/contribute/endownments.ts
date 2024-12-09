@@ -35,7 +35,7 @@ endownmentRoute.post(
         Item: dynamoDBItem,
       });
 
-      res.status(201).json(endownmentData);
+      res.status(200).json(endownmentData);
     } catch (error) {
       console.error("Error creating endownment:", error);
       res.status(500).json({ error: "Failed to create endownment" });

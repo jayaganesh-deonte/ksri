@@ -71,7 +71,7 @@ galleryRoute.post("/gallery", async (req: Request, res: Response) => {
 
     await documentClient.put(params);
 
-    res.status(201).json(galleryImage);
+    res.status(200).json(galleryImage);
   } catch (error) {
     console.error("Error creating gallery image:", error);
     res.status(500).json({ error: "Failed to create gallery image" });

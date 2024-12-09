@@ -36,7 +36,7 @@ foreignScholarRoute.post(
         TableName: TABLE_NAME,
         Item: dynamoDBItem,
       });
-      res.status(201).json(scholarData);
+      res.status(200).json(scholarData);
     } catch (error) {
       console.error("Error creating scholar:", error);
       res.status(500).json({ error: "Failed to create scholar" });
@@ -87,7 +87,7 @@ foreignScholarRoute.delete(
         },
       });
 
-      res.status(204).send();
+      res.status(200).send();
     } catch (error) {
       console.error("Error deleting scholar:", error);
       res.status(500).json({ error: "Failed to delete scholar" });

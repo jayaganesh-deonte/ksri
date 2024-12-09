@@ -10,12 +10,19 @@ import {
 import { useAppStore } from "@/stores/app";
 
 import index from "@/views/index.vue";
+import milestone from "@/views/milestone.vue";
 
 const routes = [
   {
     path: "/",
     name: "index",
     component: index,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/milestone",
+    name: "milestone",
+    component: milestone,
     meta: { requiresAuth: true },
   },
 ];

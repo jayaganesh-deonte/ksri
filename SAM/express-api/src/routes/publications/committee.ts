@@ -64,7 +64,7 @@ publicationsCommitteeRouter.post(
         TableName: COMMITTEE_MEMBERS_TABLE,
         Item: dynamoDBCommitteeMember,
       });
-      res.status(201).json(committeeMember);
+      res.status(200).json(committeeMember);
     } catch (error) {
       console.error("Error creating CommitteeMember:", error);
       res.status(500).json({ error: "Failed to create CommitteeMember" });

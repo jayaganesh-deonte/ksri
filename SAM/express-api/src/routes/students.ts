@@ -33,7 +33,7 @@ studentRoute.post("/students", async (req: Request, res: Response) => {
       Item: dynamoDBItem,
     });
 
-    res.status(201).json(studentData);
+    res.status(200).json(studentData);
   } catch (error) {
     console.error("Error creating student:", error);
     res.status(500).json({ error: "Failed to create student" });

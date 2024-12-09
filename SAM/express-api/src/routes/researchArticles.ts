@@ -36,7 +36,7 @@ researchArticlesRoute.post(
       // Save to DynamoDB
       await documentClient.put(params);
 
-      res.status(201).json(researchArticleData);
+      res.status(200).json(researchArticleData);
     } catch (error) {
       console.error("Error creating research article:", error);
       res.status(500).json({ error: "Failed to create research article" });

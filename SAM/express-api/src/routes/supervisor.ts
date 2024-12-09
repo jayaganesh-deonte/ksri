@@ -37,7 +37,7 @@ supervisorRoute.post("/supervisor", async (req: Request, res: Response) => {
       Item: dynamoDBItem,
     });
 
-    res.status(201).json(supervisorData);
+    res.status(200).json(supervisorData);
   } catch (error) {
     console.error("Error creating supervisor:", error);
     res.status(500).json({ error: "Failed to create supervisor" });

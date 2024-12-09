@@ -48,7 +48,7 @@ milestonesRoute.post(
         TableName: "ksri_admin_master_table",
         Item: dynamoDBItem,
       });
-      res.status(201).json(milestone);
+      res.status(200).json(milestone);
     } catch (error) {
       console.error("Error creating milestone:", error);
       res.status(500).json({ error: "Failed to create milestone" });
@@ -78,7 +78,7 @@ milestonesRoute.delete(
         },
       });
 
-      res.status(204).send();
+      res.status(200).send();
     } catch (error) {
       console.error("Error deleting milestone:", error);
       res.status(500).json({ error: "Failed to delete milestone" });

@@ -60,7 +60,7 @@ collectionsRoute.post(
         Item: toDynamoDB(collection),
       };
       await documentClient.put(params);
-      res.status(201).json(collection);
+      res.status(200).json(collection);
     } catch (error) {
       console.error("Error creating collection:", error);
       res.status(500).json({ error: "Failed to create collection" });

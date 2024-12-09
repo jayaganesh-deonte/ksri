@@ -38,7 +38,7 @@ governingBodyMembersRoute.post(
         Item: dynamoDBItem,
       });
 
-      res.status(201).json(dynamoDBItem);
+      res.status(200).json(dynamoDBItem);
     } catch (error) {
       console.error("Error creating GoverningBodyMember:", error);
       res.status(500).json({ error: "Failed to create GoverningBodyMember" });

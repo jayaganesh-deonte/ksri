@@ -49,7 +49,7 @@ homeDialogRouter.post("/homedialog", async (req: Request, res: Response) => {
       TableName: HOMEDIALOG_TABLE,
       Item: homeDialogDDB,
     });
-    res.status(201).json(homeDialog);
+    res.status(200).json(homeDialog);
   } catch (error) {
     console.error("Error creating home dialog:", error);
     res.status(500).json({ error: "Internal Server Error" });
