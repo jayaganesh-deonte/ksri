@@ -70,5 +70,10 @@ const menuOptions = [
       },
     ],
   },
+  {
+    title: "Endowments",
+    path: "/endowments",
+    icon: "mdi-account-tie",
+  },
 ];
 </script>

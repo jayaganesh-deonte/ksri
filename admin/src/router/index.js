@@ -17,6 +17,8 @@ import traditionalScholars from "@/views/scholars/traditionalScholars.vue";
 import foreignScholars from "@/views/scholars/foreignScholars.vue";
 import modernScholars from "@/views/scholars/modernScholars.vue";
 
+import endowments from "@/views/endowments.vue";
+
 const routes = [
   {
     path: "/",
@@ -52,6 +54,12 @@ const routes = [
     path: "/modern-scholars",
     name: "modernScholars",
     component: modernScholars,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/endowments",
+    name: "endowments",
+    component: endowments,
     meta: { requiresAuth: true },
   },
 ];

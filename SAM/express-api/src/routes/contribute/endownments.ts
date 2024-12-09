@@ -50,7 +50,7 @@ endownmentRoute.get(
     try {
       const params = {
         TableName: "ksri_admin_master_table",
-        FilterExpression: "entityType = :entityType",
+        KeyConditionExpression: "entityType = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#ENDOWNMENT",
         },
@@ -66,37 +66,6 @@ endownmentRoute.get(
     } catch (error) {
       console.error("Error fetching endownments:", error);
       res.status(500).json({ error: "Failed to fetch endownments" });
-    }
-  }
-);
-
-// UPDATE Endownment
-endownmentRoute.put(
-  "/contribute/endownments",
-  async (req: Request, res: Response) => {
-    try {
-      const endownmentData: Endownment = req.body;
-
-      // Validate endownment data
-      if (!validateEndownment(endownmentData)) {
-        return res.status(400).json({
-          error:
-            "Invalid endownment data. Ensure title, initiatedBy and topic are present.",
-        });
-      }
-
-      // Convert to DynamoDB format
-      const dynamoDBItem = toDynamoDB(endownmentData);
-
-      // Update item in DynamoDB
-      await documentClient.put({
-        TableName: "ksri_admin_master_table",
-        Item: dynamoDBItem,
-      });
-      res.status(200).json(endownmentData);
-    } catch (error) {
-      console.error("Error updating endownment:", error);
-      res.status(500).json({ error: "Failed to update endownment" });
     }
   }
 );
