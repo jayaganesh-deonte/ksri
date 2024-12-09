@@ -75,5 +75,18 @@ const menuOptions = [
     path: "/endowments",
     icon: "mdi-account-tie",
   },
+  {
+    title: "Governing Body Members",
+    children: [
+      {
+        title: "Present",
+        path: "/governing-body-members",
+      },
+      {
+        title: "Past",
+        path: "/governing-body-members-past",
+      },
+    ],
+  },
 ];
 </script>

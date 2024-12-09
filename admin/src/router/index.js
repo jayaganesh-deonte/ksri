@@ -19,6 +19,9 @@ import modernScholars from "@/views/scholars/modernScholars.vue";
 
 import endowments from "@/views/endowments.vue";
 
+import governingBodyMembersPast from "@/views/governingBodyMembers/governingBodyMembersPast.vue";
+import governingBodyMembersPresent from "@/views/governingBodyMembers/governingBodyMembersPresent.vue";
+
 const routes = [
   {
     path: "/",
@@ -60,6 +63,18 @@ const routes = [
     path: "/endowments",
     name: "endowments",
     component: endowments,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/governing-body-members-past",
+    name: "governingBodyMembersPast",
+    component: governingBodyMembersPast,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/governing-body-members",
+    name: "governingBodyMembersPresent",
+    component: governingBodyMembersPresent,
     meta: { requiresAuth: true },
   },
 ];
