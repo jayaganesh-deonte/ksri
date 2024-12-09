@@ -13,9 +13,9 @@ import index from "@/views/index.vue";
 import milestone from "@/views/milestone.vue";
 import projects from "@/views/projects.vue";
 
-import traditionalScholars from "@/views/traditionalScholars.vue";
-import foreignScholars from "@/views/foreignScholars.vue";
-import modernScholars from "@/views/modernScholars.vue";
+import traditionalScholars from "@/views/scholars/traditionalScholars.vue";
+import foreignScholars from "@/views/scholars/foreignScholars.vue";
+import modernScholars from "@/views/scholars/modernScholars.vue";
 
 const routes = [
   {
