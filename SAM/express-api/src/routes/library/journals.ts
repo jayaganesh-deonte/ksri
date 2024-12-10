@@ -22,6 +22,7 @@ journalRoute.post("/library/journals", async (req: Request, res: Response) => {
 
     // Validate journal data
     if (!validateJournal(journalData)) {
+      console.error("Invalid journal data:", journalData);
       return res.status(400).json({
         error: "Invalid journal data. Ensure all required fields are present.",
       });

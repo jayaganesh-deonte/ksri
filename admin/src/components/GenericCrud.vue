@@ -22,7 +22,21 @@
       class="elevation-1"
       :items-per-page="50"
       :items-per-page-options="[10, 50, 100, 200, -1]"
+      v-model:expanded="expanded"
+      :show-expand="expandable"
+      expand-on-click
     >
+      <!-- Sub-table expansion panel -->
+      <template #expanded-row="{ item }">
+        <td :colspan="headers.length" v-if="hasSubTable(item)">
+          <v-data-table
+            :headers="getSubTableHeaders(item)"
+            :items="item.subTable"
+            class="mt-2"
+          />
+        </td>
+      </template>
+
       <template #item.actions="{ item }">
         <v-icon class="me-2" size="small" @click="editItem(item)">
           mdi-pencil
@@ -31,7 +45,8 @@
       </template>
     </v-data-table>
 
-    <v-dialog v-model="dialog" width="auto" persistent min-width="400">
+    <!-- Main Dialog -->
+    <v-dialog v-model="dialog" fullscreen scrlollable persistent>
       <v-card>
         <v-card color="secondary" rounded="0" elevation="0">
           <v-card-title>
@@ -43,45 +58,95 @@
           <v-container>
             <v-row>
               <v-col v-for="field in entityFields" :key="field.key" cols="12">
-                <v-text-field
-                  v-if="field.type === 'text'"
-                  v-model="editedItem[field.key]"
-                  :label="field.label"
-                  :rules="field.rules"
-                  variant="outlined"
-                  :disabled="isEditDisabled(field)"
-                />
+                <!-- Regular fields -->
+                <template v-if="!field.isArray">
+                  <v-text-field
+                    v-if="field.type === 'text'"
+                    v-model="editedItem[field.key]"
+                    :label="field.label"
+                    :rules="field.rules"
+                    variant="outlined"
+                    :disabled="isEditDisabled(field)"
+                  />
 
-                <!-- type number -->
-                <v-text-field
-                  v-else-if="field.type === 'number'"
-                  v-model="editedItem[field.key]"
-                  :label="field.label"
-                  :rules="field.rules"
-                  variant="outlined"
-                  :disabled="isEditDisabled(field)"
-                  :type="field.type"
-                />
+                  <v-text-field
+                    v-else-if="field.type === 'number'"
+                    v-model="editedItem[field.key]"
+                    :label="field.label"
+                    :rules="field.rules"
+                    variant="outlined"
+                    :disabled="isEditDisabled(field)"
+                    type="number"
+                  />
 
-                <v-textarea
-                  v-else-if="field.type === 'text-area'"
-                  v-model="editedItem[field.key]"
-                  :label="field.label"
-                  :rules="field.rules"
-                  variant="outlined"
-                  :disabled="isEditDisabled(field)"
-                />
+                  <v-autocomplete
+                    v-else-if="field.type === 'auto-complete'"
+                    v-model="editedItem[field.key]"
+                    :label="field.label"
+                    :rules="field.rules"
+                    variant="outlined"
+                    :items="field.items"
+                    :disabled="isEditDisabled(field)"
+                  />
+                </template>
 
-                <!-- auto complete -->
-                <v-autocomplete
-                  v-else-if="field.type === 'auto-complete'"
-                  v-model="editedItem[field.key]"
-                  :label="field.label"
-                  :rules="field.rules"
-                  variant="outlined"
-                  :items="field.items"
-                  :disabled="isEditDisabled(field)"
-                />
+                <!-- Array/Sub-table fields -->
+                <template v-else>
+                  <v-card class="pa-4">
+                    <div class="d-flex justify-space-between align-center mb-4">
+                      <div class="text-h6">{{ field.label }}</div>
+                      <v-btn
+                        color="primary"
+                        size="small"
+                        @click="addSubTableRow(field.key)"
+                      >
+                        Add Row
+                      </v-btn>
+                    </div>
+
+                    <v-table v-if="editedItem[field.key]?.length">
+                      <thead>
+                        <tr>
+                          <th
+                            v-for="subField in field.fields"
+                            :key="subField.key"
+                          >
+                            {{ subField.label }}
+                          </th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr
+                          v-for="(row, index) in editedItem[field.key]"
+                          :key="index"
+                        >
+                          <td
+                            v-for="subField in field.fields"
+                            :key="subField.key"
+                          >
+                            <v-text-field
+                              v-model="row[subField.key]"
+                              :type="subField.type"
+                              variant="outlined"
+                              density="compact"
+                              hide-details
+                            />
+                          </td>
+                          <td>
+                            <v-icon
+                              size="small"
+                              @click="removeSubTableRow(field.key, index)"
+                              color="error"
+                            >
+                              mdi-delete
+                            </v-icon>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </v-table>
+                  </v-card>
+                </template>
               </v-col>
             </v-row>
           </v-container>
@@ -115,7 +180,6 @@ import { inject } from "vue";
 import { ulid } from "ulidx";
 
 const props = defineProps({
-  // Configuration for the CRUD component
   entityName: {
     type: String,
     required: true,
@@ -135,6 +199,9 @@ const props = defineProps({
   addIdToPayload: {
     default: false,
   },
+  expandable: {
+    default: false,
+  },
 });
 
 const emit = defineEmits(["item-created", "item-updated", "item-deleted"]);
@@ -145,11 +212,17 @@ const $toast = useToast();
 const search = ref("");
 const dialog = ref(false);
 const editedIndex = ref(-1);
+const expandedItems = ref(new Set());
+const expanded = ref([]);
 
 // Create a default item based on entity fields
 const defaultItem = computed(() => {
   return props.entityFields.reduce((acc, field) => {
-    acc[field.key] = field.defaultValue || "";
+    if (field.isArray) {
+      acc[field.key] = [];
+    } else {
+      acc[field.key] = field.defaultValue || "";
+    }
     return acc;
   }, {});
 });
@@ -164,21 +237,52 @@ const formTitle = computed(() => {
 
 const items = ref([]);
 
-// const getInputComponent = (field) => {
-//   switch (field.type) {
-//     case "number":
-//       return "v-text-field";
-//     case "date":
-//       return "v-text-field";
-//     default:
-//       return "v-text-field";
-//   }
-// };
+const hasSubTable = (item) => {
+  return (
+    item.subTable && Array.isArray(item.subTable) && item.subTable.length > 0
+  );
+};
+
+const getSubTableHeaders = (item) => {
+  if (!item.subTable || !item.subTable[0]) return [];
+  return Object.keys(item.subTable[0]).map((key) => ({
+    title: key,
+    key: key,
+  }));
+};
+
+const expandRow = (item) => {
+  if (expandedItems.value.has(item)) {
+    expandedItems.value.delete(item);
+  } else {
+    expandedItems.value.add(item);
+  }
+};
+
+const addSubTableRow = (key) => {
+  if (!editedItem.value[key]) {
+    editedItem.value[key] = [];
+  }
+
+  const newRow = props.entityFields
+    .find((field) => field.key === key)
+    .fields.reduce((acc, field) => {
+      acc[field.key] = field.defaultValue || "";
+      return acc;
+    }, {});
+
+  editedItem.value[key].push(newRow);
+};
+
+const removeSubTableRow = (key, index) => {
+  editedItem.value[key].splice(index, 1);
+};
+
 const isEditDisabled = (field) => {
-  // if is edit
   if (editedIndex.value !== -1) {
     return field.editDisabled;
   }
+  return false;
 };
 
 const fetchItems = async () => {

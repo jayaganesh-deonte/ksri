@@ -77,6 +77,7 @@ const menuOptions = [
   },
   {
     title: "Governing Body Members",
+    icon: "mdi-account-group",
     children: [
       {
         title: "Present",
@@ -90,6 +91,7 @@ const menuOptions = [
   },
   {
     title: "Library",
+    icon: "mdi-library",
     children: [
       {
         title: "Articles",

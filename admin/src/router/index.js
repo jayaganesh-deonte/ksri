@@ -24,6 +24,7 @@ import governingBodyMembersPresent from "@/views/governingBodyMembers/governingB
 
 import articles from "@/views/library/articles.vue";
 import books from "@/views/library/books.vue";
+import journals from "@/views/library/journals.vue";
 
 const routes = [
   {
@@ -90,6 +91,12 @@ const routes = [
     path: "/library-books",
     name: "books",
     component: books,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/library-journals",
+    name: "journals",
+    component: journals,
     meta: { requiresAuth: true },
   },
 ];

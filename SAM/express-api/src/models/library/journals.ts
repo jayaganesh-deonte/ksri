@@ -19,15 +19,15 @@
 //  create model
 export interface SubJournal {
   "JournalVolumeNumber#": string;
-  PublicationYear: number;
-  Volume: number;
+  PublicationYear: string;
+  Volume: string;
   JournalVolumeNumber: string;
 }
 
 //  create model
 export interface Journal {
   id: string;
-  JournalAccNo: number;
+  JournalAccNo: string;
   JournalName: string;
   Nationality: string;
   subTable: SubJournal[];
@@ -38,7 +38,7 @@ export interface JournalDDB {
   PK: string;
   SK: string;
   entityType: string;
-  JournalAccNo: number;
+  JournalAccNo: string;
   JournalName: string;
   Nationality: string;
   subTable: SubJournal[];
@@ -51,7 +51,7 @@ export function isJournalDDB(item: any): item is JournalDDB {
     typeof item.PK === "string" &&
     typeof item.SK === "string" &&
     typeof item.entityType === "string" &&
-    typeof item.JournalAccNo === "number" &&
+    typeof item.JournalAccNo === "string" &&
     typeof item.JournalName === "string" &&
     typeof item.Nationality === "string" &&
     Array.isArray(item.subTable)
@@ -63,7 +63,7 @@ export function isJournal(item: any): item is Journal {
   return (
     typeof item === "object" &&
     typeof item.id === "string" &&
-    typeof item.JournalAccNo === "number" &&
+    typeof item.JournalAccNo === "string" &&
     typeof item.JournalName === "string" &&
     typeof item.Nationality === "string" &&
     Array.isArray(item.subTable)
@@ -75,8 +75,8 @@ export function isSubJournal(item: any): item is SubJournal {
   return (
     typeof item === "object" &&
     typeof item.JournalVolumeNumber === "string" &&
-    typeof item.PublicationYear === "number" &&
-    typeof item.Volume === "number" &&
+    typeof item.PublicationYear === "string" &&
+    typeof item.Volume === "string" &&
     typeof item.JournalVolumeNumber === "string"
   );
 }
@@ -121,10 +121,10 @@ export function toDynamoDB(item: Journal): JournalDDB {
 
 export function validateJournal(item: Journal): boolean {
   return (
-    typeof item.id === "string" &&
-    typeof item.JournalAccNo === "number" &&
-    typeof item.JournalName === "string" &&
-    typeof item.Nationality === "string" &&
-    Array.isArray(item.subTable)
+    "id" in item &&
+    "JournalAccNo" in item &&
+    "JournalName" in item &&
+    "Nationality" in item &&
+    "subTable" in item
   );
 }
