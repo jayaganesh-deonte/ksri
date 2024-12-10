@@ -19,7 +19,7 @@ export interface Book {
   details?: string;
   id: string;
   publication: string;
-  available: boolean;
+  available: string;
 }
 
 export interface BookDDB {
@@ -33,7 +33,7 @@ export interface BookDDB {
   details?: string;
   id?: string;
   publication: string;
-  available: boolean;
+  available: string;
 }
 
 export function validateBook(item: Book): boolean {
@@ -45,7 +45,7 @@ export function validateBook(item: Book): boolean {
     typeof item.details === "string" &&
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
-    typeof item.available === "boolean"
+    typeof item.available === "string"
   );
 }
 
@@ -91,7 +91,7 @@ export function isBook(item: any): item is BookDDB {
     typeof item.details === "string" &&
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
-    typeof item.available === "boolean"
+    typeof item.available === "string"
   );
 }
 
@@ -108,7 +108,7 @@ export function isBookDDB(item: any): item is BookDDB {
     typeof item.details === "string" &&
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
-    typeof item.available === "boolean"
+    typeof item.available === "string"
   );
 }
 
@@ -125,6 +125,6 @@ export function validateBookDDB(item: BookDDB): boolean {
     typeof item.details === "string" &&
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
-    typeof item.available === "boolean"
+    typeof item.available === "string"
   );
 }

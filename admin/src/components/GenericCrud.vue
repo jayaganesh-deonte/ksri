@@ -67,6 +67,7 @@
                     :rules="field.rules"
                     variant="outlined"
                     :disabled="isEditDisabled(field)"
+                    density="compact"
                   />
 
                   <v-text-field
@@ -77,6 +78,7 @@
                     variant="outlined"
                     :disabled="isEditDisabled(field)"
                     type="number"
+                    density="compact"
                   />
 
                   <v-autocomplete
@@ -87,6 +89,16 @@
                     variant="outlined"
                     :items="field.items"
                     :disabled="isEditDisabled(field)"
+                    density="compact"
+                  />
+
+                  <ImageUpload
+                    v-else-if="field.type === 'image'"
+                    :images="editedItem[field.key]"
+                    @images-updated="
+                      (images) => (editedItem[field.key] = images)
+                    "
+                    :key="editedItem[field.key].length"
                   />
                 </template>
 
@@ -178,6 +190,7 @@ import { useToast } from "vue-toast-notification";
 import "vue-toast-notification/dist/theme-sugar.css";
 import { inject } from "vue";
 import { ulid } from "ulidx";
+import ImageUpload from "./ImageUpload.vue";
 
 const props = defineProps({
   entityName: {

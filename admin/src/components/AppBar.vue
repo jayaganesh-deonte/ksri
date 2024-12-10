@@ -107,5 +107,15 @@ const menuOptions = [
       },
     ],
   },
+  {
+    title: "Publications",
+    icon: "mdi-book-open-page-variant",
+    children: [
+      {
+        title: "books",
+        path: "/publications-books",
+      },
+    ],
+  },
 ];
 </script>
