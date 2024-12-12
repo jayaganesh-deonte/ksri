@@ -6,7 +6,7 @@
       elevation="0"
       color="secondary"
     >
-      <div class="text-h6">Files:</div>
+      <div class="text-h6">{{ title }}</div>
       <!-- add button to upload new files -->
       <v-btn color="primary" class="ml-2" @click="triggerFileInput">
         <v-icon>mdi-plus</v-icon>
@@ -32,32 +32,45 @@
         class="ma-2 pa-2 d-flex align-center justify-space-between"
         color="greenBg"
       >
-        <div class="d-flex align-center pa-2">
-          <!-- File type icon -->
-          <v-icon :color="getFileTypeIcon(file.name).color" class="mr-2">
-            {{ getFileTypeIcon(file.name).icon }}
-          </v-icon>
-
-          <!-- File name -->
-          <span>{{ file.name }}</span>
+        <!-- if type is audio -->
+        <div v-if="file.type === 'audio'">
+          <audio controls>
+            <source :src="file.url" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
         </div>
+        <div
+          v-else
+          class="ma-2 pa-2 d-flex justify-space-between"
+          style="width: 100%"
+        >
+          <div class="d-flex align-center pa-2">
+            <!-- File type icon -->
+            <v-icon :color="getFileTypeIcon(file.name).color" class="mr-2">
+              {{ getFileTypeIcon(file.name).icon }}
+            </v-icon>
 
-        <div>
-          <!-- Download button -->
-          <v-btn
-            icon
-            @click="downloadFile(file)"
-            color="primary"
-            class="mr-2"
-            size="x-small"
-          >
-            <v-icon>mdi-download</v-icon>
-          </v-btn>
+            <!-- File name -->
+            <span>{{ file.name }}</span>
+          </div>
 
-          <!-- Delete button -->
-          <v-btn icon @click="deleteFile(file)" color="error" size="x-small">
-            <v-icon>mdi-delete</v-icon>
-          </v-btn>
+          <div>
+            <!-- Download button -->
+            <v-btn
+              icon
+              @click="downloadFile(file)"
+              color="primary"
+              class="mr-2"
+              size="x-small"
+            >
+              <v-icon>mdi-download</v-icon>
+            </v-btn>
+
+            <!-- Delete button -->
+            <v-btn icon @click="deleteFile(file)" color="error" size="x-small">
+              <v-icon>mdi-delete</v-icon>
+            </v-btn>
+          </div>
         </div>
       </v-card>
     </div>
@@ -78,11 +91,24 @@ const props = defineProps({
   // Optional configuration for file types and limits
   allowedFileTypes: {
     type: Array,
-    default: () => ["image/*", ".pdf", ".doc", ".docx", ".txt"],
+    default: () => [
+      "image/*",
+      ".pdf",
+      ".doc",
+      ".docx",
+      ".txt",
+      ".mp3",
+      ".wav",
+      ".m4a",
+    ],
   },
   maxFileSize: {
     type: Number,
     default: 10 * 1024 * 1024, // 10MB default
+  },
+  title: {
+    type: String,
+    default: "Files",
   },
 });
 
@@ -93,6 +119,25 @@ const emit = defineEmits(["files-updated"]);
 const fileInput = ref(null);
 const newFiles = ref([]);
 
+const getFileType = (fileName) => {
+  const extension = fileName.split(".").pop().toLowerCase();
+  const typeMap = {
+    jpg: "image",
+    jpeg: "image",
+    png: "image",
+    gif: "image",
+    pdf: "pdf",
+    doc: "document",
+    docx: "document",
+    txt: "document",
+    default: "document",
+    mp3: "audio",
+    wav: "audio",
+    m4a: "audio",
+  };
+  return typeMap[extension] || typeMap.default;
+};
+
 // Initialize files from props
 console.log("files", props.files);
 console.log("files", props.files.length);
@@ -100,6 +145,8 @@ if (props.files.length > 0) {
   newFiles.value = [...props.files].map((file) => ({
     name: file.split("/").pop(),
     url: file,
+    // pdf, document, audio
+    type: getFileType(file.split("/").pop()),
   }));
 }
 // Computed property for accepted file types
@@ -219,16 +266,9 @@ const uploadFiles = async (e) => {
 const downloadFile = async (file) => {
   try {
     console.log("download file", file);
-    // Get signed URL for download
-    // const signedUrl = await getSignedUrl(file.url);
 
-    // // Create temporary link and trigger download
-    // const link = document.createElement("a");
-    // link.href = signedUrl;
-    // link.download = file.name;
-    // document.body.appendChild(link);
-    // link.click();
-    // document.body.removeChild(link);
+    // open url in new tab
+    window.open(file.url, "_blank");
   } catch (error) {
     console.error("Download error:", error);
     $toast.open({

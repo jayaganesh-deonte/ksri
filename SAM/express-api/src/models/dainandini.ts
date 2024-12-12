@@ -12,7 +12,7 @@
 
 export interface Dainandini {
   id: string;
-  audioFile: string;
+  audioFile: string[];
   sanskritLine1: string;
   sanskritLine2: string;
   description: string;
@@ -34,7 +34,7 @@ export interface DainandiniDDB {
 export function fromDynamoDB(item: DainandiniDDB): Dainandini {
   return {
     id: item.id,
-    audioFile: item.audioFile,
+    audioFile: [item.audioFile],
     sanskritLine1: item.sanskritLine1,
     sanskritLine2: item.sanskritLine2,
     description: item.description,
@@ -47,7 +47,7 @@ export function toDynamoDB(item: Dainandini): DainandiniDDB {
     SK: item.id,
     entityType: "ENTITYTYPE#DAINANDINI",
     id: item.id,
-    audioFile: item.audioFile,
+    audioFile: item.audioFile[0],
     sanskritLine1: item.sanskritLine1,
     sanskritLine2: item.sanskritLine2,
     description: item.description,
@@ -59,7 +59,7 @@ export function toDynamoDB(item: Dainandini): DainandiniDDB {
 export function validateDainandini(dainandini: Dainandini): boolean {
   return (
     typeof dainandini.id === "string" &&
-    typeof dainandini.audioFile === "string" &&
+    Array.isArray(dainandini.audioFile) &&
     typeof dainandini.sanskritLine1 === "string" &&
     typeof dainandini.sanskritLine2 === "string" &&
     typeof dainandini.description === "string"

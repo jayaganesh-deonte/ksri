@@ -155,5 +155,10 @@ const menuOptions = [
     path: "/research-articles",
     icon: "mdi-book-open-page-variant",
   },
+  {
+    title: "Dainandini",
+    path: "/dainandini",
+    icon: "mdi-book-music",
+  },
 ];
 </script>

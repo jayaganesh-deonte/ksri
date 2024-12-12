@@ -119,6 +119,7 @@
                       (documents) => (editedItem[field.key] = documents)
                     "
                     :key="editedItem[field.key].length * 1"
+                    :title="field.label"
                   />
                 </template>
 

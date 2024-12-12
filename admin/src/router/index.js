@@ -39,6 +39,8 @@ import news from "@/views/news.vue";
 import supervisor from "@/views/supervisor.vue";
 import researchArticles from "@/views/researchArticles.vue";
 
+import dainandini from "@/views/dainandini.vue";
+
 const routes = [
   {
     path: "/",
@@ -158,6 +160,12 @@ const routes = [
     path: "/research-articles",
     name: "researchArticles",
     component: researchArticles,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/dainandini",
+    name: "dainandini",
+    component: dainandini,
     meta: { requiresAuth: true },
   },
 ];
