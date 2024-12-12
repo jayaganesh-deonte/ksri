@@ -29,6 +29,8 @@ import journals from "@/views/library/journals.vue";
 import publicationsBooks from "@/views/publications/publicationsBooks.vue";
 import publicationCommittee from "@/views/publications/publicationCommittee.vue";
 
+import faculty from "@/views/faculty.vue";
+
 const routes = [
   {
     path: "/",
@@ -112,6 +114,12 @@ const routes = [
     path: "/publications-committee",
     name: "publicationCommittee",
     component: publicationCommittee,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/faculty",
+    name: "faculty",
+    component: faculty,
     meta: { requiresAuth: true },
   },
 ];

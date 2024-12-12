@@ -16,12 +16,12 @@ export interface Faculty {
   id: string;
   name: string;
   designation: string;
-  displayImage: string;
+  displayImage: [string];
   subtitle: string;
   description: string;
   mobile: string;
   mail: string;
-  profile: string;
+  profile: [string];
 }
 
 export interface FacultyDDB {
@@ -47,12 +47,12 @@ export function toDynamoDB(item: Faculty): FacultyDDB {
     id: item.id,
     name: item.name,
     designation: item.designation,
-    displayImage: item.displayImage,
+    displayImage: item.displayImage[0],
     subtitle: item.subtitle,
     description: item.description,
     mobile: item.mobile,
     mail: item.mail,
-    profile: item.profile,
+    profile: item.profile[0],
   };
 }
 
@@ -80,12 +80,12 @@ export function fromDynamoDB(item: FacultyDDB): Faculty {
     id: item.SK,
     name: item.name,
     designation: item.designation,
-    displayImage: item.displayImage,
+    displayImage: [item.displayImage],
     subtitle: item.subtitle,
     description: item.description,
     mobile: item.mobile,
     mail: item.mail,
-    profile: item.profile,
+    profile: [item.profile],
   };
 }
 
@@ -127,11 +127,14 @@ export function validateFaculty(item: Faculty): boolean {
     typeof item.id === "string" &&
     typeof item.name === "string" &&
     typeof item.designation === "string" &&
-    typeof item.displayImage === "string" &&
+    Array.isArray(item.displayImage) &&
+    item.displayImage.every((image: any) => typeof image === "string") &&
+    // typeof item.displayImage  &&
     typeof item.subtitle === "string" &&
     typeof item.description === "string" &&
     typeof item.mobile === "string" &&
     typeof item.mail === "string" &&
-    typeof item.profile === "string"
+    Array.isArray(item.profile) &&
+    item.profile.every((profile: any) => typeof profile === "string")
   );
 }

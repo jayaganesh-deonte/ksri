@@ -81,6 +81,16 @@
                     density="compact"
                   />
 
+                  <v-textarea
+                    v-else-if="field.type === 'textarea'"
+                    v-model="editedItem[field.key]"
+                    :label="field.label"
+                    :rules="field.rules"
+                    variant="outlined"
+                    :disabled="isEditDisabled(field)"
+                    density="compact"
+                  />
+
                   <v-autocomplete
                     v-else-if="field.type === 'auto-complete'"
                     v-model="editedItem[field.key]"
@@ -99,6 +109,15 @@
                       (images) => (editedItem[field.key] = images)
                     "
                     :key="editedItem[field.key].length"
+                  />
+
+                  <DocumentUpload
+                    v-else-if="field.type === 'document'"
+                    :files="editedItem[field.key]"
+                    @files-updated="
+                      (documents) => (editedItem[field.key] = documents)
+                    "
+                    :key="editedItem[field.key].length * 1"
                   />
                 </template>
 
@@ -191,6 +210,7 @@ import "vue-toast-notification/dist/theme-sugar.css";
 import { inject } from "vue";
 import { ulid } from "ulidx";
 import ImageUpload from "./ImageUpload.vue";
+import DocumentUpload from "./DocumentUpload.vue";
 
 const props = defineProps({
   entityName: {

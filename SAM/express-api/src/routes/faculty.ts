@@ -66,12 +66,12 @@ facultyRouter.post("/faculty", async (req: Request, res: Response) => {
 //  DELETE Faculty
 facultyRouter.delete("/faculty", async (req: Request, res: Response) => {
   try {
-    const { id } = req.body;
+    const { name, id } = req.body;
     const params = {
       TableName: FACULTY_TABLE,
       Key: {
-        PK: id,
-        SK: "ENTITYTYPE#FACULTY",
+        PK: name,
+        SK: id,
       },
     };
     await documentClient.delete(params);

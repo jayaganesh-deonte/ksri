@@ -15,14 +15,16 @@
       <!-- hidden input to select images -->
       <input
         type="file"
+        id="imageUpload"
         multiple
         accept="image/*"
         @change="uploadImages"
         style="display: none"
       />
     </v-card>
-    <div class="d-flex flex-wrap ma-2">
-      <v-card v-for="image in images" class="ma-2" :key="image.id" width="300">
+
+    <div class="d-flex flex-wrap ma-2" v-if="images.length > 0">
+      <v-card v-for="image in images" class="ma-2" :key="image" width="300">
         <v-img :src="image" alt="image" width="300">
           <div class="d-flex justify-end ma-2">
             <!-- icon to delete image -->
@@ -67,7 +69,7 @@ const emit = defineEmits(["images-updated"]);
 const uploadImages = async (e) => {
   // select images from input
   // click input to select images
-  const inputElement = document.querySelector('input[type="file"]');
+  const inputElement = document.getElementById("imageUpload");
   inputElement.click();
 
   const files = e.target.files;

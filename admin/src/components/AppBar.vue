@@ -76,6 +76,11 @@ const menuOptions = [
     icon: "mdi-account-tie",
   },
   {
+    title: "Faculty",
+    path: "/faculty",
+    icon: "mdi-account-tie",
+  },
+  {
     title: "Governing Body Members",
     icon: "mdi-account-group",
     children: [
