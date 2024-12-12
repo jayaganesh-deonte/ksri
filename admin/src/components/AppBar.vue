@@ -50,18 +50,14 @@ const menuOptions = [
   {
     title: "Home Dialog",
     path: "/home-dialog",
-    icon: "mdi-home",
+    icon: "mdi-post-outline",
   },
   {
     title: "Banner Text",
     path: "/banner-text",
     icon: "mdi-text",
   },
-  {
-    title: "Milestone",
-    path: "/milestone",
-    icon: "mdi-sign-direction",
-  },
+
   {
     title: "News",
     path: "/news",
@@ -95,11 +91,7 @@ const menuOptions = [
       },
     ],
   },
-  {
-    title: "Endowments",
-    path: "/endowments",
-    icon: "mdi-account-tie",
-  },
+
   {
     title: "Faculty",
     path: "/faculty",
@@ -175,6 +167,16 @@ const menuOptions = [
     title: "Research Articles",
     path: "/research-articles",
     icon: "mdi-book-open-page-variant",
+  },
+  {
+    title: "Endowments",
+    path: "/endowments",
+    icon: "mdi-projector-screen",
+  },
+  {
+    title: "Milestone",
+    path: "/milestone",
+    icon: "mdi-sign-direction",
   },
 ];
 </script>
