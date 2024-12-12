@@ -12,7 +12,7 @@ export interface ResearchArticle {
   title: string;
   subTitle: string;
   author: string;
-  link: string;
+  link: string[];
 }
 export interface ResearchArticleDDB {
   PK: string;
@@ -44,7 +44,7 @@ export function validateResearchArticle(item: ResearchArticle): boolean {
     typeof item.title === "string" &&
     typeof item.subTitle === "string" &&
     typeof item.author === "string" &&
-    typeof item.link === "string"
+    Array.isArray(item.link)
   );
 }
 
@@ -54,7 +54,7 @@ export function fromDynamoDB(item: ResearchArticleDDB): ResearchArticle {
     title: item.title,
     subTitle: item.subTitle,
     author: item.author,
-    link: item.link,
+    link: [item.link],
   };
 }
 
@@ -67,6 +67,6 @@ export function toDynamoDB(item: ResearchArticle): ResearchArticleDDB {
     title: item.title,
     subTitle: item.subTitle,
     author: item.author,
-    link: item.link,
+    link: item.link[0],
   };
 }

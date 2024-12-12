@@ -37,6 +37,7 @@ import galleryImages from "@/views/gallery/galleryImages.vue";
 import news from "@/views/news.vue";
 
 import supervisor from "@/views/supervisor.vue";
+import researchArticles from "@/views/researchArticles.vue";
 
 const routes = [
   {
@@ -151,6 +152,12 @@ const routes = [
     path: "/supervisor",
     name: "supervisor",
     component: supervisor,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/research-articles",
+    name: "researchArticles",
+    component: researchArticles,
     meta: { requiresAuth: true },
   },
 ];

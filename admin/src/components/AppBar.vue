@@ -150,5 +150,10 @@ const menuOptions = [
     path: "/supervisor",
     icon: "mdi-account-tie",
   },
+  {
+    title: "Research Articles",
+    path: "/research-articles",
+    icon: "mdi-book-open-page-variant",
+  },
 ];
 </script>
