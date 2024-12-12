@@ -31,6 +31,9 @@ import publicationCommittee from "@/views/publications/publicationCommittee.vue"
 
 import faculty from "@/views/faculty.vue";
 
+import galleryCollections from "@/views/gallery/galleryCollections.vue";
+import galleryImages from "@/views/gallery/galleryImages.vue";
+
 const routes = [
   {
     path: "/",
@@ -120,6 +123,18 @@ const routes = [
     path: "/faculty",
     name: "faculty",
     component: faculty,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/gallery-collections",
+    name: "galleryCollections",
+    component: galleryCollections,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/gallery-images",
+    name: "galleryImages",
+    component: galleryImages,
     meta: { requiresAuth: true },
   },
 ];

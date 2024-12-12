@@ -126,5 +126,19 @@ const menuOptions = [
       },
     ],
   },
+  {
+    title: "Gallery",
+    icon: "mdi-image",
+    children: [
+      {
+        title: "Collection",
+        path: "/gallery-collections",
+      },
+      {
+        title: "Images",
+        path: "/gallery-images",
+      },
+    ],
+  },
 ];
 </script>

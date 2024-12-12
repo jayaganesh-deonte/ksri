@@ -5,7 +5,7 @@
 
 export interface GalleryImage {
   id: string;
-  imageUrl: string;
+  imageUrl: [string];
   description: string;
   collection: string;
 }
@@ -35,7 +35,8 @@ export function isGalleryImage(item: any): item is GalleryImage {
   return (
     typeof item === "object" &&
     typeof item.id === "string" &&
-    typeof item.imageUrl === "string" &&
+    Array.isArray(item.imageUrl) &&
+    typeof item.description === "string" &&
     typeof item.description === "string" &&
     typeof item.collection === "string"
   );
@@ -57,7 +58,7 @@ export function toDynamoDB(item: GalleryImage): GalleryImageDDB {
     PK: item.collection,
     SK: item.id,
     entityType: "ENTITYTYPE#GALLERY#IMAGE",
-    imageUrl: item.imageUrl,
+    imageUrl: item.imageUrl[0],
     description: item.description,
     collection: item.collection,
   };
@@ -66,7 +67,7 @@ export function toDynamoDB(item: GalleryImage): GalleryImageDDB {
 export function fromDynamoDB(item: GalleryImageDDB): GalleryImage {
   return {
     id: item.SK,
-    imageUrl: item.imageUrl,
+    imageUrl: [item.imageUrl],
     description: item.description,
     collection: item.collection,
   };
@@ -75,7 +76,7 @@ export function fromDynamoDB(item: GalleryImageDDB): GalleryImage {
 export function validateGalleryImage(item: GalleryImage): boolean {
   return (
     typeof item.id === "string" &&
-    typeof item.imageUrl === "string" &&
+    Array.isArray(item.imageUrl) &&
     typeof item.description === "string" &&
     typeof item.collection === "string"
   );
