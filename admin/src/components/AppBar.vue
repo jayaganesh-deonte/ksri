@@ -145,5 +145,10 @@ const menuOptions = [
     path: "/news",
     icon: "mdi-newspaper",
   },
+  {
+    title: "supervisor",
+    path: "/supervisor",
+    icon: "mdi-account-tie",
+  },
 ];
 </script>
