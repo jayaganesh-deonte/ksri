@@ -115,6 +115,10 @@ const menuOptions = [
         title: "books",
         path: "/publications-books",
       },
+      {
+        title: "Committee",
+        path: "/publications-committee",
+      },
     ],
   },
 ];
