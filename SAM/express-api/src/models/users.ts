@@ -1,0 +1,76 @@
+// Example User object structure
+// {
+//  id: ""
+//     "name":"",
+//     "email": "",
+//     "phoneNumber": "",
+//     "group": "",
+//     "displayImage": []
+// }
+
+// create model
+
+// Valid group values are: admin, super-admin, read-only
+type UserGroup = "admin" | "super-admin" | "read-only";
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  phoneNumber: string;
+  group: UserGroup;
+  displayImage: string[];
+}
+
+export interface UserDDB {
+  PK: string;
+  SK: string;
+  entityType: string;
+  name: string;
+  email: string;
+  phoneNumber: string;
+  group: UserGroup;
+  displayImage: string;
+}
+
+// toDynamoDB
+
+export function toDynamoDB(item: User): UserDDB {
+  return {
+    PK: item.name,
+    SK: item.id,
+    entityType: "ENTITYTYPE#USER",
+    name: item.name,
+    email: item.email,
+    phoneNumber: item.phoneNumber,
+    group: item.group,
+    displayImage: item.displayImage[0],
+  };
+}
+
+// fromDynamoDB
+
+export function fromDynamoDB(item: UserDDB): User {
+  return {
+    id: item.SK,
+    name: item.name,
+    email: item.email,
+    phoneNumber: item.phoneNumber,
+    group: item.group,
+    displayImage: [item.displayImage],
+  };
+}
+
+// validateUser
+
+export function validateUser(item: User): boolean {
+  const validGroups: UserGroup[] = ["admin", "super-admin", "read-only"];
+  return (
+    typeof item.id === "string" &&
+    typeof item.name === "string" &&
+    typeof item.email === "string" &&
+    typeof item.phoneNumber === "string" &&
+    validGroups.includes(item.group) &&
+    Array.isArray(item.displayImage)
+  );
+}

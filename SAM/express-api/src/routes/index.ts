@@ -34,6 +34,8 @@ import { dainandiniRouter } from "./dainandini";
 import { homeDialogRouter } from "./homeDialog";
 import { marqueeTextsRouter } from "./marqueeTexts";
 
+import { userRoute } from "./user";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -69,3 +71,5 @@ routes.use(researchArticlesRoute);
 routes.use(dainandiniRouter);
 routes.use(homeDialogRouter);
 routes.use(marqueeTextsRouter);
+
+routes.use(userRoute);

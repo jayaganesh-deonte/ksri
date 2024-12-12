@@ -44,6 +44,7 @@ import dainandini from "@/views/dainandini.vue";
 import homeDialog from "@/views/homeDialog.vue";
 
 import bannerText from "@/views/bannerText.vue";
+import users from "@/views/users.vue";
 
 const routes = [
   {
@@ -188,6 +189,12 @@ const routes = [
     path: "/events",
     name: "events",
     component: events,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/users",
+    name: "users",
+    component: users,
     meta: { requiresAuth: true },
   },
 ];

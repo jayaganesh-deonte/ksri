@@ -74,6 +74,11 @@ const menuOptions = [
     icon: "mdi-book-education",
   },
   {
+    title: "Users",
+    path: "/users",
+    icon: "mdi-account",
+  },
+  {
     title: "Scholars",
     icon: "mdi-account-school",
     children: [
