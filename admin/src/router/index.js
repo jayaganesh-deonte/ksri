@@ -42,6 +42,8 @@ import researchArticles from "@/views/researchArticles.vue";
 import dainandini from "@/views/dainandini.vue";
 import homeDialog from "@/views/homeDialog.vue";
 
+import bannerText from "@/views/bannerText.vue";
+
 const routes = [
   {
     path: "/",
@@ -173,6 +175,12 @@ const routes = [
     path: "/home-dialog",
     name: "homeDialog",
     component: homeDialog,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/banner-text",
+    name: "bannerText",
+    component: bannerText,
     meta: { requiresAuth: true },
   },
 ];

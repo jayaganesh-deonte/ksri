@@ -62,11 +62,11 @@ marqueeTextsRouter.delete(
   "/marqueetexts",
   async (req: Request, res: Response) => {
     try {
-      const { id } = req.body;
+      const { name, id } = req.body;
       const params = {
         TableName: MARQUEETEXTS_TABLE,
         Key: {
-          PK: id,
+          PK: name,
           SK: id,
         },
       };

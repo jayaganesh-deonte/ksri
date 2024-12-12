@@ -165,5 +165,10 @@ const menuOptions = [
     path: "/home-dialog",
     icon: "mdi-home",
   },
+  {
+    title: "Banner Text",
+    path: "/banner-text",
+    icon: "mdi-text",
+  },
 ];
 </script>
