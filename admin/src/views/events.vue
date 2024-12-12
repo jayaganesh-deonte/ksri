@@ -1,0 +1,93 @@
+<template>
+  <generic-crud
+    entityName="Events"
+    :apiEndpoint="apiEndpoint"
+    :entityFields="eventsFields"
+    :headers="eventsHeaders"
+    :addIdToPayload="true"
+  />
+</template>
+
+<script setup>
+const apiEndpoint = import.meta.env.VITE_API_URL + "/events";
+
+const eventsFields = [
+  {
+    key: "title",
+    label: "Title",
+    type: "text",
+    editDisabled: true,
+    rules: [
+      (v) => !!v || "Title is required",
+      (v) => v.length <= 200 || "Title must be 200 characters or less",
+    ],
+  },
+  {
+    key: "subtitle",
+    label: "Subtitle",
+    type: "text",
+    rules: [
+      (v) => !!v || "Subtitle is required",
+      (v) => v.length <= 250 || "Subtitle must be 250 characters or less",
+    ],
+  },
+  {
+    key: "description",
+    label: "Description",
+    type: "textarea",
+    rules: [
+      (v) => !!v || "Description is required",
+      (v) => v.length <= 1000 || "Description must be 1000 characters or less",
+    ],
+  },
+  {
+    key: "category",
+    label: "Category",
+    type: "auto-complete",
+    multiple: true,
+    items: ["Events", "Workshops", "Competitions", "Lectures", "Seminars"],
+    rules: [(v) => !!v || "At least one category is required"],
+  },
+  {
+    key: "venue",
+    label: "Venue",
+    type: "text",
+    rules: [(v) => !!v || "Venue is required"],
+  },
+  {
+    key: "date",
+    label: "Event Date",
+    type: "date",
+    rules: [(v) => !!v || "Date is required"],
+  },
+  {
+    key: "images",
+    label: "Event Images",
+    type: "image",
+    rules: [(v) => !!v || "At least one image is required"],
+  },
+];
+
+const eventsHeaders = [
+  {
+    key: "title",
+    title: "Title",
+  },
+  {
+    key: "category",
+    title: "Category",
+  },
+  {
+    key: "date",
+    title: "Date",
+  },
+  {
+    key: "venue",
+    title: "Venue",
+  },
+  {
+    key: "actions",
+    title: "Actions",
+  },
+];
+</script>

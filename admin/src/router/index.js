@@ -35,6 +35,7 @@ import galleryCollections from "@/views/gallery/galleryCollections.vue";
 import galleryImages from "@/views/gallery/galleryImages.vue";
 
 import news from "@/views/news.vue";
+import events from "@/views/events.vue";
 
 import supervisor from "@/views/supervisor.vue";
 import researchArticles from "@/views/researchArticles.vue";
@@ -181,6 +182,12 @@ const routes = [
     path: "/banner-text",
     name: "bannerText",
     component: bannerText,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/events",
+    name: "events",
+    component: events,
     meta: { requiresAuth: true },
   },
 ];

@@ -81,6 +81,18 @@
                     density="compact"
                   />
 
+                  <!-- type date -->
+                  <v-text-field
+                    v-else-if="field.type === 'date'"
+                    v-model="editedItem[field.key]"
+                    :label="field.label"
+                    :rules="field.rules"
+                    variant="outlined"
+                    :disabled="isEditDisabled(field)"
+                    type="date"
+                    density="compact"
+                  />
+
                   <v-textarea
                     v-else-if="field.type === 'textarea'"
                     v-model="editedItem[field.key]"
@@ -100,6 +112,7 @@
                     :items="field.items"
                     :disabled="isEditDisabled(field)"
                     density="compact"
+                    :multiple="field.multiple"
                   />
 
                   <ImageUpload
@@ -254,6 +267,10 @@ const expanded = ref([]);
 const defaultItem = computed(() => {
   return props.entityFields.reduce((acc, field) => {
     if (field.isArray) {
+      acc[field.key] = [];
+    }
+    // else if type is auto-complete and multiple is true then set it to an empty array
+    else if (field.type === "auto-complete" && field.multiple) {
       acc[field.key] = [];
     } else {
       acc[field.key] = field.defaultValue || "";

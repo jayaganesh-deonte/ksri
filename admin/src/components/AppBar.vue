@@ -43,9 +43,34 @@ const drawer = ref(false);
 
 const menuOptions = [
   {
+    title: "Dainandini",
+    path: "/dainandini",
+    icon: "mdi-book-music",
+  },
+  {
+    title: "Home Dialog",
+    path: "/home-dialog",
+    icon: "mdi-home",
+  },
+  {
+    title: "Banner Text",
+    path: "/banner-text",
+    icon: "mdi-text",
+  },
+  {
     title: "Milestone",
     path: "/milestone",
     icon: "mdi-sign-direction",
+  },
+  {
+    title: "News",
+    path: "/news",
+    icon: "mdi-newspaper",
+  },
+  {
+    title: "Events",
+    path: "/events",
+    icon: "mdi-calendar",
   },
   {
     title: "Projects",
@@ -140,11 +165,7 @@ const menuOptions = [
       },
     ],
   },
-  {
-    title: "News",
-    path: "/news",
-    icon: "mdi-newspaper",
-  },
+
   {
     title: "supervisor",
     path: "/supervisor",
@@ -154,21 +175,6 @@ const menuOptions = [
     title: "Research Articles",
     path: "/research-articles",
     icon: "mdi-book-open-page-variant",
-  },
-  {
-    title: "Dainandini",
-    path: "/dainandini",
-    icon: "mdi-book-music",
-  },
-  {
-    title: "Home Dialog",
-    path: "/home-dialog",
-    icon: "mdi-home",
-  },
-  {
-    title: "Banner Text",
-    path: "/banner-text",
-    icon: "mdi-text",
   },
 ];
 </script>

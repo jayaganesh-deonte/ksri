@@ -14,10 +14,7 @@ export interface Event {
   category: EventCategory[];
   venue: string;
   date: string;
-  images: {
-    src: string;
-    alt: string;
-  }[];
+  images: string[];
   id: string;
 }
 
