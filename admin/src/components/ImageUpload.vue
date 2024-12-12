@@ -6,7 +6,7 @@
       elevation="0"
       color="secondary"
     >
-      <div class="text-h6">Images:</div>
+      <div class="text-h6">{{ title }}</div>
       <!-- add button to upload new images -->
       <v-btn color="primary" class="ml-2" @click="uploadImages">
         <v-icon>mdi-plus</v-icon>
@@ -15,7 +15,7 @@
       <!-- hidden input to select images -->
       <input
         type="file"
-        id="imageUpload"
+        :id="title"
         multiple
         accept="image/*"
         @change="uploadImages"
@@ -55,6 +55,7 @@ const swal = inject("$swal");
 // add props to get existing images
 const props = defineProps({
   images: Array,
+  title: String,
 });
 
 let newImages = ref([]);
@@ -69,7 +70,7 @@ const emit = defineEmits(["images-updated"]);
 const uploadImages = async (e) => {
   // select images from input
   // click input to select images
-  const inputElement = document.getElementById("imageUpload");
+  const inputElement = document.getElementById(props.title);
   inputElement.click();
 
   const files = e.target.files;

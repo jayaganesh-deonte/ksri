@@ -34,6 +34,8 @@ import faculty from "@/views/faculty.vue";
 import galleryCollections from "@/views/gallery/galleryCollections.vue";
 import galleryImages from "@/views/gallery/galleryImages.vue";
 
+import news from "@/views/news.vue";
+
 const routes = [
   {
     path: "/",
@@ -135,6 +137,12 @@ const routes = [
     path: "/gallery-images",
     name: "galleryImages",
     component: galleryImages,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/news",
+    name: "news",
+    component: news,
     meta: { requiresAuth: true },
   },
 ];

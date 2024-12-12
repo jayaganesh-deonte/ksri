@@ -109,6 +109,7 @@
                       (images) => (editedItem[field.key] = images)
                     "
                     :key="editedItem[field.key].length"
+                    :title="field.label"
                   />
 
                   <DocumentUpload

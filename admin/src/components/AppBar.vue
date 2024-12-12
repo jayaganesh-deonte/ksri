@@ -140,5 +140,10 @@ const menuOptions = [
       },
     ],
   },
+  {
+    title: "News",
+    path: "/news",
+    icon: "mdi-newspaper",
+  },
 ];
 </script>

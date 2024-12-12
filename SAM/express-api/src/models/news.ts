@@ -15,12 +15,12 @@
 // create model
 
 export interface News {
-  avatarImage: string;
+  avatarImage: string[];
   text: string;
-  details_page: string;
+  // details_page: string;
   heading: string;
   title: string;
-  heading_image_url: string;
+  heading_image_url: string[];
   images: string[];
   id: string;
 }
@@ -31,7 +31,7 @@ export interface NewsDDB {
   entityType: string;
   avatarImage: string;
   text: string;
-  details_page: string;
+  // details_page: string;
   heading: string;
   title: string;
   heading_image_url: string;
@@ -41,12 +41,12 @@ export interface NewsDDB {
 
 export const fromDynamoDB = (item: NewsDDB): News => {
   return {
-    avatarImage: item.avatarImage,
+    avatarImage: [item.avatarImage],
     text: item.text,
-    details_page: item.details_page,
+    // details_page: item.details_page,
     heading: item.heading,
     title: item.title,
-    heading_image_url: item.heading_image_url,
+    heading_image_url: [item.heading_image_url],
     images: item.images,
     id: item.id,
   };
@@ -57,12 +57,12 @@ export const toDynamoDB = (item: News): NewsDDB => {
     PK: item.title,
     SK: item.id,
     entityType: "ENTITYTYPE#NEWS",
-    avatarImage: item.avatarImage,
+    avatarImage: item.avatarImage[0],
     text: item.text,
-    details_page: item.details_page,
+    // details_page: item.details_page,
     heading: item.heading,
     title: item.title,
-    heading_image_url: item.heading_image_url,
+    heading_image_url: item.heading_image_url[0],
     images: item.images,
     id: item.id,
   };
@@ -71,12 +71,12 @@ export const toDynamoDB = (item: News): NewsDDB => {
 // validate News
 export function validateNews(item: News): boolean {
   return (
-    typeof item.avatarImage === "string" &&
+    Array.isArray(item.avatarImage) &&
     typeof item.text === "string" &&
-    typeof item.details_page === "string" &&
+    // typeof item.details_page === "string" &&
     typeof item.heading === "string" &&
     typeof item.title === "string" &&
-    typeof item.heading_image_url === "string" &&
+    Array.isArray(item.heading_image_url) &&
     Array.isArray(item.images) &&
     typeof item.id === "string"
   );
@@ -89,7 +89,7 @@ export function validateNewsDDB(item: NewsDDB): boolean {
     typeof item.entityType === "string" &&
     typeof item.avatarImage === "string" &&
     typeof item.text === "string" &&
-    typeof item.details_page === "string" &&
+    // typeof item.details_page === "string" &&
     typeof item.heading === "string" &&
     typeof item.title === "string" &&
     typeof item.heading_image_url === "string" &&
