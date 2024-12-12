@@ -52,7 +52,11 @@ const userFields = [
     key: "group",
     label: "Group",
     type: "auto-complete",
-    items: ["super-admin", "admin", "user"],
+    items: [
+      "ksri_admin_group",
+      "ksri_super_admin_group",
+      "ksri_read_only_group",
+    ],
 
     rules: [(v) => !!v || "Group is required"],
   },

@@ -9,6 +9,14 @@ import {
   validateUser,
 } from "../models/users";
 
+import {
+  createUserInCognito,
+  updateUserGroup,
+  deleteUserFromCognito,
+} from "../cognito_services/cognito";
+
+const USER_POOL_ID = process.env.USER_POOL_ID ?? "ap-south-1_VHRb4I0Ig";
+
 // GET all users
 export const userRoute = Router();
 
@@ -50,6 +58,11 @@ userRoute.delete("/users", async (req: Request, res: Response) => {
       },
       //   ConditionExpression: "attribute_exists(id)",
     });
+    const cognitoResponse = await deleteUserFromCognito({
+      email: name,
+      userPoolId: USER_POOL_ID,
+    });
+    console.log("cognitoResponse", cognitoResponse);
 
     res.json({ message: "User deleted successfully" });
   } catch (error) {
@@ -73,6 +86,14 @@ userRoute.post("/users", async (req: Request, res: Response) => {
       TableName: USERS_TABLE,
       Item: userDDB,
     });
+
+    const cognitoResponse = await createUserInCognito({
+      name: user.name,
+      email: user.email,
+      userPoolId: USER_POOL_ID,
+      group: user.group,
+    });
+    console.log("cognitoResponse", cognitoResponse);
 
     res.status(200).json(user);
   } catch (error) {
