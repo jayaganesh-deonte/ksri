@@ -40,6 +40,7 @@ import supervisor from "@/views/supervisor.vue";
 import researchArticles from "@/views/researchArticles.vue";
 
 import dainandini from "@/views/dainandini.vue";
+import homeDialog from "@/views/homeDialog.vue";
 
 const routes = [
   {
@@ -166,6 +167,12 @@ const routes = [
     path: "/dainandini",
     name: "dainandini",
     component: dainandini,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/home-dialog",
+    name: "homeDialog",
+    component: homeDialog,
     meta: { requiresAuth: true },
   },
 ];

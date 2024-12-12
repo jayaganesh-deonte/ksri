@@ -160,5 +160,10 @@ const menuOptions = [
     path: "/dainandini",
     icon: "mdi-book-music",
   },
+  {
+    title: "Home Dialog",
+    path: "/home-dialog",
+    icon: "mdi-home",
+  },
 ];
 </script>
