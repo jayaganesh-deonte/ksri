@@ -8,44 +8,60 @@
   />
 </template>
 
-<script setup>
-const apiEndpoint = import.meta.env.VITE_API_URL + "/gallery";
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      galleryCollections: [],
+      apiEndpoint: import.meta.env.VITE_API_URL + "/gallery",
+      galleryHeaders: [
+        {
+          key: "description",
+          title: "Description",
+        },
+        {
+          key: "collection",
+          title: "Collection",
+        },
+        { key: "actions", title: "Actions" },
+      ],
+    };
+  },
+  computed: {
+    galleryFields() {
+      return [
+        {
+          key: "imageUrl",
+          label: "Image",
+          type: "image",
+          rules: [(v) => !!v || "Image is required"],
+        },
+        {
+          key: "description",
+          label: "Description",
+          type: "text",
+          rules: [(v) => !!v || "Description is required"],
+        },
+        {
+          key: "collection",
+          label: "Collection",
+          type: "auto-complete",
+          items: this.galleryCollections,
+          rules: [(v) => !!v || "Collection is required"],
+        },
+      ];
+    },
+  },
+  async mounted() {
+    const galleryCollectionUrl =
+      import.meta.env.VITE_API_URL + "/gallery/collections";
 
-// {
-//   "imageUrl": "https://d30y75l38k1y9.cloudfront.net/upload/1-J4t.jpg",
-//   "description": "Golden Jubilee Inauguration  - 1994",
-//   "collection": "KSRI Gallery Collection 2"
-// }
-const galleryFields = [
-  {
-    key: "imageUrl",
-    label: "Image",
-    type: "image",
-    rules: [(v) => !!v || "Image is required"],
-  },
-  {
-    key: "description",
-    label: "Description",
-    type: "text",
-    rules: [(v) => !!v || "Description is required"],
-  },
-  {
-    key: "collection",
-    label: "Collection",
-    type: "text",
-    rules: [(v) => !!v || "Collection is required"],
-  },
-];
+    const response = await axios.get(galleryCollectionUrl);
 
-const galleryHeaders = [
-  {
-    key: "description",
-    title: "Description",
+    this.galleryCollections = response.data.map(
+      (collection) => collection.name
+    );
   },
-  {
-    key: "collection",
-    title: "Collection",
-  },
-  { key: "actions", title: "Actions" },
-];
+};
 </script>
