@@ -54,12 +54,13 @@ const middlewareFunction = async function (
     if (!Authorization) {
       return res.status(401).json({ message: "Unauthorized" });
     }
-    const token = Authorization.split(" ")[1];
+    const token = Authorization;
     try {
       const payload = await verifier.verify(token, {
         tokenUse: "id",
         clientId: CLIENT_ID,
       });
+      // console.log("Token is valid. Payload:", payload);
       next();
     } catch {
       console.error("Token not valid");
