@@ -47,12 +47,12 @@ import bannerText from "@/views/bannerText.vue";
 import users from "@/views/users.vue";
 
 const routes = [
-  {
-    path: "/",
-    name: "index",
-    component: index,
-    meta: { requiresAuth: true },
-  },
+  // {
+  //   path: "/",
+  //   name: "index",
+  //   component: index,
+  //   meta: { requiresAuth: true },
+  // },
   {
     path: "/milestone",
     name: "milestone",
@@ -167,8 +167,14 @@ const routes = [
     component: researchArticles,
     meta: { requiresAuth: true },
   },
+  // {
+  //   path: "/dainandini",
+  //   name: "dainandini",
+  //   component: dainandini,
+  //   meta: { requiresAuth: true },
+  // },
   {
-    path: "/dainandini",
+    path: "/",
     name: "dainandini",
     component: dainandini,
     meta: { requiresAuth: true },

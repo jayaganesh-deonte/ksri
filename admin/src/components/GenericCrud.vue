@@ -248,6 +248,8 @@ import { storeToRefs } from "pinia";
 const store = useAppStore();
 const { isEditDisabledForUser } = storeToRefs(store);
 
+import { getUserIdToken } from "@/services/auth";
+
 const props = defineProps({
   entityName: {
     type: String,
@@ -360,7 +362,14 @@ const isEditDisabled = (field) => {
 
 const fetchItems = async () => {
   try {
-    const response = await axios.get(props.apiEndpoint);
+    //  get id token
+    const idToken = await getUserIdToken();
+
+    const response = await axios.get(props.apiEndpoint, {
+      headers: {
+        Authorization: `${idToken}`,
+      },
+    });
     items.value = response.data;
   } catch (error) {
     console.error(`Error fetching ${props.entityName}:`, error);
@@ -396,8 +405,14 @@ const deleteItem = (item) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
+        //  get id token
+        const idToken = await getUserIdToken();
+
         const response = await axios.delete(props.apiEndpoint, {
           data: item,
+          headers: {
+            Authorization: `${idToken}`,
+          },
         });
 
         if (response.status === 200) {
@@ -456,7 +471,14 @@ const save = async () => {
 
     console.log("payload", payload);
 
-    const response = await axios.post(props.apiEndpoint, payload);
+    //  get id token
+    const idToken = await getUserIdToken();
+
+    const response = await axios.post(props.apiEndpoint, payload, {
+      headers: {
+        Authorization: `${idToken}`,
+      },
+    });
 
     if (response.status === 200) {
       $toast.open({
