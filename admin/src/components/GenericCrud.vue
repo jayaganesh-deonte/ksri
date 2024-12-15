@@ -227,6 +227,10 @@ import { ulid } from "ulidx";
 import ImageUpload from "./ImageUpload.vue";
 import DocumentUpload from "./DocumentUpload.vue";
 
+import { useAppStore } from "@/stores/app";
+
+const store = useAppStore();
+
 const props = defineProps({
   entityName: {
     type: String,
@@ -418,6 +422,22 @@ const save = async () => {
     if (props.addIdToPayload && editedIndex.value === -1) {
       payload.id = ulid();
     }
+
+    //  check if meta data is present
+    if (payload.metadata) {
+      payload.metadata.updated_at = new Date().toISOString();
+      payload.metadata.updated_by = store.user.username;
+    } else {
+      payload.metadata = {
+        created_by: store.user.username,
+        updated_by: store.user.username,
+
+        updated_at: new Date().toISOString(),
+        created_at: new Date().toISOString(),
+      };
+    }
+
+    console.log("payload", payload);
 
     const response = await axios.post(props.apiEndpoint, payload);
 

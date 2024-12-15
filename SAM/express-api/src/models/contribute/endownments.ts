@@ -12,6 +12,7 @@ export interface Endownment {
   title: string;
   initiatedBy: string;
   topic: string;
+  metadata?: { [key: string]: any };
 }
 
 export interface EndownmentDDB {
@@ -21,6 +22,7 @@ export interface EndownmentDDB {
   title: string;
   initiatedBy: string;
   topic: string;
+  metadata?: { [key: string]: any };
 }
 
 export function isEndownmentDDB(item: any): item is EndownmentDDB {
@@ -31,7 +33,8 @@ export function isEndownmentDDB(item: any): item is EndownmentDDB {
     typeof item.entityType === "string" &&
     typeof item.title === "string" &&
     typeof item.initiatedBy === "string" &&
-    typeof item.topic === "string"
+    typeof item.topic === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -41,7 +44,8 @@ export function isEndownment(item: any): item is Endownment {
     typeof item.id === "string" &&
     typeof item.title === "string" &&
     typeof item.initiatedBy === "string" &&
-    typeof item.topic === "string"
+    typeof item.topic === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -51,6 +55,7 @@ export function fromDynamoDB(item: EndownmentDDB): Endownment {
     title: item.title,
     initiatedBy: item.initiatedBy,
     topic: item.topic,
+    metadata: item.metadata,
   };
 }
 
@@ -59,7 +64,9 @@ export function validateEndownment(endownment: Partial<Endownment>): boolean {
     typeof endownment.title === "string" &&
     typeof endownment.initiatedBy === "string" &&
     typeof endownment.topic === "string" &&
-    typeof endownment.id === "string"
+    typeof endownment.id === "string" &&
+    (endownment.metadata === undefined ||
+      typeof endownment.metadata === "object")
   );
 }
 
@@ -71,5 +78,6 @@ export function toDynamoDB(item: Endownment): EndownmentDDB {
     title: item.title,
     initiatedBy: item.initiatedBy,
     topic: item.topic,
+    metadata: item.metadata,
   };
 }

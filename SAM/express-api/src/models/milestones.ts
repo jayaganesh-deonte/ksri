@@ -3,6 +3,7 @@ export interface Milestone {
   year: number;
   title: string;
   description: string;
+  metadata?: { [key: string]: string };
 }
 
 // DynamoDB specific model
@@ -13,6 +14,7 @@ export interface MilestoneDDB {
   year: number;
   title: string;
   description: string;
+  metadata?: { [key: string]: string };
 }
 
 // Convert DynamoDB record to application model
@@ -21,6 +23,7 @@ export function fromDynamoDB(item: MilestoneDDB): Milestone {
     year: item.year,
     title: item.title,
     description: item.description,
+    metadata: item.metadata,
   };
 }
 
@@ -39,6 +42,7 @@ export function toDynamoDB(milestone: Milestone): MilestoneDDB {
     year: milestone.year,
     title: milestone.title,
     description: milestone.description,
+    metadata: milestone.metadata,
   };
 }
 
@@ -51,6 +55,9 @@ export function isMilestoneDDB(item: any): item is MilestoneDDB {
     typeof item.entityType === "string" &&
     typeof item.year === "number" &&
     typeof item.title === "string" &&
-    typeof item.description === "string"
+    typeof item.description === "string" &&
+    (typeof item.metadata === "undefined" ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }

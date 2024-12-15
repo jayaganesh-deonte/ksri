@@ -23,6 +23,7 @@ export interface User {
   phoneNumber: string;
   group: UserGroup;
   displayImage: string[];
+  metadata?: { [key: string]: string };
 }
 
 export interface UserDDB {
@@ -34,6 +35,7 @@ export interface UserDDB {
   phoneNumber: string;
   group: UserGroup;
   displayImage: string;
+  metadata?: { [key: string]: string };
 }
 
 // toDynamoDB
@@ -48,6 +50,7 @@ export function toDynamoDB(item: User): UserDDB {
     phoneNumber: item.phoneNumber,
     group: item.group,
     displayImage: item.displayImage[0],
+    metadata: item.metadata,
   };
 }
 
@@ -61,6 +64,7 @@ export function fromDynamoDB(item: UserDDB): User {
     phoneNumber: item.phoneNumber,
     group: item.group,
     displayImage: [item.displayImage],
+    metadata: item.metadata,
   };
 }
 
@@ -78,6 +82,9 @@ export function validateUser(item: User): boolean {
     typeof item.email === "string" &&
     typeof item.phoneNumber === "string" &&
     validGroups.includes(item.group) &&
-    Array.isArray(item.displayImage)
+    Array.isArray(item.displayImage) &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }

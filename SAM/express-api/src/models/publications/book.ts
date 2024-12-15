@@ -20,6 +20,7 @@ export interface Book {
   id: string;
   publication: string;
   available: string;
+  metadata?: { [key: string]: any };
 }
 
 export interface BookDDB {
@@ -34,6 +35,7 @@ export interface BookDDB {
   id?: string;
   publication: string;
   available: string;
+  metadata?: { [key: string]: any };
 }
 
 export function validateBook(item: Book): boolean {
@@ -45,7 +47,8 @@ export function validateBook(item: Book): boolean {
     typeof item.details === "string" &&
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
-    typeof item.available === "string"
+    typeof item.available === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -62,6 +65,7 @@ export function toDynamoDB(item: Book): BookDDB {
     id: item.id,
     publication: item.publication,
     available: item.available,
+    metadata: item.metadata,
   };
 }
 
@@ -75,6 +79,7 @@ export function fromDynamoDB(item: BookDDB): Book {
     id: item.SK,
     publication: item.publication,
     available: item.available,
+    metadata: item.metadata,
   };
 }
 
@@ -91,7 +96,8 @@ export function isBook(item: any): item is BookDDB {
     typeof item.details === "string" &&
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
-    typeof item.available === "string"
+    typeof item.available === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -108,7 +114,8 @@ export function isBookDDB(item: any): item is BookDDB {
     typeof item.details === "string" &&
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
-    typeof item.available === "string"
+    typeof item.available === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -125,6 +132,7 @@ export function validateBookDDB(item: BookDDB): boolean {
     typeof item.details === "string" &&
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
-    typeof item.available === "string"
+    typeof item.available === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }

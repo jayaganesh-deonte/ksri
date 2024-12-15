@@ -14,6 +14,7 @@ export interface GoverningBodyMemberPast {
   endYear: string;
   designation: string;
   id: string;
+  metadata?: { [key: string]: string };
 }
 
 export interface GoverningBodyMemberPastDDB {
@@ -24,6 +25,7 @@ export interface GoverningBodyMemberPastDDB {
   startYear: string;
   endYear: string;
   designation: string;
+  metadata?: { [key: string]: string };
 }
 
 export function isGoverningBodyMemberPastDDB(
@@ -37,7 +39,10 @@ export function isGoverningBodyMemberPastDDB(
     typeof item.name === "string" &&
     typeof item.startYear === "string" &&
     typeof item.endYear === "string" &&
-    typeof item.designation === "string"
+    typeof item.designation === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -49,7 +54,10 @@ export function isGoverningBodyMemberPast(
     typeof item.name === "string" &&
     typeof item.startYear === "string" &&
     typeof item.endYear === "string" &&
-    typeof item.designation === "string"
+    typeof item.designation === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -60,7 +68,10 @@ export function validateGoverningBodyMemberPast(
     typeof item.name === "string" &&
     typeof item.startYear === "string" &&
     typeof item.endYear === "string" &&
-    typeof item.designation === "string"
+    typeof item.designation === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -74,7 +85,10 @@ export function validateGoverningBodyMemberPastDDB(
     typeof item.name === "string" &&
     typeof item.startYear === "string" &&
     typeof item.endYear === "string" &&
-    typeof item.designation === "string"
+    typeof item.designation === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -89,6 +103,7 @@ export function toDynamoDB(
     startYear: item.startYear,
     endYear: item.endYear,
     designation: item.designation,
+    metadata: item.metadata,
   };
 }
 export function fromDynamoDB(
@@ -100,5 +115,6 @@ export function fromDynamoDB(
     endYear: item.endYear,
     designation: item.designation,
     id: item.SK,
+    metadata: item.metadata,
   };
 }

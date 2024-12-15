@@ -17,6 +17,7 @@ export interface Book {
   editor: string;
   publisher: string;
   remarks: string;
+  metadata?: { [key: string]: any };
 }
 
 // DynamoDB specific model
@@ -30,6 +31,7 @@ export interface BookDDB {
   editor: string;
   publisher: string;
   remarks: string;
+  metadata?: { [key: string]: any };
 }
 
 export function toDynamoDB(item: Book): BookDDB {
@@ -43,6 +45,7 @@ export function toDynamoDB(item: Book): BookDDB {
     editor: item.editor,
     publisher: item.publisher,
     remarks: item.remarks,
+    metadata: item.metadata,
   };
 }
 
@@ -55,6 +58,7 @@ export function fromDynamoDB(item: BookDDB): Book {
     editor: item.editor,
     publisher: item.publisher,
     remarks: item.remarks,
+    metadata: item.metadata,
   };
 }
 
@@ -69,7 +73,8 @@ export function isBookDDB(item: any): item is BookDDB {
     typeof item.author === "string" &&
     typeof item.editor === "string" &&
     typeof item.publisher === "string" &&
-    typeof item.remarks === "string"
+    typeof item.remarks === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -82,7 +87,8 @@ export function isBook(item: any): item is Book {
     typeof item.author === "string" &&
     typeof item.editor === "string" &&
     typeof item.publisher === "string" &&
-    typeof item.remarks === "string"
+    typeof item.remarks === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -94,6 +100,7 @@ export function validateBook(item: Book): boolean {
     typeof item.author === "string" &&
     typeof item.editor === "string" &&
     typeof item.publisher === "string" &&
-    typeof item.remarks === "string"
+    typeof item.remarks === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }

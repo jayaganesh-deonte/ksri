@@ -22,6 +22,7 @@ export interface Faculty {
   mobile: string;
   mail: string;
   profile: [string];
+  metadata?: { [key: string]: string };
 }
 
 export interface FacultyDDB {
@@ -37,6 +38,7 @@ export interface FacultyDDB {
   mobile: string;
   mail: string;
   profile: string;
+  metadata?: { [key: string]: string };
 }
 
 export function toDynamoDB(item: Faculty): FacultyDDB {
@@ -53,6 +55,7 @@ export function toDynamoDB(item: Faculty): FacultyDDB {
     mobile: item.mobile,
     mail: item.mail,
     profile: item.profile[0],
+    metadata: item.metadata,
   };
 }
 
@@ -71,7 +74,8 @@ export function isFacultyDDB(item: any): item is FacultyDDB {
     "description" in item &&
     "mobile" in item &&
     "mail" in item &&
-    "profile" in item
+    "profile" in item &&
+    "metadata" in item
   );
 }
 
@@ -86,6 +90,7 @@ export function fromDynamoDB(item: FacultyDDB): Faculty {
     mobile: item.mobile,
     mail: item.mail,
     profile: [item.profile],
+    metadata: item.metadata,
   };
 }
 
@@ -101,7 +106,8 @@ export function isFaculty(item: any): item is Faculty {
     "description" in item &&
     "mobile" in item &&
     "mail" in item &&
-    "profile" in item
+    "profile" in item &&
+    "metadata" in item
   );
 }
 
@@ -118,7 +124,8 @@ export function validateFacultyDDB(item: FacultyDDB): boolean {
     typeof item.description === "string" &&
     typeof item.mobile === "string" &&
     typeof item.mail === "string" &&
-    typeof item.profile === "string"
+    typeof item.profile === "string" &&
+    typeof item.metadata === "object"
   );
 }
 
@@ -135,6 +142,9 @@ export function validateFaculty(item: Faculty): boolean {
     typeof item.mobile === "string" &&
     typeof item.mail === "string" &&
     Array.isArray(item.profile) &&
-    item.profile.every((profile: any) => typeof profile === "string")
+    item.profile.every((profile: any) => typeof profile === "string") &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }

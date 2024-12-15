@@ -16,6 +16,7 @@ export interface Event {
   date: string;
   images: string[];
   id: string;
+  metadata?: { [key: string]: any };
 }
 
 export interface EventDDB extends Event {
@@ -34,7 +35,8 @@ export function isEvent(item: any): item is Event {
     typeof item.venue === "string" &&
     typeof item.date === "string" &&
     Array.isArray(item.images) &&
-    typeof item.id === "string"
+    typeof item.id === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -51,7 +53,8 @@ export function isEventDDB(item: any): item is EventDDB {
     typeof item.venue === "string" &&
     typeof item.date === "string" &&
     Array.isArray(item.images) &&
-    typeof item.id === "string"
+    typeof item.id === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -64,7 +67,8 @@ export function validateEvent(event: Partial<Event>): boolean {
     typeof event.venue === "string" &&
     typeof event.date === "string" &&
     Array.isArray(event.images) &&
-    typeof event.id === "string"
+    typeof event.id === "string" &&
+    (event.metadata === undefined || typeof event.metadata === "object")
   );
 }
 
@@ -78,6 +82,7 @@ export function fromDynamoDB(item: EventDDB): Event {
     date: item.date,
     images: item.images,
     id: item.id,
+    metadata: item.metadata,
   };
 }
 
@@ -94,5 +99,6 @@ export function toDynamoDB(item: Event): EventDDB {
     date: item.date,
     images: item.images,
     id: item.id,
+    metadata: item.metadata,
   };
 }

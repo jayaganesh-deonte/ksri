@@ -8,6 +8,7 @@ export interface GalleryImage {
   imageUrl: [string];
   description: string;
   collection: string;
+  metadata?: { [key: string]: any };
 }
 
 export interface GalleryImageDDB {
@@ -17,6 +18,7 @@ export interface GalleryImageDDB {
   imageUrl: string;
   description: string;
   collection: string;
+  metadata?: { [key: string]: any };
 }
 
 export function isGalleryImageDDB(item: any): item is GalleryImageDDB {
@@ -27,7 +29,8 @@ export function isGalleryImageDDB(item: any): item is GalleryImageDDB {
     typeof item.entityType === "string" &&
     typeof item.imageUrl === "string" &&
     typeof item.description === "string" &&
-    typeof item.collection === "string"
+    typeof item.collection === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -38,7 +41,8 @@ export function isGalleryImage(item: any): item is GalleryImage {
     Array.isArray(item.imageUrl) &&
     typeof item.description === "string" &&
     typeof item.description === "string" &&
-    typeof item.collection === "string"
+    typeof item.collection === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -49,7 +53,8 @@ export function validateGalleryImageDDB(item: GalleryImageDDB): boolean {
     typeof item.entityType === "string" &&
     typeof item.imageUrl === "string" &&
     typeof item.description === "string" &&
-    typeof item.collection === "string"
+    typeof item.collection === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -61,6 +66,7 @@ export function toDynamoDB(item: GalleryImage): GalleryImageDDB {
     imageUrl: item.imageUrl[0],
     description: item.description,
     collection: item.collection,
+    metadata: item.metadata,
   };
 }
 
@@ -70,6 +76,7 @@ export function fromDynamoDB(item: GalleryImageDDB): GalleryImage {
     imageUrl: [item.imageUrl],
     description: item.description,
     collection: item.collection,
+    metadata: item.metadata,
   };
 }
 
@@ -78,6 +85,7 @@ export function validateGalleryImage(item: GalleryImage): boolean {
     typeof item.id === "string" &&
     Array.isArray(item.imageUrl) &&
     typeof item.description === "string" &&
-    typeof item.collection === "string"
+    typeof item.collection === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }

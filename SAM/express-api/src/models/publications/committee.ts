@@ -2,6 +2,7 @@
 //     "id": 1,
 //     "name": "Dr.K. Srinivasan",
 //     "designation": "Research Committee" |  "Editorial Committee",
+//     "metadata": { "key": "value" } // optional
 // }
 
 // create model
@@ -9,6 +10,7 @@ export interface CommitteeMember {
   id: string;
   name: string;
   designation: "Research Committee" | "Editorial Committee";
+  metadata?: { [key: string]: string };
 }
 
 export interface CommitteeMemberDDB {
@@ -18,6 +20,7 @@ export interface CommitteeMemberDDB {
   id: string;
   name: string;
   designation: "Research Committee" | "Editorial Committee";
+  metadata?: { [key: string]: string };
 }
 
 // validate the committee member
@@ -26,7 +29,10 @@ export function validateCommitteeMember(item: CommitteeMember): boolean {
     typeof item.id === "string" &&
     typeof item.name === "string" &&
     (item.designation === "Research Committee" ||
-      item.designation === "Editorial Committee")
+      item.designation === "Editorial Committee") &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -39,6 +45,7 @@ export function toDynamoDB(item: CommitteeMember): CommitteeMemberDDB {
     id: item.id,
     name: item.name,
     designation: item.designation,
+    ...(item.metadata && { metadata: item.metadata }),
   };
 }
 
@@ -48,6 +55,7 @@ export function fromDynamoDB(item: CommitteeMemberDDB): CommitteeMember {
     id: item.SK,
     name: item.name,
     designation: item.designation,
+    ...(item.metadata && { metadata: item.metadata }),
   };
 }
 
@@ -57,7 +65,10 @@ export function isCommitteeMember(item: any): item is CommitteeMember {
     typeof item.id === "number" &&
     typeof item.name === "string" &&
     (item.designation === "Research Committee" ||
-      item.designation === "Editorial Committee")
+      item.designation === "Editorial Committee") &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -70,6 +81,9 @@ export function isCommitteeMemberDDB(item: any): item is CommitteeMemberDDB {
     typeof item.id === "string" &&
     typeof item.name === "string" &&
     (item.designation === "Research Committee" ||
-      item.designation === "Editorial Committee")
+      item.designation === "Editorial Committee") &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }

@@ -9,6 +9,7 @@ export interface ForeignScholar {
   name: string;
   university: string;
   subject: string;
+  metadata?: { [key: string]: string };
 }
 
 export interface ForeignScholarDDB {
@@ -18,6 +19,7 @@ export interface ForeignScholarDDB {
   name: string;
   university: string;
   subject: string;
+  metadata?: { [key: string]: string };
 }
 
 export function toDynamoDB(scholar: ForeignScholar): ForeignScholarDDB {
@@ -28,6 +30,7 @@ export function toDynamoDB(scholar: ForeignScholar): ForeignScholarDDB {
     name: scholar.name,
     university: scholar.university,
     subject: scholar.subject,
+    metadata: scholar.metadata,
   };
 }
 
@@ -49,6 +52,7 @@ export function fromDynamoDB(item: ForeignScholarDDB): ForeignScholar {
     name: item.name,
     university: item.university,
     subject: item.subject,
+    metadata: item.metadata,
   };
 }
 
@@ -58,7 +62,10 @@ export function isForeignScholar(item: any): item is ForeignScholar {
     typeof item.id === "string" &&
     typeof item.name === "string" &&
     typeof item.university === "string" &&
-    typeof item.subject === "string"
+    typeof item.subject === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -69,6 +76,9 @@ export function validateForeignScholar(
     typeof scholar.name === "string" &&
     typeof scholar.university === "string" &&
     typeof scholar.subject === "string" &&
-    typeof scholar.id === "string"
+    typeof scholar.id === "string" &&
+    (scholar.metadata === undefined ||
+      (typeof scholar.metadata === "object" &&
+        Object.values(scholar.metadata).every((v) => typeof v === "string")))
   );
 }

@@ -4,6 +4,7 @@ export interface HomeDialog {
   description: string;
   buttonText: string;
   buttonLink: string;
+  metadata?: { [key: string]: string };
 }
 
 export interface HomeDialogDDB {
@@ -15,6 +16,7 @@ export interface HomeDialogDDB {
   description: string;
   buttonText: string;
   buttonLink: string;
+  metadata?: { [key: string]: string };
 }
 
 export function validateHomeDialog(homeDialog: HomeDialog): boolean {
@@ -23,7 +25,10 @@ export function validateHomeDialog(homeDialog: HomeDialog): boolean {
     typeof homeDialog.title === "string" &&
     typeof homeDialog.description === "string" &&
     typeof homeDialog.buttonText === "string" &&
-    typeof homeDialog.buttonLink === "string"
+    typeof homeDialog.buttonLink === "string" &&
+    (homeDialog.metadata === undefined ||
+      (typeof homeDialog.metadata === "object" &&
+        Object.values(homeDialog.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -35,6 +40,7 @@ export function fromDynamoDB(homeDialogDDB: HomeDialogDDB): HomeDialog {
     description: homeDialogDDB.description,
     buttonText: homeDialogDDB.buttonText,
     buttonLink: homeDialogDDB.buttonLink,
+    metadata: homeDialogDDB.metadata,
   };
 }
 
@@ -49,5 +55,6 @@ export function toDynamoDB(homeDialog: HomeDialog): HomeDialogDDB {
     description: homeDialog.description,
     buttonText: homeDialog.buttonText,
     buttonLink: homeDialog.buttonLink,
+    metadata: homeDialog.metadata,
   };
 }

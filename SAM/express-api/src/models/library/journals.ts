@@ -31,6 +31,7 @@ export interface Journal {
   JournalName: string;
   Nationality: string;
   subTable: SubJournal[];
+  metadata?: { [key: string]: any };
 }
 
 //  create model
@@ -42,6 +43,7 @@ export interface JournalDDB {
   JournalName: string;
   Nationality: string;
   subTable: SubJournal[];
+  metadata?: { [key: string]: any };
 }
 
 // Type guard to check if an object is a valid JournalDDB
@@ -54,7 +56,8 @@ export function isJournalDDB(item: any): item is JournalDDB {
     typeof item.JournalAccNo === "string" &&
     typeof item.JournalName === "string" &&
     typeof item.Nationality === "string" &&
-    Array.isArray(item.subTable)
+    Array.isArray(item.subTable) &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -66,7 +69,8 @@ export function isJournal(item: any): item is Journal {
     typeof item.JournalAccNo === "string" &&
     typeof item.JournalName === "string" &&
     typeof item.Nationality === "string" &&
-    Array.isArray(item.subTable)
+    Array.isArray(item.subTable) &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -91,6 +95,7 @@ export function toJournalDDB(item: Journal): JournalDDB {
     JournalName: item.JournalName,
     Nationality: item.Nationality,
     subTable: item.subTable,
+    metadata: item.metadata,
   };
 }
 
@@ -102,6 +107,7 @@ export function fromJournalDDB(item: JournalDDB): Journal {
     JournalName: item.JournalName,
     Nationality: item.Nationality,
     subTable: item.subTable,
+    metadata: item.metadata,
   };
 }
 
@@ -114,17 +120,18 @@ export function toDynamoDB(item: Journal): JournalDDB {
     JournalName: item.JournalName,
     Nationality: item.Nationality,
     subTable: item.subTable,
+    metadata: item.metadata,
   };
 }
 
 // validate Journal
-
 export function validateJournal(item: Journal): boolean {
   return (
     "id" in item &&
     "JournalAccNo" in item &&
     "JournalName" in item &&
     "Nationality" in item &&
-    "subTable" in item
+    "subTable" in item &&
+    (!("metadata" in item) || typeof item.metadata === "object")
   );
 }

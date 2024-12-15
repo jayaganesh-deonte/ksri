@@ -5,6 +5,7 @@ export interface Project {
   subTitle: string; // Made required since all project types have it
   completedYear?: string; // Optional as only completed projects have years
   status: "Completed" | "On-Going" | "Future Projects"; // Using literal types for status
+  metadata?: { [key: string]: string };
 }
 
 // DynamoDB specific model
@@ -17,6 +18,7 @@ export interface ProjectDDB {
   subTitle: string;
   completedYear?: string;
   status: string;
+  metadata?: { [key: string]: string };
 }
 
 // Convert DynamoDB record to application model
@@ -27,6 +29,7 @@ export function fromDynamoDB(item: ProjectDDB): Project {
     subTitle: item.subTitle,
     completedYear: item.completedYear,
     status: item.status as Project["status"],
+    metadata: item.metadata,
   };
 }
 
@@ -43,6 +46,7 @@ export function toDynamoDB(project: Project): ProjectDDB {
     subTitle: project.subTitle,
     completedYear: project.completedYear,
     status: project.status,
+    metadata: project.metadata,
   };
 }
 
@@ -56,7 +60,12 @@ export function isProjectDDB(item: any): item is ProjectDDB {
     typeof item.id === "string" &&
     typeof item.title === "string" &&
     typeof item.subTitle === "string" &&
-    typeof item.status === "string"
+    typeof item.status === "string" &&
+    (typeof item.completedYear === "undefined" ||
+      typeof item.completedYear === "string") &&
+    (typeof item.metadata === "undefined" ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 

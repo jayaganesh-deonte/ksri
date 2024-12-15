@@ -16,6 +16,7 @@ export interface Dainandini {
   sanskritLine1: string;
   sanskritLine2: string;
   description: string;
+  metadata?: { [key: string]: string };
 }
 
 export interface DainandiniDDB {
@@ -27,6 +28,7 @@ export interface DainandiniDDB {
   sanskritLine1: string;
   sanskritLine2: string;
   description: string;
+  metadata?: { [key: string]: string };
 }
 
 // from dynamodb
@@ -38,6 +40,7 @@ export function fromDynamoDB(item: DainandiniDDB): Dainandini {
     sanskritLine1: item.sanskritLine1,
     sanskritLine2: item.sanskritLine2,
     description: item.description,
+    metadata: item.metadata,
   };
 }
 
@@ -51,6 +54,7 @@ export function toDynamoDB(item: Dainandini): DainandiniDDB {
     sanskritLine1: item.sanskritLine1,
     sanskritLine2: item.sanskritLine2,
     description: item.description,
+    metadata: item.metadata,
   };
 }
 
@@ -62,6 +66,9 @@ export function validateDainandini(dainandini: Dainandini): boolean {
     Array.isArray(dainandini.audioFile) &&
     typeof dainandini.sanskritLine1 === "string" &&
     typeof dainandini.sanskritLine2 === "string" &&
-    typeof dainandini.description === "string"
+    typeof dainandini.description === "string" &&
+    (dainandini.metadata === undefined ||
+      (typeof dainandini.metadata === "object" &&
+        Object.values(dainandini.metadata).every((v) => typeof v === "string")))
   );
 }

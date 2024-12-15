@@ -5,6 +5,7 @@ export interface TraditionalScholar {
   year?: string; // Optional year
   description: string;
   type?: string;
+  metadata?: { [key: string]: string };
 }
 
 // DynamoDB specific model
@@ -17,6 +18,7 @@ export interface TraditionalScholarDDB {
   year?: string;
   description: string;
   type?: string;
+  metadata?: { [key: string]: string };
 }
 
 // Convert DynamoDB record to application model
@@ -27,6 +29,7 @@ export function fromDynamoDB(item: TraditionalScholarDDB): TraditionalScholar {
     year: item.year,
     description: item.description,
     type: item.type,
+    metadata: item.metadata,
   };
 }
 
@@ -41,6 +44,7 @@ export function toDynamoDB(scholar: TraditionalScholar): TraditionalScholarDDB {
     year: scholar.year,
     description: scholar.description,
     type: scholar.type,
+    metadata: scholar.metadata,
   };
 }
 
@@ -56,7 +60,10 @@ export function isTraditionalScholarDDB(
     typeof item.id === "string" &&
     typeof item.name === "string" &&
     typeof item.description === "string" &&
-    typeof item.type === "string"
+    typeof item.type === "string" &&
+    (typeof item.metadata === "undefined" ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 

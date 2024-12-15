@@ -23,6 +23,7 @@ export interface News {
   heading_image_url: string[];
   images: string[];
   id: string;
+  metadata?: { [key: string]: string };
 }
 
 export interface NewsDDB {
@@ -37,6 +38,7 @@ export interface NewsDDB {
   heading_image_url: string;
   images: string[];
   id: string;
+  metadata?: { [key: string]: string };
 }
 
 export const fromDynamoDB = (item: NewsDDB): News => {
@@ -49,6 +51,7 @@ export const fromDynamoDB = (item: NewsDDB): News => {
     heading_image_url: [item.heading_image_url],
     images: item.images,
     id: item.id,
+    metadata: item.metadata,
   };
 };
 
@@ -65,6 +68,7 @@ export const toDynamoDB = (item: News): NewsDDB => {
     heading_image_url: item.heading_image_url[0],
     images: item.images,
     id: item.id,
+    metadata: item.metadata,
   };
 };
 
@@ -78,7 +82,10 @@ export function validateNews(item: News): boolean {
     typeof item.title === "string" &&
     Array.isArray(item.heading_image_url) &&
     Array.isArray(item.images) &&
-    typeof item.id === "string"
+    typeof item.id === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -94,6 +101,9 @@ export function validateNewsDDB(item: NewsDDB): boolean {
     typeof item.title === "string" &&
     typeof item.heading_image_url === "string" &&
     Array.isArray(item.images) &&
-    typeof item.id === "string"
+    typeof item.id === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   ); // && validateNews(item) // Recursively validate the nested News object
 }

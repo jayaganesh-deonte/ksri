@@ -15,6 +15,7 @@ export interface Student {
   areaOfStudy: string;
   supervisor: string;
   status: string;
+  metadata?: { [key: string]: string };
 }
 
 export interface StudentDDB {
@@ -26,6 +27,7 @@ export interface StudentDDB {
   areaOfStudy: string;
   supervisor: string;
   status: string;
+  metadata?: { [key: string]: string };
 }
 
 export function toDynamoDB(student: Student): StudentDDB {
@@ -38,6 +40,7 @@ export function toDynamoDB(student: Student): StudentDDB {
     areaOfStudy: student.areaOfStudy,
     supervisor: student.supervisor,
     status: student.status,
+    metadata: student.metadata,
   };
 }
 
@@ -51,7 +54,10 @@ export function isStudentDDB(item: any): item is StudentDDB {
     typeof item.course === "string" &&
     typeof item.areaOfStudy === "string" &&
     typeof item.supervisor === "string" &&
-    typeof item.status === "string"
+    typeof item.status === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -63,6 +69,7 @@ export function fromDynamoDB(item: StudentDDB): Student {
     areaOfStudy: item.areaOfStudy,
     supervisor: item.supervisor,
     status: item.status,
+    metadata: item.metadata,
   };
 }
 
@@ -73,6 +80,9 @@ export function validateStudent(student: Partial<Student>): boolean {
     typeof student.areaOfStudy === "string" &&
     typeof student.supervisor === "string" &&
     typeof student.status === "string" &&
-    typeof student.id === "string"
+    typeof student.id === "string" &&
+    (typeof student.metadata === "undefined" ||
+      (typeof student.metadata === "object" &&
+        Object.values(student.metadata).every((v) => typeof v === "string")))
   );
 }

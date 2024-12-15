@@ -13,6 +13,7 @@ export interface ResearchArticle {
   subTitle: string;
   author: string;
   link: string[];
+  metadata?: { [key: string]: string };
 }
 export interface ResearchArticleDDB {
   PK: string;
@@ -23,6 +24,7 @@ export interface ResearchArticleDDB {
   subTitle: string;
   author: string;
   link: string;
+  metadata?: { [key: string]: string };
 }
 
 export function validateResearchArticleDDB(item: ResearchArticleDDB): boolean {
@@ -34,7 +36,10 @@ export function validateResearchArticleDDB(item: ResearchArticleDDB): boolean {
     typeof item.title === "string" &&
     typeof item.subTitle === "string" &&
     typeof item.author === "string" &&
-    typeof item.link === "string"
+    typeof item.link === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -44,7 +49,10 @@ export function validateResearchArticle(item: ResearchArticle): boolean {
     typeof item.title === "string" &&
     typeof item.subTitle === "string" &&
     typeof item.author === "string" &&
-    Array.isArray(item.link)
+    Array.isArray(item.link) &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -55,6 +63,7 @@ export function fromDynamoDB(item: ResearchArticleDDB): ResearchArticle {
     subTitle: item.subTitle,
     author: item.author,
     link: [item.link],
+    metadata: item.metadata,
   };
 }
 
@@ -68,5 +77,6 @@ export function toDynamoDB(item: ResearchArticle): ResearchArticleDDB {
     subTitle: item.subTitle,
     author: item.author,
     link: item.link[0],
+    metadata: item.metadata,
   };
 }

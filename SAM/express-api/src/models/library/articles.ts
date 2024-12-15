@@ -17,6 +17,7 @@ export interface Article {
   volume: string;
   year: number;
   remarks: string;
+  metadata?: { [key: string]: any };
 }
 
 // DynamoDB specific model
@@ -30,6 +31,7 @@ export interface ArticleDDB {
   volume: string;
   year: number;
   remarks: string;
+  metadata?: { [key: string]: any };
 }
 
 export function toDynamoDB(item: Article): ArticleDDB {
@@ -43,6 +45,7 @@ export function toDynamoDB(item: Article): ArticleDDB {
     volume: item.volume,
     year: item.year,
     remarks: item.remarks,
+    metadata: item.metadata,
   };
 }
 
@@ -55,6 +58,7 @@ export function fromDynamoDB(item: ArticleDDB): Article {
     volume: item.volume,
     year: item.year,
     remarks: item.remarks,
+    metadata: item.metadata,
   };
 }
 
@@ -69,7 +73,8 @@ export function isArticleDDB(item: any): item is ArticleDDB {
     typeof item.journal === "string" &&
     typeof item.volume === "string" &&
     typeof item.year === "number" &&
-    typeof item.remarks === "string"
+    typeof item.remarks === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -82,7 +87,8 @@ export function isArticle(item: any): item is Article {
     typeof item.journal === "string" &&
     typeof item.volume === "string" &&
     typeof item.year === "number" &&
-    typeof item.remarks === "string"
+    typeof item.remarks === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
 
@@ -94,6 +100,7 @@ export function validateArticle(item: Article): boolean {
     typeof item.journal === "string" &&
     typeof item.volume === "string" &&
     typeof item.year === "string" &&
-    typeof item.remarks === "string"
+    typeof item.remarks === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object")
   );
 }

@@ -12,6 +12,7 @@ export interface GoverningBodyMember {
   name: string;
   subtitle: string;
   designation: string;
+  metadata?: { [key: string]: string };
 }
 
 // DynamoDB specific model
@@ -22,6 +23,7 @@ export interface GoverningBodyMemberDDB {
   name: string;
   subtitle: string;
   designation: string;
+  metadata?: { [key: string]: string };
 }
 
 // Type guard to check if an object is a valid GoverningBodyMemberDDB
@@ -35,7 +37,10 @@ export function isGoverningBodyMemberDDB(
     typeof item.entityType === "string" &&
     typeof item.name === "string" &&
     typeof item.subtitle === "string" &&
-    typeof item.designation === "string"
+    typeof item.designation === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -46,7 +51,10 @@ export function isGoverningBodyMember(item: any): item is GoverningBodyMember {
     typeof item.id === "string" &&
     typeof item.name === "string" &&
     typeof item.subtitle === "string" &&
-    typeof item.designation === "string"
+    typeof item.designation === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -59,6 +67,7 @@ export function toDynamoDB(item: GoverningBodyMember): GoverningBodyMemberDDB {
     name: item.name,
     subtitle: item.subtitle,
     designation: item.designation,
+    metadata: item.metadata,
   };
 }
 
@@ -71,6 +80,7 @@ export function fromDynamoDB(
     name: item.name,
     subtitle: item.subtitle,
     designation: item.designation,
+    metadata: item.metadata,
   };
 }
 
@@ -82,6 +92,9 @@ export function validateGoverningBodyMember(
     typeof item.id === "string" &&
     typeof item.name === "string" &&
     typeof item.subtitle === "string" &&
-    typeof item.designation === "string"
+    typeof item.designation === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
