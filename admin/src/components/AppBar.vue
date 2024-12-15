@@ -3,6 +3,13 @@
     <v-app-bar-nav-icon @click="drawer = !drawer" />
 
     <v-toolbar-title>KSRI Admin</v-toolbar-title>
+
+    <!-- show profile icon if logged in -->
+    <v-spacer />
+    <v-btn> welcome, {{ store.user.username }}! </v-btn>
+    <v-btn icon @click="logout">
+      <v-icon>mdi-logout</v-icon>
+    </v-btn>
   </v-app-bar>
 
   <v-navigation-drawer v-model="drawer" app>
@@ -39,7 +46,13 @@
 <script setup>
 import { ref, computed } from "vue";
 
+import { useAppStore } from "@/stores/app";
+
+import { signOut } from "aws-amplify/auth";
+
 const drawer = ref(false);
+
+const store = useAppStore();
 
 const allOptions = [
   {
@@ -198,4 +211,11 @@ let menuOptions = computed(() => {
 
   return tempMenu;
 });
+
+const logout = async () => {
+  await signOut();
+  localStorage.clear();
+
+  window.location.href = "/";
+};
 </script>
