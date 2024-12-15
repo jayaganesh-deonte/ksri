@@ -78,3 +78,29 @@ marqueeTextsRouter.delete(
     }
   }
 );
+
+// PUBLIC router GET Marquee Texts
+marqueeTextsRouter.get(
+  "/public/marqueetexts",
+  async (req: Request, res: Response) => {
+    try {
+      // query table using GSI
+      const result = await documentClient.query({
+        TableName: MARQUEETEXTS_TABLE,
+        IndexName: "entityTypePK",
+        KeyConditionExpression: "entityType = :sk",
+        ExpressionAttributeValues: {
+          ":sk": "ENTITYTYPE#MARQUEETEXT",
+        },
+        //   id is lexagraphically sorted so sort it from old to new
+        ScanIndexForward: true,
+      });
+      res.json(
+        result.Items?.map((item) => fromDynamoDB(item as MarqueeTextDDB))
+      );
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  }
+);

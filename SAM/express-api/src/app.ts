@@ -81,7 +81,7 @@ if (!AWS_LAMBDA_FUNCTION_NAME) {
   app.use(cors(corsOption));
 }
 
-// app.use(middlewareFunction);
+app.use(middlewareFunction);
 
 app.use("/", routes);
 

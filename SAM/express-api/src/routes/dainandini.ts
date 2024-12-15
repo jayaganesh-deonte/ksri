@@ -72,3 +72,29 @@ dainandiniRouter.delete("/dainandini", async (req: Request, res: Response) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+// add a router /public/dainandini for GET
+dainandiniRouter.get(
+  "/dainandini/public",
+  async (req: Request, res: Response) => {
+    try {
+      // query table using GSI
+      const result = await documentClient.query({
+        TableName: DAINANDINI_TABLE,
+        IndexName: "entityTypePK",
+        KeyConditionExpression: "entityType = :sk",
+        ExpressionAttributeValues: {
+          ":sk": "ENTITYTYPE#DAINANDINI",
+        },
+        //   id is lexagraphically sorted so sort it from old to new
+        ScanIndexForward: true,
+      });
+      res.json(
+        result.Items?.map((item) => fromDynamoDB(item as DainandiniDDB))
+      );
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  }
+);

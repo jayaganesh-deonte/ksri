@@ -74,3 +74,32 @@ homeDialogRouter.delete("/homedialog", async (req: Request, res: Response) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+// public route /public/homedialog
+homeDialogRouter.get(
+  "/public/homedialog",
+  async (req: Request, res: Response) => {
+    try {
+      // query table using GSI
+      const result = await documentClient.query({
+        TableName: HOMEDIALOG_TABLE,
+        IndexName: "entityTypePK",
+        KeyConditionExpression: "entityType = :sk",
+        ExpressionAttributeValues: {
+          ":sk": "ENTITYTYPE#HOMEDIALOG",
+        },
+        //   id is lexagraphically sorted so sort it from old to new
+        ScanIndexForward: true,
+      });
+
+      const homeDialogs =
+        result.Items &&
+        result.Items.map((item) => fromDynamoDB(item as HomeDialogDDB));
+
+      res.status(200).json(homeDialogs);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  }
+);
