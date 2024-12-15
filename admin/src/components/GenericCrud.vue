@@ -38,10 +38,23 @@
       </template>
 
       <template #item.actions="{ item }">
-        <v-icon class="me-2" size="small" @click="editItem(item)">
+        <v-icon
+          class="me-2"
+          size="small"
+          @click="editItem(item)"
+          :disabled="isEditDisabledForUser"
+          :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
+        >
           mdi-pencil
         </v-icon>
-        <v-icon size="small" @click="deleteItem(item)"> mdi-delete </v-icon>
+        <v-icon
+          size="small"
+          @click="deleteItem(item)"
+          :disabled="isEditDisabledForUser"
+          :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
+        >
+          mdi-delete
+        </v-icon>
       </template>
     </v-data-table>
 
@@ -228,8 +241,10 @@ import ImageUpload from "./ImageUpload.vue";
 import DocumentUpload from "./DocumentUpload.vue";
 
 import { useAppStore } from "@/stores/app";
+import { storeToRefs } from "pinia";
 
 const store = useAppStore();
+const { isEditDisabledForUser } = storeToRefs(store);
 
 const props = defineProps({
   entityName: {
@@ -479,3 +494,11 @@ onMounted(() => {
   fetchItems();
 });
 </script>
+
+<style scoped>
+/* Add your styles here */
+.curor-not-allowed {
+  pointer-events: auto !important;
+  cursor: not-allowed !important;
+}
+</style>

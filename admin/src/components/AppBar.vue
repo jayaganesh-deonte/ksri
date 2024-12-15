@@ -37,11 +37,11 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 const drawer = ref(false);
 
-const menuOptions = [
+const allOptions = [
   {
     title: "Dainandini",
     path: "/dainandini",
@@ -72,11 +72,6 @@ const menuOptions = [
     title: "Projects",
     path: "/projects",
     icon: "mdi-book-education",
-  },
-  {
-    title: "Users",
-    path: "/users",
-    icon: "mdi-account",
   },
   {
     title: "Scholars",
@@ -184,4 +179,23 @@ const menuOptions = [
     icon: "mdi-sign-direction",
   },
 ];
+
+let menuOptions = computed(() => {
+  let superAdminMenuOptions = [
+    {
+      title: "Users",
+      path: "/users",
+      icon: "mdi-account",
+    },
+  ];
+
+  let tempMenu = [...allOptions];
+
+  // if user is super-admin add below options
+  if (localStorage.getItem("role") === "super-admin") {
+    tempMenu = [...tempMenu, ...superAdminMenuOptions];
+  }
+
+  return tempMenu;
+});
 </script>

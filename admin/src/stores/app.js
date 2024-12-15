@@ -38,4 +38,9 @@ export const useAppStore = defineStore("app", {
       }
     },
   },
+  getters: {
+    isEditDisabledForUser() {
+      return this.isReadOnlyUser;
+    },
+  },
 });
