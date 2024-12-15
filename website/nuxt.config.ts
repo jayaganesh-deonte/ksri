@@ -16,6 +16,12 @@ export default defineNuxtConfig({
       "process.env.DEBUG": false,
     },
   },
+  runtimeConfig: {
+    public: {
+      API_URL:
+        "https://y5qgjz4d6k72e7mqjdjd2tv7hi0uattt.lambda-url.ap-south-1.on.aws/public",
+    },
+  },
   modules: [
     "@nuxt/image",
     "@nuxtjs/sitemap",

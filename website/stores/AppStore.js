@@ -1,14 +1,15 @@
+import axios from "axios";
 import { defineStore } from "pinia";
 
 export const appStore = defineStore("app", {
   state: () => ({
-    isHomeDialogContentPresent: true,
+    isHomeDialogContentPresent: false,
     homeDialogContent: {
-      title: "Update",
-      description:
-        "KSRI Payment Gateway: Our Kuppuswami Sastri Research Institute has now got its own Payment Gateway!",
-      buttonText: "Visit Website",
-      buttonLink: "/contribute",
+      // title: "Update",
+      // description:
+      //   "KSRI Payment Gateway: Our Kuppuswami Sastri Research Institute has now got its own Payment Gateway!",
+      // buttonText: "Visit Website",
+      // buttonLink: "/contribute",
     },
     dainandini: {
       audioFile:
@@ -19,19 +20,86 @@ export const appStore = defineStore("app", {
         "Good people win over the bad souls by their good conduct; untruthful with truth and even the enemies by favouring them.",
     },
     marqueeTexts: [
-      {
-        name: "Know about our upcoming events",
-        link: "/events",
-      },
-      {
-        name: "Click here Contribute Now!!!",
-        link: "/contribute",
-      },
+      // {
+      //   name: "Know about our upcoming events",
+      //   link: "/events",
+      // },
     ],
   }),
   getters: {
     getHomeDialogContent: (state) => state.homeDialogContent,
     getDainandini: (state) => state.dainandini,
   },
-  actions: {},
+  actions: {
+    // get dainandini from api
+    async getDainandiniFromApi() {
+      const runtimeConfig = useRuntimeConfig();
+
+      try {
+        // make axios get request
+        const response = await axios.get(
+          `${runtimeConfig.public.API_URL}/dainandini`
+        );
+
+        this.dainandini = response.data[0];
+
+        console.log("dainandini store", this.dainandini);
+      } catch (error) {
+        console.log("error", error);
+      }
+    },
+
+    // get home dialog content from api
+    async getHomeDialogContentFromApi() {
+      const runtimeConfig = useRuntimeConfig();
+
+      try {
+        // make axios get request
+        const response = await axios.get(
+          `${runtimeConfig.public.API_URL}/homedialog`
+        );
+
+        // if data is present set  isHomeDialogContentPresent to true
+        if (response.data.length > 0) {
+          this.homeDialogContent = response.data[0];
+
+          console.log("home dialog content store", this.homeDialogContent);
+          this.isHomeDialogContentPresent = true;
+        }
+      } catch (error) {
+        console.log("error", error);
+      }
+    },
+    //  get getMarqueeTextsFromApi
+    async getMarqueeTextsFromApi() {
+      const runtimeConfig = useRuntimeConfig();
+
+      try {
+        // make axios get request
+        const response = await axios.get(
+          `${runtimeConfig.public.API_URL}/marqueetexts`
+        );
+
+        this.marqueeTexts = response.data;
+
+        console.log("marquee texts store", this.marqueeTexts);
+      } catch (error) {
+        console.log("error", error);
+      }
+    },
+
+    // get all data from api
+    async getAllDataFromApi() {
+      console.log("get all data from api");
+      const runtimeConfig = useRuntimeConfig();
+
+      console.log("API", runtimeConfig.public.API_URL);
+      // make all api calls
+      await Promise.all([
+        this.getDainandiniFromApi(),
+        this.getHomeDialogContentFromApi(),
+        this.getMarqueeTextsFromApi(),
+      ]);
+    },
+  },
 });

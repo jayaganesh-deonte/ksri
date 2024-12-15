@@ -13,6 +13,16 @@
   </v-app>
 </template>
 
+<script setup>
+import { appStore } from "~/stores/AppStore";
+const store = appStore();
+
+onMounted(async () => {
+  // get data from actions
+  await store.getAllDataFromApi();
+});
+</script>
+
 <style>
 .hover-line {
   border: 1px solid black;

@@ -1,5 +1,5 @@
 <template>
-  <v-system-bar>
+  <v-system-bar v-if="store.marqueeTexts.length > 0">
     <NuxtMarquee pause-on-hover pause-on-click autoFill>
       <div v-for="(marqueeText, index) in store.marqueeTexts" :key="index">
         <!-- display text and add link to it -->
