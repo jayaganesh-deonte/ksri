@@ -1,65 +1,67 @@
 <template>
   <div>
-    <div class="d-flex align-center mb-4">
-      <v-text-field
-        v-model="search"
-        :label="`Search ${entityName}`"
-        append-inner-icon="mdi-magnify"
-        class="me-4"
-        hide-details
-        variant="outlined"
-      />
-      <v-btn color="primary" @click="createItem">
-        <v-icon start> mdi-plus </v-icon>
-        Add {{ entityName }}
-      </v-btn>
+    <div v-show="!dialog">
+      <div class="d-flex align-center mb-4">
+        <v-text-field
+          v-model="search"
+          :label="`Search ${entityName}`"
+          append-inner-icon="mdi-magnify"
+          class="me-4"
+          hide-details
+          variant="outlined"
+        />
+        <v-btn color="primary" @click="createItem">
+          <v-icon start> mdi-plus </v-icon>
+          Add {{ entityName }}
+        </v-btn>
+      </div>
+
+      <v-data-table
+        :headers="headers"
+        :items="items"
+        :search="search"
+        class="elevation-1"
+        :items-per-page="50"
+        :items-per-page-options="[10, 50, 100, 200, -1]"
+        v-model:expanded="expanded"
+        :show-expand="expandable"
+        expand-on-click
+      >
+        <!-- Sub-table expansion panel -->
+        <template #expanded-row="{ item }">
+          <td :colspan="headers.length" v-if="hasSubTable(item)">
+            <v-data-table
+              :headers="getSubTableHeaders(item)"
+              :items="item.subTable"
+              class="mt-2"
+            />
+          </td>
+        </template>
+
+        <template #item.actions="{ item }">
+          <v-icon
+            class="me-2"
+            size="small"
+            @click="editItem(item)"
+            :disabled="isEditDisabledForUser"
+            :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
+          >
+            mdi-pencil
+          </v-icon>
+          <v-icon
+            size="small"
+            @click="deleteItem(item)"
+            :disabled="isEditDisabledForUser"
+            :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
+          >
+            mdi-delete
+          </v-icon>
+        </template>
+      </v-data-table>
     </div>
 
-    <v-data-table
-      :headers="headers"
-      :items="items"
-      :search="search"
-      class="elevation-1"
-      :items-per-page="50"
-      :items-per-page-options="[10, 50, 100, 200, -1]"
-      v-model:expanded="expanded"
-      :show-expand="expandable"
-      expand-on-click
-    >
-      <!-- Sub-table expansion panel -->
-      <template #expanded-row="{ item }">
-        <td :colspan="headers.length" v-if="hasSubTable(item)">
-          <v-data-table
-            :headers="getSubTableHeaders(item)"
-            :items="item.subTable"
-            class="mt-2"
-          />
-        </td>
-      </template>
-
-      <template #item.actions="{ item }">
-        <v-icon
-          class="me-2"
-          size="small"
-          @click="editItem(item)"
-          :disabled="isEditDisabledForUser"
-          :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
-        >
-          mdi-pencil
-        </v-icon>
-        <v-icon
-          size="small"
-          @click="deleteItem(item)"
-          :disabled="isEditDisabledForUser"
-          :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
-        >
-          mdi-delete
-        </v-icon>
-      </template>
-    </v-data-table>
-
     <!-- Main Dialog -->
-    <v-dialog v-model="dialog" fullscreen scrlollable persistent>
+    <div v-show="dialog" fullscreen scrlollable persistent>
       <v-card>
         <v-card color="secondary" rounded="0" elevation="0">
           <v-card-title>
@@ -226,7 +228,7 @@
           </v-btn>
         </v-card-actions>
       </v-card>
-    </v-dialog>
+    </div>
   </div>
 </template>
 

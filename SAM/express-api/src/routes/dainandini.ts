@@ -75,7 +75,7 @@ dainandiniRouter.delete("/dainandini", async (req: Request, res: Response) => {
 
 // add a router /public/dainandini for GET
 dainandiniRouter.get(
-  "/dainandini/public",
+  "/public/dainandini",
   async (req: Request, res: Response) => {
     try {
       // query table using GSI
