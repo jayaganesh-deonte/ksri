@@ -1,0 +1,56 @@
+[
+    {
+        "President": [
+            {
+                "name": "Dr. R.K. Raghavan",
+                "subtitle": "(Former Director, Central Bureau of Investigation, New Delhi and Former High commissioner of India to the Republic of Cyprus)"
+            }
+        ],
+        "Vice President": [
+            {
+                "name": "Sri R. Kalidas"
+            },
+            {
+                "name": "Justice Mrs. Prabha Sridevan"
+            }
+        ],
+        "Secretary": [
+            {
+                "name": "Dr.Sita Sundar Ram"
+            }
+        ],
+        "Treasurer": [
+            {
+                "name": "Dr. V. Kameswari"
+            }
+        ],
+        "Trustees": [
+            {
+                "name": "Dr. R. Mahadevan"
+            },
+            {
+                "name": "Sri D. Suresh"
+            }
+        ],
+        "Members": [
+            {
+                "name": "Sri S. Srinivasan"
+            },
+            {
+                "name": "Dr. E.R. Rama Bai"
+            },
+            {
+                "name": "Dr. R. Krishnamurthy Sastrigal"
+            },
+            {
+                "name": "Sri Y. Chandrasekhar"
+            },
+            {
+                "name": "Dr. K.S.Balasubramanian"
+            },
+            {
+                "name": "Sri Srinath Sridevan"
+            }
+        ]
+    }
+]

@@ -78,9 +78,9 @@ publicationBookRoute.get(
       }
 
       const books = result.Items?.map((item) => {
-        if (isBook(item)) {
-          return fromDynamoDB(item);
-        }
+        // if (isBook(item)) {
+        return fromDynamoDB(item as any);
+        // }
       });
 
       res.json(books);

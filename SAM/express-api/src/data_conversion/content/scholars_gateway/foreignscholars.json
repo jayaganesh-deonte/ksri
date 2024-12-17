@@ -1,0 +1,417 @@
+[
+    {
+        "name": "Dr.Robert C.Lester",
+        "university": "Yale University",
+        "subject": "Yoga in Visistadvaita"
+    },
+    {
+        "name": "Dr.Daniel H.Smith",
+        "university": "Syracuse, USA",
+        "subject": "Pancaratra Samhita"
+    },
+    {
+        "name": "Mrs.Nariko Mayeda",
+        "university": "Pennsylvania, USA",
+        "subject": "Indian Literature and Folklore"
+    },
+    {
+        "name": "Dr.J.Ensink Croningen",
+        "university": "Univ. Holland",
+        "subject": "Sutasoma;-A Javanese text."
+    },
+    {
+        "name": "Miss.Patricia Butterfield",
+        "university": "Philadelphia, USA",
+        "subject": "General Sanskrit Studies"
+    },
+    {
+        "name": "Miss F.Wilson",
+        "university": "Berkeley & Wisconsin USA",
+        "subject": "Critical Edn. of Krsnakarnamrta"
+    },
+    {
+        "name": "Miss.Edwina",
+        "university": "United Kingdom",
+        "subject": "Sanskrit Prahasanas"
+    },
+    {
+        "name": "Dr.James Bruce Long",
+        "university": "Univ. of Chicago, USA",
+        "subject": "Saivism & Sivapurana"
+    },
+    {
+        "name": "Dr.George Hart",
+        "university": "Univ. of Harvard & Philadelphia, USA",
+        "subject": "Alankara & Nyaya"
+    },
+    {
+        "name": "Dr.K.Kamimura",
+        "university": "Japan",
+        "subject": "Sahitya Texts"
+    },
+    {
+        "name": "Mr.M.Watase",
+        "university": "Japan",
+        "subject": "Hindu Law"
+    },
+    {
+        "name": "Dr.Peter Khoroche",
+        "university": "S.A.O.S., London",
+        "subject": "Dramas of Bhavabhuti etc."
+    },
+    {
+        "name": "Mr.David Nelson",
+        "university": "Minneapolis, USA",
+        "subject": "Hasyarnava Prahasana etc."
+    },
+    {
+        "name": "Mr.Michael Font",
+        "university": "U.S.A.",
+        "subject": "Sanskrit Language Literature"
+    },
+    {
+        "name": "Miss.Melodie Doherty",
+        "university": "Whunnipe, Canada",
+        "subject": "General Skt. Text"
+    },
+    {
+        "name": "Mr.David Iglehart",
+        "university": "Texas, USA",
+        "subject": "Emotive Content & Appreciation"
+    },
+    {
+        "name": "Ms.Nadine Berardi",
+        "university": "New York, USA",
+        "subject": "Dhvani in Natya"
+    },
+    {
+        "name": "Mr.Wayne Surdam",
+        "university": "Berkeley, USA",
+        "subject": "Saiva Agamas & Paddhati"
+    },
+    {
+        "name": "Prof.V.K.Chari",
+        "university": "Carleton, Ottawa",
+        "subject": "Alamkara Concepts"
+    },
+    {
+        "name": "Dr.Robert Gottlieb",
+        "university": "Washington, USA",
+        "subject": "Select songs of Muthuswami Dikshitar"
+    },
+    {
+        "name": "Dr.Fabrizia Baldissera",
+        "university": "Milan, Italy",
+        "subject": "Ed. of Saradatilaka Bhana"
+    },
+    {
+        "name": "Ms.Tessa Wilcox",
+        "university": "Berkeley, USA",
+        "subject": "Sanskrit Literature"
+    },
+    {
+        "name": "Dr.Francis X.Clooney",
+        "university": "Chicago, USA",
+        "subject": "Retrieving the Purva Mimamsa of Jaimini"
+    },
+    {
+        "name": "Dr.Wayne Surdam",
+        "university": "Berkeley, USA",
+        "subject": "Cataloguing of Saiva Rituals"
+    },
+    {
+        "name": "Prof.Robert C.Lester",
+        "university": "Univ. of Colorado, USA",
+        "subject": "Domestic Ritual Practice of Sri Vaishnava Hindus"
+    },
+    {
+        "name": "Ms.Any-Claude Medioni",
+        "university": "France",
+        "subject": "Vedanta Desika's Stotras - A Literary & Iconographical Study"
+    },
+    {
+        "name": "Mr.Richard H. Davis",
+        "university": "Univ. of Chicago, USA",
+        "subject": "Ritual in an Oscillating Universe"
+    },
+    {
+        "name": "Ms.Armelle Choquard",
+        "university": "Sorbonne, France",
+        "subject": "Bharata's Natya Sastra And Yoga"
+    },
+    {
+        "name": "Ms.Julie H. Hiebert",
+        "university": "Harward, USA",
+        "subject": "Royal Evenings, Sanskrit Poetry of Queen & Court"
+    },
+    {
+        "name": "Mr.Michael Nixon",
+        "university": "Ireland",
+        "subject": "Karnataka Music notation In MSS"
+    },
+    {
+        "name": "Miss.Mercille Josephine",
+        "university": "Sorbonne, France",
+        "subject": "Forecasting human behaviour According to ancient Indian Knowledge"
+    },
+    {
+        "name": "Mr.Geenens Phillppe",
+        "university": "Liege, Belgium",
+        "subject": "Introduction to Rajamarthanda of Bhoja deva"
+    },
+    {
+        "name": "Mr.Leon Hannotte",
+        "university": "Mc Master, Canada",
+        "subject": "Naresvara Pariksa of Sadyojyoti"
+    },
+    {
+        "name": "Dr.John A. Taber",
+        "university": "Ohio, USA",
+        "subject": "Specific Mimamsa and Nyaya texts"
+    },
+    {
+        "name": "Miss.Alyette Degraces",
+        "university": "Sorbonne, France",
+        "subject": "Study of Sannyasa & Vedanta Upanisads"
+    },
+    {
+        "name": "Dr.Robert E. Brown",
+        "university": "San Diego, USA",
+        "subject": "Collecton & Trans. of Skt. Mss. on Tala"
+    },
+    {
+        "name": "Dr.Nienke Kruger",
+        "university": "Free Univ., Holland",
+        "subject": "The concept of grace in South Indian Saivism"
+    },
+    {
+        "name": "Dr.Indira V. Peterson",
+        "university": "Mount Holyoke College, USA",
+        "subject": "Research in Classical Skt. Mahakavya - texts and comm.. in Mss."
+    },
+    {
+        "name": "Dr.Bruce M. Perry",
+        "university": "Pennsylavania, USA",
+        "subject": "An annotated trans. of Udayana's parisuddhi"
+    },
+    {
+        "name": "Ms.Martha Ann Selby",
+        "university": "Chicago, USA",
+        "subject": "A comparative study of Forms & figures in classical Indian Poetry"
+    },
+    {
+        "name": "Ms.Ginnette Ishimatsu",
+        "university": "Univ. of California, USA",
+        "subject": "Sources of Modern Saiva Temple rituals in Tamilnadu"
+    },
+    {
+        "name": "Ms.Nadine L. Berardi",
+        "university": "Columbia Univ., USA",
+        "subject": "Dhvanyaloka & Literary Semiotics"
+    },
+    {
+        "name": "Ms.Annie Christine Couturier",
+        "university": "Paris",
+        "subject": "Study of Yoga & Major Comms. With Translation into French"
+    },
+    {
+        "name": "Mr.Steven P. Hopkins",
+        "university": "Harvard Univ., USA",
+        "subject": "Poetry Iconocity; The stotras Of Vedanta Desika"
+    },
+    {
+        "name": "Ms.Denise Marie Hanusek",
+        "university": "Harvard Divinity School, USA",
+        "subject": "A Comparison of Ramanuja & John of the Cross: Union Of the soul with god"
+    },
+    {
+        "name": "Prof.Francis X. Clooney",
+        "university": "Boston College, USA",
+        "subject": "Srivaisnava Commentaries Of Nammalvar"
+    },
+    {
+        "name": "Ms.Karen P. Pechilis",
+        "university": "Univ. of Chicago, USA",
+        "subject": "The Persistence of Bhakti : Towards an Ethno History Of Religion"
+    },
+    {
+        "name": "Mr.Stephen Jenkins",
+        "university": "Univ. of Harvard, USA",
+        "subject": "The Saint's return to the world In Ramanuja & his tradition"
+    },
+    {
+        "name": "Mr.Robert C. Lester",
+        "university": "Univ. of Colarado, USA",
+        "subject": "Gandhi's Religion"
+    },
+    {
+        "name": "Mr.Lawrence J. McCrea",
+        "university": "Univ. of Chicago, USA",
+        "subject": "Rhetoric of Medieval Kashmir"
+    },
+    {
+        "name": "Ms.Janet O Shea",
+        "university": "Univ. of Berkeley, USA",
+        "subject": "Dance History"
+    },
+    {
+        "name": "Dr.Tara Michael",
+        "university": "",
+        "subject": "Study of Natha Sampradya"
+    },
+    {
+        "name": "Mr.Yigal David Bronner",
+        "university": "Univ. of Chicago, USA",
+        "subject": "Theory & Practice of Slesa in Indian Culture"
+    },
+    {
+        "name": "Ms.Katherine C. Zubko",
+        "university": "Harvard Univ. USA",
+        "subject": "Study of Rasa Theory"
+    },
+    {
+        "name": "Dr.Ute Husken",
+        "university": "Hiedelberg Univ. Germany",
+        "subject": "Vaikhanasa Grhya Sutras"
+    },
+    {
+        "name": "Ms.Rupa Viswanathan Roberts",
+        "university": "Columbia Univ., USA",
+        "subject": "Mimamsa & Vyakarana"
+    },
+    {
+        "name": "Dr.Daud R. Ali",
+        "university": "SOAS, London",
+        "subject": "Works of Kshemendra"
+    },
+    {
+        "name": "Dr.Ajay K. Rao",
+        "university": "Univ. of Chicago, USA",
+        "subject": "Reading of Ramayana in the Srivaishnava Tradition"
+    },
+    {
+        "name": "Dr.Richard H. Davis",
+        "university": "Bard College, USA",
+        "subject": "Age of Temples: Religious Culture in Medieval South"
+    },
+    {
+        "name": "Ms.Vena Ramphal",
+        "university": "SOAS, London",
+        "subject": "Natya Sastra"
+    },
+    {
+        "name": "Mr.Whitney M. Cox",
+        "university": "Univ. of Chicago USA",
+        "subject": "The Textual Culture in Medieval Cholamandala"
+    },
+    {
+        "name": "Mr.Devan Patel",
+        "university": "Univ. of California, Berkeley, USA",
+        "subject": "A Study of Coms. On Bhagavatam & Naishadiya"
+    },
+    {
+        "name": "Ms.Kate Zubko",
+        "university": "Emory Univ. USA",
+        "subject": "Dancing Across Religious Boundaries in Bharata Natya"
+    },
+    {
+        "name": "Ms.Sucharita Adluri",
+        "university": "Univ. of Pennsylvania USA",
+        "subject": "Religious Studies: South Indian Vaishnavism"
+    },
+    {
+        "name": "Mr.Blake Wentworth",
+        "university": "Univ. of Chicago, USA",
+        "subject": "History of Religion"
+    },
+    {
+        "name": "Ms.Ronit Ricci",
+        "university": "Univ. of Michigan USA",
+        "subject": "Islamic Literary Traditions in Javanese and Tamil"
+    },
+    {
+        "name": "Timothy Lubin",
+        "university": "Univ. Washington And Lee, USA",
+        "subject": "Ritual Functions and authority of Bramins in Early Historic India"
+    },
+    {
+        "name": "Swamini Hamsananda",
+        "university": "Savona, Italy",
+        "subject": "Yoga Sutras of Patanjali & Bhagavad Gita"
+    },
+    {
+        "name": "Amy Allocco",
+        "university": "Emory University, USA",
+        "subject": "Goddesses, Nagas and Anthills: Newly Evolving Women's Ritual Practices in Tamilnadu"
+    },
+    {
+        "name": "Meera Kuchroo",
+        "university": "McGill University, Canada",
+        "subject": "Lakshmidhara's Comm. On the Soundarya Lahari"
+    },
+    {
+        "name": "Michael Karrassowitch",
+        "university": "Tech. Univ. Of Vienna & the Academy of Fine arts Vienna",
+        "subject": "Manasara (Architecture Text)"
+    },
+    {
+        "name": "James Madaio",
+        "university": "University of Manchester U.K.",
+        "subject": "Jivan Mukti Viveka with Purnanandendu Kaumudi & Yoga Vasistha"
+    },
+    {
+        "name": "Charles Preston",
+        "university": "University of Chicago, U.S.A.",
+        "subject": "Modern Sanskrit Plays"
+    },
+    {
+        "name": "Dr.Martha Ann Selby",
+        "university": "University of Texas, Austin, USA",
+        "subject": ""
+    },
+    {
+        "name": "Simonetta",
+        "university": "Italy",
+        "subject": ""
+    },
+    {
+        "name": "Ms.Jennifer Lyn",
+        "university": "Vancouver, Canada",
+        "subject": ""
+    },
+    {
+        "name": "Ms.Melaine Boyer",
+        "university": "Mexico",
+        "subject": ""
+    },
+    {
+        "name": "Janet Aum",
+        "university": "Chicago, USA",
+        "subject": ""
+    },
+    {
+        "name": "Dimitra Eisterer Petimeza",
+        "university": "University of Vienna, Austria",
+        "subject": ""
+    },
+    {
+        "name": "Kashi Gomez",
+        "university": "University of California, Berkeley, USA",
+        "subject": ""
+    },
+    {
+        "name": "Anya Fredsell",
+        "university": "Georgia, USA",
+        "subject": ""
+    },
+    {
+        "name": "Anja Metzger",
+        "university": "USA",
+        "subject": ""
+    },
+    {
+        "name": "Saran Deva Subsantiwongre",
+        "university": "Thailand",
+        "subject": ""
+    }
+]

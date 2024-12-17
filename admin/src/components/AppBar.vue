@@ -57,7 +57,7 @@ const store = useAppStore();
 const allOptions = [
   {
     title: "Dainandini",
-    path: "/dainandini",
+    path: "/",
     icon: "mdi-book-music",
   },
   {
@@ -85,6 +85,11 @@ const allOptions = [
     title: "Projects",
     path: "/projects",
     icon: "mdi-book-education",
+  },
+  {
+    title: "Students",
+    path: "/students",
+    icon: "mdi-account-school",
   },
   {
     title: "Scholars",

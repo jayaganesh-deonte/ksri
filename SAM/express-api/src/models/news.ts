@@ -57,7 +57,7 @@ export const fromDynamoDB = (item: NewsDDB): News => {
 
 export const toDynamoDB = (item: News): NewsDDB => {
   return {
-    PK: item.title,
+    PK: item.heading.substring(0, 100),
     SK: item.id,
     entityType: "ENTITYTYPE#NEWS",
     avatarImage: item.avatarImage[0],
