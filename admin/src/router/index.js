@@ -49,6 +49,7 @@ import bannerText from "@/views/bannerText.vue";
 import users from "@/views/users.vue";
 
 import bankInfo from "@/views/bankInfo.vue";
+import postalAddress from "@/views/postalAddress.vue";
 
 const routes = [
   // {
@@ -217,6 +218,12 @@ const routes = [
     path: "/bank-info",
     name: "bankInfo",
     component: bankInfo,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/postal-address",
+    name: "postalAddress",
+    component: postalAddress,
     meta: { requiresAuth: true },
   },
 ];

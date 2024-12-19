@@ -197,6 +197,11 @@ const allOptions = [
     icon: "mdi-bank",
   },
   {
+    title: "Postal Address",
+    path: "/postal-address",
+    icon: "mdi-map-marker",
+  },
+  {
     title: "Milestone",
     path: "/milestone",
     icon: "mdi-sign-direction",

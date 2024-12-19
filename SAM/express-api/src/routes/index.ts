@@ -37,6 +37,7 @@ import { marqueeTextsRouter } from "./marqueeTexts";
 import { userRoute } from "./user";
 
 import { bankInfoRoute } from "./contribute/bankInfo";
+import { postalAddressRoute } from "./contribute/postalAddress";
 
 export const routes = express.Router();
 
@@ -77,3 +78,4 @@ routes.use(marqueeTextsRouter);
 routes.use(userRoute);
 
 routes.use(bankInfoRoute);
+routes.use(postalAddressRoute);
