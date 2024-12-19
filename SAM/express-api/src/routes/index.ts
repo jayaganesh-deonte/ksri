@@ -36,6 +36,8 @@ import { marqueeTextsRouter } from "./marqueeTexts";
 
 import { userRoute } from "./user";
 
+import { bankInfoRoute } from "./contribute/bankInfo";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -73,3 +75,5 @@ routes.use(homeDialogRouter);
 routes.use(marqueeTextsRouter);
 
 routes.use(userRoute);
+
+routes.use(bankInfoRoute);

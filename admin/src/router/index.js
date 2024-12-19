@@ -48,6 +48,8 @@ import homeDialog from "@/views/homeDialog.vue";
 import bannerText from "@/views/bannerText.vue";
 import users from "@/views/users.vue";
 
+import bankInfo from "@/views/bankInfo.vue";
+
 const routes = [
   // {
   //   path: "/",
@@ -209,6 +211,12 @@ const routes = [
     path: "/users",
     name: "users",
     component: users,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/bank-info",
+    name: "bankInfo",
+    component: bankInfo,
     meta: { requiresAuth: true },
   },
 ];

@@ -192,6 +192,11 @@ const allOptions = [
     icon: "mdi-projector-screen",
   },
   {
+    title: "Bank Info",
+    path: "/bank-info",
+    icon: "mdi-bank",
+  },
+  {
     title: "Milestone",
     path: "/milestone",
     icon: "mdi-sign-direction",
