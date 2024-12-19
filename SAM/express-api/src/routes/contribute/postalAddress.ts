@@ -55,7 +55,8 @@ postalAddressRoute.get(
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#POSTALADDRESS",
         },
-        IndexName: "entityTypePK",
+        IndexName: "entityTypeSK",
+        ScanIndexForward: false,
       };
 
       const { Items } = await documentClient.query(params);

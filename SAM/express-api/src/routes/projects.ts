@@ -71,13 +71,13 @@ projectRoute.get("/projects", async (req: Request, res: Response) => {
           ":sk": "ENTITYTYPE#PROJECT",
           ":status": status,
         },
-        //   id is lexagraphically sorted so sort it from old to new
-        ScanIndexForward: true,
+        //   id is lexagraphically sorted so sort it
+        ScanIndexForward: false,
       });
     } else {
       result = await documentClient.query({
         TableName: PROJECTS_TABLE,
-        IndexName: "entityTypePK",
+        IndexName: "entityTypeSK",
         KeyConditionExpression: "entityType = :sk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#PROJECT",

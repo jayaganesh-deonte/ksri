@@ -51,11 +51,12 @@ articleRoute.get("/library/articles", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: ARTICLES_TABLE,
-      IndexName: "entityTypePK",
+      IndexName: "entityTypeSK",
       KeyConditionExpression: "entityType = :sk",
       ExpressionAttributeValues: {
         ":sk": "ENTITYTYPE#ARTICLE",
       },
+      ScanIndexForward: false,
     });
 
     const articles = result.Items?.map((item) =>

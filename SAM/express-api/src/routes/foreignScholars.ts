@@ -55,7 +55,8 @@ foreignScholarRoute.get(
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#FOREIGN_SCHOLAR",
         },
-        IndexName: "entityTypePK",
+        IndexName: "entityTypeSK",
+        ScanIndexForward: false,
       };
 
       const { Items } = await documentClient.query(params);

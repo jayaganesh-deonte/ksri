@@ -50,7 +50,8 @@ supervisorRoute.get("/supervisor", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: SUPERVISORS_TABLE,
-      IndexName: "entityTypePK",
+      IndexName: "entityTypeSK",
+      ScanIndexForward: false,
       KeyConditionExpression: "entityType = :sk",
       ExpressionAttributeValues: {
         ":sk": "ENTITYTYPE#SUPERVISOR",

@@ -54,7 +54,8 @@ endownmentRoute.get(
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#ENDOWNMENT",
         },
-        IndexName: "entityTypePK",
+        IndexName: "entityTypeSK",
+        ScanIndexForward: false,
       };
 
       const { Items } = await documentClient.query(params);

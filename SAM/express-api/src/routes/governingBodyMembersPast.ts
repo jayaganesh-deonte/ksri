@@ -19,7 +19,8 @@ governingBodyMembersPastRouter.get(
   async (req: Request, res: Response) => {
     const params = {
       TableName: TABLE_NAME,
-      IndexName: "entityTypePK",
+      IndexName: "entityTypeSK",
+      ScanIndexForward: false,
       KeyConditionExpression: "entityType = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#GOVERNINGBODYMEMBERPAST",

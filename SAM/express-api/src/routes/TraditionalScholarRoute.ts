@@ -79,8 +79,9 @@ traditionalScholarRoute.get(
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#TRADITIONAL_SCHOLAR",
         },
-        // use GSI entityTypePK
-        IndexName: "entityTypePK",
+        // use GSI entityTypeSK
+        IndexName: "entityTypeSK",
+        ScanIndexForward: false,
       };
 
       // Execute query

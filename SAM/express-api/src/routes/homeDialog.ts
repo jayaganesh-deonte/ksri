@@ -20,7 +20,7 @@ homeDialogRouter.get("/homedialog", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: HOMEDIALOG_TABLE,
-      IndexName: "entityTypePK",
+      IndexName: "entityTypeSK",
       KeyConditionExpression: "entityType = :sk",
       ExpressionAttributeValues: {
         ":sk": "ENTITYTYPE#HOMEDIALOG",
@@ -83,13 +83,14 @@ homeDialogRouter.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: HOMEDIALOG_TABLE,
-        IndexName: "entityTypePK",
+        IndexName: "entityTypeSK",
+
         KeyConditionExpression: "entityType = :sk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#HOMEDIALOG",
         },
         //   id is lexagraphically sorted so sort it from old to new
-        ScanIndexForward: true,
+        ScanIndexForward: false,
       });
 
       const homeDialogs =

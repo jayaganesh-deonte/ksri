@@ -51,7 +51,8 @@ bookRoute.get("/library/books", async (req: Request, res: Response) => {
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#LIBRARY#BOOK",
       },
-      IndexName: "entityTypePK",
+      IndexName: "entityTypeSK",
+      ScanIndexForward: false,
     };
     const response = await documentClient.query(params);
     const books = response.Items?.map((item) => fromDynamoDB(item as BookDDB));

@@ -51,7 +51,8 @@ eventRoute.get("/events", async (req: Request, res: Response) => {
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#EVENT",
       },
-      IndexName: "entityTypePK",
+      IndexName: "entityTypeSK",
+      ScanIndexForward: false,
     };
 
     const { Items } = await documentClient.query(params);

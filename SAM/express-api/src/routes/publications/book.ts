@@ -58,7 +58,8 @@ publicationBookRoute.get(
         // query table using GSI
         result = await documentClient.query({
           TableName: BOOKS_TABLE,
-          IndexName: "entityTypePK",
+          IndexName: "entityTypeSK",
+          ScanIndexForward: false,
           KeyConditionExpression: "entityType = :sk",
           ExpressionAttributeValues: {
             ":sk": "ENTITYTYPE#BOOK",
@@ -68,7 +69,7 @@ publicationBookRoute.get(
         // query GSI entityTypePK entityType => ENTITYTYPE#BOOK and PK = publication
         result = await documentClient.query({
           TableName: BOOKS_TABLE,
-          IndexName: "entityTypePK",
+          IndexName: "entityTypePK", //TODO
           KeyConditionExpression: "entityType = :sk AND PK = :pk",
           ExpressionAttributeValues: {
             ":sk": "ENTITYTYPE#BOOK",

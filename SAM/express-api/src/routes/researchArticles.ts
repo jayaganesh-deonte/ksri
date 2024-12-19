@@ -52,7 +52,8 @@ researchArticlesRoute.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: RESEARCH_ARTICLES_TABLE,
-        IndexName: "entityTypePK",
+        IndexName: "entityTypeSK",
+        ScanIndexForward: false,
         KeyConditionExpression: "entityType = :sk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#RESEARCHARTICLE",

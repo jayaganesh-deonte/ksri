@@ -66,6 +66,7 @@ studentRoute.get("/students", async (req: Request, res: Response) => {
     const result = await documentClient.query({
       TableName: STUDENTS_TABLE,
       IndexName: "entityTypePK",
+      ScanIndexForward: false,
       KeyConditionExpression: "entityType = :sk",
       FilterExpression:
         filterExpression.length > 0

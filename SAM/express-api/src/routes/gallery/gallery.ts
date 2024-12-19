@@ -27,7 +27,7 @@ galleryRoute.get("/gallery", async (req: Request, res: Response) => {
     if (collection) {
       result = await documentClient.query({
         TableName: GALLERY_TABLE,
-        IndexName: "entityTypePK",
+        IndexName: "entityTypePK", //TODO
         KeyConditionExpression: "entityType = :sk AND PK = :pk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#GALLERY#IMAGE",
@@ -37,7 +37,7 @@ galleryRoute.get("/gallery", async (req: Request, res: Response) => {
     } else {
       result = await documentClient.query({
         TableName: GALLERY_TABLE,
-        IndexName: "entityTypePK",
+        IndexName: "entityTypeSK",
         KeyConditionExpression: "entityType = :sk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#GALLERY#IMAGE",

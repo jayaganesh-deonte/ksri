@@ -52,7 +52,8 @@ journalRoute.get("/library/journals", async (req: Request, res: Response) => {
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#JOURNAL",
       },
-      IndexName: "entityTypePK",
+      IndexName: "entityTypeSK",
+      ScanIndexForward: false,
     };
     const response = await documentClient.query(params);
     const journals = response.Items?.map((item: any) => fromJournalDDB(item));

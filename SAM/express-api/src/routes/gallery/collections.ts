@@ -24,13 +24,13 @@ collectionsRoute.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: COLLECTIONS_TABLE,
-        IndexName: "entityTypePK",
+        IndexName: "entityTypeSK",
         KeyConditionExpression: "entityType = :sk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#GALLERY#COLLECTION",
         },
         //   id is lexagraphically sorted so sort it from old to new
-        ScanIndexForward: true,
+        ScanIndexForward: false,
       });
 
       const collections = result.Items?.map((item) =>

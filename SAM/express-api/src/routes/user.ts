@@ -28,7 +28,8 @@ userRoute.get("/users", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: USERS_TABLE,
-      IndexName: "entityTypePK",
+      IndexName: "entityTypeSK",
+      ScanIndexForward: false,
       KeyConditionExpression: "entityType = :sk",
       ExpressionAttributeValues: {
         ":sk": "ENTITYTYPE#USER",

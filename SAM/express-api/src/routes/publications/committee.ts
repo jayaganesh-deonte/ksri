@@ -23,7 +23,8 @@ publicationsCommitteeRouter.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: COMMITTEE_MEMBERS_TABLE,
-        IndexName: "entityTypePK",
+        IndexName: "entityTypeSK",
+        ScanIndexForward: false,
         KeyConditionExpression: "entityType = :sk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#PUBLICATION#COMMITTEEMEMBER",

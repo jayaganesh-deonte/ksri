@@ -18,7 +18,8 @@ milestonesRoute.get("/milestones", async (req: Request, res: Response) => {
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#MILESTONE",
       },
-      IndexName: "entityTypePK",
+      IndexName: "entityTypeSK",
+      ScanIndexForward: false,
     };
 
     const { Items } = await documentClient.query(params);

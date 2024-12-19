@@ -53,7 +53,8 @@ bankInfoRoute.get(
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#BANKINFO",
         },
-        IndexName: "entityTypePK",
+        IndexName: "entityTypeSK",
+        ScanIndexForward: false,
       };
 
       const { Items } = await documentClient.query(params);

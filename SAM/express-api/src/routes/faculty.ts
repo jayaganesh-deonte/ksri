@@ -20,13 +20,13 @@ facultyRouter.get("/faculty", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: FACULTY_TABLE,
-      IndexName: "entityTypePK",
-      KeyConditionExpression: "entityType = :sk",
+      IndexName: "entityTypeSK",
+      KeyConditionExpression: "entityType = :entityType",
       ExpressionAttributeValues: {
-        ":sk": "ENTITYTYPE#FACULTY",
+        ":entityType": "ENTITYTYPE#FACULTY",
       },
       //   id is lexagraphically sorted so sort it from old to new
-      ScanIndexForward: true,
+      ScanIndexForward: false,
     });
 
     const faculty = result.Items?.map((item) =>

@@ -20,7 +20,7 @@ marqueeTextsRouter.get("/marqueetexts", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: MARQUEETEXTS_TABLE,
-      IndexName: "entityTypePK",
+      IndexName: "entityTypeSK",
       KeyConditionExpression: "entityType = :sk",
       ExpressionAttributeValues: {
         ":sk": "ENTITYTYPE#MARQUEETEXT",
@@ -87,13 +87,12 @@ marqueeTextsRouter.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: MARQUEETEXTS_TABLE,
-        IndexName: "entityTypePK",
+        IndexName: "entityTypeSK",
         KeyConditionExpression: "entityType = :sk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#MARQUEETEXT",
         },
-        //   id is lexagraphically sorted so sort it from old to new
-        ScanIndexForward: true,
+        ScanIndexForward: false,
       });
       res.json(
         result.Items?.map((item) => fromDynamoDB(item as MarqueeTextDDB))
