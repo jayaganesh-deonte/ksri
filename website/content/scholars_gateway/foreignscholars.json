@@ -1,417 +1,998 @@
 [
-    {
-        "name": "Dr.Robert C.Lester",
-        "university": "Yale University",
-        "subject": "Yoga in Visistadvaita"
-    },
-    {
-        "name": "Dr.Daniel H.Smith",
-        "university": "Syracuse, USA",
-        "subject": "Pancaratra Samhita"
-    },
-    {
-        "name": "Mrs.Nariko Mayeda",
-        "university": "Pennsylvania, USA",
-        "subject": "Indian Literature and Folklore"
-    },
-    {
-        "name": "Dr.J.Ensink Croningen",
-        "university": "Univ. Holland",
-        "subject": "Sutasoma;-A Javanese text."
-    },
-    {
-        "name": "Miss.Patricia Butterfield",
-        "university": "Philadelphia, USA",
-        "subject": "General Sanskrit Studies"
-    },
-    {
-        "name": "Miss F.Wilson",
-        "university": "Berkeley & Wisconsin USA",
-        "subject": "Critical Edn. of Krsnakarnamrta"
-    },
-    {
-        "name": "Miss.Edwina",
-        "university": "United Kingdom",
-        "subject": "Sanskrit Prahasanas"
-    },
-    {
-        "name": "Dr.James Bruce Long",
-        "university": "Univ. of Chicago, USA",
-        "subject": "Saivism & Sivapurana"
-    },
-    {
-        "name": "Dr.George Hart",
-        "university": "Univ. of Harvard & Philadelphia, USA",
-        "subject": "Alankara & Nyaya"
-    },
-    {
-        "name": "Dr.K.Kamimura",
-        "university": "Japan",
-        "subject": "Sahitya Texts"
-    },
-    {
-        "name": "Mr.M.Watase",
-        "university": "Japan",
-        "subject": "Hindu Law"
-    },
-    {
-        "name": "Dr.Peter Khoroche",
-        "university": "S.A.O.S., London",
-        "subject": "Dramas of Bhavabhuti etc."
-    },
-    {
-        "name": "Mr.David Nelson",
-        "university": "Minneapolis, USA",
-        "subject": "Hasyarnava Prahasana etc."
-    },
-    {
-        "name": "Mr.Michael Font",
-        "university": "U.S.A.",
-        "subject": "Sanskrit Language Literature"
-    },
-    {
-        "name": "Miss.Melodie Doherty",
-        "university": "Whunnipe, Canada",
-        "subject": "General Skt. Text"
-    },
-    {
-        "name": "Mr.David Iglehart",
-        "university": "Texas, USA",
-        "subject": "Emotive Content & Appreciation"
-    },
-    {
-        "name": "Ms.Nadine Berardi",
-        "university": "New York, USA",
-        "subject": "Dhvani in Natya"
-    },
-    {
-        "name": "Mr.Wayne Surdam",
-        "university": "Berkeley, USA",
-        "subject": "Saiva Agamas & Paddhati"
-    },
-    {
-        "name": "Prof.V.K.Chari",
-        "university": "Carleton, Ottawa",
-        "subject": "Alamkara Concepts"
-    },
-    {
-        "name": "Dr.Robert Gottlieb",
-        "university": "Washington, USA",
-        "subject": "Select songs of Muthuswami Dikshitar"
-    },
-    {
-        "name": "Dr.Fabrizia Baldissera",
-        "university": "Milan, Italy",
-        "subject": "Ed. of Saradatilaka Bhana"
-    },
-    {
-        "name": "Ms.Tessa Wilcox",
-        "university": "Berkeley, USA",
-        "subject": "Sanskrit Literature"
-    },
-    {
-        "name": "Dr.Francis X.Clooney",
-        "university": "Chicago, USA",
-        "subject": "Retrieving the Purva Mimamsa of Jaimini"
-    },
-    {
-        "name": "Dr.Wayne Surdam",
-        "university": "Berkeley, USA",
-        "subject": "Cataloguing of Saiva Rituals"
-    },
-    {
-        "name": "Prof.Robert C.Lester",
-        "university": "Univ. of Colorado, USA",
-        "subject": "Domestic Ritual Practice of Sri Vaishnava Hindus"
-    },
-    {
-        "name": "Ms.Any-Claude Medioni",
-        "university": "France",
-        "subject": "Vedanta Desika's Stotras - A Literary & Iconographical Study"
-    },
-    {
-        "name": "Mr.Richard H. Davis",
-        "university": "Univ. of Chicago, USA",
-        "subject": "Ritual in an Oscillating Universe"
-    },
-    {
-        "name": "Ms.Armelle Choquard",
-        "university": "Sorbonne, France",
-        "subject": "Bharata's Natya Sastra And Yoga"
-    },
-    {
-        "name": "Ms.Julie H. Hiebert",
-        "university": "Harward, USA",
-        "subject": "Royal Evenings, Sanskrit Poetry of Queen & Court"
-    },
-    {
-        "name": "Mr.Michael Nixon",
-        "university": "Ireland",
-        "subject": "Karnataka Music notation In MSS"
-    },
-    {
-        "name": "Miss.Mercille Josephine",
-        "university": "Sorbonne, France",
-        "subject": "Forecasting human behaviour According to ancient Indian Knowledge"
-    },
-    {
-        "name": "Mr.Geenens Phillppe",
-        "university": "Liege, Belgium",
-        "subject": "Introduction to Rajamarthanda of Bhoja deva"
-    },
-    {
-        "name": "Mr.Leon Hannotte",
-        "university": "Mc Master, Canada",
-        "subject": "Naresvara Pariksa of Sadyojyoti"
-    },
-    {
-        "name": "Dr.John A. Taber",
-        "university": "Ohio, USA",
-        "subject": "Specific Mimamsa and Nyaya texts"
-    },
-    {
-        "name": "Miss.Alyette Degraces",
-        "university": "Sorbonne, France",
-        "subject": "Study of Sannyasa & Vedanta Upanisads"
-    },
-    {
-        "name": "Dr.Robert E. Brown",
-        "university": "San Diego, USA",
-        "subject": "Collecton & Trans. of Skt. Mss. on Tala"
-    },
-    {
-        "name": "Dr.Nienke Kruger",
-        "university": "Free Univ., Holland",
-        "subject": "The concept of grace in South Indian Saivism"
-    },
-    {
-        "name": "Dr.Indira V. Peterson",
-        "university": "Mount Holyoke College, USA",
-        "subject": "Research in Classical Skt. Mahakavya - texts and comm.. in Mss."
-    },
-    {
-        "name": "Dr.Bruce M. Perry",
-        "university": "Pennsylavania, USA",
-        "subject": "An annotated trans. of Udayana's parisuddhi"
-    },
-    {
-        "name": "Ms.Martha Ann Selby",
-        "university": "Chicago, USA",
-        "subject": "A comparative study of Forms & figures in classical Indian Poetry"
-    },
-    {
-        "name": "Ms.Ginnette Ishimatsu",
-        "university": "Univ. of California, USA",
-        "subject": "Sources of Modern Saiva Temple rituals in Tamilnadu"
-    },
-    {
-        "name": "Ms.Nadine L. Berardi",
-        "university": "Columbia Univ., USA",
-        "subject": "Dhvanyaloka & Literary Semiotics"
-    },
-    {
-        "name": "Ms.Annie Christine Couturier",
-        "university": "Paris",
-        "subject": "Study of Yoga & Major Comms. With Translation into French"
-    },
-    {
-        "name": "Mr.Steven P. Hopkins",
-        "university": "Harvard Univ., USA",
-        "subject": "Poetry Iconocity; The stotras Of Vedanta Desika"
-    },
-    {
-        "name": "Ms.Denise Marie Hanusek",
-        "university": "Harvard Divinity School, USA",
-        "subject": "A Comparison of Ramanuja & John of the Cross: Union Of the soul with god"
-    },
-    {
-        "name": "Prof.Francis X. Clooney",
-        "university": "Boston College, USA",
-        "subject": "Srivaisnava Commentaries Of Nammalvar"
-    },
-    {
-        "name": "Ms.Karen P. Pechilis",
-        "university": "Univ. of Chicago, USA",
-        "subject": "The Persistence of Bhakti : Towards an Ethno History Of Religion"
-    },
-    {
-        "name": "Mr.Stephen Jenkins",
-        "university": "Univ. of Harvard, USA",
-        "subject": "The Saint's return to the world In Ramanuja & his tradition"
-    },
-    {
-        "name": "Mr.Robert C. Lester",
-        "university": "Univ. of Colarado, USA",
-        "subject": "Gandhi's Religion"
-    },
-    {
-        "name": "Mr.Lawrence J. McCrea",
-        "university": "Univ. of Chicago, USA",
-        "subject": "Rhetoric of Medieval Kashmir"
-    },
-    {
-        "name": "Ms.Janet O Shea",
-        "university": "Univ. of Berkeley, USA",
-        "subject": "Dance History"
-    },
-    {
-        "name": "Dr.Tara Michael",
-        "university": "",
-        "subject": "Study of Natha Sampradya"
-    },
-    {
-        "name": "Mr.Yigal David Bronner",
-        "university": "Univ. of Chicago, USA",
-        "subject": "Theory & Practice of Slesa in Indian Culture"
-    },
-    {
-        "name": "Ms.Katherine C. Zubko",
-        "university": "Harvard Univ. USA",
-        "subject": "Study of Rasa Theory"
-    },
-    {
-        "name": "Dr.Ute Husken",
-        "university": "Hiedelberg Univ. Germany",
-        "subject": "Vaikhanasa Grhya Sutras"
-    },
-    {
-        "name": "Ms.Rupa Viswanathan Roberts",
-        "university": "Columbia Univ., USA",
-        "subject": "Mimamsa & Vyakarana"
-    },
-    {
-        "name": "Dr.Daud R. Ali",
-        "university": "SOAS, London",
-        "subject": "Works of Kshemendra"
-    },
-    {
-        "name": "Dr.Ajay K. Rao",
-        "university": "Univ. of Chicago, USA",
-        "subject": "Reading of Ramayana in the Srivaishnava Tradition"
-    },
-    {
-        "name": "Dr.Richard H. Davis",
-        "university": "Bard College, USA",
-        "subject": "Age of Temples: Religious Culture in Medieval South"
-    },
-    {
-        "name": "Ms.Vena Ramphal",
-        "university": "SOAS, London",
-        "subject": "Natya Sastra"
-    },
-    {
-        "name": "Mr.Whitney M. Cox",
-        "university": "Univ. of Chicago USA",
-        "subject": "The Textual Culture in Medieval Cholamandala"
-    },
-    {
-        "name": "Mr.Devan Patel",
-        "university": "Univ. of California, Berkeley, USA",
-        "subject": "A Study of Coms. On Bhagavatam & Naishadiya"
-    },
-    {
-        "name": "Ms.Kate Zubko",
-        "university": "Emory Univ. USA",
-        "subject": "Dancing Across Religious Boundaries in Bharata Natya"
-    },
-    {
-        "name": "Ms.Sucharita Adluri",
-        "university": "Univ. of Pennsylvania USA",
-        "subject": "Religious Studies: South Indian Vaishnavism"
-    },
-    {
-        "name": "Mr.Blake Wentworth",
-        "university": "Univ. of Chicago, USA",
-        "subject": "History of Religion"
-    },
-    {
-        "name": "Ms.Ronit Ricci",
-        "university": "Univ. of Michigan USA",
-        "subject": "Islamic Literary Traditions in Javanese and Tamil"
-    },
-    {
-        "name": "Timothy Lubin",
-        "university": "Univ. Washington And Lee, USA",
-        "subject": "Ritual Functions and authority of Bramins in Early Historic India"
-    },
-    {
-        "name": "Swamini Hamsananda",
-        "university": "Savona, Italy",
-        "subject": "Yoga Sutras of Patanjali & Bhagavad Gita"
-    },
-    {
-        "name": "Amy Allocco",
-        "university": "Emory University, USA",
-        "subject": "Goddesses, Nagas and Anthills: Newly Evolving Women's Ritual Practices in Tamilnadu"
-    },
-    {
-        "name": "Meera Kuchroo",
-        "university": "McGill University, Canada",
-        "subject": "Lakshmidhara's Comm. On the Soundarya Lahari"
-    },
-    {
-        "name": "Michael Karrassowitch",
-        "university": "Tech. Univ. Of Vienna & the Academy of Fine arts Vienna",
-        "subject": "Manasara (Architecture Text)"
-    },
-    {
-        "name": "James Madaio",
-        "university": "University of Manchester U.K.",
-        "subject": "Jivan Mukti Viveka with Purnanandendu Kaumudi & Yoga Vasistha"
-    },
-    {
-        "name": "Charles Preston",
-        "university": "University of Chicago, U.S.A.",
-        "subject": "Modern Sanskrit Plays"
-    },
-    {
-        "name": "Dr.Martha Ann Selby",
-        "university": "University of Texas, Austin, USA",
-        "subject": ""
-    },
-    {
-        "name": "Simonetta",
-        "university": "Italy",
-        "subject": ""
-    },
-    {
-        "name": "Ms.Jennifer Lyn",
-        "university": "Vancouver, Canada",
-        "subject": ""
-    },
-    {
-        "name": "Ms.Melaine Boyer",
-        "university": "Mexico",
-        "subject": ""
-    },
-    {
-        "name": "Janet Aum",
-        "university": "Chicago, USA",
-        "subject": ""
-    },
-    {
-        "name": "Dimitra Eisterer Petimeza",
-        "university": "University of Vienna, Austria",
-        "subject": ""
-    },
-    {
-        "name": "Kashi Gomez",
-        "university": "University of California, Berkeley, USA",
-        "subject": ""
-    },
-    {
-        "name": "Anya Fredsell",
-        "university": "Georgia, USA",
-        "subject": ""
-    },
-    {
-        "name": "Anja Metzger",
-        "university": "USA",
-        "subject": ""
-    },
-    {
-        "name": "Saran Deva Subsantiwongre",
-        "university": "Thailand",
-        "subject": ""
+  {
+    "id": "01JFAJ2C72ZYJBEE6PQHBXF1E5",
+    "name": "Ms.Kate Zubko",
+    "university": "Emory Univ. USA",
+    "subject": "Dancing Across Religious Boundaries in Bharata Natya",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
     }
+  },
+  {
+    "id": "01JFAJ2C72Z5ZWT09YE2DS5BY0",
+    "name": "Timothy Lubin",
+    "university": "Univ. Washington And Lee, USA",
+    "subject": "Ritual Functions and authority of Bramins in Early Historic India",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72Z0W6GXABM20BHVSD",
+    "name": "Dr.Martha Ann Selby",
+    "university": "University of Texas, Austin, USA",
+    "subject": "",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72XCT6TJWECT6BQJN6",
+    "name": "Dr.Richard H. Davis",
+    "university": "Bard College, USA",
+    "subject": "Age of Temples: Religious Culture in Medieval South",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72VXQSQG4SCYTHM983",
+    "name": "Charles Preston",
+    "university": "University of Chicago, U.S.A.",
+    "subject": "Modern Sanskrit Plays",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72VJBK3ERSFN76JMK0",
+    "name": "Anja Metzger",
+    "university": "USA",
+    "subject": "",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72TXFFSW66C6FAMS0T",
+    "name": "Swamini Hamsananda",
+    "university": "Savona, Italy",
+    "subject": "Yoga Sutras of Patanjali & Bhagavad Gita",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72RBE1FTN7F1PF27PG",
+    "name": "Michael Karrassowitch",
+    "university": "Tech. Univ. Of Vienna & the Academy of Fine arts Vienna",
+    "subject": "Manasara (Architecture Text)",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72QM9XNWNYFQXQNTT7",
+    "name": "Ms.Rupa Viswanathan Roberts",
+    "university": "Columbia Univ., USA",
+    "subject": "Mimamsa & Vyakarana",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72Q93SD1Q0C5QDGP5Q",
+    "name": "Anya Fredsell",
+    "university": "Georgia, USA",
+    "subject": "",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72N6CRSN9QS3YMW9J9",
+    "name": "Ms.Ronit Ricci",
+    "university": "Univ. of Michigan USA",
+    "subject": "Islamic Literary Traditions in Javanese and Tamil",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72KHC5PMD7T97BCMSZ",
+    "name": "Ms.Sucharita Adluri",
+    "university": "Univ. of Pennsylvania USA",
+    "subject": "Religious Studies: South Indian Vaishnavism",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72HKQ6ZJQRWV51QX5F",
+    "name": "Mr.Whitney M. Cox",
+    "university": "Univ. of Chicago USA",
+    "subject": "The Textual Culture in Medieval Cholamandala",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72G0HHFET6MZBDR4HX",
+    "name": "Dr.Daud R. Ali",
+    "university": "SOAS, London",
+    "subject": "Works of Kshemendra",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72F8R62CFWQB38MKEP",
+    "name": "James Madaio",
+    "university": "University of Manchester U.K.",
+    "subject": "Jivan Mukti Viveka with Purnanandendu Kaumudi & Yoga Vasistha",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72DYE5AKBQ6K2M7GJF",
+    "name": "Janet Aum",
+    "university": "Chicago, USA",
+    "subject": "",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72CY4YXBN0EHPJ5F30",
+    "name": "Ms.Vena Ramphal",
+    "university": "SOAS, London",
+    "subject": "Natya Sastra",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72CMZSQRZ81AYN2M29",
+    "name": "Kashi Gomez",
+    "university": "University of California, Berkeley, USA",
+    "subject": "",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72B52115BFX6R7W0QC",
+    "name": "Dr.Ajay K. Rao",
+    "university": "Univ. of Chicago, USA",
+    "subject": "Reading of Ramayana in the Srivaishnava Tradition",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72AKDMYQ4VS4M31RDX",
+    "name": "Mr.Devan Patel",
+    "university": "Univ. of California, Berkeley, USA",
+    "subject": "A Study of Coms. On Bhagavatam & Naishadiya",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C727XTNG5G9Z706B47M",
+    "name": "Ms.Melaine Boyer",
+    "university": "Mexico",
+    "subject": "",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C726HKF4WMGADKXTXTS",
+    "name": "Saran Deva Subsantiwongre",
+    "university": "Thailand",
+    "subject": "",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.499Z",
+      "updated_at": "2024-12-17T14:59:02.499Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C7255VAASA3918WXZ3X",
+    "name": "Meera Kuchroo",
+    "university": "McGill University, Canada",
+    "subject": "Lakshmidhara's Comm. On the Soundarya Lahari",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C723D7DN2FWQEKGQ7H6",
+    "name": "Dimitra Eisterer Petimeza",
+    "university": "University of Vienna, Austria",
+    "subject": "",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C722BAAQ5AEMY0X5MM5",
+    "name": "Dr.Ute Husken",
+    "university": "Hiedelberg Univ. Germany",
+    "subject": "Vaikhanasa Grhya Sutras",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72173XHF132PCGEQ9K",
+    "name": "Simonetta",
+    "university": "Italy",
+    "subject": "",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72118FGWQ0C7Q00WP1",
+    "name": "Ms.Jennifer Lyn",
+    "university": "Vancouver, Canada",
+    "subject": "",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C720F3SDE53GRF27Q7H",
+    "name": "Amy Allocco",
+    "university": "Emory University, USA",
+    "subject": "Goddesses, Nagas and Anthills:Newly Evolving Women's Ritual Practices in Tamilnadu",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:26.234Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C72002TK900VE8GQZFJ",
+    "name": "Mr.Blake Wentworth",
+    "university": "Univ. of Chicago, USA",
+    "subject": "History of Religion",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.498Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71XKQXWW65NRMKQ5XN",
+    "name": "Mr.Steven P. Hopkins",
+    "university": "Harvard Univ., USA",
+    "subject": "Poetry Iconocity; The stotras Of Vedanta Desika",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71W7EBTF36WZZ1TZHY",
+    "name": "Mr.Leon Hannotte",
+    "university": "Mc Master, Canada",
+    "subject": "Naresvara Pariksa of Sadyojyoti",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71SFHW0CSVDMA16J8T",
+    "name": "Ms.Ginnette Ishimatsu",
+    "university": "Univ. of California, USA",
+    "subject": "Sources of Modern Saiva Temple rituals in Tamilnadu",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71RFJM819SAYJKMA19",
+    "name": "Mr.Stephen Jenkins",
+    "university": "Univ. of Harvard, USA",
+    "subject": "The Saint's return to the world In Ramanuja & his tradition",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71RDXQBRC4BP56QFGS",
+    "name": "Mr.Yigal David Bronner",
+    "university": "Univ. of Chicago, USA",
+    "subject": "Theory & Practice of Slesa in Indian Culture",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71Q5YZ49VWS5121YXM",
+    "name": "Dr.Nienke Kruger",
+    "university": "Free Univ., Holland",
+    "subject": "The concept of grace in South Indian Saivism",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71KE4SYQFP7NS51HCA",
+    "name": "Dr.Tara Michael",
+    "university": "",
+    "subject": "Study of Natha Sampradya",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71J22KTDR5W3Y9M522",
+    "name": "Mr.Robert C. Lester",
+    "university": "Univ. of Colarado, USA",
+    "subject": "Gandhi's Religion",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71HCEBFJ3JBP9P33PQ",
+    "name": "Dr.Robert E. Brown",
+    "university": "San Diego, USA",
+    "subject": "Collecton & Trans. of Skt. Mss. on Tala",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71G7MBWGZ4XJ2MS0A5",
+    "name": "Ms.Martha Ann Selby",
+    "university": "Chicago, USA",
+    "subject": "A comparative study of Forms & figures in classical Indian Poetry",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71E7E0CYSAJ0KX22PR",
+    "name": "Ms.Denise Marie Hanusek",
+    "university": "Harvard Divinity School, USA",
+    "subject": "A Comparison of Ramanuja & John of the Cross: Union Of the soul with god",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71BV76NXSW2XRF4VTC",
+    "name": "Miss.Alyette Degraces",
+    "university": "Sorbonne, France",
+    "subject": "Study of Sannyasa & Vedanta Upanisads",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71B53Q9KMYT68124X0",
+    "name": "Ms.Katherine C. Zubko",
+    "university": "Harvard Univ. USA",
+    "subject": "Study of Rasa Theory",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.498Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C71AQXCRAJ3N5BYCWV5",
+    "name": "Ms.Karen P. Pechilis",
+    "university": "Univ. of Chicago, USA",
+    "subject": "The Persistence of Bhakti : Towards an Ethno History Of Religion",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C718NWNJ2BG6W2GFSZ2",
+    "name": "Mr.Lawrence J. McCrea",
+    "university": "Univ. of Chicago, USA",
+    "subject": "Rhetoric of Medieval Kashmir",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C716FQPGYT961Z7BG0J",
+    "name": "Ms.Janet O Shea",
+    "university": "Univ. of Berkeley, USA",
+    "subject": "Dance History",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C716D0GJG1EJP7C67CB",
+    "name": "Dr.Bruce M. Perry",
+    "university": "Pennsylavania, USA",
+    "subject": "An annotated trans. of Udayana's parisuddhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C715794XC1GKRDKKEYC",
+    "name": "Ms.Annie Christine Couturier",
+    "university": "Paris",
+    "subject": "Study of Yoga & Major Comms. With Translation into French",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C711J42X9Z0RPNBKH3V",
+    "name": "Dr.John A. Taber",
+    "university": "Ohio, USA",
+    "subject": "Specific Mimamsa and Nyaya texts",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C711AZXQXZ411NW1DRH",
+    "name": "Ms.Nadine L. Berardi",
+    "university": "Columbia Univ., USA",
+    "subject": "Dhvanyaloka & Literary Semiotics",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C7111SRX0KPQR7STXS7",
+    "name": "Dr.Indira V. Peterson",
+    "university": "Mount Holyoke College, USA",
+    "subject": "Research in Classical Skt. Mahakavya - texts and comm.. in Mss.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C710HH5XZ34S89D253X",
+    "name": "Prof.Francis X. Clooney",
+    "university": "Boston College, USA",
+    "subject": "Srivaisnava Commentaries Of Nammalvar",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.497Z",
+      "updated_at": "2024-12-17T14:59:02.497Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70YCAJXTNNFHTW0N0R",
+    "name": "Mr.M.Watase",
+    "university": "Japan",
+    "subject": "Hindu Law",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70WT0Z2CGM7FTG3VTB",
+    "name": "Prof.V.K.Chari",
+    "university": "Carleton, Ottawa",
+    "subject": "Alamkara Concepts",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70SRZJ7E3EHDWPT1A8",
+    "name": "Prof.Robert C.Lester",
+    "university": "Univ. of Colorado, USA",
+    "subject": "Domestic Ritual Practice of Sri Vaishnava Hindus",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70RZXD5EPX60NDFDKZ",
+    "name": "Mr.David Iglehart",
+    "university": "Texas, USA",
+    "subject": "Emotive Content & Appreciation",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70RN70DZNTTJP52YP4",
+    "name": "Miss.Melodie Doherty",
+    "university": "Whunnipe, Canada",
+    "subject": "General Skt. Text",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70P6B0RF8JXZQAAG3C",
+    "name": "Dr.Wayne Surdam",
+    "university": "Berkeley, USA",
+    "subject": "Cataloguing of Saiva Rituals",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70MVPND3DFC87WYBAV",
+    "name": "Mr.Wayne Surdam",
+    "university": "Berkeley, USA",
+    "subject": "Saiva Agamas & Paddhati",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70MPEPCWQ8VZ83Q2XZ",
+    "name": "Miss F.Wilson",
+    "university": "Berkeley & Wisconsin USA",
+    "subject": "Critical Edn. of Krsnakarnamrta",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70M2SNEHDX0PPBJD0H",
+    "name": "Mr.David Nelson",
+    "university": "Minneapolis, USA",
+    "subject": "Hasyarnava Prahasana etc.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70KXQWPXZVPSSBVJ9K",
+    "name": "Dr.James Bruce Long",
+    "university": "Univ. of Chicago, USA",
+    "subject": "Saivism & Sivapurana",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70KRJDGX7BTFA0HV4J",
+    "name": "Dr.Fabrizia Baldissera",
+    "university": "Milan, Italy",
+    "subject": "Ed. of Saradatilaka Bhana",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70J290516DB54V0RYW",
+    "name": "Ms.Nadine Berardi",
+    "university": "New York, USA",
+    "subject": "Dhvani in Natya",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70G7E2M8ZGBCC0BQNY",
+    "name": "Mr.Richard H. Davis",
+    "university": "Univ. of Chicago, USA",
+    "subject": "Ritual in an Oscillating Universe",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70FHSKBJDE9P1Q7E2R",
+    "name": "Miss.Mercille Josephine",
+    "university": "Sorbonne, France",
+    "subject": "Forecasting human behaviour According to ancient Indian Knowledge",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70FD8SK74DA1257JSW",
+    "name": "Miss.Edwina",
+    "university": "United Kingdom",
+    "subject": "Sanskrit Prahasanas",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70ERR3XNZVQ9ZXD7E2",
+    "name": "Mr.Geenens Phillppe",
+    "university": "Liege, Belgium",
+    "subject": "Introduction to Rajamarthanda of Bhoja deva",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70DN39JN1YBH5TRW3X",
+    "name": "Dr.Francis X.Clooney",
+    "university": "Chicago, USA",
+    "subject": "Retrieving the Purva Mimamsa of Jaimini",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70D5QXS4SM34D02JRG",
+    "name": "Dr.K.Kamimura",
+    "university": "Japan",
+    "subject": "Sahitya Texts",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70BQHNYCKFVXG5DFEM",
+    "name": "Ms.Any-Claude Medioni",
+    "university": "France",
+    "subject": "Vedanta Desika's Stotras - A Literary & Iconographical Study",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C70A79VS5FTF57W5Q7E",
+    "name": "Ms.Armelle Choquard",
+    "university": "Sorbonne, France",
+    "subject": "Bharata's Natya Sastra And Yoga",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C709WW9H9KESJZT8EGZ",
+    "name": "Mr.Michael Nixon",
+    "university": "Ireland",
+    "subject": "Karnataka Music notation In MSS",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C707SQH36SDPCJJCST9",
+    "name": "Ms.Tessa Wilcox",
+    "university": "Berkeley, USA",
+    "subject": "Sanskrit Literature",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C705ZE6PZKKYV4EANXJ",
+    "name": "Dr.Peter Khoroche",
+    "university": "S.A.O.S., London",
+    "subject": "Dramas of Bhavabhuti etc.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C7059PQ3DBGZMH9W7NK",
+    "name": "Ms.Julie H. Hiebert",
+    "university": "Harward, USA",
+    "subject": "Royal Evenings, Sanskrit Poetry of Queen & Court",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C704NDT5P2JS81W90VG",
+    "name": "Mr.Michael Font",
+    "university": "U.S.A.",
+    "subject": "Sanskrit Language Literature",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C704AZ65EZK3BF7JG9Z",
+    "name": "Dr.George Hart",
+    "university": "Univ. of Harvard & Philadelphia, USA",
+    "subject": "Alankara & Nyaya",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C703DZYXG7GMCPC34DS",
+    "name": "Dr.Robert Gottlieb",
+    "university": "Washington, USA",
+    "subject": "Select songs of Muthuswami Dikshitar",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.496Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C6ZS8NX89SZA07B9NC2",
+    "name": "Dr.Daniel H.Smith",
+    "university": "Syracuse, USA",
+    "subject": "Pancaratra Samhita",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.495Z",
+      "updated_at": "2024-12-17T14:59:02.495Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C6Z9MMZYQXM6EJZ4X76",
+    "name": "Mrs.Nariko Mayeda",
+    "university": "Pennsylvania, USA",
+    "subject": "Indian Literature and Folklore",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.495Z",
+      "updated_at": "2024-12-17T14:59:02.495Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C6Z3SWG0GTCAS46N3M8",
+    "name": "Miss.Patricia Butterfield",
+    "university": "Philadelphia, USA",
+    "subject": "General Sanskrit Studies",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.495Z",
+      "updated_at": "2024-12-17T14:59:02.496Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C6Z1ECGGFK2F7SRXGEB",
+    "name": "Dr.J.Ensink Croningen",
+    "university": "Univ. Holland",
+    "subject": "Sutasoma;-A Javanese text.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.495Z",
+      "updated_at": "2024-12-17T14:59:02.495Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ2C6Y4JX99JTYP88KWRXW",
+    "name": "Dr.Robert C.Lester",
+    "university": "Yale University",
+    "subject": "Yoga in Visistadvaita",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T14:59:02.495Z",
+      "updated_at": "2024-12-17T14:59:02.495Z",
+      "created_by": "admin"
+    }
+  }
 ]

@@ -26,7 +26,7 @@
         </div>
         <!-- heading image -->
         <v-img
-          :src="news.avatarImage"
+          :src="news.avatarImage[0]"
           v-if="news.avatarImage"
           width="100%"
           height="500"

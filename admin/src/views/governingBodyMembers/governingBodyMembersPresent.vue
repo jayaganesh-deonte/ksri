@@ -30,7 +30,7 @@ const endowmentFields = [
     label: "Designation",
     type: "auto-complete",
     rules: [(v) => !!v || "Designation is required"],
-    items: ["President", "Vice President", "Secretary", "Treasurer"],
+    items: ["President", "Vice President", "Secretary", "Treasurer", "Members"],
   },
 ];
 

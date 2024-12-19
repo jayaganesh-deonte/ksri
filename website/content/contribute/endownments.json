@@ -1,117 +1,278 @@
 [
-    {
-        "title": "Dr.M. Narasimhachari Endowment",
-        "initiatedBy": "Instituted by Family members, friends & Students",
-        "topic": "A lecture is organised every year on Sanskrit Literature"
-    },
-    {
-        "title": "Ms. Subbulakshmi Endowment",
-        "initiatedBy": "Instituted by Family members",
-        "topic": "A lecture is organised every year on Music"
-    },
-    {
-        "title": "R.V.Easwaran Endowment",
-        "initiatedBy": "Instituted by Family members",
-        "topic": "A lecture is organised every year on Music"
-    },
-    {
-        "title": "D.Ramakrishnan Endowment",
-        "initiatedBy": "Instituted by Sri P.R.Kannan (son)",
-        "topic": "A lecture is organised every year on Sanskrit Literature"
-    },
-    {
-        "title": "Prof. V.Venkatachalam Endowment",
-        "initiatedBy": "Instituted by Family members",
-        "topic": "A lecture is organised every year on Sanskrit Literature"
-    },
-    {
-        "title": "Dr.S.Jayasree Endowment",
-        "initiatedBy": "Endowed by Sri S.Hariharan.",
-        "topic": "A lecture is conducted on 5th April of every year."
-    },
-    {
-        "title": "Prof.K.A.Lakshmana Sastri Endowment",
-        "initiatedBy": "Endowed by Dr.E.R.Ramabai, former Head, Dept. of Sanskrit, University of Madras",
-        "topic": "For conducting lecture on any sastra."
-    },
-    {
-        "title": "R.Narasimhachari Endowment",
-        "initiatedBy": "Sloka recitation competition for school students is conducted in the second week of September every year.",
-        "topic": "A lecture on different schools of Vedanta is also conducted in the month of September/October of each year."
-    },
-    {
-        "title": "Sankari Endowment",
-        "initiatedBy": "Padmasri Dr.A.Sivasailam in memory of Prof.R.Sankari.",
-        "topic": "Lecture is conducted every year Feb/Mar on any sastra."
-    },
-    {
-        "title": "Prof.P.S.Subrahmanya Sastri Centenary Endowment",
-        "initiatedBy": "Instituted by Dr.P.N.Natarajan.",
-        "topic": "Lecture is arranged every year in the month of Nov.-March on grammar, linguistics orTamil studies."
-    },
-    {
-        "title": "R. Srinivasatatachari Endowment",
-        "initiatedBy": "Mrs.Sarayu Srinivasan .",
-        "topic": "A lecture is organized each year in November on dance and music."
-    },
-    {
-        "title": "Navypakkam Mimisal Narasimha Patrachariar Endowment and Justice N.Rajagopala Ayyangar Endowment",
-        "initiatedBy": "LinkedInuted by Sri N.Raghunathan, Former Chief Secretary, Govt. of Maharashtra.",
-        "topic": "Lectures are conducted in the month of Oct/Nov. on Law and Jurisprudence"
-    },
-    {
-        "title": "Suryakumari Dwarakadas Endowment",
-        "initiatedBy": "LinkedInuted by Sri D.Suresh, member of Governing Body",
-        "topic": "KSRI - Interschool Bhagavadgita recitationis being organized every year on the 1st Saturday of September"
-    },
-    {
-        "title": "Guna Pai Priyamvada Bai Endowment",
-        "initiatedBy": "LinkedInuted by Mr.Vasant Pai, Senior Advocate, Madras High Court Anthyakshari sloka recitation competition for school children.",
-        "topic": "It is being conducted every year in the month of Jan/Feb."
-    },
-    {
-        "title": "Dr.S.S.Janaki Endowment",
-        "initiatedBy": "Instituted by family members",
-        "topic": "For publication of Journal of Oriental Research"
-    },
-    {
-        "title": "Dr.V.Raghavan Endowment",
-        "initiatedBy": "Instituted by family members",
-        "topic": "Kombur Ramabhadran Endowment"
-    },
-    {
-        "title": "Kombur Ramabhadran Endowment",
-        "initiatedBy": "Instituted by Sri R.T.Chari.",
-        "topic": "Senior Sanskrit scholar is being honoured with a purse of Rs.10,000/- every year in the month of Oct/Nov."
-    },
-    {
-        "title": "Sundaram Sarawathi Endowment",
-        "initiatedBy": "LinkedInuted by Mrs.Saraswathi Sundaram and students and colleagues of Dr.C.S.Sundaram.",
-        "topic": "Lecture is arranged in the month of July/Aug. on literature, drama etc."
-    },
-    {
-        "title": "S.Subbalakshmi Ammal Endowment",
-        "initiatedBy": "LinkedInuted by Mrs.S.Subbalakshmi",
-        "topic": "For a lecture on Music"
-    },
-    {
-        "title": "Shankar Vidya Endowment",
-        "initiatedBy": "LinkedInuted by Mrs.Vidya Shankar",
-        "topic": "For a lecture on Music"
-    },
-    {
-        "title": "R.V.Eswaran Endowment",
-        "initiatedBy": "LinkedInuted by Mrs.Krishna Easwaran",
-        "topic": "For a lecture on Music in Aug/Sept"
-    },
-    {
-        "title": "Rajam Ramaswami Endowment",
-        "initiatedBy": "LinkedInuted by Mrs. Sundari Mani.",
-        "topic": "For a lecture on literature"
-    },
-    {
-        "title": "S.Subhadra Endowment",
-        "initiatedBy": "LinkedInuted by Family members, friends & Students",
-        "topic": "A lecture is organised every year on Sanskrit Literature"
+  {
+    "id": "01JF5NHKNNZDB2K3MFST5HQC71",
+    "title": "Guna Pai Priyamvada Bai Endowment",
+    "initiatedBy": "LinkedInuted by Mr.Vasant Pai, Senior Advocate, Madras High Court Anthyakshari sloka recitation competition for school children.",
+    "topic": "It is being conducted every year in the month of Jan/Feb.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
     }
+  },
+  {
+    "id": "01JF5NHKNNYQWE04JYJD27R86B",
+    "title": "Dr.S.S.Janaki Endowment",
+    "initiatedBy": "Instituted by family members",
+    "topic": "For publication of Journal of Oriental Research",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNNSZCXA0YXEMRCN1PD",
+    "title": "Suryakumari Dwarakadas Endowment",
+    "initiatedBy": "LinkedInuted by Sri D.Suresh, member of Governing Body",
+    "topic": "KSRI - Interschool Bhagavadgita recitationis being organized every year on the 1st Saturday of September",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNNSZ7Z4HGEG1XMTM10",
+    "title": "R.V.Eswaran Endowment",
+    "initiatedBy": "LinkedInuted by Mrs.Krishna Easwaran",
+    "topic": "For a lecture on Music in Aug/Sept",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNNMW7YCCWRQDDWB9B6",
+    "title": "Rajam Ramaswami Endowment",
+    "initiatedBy": "LinkedInuted by Mrs. Sundari Mani.",
+    "topic": "For a lecture on literature",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNNM7E1B2B53YP5NEK2",
+    "title": "Prof.P.S.Subrahmanya Sastri Centenary Endowment",
+    "initiatedBy": "Instituted by Dr.P.N.Natarajan.",
+    "topic": "Lecture is arranged every year in the month of Nov.-March on grammar, linguistics orTamil studies.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNNGTCF2JEAEQ22204Q",
+    "title": "Shankar Vidya Endowment",
+    "initiatedBy": "LinkedInuted by Mrs.Vidya Shankar",
+    "topic": "For a lecture on Music",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNNED2QSTJ8ASRR7RJA",
+    "title": "S.Subhadra Endowment",
+    "initiatedBy": "LinkedInuted by Family members, friends & Students",
+    "topic": "A lecture is organised every year on Sanskrit Literature",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNNDDCKP8FP23PZ16NA",
+    "title": "Sundaram Sarawathi Endowment",
+    "initiatedBy": "LinkedInuted by Mrs.Saraswathi Sundaram and students and colleagues of Dr.C.S.Sundaram.",
+    "topic": "Lecture is arranged in the month of July/Aug. on literature, drama etc.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNNAYCG76C5YEJCKY56",
+    "title": "R. Srinivasatatachari Endowment",
+    "initiatedBy": "Mrs.Sarayu Srinivasan .",
+    "topic": "A lecture is organized each year in November on dance and music.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNNARZN01APZ7C3DJVQ",
+    "title": "Navypakkam Mimisal Narasimha Patrachariar Endowment and Justice N.Rajagopala Ayyangar Endowment",
+    "initiatedBy": "LinkedInuted by Sri N.Raghunathan, Former Chief Secretary, Govt. of Maharashtra.",
+    "topic": "Lectures are conducted in the month of Oct/Nov. on Law and Jurisprudence",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNN8AT8D79SW3WNVTG7",
+    "title": "Dr.V.Raghavan Endowment",
+    "initiatedBy": "Instituted by family members",
+    "topic": "Kombur Ramabhadran Endowment",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNN6Y10MPHXHE7FG008",
+    "title": "Kombur Ramabhadran Endowment",
+    "initiatedBy": "Instituted by Sri R.T.Chari.",
+    "topic": "Senior Sanskrit scholar is being honoured with a purse of Rs.10,000/- every year in the month of Oct/Nov.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNN2Y8RMPDKT5PHT1DF",
+    "title": "S.Subbalakshmi Ammal Endowment",
+    "initiatedBy": "LinkedInuted by Mrs.S.Subbalakshmi",
+    "topic": "For a lecture on Music",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNMXSJMGQJV4CQYRPSW",
+    "title": "Sankari Endowment",
+    "initiatedBy": "Padmasri Dr.A.Sivasailam in memory of Prof.R.Sankari.",
+    "topic": "Lecture is conducted every year Feb/Mar on any sastra.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.221Z",
+      "updated_at": "2024-12-15T17:23:35.221Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNMSAH78WH4CPQD08M1",
+    "title": "Dr.S.Jayasree Endowment",
+    "initiatedBy": "Endowed by Sri S.Hariharan.",
+    "topic": "A lecture is conducted on 5th April of every year.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.220Z",
+      "updated_at": "2024-12-15T17:23:35.220Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNMD52KA4V69MCEBKM5",
+    "title": "Prof. V.Venkatachalam Endowment",
+    "initiatedBy": "Instituted by Family members",
+    "topic": "A lecture is organised every year on Sanskrit Literature",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.220Z",
+      "updated_at": "2024-12-15T17:23:35.220Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNMCNZ219ATC33HGF4J",
+    "title": "R.Narasimhachari Endowment",
+    "initiatedBy": "Sloka recitation competition for school students is conducted in the second week of September every year.",
+    "topic": "A lecture on different schools of Vedanta is also conducted in the month of September/October of each year.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.220Z",
+      "updated_at": "2024-12-15T17:23:35.220Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNM7Q2VZDMSDHGCD8X9",
+    "title": "D.Ramakrishnan Endowment",
+    "initiatedBy": "Instituted by Sri P.R.Kannan (son)",
+    "topic": "A lecture is organised every year on Sanskrit Literature",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.220Z",
+      "updated_at": "2024-12-15T17:23:35.220Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNM6PAF7SFNWQBXY403",
+    "title": "R.V.Easwaran Endowment",
+    "initiatedBy": "Instituted by Family members",
+    "topic": "A lecture is organised every year on Music",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.220Z",
+      "updated_at": "2024-12-15T17:23:35.220Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNM0TGQSGD8MNP667HV",
+    "title": "Prof.K.A.Lakshmana Sastri Endowment",
+    "initiatedBy": "Endowed by Dr.E.R.Ramabai, former Head, Dept. of Sanskrit, University of Madras",
+    "topic": "For conducting lecture on any sastra.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.220Z",
+      "updated_at": "2024-12-15T17:23:35.220Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNM03639BQM4CMNTKBH",
+    "title": "Ms. Subbulakshmi Endowment",
+    "initiatedBy": "Instituted by Family members",
+    "topic": "A lecture is organised every year on Music",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.220Z",
+      "updated_at": "2024-12-15T17:23:35.220Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5NHKNKGFDKFSK1D108HFT2",
+    "title": "Dr.M. Narasimhachari Endowment",
+    "initiatedBy": "Instituted by Family members, friends & Students",
+    "topic": "A lecture is organised every year on Sanskrit Literature",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:23:35.220Z",
+      "updated_at": "2024-12-15T17:23:35.220Z",
+      "created_by": "admin"
+    }
+  }
 ]

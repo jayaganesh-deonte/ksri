@@ -1,46 +1,134 @@
 [
-    {
-        "name": "Dr.A. Thiruvengadathan",
-        "description": "Edition from Manuscripts of Suktisadhutvamalika of Viraraghava"
-    },
-    {
-        "name": "Dr.V.L.Sethuraman",
-        "description": "Edition and Study of Dattatreya Campu"
-    },
-    {
-        "name": "Dr.C.Panduranga Bhatta",
-        "description": "Critical Study of Arunagiri's Com. on Kalidasa's Raghuvamsa"
-    },
-    {
-        "name": "Sri N.S. Sathagopan",
-        "description": "Critical Edition and Study of Life of Vaishnavacarya Sri Ramanuja Mahadesikan"
-    },
-    {
-        "name": "Dr. R.Thyagarajan",
-        "description": "Edition from Mss. of Cidambarakavi's Bhagavata Campu"
-    },
-    {
-        "name": "Sri Goda Venkateswara Rao",
-        "description": "Edition from Mss. of Tryambaka Sastri's Hetvabhasa Samanyanirukti"
-    },
-    {
-        "name": "Pt.L. Narayanan",
-        "description": "Some Mimamsa concepts in Sastradipika"
-    },
-    {
-        "name": "Sri Bilvanathan",
-        "description": "Origin and Development of Apurvavidhi in Mimamsa"
-    },
-    {
-        "name": "Sri N. Neelabalan",
-        "description": "Contribution of Ramanujadasa to Mimamsa Sastra"
-    },
-    {
-        "name": "Dr. R.N. Sampath",
-        "description": "Critical analysis of citations in Vedanta Desikas Works"
-    },
-    {
-        "name": "Sri K.A. Sabharatnam Sivacarya",
-        "description": "Pancasuddhi in Saiva Agamas"
+  {
+    "id": "01JFAJ9KDWR27W0HMYHN3EKWQ2",
+    "name": "Dr.V.L.Sethuraman",
+    "description": "Edition and Study of Dattatreya Campu",
+    "type": "Shastrachudamani",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:02:59.260Z",
+      "updated_at": "2024-12-17T15:02:59.260Z",
+      "created_by": "admin"
     }
+  },
+  {
+    "id": "01JFAJ9KDWQHKEDWYPXTV41NWW",
+    "name": "Dr.C.Panduranga Bhatta",
+    "description": "Critical Study of Arunagiri's Com. on Kalidasa's Raghuvamsa",
+    "type": "Shastrachudamani",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:02:59.260Z",
+      "updated_at": "2024-12-17T15:02:59.260Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ9KDWNACTSS1YP5MSWBHY",
+    "name": "Pt.L. Narayanan",
+    "description": "Some Mimamsa concepts in Sastradipika",
+    "type": "Shastrachudamani",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:02:59.260Z",
+      "updated_at": "2024-12-17T15:02:59.260Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ9KDWKFHMJ90J6BTTTVZC",
+    "name": "Sri N. Neelabalan",
+    "description": "Contribution of Ramanujadasa to Mimamsa Sastra",
+    "type": "Shastrachudamani",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:02:59.260Z",
+      "updated_at": "2024-12-17T15:02:59.260Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ9KDWK39BTR478SA1DHKD",
+    "name": "Sri N.S. Sathagopan",
+    "description": "Critical Edition and Study of Life of Vaishnavacarya Sri Ramanuja Mahadesikan",
+    "type": "Shastrachudamani",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:02:59.260Z",
+      "updated_at": "2024-12-17T15:02:59.260Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ9KDWJDFTEFXAGXZT9WPG",
+    "name": "Sri Goda Venkateswara Rao",
+    "description": "Edition from Mss. of Tryambaka Sastri's Hetvabhasa Samanyanirukti",
+    "type": "Shastrachudamani",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:02:59.260Z",
+      "updated_at": "2024-12-17T15:02:59.260Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ9KDWCRJ4NPWCQBXX52RD",
+    "name": "Dr. R.Thyagarajan",
+    "description": "Edition from Mss. of Cidambarakavi's Bhagavata Campu",
+    "type": "Shastrachudamani",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:02:59.260Z",
+      "updated_at": "2024-12-17T15:02:59.260Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ9KDW62SHXF8FPSJ9EBP9",
+    "name": "Sri Bilvanathan",
+    "description": "Origin and Development of Apurvavidhi in Mimamsa",
+    "type": "Shastrachudamani",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:02:59.260Z",
+      "updated_at": "2024-12-17T15:02:59.260Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ9KDW031JT3EHS5GNNTK0",
+    "name": "Dr. R.N. Sampath",
+    "description": "Critical analysis of citations in Vedanta Desikas Works",
+    "type": "Shastrachudamani",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:02:59.260Z",
+      "updated_at": "2024-12-17T15:02:59.260Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ9KDW025TWESKMB2CHZR6",
+    "name": "Sri K.A. Sabharatnam Sivacarya",
+    "description": "Pancasuddhi in Saiva Agamas",
+    "type": "Shastrachudamani",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:02:59.260Z",
+      "updated_at": "2024-12-17T15:02:59.260Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJ9KDV60KESVG6DA40Q273",
+    "name": "Dr.A. Thiruvengadathan",
+    "description": "Edition from Manuscripts of Suktisadhutvamalika of Viraraghava",
+    "type": "Shastrachudamani",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:02:59.259Z",
+      "updated_at": "2024-12-17T15:02:59.260Z",
+      "created_by": "admin"
+    }
+  }
 ]

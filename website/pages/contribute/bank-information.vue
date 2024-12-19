@@ -14,13 +14,15 @@
         <v-table style="background-color: transparent" v-if="!$device.isMobile">
           <tbody>
             <tr
-              v-for="(value, key) in bankDetails"
+              v-for="(value, key) in bankInfo"
               :key="key"
               class="text-h6"
               data-aos="fade-left"
               :data-aos-delay="`${bankDetailsKeys.indexOf(key) * 100}`"
             >
-              <td class="font-weight-bold text-secondary">{{ key }}</td>
+              <td class="font-weight-bold text-secondary">
+                {{ tableKeys[bankDetailsKeys.indexOf(key)] }}
+              </td>
               <td>{{ value }}</td>
             </tr>
           </tbody>
@@ -31,11 +33,13 @@
           class="text-body-1"
           data-aos="fade-left"
           :data-aos-delay="`${bankDetailsKeys.indexOf(key) * 100}`"
-          v-for="(value, key) in bankDetails"
+          v-for="(value, key) in bankInfo"
           :key="key"
         >
           <v-list-item>
-            <div class="font-weight-bold text-secondary">{{ key }}</div>
+            <div class="font-weight-bold text-secondary">
+              {{ tableKeys[bankDetailsKeys.indexOf(key)] }}
+            </div>
             <div>{{ value }}</div>
           </v-list-item>
         </v-list>
@@ -58,9 +62,34 @@ useSeoMeta({
 
 import contributeHeader from "./contributeHeader.vue";
 
+const tableKeys = [
+  "Our Name",
+  "Bank",
+  "S.B.Account No.",
+  "IFSC CODE",
+  "MICR NO.",
+];
+
 const bankDetailsData = await queryContent("contribute", "bankinfo").findOne();
 
 const bankDetails = bankDetailsData.body[0];
 
-const bankDetailsKeys = Object.keys(bankDetails);
+// {
+//     "id": "THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE.",
+//     "name": "THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE.",
+//     "bankName": "Union Bank of India, Mylapore Branch",
+//     "accountNo": "395702010007408",
+//     "ifsc": "UBIN0539571",
+//     "micr": "600026009"
+//   }
+
+let bankInfo = {
+  "our Name": bankDetails.name,
+  Bank: bankDetails.bankName,
+  "S.B.Account No.": bankDetails.accountNo,
+  "IFSC CODE": bankDetails.ifsc,
+  "MICR NO.": bankDetails.micr,
+};
+
+const bankDetailsKeys = Object.keys(bankInfo);
 </script>

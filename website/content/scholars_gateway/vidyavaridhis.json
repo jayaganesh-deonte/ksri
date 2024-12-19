@@ -1,82 +1,242 @@
 [
-    {
-        "name": "K.S.Balasubramanian",
-        "description": "Critical study of Hathasanketacandrika of Sundaradeva"
-    },
-    {
-        "name": "T.V.Vasudeva",
-        "description": "Critical Edition and Study from manuscripts of Amarananda's Svatmayogapradipa"
-    },
-    {
-        "name": "Smt.K.Gomati",
-        "description": "Critical Edition of Ananda Tirtha's Dvadasa Stotra with hitherto unpublished commentaries."
-    },
-    {
-        "name": "Sri S Bilvanathan",
-        "description": "Critical Edition & Study from Mss. of Vidhibhusana by Venkatanarayana"
-    },
-    {
-        "name": "Sri Neelabalan",
-        "description": "Critical Edition & Study of Tantranitilahari of Ramanujadasa from Mss."
-    },
-    {
-        "name": "Sri K. Sreekanthan",
-        "description": "Duruhasiksa of Appayya Diksita-III- A Critical Study"
-    },
-    {
-        "name": "Smt G.D. Jayalakshmi",
-        "description": "Critical Edition & Study of Darukavanavilasa by Ratnaradhya"
-    },
-    {
-        "name": "Ms. T.Lalitha Subhalakshmi",
-        "description": "Critical Edition & Study of Alankarasirobhusana"
-    },
-    {
-        "name": "Sri K Ramanathan",
-        "description": "Critical Edition & Study of Advaitamukasara"
-    },
-    {
-        "name": "Ms. S. Annapurna",
-        "description": "Critical Edition & Study of Dhanyakumaracarita"
-    },
-    {
-        "name": "Sri D. Mallikarjuna",
-        "description": "Mimamsa Yajnika Sampradaya Samiksha"
-    },
-    {
-        "name": "Sri V. Soumya Narayanan",
-        "description": "Sri Vaishnavasampradaye Sritattvavicarah"
-    },
-    {
-        "name": "Sri R.Natarajan",
-        "description": "Nalladhvarinah Advaitarasamanjari Parimalavyakhya Sahita samskaranam Visishtadhyayanam ca"
-    },
-    {
-        "name": "Dr.T. Sanjeeva Rao",
-        "description": "Bharatiya Samskriteh ve raghavasya samskrita gaveshana mulaka upakritih"
-    },
-    {
-        "name": "Smt. Prabha",
-        "description": "Lasyangas"
-    },
-    {
-        "name": "Sri T.S. Nagarajan",
-        "description": "Jyotishe Ayurdayam"
-    },
-    {
-        "name": "Sri Bhavanarayanan",
-        "description": "Sahitya"
-    },
-    {
-        "name": "Sri J. Venkataraman",
-        "description": "Sambhubhattasya Nirupanam"
-    },
-    {
-        "name": "Sri K.N. Varadarajan",
-        "description": "Saint-poets in Sanskrit from 12th to 19th C.A.D"
-    },
-    {
-        "name": "Sri H.G. Panduranga",
-        "description": "Critical Edition & Study of Madrakanya Parinaya Campus"
+  {
+    "id": "01JFAJBHFMZ9ZCDTY13XSH29WQ",
+    "name": "Sri Bhavanarayanan",
+    "description": "Sahitya",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
     }
+  },
+  {
+    "id": "01JFAJBHFMV97VMQ419TBHP8FY",
+    "name": "Sri D. Mallikarjuna",
+    "description": "Mimamsa Yajnika Sampradaya Samiksha",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFMT42NQTR394V4B75H",
+    "name": "Sri K.N. Varadarajan",
+    "description": "Saint-poets in Sanskrit from 12th to 19th C.A.D",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFMQXNA9A335A2K5JYS",
+    "name": "Sri T.S. Nagarajan",
+    "description": "Jyotishe Ayurdayam",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFMPTM71DNKX765M9GA",
+    "name": "Sri V. Soumya Narayanan",
+    "description": "Sri Vaishnavasampradaye Sritattvavicarah",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFMNQY4KZCEAWEEZJHG",
+    "name": "Smt. Prabha",
+    "description": "Lasyangas",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFMMT45M8CW0G13D5B1",
+    "name": "Ms. S. Annapurna",
+    "description": "Critical Edition & Study of Dhanyakumaracarita",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFMJAVC923FMN38NNRC",
+    "name": "Sri H.G. Panduranga",
+    "description": "Critical Edition & Study of Madrakanya Parinaya Campus",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFMEWY998XJ285S4NCK",
+    "name": "Ms. T.Lalitha Subhalakshmi",
+    "description": "Critical Edition & Study of Alankarasirobhusana",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFMB3ZTK1CE960ESPVT",
+    "name": "Sri K Ramanathan",
+    "description": "Critical Edition & Study of Advaitamukasara",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFM6CNNQT50ZFSW5R7Z",
+    "name": "Sri R.Natarajan",
+    "description": "Nalladhvarinah Advaitarasamanjari Parimalavyakhya Sahita samskaranam Visishtadhyayanam ca",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFM6AFBP3ZKPD0QY4JW",
+    "name": "Sri J. Venkataraman",
+    "description": "Sambhubhattasya Nirupanam",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFM412EASJ46NKVMVS9",
+    "name": "Dr.T. Sanjeeva Rao",
+    "description": "Bharatiya Samskriteh ve raghavasya samskrita gaveshana mulaka upakritih",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFM1HK6D928DK70ZTH3",
+    "name": "Smt G.D. Jayalakshmi",
+    "description": "Critical Edition & Study of Darukavanavilasa by Ratnaradhya",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFKVQXDEPB7V2XRCA35",
+    "name": "T.V.Vasudeva",
+    "description": "Critical Edition and Study from manuscripts of Amarananda's Svatmayogapradipa",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.803Z",
+      "updated_at": "2024-12-17T15:04:02.803Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFKR4FVSEDYTTRNNMT4",
+    "name": "Sri Neelabalan",
+    "description": "Critical Edition & Study of Tantranitilahari of Ramanujadasa from Mss.",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.803Z",
+      "updated_at": "2024-12-17T15:04:02.803Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFKDDV8141GAP2KKJRZ",
+    "name": "Sri S Bilvanathan",
+    "description": "Critical Edition & Study from Mss. of Vidhibhusana by Venkatanarayana",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.803Z",
+      "updated_at": "2024-12-17T15:04:02.803Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFKBX6F3TCBN6N4HFNH",
+    "name": "Smt.K.Gomati",
+    "description": "Critical Edition of Ananda Tirtha's Dvadasa Stotra with hitherto unpublished commentaries.",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.803Z",
+      "updated_at": "2024-12-17T15:04:02.803Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFK1VCDT9J2FBAFBS8B",
+    "name": "Sri K. Sreekanthan",
+    "description": "Duruhasiksa of Appayya Diksita-III- A Critical Study",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.804Z",
+      "updated_at": "2024-12-17T15:04:02.804Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJBHFJZ3XW2RWMZBR7AH31",
+    "name": "K.S.Balasubramanian",
+    "description": "Critical study of Hathasanketacandrika of Sundaradeva",
+    "type": "Vidyavaridhi",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T15:04:02.803Z",
+      "updated_at": "2024-12-17T15:04:02.803Z",
+      "created_by": "admin"
+    }
+  }
 ]

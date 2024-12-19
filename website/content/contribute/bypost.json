@@ -1,8 +1,9 @@
 [
-    {
-        "instituteName": "The Kuppuswami Sastri Research Institute",
-        "address": "84, Thiru vi ka Road, Mylapore, Chennai 600 004.",
-        "email": "ksrinst@gmail.com",
-        "phone": "044-24985320"
-    }
+  {
+    "id": "01JFEYM4P0BGWT13PNGGP162DY",
+    "instituteName": "The Kuppuswami Sastri Research Institute",
+    "address": "84, Thiru vi ka Road, Mylapore, Chennai 600 004",
+    "email": "ksrinst@gmail.com",
+    "phone": "044-24985320"
+  }
 ]

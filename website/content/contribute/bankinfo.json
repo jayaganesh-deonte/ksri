@@ -1,9 +1,10 @@
 [
-    {
-        "Our Name": "THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE.",
-        "Bank": "Union Bank of India, Mylapore Branch.",
-        "S.B.Account No.": "395702010007408.",
-        "IFSC CODE": "UBIN0539571.",
-        "MICR NO.": "600026009"
-    }
+  {
+    "id": "THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE.",
+    "name": "THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE.",
+    "bankName": "Union Bank of India, Mylapore Branch",
+    "accountNo": "395702010007408",
+    "ifsc": "UBIN0539571",
+    "micr": "600026009"
+  }
 ]

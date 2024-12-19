@@ -146,15 +146,10 @@ const pageDetails = [
     endpoint: "/students?status=Completed&course=Ph.D.",
     outputFile: "../website/content//students/past/phd.json",
   },
-  // students/present/mphil
+  // students/present
   {
-    endpoint: "/students?status=On-Going&course=M.Phil",
-    outputFile: "../website/content//students/present/mphil.json",
-  },
-  // students/present/phd
-  {
-    endpoint: "/students?status=On-Going&course=Ph.D.",
-    outputFile: "../website/content//students/present/phd.json",
+    endpoint: "/students?status=On-Going",
+    outputFile: "../website/content//students/present/students.json",
   },
   // faculty
   {
@@ -189,6 +184,9 @@ const pageDetails = [
   {
     endpoint: "/projects?status=Completed",
     outputFile: "../website/content//projects/completedprojects.json",
+    // sort by "completedYear": "2005-08"
+    filter: (data: any[]) =>
+      data.sort((a, b) => a.completedYear - b.completedYear),
   },
   // researchArticles
   {
@@ -332,7 +330,19 @@ const fixedData = [
       },
     ],
     outputFile:
-      "../website/content//projects/ancientIndianKnowledgeSeries.json",
+      "../website/content//projects/ancientindianknowledgeseries.json",
+  },
+  {
+    fileContent: [
+      "Upcoming",
+      "Seminars",
+      "Endowment Lectures",
+      "Workshop",
+      "Viva",
+      "Events",
+      "All",
+    ],
+    outputFile: "../website/content//events/categories.json",
   },
 ];
 

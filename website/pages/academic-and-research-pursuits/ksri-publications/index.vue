@@ -33,7 +33,7 @@
           {{ key }}
         </div>
         <CommitteeMembers
-          :governingBodyMembers="publicationCommittee"
+          :governingBodyMembers="committee"
           :governingBodyMembersKey="key"
         />
       </div>
@@ -68,8 +68,8 @@
       </v-card>
     </div>
 
-    <div class="my-6">
-      <!-- Publications for Sale -->
+    <!-- <div class="my-6">
+     
 
       <publicationForSale
         :publicationsForSale="publicationsForSale"
@@ -80,7 +80,7 @@
         :publicationsForSale="publicationsOutOfStock"
         title="Publications Out of Stock"
       />
-    </div>
+    </div> -->
 
     <!-- Samskrita Academy Publications -->
     <div class="my-6">
@@ -106,7 +106,7 @@
               <v-row class="">
                 <v-col cols="12" md="10">
                   <div>
-                    {{ samskritaAcademyPublication.name }}
+                    {{ samskritaAcademyPublication.title }}
                   </div>
                 </v-col>
                 <v-col cols="12" md="2">
@@ -137,10 +137,49 @@ useSeoMeta({
 import publicationForSale from "../components/publicationForSale.vue";
 const publicationCommittee = await queryContent(
   "publications",
-  "committee"
+  "committeemembers"
 ).findOne();
 
+// [
+//   {
+//     "id": "01JFAHR8VXRAR7Q0CB18CQY1SD",
+//     "name": "Dr.P.C.Muralidharan",
+//     "designation": "Editorial Committee",
+//     "metadata": {
+//       "updated_by": "admin",
+//       "created_at": "2024-12-17T14:53:31.389Z",
+//       "updated_at": "2024-12-17T14:53:31.389Z",
+//       "created_by": "admin"
+//     }
+//   }
+// ]
+
 const publicationCommitteeKeys = ["Research Committee", "Editorial Committee"];
+
+let committee = {};
+let researchCommitee = [];
+let editorialCommittee = [];
+
+console.log("publicationCommittee", publicationCommittee);
+
+publicationCommittee.body.forEach((member) => {
+  if (publicationCommitteeKeys.includes(member.designation)) {
+    committee[member.designation] = member;
+  }
+  if (member.designation === "Research Committee") {
+    researchCommitee.push(member);
+  }
+  if (member.designation === "Editorial Committee") {
+    editorialCommittee.push(member);
+  }
+});
+
+committee = {
+  "Research Committee": researchCommitee,
+  "Editorial Committee": editorialCommittee,
+};
+
+console.log("committee", committee);
 
 const publicationCards = [
   {
@@ -159,19 +198,19 @@ const publicationCards = [
   },
 ];
 
-const publicationsForSaleData = await queryContent(
-  "publications",
-  "forsale"
-).findOne();
+// const publicationsForSaleData = await queryContent(
+//   "publications",
+//   "forsale"
+// ).findOne();
 
-const publicationsForSale = publicationsForSaleData.body;
+// const publicationsForSale = publicationsForSaleData.body;
 
-const publicationsOutOfStockData = await queryContent(
-  "publications",
-  "outofstock"
-).findOne();
+// const publicationsOutOfStockData = await queryContent(
+//   "publications",
+//   "outofstock"
+// ).findOne();
 
-const publicationsOutOfStock = publicationsOutOfStockData.body;
+// const publicationsOutOfStock = publicationsOutOfStockData.body;
 
 // Samskrita Academy Publications
 const samskritaAcademyPublicationsData = await queryContent(

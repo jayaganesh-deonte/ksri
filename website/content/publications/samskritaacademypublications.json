@@ -1,110 +1,353 @@
 [
   {
-    "name": "Tamraparni Mahatmya with Tamil translation by A.R. Ganapathi Sastri (bringing out the glory of the perennial river of Tamil Nadu in 6200 verses, divided into 64 chapters, comprising of 1700 pages in 2 parts).",
-    "price": "₹ 2000"
+    "title": "Lectures on the Ramayana by Rt.Hon'ble V.S.Srinivasa Sastri",
+    "price": "₹ 200",
+    "id": "01JFATBK5DEFQ3Y3G6Z9CN45EG",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.133Z",
+      "updated_at": "2024-12-17T17:23:53.133Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Gitamrtamahodadhi by (late) Brahmasri Viswanatha Sastri.",
-    "price": "₹ 500"
+    "title": "Srimad Valmiki Ramayana Sangraha",
+    "price": "₹ 300",
+    "id": "01JFATBK5A2Q5WVEFDDV4RC74A",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.131Z",
+      "updated_at": "2024-12-17T17:23:53.131Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Rahasyatrayasara of Sri Vedanta Desika with English translation by Sri N. Raghunathan, I.A.S. (Former Chief Secretary of Maharashtra)",
-    "price": "₹ 1000"
+    "title": "Manasolla Stuti of Appayya Dikshitawith Eng. translation",
+    "price": "₹ 60",
+    "id": "01JFATBK5C3BMK31CYBR5XC7P7",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.132Z",
+      "updated_at": "2024-12-17T17:23:53.132Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Lectures on the Bhagavadgita (3 Vols. in 1set) by Swami Paramarthananda",
-    "price": "₹ 600"
+    "title": "Sankara and Shanmata",
+    "price": "₹ 500",
+    "id": "01JFATBK5A9Y809ST3CK9T2X0W",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.130Z",
+      "updated_at": "2024-12-17T17:23:53.130Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Sankara and Shanmata",
-    "price": "₹ 500"
+    "title": "Lectures on the Bhagavadgita (3 Vols. in 1set) by Swami Paramarthananda",
+    "price": "₹ 600",
+    "id": "01JFATBK5AABTX04XVP5Q0REFA",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.130Z",
+      "updated_at": "2024-12-17T17:23:53.130Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Aryacharitram",
-    "price": "₹ 300"
+    "title": "Physical Health and Mental Health by Swami Paramarthananda",
+    "price": "₹ 120",
+    "id": "01JFATBK5CF6F5T6YKXB01E0AV",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.132Z",
+      "updated_at": "2024-12-17T17:23:53.132Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Srimad Valmiki Ramayana Sangraha",
-    "price": "₹ 300"
+    "title": "Tamraparni Mahatmya with Tamil translation by A.R. Ganapathi Sastri (bringing out the glory of the perennial river of Tamil Nadu in 6200 verses, divided into 64 chapters, comprising of 1700 pages in 2 parts).",
+    "price": "₹ 2000",
+    "id": "01JFATBK59FXX4FTSWN300C6QA",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.130Z",
+      "updated_at": "2024-12-17T17:23:53.130Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Culture and Creativity by K.Chandrasekharan",
-    "price": "₹ 200"
+    "title": "Jayanteya Gita, text with Eng. translation",
+    "price": "₹ 80",
+    "id": "01JFATBK5B07EZJP7PQXFBH371",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.132Z",
+      "updated_at": "2024-12-17T17:23:53.132Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Golden Harvest by K.Chandrasekharan",
-    "price": "₹ 200"
+    "title": "Stories of Ancient India (Eng. Tr. of Selection form \"Aryacharitam\" Compiled by Sri V.Krishnaswami Iyer) by Dr.Sita Sundar Ram & Dr.V.Premalatha",
+    "price": "₹ 200",
+    "id": "01JFATBK5D6K0YCJHVRCNJ9G23",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.133Z",
+      "updated_at": "2024-12-17T17:23:53.133Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Ramayana Peruraigal (Tamil)",
-    "price": "₹ 150"
+    "title": "Aryacharitram",
+    "price": "₹ 300",
+    "id": "01JFATBK5AT4S0K7B1C2E0JG5R",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.130Z",
+      "updated_at": "2024-12-17T17:23:53.130Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Key to Antoine's Sanskrit Manual",
-    "price": "₹ 100"
+    "title": "Golden Harvest by K.Chandrasekharan",
+    "price": "₹ 200",
+    "id": "01JFATBK5BJY4K8SM30H83M2TE",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.131Z",
+      "updated_at": "2024-12-17T17:23:53.131Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "The Mahabharata by Mastri Venkatesa Iyengar",
-    "price": "₹ 100"
+    "title": "Ramayana Peruraigal (Tamil)",
+    "price": "₹ 150",
+    "id": "01JFATBK5B1R8YSYE89FMQWVM9",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.131Z",
+      "updated_at": "2024-12-17T17:23:53.131Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Tagore A Master Spirit by K.Chandrasekharan",
-    "price": "₹ 100"
+    "title": "Ramayana Diary",
+    "price": "₹ 150",
+    "id": "01JFATBK5C47NQKMPMVEJS5VMC",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.133Z",
+      "updated_at": "2024-12-17T17:23:53.133Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Tagore and Indian Literature by K.Chandrasekharan",
-    "price": "₹ 50"
+    "title": "Catussutri – A Study",
+    "price": "₹ 75",
+    "id": "01JFATBK5C05CDXF4WXFHEEGH5",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.132Z",
+      "updated_at": "2024-12-17T17:23:53.132Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Manche Sloka and Atmarama of Samartha Ramadasa",
-    "price": "₹ 80"
+    "title": "Tagore and Indian Literature by K.Chandrasekharan",
+    "price": "₹ 50",
+    "id": "01JFATBK5BS611EWQKKTPKBKZQ",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.131Z",
+      "updated_at": "2024-12-17T17:23:53.131Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Jayanteya Gita, text with Eng. translation",
-    "price": "₹ 80"
+    "title": "The Mahabharata by Mastri Venkatesa Iyengar",
+    "price": "₹ 100",
+    "id": "01JFATBK5BB9175CJEWM1JWHMA",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.131Z",
+      "updated_at": "2024-12-17T17:23:53.131Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Catussutri – A Study",
-    "price": "₹ 75"
+    "title": "An Approach to Indian Art",
+    "price": "₹ 50",
+    "id": "01JFATBK5CGB69MXCANG5X06Q7",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.132Z",
+      "updated_at": "2024-12-17T17:23:53.132Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Manasolla Stuti of Appayya Dikshitawith Eng. translation",
-    "price": "₹ 60"
+    "title": "Sri Karpakavalli Satakam",
+    "price": "₹ 25",
+    "id": "01JFATBK5CQQ0NV276BFVD6XFQ",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.132Z",
+      "updated_at": "2024-12-17T17:23:53.132Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Ramayana Triveni K.Chandrasekharan",
-    "price": "₹ 60"
+    "title": "Ramayana Triveni K.Chandrasekharan",
+    "price": "₹ 60",
+    "id": "01JFATBK5C4923JCP4PSKACNRC",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.132Z",
+      "updated_at": "2024-12-17T17:23:53.132Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "An Approach to Indian Art",
-    "price": "₹ 50"
+    "title": "Culture and Creativity by K.Chandrasekharan",
+    "price": "₹ 200",
+    "id": "01JFATBK5BBQ511V2KEYWR6N1C",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.131Z",
+      "updated_at": "2024-12-17T17:23:53.131Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Pulavar Pottrum Punithar V.Krishnaswami Iyer By Mm.Dr.U.Ve. Swaminatha Iyer (Tamil)",
-    "price": "₹ 40"
+    "title": "Pulavar Pottrum Punithar V.Krishnaswami Iyer By Mm.Dr.U.Ve. Swaminatha Iyer (Tamil)",
+    "price": "₹ 40",
+    "id": "01JFATBK5CVP0X78WM9NX5N0CS",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.132Z",
+      "updated_at": "2024-12-17T17:23:53.132Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Cosmology, God and the Indian Scriptures",
-    "price": "₹ 40"
+    "title": "Key to Antoine's Sanskrit Manual",
+    "price": "₹ 100",
+    "id": "01JFATBK5B65292Z6R6B98MYAC",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.131Z",
+      "updated_at": "2024-12-17T17:23:53.131Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Sri Karpakavalli Satakam",
-    "price": "₹ 25"
+    "title": "Tagore A Master Spirit by K.Chandrasekharan",
+    "price": "₹ 100",
+    "id": "01JFATBK5BSN2GGCPRXGM1Z6YY",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.131Z",
+      "updated_at": "2024-12-17T17:23:53.131Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Physical Health and Mental Health by Swami Paramarthananda",
-    "price": "₹ 120"
+    "title": "Rahasyatrayasara of Sri Vedanta Desika with English translation by Sri N. Raghunathan, I.A.S. (Former Chief Secretary of Maharashtra)",
+    "price": "₹ 1000",
+    "id": "01JFATBK5AAFPH7XCV5G9HD555",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.130Z",
+      "updated_at": "2024-12-17T17:23:53.130Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Ramayana Diary",
-    "price": "₹ 150"
+    "title": "Cosmology, God and the Indian Scriptures",
+    "price": "₹ 40",
+    "id": "01JFATBK5CSQ1XR3KKDKY3C3M0",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.132Z",
+      "updated_at": "2024-12-17T17:23:53.132Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Lectures on the Ramayana by Rt.Hon'ble V.S.Srinivasa Sastri",
-    "price": "₹ 200"
+    "title": "Manche Sloka and Atmarama of Samartha Ramadasa",
+    "price": "₹ 80",
+    "id": "01JFATBK5BEPA9HM65P0CN7XKP",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.131Z",
+      "updated_at": "2024-12-17T17:23:53.131Z",
+      "created_by": "admin"
+    }
   },
   {
-    "name": "Stories of Ancient India (Eng. Tr. of Selection form \"Aryacharitam\" Compiled by Sri V.Krishnaswami Iyer) by Dr.Sita Sundar Ram & Dr.V.Premalatha",
-    "price": "₹ 200"
+    "title": "Gitamrtamahodadhi by (late) Brahmasri Viswanatha Sastri.",
+    "price": "₹ 500",
+    "id": "01JFATBK5AVDFVJR19ED4SR7ND",
+    "publication": "Samskrita Academy",
+    "available": "true",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T17:23:53.130Z",
+      "updated_at": "2024-12-17T17:23:53.130Z",
+      "created_by": "admin"
+    }
   }
 ]

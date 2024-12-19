@@ -1,277 +1,312 @@
 [
-    {
-        "JournalAccNo": 1,
-        "JournalName": "JOURNAL OF ASIATIQUE",
-        "Nationality": "FOREIGN",
-        "subTable": [
-            {
-                "JournalVolumeNumber#": 1,
-                "PublicationYear": 1949,
-                "Volume": 237,
-                "JournalVolumeNumber": "1,2"
-            },
-            {
-                "JournalVolumeNumber#": 2,
-                "PublicationYear": 1950,
-                "Volume": 238,
-                "JournalVolumeNumber": 2
-            },
-            {
-                "JournalVolumeNumber#": 3,
-                "PublicationYear": 1951,
-                "Volume": 239,
-                "JournalVolumeNumber": "1,2,3"
-            },
-            {
-                "JournalVolumeNumber#": 4,
-                "PublicationYear": 1952,
-                "Volume": 240,
-                "JournalVolumeNumber": "2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 5,
-                "PublicationYear": 1953,
-                "Volume": 241,
-                "JournalVolumeNumber": "1,2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 6,
-                "PublicationYear": 1954,
-                "Volume": 242,
-                "JournalVolumeNumber": "2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 9,
-                "PublicationYear": 1955,
-                "Volume": 243,
-                "JournalVolumeNumber": "3,4"
-            },
-            {
-                "JournalVolumeNumber#": 10,
-                "PublicationYear": 1956,
-                "Volume": "-",
-                "JournalVolumeNumber": "-"
-            }
-        ]
-    },
-    {
-        "JournalAccNo": 2,
-        "JournalName": "ARCHIV ORIENTALINI",
-        "Nationality": "FOREIGN",
-        "subTable": [
-            {
-                "JournalVolumeNumber#": 1,
-                "PublicationYear": 1949,
-                "Volume": 237,
-                "JournalVolumeNumber": "1,2"
-            },
-            {
-                "JournalVolumeNumber#": 2,
-                "PublicationYear": 1950,
-                "Volume": 238,
-                "JournalVolumeNumber": 2
-            },
-            {
-                "JournalVolumeNumber#": 3,
-                "PublicationYear": 1951,
-                "Volume": 239,
-                "JournalVolumeNumber": "1,2,3"
-            },
-            {
-                "JournalVolumeNumber#": 4,
-                "PublicationYear": 1952,
-                "Volume": 240,
-                "JournalVolumeNumber": "2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 5,
-                "PublicationYear": 1953,
-                "Volume": 241,
-                "JournalVolumeNumber": "1,2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 6,
-                "PublicationYear": 1954,
-                "Volume": 242,
-                "JournalVolumeNumber": "2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 9,
-                "PublicationYear": 1955,
-                "Volume": 243,
-                "JournalVolumeNumber": "3,4"
-            },
-            {
-                "JournalVolumeNumber#": 10,
-                "PublicationYear": 1956,
-                "Volume": "-",
-                "JournalVolumeNumber": "-"
-            }
-        ]
-    },
-    {
-        "JournalAccNo": 3,
-        "JournalName": "ASIAN STUDIES PHILIPINES",
-        "Nationality": "FOREIGN",
-        "subTable": [
-            {
-                "JournalVolumeNumber#": 1,
-                "PublicationYear": 1949,
-                "Volume": 237,
-                "JournalVolumeNumber": "1,2"
-            },
-            {
-                "JournalVolumeNumber#": 2,
-                "PublicationYear": 1950,
-                "Volume": 238,
-                "JournalVolumeNumber": 2
-            },
-            {
-                "JournalVolumeNumber#": 3,
-                "PublicationYear": 1951,
-                "Volume": 239,
-                "JournalVolumeNumber": "1,2,3"
-            },
-            {
-                "JournalVolumeNumber#": 4,
-                "PublicationYear": 1952,
-                "Volume": 240,
-                "JournalVolumeNumber": "2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 5,
-                "PublicationYear": 1953,
-                "Volume": 241,
-                "JournalVolumeNumber": "1,2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 6,
-                "PublicationYear": 1954,
-                "Volume": 242,
-                "JournalVolumeNumber": "2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 9,
-                "PublicationYear": 1955,
-                "Volume": 243,
-                "JournalVolumeNumber": "3,4"
-            },
-            {
-                "JournalVolumeNumber#": 10,
-                "PublicationYear": 1956,
-                "Volume": "-",
-                "JournalVolumeNumber": "-"
-            }
-        ]
-    },
-    {
-        "JournalAccNo": 4,
-        "JournalName": "BULLETIN DE I ECOLE FRANCAISE",
-        "Nationality": "FOREIGN",
-        "subTable": [
-            {
-                "JournalVolumeNumber#": 1,
-                "PublicationYear": 1949,
-                "Volume": 237,
-                "JournalVolumeNumber": "1,2"
-            },
-            {
-                "JournalVolumeNumber#": 2,
-                "PublicationYear": 1950,
-                "Volume": 238,
-                "JournalVolumeNumber": 2
-            },
-            {
-                "JournalVolumeNumber#": 3,
-                "PublicationYear": 1951,
-                "Volume": 239,
-                "JournalVolumeNumber": "1,2,3"
-            },
-            {
-                "JournalVolumeNumber#": 4,
-                "PublicationYear": 1952,
-                "Volume": 240,
-                "JournalVolumeNumber": "2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 5,
-                "PublicationYear": 1953,
-                "Volume": 241,
-                "JournalVolumeNumber": "1,2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 6,
-                "PublicationYear": 1954,
-                "Volume": 242,
-                "JournalVolumeNumber": "2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 9,
-                "PublicationYear": 1955,
-                "Volume": 243,
-                "JournalVolumeNumber": "3,4"
-            },
-            {
-                "JournalVolumeNumber#": 10,
-                "PublicationYear": 1956,
-                "Volume": "-",
-                "JournalVolumeNumber": "-"
-            }
-        ]
-    },
-    {
-        "JournalAccNo": 5,
-        "JournalName": "INDIAN AND BUDDHIST STUDIES",
-        "Nationality": "FOREIGN",
-        "subTable": [
-            {
-                "JournalVolumeNumber#": 1,
-                "PublicationYear": 1949,
-                "Volume": 237,
-                "JournalVolumeNumber": "1,2"
-            },
-            {
-                "JournalVolumeNumber#": 2,
-                "PublicationYear": 1950,
-                "Volume": 238,
-                "JournalVolumeNumber": 2
-            },
-            {
-                "JournalVolumeNumber#": 3,
-                "PublicationYear": 1951,
-                "Volume": 239,
-                "JournalVolumeNumber": "1,2,3"
-            },
-            {
-                "JournalVolumeNumber#": 4,
-                "PublicationYear": 1952,
-                "Volume": 240,
-                "JournalVolumeNumber": "2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 5,
-                "PublicationYear": 1953,
-                "Volume": 241,
-                "JournalVolumeNumber": "1,2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 6,
-                "PublicationYear": 1954,
-                "Volume": 242,
-                "JournalVolumeNumber": "2,3,4"
-            },
-            {
-                "JournalVolumeNumber#": 9,
-                "PublicationYear": 1955,
-                "Volume": 243,
-                "JournalVolumeNumber": "3,4"
-            },
-            {
-                "JournalVolumeNumber#": 10,
-                "PublicationYear": 1956,
-                "Volume": "-",
-                "JournalVolumeNumber": "-"
-            }
-        ]
+  {
+    "id": "01JF5QB7RSPSFCXJRQE4NR2WGG",
+    "JournalAccNo": 5,
+    "JournalName": "INDIAN AND BUDDHIST STUDIES",
+    "Nationality": "FOREIGN",
+    "subTable": [
+      {
+        "PublicationYear": 1949,
+        "Volume": 237,
+        "JournalVolumeNumber#": 1,
+        "JournalVolumeNumber": "1,2"
+      },
+      {
+        "PublicationYear": 1950,
+        "Volume": 238,
+        "JournalVolumeNumber#": 2,
+        "JournalVolumeNumber": 2
+      },
+      {
+        "PublicationYear": 1951,
+        "Volume": 239,
+        "JournalVolumeNumber#": 3,
+        "JournalVolumeNumber": "1,2,3"
+      },
+      {
+        "PublicationYear": 1952,
+        "Volume": 240,
+        "JournalVolumeNumber#": 4,
+        "JournalVolumeNumber": "2,3,4"
+      },
+      {
+        "PublicationYear": 1953,
+        "Volume": 241,
+        "JournalVolumeNumber#": 5,
+        "JournalVolumeNumber": "1,2,3,4"
+      },
+      {
+        "PublicationYear": 1954,
+        "Volume": 242,
+        "JournalVolumeNumber#": 6,
+        "JournalVolumeNumber": "2,3,4"
+      },
+      {
+        "PublicationYear": 1955,
+        "Volume": 243,
+        "JournalVolumeNumber#": 9,
+        "JournalVolumeNumber": "3,4"
+      },
+      {
+        "PublicationYear": 1956,
+        "Volume": "-",
+        "JournalVolumeNumber#": 10,
+        "JournalVolumeNumber": "-"
+      }
+    ],
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:55:03.577Z",
+      "updated_at": "2024-12-15T17:55:03.577Z",
+      "created_by": "admin"
     }
+  },
+  {
+    "id": "01JF5QB7RSK7TWGQQ1XECXNH13",
+    "JournalAccNo": 4,
+    "JournalName": "BULLETIN DE I ECOLE FRANCAISE",
+    "Nationality": "FOREIGN",
+    "subTable": [
+      {
+        "PublicationYear": 1949,
+        "Volume": 237,
+        "JournalVolumeNumber#": 1,
+        "JournalVolumeNumber": "1,2"
+      },
+      {
+        "PublicationYear": 1950,
+        "Volume": 238,
+        "JournalVolumeNumber#": 2,
+        "JournalVolumeNumber": 2
+      },
+      {
+        "PublicationYear": 1951,
+        "Volume": 239,
+        "JournalVolumeNumber#": 3,
+        "JournalVolumeNumber": "1,2,3"
+      },
+      {
+        "PublicationYear": 1952,
+        "Volume": 240,
+        "JournalVolumeNumber#": 4,
+        "JournalVolumeNumber": "2,3,4"
+      },
+      {
+        "PublicationYear": 1953,
+        "Volume": 241,
+        "JournalVolumeNumber#": 5,
+        "JournalVolumeNumber": "1,2,3,4"
+      },
+      {
+        "PublicationYear": 1954,
+        "Volume": 242,
+        "JournalVolumeNumber#": 6,
+        "JournalVolumeNumber": "2,3,4"
+      },
+      {
+        "PublicationYear": 1955,
+        "Volume": 243,
+        "JournalVolumeNumber#": 9,
+        "JournalVolumeNumber": "3,4"
+      },
+      {
+        "PublicationYear": 1956,
+        "Volume": "-",
+        "JournalVolumeNumber#": 10,
+        "JournalVolumeNumber": "-"
+      }
+    ],
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:55:03.577Z",
+      "updated_at": "2024-12-15T17:55:03.577Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5QB7RS9HWVT5VHT54PWET2",
+    "JournalAccNo": 2,
+    "JournalName": "ARCHIV ORIENTALINI",
+    "Nationality": "FOREIGN",
+    "subTable": [
+      {
+        "PublicationYear": 1949,
+        "Volume": 237,
+        "JournalVolumeNumber#": 1,
+        "JournalVolumeNumber": "1,2"
+      },
+      {
+        "PublicationYear": 1950,
+        "Volume": 238,
+        "JournalVolumeNumber#": 2,
+        "JournalVolumeNumber": 2
+      },
+      {
+        "PublicationYear": 1951,
+        "Volume": 239,
+        "JournalVolumeNumber#": 3,
+        "JournalVolumeNumber": "1,2,3"
+      },
+      {
+        "PublicationYear": 1952,
+        "Volume": 240,
+        "JournalVolumeNumber#": 4,
+        "JournalVolumeNumber": "2,3,4"
+      },
+      {
+        "PublicationYear": 1953,
+        "Volume": 241,
+        "JournalVolumeNumber#": 5,
+        "JournalVolumeNumber": "1,2,3,4"
+      },
+      {
+        "PublicationYear": 1954,
+        "Volume": 242,
+        "JournalVolumeNumber#": 6,
+        "JournalVolumeNumber": "2,3,4"
+      },
+      {
+        "PublicationYear": 1955,
+        "Volume": 243,
+        "JournalVolumeNumber#": 9,
+        "JournalVolumeNumber": "3,4"
+      },
+      {
+        "PublicationYear": 1956,
+        "Volume": "-",
+        "JournalVolumeNumber#": 10,
+        "JournalVolumeNumber": "-"
+      }
+    ],
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:55:03.577Z",
+      "updated_at": "2024-12-15T17:55:03.577Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5QB7RS7WREDYV42GJP5B5R",
+    "JournalAccNo": 3,
+    "JournalName": "ASIAN STUDIES PHILIPINES",
+    "Nationality": "FOREIGN",
+    "subTable": [
+      {
+        "PublicationYear": 1949,
+        "Volume": 237,
+        "JournalVolumeNumber#": 1,
+        "JournalVolumeNumber": "1,2"
+      },
+      {
+        "PublicationYear": 1950,
+        "Volume": 238,
+        "JournalVolumeNumber#": 2,
+        "JournalVolumeNumber": 2
+      },
+      {
+        "PublicationYear": 1951,
+        "Volume": 239,
+        "JournalVolumeNumber#": 3,
+        "JournalVolumeNumber": "1,2,3"
+      },
+      {
+        "PublicationYear": 1952,
+        "Volume": 240,
+        "JournalVolumeNumber#": 4,
+        "JournalVolumeNumber": "2,3,4"
+      },
+      {
+        "PublicationYear": 1953,
+        "Volume": 241,
+        "JournalVolumeNumber#": 5,
+        "JournalVolumeNumber": "1,2,3,4"
+      },
+      {
+        "PublicationYear": 1954,
+        "Volume": 242,
+        "JournalVolumeNumber#": 6,
+        "JournalVolumeNumber": "2,3,4"
+      },
+      {
+        "PublicationYear": 1955,
+        "Volume": 243,
+        "JournalVolumeNumber#": 9,
+        "JournalVolumeNumber": "3,4"
+      },
+      {
+        "PublicationYear": 1956,
+        "Volume": "-",
+        "JournalVolumeNumber#": 10,
+        "JournalVolumeNumber": "-"
+      }
+    ],
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:55:03.577Z",
+      "updated_at": "2024-12-15T17:55:03.577Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JF5QB7RQPQ206JK1Q820F8JK",
+    "JournalAccNo": 1,
+    "JournalName": "JOURNAL OF ASIATIQUE",
+    "Nationality": "FOREIGN",
+    "subTable": [
+      {
+        "PublicationYear": 1949,
+        "Volume": 237,
+        "JournalVolumeNumber#": 1,
+        "JournalVolumeNumber": "1,2"
+      },
+      {
+        "PublicationYear": 1950,
+        "Volume": 238,
+        "JournalVolumeNumber#": 2,
+        "JournalVolumeNumber": 2
+      },
+      {
+        "PublicationYear": 1951,
+        "Volume": 239,
+        "JournalVolumeNumber#": 3,
+        "JournalVolumeNumber": "1,2,3"
+      },
+      {
+        "PublicationYear": 1952,
+        "Volume": 240,
+        "JournalVolumeNumber#": 4,
+        "JournalVolumeNumber": "2,3,4"
+      },
+      {
+        "PublicationYear": 1953,
+        "Volume": 241,
+        "JournalVolumeNumber#": 5,
+        "JournalVolumeNumber": "1,2,3,4"
+      },
+      {
+        "PublicationYear": 1954,
+        "Volume": 242,
+        "JournalVolumeNumber#": 6,
+        "JournalVolumeNumber": "2,3,4"
+      },
+      {
+        "PublicationYear": 1955,
+        "Volume": 243,
+        "JournalVolumeNumber#": 9,
+        "JournalVolumeNumber": "3,4"
+      },
+      {
+        "PublicationYear": 1956,
+        "Volume": "-",
+        "JournalVolumeNumber#": 10,
+        "JournalVolumeNumber": "-"
+      }
+    ],
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-15T17:55:03.576Z",
+      "updated_at": "2024-12-15T17:55:03.577Z",
+      "created_by": "admin"
+    }
+  }
 ]

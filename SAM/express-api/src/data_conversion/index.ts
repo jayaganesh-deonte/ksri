@@ -782,13 +782,10 @@ const main = async () => {
   // await insertLibraryArticles();
   // await insertLibraryBooks();
   // await insertLibraryJournals();
-  await insertPublicationBooks();
-
-  await insertsamskritaacademypublicationsBooks();
-
-  await insertOutOfStockPubBooks("outofstock", false);
-  await insertOutOfStockPubBooks("forsale", true);
-
+  // await insertPublicationBooks();
+  // await insertsamskritaacademypublicationsBooks();
+  // await insertOutOfStockPubBooks("outofstock", false);
+  // await insertOutOfStockPubBooks("forsale", true);
   // await insertPublicationCommittee();
   // await insertForeignScholars();
   // await insertshastrachudamanis();
@@ -799,10 +796,9 @@ const main = async () => {
   // await insertGallery();
   // await insertmilestones();
   // await insertNews();
-  // await insertProjects();
+  await insertProjects();
   // await insertResearchArticles();
   // await insertpresentGoverningBodyMembers();
-
   // await insertGoveringBodyPast();
 };
 

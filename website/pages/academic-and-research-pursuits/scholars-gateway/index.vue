@@ -182,7 +182,7 @@ import scholarsHeader from "./scholarsHeader.vue";
 
 const traditionalData = await queryContent(
   "scholars_gateway",
-  "traditional"
+  "traditionalscholars"
 ).findOne();
 
 const traditionalScholars = traditionalData.body;

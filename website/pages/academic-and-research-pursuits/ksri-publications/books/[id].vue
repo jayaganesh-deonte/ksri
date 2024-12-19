@@ -49,12 +49,19 @@
               hide-delimiter-background
               show-arrows-on-hover
             >
-              <v-carousel-item
-                v-for="imageUrl in bookInfo.imageUrls"
-                :key="imageUrl"
-              >
-                <v-img :src="imageUrl" fit></v-img>
-              </v-carousel-item>
+              <template v-if="bookInfo.imageUrls">
+                <v-carousel-item
+                  v-for="imageUrl in bookInfo.imageUrls"
+                  :key="imageUrl"
+                >
+                  <v-img :src="imageUrl" fit></v-img>
+                </v-carousel-item>
+              </template>
+              <template v-else>
+                <v-carousel-item>
+                  <v-img src="/img/ksri-logo.png" fit></v-img>
+                </v-carousel-item>
+              </template>
             </v-carousel>
           </v-col>
           <v-col

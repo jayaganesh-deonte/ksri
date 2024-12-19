@@ -18,8 +18,12 @@
         <!-- Title and Details Column -->
         <v-col cols="12" sm="12" class="py-2">
           <!-- image -->
-          <div data-aos="fade-up">
+          <div data-aos="fade-up" v-if="book.imageUrls">
             <v-img :src="book.imageUrls[0]" fit height="200"></v-img>
+          </div>
+          <!-- else display logo -->
+          <div data-aos="fade-up" v-else>
+            <v-img src="/img/ksri-logo.png" fit height="200"></v-img>
           </div>
           <div
             class="text-start pa-0"

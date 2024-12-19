@@ -27,7 +27,7 @@
           <v-row class="ma-2">
             <v-col cols="12" md="4" class="">
               <v-img
-                :src="item.displayImage"
+                :src="item.displayImage[0]"
                 :alt="item.name"
                 width="150"
                 fit
@@ -73,7 +73,7 @@
               variant="outlined"
               color="primary"
               rounded="pill"
-              @click="downloadProfile(item.profile)"
+              @click="downloadProfile(item.profile[0])"
               >View Profile</v-btn
             >
           </div>
@@ -97,11 +97,11 @@ const facultyData = await queryContent("faculty").findOne();
 const faculty = facultyData.body;
 
 const downloadProfile = (profile) => {
-  // check if valid url
+  const link = document.createElement("a");
 
-  if (!profile.startsWith("http://") && !profile.startsWith("https://")) {
-    window.open(profile, "_blank");
-  }
+  link.href = profile;
+  link.target = "_blank";
+  link.click();
 };
 </script>
 

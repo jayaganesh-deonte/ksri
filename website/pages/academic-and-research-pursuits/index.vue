@@ -44,7 +44,7 @@
             >
               <div class="text-h5 font-weight-bold">{{ project.title }}</div>
               <div class="horizontalLine my-6" style="--line-width: 10%"></div>
-              <div class="text-subtitle-1">{{ project.description }}</div>
+              <div class="text-subtitle-1">{{ project.subTitle }}</div>
             </div>
           </v-card>
         </div>
@@ -114,9 +114,30 @@ useSeoMeta({
   twitterDescription: "Academic and Research Pursuits of KSRI",
 });
 import displayProjects from "./components/displayProjects.vue";
-const projects = await queryContent("projects").findOne();
 
-console.log("projects", projects);
+// const projects = await queryContent("projects").findOne();
+
+// console.log("projects", projects);
+
+const completedprojects = await queryContent(
+  "projects",
+  "completedprojects"
+).findOne();
+
+const ongoingprojects = await queryContent(
+  "projects",
+  "ongoingprojects"
+).findOne();
+
+const futureprojects = await queryContent(
+  "projects",
+  "futureprojects"
+).findOne();
+
+const ancientIndianKnowledgeSeries = await queryContent(
+  "projects",
+  "ancientindianknowledgeseries"
+).findOne();
 
 let activeCategory = ref("Completed");
 
@@ -128,6 +149,14 @@ const projectButtonList = [
 ];
 
 const getEventsByCategory = computed(() => {
-  return projects[activeCategory.value];
+  if (activeCategory.value === "Completed") {
+    return completedprojects.body;
+  } else if (activeCategory.value === "On-Going") {
+    return ongoingprojects.body;
+  } else if (activeCategory.value === "Future Projects") {
+    return futureprojects.body;
+  } else if (activeCategory.value === "Ancient Indian Knowledge Series") {
+    return ancientIndianKnowledgeSeries.body[0];
+  }
 });
 </script>

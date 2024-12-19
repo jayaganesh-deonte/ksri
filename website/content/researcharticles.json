@@ -1,44 +1,125 @@
 [
-    {
-        "title": "MINING AND METALLURGY",
-        "subTitle": "A survey of Sanskrit literature would bring out the fact that the mining and metallurgical sciences were part of the social life in ancient India.",
-        "author": "Dr. K.S. Balasubramanian, Deputy Director, K.S.R.I. Institute, Chennai",
-        "link": "https://d30y75l38k1y9.cloudfront.net/upload/media/1 Mining and Metallurgy.pdf"
-    },
-    {
-        "title": "ÄSTHÄNAKOLÄKALAM — A MATHEMATICAL TREATISE IN TAMIL",
-        "subTitle": "The mathematical text in Tamil by the name Ästhänakoläkalam seems to be a compilation of Manuscripts. Some of the interesting topics from this text are taken into consideration here.",
-        "author": "Dr. Sita Sundar Ram, Senior Research Fellow, K.S.R.Institute, Chennai",
-        "link": "https://d30y75l38k1y9.cloudfront.net/upload/media/Asthanakolakalam.pdf"
-    },
-    {
-        "title": "BHAYÄNAKA AND BÉBHATSA",
-        "subTitle": "Bharata considers these two Rasas as powerful enough to be called as major Rasas, since they are attuned with Véra and Raudra respectively",
-        "author": "Ms. Annapurna, Research Associate, K. S. R. Institute, Chennai",
-        "link": "https://d30y75l38k1y9.cloudfront.net/upload/media/Bhayanaka and Bibhatsa.pdf"
-    },
-    {
-        "title": "KÄVYAS ON VÄGGEYAKÄRAS",
-        "subTitle": "It is in Sanskrit literature that the art, the science and the history of Indian music are mainly embedded and a knowledge of Sanskrit and a study of the texts in that language becomes essential for every person pursuing Indian music.",
-        "author": "Lavanya Pravin, Research Scholar, K. S. R. Institute, Chennai",
-        "link": "https://d30y75l38k1y9.cloudfront.net/upload/media/Kavyas on Vageyakaras.pdf"
-    },
-    {
-        "title": "Temple Festival- Vajramakuta Utsava of Melkote",
-        "subTitle": "A couple of Puranic concepts relating to the birth of Närada and the story related to Mainäka mountain is taken up in this paper to be analysed on the lines of the modern geographic concepts known as Kuiper belt and Oort clouds.",
-        "author": "Dr. V. Yamuna Devi, Asst. Professor, Kuppuswami Sastri Research Institute, Chennai",
-        "link": "https://d30y75l38k1y9.cloudfront.net/upload/media/Temple Festival - Vajramakuta Utsava - Melkote - Copy.pdf"
-    },
-    {
-        "title": "KUIPER BELT, OORT CLOUD – A PURANIC INSIGHT",
-        "subTitle": "This paper gives a Geographical approach to Indology",
-        "author": "K. Vidyuta, Ph. D. Research Scholar, K. S. R. Institute, Chennai",
-        "link": "https://d30y75l38k1y9.cloudfront.net/upload/media/Technical - Kuiper Belt, Oort Clouds - Puranic insight.pdf"
-    },
-    {
-        "title": "THE GEOGRAPHICAL APPROACH TO INDOLOGY",
-        "subTitle": "This paper gives a Geographical approach to Indology",
-        "author": "R. Parthasarthy, Honorary Professor, KSRI, Chennai",
-        "link": "https://d30y75l38k1y9.cloudfront.net/upload/media/The Geographical Approach to Indology - Copy.pdf"
+  {
+    "id": "MINING AND METALLURGY",
+    "title": "MINING AND METALLURGY",
+    "subTitle": "A survey of Sanskrit literature would bring out the fact that the mining and metallurgical sciences were part of the social life in ancient India.",
+    "author": "Dr. K.S. Balasubramanian, Deputy Director, K.S.R.I. Institute, Chennai",
+    "link": [
+      "https://d30y75l38k1y9.cloudfront.net/upload/media/1 Mining and Metallurgy.pdf"
+    ]
+  },
+  {
+    "id": "01JFAR25K8XNSGMR50GPFKCED8",
+    "title": "BHAYÄNAKA AND BÉBHATSA",
+    "subTitle": "Bharata considers these two Rasas as powerful enough to be called as major Rasas, since they are attuned with Véra and Raudra respectively",
+    "author": "Ms. Annapurna, Research Associate, K. S. R. Institute, Chennai",
+    "link": [
+      "https://d30y75l38k1y9.cloudfront.net/upload/media/Bhayanaka and Bibhatsa.pdf"
+    ],
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T16:43:47.176Z",
+      "updated_at": "2024-12-17T16:43:47.176Z",
+      "created_by": "admin"
     }
+  },
+  {
+    "id": "01JFAR25K8TJ7S6ZNS477YD7Z6",
+    "title": "ÄSTHÄNAKOLÄKALAM — A MATHEMATICAL TREATISE IN TAMIL",
+    "subTitle": "The mathematical text in Tamil by the name Ästhänakoläkalam seems to be a compilation of Manuscripts. Some of the interesting topics from this text are taken into consideration here.",
+    "author": "Dr. Sita Sundar Ram, Senior Research Fellow, K.S.R.Institute, Chennai",
+    "link": [
+      "https://d30y75l38k1y9.cloudfront.net/upload/media/Asthanakolakalam.pdf"
+    ],
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T16:43:47.176Z",
+      "updated_at": "2024-12-17T16:43:47.176Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAR25K8KG5B1PZ254DJHQE1",
+    "title": "Temple Festival- Vajramakuta Utsava of Melkote",
+    "subTitle": "A couple of Puranic concepts relating to the birth of Närada and the story related to Mainäka mountain is taken up in this paper to be analysed on the lines of the modern geographic concepts known as Kuiper belt and Oort clouds.",
+    "author": "Dr. V. Yamuna Devi, Asst. Professor, Kuppuswami Sastri Research Institute, Chennai",
+    "link": [
+      "https://d30y75l38k1y9.cloudfront.net/upload/media/Temple Festival - Vajramakuta Utsava - Melkote - Copy.pdf"
+    ],
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T16:43:47.176Z",
+      "updated_at": "2024-12-17T16:43:47.176Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAR25K8BWXN9VYRKMFHDQRE",
+    "title": "KUIPER BELT, OORT CLOUD – A PURANIC INSIGHT",
+    "subTitle": "This paper gives a Geographical approach to Indology",
+    "author": "K. Vidyuta, Ph. D. Research Scholar, K. S. R. Institute, Chennai",
+    "link": [
+      "https://d30y75l38k1y9.cloudfront.net/upload/media/Technical - Kuiper Belt, Oort Clouds - Puranic insight.pdf"
+    ],
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T16:43:47.176Z",
+      "updated_at": "2024-12-17T16:43:47.176Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAR25K8BV004P0SPYJEJH27",
+    "title": "THE GEOGRAPHICAL APPROACH TO INDOLOGY",
+    "subTitle": "This paper gives a Geographical approach to Indology",
+    "author": "R. Parthasarthy, Honorary Professor, KSRI, Chennai",
+    "link": [
+      "https://d30y75l38k1y9.cloudfront.net/upload/media/The Geographical Approach to Indology - Copy.pdf"
+    ],
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T16:43:47.176Z",
+      "updated_at": "2024-12-17T16:43:47.176Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAR25K813R7QYHWD1Y8C589",
+    "title": "KÄVYAS ON VÄGGEYAKÄRAS",
+    "subTitle": "It is in Sanskrit literature that the art, the science and the history of Indian music are mainly embedded and a knowledge of Sanskrit and a study of the texts in that language becomes essential for every person pursuing Indian music.",
+    "author": "Lavanya Pravin, Research Scholar, K. S. R. Institute, Chennai",
+    "link": [
+      "https://d30y75l38k1y9.cloudfront.net/upload/media/Kavyas on Vageyakaras.pdf"
+    ],
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T16:43:47.176Z",
+      "updated_at": "2024-12-17T16:43:47.176Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAR25K62ZG3CGS4NB7PAD8K",
+    "title": "MINING AND METALLURGY",
+    "subTitle": "A survey of Sanskrit literature would bring out the fact that the mining and metallurgical sciences were part of the social life in ancient India.",
+    "author": "Dr. K.S. Balasubramanian, Deputy Director, K.S.R.I. Institute, Chennai",
+    "link": [
+      "https://d30y75l38k1y9.cloudfront.net/upload/media/1 Mining and Metallurgy.pdf"
+    ],
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2024-12-17T16:43:47.175Z",
+      "updated_at": "2024-12-17T16:43:47.176Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JEWG7R7ZM41SHSWGR0BW2Z56",
+    "title": "ÄSTHÄNAKOLÄKALAM — A MATHEMATICAL TREATISE IN TAMIL",
+    "subTitle": "The mathematical text in Tamil by the name Ästhänakoläkalam seems to be a compilation of Manuscripts. Some of the interesting topics from this text are taken into consideration here.",
+    "author": "Dr. Sita Sundar Ram, Senior Research Fellow, K.S.R.Institute, Chennai",
+    "link": [
+      "https://de5byrc8ksekt.cloudfront.net/files/Asthanakolakalam.pdf"
+    ]
+  }
 ]

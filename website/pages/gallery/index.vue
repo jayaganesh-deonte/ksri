@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="subsection in gallerySubsections" :key="subsection">
+    <div v-for="subsection in collections" :key="subsection">
       <v-card
         class="mb-6 text-center"
         rounded="0"
@@ -14,7 +14,7 @@
 
       <!-- display images -->
       <div class="d-flex flex-row flex-wrap justify-center">
-        <div v-for="image in gallery[subsection]" :key="image" class="">
+        <div v-for="image in galleryImages[subsection]" :key="image" class="">
           <galleryCard :image="image" />
         </div>
       </div>
@@ -34,10 +34,29 @@ useSeoMeta({
 
 import galleryCard from "~/components/gallery/galleryCard.vue";
 
-const galleryData = await queryContent("gallery").findOne();
-console.log("gallery", galleryData);
+const collectionsData = await queryContent("gallery", "collections").findOne();
 
-const gallery = galleryData.gallery;
+const collections = collectionsData.body;
 
-const gallerySubsections = Object.keys(gallery);
+console.log("collections", collections);
+
+const galleryData = await queryContent("gallery", "gallery").findOne();
+
+console.log("galleryData", galleryData.body);
+
+const images = galleryData.body;
+
+console.log("images", images);
+
+let galleryImages = {};
+
+collections.forEach((collection) => {
+  galleryImages[collection] = [];
+  images.forEach((image) => {
+    if (image.collection === collection) {
+      galleryImages[collection].push(image);
+    }
+  });
+});
+console.log("galleryImages", galleryImages);
 </script>

@@ -46,7 +46,7 @@ let activeButton = ref("Present");
 const coursesData = await queryContent("courses").findOne();
 const courses = coursesData.body;
 
-const supervisorsData = await queryContent("supervisors").findOne();
+const supervisorsData = await queryContent("supervisor").findOne();
 const supervisors = supervisorsData.body;
 
 const presentStudentsData = await queryContent(

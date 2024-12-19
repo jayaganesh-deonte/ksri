@@ -27,15 +27,15 @@
     <!-- for all governing body members display heading , their name and subtitle -->
     <div v-if="actionSection === 'Present'">
       <GoverningBody
-        :governingBodyMemberKeys="governingBodyMemberKeys"
-        :governingBodyMembers="presentGoverningBodyMembers"
+        :governingBodyMemberKeys="designations"
+        :governingBodyMembers="presentGoverningBodyMembersWithDesignations"
       />
     </div>
 
     <div v-if="actionSection === 'Past'">
       <GoverningBody
-        :governingBodyMemberKeys="pastGoverningBodyMemberKeys"
-        :governingBodyMembers="pastGoverningBodyMembers"
+        :governingBodyMemberKeys="pastDesignations"
+        :governingBodyMembers="pastGoverningBodyMembersWithDesignations"
       />
     </div>
   </div>
@@ -50,7 +50,36 @@ const presentGoverningBodyMemberData = await queryContent(
   "governingbodymembers",
   "present"
 ).findOne();
-const presentGoverningBodyMembers = presentGoverningBodyMemberData.body[0];
+const presentGoverningBodyMembers = presentGoverningBodyMemberData.body;
+
+const designations = [
+  "President",
+  "Vice President",
+  "Secretary",
+  "Treasurer",
+  "Trustees",
+  "Members",
+];
+// create a object with designations as keys and values from presentGoverningBodyMembers as values
+let presentGoverningBodyMembersWithDesignations = {};
+
+console.log("presentGoverningBodyMembers", presentGoverningBodyMembers);
+
+presentGoverningBodyMembers.forEach((member) => {
+  designations.forEach((designation) => {
+    if (member.designation === designation) {
+      if (!presentGoverningBodyMembersWithDesignations[designation]) {
+        presentGoverningBodyMembersWithDesignations[designation] = [];
+      }
+      presentGoverningBodyMembersWithDesignations[designation].push(member);
+    }
+  });
+});
+
+console.log(
+  "presentGoverningBodyMembersWithDesignations",
+  presentGoverningBodyMembersWithDesignations
+);
 
 const governingBodyMemberKeys = Object.keys(presentGoverningBodyMembers);
 
@@ -58,7 +87,29 @@ const pastGoverningBodyMembersData = await queryContent(
   "governingbodymembers",
   "past"
 ).findOne();
-const pastGoverningBodyMembers = pastGoverningBodyMembersData.body[0];
+const pastGoverningBodyMembers = pastGoverningBodyMembersData.body;
+
+let pastDesignations = [
+  "Presidents",
+  "Vice-Presidents",
+  "Secretaries",
+  "Treasurers",
+  "Trustees",
+  "Members",
+];
+
+let pastGoverningBodyMembersWithDesignations = {};
+
+pastGoverningBodyMembers.forEach((member) => {
+  pastDesignations.forEach((designation) => {
+    if (member.designation === designation) {
+      if (!pastGoverningBodyMembersWithDesignations[designation]) {
+        pastGoverningBodyMembersWithDesignations[designation] = [];
+      }
+      pastGoverningBodyMembersWithDesignations[designation].push(member);
+    }
+  });
+});
 
 const pastGoverningBodyMemberKeys = Object.keys(pastGoverningBodyMembers);
 

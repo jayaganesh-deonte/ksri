@@ -19,7 +19,7 @@
       >
         <v-avatar size="80">
           <v-img
-            :src="item.avatarImage"
+            :src="item.avatarImage[0]"
             :alt="item.title"
             width="80"
             fit

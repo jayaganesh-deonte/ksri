@@ -7,7 +7,7 @@
     @mouseover="handleMouseOver"
     @mouseleave="handleMouseLeave"
   >
-    <v-img :src="image.imageUrl" fit>
+    <v-img :src="image.imageUrl[0]" fit>
       <template v-slot:placeholder>
         <div class="d-flex align-center justify-center fill-height">
           <v-progress-circular
