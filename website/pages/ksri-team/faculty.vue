@@ -18,6 +18,8 @@
           v-for="(item, index) in facultyItemsNew[designationName]"
           :key="index"
           class="ma-2"
+          :width="`${$device.isMobile ? '' : '40vw'}`"
+          :height="`${$device.isMobile ? '' : '90%'}`"
         >
           <div
             class="ma-2 sectionTitle3 text-start"
