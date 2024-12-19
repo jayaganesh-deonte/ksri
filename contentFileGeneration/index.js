@@ -220,8 +220,11 @@ var pageDetails = [
         endpoint: "/projects?status=Completed",
         outputFile: "../website/content//projects/completedprojects.json",
         // sort by "completedYear": "2005-08"
+        // filter: (data: any[]) =>
+        //   data.sort((a, b) => a.completedYear - b.completedYear),
+        //  sort by descending order
         filter: function (data) {
-            return data.sort(function (a, b) { return a.completedYear - b.completedYear; });
+            return data.sort(function (a, b) { return b.completedYear - a.completedYear; });
         },
     },
     // researchArticles

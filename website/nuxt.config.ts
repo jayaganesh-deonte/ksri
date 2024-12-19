@@ -11,6 +11,9 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
   },
+  devServer: {
+    port: 8080,
+  },
   vite: {
     define: {
       "process.env.DEBUG": false,

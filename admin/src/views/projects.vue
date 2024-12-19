@@ -32,6 +32,11 @@ const projectFields = [
     rules: [(v) => !!v || "Sub Title is required"],
   },
   {
+    key: "startYear",
+    label: "Started Year",
+    type: "text",
+  },
+  {
     key: "completedYear",
     label: "Completed Year",
     type: "text",
@@ -54,6 +59,10 @@ const projectHeaders = [
   {
     key: "subTitle",
     title: "Sub Title",
+  },
+  {
+    key: "startYear",
+    title: "Started Year",
   },
   {
     key: "completedYear",
