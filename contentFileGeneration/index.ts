@@ -154,8 +154,17 @@ const pageDetails = [
   // faculty
   {
     endpoint: "/faculty",
-    outputFile: "../website/content//faculty.json",
+    outputFile: "../website/content//faculty/faculty.json",
   },
+  // /faculty/designation
+  {
+    endpoint: "/faculty/designation",
+    outputFile: "../website/content//faculty/designation.json",
+    //  order by orderId and select only name
+    filter: (data: any[]) =>
+      data.sort((a, b) => a.orderId - b.orderId).map((item) => item.name),
+  },
+
   // milestones
   {
     endpoint: "/milestones",

@@ -109,6 +109,11 @@ const allOptions = [
       },
     ],
   },
+  {
+    title: "Faculty Designation",
+    path: "/faculty-designation",
+    icon: "mdi-account-tie",
+  },
 
   {
     title: "Faculty",

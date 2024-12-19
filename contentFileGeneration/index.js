@@ -189,7 +189,16 @@ var pageDetails = [
     // faculty
     {
         endpoint: "/faculty",
-        outputFile: "../website/content//faculty.json",
+        outputFile: "../website/content//faculty/faculty.json",
+    },
+    // /faculty/designation
+    {
+        endpoint: "/faculty/designation",
+        outputFile: "../website/content//faculty/designation.json",
+        //  order by orderId and select only name
+        filter: function (data) {
+            return data.sort(function (a, b) { return a.orderId - b.orderId; }).map(function (item) { return item.name; });
+        },
     },
     // milestones
     {

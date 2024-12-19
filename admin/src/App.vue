@@ -2,7 +2,9 @@
   <v-app>
     <app-bar />
     <v-main>
-      <router-view class="ma-4 pa-4" />
+      <Suspense class="ma-4 pa-4">
+        <router-view class="ma-4 pa-4" />
+      </Suspense>
     </v-main>
   </v-app>
 </template>

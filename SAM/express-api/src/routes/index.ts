@@ -41,6 +41,8 @@ import { postalAddressRoute } from "./contribute/postalAddress";
 
 import { chairRouter } from "./chair";
 
+import { facultyDesignationRouter } from "./facultyDesignations";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -83,3 +85,5 @@ routes.use(bankInfoRoute);
 routes.use(postalAddressRoute);
 
 routes.use(chairRouter);
+
+routes.use(facultyDesignationRouter);

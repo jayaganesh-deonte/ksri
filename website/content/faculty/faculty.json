@@ -66,6 +66,28 @@
     "orderId": "1"
   },
   {
+    "id": "01JFAK9T5ZFFHKD08N4S4ZHXXH",
+    "name": "Dr. V.Preethi",
+    "designation": "Assistant Professor",
+    "displayImage": [
+      "https://d30y75l38k1y9.cloudfront.net/upload/faculty/preethi.jpg"
+    ],
+    "subtitle": "Areas of Specialisation: Sahitya, Yoga and Manuscriptology",
+    "description": "More than 13 years of teaching and research experience.",
+    "mobile": "8248630164",
+    "mail": "preethimahesh.krishnan@gmail.com",
+    "profile": [
+      "https://d30y75l38k1y9.cloudfront.net/upload/media/Preethi Resume 5. 8. 24.pdf"
+    ],
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-17T15:20:34.751Z",
+      "updated_at": "2024-12-19T17:42:20.717Z",
+      "created_by": "admin"
+    },
+    "orderId": "2"
+  },
+  {
     "id": "01JFAK9T5Z03V0FD14QY1FQHK2",
     "name": "Dr. P.C. Muralidharan",
     "designation": "Assistant Professor",
@@ -108,27 +130,5 @@
       "created_by": "admin"
     },
     "orderId": "1"
-  },
-  {
-    "id": "01JFAK9T5ZFFHKD08N4S4ZHXXH",
-    "name": "Dr. V.Preethi",
-    "designation": "Associate Professor",
-    "displayImage": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/faculty/preethi.jpg"
-    ],
-    "subtitle": "Areas of Specialisation: Sahitya, Yoga and Manuscriptology",
-    "description": "More than 13 years of teaching and research experience.",
-    "mobile": "8248630164",
-    "mail": "preethimahesh.krishnan@gmail.com",
-    "profile": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/media/Preethi Resume 5. 8. 24.pdf"
-    ],
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-17T15:20:34.751Z",
-      "updated_at": "2024-12-19T17:25:29.234Z",
-      "created_by": "admin"
-    },
-    "orderId": "2"
   }
 ]

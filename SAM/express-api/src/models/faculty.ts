@@ -23,6 +23,7 @@ export interface Faculty {
   mail: string;
   profile: [string];
   metadata?: { [key: string]: string };
+  orderId?: string;
 }
 
 export interface FacultyDDB {
@@ -39,6 +40,7 @@ export interface FacultyDDB {
   mail: string;
   profile: string;
   metadata?: { [key: string]: string };
+  orderId?: string;
 }
 
 export function toDynamoDB(item: Faculty): FacultyDDB {
@@ -56,6 +58,7 @@ export function toDynamoDB(item: Faculty): FacultyDDB {
     mail: item.mail,
     profile: item.profile[0],
     metadata: item.metadata,
+    orderId: item.orderId,
   };
 }
 
@@ -75,7 +78,8 @@ export function isFacultyDDB(item: any): item is FacultyDDB {
     "mobile" in item &&
     "mail" in item &&
     "profile" in item &&
-    "metadata" in item
+    "metadata" in item &&
+    "orderId" in item
   );
 }
 
@@ -91,6 +95,7 @@ export function fromDynamoDB(item: FacultyDDB): Faculty {
     mail: item.mail,
     profile: [item.profile],
     metadata: item.metadata,
+    orderId: item.orderId,
   };
 }
 
@@ -107,7 +112,8 @@ export function isFaculty(item: any): item is Faculty {
     "mobile" in item &&
     "mail" in item &&
     "profile" in item &&
-    "metadata" in item
+    "metadata" in item &&
+    "orderId" in item
   );
 }
 
@@ -125,7 +131,8 @@ export function validateFacultyDDB(item: FacultyDDB): boolean {
     typeof item.mobile === "string" &&
     typeof item.mail === "string" &&
     typeof item.profile === "string" &&
-    typeof item.metadata === "object"
+    typeof item.metadata === "object" &&
+    (item.orderId === undefined || typeof item.orderId === "string")
   );
 }
 
@@ -145,6 +152,7 @@ export function validateFaculty(item: Faculty): boolean {
     item.profile.every((profile: any) => typeof profile === "string") &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    (item.orderId === undefined || typeof item.orderId === "string")
   );
 }

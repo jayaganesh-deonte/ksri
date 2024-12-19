@@ -52,6 +52,7 @@ import bankInfo from "@/views/bankInfo.vue";
 import postalAddress from "@/views/postalAddress.vue";
 
 import chair from "@/views/chair.vue";
+import facultyDesignations from "@/views/facultyDesignations.vue";
 
 const routes = [
   // {
@@ -232,6 +233,12 @@ const routes = [
     path: "/chair",
     name: "chair",
     component: chair,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/faculty-designation",
+    name: "facultyDesignations",
+    component: facultyDesignations,
     meta: { requiresAuth: true },
   },
 ];
