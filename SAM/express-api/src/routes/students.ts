@@ -43,14 +43,39 @@ studentRoute.post("/students", async (req: Request, res: Response) => {
 // GET Students
 studentRoute.get("/students", async (req: Request, res: Response) => {
   try {
-    // query table using GSI
+    // query table using GSI with optional filters for status and course
+    const { status, course } = req.query;
+
+    let filterExpression = [];
+    let expressionAttributeValues: any = {
+      ":sk": "ENTITYTYPE#STUDENT",
+    };
+    let expressionAttributeNames: any = {};
+
+    if (status) {
+      filterExpression.push("#st = :status");
+      expressionAttributeValues[":status"] = status;
+      expressionAttributeNames["#st"] = "status";
+    }
+
+    if (course) {
+      filterExpression.push("course = :course");
+      expressionAttributeValues[":course"] = course;
+    }
+
     const result = await documentClient.query({
       TableName: STUDENTS_TABLE,
       IndexName: "entityTypePK",
       KeyConditionExpression: "entityType = :sk",
-      ExpressionAttributeValues: {
-        ":sk": "ENTITYTYPE#STUDENT",
-      },
+      FilterExpression:
+        filterExpression.length > 0
+          ? filterExpression.join(" AND ")
+          : undefined,
+      ExpressionAttributeValues: expressionAttributeValues,
+      ExpressionAttributeNames:
+        Object.keys(expressionAttributeNames).length > 0
+          ? expressionAttributeNames
+          : undefined,
     });
 
     const students = result.Items?.map((item) =>
