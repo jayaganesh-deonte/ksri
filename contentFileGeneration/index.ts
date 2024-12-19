@@ -41,96 +41,97 @@ async function fetchAndSaveData(
 const pageDetails = [
   {
     endpoint: "/contribute/bankInfo",
-    outputFile: "./content/contribute/bankInfo.json",
+    outputFile: "../website/content//contribute/bankInfo.json",
   },
   {
     endpoint: "/contribute/postalAddress",
-    outputFile: "./content/contribute/postalAddress.json",
+    outputFile: "../website/content//contribute/bypost.json",
   },
   // endownments
   {
     endpoint: "/contribute/endownments",
-    outputFile: "./content/contribute/endownments.json",
+    outputFile: "../website/content//contribute/endownments.json",
   },
   // events
   {
     endpoint: "/events",
-    outputFile: "./content/events/events.json",
+    outputFile: "../website/content//events/events.json",
   },
   // /gallery/collections
   {
     endpoint: "/gallery/collections",
-    outputFile: "./content/gallery/collections.json",
+    outputFile: "../website/content//gallery/collections.json",
     // only name
     filter: (data: any[]) => data.map((item) => item.name),
   },
   // /gallery
   {
     endpoint: "/gallery",
-    outputFile: "./content/gallery/gallery.json",
+    outputFile: "../website/content//gallery/gallery.json",
   },
   // governing-body-members present
   {
     endpoint: "/governing-body-members",
-    outputFile: "./content/governingbodymembers/present.json",
+    outputFile: "../website/content//governingbodymembers/present.json",
   },
   // governing-body-members-past
   {
     endpoint: "/governing-body-members-past",
-    outputFile: "./content/governingbodymembers/past.json",
+    outputFile: "../website/content//governingbodymembers/past.json",
   },
   // /library/articles
   {
     endpoint: "/library/articles",
-    outputFile: "./content/library/articles.json",
+    outputFile: "../website/content//library/articles.json",
   },
   //  /library/books
   {
     endpoint: "/library/books",
-    outputFile: "./content/library/books.json",
+    outputFile: "../website/content//library/books.json",
   },
   // /library/journals
   {
     endpoint: "/library/journals",
-    outputFile: "./content/library/journals.json",
+    outputFile: "../website/content//library/journals.json",
   },
   // /publications/books?publication-KSRI
   {
     endpoint: "/publications/books?publication=KSRI",
-    outputFile: "./content/publications/books.json",
+    outputFile: "../website/content//publications/books.json",
   },
   {
     endpoint: "/publications/books?publication=Samskrita Academy",
-    outputFile: "./content/publications/samskritaacademypublications.json",
+    outputFile:
+      "../website/content//publications/samskritaacademypublications.json",
   },
   // publications/committee-members
   {
     endpoint: "/publications/committee-members",
-    outputFile: "./content/publications/committeemembers.json",
+    outputFile: "../website/content//publications/committeemembers.json",
   },
   // /foreign-scholars
   {
     endpoint: "/foreign-scholars",
-    outputFile: "./content/scholars_gateway/foreignscholars.json",
+    outputFile: "../website/content//scholars_gateway/foreignscholars.json",
   },
   // /traditional-scholars
   {
     endpoint: "/traditional-scholars",
-    outputFile: "./content/scholars_gateway/traditionalscholars.json",
+    outputFile: "../website/content//scholars_gateway/traditionalscholars.json",
     filter: (data: any[]) =>
       data.filter((item) => item.type === "Traditional Study"),
   },
   //  shastrachudamanis
   {
     endpoint: "/traditional-scholars",
-    outputFile: "./content/scholars_gateway/shastrachudamanis.json",
+    outputFile: "../website/content//scholars_gateway/shastrachudamanis.json",
     filter: (data: any[]) =>
       data.filter((item) => item.type === "Shastrachudamani"),
   },
   // vidyavaridhis
   {
     endpoint: "/traditional-scholars",
-    outputFile: "./content/scholars_gateway/vidyavaridhis.json",
+    outputFile: "../website/content//scholars_gateway/vidyavaridhis.json",
     filter: (data: any[]) =>
       data.filter((item) => item.type === "Vidyavaridhi"),
   },
@@ -138,66 +139,66 @@ const pageDetails = [
   // students/past/mphil
   {
     endpoint: "/students?status=Completed&course=M.Phil",
-    outputFile: "./content/students/past/mphil.json",
+    outputFile: "../website/content//students/past/mphil.json",
   },
   // students/past/phd
   {
     endpoint: "/students?status=Completed&course=Ph.D.",
-    outputFile: "./content/students/past/phd.json",
+    outputFile: "../website/content//students/past/phd.json",
   },
   // students/present/mphil
   {
     endpoint: "/students?status=On-Going&course=M.Phil",
-    outputFile: "./content/students/present/mphil.json",
+    outputFile: "../website/content//students/present/mphil.json",
   },
   // students/present/phd
   {
     endpoint: "/students?status=On-Going&course=Ph.D.",
-    outputFile: "./content/students/present/phd.json",
+    outputFile: "../website/content//students/present/phd.json",
   },
   // faculty
   {
     endpoint: "/faculty",
-    outputFile: "./content/faculty.json",
+    outputFile: "../website/content//faculty.json",
   },
   // milestones
   {
     endpoint: "/milestones",
-    outputFile: "./content/milestones.json",
+    outputFile: "../website/content//milestones.json",
     // sort by year in descending order
     filter: (data: any[]) => data.sort((a, b) => b.year - a.year),
   },
   // news
   {
     endpoint: "/news",
-    outputFile: "./content/news.json",
+    outputFile: "../website/content//news.json",
     // sort by id in  ascending order
     filter: (data: any[]) => data.sort((a, b) => a.id - b.id),
   },
   ///projects?status=Future Projects
   {
     endpoint: "/projects?status=Future Projects",
-    outputFile: "./content/projects/futureprojects.json",
+    outputFile: "../website/content//projects/futureprojects.json",
   },
   ///projects?status=On-Going
   {
     endpoint: "/projects?status=On-Going",
-    outputFile: "./content/projects/ongoingprojects.json",
+    outputFile: "../website/content//projects/ongoingprojects.json",
   },
   ///projects?status=Completed
   {
     endpoint: "/projects?status=Completed",
-    outputFile: "./content/projects/completedprojects.json",
+    outputFile: "../website/content//projects/completedprojects.json",
   },
   // researchArticles
   {
     endpoint: "/researchArticles",
-    outputFile: "./content/researcharticles.json",
+    outputFile: "../website/content//researcharticles.json",
   },
   // supervisor
   {
     endpoint: "/supervisor",
-    outputFile: "./content/supervisor.json",
+    outputFile: "../website/content//supervisor.json",
     //  from array of object, pick only name
     filter: (data: any[]) => data.map((item) => item.name),
   },
@@ -215,7 +216,7 @@ const fixedData = [
         subTitle: "(Affiliated to the University of Madras)",
       },
     ],
-    outputFile: "./content/courses.json",
+    outputFile: "../website/content//courses.json",
   },
   {
     fileContent: [
@@ -330,7 +331,8 @@ const fixedData = [
         ],
       },
     ],
-    outputFile: "./content/projects/ancientIndianKnowledgeSeries.json",
+    outputFile:
+      "../website/content//projects/ancientIndianKnowledgeSeries.json",
   },
 ];
 
