@@ -12,6 +12,7 @@ export interface Chair {
   name: string;
   subTitle: string;
   orderId: string;
+  metadata?: { [key: string]: string };
 }
 
 export interface ChairDDB {
@@ -24,6 +25,7 @@ export interface ChairDDB {
   name: string;
   subTitle: string;
   orderId: string;
+  metadata?: { [key: string]: string };
 }
 
 export function validateChairDDB(item: ChairDDB): boolean {
@@ -36,7 +38,10 @@ export function validateChairDDB(item: ChairDDB): boolean {
     typeof item.areaOfSpecialization === "string" &&
     typeof item.name === "string" &&
     typeof item.subTitle === "string" &&
-    typeof item.orderId === "string"
+    typeof item.orderId === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -47,7 +52,10 @@ export function validateChair(item: Chair): boolean {
     typeof item.areaOfSpecialization === "string" &&
     typeof item.name === "string" &&
     typeof item.subTitle === "string" &&
-    typeof item.orderId === "string"
+    typeof item.orderId === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -62,6 +70,7 @@ export function toDynamoDB(item: Chair): ChairDDB {
     name: item.name,
     subTitle: item.subTitle,
     orderId: item.orderId,
+    metadata: item.metadata,
   };
 }
 
@@ -73,5 +82,6 @@ export function fromDynamoDB(item: ChairDDB): Chair {
     name: item.name,
     subTitle: item.subTitle,
     orderId: item.orderId,
+    metadata: item.metadata,
   };
 }

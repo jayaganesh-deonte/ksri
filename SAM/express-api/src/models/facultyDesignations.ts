@@ -3,6 +3,7 @@ export interface FacultyDesignation {
   id: string;
   orderId: string;
   name: string;
+  metadata?: { [key: string]: string };
 }
 
 export interface FacultyDesignationDDB {
@@ -12,6 +13,7 @@ export interface FacultyDesignationDDB {
   id: string;
   orderId: string;
   name: string;
+  metadata?: { [key: string]: string };
 }
 
 export function validateFacultyDesignationDDB(
@@ -23,7 +25,10 @@ export function validateFacultyDesignationDDB(
     typeof item.entityType === "string" &&
     typeof item.id === "string" &&
     typeof item.orderId === "string" &&
-    typeof item.name === "string"
+    typeof item.name === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -31,7 +36,10 @@ export function validateFacultyDesignation(item: FacultyDesignation): boolean {
   return (
     typeof item.id === "string" &&
     typeof item.orderId === "string" &&
-    typeof item.name === "string"
+    typeof item.name === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string")))
   );
 }
 
@@ -43,6 +51,7 @@ export function toDynamoDB(item: FacultyDesignation): FacultyDesignationDDB {
     id: item.id,
     orderId: item.orderId,
     name: item.name,
+    metadata: item.metadata,
   };
 }
 
@@ -51,5 +60,6 @@ export function fromDynamoDB(item: FacultyDesignationDDB): FacultyDesignation {
     id: item.id,
     orderId: item.orderId,
     name: item.name,
+    metadata: item.metadata,
   };
 }
