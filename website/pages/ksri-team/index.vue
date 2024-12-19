@@ -81,6 +81,16 @@ console.log(
   presentGoverningBodyMembersWithDesignations
 );
 
+// sort with ids
+for (let designation in designations) {
+  let designationName = designations[designation];
+  if (presentGoverningBodyMembersWithDesignations[designationName]) {
+    presentGoverningBodyMembersWithDesignations[designationName].sort(
+      (a, b) => a.id - b.id
+    );
+  }
+}
+
 const governingBodyMemberKeys = Object.keys(presentGoverningBodyMembers);
 
 const pastGoverningBodyMembersData = await queryContent(
@@ -110,6 +120,16 @@ pastGoverningBodyMembers.forEach((member) => {
     }
   });
 });
+
+// sort past with endYear
+for (let designation in pastDesignations) {
+  let designationName = pastDesignations[designation];
+  if (pastGoverningBodyMembersWithDesignations[designationName]) {
+    pastGoverningBodyMembersWithDesignations[designationName].sort(
+      (a, b) => b.endYear - a.endYear
+    );
+  }
+}
 
 const pastGoverningBodyMemberKeys = Object.keys(pastGoverningBodyMembers);
 

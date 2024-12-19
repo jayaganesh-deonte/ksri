@@ -20,6 +20,13 @@ const endowmentFields = [
     editDisabled: true,
   },
   {
+    key: "id",
+    label: "ID",
+    type: "number",
+    rules: [(v) => !!v || "ID is required"],
+    editDisabled: true,
+  },
+  {
     key: "subtitle",
     label: "Subtitle",
     type: "text",
@@ -35,6 +42,7 @@ const endowmentFields = [
 ];
 
 const endowmentHeaders = [
+  { title: "ID", key: "id" },
   { title: "Name", key: "name" },
   { title: "Subtitle", key: "subtitle" },
   { title: "Designation", key: "designation" },

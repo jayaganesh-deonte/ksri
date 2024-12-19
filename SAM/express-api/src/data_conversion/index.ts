@@ -677,7 +677,7 @@ const insertpresentGoverningBodyMembers = async () => {
     const membersWithDesignation = members.map((member: any) => ({
       ...member,
       designation,
-      id: ulid(),
+      // id: ulid(),
       metadata: generateMetaData(),
     }));
 
@@ -796,9 +796,9 @@ const main = async () => {
   // await insertGallery();
   // await insertmilestones();
   // await insertNews();
-  await insertProjects();
+  // await insertProjects();
   // await insertResearchArticles();
-  // await insertpresentGoverningBodyMembers();
+  await insertpresentGoverningBodyMembers();
   // await insertGoveringBodyPast();
 };
 
