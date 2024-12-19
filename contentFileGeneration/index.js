@@ -239,6 +239,13 @@ var pageDetails = [
         //  from array of object, pick only name
         filter: function (data) { return data.map(function (item) { return item.name; }); },
     },
+    // chair
+    {
+        endpoint: "/chair",
+        outputFile: "../website/content//chair.json",
+        //  order based on orderId
+        filter: function (data) { return data.sort(function (a, b) { return a.orderId - b.orderId; }); },
+    },
 ];
 var fixedData = [
     {

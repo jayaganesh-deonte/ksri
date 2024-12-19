@@ -1,0 +1,42 @@
+[
+  {
+    "id": "01JFFDAJTZWQ1X2FH7NQ2EGPCJ",
+    "chairName": "Brahmasri Anna Subramaniam Chair",
+    "areaOfSpecialization": "Veda-Vedanta Studies",
+    "name": "Dr. K. Srinivasan",
+    "subTitle": "Former Principal &Head, Dept. of Sanskrit RKM Vivekananda College, Chennai",
+    "orderId": "1"
+  },
+  {
+    "id": "01JFFDA4G6DQSWFDNMARTR43S9",
+    "chairName": "Dr. B. Madhavan Chair",
+    "areaOfSpecialization": "Sanskrit Grammar",
+    "name": "Dr. Muthulakshmi",
+    "subTitle": "Research Associate, The KSRI",
+    "orderId": "2"
+  },
+  {
+    "id": "01JFFD9Q6X9D8YS8MWE4NBST7F",
+    "chairName": "Sanātana Dharma Chair",
+    "areaOfSpecialization": "Ancient Indian Culture",
+    "name": "Dr. R. Thiagarajan",
+    "subTitle": "Former Prof. & Head, Dept. of Sanskrit, Presidency College, Chennai .",
+    "orderId": "3"
+  },
+  {
+    "id": "01JFFD98TRAXYH3AVY9GW4S7TA",
+    "chairName": "Dr. S.S. Janaki Chair",
+    "areaOfSpecialization": "Sahitya and Allied subjects",
+    "name": "Ms.V. Lalitha",
+    "subTitle": " ",
+    "orderId": "4"
+  },
+  {
+    "id": "01JFFD8SXA8GS10HD03TWN78R9",
+    "chairName": "Dr. E.R. Rama Bai Chair",
+    "areaOfSpecialization": "Sanskrit Literature",
+    "name": "Dr.Vasumathi Rajaram",
+    "subTitle": " ",
+    "orderId": "5"
+  }
+]

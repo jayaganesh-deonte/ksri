@@ -203,6 +203,13 @@ const pageDetails = [
     //  from array of object, pick only name
     filter: (data: any[]) => data.map((item) => item.name),
   },
+  // chair
+  {
+    endpoint: "/chair",
+    outputFile: "../website/content//chair.json",
+    //  order based on orderId
+    filter: (data: any[]) => data.sort((a, b) => a.orderId - b.orderId),
+  },
 ];
 
 const fixedData = [

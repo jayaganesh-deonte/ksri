@@ -51,6 +51,8 @@ import users from "@/views/users.vue";
 import bankInfo from "@/views/bankInfo.vue";
 import postalAddress from "@/views/postalAddress.vue";
 
+import chair from "@/views/chair.vue";
+
 const routes = [
   // {
   //   path: "/",
@@ -224,6 +226,12 @@ const routes = [
     path: "/postal-address",
     name: "postalAddress",
     component: postalAddress,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/chair",
+    name: "chair",
+    component: chair,
     meta: { requiresAuth: true },
   },
 ];

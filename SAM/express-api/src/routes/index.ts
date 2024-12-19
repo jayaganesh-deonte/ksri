@@ -39,6 +39,8 @@ import { userRoute } from "./user";
 import { bankInfoRoute } from "./contribute/bankInfo";
 import { postalAddressRoute } from "./contribute/postalAddress";
 
+import { chairRouter } from "./chair";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -79,3 +81,5 @@ routes.use(userRoute);
 
 routes.use(bankInfoRoute);
 routes.use(postalAddressRoute);
+
+routes.use(chairRouter);

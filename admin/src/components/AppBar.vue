@@ -206,6 +206,11 @@ const allOptions = [
     path: "/milestone",
     icon: "mdi-sign-direction",
   },
+  {
+    title: "Chair",
+    path: "/chair",
+    icon: "mdi-account-tie",
+  },
 ];
 
 let menuOptions = computed(() => {
