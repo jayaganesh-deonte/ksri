@@ -469,11 +469,8 @@ Resources:
       # redirect
       CustomRules:
         - Source: /<*>
-          Target: /
+          Target: /index.html
           Status: 404
-        - Source: </^[^.]+$|\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json)$)([^.]+$)/>
-          Target: /
-          Status: 200
   # create a branch for website
   websiteAmplifyBranch:
     Type: AWS::Amplify::Branch
