@@ -28,6 +28,12 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Start local server
+        working-directory: ./SAM/express-api
+        run: |
+          npm install
+          npm run dev
+
       - name: Generate content for website
         working-directory: ./contentFileGeneration
         run: |
