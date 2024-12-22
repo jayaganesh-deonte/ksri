@@ -63,4 +63,5 @@ jobs:
           DISTRIBUTION_ID: ${{vars.DISTRIBUTION_ID}}
           WEBSITE_S3_NAME: ${{vars.WEBSITE_S3_NAME}}
         run: |
+          npm install
           node index.js
