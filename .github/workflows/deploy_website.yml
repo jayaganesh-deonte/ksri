@@ -32,7 +32,7 @@ jobs:
         working-directory: ./SAM/express-api
         run: |
           npm install
-          nohup npm run dev
+          nohup npm run dev &
 
       # wait for server to start
       - name: Wait for server to start
