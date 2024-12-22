@@ -54,8 +54,7 @@ jobs:
       - name: Zip files
         working-directory: ./website/dist
         run: |
-          ls ../../../
-          zip -r ../../deployZipToAmplify/website.zip .
+          zip -r ../../../deployZipToAmplify/website.zip .
 
       - name: Deploy to AWS Amplify
         working-directory: ./deployZipToAmplify
