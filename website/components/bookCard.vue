@@ -46,6 +46,16 @@
           <div class="text-start pa-0 mt-5 text-secondary" data-aos-delay="300">
             Price: {{ book.price }}
           </div>
+          <!-- show if out of stock -->
+          <div
+            class="text-start pa-0 mt-5 text-danger"
+            v-if="book.available != 'Yes'"
+            data-aos-delay="400"
+          >
+            <v-chip color="error" label outlined rounded="pill">
+              Out of Stock
+            </v-chip>
+          </div>
         </v-col>
       </v-row>
 

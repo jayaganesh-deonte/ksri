@@ -85,7 +85,16 @@
                 data-aos="fade-left"
                 data-aos-delay="300"
               >
-                Rs. {{ bookInfo.price }}
+                Price: {{ bookInfo.price }}
+              </div>
+              <div
+                class="text-start pa-0 mt-5 text-danger"
+                v-if="bookInfo.available != 'Yes'"
+                data-aos-delay="400"
+              >
+                <v-chip color="error" label outlined rounded="pill">
+                  Out of Stock
+                </v-chip>
               </div>
             </div>
             <div class="text-body-1" data-aos="fade-left" data-aos-delay="400">
@@ -99,9 +108,21 @@
 </template>
 
 <script setup>
-import { bookStore } from "~/stores/bookStore";
+const samskritaAcademyPublicationsData = await queryContent(
+  "publications",
+  "samskritaacademypublications"
+).findOne();
 
-const storeBook = await bookStore();
+const samskritaAcademyPublications = samskritaAcademyPublicationsData.body;
+const booksData = await queryContent("publications", "books").findOne();
+
+const ksriBooks = booksData.body;
+
+let books = reactive([...ksriBooks, ...samskritaAcademyPublications]);
+
+onMounted(async () => {
+  getBookInfo();
+});
 
 // get book id from route
 const route = useRoute();
@@ -117,11 +138,20 @@ const bookInfo = reactive({
   imageUrls: "",
   details: "",
   id: "",
+  available: "",
+  publication: "",
 });
-
+const getBookById = (id) => {
+  // find book from book & samskritaAcademyPublicationBooks list if not found return null
+  const book = books.find((book) => book.id === id);
+  if (book) {
+    return book;
+  }
+  return null;
+};
 // get books
 const getBookInfo = async () => {
-  const book = await storeBook.getBookById(route.params.id);
+  const book = getBookById(route.params.id);
 
   if (book == null) {
     bookNotFound.value = true;
@@ -132,6 +162,8 @@ const getBookInfo = async () => {
     bookInfo.imageUrls = book.imageUrls;
     bookInfo.details = book.details;
     bookInfo.id = book.id;
+    bookInfo.available = book.available;
+    bookInfo.publication = book.publication;
   }
   bookInfoFetched.value = true;
 
@@ -144,8 +176,4 @@ const getBookInfo = async () => {
     twitterDescription: book.subtitle,
   });
 };
-
-onMounted(() => {
-  getBookInfo();
-});
 </script>

@@ -83,7 +83,7 @@
     </div> -->
 
     <!-- Samskrita Academy Publications -->
-    <div class="my-6">
+    <!-- <div class="my-6">
       <v-card rounded="0" class="ma-4 pa-6">
         <div class="d-flex flex-column align-center">
           <div class="text-h5" data-aos="fade-right">
@@ -97,7 +97,6 @@
           class=""
         >
           <v-list-item data-aos="fade-up" class="ma-2">
-            <!-- prepend book icon  -->
             <template v-slot:prepend>
               <v-icon>mdi-book-open-blank-variant-outline</v-icon>
             </template>
@@ -118,7 +117,7 @@
           <div class="horizontalLine" style="--line-height: 1px"></div>
         </div>
       </v-card>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -219,4 +218,7 @@ const samskritaAcademyPublicationsData = await queryContent(
 ).findOne();
 
 const samskritaAcademyPublications = samskritaAcademyPublicationsData.body;
+const booksData = await queryContent("publications", "books").findOne();
+
+const ksriBooks = booksData.body;
 </script>
