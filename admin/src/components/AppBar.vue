@@ -17,27 +17,23 @@
       <template v-for="item in menuOptions" :key="item.title">
         <v-list-group v-if="item.children">
           <template #activator="{ props }">
-            <v-list-item
-              v-bind="props"
-              :title="item.title"
-              :prepend-icon="item.icon"
-            />
+            <v-list-item v-bind="props" :prepend-icon="item.icon">
+              {{ item.title }}
+            </v-list-item>
           </template>
 
           <v-list-item
             v-for="child in item.children"
             :key="child.title"
             :to="child.path"
-            :title="child.title"
-          />
+          >
+            {{ child.title }}
+          </v-list-item>
         </v-list-group>
 
-        <v-list-item
-          v-else
-          :to="item.path"
-          :title="item.title"
-          :prepend-icon="item.icon"
-        />
+        <v-list-item v-else :to="item.path" :prepend-icon="item.icon">
+          {{ item.title }}
+        </v-list-item>
       </template>
     </v-list>
   </v-navigation-drawer>
@@ -55,42 +51,64 @@ const drawer = ref(false);
 const store = useAppStore();
 
 const allOptions = [
+  // Main/Home Items
   {
     title: "Dainandini",
     path: "/",
     icon: "mdi-book-music",
   },
+
+  // News & Events
   {
-    title: "Home Dialog",
-    path: "/home-dialog",
-    icon: "mdi-post-outline",
-  },
-  {
-    title: "Banner Text",
-    path: "/banner-text",
-    icon: "mdi-text",
+    title: "Updates",
+    icon: "mdi-newspaper",
+    children: [
+      {
+        title: "Home Dialog",
+        path: "/home-dialog",
+        icon: "mdi-post-outline",
+      },
+      {
+        title: "Banner Text",
+        path: "/banner-text",
+        icon: "mdi-text",
+      },
+      {
+        title: "News",
+        path: "/news",
+      },
+      {
+        title: "Events",
+        path: "/events",
+      },
+    ],
   },
 
+  // Academic
   {
-    title: "News",
-    path: "/news",
-    icon: "mdi-newspaper",
-  },
-  {
-    title: "Events",
-    path: "/events",
-    icon: "mdi-calendar",
-  },
-  {
-    title: "Projects",
-    path: "/projects",
+    title: "Academic",
     icon: "mdi-book-education",
+    children: [
+      {
+        title: "Projects",
+        path: "/projects",
+      },
+      {
+        title: "Supervisor",
+        path: "/supervisor",
+      },
+      {
+        title: "Students",
+        path: "/students",
+      },
+      {
+        title: "Research Articles",
+        path: "/research-articles",
+      },
+    ],
   },
-  {
-    title: "Students",
-    path: "/students",
-    icon: "mdi-account-school",
-  },
+
+  // Scholars (existing structure maintained)
   {
     title: "Scholars",
     icon: "mdi-account-school",
@@ -109,19 +127,31 @@ const allOptions = [
       },
     ],
   },
+
+  // Faculty & Administration
   {
-    title: "Faculty Designation",
-    path: "/faculty-designation",
-    icon: "mdi-account-tie",
+    title: "KSRI Faculty",
+    icon: "mdi-account-group",
+    children: [
+      {
+        title: "Faculty",
+        path: "/faculty",
+      },
+      {
+        title: "Faculty Designation",
+        path: "/faculty-designation",
+      },
+
+      {
+        title: "Chair",
+        path: "/chair",
+      },
+    ],
   },
 
+  // Governing Body (existing structure maintained)
   {
-    title: "Faculty",
-    path: "/faculty",
-    icon: "mdi-account-tie",
-  },
-  {
-    title: "Governing Body Members",
+    title: "Governing Body",
     icon: "mdi-account-group",
     children: [
       {
@@ -134,6 +164,8 @@ const allOptions = [
       },
     ],
   },
+
+  // Library
   {
     title: "Library",
     icon: "mdi-library",
@@ -152,12 +184,13 @@ const allOptions = [
       },
     ],
   },
+  // Publications
   {
     title: "Publications",
     icon: "mdi-book-open-page-variant",
     children: [
       {
-        title: "books",
+        title: "Books",
         path: "/publications-books",
       },
       {
@@ -166,6 +199,8 @@ const allOptions = [
       },
     ],
   },
+
+  // Media
   {
     title: "Gallery",
     icon: "mdi-image",
@@ -181,40 +216,28 @@ const allOptions = [
     ],
   },
 
+  // Institution Info
   {
-    title: "supervisor",
-    path: "/supervisor",
-    icon: "mdi-account-tie",
-  },
-  {
-    title: "Research Articles",
-    path: "/research-articles",
-    icon: "mdi-book-open-page-variant",
-  },
-  {
-    title: "Endowments",
-    path: "/endowments",
-    icon: "mdi-projector-screen",
-  },
-  {
-    title: "Bank Info",
-    path: "/bank-info",
-    icon: "mdi-bank",
-  },
-  {
-    title: "Postal Address",
-    path: "/postal-address",
-    icon: "mdi-map-marker",
-  },
-  {
-    title: "Milestone",
-    path: "/milestone",
-    icon: "mdi-sign-direction",
-  },
-  {
-    title: "Chair",
-    path: "/chair",
-    icon: "mdi-account-tie",
+    title: "Institution",
+    icon: "mdi-information",
+    children: [
+      {
+        title: "Endowments",
+        path: "/endowments",
+      },
+      {
+        title: "Bank Info",
+        path: "/bank-info",
+      },
+      {
+        title: "Postal Address",
+        path: "/postal-address",
+      },
+      {
+        title: "Milestone",
+        path: "/milestone",
+      },
+    ],
   },
 ];
 
