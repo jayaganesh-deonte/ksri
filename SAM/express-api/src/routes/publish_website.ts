@@ -5,7 +5,6 @@ import {
   getParameter,
   triggerGithubWorkflow,
 } from "../github_actions/trigger_workflow";
-import { timeStamp } from "console";
 
 export const deployRoute = Router();
 
@@ -14,6 +13,13 @@ const PROJECTS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
 // Deploy Website
 deployRoute.post("/deploy", async (req: Request, res: Response) => {
   try {
+    // check if deployment is already in progress
+    const deploymentStatus = await getDeploymentStatus();
+
+    if (deploymentStatus.status === "IN_PROGRESS") {
+      throw new Error("Deployment is already in progress");
+    }
+
     const github_pat = await getParameter("/deonte/github/action/pat");
     const owner = "jayaganesh-deonte";
     const repo = "ksri";
@@ -72,24 +78,29 @@ deployRoute.post("/deploy", async (req: Request, res: Response) => {
   }
 });
 
+const getDeploymentStatus = async () => {
+  const params = {
+    TableName: PROJECTS_TABLE,
+    Key: {
+      PK: "ENTITYTYPE#DEPLOYMENT",
+      SK: "ENTITYTYPE#DEPLOYMENT",
+    },
+  };
+
+  const result = await documentClient.get(params);
+  const item = result.Item || {};
+  let response = {
+    status: item.status,
+    metadata: item.metadata,
+    timestamp: item.timestamp,
+  };
+  return response;
+};
+
 // Get Deployment Status
 deployRoute.get("/deploy/status", async (req: Request, res: Response) => {
   try {
-    const params = {
-      TableName: PROJECTS_TABLE,
-      Key: {
-        PK: "ENTITYTYPE#DEPLOYMENT",
-        SK: "ENTITYTYPE#DEPLOYMENT",
-      },
-    };
-
-    const result = await documentClient.get(params);
-    const item = result.Item || {};
-    let response = {
-      status: item.status,
-      metadata: item.metadata,
-      timestamp: item.timestamp,
-    };
+    let response = await getDeploymentStatus();
     res.status(200).json(response);
   } catch (error) {
     console.error("Error getting deployment status:", error);
