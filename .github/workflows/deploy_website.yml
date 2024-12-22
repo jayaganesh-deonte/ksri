@@ -49,7 +49,7 @@ jobs:
         working-directory: ./website
         run: |
           npm install
-          npm run build
+          npm run generate
 
       - name: Zip files
         working-directory: ./website
