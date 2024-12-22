@@ -52,9 +52,9 @@ jobs:
           npm run generate
 
       - name: Zip files
-        working-directory: ./website
+        working-directory: ./website/dist
         run: |
-          zip -r ../deployZipToAmplify/website.zip ./dist
+          zip -r ../deployZipToAmplify/website.zip .
 
       - name: Deploy to AWS Amplify
         working-directory: ./deployZipToAmplify
