@@ -5,10 +5,10 @@
       :style="`${$device.isMobile ? 'height: 100vh' : 'height: 90vh'}`"
       cycle
       continuous
-      interval="5000"
+      interval="8000"
     >
       <home-carousel-item
-        src="https://d30y75l38k1y9.cloudfront.net/home-slide-bg-1.jpg"
+        src="/img/home-slide-bg-1.jpg"
         title-text="CENTRE FOR SANSKRIT"
         title-text-line2="& INDOLOGY RESEARCH"
         description-text="Chennai-based private, non-profit organization established in 1945 to conduct world-class research in Sanskrit"
@@ -20,7 +20,7 @@
       />
 
       <home-carousel-item
-        src="https://d30y75l38k1y9.cloudfront.net/home-slide-bg-2.jpg"
+        src="/img/home-slide-bg-2.jpg"
         title-text="KSRI LIBRARY"
         title-text-line2="In-house & Online"
         description-text="The Library is comprised of nearly 60,000 books and 1,500 Palmleaf Manuscripts on variety of Sanskrit"
