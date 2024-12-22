@@ -60,7 +60,7 @@ userRoute.delete("/users", async (req: Request, res: Response) => {
       //   ConditionExpression: "attribute_exists(id)",
     });
     const cognitoResponse = await deleteUserFromCognito({
-      email: name,
+      name: name,
       userPoolId: USER_POOL_ID,
     });
     console.log("cognitoResponse", cognitoResponse);

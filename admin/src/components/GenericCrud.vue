@@ -10,7 +10,12 @@
           hide-details
           variant="outlined"
         />
-        <v-btn color="primary" @click="createItem">
+        <v-btn
+          color="primary"
+          @click="createItem"
+          :disabled="isEditDisabledForUser"
+          :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
+        >
           <v-icon start> mdi-plus </v-icon>
           Add {{ entityName }}
         </v-btn>
@@ -388,12 +393,20 @@ const createItem = () => {
 };
 
 const editItem = (item) => {
+  // check if edit disabled for user
+  if (isEditDisabledForUser.value) {
+    return;
+  }
   editedIndex.value = items.value.indexOf(item);
   editedItem.value = { ...item };
   dialog.value = true;
 };
 
 const deleteItem = (item) => {
+  // check if delete disabled for user
+  if (isEditDisabledForUser.value) {
+    return;
+  }
   swal({
     title: "Are you sure?",
     text: `You won't be able to revert this ${props.entityName}!`,

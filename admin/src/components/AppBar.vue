@@ -230,7 +230,7 @@ let menuOptions = computed(() => {
   let tempMenu = [...allOptions];
 
   // if user is super-admin add below options
-  if (localStorage.getItem("role") === "super-admin") {
+  if (store.isSuperAdmin) {
     tempMenu = [...tempMenu, ...superAdminMenuOptions];
   }
 
