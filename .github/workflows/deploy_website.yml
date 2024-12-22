@@ -51,7 +51,11 @@ jobs:
           npm install
           npm run generate
 
-      - name: Zip files
-        working-directory: ./website
+      - name: Sync to S3
+        working-directory: ./website/dist
         run: |
-          zip -r ../website.zip ./dist
+          aws s3 sync . s3://${{vars.S3_BUCKET_NAME}} --delete
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{vars.CLOUDFRONT_DISTRIBUTION_ID}} --paths "/*"
