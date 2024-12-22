@@ -32,7 +32,12 @@ jobs:
         working-directory: ./SAM/express-api
         run: |
           npm install
-          npm run dev
+          nohup npm run dev
+
+      # wait for server to start
+      - name: Wait for server to start
+        run: |
+          sleep 10
 
       - name: Generate content for website
         working-directory: ./contentFileGeneration
