@@ -785,10 +785,10 @@ const main = async () => {
   // await insertLibraryArticles();
   // await insertLibraryBooks();
   // await insertLibraryJournals();
-  await insertPublicationBooks();
-  await insertsamskritaacademypublicationsBooks();
   await insertOutOfStockPubBooks("outofstock", "No");
   await insertOutOfStockPubBooks("forsale", "Yes");
+  await insertsamskritaacademypublicationsBooks();
+  await insertPublicationBooks();
   // await insertPublicationCommittee();
   // await insertForeignScholars();
   // await insertshastrachudamanis();

@@ -19,6 +19,11 @@
           <v-icon start> mdi-plus </v-icon>
           Add {{ entityName }}
         </v-btn>
+        <!-- export as CSV -->
+        <v-btn color="primary" class="ms-4" @click="exportAsCSV">
+          <v-icon start> mdi-file-export </v-icon>
+          Export as CSV
+        </v-btn>
       </div>
 
       <v-data-table
@@ -525,6 +530,62 @@ const save = async () => {
       message: "There was some error. Please try again",
     });
   }
+};
+
+const exportAsCSV = () => {
+  // Add BOM for Excel UTF-8 detection
+  const BOM = "\uFEFF";
+
+  const escapeCSVValue = (value) => {
+    if (value === null || value === undefined) {
+      return "";
+    }
+
+    const stringValue = String(value);
+    // Check if value needs to be quoted
+    if (
+      stringValue.includes(",") ||
+      stringValue.includes('"') ||
+      stringValue.includes("\n")
+    ) {
+      // Escape quotes and wrap in quotes
+      return `"${stringValue.replace(/"/g, '""')}"`;
+    }
+    return stringValue;
+  };
+
+  const csvContent = items.value
+    .map((item) => {
+      return props.entityFields
+        .map((field) => escapeCSVValue(item[field.key]))
+        .join(",");
+    })
+    .join("\n");
+
+  const csvHeader = props.entityFields
+    .map((field) => escapeCSVValue(field.label))
+    .join(",");
+
+  const csvData = `${BOM}${csvHeader}\n${csvContent}`;
+
+  // Create blob with proper encoding
+  const blob = new Blob([csvData], {
+    type: "text/csv;charset=utf-8",
+  });
+
+  // Create download link
+  const link = document.createElement("a");
+  const url = URL.createObjectURL(blob);
+  link.setAttribute("href", url);
+  link.setAttribute("download", `${props.entityName}.csv`);
+
+  // Trigger download
+  document.body.appendChild(link);
+  link.click();
+
+  // Cleanup
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url); // Free up memory
 };
 
 onMounted(() => {
