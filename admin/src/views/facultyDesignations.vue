@@ -24,6 +24,13 @@ const facultyFields = [
     // editDisabled: true,
   },
   {
+    key: "type",
+    label: "Type",
+    type: "auto-complete",
+    items: ["ACADEMIC", "NON ACADEMIC"],
+    rules: [(v) => !!v || "Type is required"],
+  },
+  {
     key: "name",
     label: "Name",
     type: "text",
@@ -36,6 +43,10 @@ const facultyHeaders = [
   {
     key: "orderId",
     title: "Order Id",
+  },
+  {
+    key: "type",
+    title: "Type",
   },
   {
     key: "name",

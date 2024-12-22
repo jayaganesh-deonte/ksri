@@ -17,8 +17,21 @@ const FACULTY_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
 // GET Faculty
 facultyRouter.get("/faculty", async (req: Request, res: Response) => {
   try {
+    // option type query parameter
+    const { designationType } = req.query;
+
+    // if type is provide, validate it
+    if (designationType !== undefined) {
+      if (
+        designationType !== "ACADEMIC" &&
+        designationType !== "NON ACADEMIC"
+      ) {
+        return res.status(400).json({ error: "Invalid query parameter" });
+      }
+    }
+
     // query table using GSI
-    const result = await documentClient.query({
+    const params: any = {
       TableName: FACULTY_TABLE,
       IndexName: "entityTypeSK",
       KeyConditionExpression: "entityType = :entityType",
@@ -27,7 +40,17 @@ facultyRouter.get("/faculty", async (req: Request, res: Response) => {
       },
       //   id is lexagraphically sorted so sort it from old to new
       ScanIndexForward: false,
-    });
+    };
+
+    if (designationType) {
+      params.FilterExpression = "#type = :designationType";
+      params.ExpressionAttributeNames = {
+        "#type": "type",
+      };
+      params.ExpressionAttributeValues[":designationType"] = designationType;
+    }
+
+    const result = await documentClient.query(params);
 
     const faculty = result.Items?.map((item) =>
       fromDynamoDB(item as FacultyDDB)

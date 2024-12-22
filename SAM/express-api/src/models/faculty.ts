@@ -12,6 +12,8 @@
 
 // create model
 
+export type FacultyType = "ACADEMIC" | "NON ACADEMIC";
+
 export interface Faculty {
   id: string;
   name: string;
@@ -22,6 +24,7 @@ export interface Faculty {
   mobile: string;
   mail: string;
   profile: [string];
+  type: FacultyType;
   metadata?: { [key: string]: string };
   orderId?: string;
 }
@@ -39,6 +42,7 @@ export interface FacultyDDB {
   mobile: string;
   mail: string;
   profile: string;
+  type: FacultyType;
   metadata?: { [key: string]: string };
   orderId?: string;
 }
@@ -57,6 +61,7 @@ export function toDynamoDB(item: Faculty): FacultyDDB {
     mobile: item.mobile,
     mail: item.mail,
     profile: item.profile[0],
+    type: item.type,
     metadata: item.metadata,
     orderId: item.orderId,
   };
@@ -78,6 +83,7 @@ export function isFacultyDDB(item: any): item is FacultyDDB {
     "mobile" in item &&
     "mail" in item &&
     "profile" in item &&
+    "type" in item &&
     "metadata" in item &&
     "orderId" in item
   );
@@ -94,6 +100,7 @@ export function fromDynamoDB(item: FacultyDDB): Faculty {
     mobile: item.mobile,
     mail: item.mail,
     profile: [item.profile],
+    type: item.type,
     metadata: item.metadata,
     orderId: item.orderId,
   };
@@ -112,6 +119,7 @@ export function isFaculty(item: any): item is Faculty {
     "mobile" in item &&
     "mail" in item &&
     "profile" in item &&
+    "type" in item &&
     "metadata" in item &&
     "orderId" in item
   );
@@ -131,6 +139,7 @@ export function validateFacultyDDB(item: FacultyDDB): boolean {
     typeof item.mobile === "string" &&
     typeof item.mail === "string" &&
     typeof item.profile === "string" &&
+    (item.type === "ACADEMIC" || item.type === "NON ACADEMIC") &&
     typeof item.metadata === "object" &&
     (item.orderId === undefined || typeof item.orderId === "string")
   );
@@ -150,6 +159,7 @@ export function validateFaculty(item: Faculty): boolean {
     typeof item.mail === "string" &&
     Array.isArray(item.profile) &&
     item.profile.every((profile: any) => typeof profile === "string") &&
+    (item.type === "ACADEMIC" || item.type === "NON ACADEMIC") &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&

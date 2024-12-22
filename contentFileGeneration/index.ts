@@ -153,13 +153,27 @@ const pageDetails = [
   },
   // faculty
   {
-    endpoint: "/faculty",
+    endpoint: "/faculty?designationType=ACADEMIC",
     outputFile: "../website/content//faculty/faculty.json",
   },
   // /faculty/designation
   {
-    endpoint: "/faculty/designation",
+    endpoint: "/faculty/designation?designationType=ACADEMIC",
     outputFile: "../website/content//faculty/designation.json",
+    //  order by orderId and select only name
+    filter: (data: any[]) =>
+      data.sort((a, b) => a.orderId - b.orderId).map((item) => item.name),
+  },
+
+  // faculty NON ACADEMIC
+  {
+    endpoint: "/faculty?designationType=NON ACADEMIC",
+    outputFile: "../website/content//faculty/nonacademic.json",
+  },
+  // /faculty/designation
+  {
+    endpoint: "/faculty/designation?designationType=NON ACADEMIC",
+    outputFile: "../website/content//faculty/nonacademicdesignation.json",
     //  order by orderId and select only name
     filter: (data: any[]) =>
       data.sort((a, b) => a.orderId - b.orderId).map((item) => item.name),

@@ -71,6 +71,13 @@ const facultyFields = [
     editDisabled: true,
   },
   {
+    key: "type",
+    label: "Type",
+    type: "auto-complete",
+    items: ["ACADEMIC", "NON ACADEMIC"],
+    rules: [(v) => !!v || "Type is required"],
+  },
+  {
     key: "designation",
     label: "Designation",
     type: "auto-complete",
@@ -126,6 +133,10 @@ const facultyHeaders = [
   {
     key: "designation",
     title: "Designation",
+  },
+  {
+    key: "type",
+    title: "Type",
   },
   {
     key: "subtitle",

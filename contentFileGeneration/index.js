@@ -188,13 +188,27 @@ var pageDetails = [
     },
     // faculty
     {
-        endpoint: "/faculty",
+        endpoint: "/faculty?designationType=ACADEMIC",
         outputFile: "../website/content//faculty/faculty.json",
     },
     // /faculty/designation
     {
-        endpoint: "/faculty/designation",
+        endpoint: "/faculty/designation?designationType=ACADEMIC",
         outputFile: "../website/content//faculty/designation.json",
+        //  order by orderId and select only name
+        filter: function (data) {
+            return data.sort(function (a, b) { return a.orderId - b.orderId; }).map(function (item) { return item.name; });
+        },
+    },
+    // faculty NON ACADEMIC
+    {
+        endpoint: "/faculty?designationType=NON ACADEMIC",
+        outputFile: "../website/content//faculty/nonacademic.json",
+    },
+    // /faculty/designation
+    {
+        endpoint: "/faculty/designation?designationType=NON ACADEMIC",
+        outputFile: "../website/content//faculty/nonacademicdesignation.json",
         //  order by orderId and select only name
         filter: function (data) {
             return data.sort(function (a, b) { return a.orderId - b.orderId; }).map(function (item) { return item.name; });
