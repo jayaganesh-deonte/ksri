@@ -43,6 +43,8 @@ import { chairRouter } from "./chair";
 
 import { facultyDesignationRouter } from "./facultyDesignations";
 
+import { deployRoute } from "./publish_website";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -87,3 +89,5 @@ routes.use(postalAddressRoute);
 routes.use(chairRouter);
 
 routes.use(facultyDesignationRouter);
+
+routes.use(deployRoute);

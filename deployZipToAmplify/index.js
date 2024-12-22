@@ -19,10 +19,17 @@ const {
   GetInvalidationCommand,
 } = require("@aws-sdk/client-cloudfront");
 
+const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+const { DynamoDBDocument } = require("@aws-sdk/lib-dynamodb");
+
+export const documentClient = DynamoDBDocument.from(new DynamoDBClient());
+
 const S3_NAME = process.env.WEBSITE_S3_NAME || "ksri-website-zip";
 const appId = process.env.APP_ID || "djs0bgez0rna3";
 const branchName = process.env.BRANCH_NAME || "prod";
 const distributionId = process.env.DISTRIBUTION_ID || "E1L197RUHFCEFU";
+
+const DDB_TABLE_NAME = process.env.DDB_TABLE_NAME || "ksri-website-deployment";
 
 const uploadZipToS3 = async (zipFilePath) => {
   try {
@@ -151,6 +158,31 @@ const invalidateCloudFront = async (distributionId) => {
   );
 };
 
+const updateWorkFlowStatusInDDB = async () => {
+  // get current timestamp
+  const timestamp = new Date().toISOString();
+
+  const item = {
+    PK: "ENTITYTYPE#DEPLOYMENT",
+    SK: "ENTITYTYPE#DEPLOYMENT",
+    entityType: "ENTITYTYPE#DEPLOYMENT",
+    timestamp: timestamp,
+    status: "SUCCEEDED",
+  };
+
+  const params = {
+    TableName: DDB_TABLE_NAME,
+    Item: item,
+  };
+
+  try {
+    await documentClient.put(params);
+    console.log("Item added successfully:", item);
+  } catch (error) {
+    console.error("Error adding item:", error);
+  }
+};
+
 const main = async () => {
   const zipFilePath = "./website.zip";
   const response = await publishZipToAmplify(appId, branchName, zipFilePath);
@@ -158,6 +190,8 @@ const main = async () => {
 
   const invalidationRes = await invalidateCloudFront(distributionId);
   console.log("Invalidation response:", invalidationRes);
+
+  await updateWorkFlowStatusInDDB();
 };
 
 main();

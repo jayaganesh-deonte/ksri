@@ -10,6 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.705.0",
+    "@aws-sdk/lib-dynamodb": "^3.705.0",
     "@aws-sdk/client-amplify": "^3.716.0",
     "@aws-sdk/client-cloudfront": "^3.716.0",
     "@aws-sdk/client-s3": "^3.717.0"
