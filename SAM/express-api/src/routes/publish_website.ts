@@ -13,16 +13,16 @@ const PROJECTS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
 // Deploy Website
 deployRoute.post("/deploy", async (req: Request, res: Response) => {
   try {
-    // update updateDeploymentHistory
-    const metadata = req.body;
-    await updateDeploymentHistory(metadata);
-
     // check if deployment is already in progress
     const deploymentStatus = await getDeploymentStatus();
 
     if (deploymentStatus.status === "IN_PROGRESS") {
       throw new Error("Deployment is already in progress");
     }
+
+    // update updateDeploymentHistory
+    const metadata = req.body;
+    await updateDeploymentHistory(metadata);
 
     const github_pat = await getParameter("/deonte/github/action/pat");
     const owner = "jayaganesh-deonte";
