@@ -437,81 +437,85 @@ Resources:
         ViewerCertificate:
           CloudFrontDefaultCertificate: true
 
-  # S3 Bucket for static website hosting
-  StaticWebsiteBucket:
-    Type: "AWS::S3::Bucket"
+  S3BucketForWebsiteZip:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
     Properties:
-      BucketName: !Sub "${Prefix}-static-website"
-      WebsiteConfiguration:
-        IndexDocument: 200.html
-        ErrorDocument: 404.html
-      # PublicAccessBlockConfiguration:
-      #   BlockPublicAcesses: false
-      VersioningConfiguration:
-        Status: Enabled
+      BucketName: !Sub ${Prefix}-website-zip
+      # make bucket public
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
 
-  # Bucket policy to allow CloudFront access
-  StaticWebsiteBucketPolicy:
-    Type: "AWS::S3::BucketPolicy"
+  S3BucketPolicyForWebsiteZip:
+    Type: AWS::S3::BucketPolicy
     Properties:
-      Bucket: !Ref StaticWebsiteBucket
+      Bucket: !Ref S3BucketForWebsiteZip
       PolicyDocument:
         Version: "2012-10-17"
         Statement:
           - Effect: Allow
-            Principal:
-              Service: cloudfront.amazonaws.com
+            Principal: "*"
             Action: "s3:GetObject"
-            Resource: !Sub "${StaticWebsiteBucket.Arn}/*"
-            Condition:
-              StringEquals:
-                "AWS:SourceArn": !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/${CloudFrontDistribution}"
+            Resource: !Sub arn:aws:s3:::${S3BucketForWebsiteZip}/*
 
-  # CloudFront Origin Access Control
-  CloudFrontOAC:
-    Type: "AWS::CloudFront::OriginAccessControl"
+  # website amplify with cloudfront
+  websiteAmplifyApp:
+    Type: AWS::Amplify::App
     Properties:
-      OriginAccessControlConfig:
-        Name: !Sub "${Prefix}-static-website-OAC"
-        Description: "Origin Access Control for S3 static website"
-        SigningBehavior: "always"
-        SigningProtocol: "sigv4"
-        OriginAccessControlOriginType: "s3"
-
-  # CloudFront Distribution
-  CloudFrontDistribution:
-    Type: "AWS::CloudFront::Distribution"
+      Name: !Sub ${Prefix}-website-amplify
+      # redirect
+      CustomRules:
+        - Source: /<*>
+          Target: /
+          Status: 404
+        - Source: </^[^.]+$|\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json)$)([^.]+$)/>
+          Target: /
+          Status: 200
+  # create a branch for website
+  websiteAmplifyBranch:
+    Type: AWS::Amplify::Branch
+    Properties:
+      AppId: !GetAtt websiteAmplifyApp.AppId
+      BranchName: prod
+  # cloudfront distribution for website
+  websiteDistribution:
+    Type: AWS::CloudFront::Distribution
     Properties:
       DistributionConfig:
-        Enabled: true
-        DefaultRootObject: 200.html
-        IPV6Enabled: true
-        HttpVersion: http2
         Origins:
-          - Id: S3Origin
-            DomainName: !GetAtt StaticWebsiteBucket.RegionalDomainName
-            OriginAccessControlId: !Ref CloudFrontOAC
-            S3OriginConfig:
-              OriginAccessIdentity: ""
+          - ConnectionAttempts: 3
+            ConnectionTimeout: 10
+            CustomOriginConfig:
+              HTTPPort: 80
+              HTTPSPort: 443
+              OriginKeepaliveTimeout: 5
+              OriginProtocolPolicy: https-only
+              OriginReadTimeout: 30
+              OriginSSLProtocols:
+                - TLSv1.2
+            DomainName: !Sub prod.${websiteAmplifyApp.DefaultDomain}
+            Id: uiOrigin
+            OriginPath: ""
         DefaultCacheBehavior:
-          TargetOriginId: S3Origin
-          ViewerProtocolPolicy: redirect-to-https
+          ForwardedValues:
+            QueryString: "false"
+            Cookies:
+              Forward: none
           AllowedMethods:
             - GET
             - HEAD
             - OPTIONS
-          CachedMethods:
-            - GET
-            - HEAD
-            - OPTIONS
-          Compress: true
-          DefaultTTL: 86400
-          MinTTL: 0
-          MaxTTL: 31536000
-          ForwardedValues:
-            QueryString: false
-            Cookies:
-              Forward: none
+          TargetOriginId: uiOrigin
+          ViewerProtocolPolicy: redirect-to-https
+        Comment: !Sub ${Prefix} website amplify
+        PriceClass: PriceClass_200
+        Enabled: true
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: true
+
 Outputs:
   UserPoolId:
     Value: !Ref CognitoUserPool
@@ -535,12 +539,12 @@ Outputs:
     Value: !GetAtt imageDistribution.DomainName
   expressAPIUrl:
     Value: !GetAtt expressAPIUrl.FunctionUrl
-  WebsiteBucketName:
-    Description: "Name of S3 bucket hosting the website"
-    Value: !Ref StaticWebsiteBucket
-  CloudFrontDomainName:
-    Description: "Domain name of CloudFront distribution"
-    Value: !GetAtt CloudFrontDistribution.DomainName
+  # WebsiteBucketName:
+  #   Description: "Name of S3 bucket hosting the website"
+  #   Value: !Ref StaticWebsiteBucket
+  # CloudFrontDomainName:
+  #   Description: "Domain name of CloudFront distribution"
+  #   Value: !GetAtt CloudFrontDistribution.DomainName
   WebsiteURL:
     Description: "URL of the website"
-    Value: !Sub "https://${CloudFrontDistribution.DomainName}"
+    Value: !GetAtt websiteDistribution.DomainName
