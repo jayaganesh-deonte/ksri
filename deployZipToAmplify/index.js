@@ -29,7 +29,7 @@ const appId = process.env.APP_ID || "djs0bgez0rna3";
 const branchName = process.env.BRANCH_NAME || "prod";
 const distributionId = process.env.DISTRIBUTION_ID || "E1L197RUHFCEFU";
 
-const DDB_TABLE_NAME = process.env.DDB_TABLE_NAME || "ksri-website-deployment";
+const DDB_TABLE_NAME = process.env.DDB_TABLE_NAME || "ksri_admin_master_table";
 
 const uploadZipToS3 = async (zipFilePath) => {
   try {

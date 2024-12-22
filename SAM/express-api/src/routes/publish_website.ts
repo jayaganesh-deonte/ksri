@@ -13,6 +13,10 @@ const PROJECTS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
 // Deploy Website
 deployRoute.post("/deploy", async (req: Request, res: Response) => {
   try {
+    // update updateDeploymentHistory
+    const metadata = req.body;
+    await updateDeploymentHistory(metadata);
+
     // check if deployment is already in progress
     const deploymentStatus = await getDeploymentStatus();
 
@@ -38,45 +42,44 @@ deployRoute.post("/deploy", async (req: Request, res: Response) => {
       error: "Failed to trigger deployment",
       details: error instanceof Error ? error.message : "Unknown error",
     });
-  } finally {
-    // update DDB with deployment status
-    // get current timestamp
-    const timestamp = new Date().toISOString();
-
-    // get metadata from request body
-    const { metadata } = req.body;
-
-    const item = {
-      PK: "ENTITYTYPE#DEPLOYMENT",
-      SK: "ENTITYTYPE#DEPLOYMENT",
-      entityType: "ENTITYTYPE#DEPLOYMENT",
-      timestamp: timestamp,
-      status: "IN_PROGRESS",
-      metadata: metadata,
-    };
-    await documentClient.put({
-      TableName: PROJECTS_TABLE,
-      Item: item,
-    });
-
-    // TTL as 60 days from now in epoch time
-    const ttl = Math.floor(new Date().getTime() / 1000) + 60 * 24 * 60 * 60;
-
-    // store deployment history in DDB
-    const deploymentHistoryItem = {
-      PK: "ENTITYTYPE#DEPLOYMENT_HISTORY",
-      SK: `DEPLOYMENT#${timestamp}`,
-      entityType: "ENTITYTYPE#DEPLOYMENT_HISTORY",
-      timestamp: timestamp,
-      metadata: metadata,
-      ttl: ttl,
-    };
-    await documentClient.put({
-      TableName: PROJECTS_TABLE,
-      Item: deploymentHistoryItem,
-    });
   }
 });
+
+const updateDeploymentHistory = async (metadata: any) => {
+  // update DDB with deployment status
+  // get current timestamp
+  const timestamp = new Date().toISOString();
+
+  const item = {
+    PK: "ENTITYTYPE#DEPLOYMENT",
+    SK: "ENTITYTYPE#DEPLOYMENT",
+    entityType: "ENTITYTYPE#DEPLOYMENT",
+    timestamp: timestamp,
+    status: "IN_PROGRESS",
+    metadata: metadata,
+  };
+  await documentClient.put({
+    TableName: PROJECTS_TABLE,
+    Item: item,
+  });
+
+  // TTL as 60 days from now in epoch time
+  const ttl = Math.floor(new Date().getTime() / 1000) + 60 * 24 * 60 * 60;
+
+  // store deployment history in DDB
+  const deploymentHistoryItem = {
+    PK: "ENTITYTYPE#DEPLOYMENT_HISTORY",
+    SK: `DEPLOYMENT#${timestamp}`,
+    entityType: "ENTITYTYPE#DEPLOYMENT_HISTORY",
+    timestamp: timestamp,
+    metadata: metadata,
+    ttl: ttl,
+  };
+  await documentClient.put({
+    TableName: PROJECTS_TABLE,
+    Item: deploymentHistoryItem,
+  });
+};
 
 const getDeploymentStatus = async () => {
   const params = {
