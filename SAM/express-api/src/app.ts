@@ -14,6 +14,8 @@ const PORT = 3001;
 
 const AWS_LAMBDA_FUNCTION_NAME = process.env.AWS_LAMBDA_FUNCTION_NAME;
 
+const CODEBUILD_BUILD_ARN = process.env.CODEBUILD_BUILD_ARN;
+
 let REGION: string;
 let USER_POOL_ID: string;
 let CLIENT_ID: string;
@@ -21,7 +23,7 @@ let ALLOWED_URL: string;
 
 let verifier: any;
 
-if (AWS_LAMBDA_FUNCTION_NAME) {
+if (AWS_LAMBDA_FUNCTION_NAME && CODEBUILD_BUILD_ARN == undefined) {
   REGION = process.env.AWS_REGION ?? "";
   USER_POOL_ID = process.env.USER_POOL_ID ?? "";
   CLIENT_ID = process.env.CLIENT_ID ?? "";
