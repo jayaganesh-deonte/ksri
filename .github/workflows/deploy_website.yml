@@ -1,0 +1,46 @@
+name: Deploy Website
+
+on:
+  workflow_dispatch:
+
+# build ui and deploy to aws
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    env:
+      AWS_REGION: ${{vars.AWS_REGION}}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: ${{vars.AWS_REGION}}
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Generate content for website
+        working-directory: ./contentFileGeneration
+        run: |
+          npm install
+          npm run dev
+
+      - name: Build
+        working-directory: ./website
+        run: |
+          npm install
+          npm run build
+
+      - name: Zip files
+        working-directory: ./website
+        run: |
+          zip -r ../website.zip ./dist
