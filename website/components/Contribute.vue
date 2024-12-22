@@ -41,7 +41,7 @@
       >
         <v-card color="secondary" data-aos="fade-left" data-aos-delay="100">
           <v-card-text class="text-h6 defaultFont">
-            100% income tax-excempt in India under 25 (i)(iii) of IT Act 1961
+            100% income tax-excempt in India under 35 (i)(iii) of IT Act 1961
           </v-card-text>
         </v-card>
         <v-card
