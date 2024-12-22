@@ -42,6 +42,11 @@ const projectFields = [
     type: "text",
   },
   {
+    key: "sponsor",
+    label: "Sponsor",
+    type: "text",
+  },
+  {
     key: "status",
     label: "Status",
     type: "auto-complete",
@@ -67,6 +72,10 @@ const projectHeaders = [
   {
     key: "completedYear",
     title: "Completed Year",
+  },
+  {
+    key: "sponsor",
+    title: "Sponsor",
   },
   { key: "status", title: "Status" },
   { key: "actions", title: "Actions" },
