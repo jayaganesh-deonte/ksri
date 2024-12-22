@@ -22,7 +22,7 @@ const {
 const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
 const { DynamoDBDocument } = require("@aws-sdk/lib-dynamodb");
 
-export const documentClient = DynamoDBDocument.from(new DynamoDBClient());
+const documentClient = DynamoDBDocument.from(new DynamoDBClient());
 
 const S3_NAME = process.env.WEBSITE_S3_NAME || "ksri-website-zip";
 const appId = process.env.APP_ID || "djs0bgez0rna3";
