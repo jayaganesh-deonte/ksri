@@ -28,7 +28,7 @@ const bookFields = [
   {
     key: "price",
     label: "Price",
-    type: "number",
+    type: "text",
     rules: [(v) => !!v || "Price is required"],
   },
   {
@@ -40,7 +40,7 @@ const bookFields = [
     key: "available",
     label: "Available",
     type: "auto-complete",
-    items: ["true", "false"],
+    items: ["Yes", "No"],
     rules: [(v) => !!v || "Available is required"],
   },
   {
@@ -48,6 +48,12 @@ const bookFields = [
     label: "Publication",
     type: "text",
     rules: [(v) => !!v || "Publication is required"],
+  },
+  {
+    key: "copies",
+    label: "Available Number of Copies",
+    type: "number",
+    rules: [(v) => !!v || "Available Number of Copies is required"],
   },
   {
     key: "imageUrls",
@@ -63,6 +69,7 @@ const bookHeaders = [
   { title: "Price", key: "price" },
   { title: "Available", key: "available" },
   { title: "Publication", key: "publication" },
+  { title: "Available Number of Copies", key: "copies" },
   { title: "Actions", key: "actions", sortable: false },
 ];
 </script>

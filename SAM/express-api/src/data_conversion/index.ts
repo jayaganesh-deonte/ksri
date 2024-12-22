@@ -243,7 +243,8 @@ const insertPublicationBooks = async () => {
     ...book,
     id: ulid(),
     metadata: generateMetaData(),
-    available: "true",
+    available: "Yes",
+    copies: "10",
   }));
 
   // remove books without title from booksWithId
@@ -729,7 +730,8 @@ const insertsamskritaacademypublicationsBooks = async () => {
         ...samskritaacademypublicationsBook,
         id: ulid(),
         metadata: generateMetaData(),
-        available: "true",
+        available: "Yes",
+        copies: "10",
         publication: "Samskrita Academy",
       })
     );
@@ -759,6 +761,7 @@ const insertOutOfStockPubBooks = async (filename, available) => {
       id: ulid(),
       metadata: generateMetaData(),
       available: available,
+      copies: "10",
       publication: "KSRI",
     };
 
@@ -782,10 +785,10 @@ const main = async () => {
   // await insertLibraryArticles();
   // await insertLibraryBooks();
   // await insertLibraryJournals();
-  // await insertPublicationBooks();
-  // await insertsamskritaacademypublicationsBooks();
-  // await insertOutOfStockPubBooks("outofstock", false);
-  // await insertOutOfStockPubBooks("forsale", true);
+  await insertPublicationBooks();
+  await insertsamskritaacademypublicationsBooks();
+  await insertOutOfStockPubBooks("outofstock", "No");
+  await insertOutOfStockPubBooks("forsale", "Yes");
   // await insertPublicationCommittee();
   // await insertForeignScholars();
   // await insertshastrachudamanis();
@@ -798,7 +801,7 @@ const main = async () => {
   // await insertNews();
   // await insertProjects();
   // await insertResearchArticles();
-  await insertpresentGoverningBodyMembers();
+  // await insertpresentGoverningBodyMembers();
   // await insertGoveringBodyPast();
 };
 

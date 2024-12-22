@@ -8,7 +8,8 @@
 //     "details": null,
 //     "id": "7682d76aaf06a6c5f319a561a4c6cce0660abe5c3ce57869fba0a80791d56e08"
 //     "publication": "",
-//   "available": true
+//     "available": true,
+//     "copies": 0
 // }
 
 export interface Book {
@@ -20,6 +21,7 @@ export interface Book {
   id: string;
   publication: string;
   available: string;
+  copies: string;
   metadata?: { [key: string]: any };
 }
 
@@ -35,6 +37,7 @@ export interface BookDDB {
   id?: string;
   publication: string;
   available: string;
+  copies: string;
   metadata?: { [key: string]: any };
 }
 
@@ -48,6 +51,7 @@ export function validateBook(item: Book): boolean {
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
     typeof item.available === "string" &&
+    typeof item.copies === "string" &&
     (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
@@ -65,6 +69,7 @@ export function toDynamoDB(item: Book): BookDDB {
     id: item.id,
     publication: item.publication,
     available: item.available,
+    copies: item.copies,
     metadata: item.metadata,
   };
 }
@@ -79,6 +84,7 @@ export function fromDynamoDB(item: BookDDB): Book {
     id: item.SK,
     publication: item.publication,
     available: item.available,
+    copies: item.copies,
     metadata: item.metadata,
   };
 }
@@ -97,6 +103,7 @@ export function isBook(item: any): item is BookDDB {
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
     typeof item.available === "string" &&
+    typeof item.copies === "number" &&
     (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
@@ -115,6 +122,7 @@ export function isBookDDB(item: any): item is BookDDB {
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
     typeof item.available === "string" &&
+    typeof item.copies === "number" &&
     (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
@@ -133,6 +141,7 @@ export function validateBookDDB(item: BookDDB): boolean {
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
     typeof item.available === "string" &&
+    typeof item.copies === "number" &&
     (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
