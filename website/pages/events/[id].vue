@@ -1,5 +1,11 @@
 <template>
   <div class="mx-4">
+    <!-- back to all events -->
+    <div class="text-center ma-4">
+      <v-btn color="primary" rounded="pill" variant="outlined" to="/events/">
+        Back to All Events
+      </v-btn>
+    </div>
     <section-title title="KSRI Events" />
     <div class="text-h6 text-center" data-aos="fade-up-right">
       KSRI organises many events periodically from its inception till date
