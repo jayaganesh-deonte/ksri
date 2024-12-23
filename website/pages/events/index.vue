@@ -66,6 +66,9 @@ const events = storeEvents.events;
 
 let activeCategory = ref("All");
 
+const data = await queryContent("events", "events").findOne();
+const categoriesData = await queryContent("events", "categories").findOne();
+
 const getUpcomingEvents = () => {
   const today = new Date();
   const upcomingEvents = events.filter((event) => {

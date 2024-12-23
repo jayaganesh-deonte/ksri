@@ -62,7 +62,8 @@ Resources:
             TableName: !Ref masterTable
         - DynamoDBWritePolicy:
             TableName: !Ref masterTable
-
+        - SSMParameterReadPolicy:
+            ParameterName: "*"
     Metadata:
       BuildMethod: esbuild
       BuildProperties:
@@ -93,6 +94,7 @@ Resources:
             TableName: !Ref masterTable
         - DynamoDBWritePolicy:
             TableName: !Ref masterTable
+
       Events:
         Schedule:
           Type: Schedule

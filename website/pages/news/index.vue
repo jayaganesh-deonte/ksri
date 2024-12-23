@@ -37,4 +37,6 @@ import NewsCard from "~/components/news/NewsCard.vue";
 import { newsStore } from "~/stores/newsStore";
 
 const storeNews = await newsStore();
+
+const data = await queryContent("news").findOne();
 </script>
