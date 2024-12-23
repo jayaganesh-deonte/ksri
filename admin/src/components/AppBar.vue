@@ -51,10 +51,16 @@ const drawer = ref(false);
 const store = useAppStore();
 
 const allOptions = [
+  // Dashboard
+  {
+    title: "Dashboard",
+    path: "/",
+    icon: "mdi-view-dashboard",
+  },
   // Main/Home Items
   {
     title: "Dainandini",
-    path: "/",
+    path: "/dainandini",
     icon: "mdi-book-music",
   },
 

@@ -407,6 +407,25 @@ const editItem = (item) => {
   dialog.value = true;
 };
 
+const updatePendingForDeployment = async () => {
+  //make POST call to /deploy/pending
+  let idToken = await getUserIdToken();
+
+  store.isDeploymentPending = true;
+
+  const apiEndpoint = import.meta.env.VITE_API_URL + "/deploy/pending";
+
+  await axios.post(
+    apiEndpoint,
+    {},
+    {
+      headers: {
+        Authorization: `${idToken}`,
+      },
+    }
+  );
+};
+
 const deleteItem = (item) => {
   // check if delete disabled for user
   if (isEditDisabledForUser.value) {
@@ -434,6 +453,9 @@ const deleteItem = (item) => {
         });
 
         if (response.status === 200) {
+          // update pending for deployment
+          await updatePendingForDeployment();
+
           await fetchItems();
           emit("item-deleted", item);
           $toast.open({
@@ -506,6 +528,9 @@ const save = async () => {
       });
 
       await fetchItems();
+
+      // update pending for deployment
+      await updatePendingForDeployment();
 
       // Emit events for parent component to listen
       if (editedIndex.value === -1) {

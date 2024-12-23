@@ -1,6 +1,8 @@
 // Utilities
 // import logger from "@/utilities/logger";
 import { defineStore } from "pinia";
+import axios from "axios";
+import { getUserIdToken } from "@/services/auth";
 
 export const useAppStore = defineStore("app", {
   state: () => ({
@@ -23,6 +25,11 @@ export const useAppStore = defineStore("app", {
 
     navDrawer: true,
     isLoading: false,
+
+    // deployment status
+    deploymentStatus: {},
+    isDeploymentPending: false,
+    isDeploymentInProgress: false,
   }),
   actions: {
     setUser(user) {
@@ -37,10 +44,83 @@ export const useAppStore = defineStore("app", {
         this.isReadOnlyUser = true;
       }
     },
+    async getDeploymentStatus() {
+      const apiEndpoint = import.meta.env.VITE_API_URL + "/deploy/status";
+      // /deploy/status
+      const idToken = getUserIdToken();
+      const response = await axios.get(apiEndpoint, {
+        headers: {
+          Authorization: `${idToken}`,
+        },
+      });
+      console.log(response);
+      if (response.status == 200) {
+        this.deploymentStatus = response.data;
+        if (this.deploymentStatus.status == "IN_PROGRESS") {
+          this.isDeploymentInProgress = true;
+        } else {
+          this.isDeploymentInProgress = false;
+        }
+      }
+    },
+    async checkDeploymentStatus() {
+      const apiEndpoint = import.meta.env.VITE_API_URL + "/deploy/pending";
+
+      const idToken = getUserIdToken();
+      const response = await axios.get(apiEndpoint, {
+        headers: {
+          Authorization: `${idToken}`,
+        },
+      });
+      console.log(response);
+      if (response.status == 200) {
+        this.deploymentStatus = response.data;
+        if (this.deploymentStatus.status == "PENDING") {
+          this.isDeploymentPending = true;
+        }
+      }
+    },
+    async deploy() {
+      if (this.isEditDisabledForUser) {
+        return;
+      }
+      const apiEndpoint = import.meta.env.VITE_API_URL + "/deploy";
+      const idToken = getUserIdToken();
+
+      this.isDeploymentInProgress = true;
+
+      const response = await axios.post(
+        apiEndpoint,
+        {
+          metadata: {
+            created_at: new Date().toISOString(),
+            created_by: this.user.name,
+            updated_at: new Date().toISOString(),
+            updated_by: this.user.name,
+          },
+        },
+        {
+          headers: {
+            Authorization: `${idToken}`,
+          },
+        }
+      );
+      console.log(response);
+      if (response.status == 200) {
+        this.isDeploymentPending = true;
+      }
+    },
   },
   getters: {
     isEditDisabledForUser() {
-      return this.isReadOnlyUser;
+      // return this.isReadOnlyUser;
+      // if is deploy status is in progress, disable edit
+      if (this.isDeploymentInProgress) {
+        return true;
+      }
+      if (this.isReadOnlyUser) {
+        return true;
+      }
     },
   },
 });

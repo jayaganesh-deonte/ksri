@@ -23,6 +23,7 @@ deployRoute.post("/deploy", async (req: Request, res: Response) => {
     // update updateDeploymentHistory
     const metadata = req.body;
     await updateDeploymentHistory(metadata);
+    await updatePendingDeployment("SUCCESS");
 
     const github_pat = await getParameter("/deonte/github/action/pat");
     const owner = "jayaganesh-deonte";
@@ -35,6 +36,7 @@ deployRoute.post("/deploy", async (req: Request, res: Response) => {
     }
 
     await triggerGithubWorkflow(github_pat, owner, repo, workflowId, ref);
+
     res.status(200).json({ message: "Deployment triggered successfully" });
   } catch (error) {
     console.error("Error triggering deployment:", error);
@@ -139,6 +141,67 @@ deployRoute.get("/deploy/history", async (req: Request, res: Response) => {
     console.error("Error getting deployment history:", error);
     res.status(500).json({
       error: "Failed to get deployment history",
+      details: error instanceof Error ? error.message : "Unknown error",
+    });
+  }
+});
+
+const updatePendingDeployment = async (status: string) => {
+  const item = {
+    PK: "ENTITYTYPE#DEPLOYMENT#PENDING",
+    SK: "ENTITYTYPE#DEPLOYMENT#PENDING",
+    entityType: "ENTITYTYPE#DEPLOYMENT#PENDING",
+    timestamp: new Date().toISOString(),
+    status: status,
+  };
+  await documentClient.put({
+    TableName: PROJECTS_TABLE,
+    Item: item,
+  });
+};
+
+// POST: pending changes available to deploy
+deployRoute.post("/deploy/pending", async (req: Request, res: Response) => {
+  try {
+    //  If deployment is already in progress, return error
+    const deploymentStatus = await getDeploymentStatus();
+
+    if (deploymentStatus.status === "IN_PROGRESS") {
+      throw new Error("Deployment is already in progress");
+    }
+
+    await updatePendingDeployment("PENDING");
+    res.status(200).json({ message: "Pending changes available to deploy" });
+  } catch (error) {
+    console.error("Error triggering deployment:", error);
+    res.status(500).json({
+      error: "Failed to trigger deployment",
+      details: error instanceof Error ? error.message : "Unknown error",
+    });
+  }
+});
+
+// GET: pending changes available to deploy
+deployRoute.get("/deploy/pending", async (req: Request, res: Response) => {
+  try {
+    const params = {
+      TableName: PROJECTS_TABLE,
+      Key: {
+        PK: "ENTITYTYPE#DEPLOYMENT#PENDING",
+        SK: "ENTITYTYPE#DEPLOYMENT#PENDING",
+      },
+    };
+    const result = await documentClient.get(params);
+    const item = result.Item || {};
+    let response = {
+      status: item.status,
+      timestamp: item.timestamp,
+    };
+    res.status(200).json(response);
+  } catch (error) {
+    console.error("Error getting pending changes:", error);
+    res.status(500).json({
+      error: "Failed to get pending changes",
       details: error instanceof Error ? error.message : "Unknown error",
     });
   }
