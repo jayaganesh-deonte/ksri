@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { getUserIdToken } from "@/services/auth";
+
 import axios from "axios";
 export default {
   data() {
@@ -54,10 +56,16 @@ export default {
     },
   },
   async mounted() {
+    const idToken = await getUserIdToken();
+
     const galleryCollectionUrl =
       import.meta.env.VITE_API_URL + "/gallery/collections";
 
-    const response = await axios.get(galleryCollectionUrl);
+    const response = await axios.get(galleryCollectionUrl, {
+      headers: {
+        Authorization: `${idToken}`,
+      },
+    });
 
     this.galleryCollections = response.data.map(
       (collection) => collection.name
