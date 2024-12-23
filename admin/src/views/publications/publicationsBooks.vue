@@ -80,6 +80,7 @@ const bookFields = [
 const bookHeaders = [
   { title: "Title", key: "title" },
   { title: "Subtitle", key: "subtitle" },
+  { title: "Author", key: "author" },
   { title: "Price", key: "price" },
   { title: "Available", key: "available" },
   { title: "Publication", key: "publication" },
