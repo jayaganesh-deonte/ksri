@@ -1,15 +1,56 @@
 <template>
-  <generic-crud
-    entityName="Student"
-    :apiEndpoint="apiEndpoint"
-    :entityFields="studentFields"
-    :headers="headers"
-    :addIdToPayload="true"
-  />
+  <div>
+    <generic-crud
+      v-if="!isLoading"
+      entityName="Student"
+      :apiEndpoint="apiEndpoint"
+      :entityFields="studentFields"
+      :headers="headers"
+      :addIdToPayload="true"
+    />
+    <v-progress-circular
+      v-if="isLoading"
+      indeterminate
+      color="primary"
+    ></v-progress-circular>
+  </div>
 </template>
 
 <script setup>
+import axios from "axios";
+
+import { ref } from "vue";
+
 const apiEndpoint = import.meta.env.VITE_API_URL + "/students";
+
+import { getUserIdToken } from "@/services/auth";
+
+let isLoading = ref(true);
+let supervisors = [];
+
+const getSupervisors = async () => {
+  isLoading.value = true;
+
+  const idToken = await getUserIdToken();
+  const apiEndpoint = import.meta.env.VITE_API_URL + "/supervisor";
+
+  const response = await axios.get(apiEndpoint, {
+    headers: {
+      Authorization: `${idToken}`,
+    },
+  });
+
+  if (response.status === 200) {
+    // get names only
+    const supervisorsWithName = response.data.map(
+      (supervisor) => supervisor.name
+    );
+    Object.assign(supervisors, supervisorsWithName);
+    isLoading.value = false;
+  }
+};
+
+await getSupervisors();
 
 const studentFields = [
   {
@@ -34,7 +75,8 @@ const studentFields = [
   {
     key: "supervisor",
     label: "Supervisor",
-    type: "text",
+    type: "auto-complete",
+    items: supervisors,
     rules: [(v) => !!v || "Supervisor is required"],
   },
   {
