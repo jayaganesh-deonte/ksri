@@ -63,7 +63,7 @@
       <v-divider />
 
       <!-- images -->
-      <div class="my-4 d-flex flex-wrap justify-center align-center">
+      <!-- <div class="my-4 d-flex flex-wrap justify-center align-center">
         <v-img
           v-for="(image, index) in event.images"
           :key="index"
@@ -73,7 +73,23 @@
           :data-aos-delay="index * 100"
           fit
         ></v-img>
-      </div>
+      </div> -->
+      <v-row class="ma-4 pa-2">
+        <v-col
+          v-for="(image, index) in event.images"
+          :key="index"
+          cols="12"
+          md="4"
+        >
+          <v-img
+            :src="image"
+            data-aos="fade-up"
+            :data-aos-delay="index * 100"
+            fit
+            :height="`${$device.isMobile ? '' : '30vh'}`"
+          ></v-img>
+        </v-col>
+      </v-row>
     </v-card>
   </div>
 </template>

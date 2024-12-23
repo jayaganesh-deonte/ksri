@@ -90,6 +90,10 @@ var pageDetails = [
     {
         endpoint: "/events",
         outputFile: "../website/content//events/events.json",
+        //  sort by date which is in yyyy-mm-dd format
+        filter: function (data) {
+            return data.sort(function (a, b) { return new Date(b.date).getTime() - new Date(a.date).getTime(); });
+        },
     },
     // /gallery/collections
     {

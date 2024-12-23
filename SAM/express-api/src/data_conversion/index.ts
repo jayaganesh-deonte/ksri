@@ -847,6 +847,15 @@ const eventsFromAdminApp = async () => {
       }
     }
 
+    // if date is not there then add 01-01-2000 to it
+    if (event.event_date === null || event.event_date === "") {
+      event.event_date = "2000-01-01";
+    }
+    // for some date only year is available if so add 01-01 to it
+    if (event.event_date.length === 4) {
+      event.event_date = event.event_date + "-01-01";
+    }
+
     convertedEvents.push({
       title: event.event_name,
       subtitle: event.title,
@@ -875,9 +884,258 @@ const eventsFromAdminApp = async () => {
   );
 };
 
+const downloadImages = async () => {
+  const images = [
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-25-at-11.54.47-am-(1).jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-25-at-11.54.47-am-(2).jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-25-at-11.54.48-am-(1).jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-25-at-11.54.48-am-(2).jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-25-at-11.55.11-am-(1).jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-25-at-11.55.11-am.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-25-at-11.55.18-am-(1).jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-25-at-11.55.19-am.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-25-at-11.55.20-am-(1).jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-25-at-11.55.20-am.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-11.33.15-am.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-11.33.16-am.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.13-pm-nUU.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.15-pm-E2y.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.16-pm-BYx.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.21-pm-(1)-gtU.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.21-pm-v78.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.23-pm-s25.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.24-pm-yEk.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.29-pm-fR5.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.31-pm-9mG.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.34-pm-jjM.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.39-pm-kr5.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.41-pm-2Qz.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.46-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.50-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.49.59-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.01-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.04-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.07-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.17-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.21-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.26-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.29-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.38-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.40-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.44-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.48-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.50-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.52-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.54-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.55-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.56-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.57-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.50.58-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.00-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.02-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.03-pm-(1).jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.03-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.05-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.06-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.07-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.09-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.11-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.13-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.14-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.15-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.16-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+    {
+      src: "https://ksri.in/Asset/upload/whatsapp-image-2024-11-26-at-12.51.17-pm.jpg",
+      alt: "National Seminar on Vedāṅgas and Upavedas",
+    },
+  ];
+  for (const image of images) {
+    const response = await fetch(image.src);
+    const blob = await response.blob();
+    const buffer = Buffer.from(await blob.arrayBuffer());
+    const fileName = image.src.split("/").pop();
+    const filePath = `./images/${fileName}`;
+    writeFileSync(filePath, buffer);
+  }
+};
+
 const main = async () => {
   // await insertEndownments();
-  await insertEvents();
+  // await insertEvents();
   // await insertLibraryArticles();
   // await insertLibraryBooks();
   // await insertLibraryJournals();
@@ -900,6 +1158,8 @@ const main = async () => {
   // await insertpresentGoverningBodyMembers();
   // await insertGoveringBodyPast();
   // await eventsFromAdminApp();
+
+  await downloadImages();
 };
 
 main();

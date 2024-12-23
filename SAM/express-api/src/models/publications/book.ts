@@ -9,7 +9,9 @@
 //     "id": "7682d76aaf06a6c5f319a561a4c6cce0660abe5c3ce57869fba0a80791d56e08"
 //     "publication": "",
 //     "available": true,
-//     "copies": 0
+//     "copies": 0,
+//     "author": "",
+//     "yearOfPublication": ""
 // }
 
 export interface Book {
@@ -23,6 +25,8 @@ export interface Book {
   available: string;
   copies: string;
   metadata?: { [key: string]: any };
+  author: string;
+  yearOfPublication: string;
 }
 
 export interface BookDDB {
@@ -39,6 +43,8 @@ export interface BookDDB {
   available: string;
   copies: string;
   metadata?: { [key: string]: any };
+  author: string;
+  yearOfPublication: string;
 }
 
 export function validateBook(item: Book): boolean {
@@ -52,6 +58,8 @@ export function validateBook(item: Book): boolean {
     typeof item.publication === "string" &&
     typeof item.available === "string" &&
     typeof item.copies === "string" &&
+    typeof item.author === "string" &&
+    typeof item.yearOfPublication === "string" &&
     (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
@@ -71,6 +79,8 @@ export function toDynamoDB(item: Book): BookDDB {
     available: item.available,
     copies: item.copies,
     metadata: item.metadata,
+    author: item.author,
+    yearOfPublication: item.yearOfPublication,
   };
 }
 
@@ -86,6 +96,8 @@ export function fromDynamoDB(item: BookDDB): Book {
     available: item.available,
     copies: item.copies,
     metadata: item.metadata,
+    author: item.author,
+    yearOfPublication: item.yearOfPublication,
   };
 }
 
@@ -104,6 +116,8 @@ export function isBook(item: any): item is BookDDB {
     typeof item.publication === "string" &&
     typeof item.available === "string" &&
     typeof item.copies === "number" &&
+    typeof item.author === "string" &&
+    typeof item.yearOfPublication === "string" &&
     (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
@@ -123,6 +137,8 @@ export function isBookDDB(item: any): item is BookDDB {
     typeof item.publication === "string" &&
     typeof item.available === "string" &&
     typeof item.copies === "number" &&
+    typeof item.author === "string" &&
+    typeof item.yearOfPublication === "string" &&
     (item.metadata === undefined || typeof item.metadata === "object")
   );
 }
@@ -142,6 +158,8 @@ export function validateBookDDB(item: BookDDB): boolean {
     typeof item.publication === "string" &&
     typeof item.available === "string" &&
     typeof item.copies === "number" &&
+    typeof item.author === "string" &&
+    typeof item.yearOfPublication === "string" &&
     (item.metadata === undefined || typeof item.metadata === "object")
   );
 }

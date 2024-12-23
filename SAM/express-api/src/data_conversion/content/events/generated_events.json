@@ -4,7 +4,7 @@
         "subtitle": "Seminar on Arthasastra - 1967",
         "description": "Dr.Friedrich Wilhelm, University of Munich, Dr.V.Raghavan, Sri K.BalasubramaniaIyer, Sri G.HariharaSastri and Dr.K.Ezhuutachan participated.",
         "venue": "-",
-        "date": "1967",
+        "date": "1967-01-01",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
@@ -20,7 +20,7 @@
         "subtitle": "Seminars during the Silver Jubilee celebration.",
         "description": "Kuppuswami Sastri Research Institute Silver Jubilee celebration.",
         "venue": "KSRI",
-        "date": "1971",
+        "date": "1971-01-01",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
@@ -36,7 +36,7 @@
         "subtitle": "Birth Centenary Celebrations of Prof.S.KuppuswamiSastri",
         "description": "Seminars during Birth Centenary Celebrations of Prof.S.KuppuswamiSastri - on diverse subjects...",
         "venue": "KSRI",
-        "date": "1981",
+        "date": "1981-01-01",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
@@ -52,7 +52,7 @@
         "subtitle": "Siva Temple & Temple Rituals(Satyamurthi Endowment)",
         "description": "Siva Temple & Temple Rituals ( Satyamurthi Endowment) at K.S.R.I.",
         "venue": "KSRI",
-        "date": "1983",
+        "date": "1983-01-01",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
@@ -68,7 +68,7 @@
         "subtitle": "Domestic Vaishnava Rituals",
         "description": "Domestic Vaishnava Rituals in Kuppuswami Sastri Research Institute",
         "venue": "KSRI",
-        "date": "1983",
+        "date": "1983-01-01",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
@@ -84,7 +84,7 @@
         "subtitle": "UmapatiSivacarya, His Life, work and Contribution to Saivism",
         "description": "UmapatiSivacarya, His Life, work and Contribution to Saivism (Satyamurthi Endowment) at K.S.R.I",
         "venue": "KSRI",
-        "date": "1988",
+        "date": "1988-01-01",
         "images": [],
         "category": [
             "Seminars"
@@ -95,7 +95,7 @@
         "subtitle": "Symposium on Temple Arts",
         "description": "Symposium on Temple Arts (jointly with the Institute of Traditional Culture)",
         "venue": "KSRI",
-        "date": "1988",
+        "date": "1988-01-01",
         "images": [],
         "category": [
             "Seminars"
@@ -106,7 +106,7 @@
         "subtitle": "Seminar on Vaishnava Agamas",
         "description": "Seminar on Vaishnava Agamas, 1989 - Sri. Krishnaswami Iyengar, Justice Sri.S. Ranganathan, Mr.B.Madhavan",
         "venue": "KSRI ",
-        "date": "1989",
+        "date": "1989-01-01",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/19.jpg",
@@ -122,7 +122,7 @@
         "subtitle": "Vedic Sammelan",
         "description": "Vedic Sammelan (sponsored by the Rashtriya Veda VidyaPratishthan, New Delhi)",
         "venue": "New Delhi",
-        "date": "1990",
+        "date": "1990-01-01",
         "images": [],
         "category": [
             "Seminars"
@@ -133,7 +133,7 @@
         "subtitle": "Saiva Rituals & Philosophy (Satyamurthi Endowment).",
         "description": "Saiva Rituals & Philosophy (Satyamurthi Endowment) in K.S.R.I",
         "venue": "KSRI",
-        "date": "1992",
+        "date": "1992-01-01",
         "images": [],
         "category": [
             "Seminars"
@@ -144,7 +144,7 @@
         "subtitle": " Golden Jubilee of the Institute",
         "description": "Sanskrit & Science (in connection with the Golden Jubilee of the Institute).",
         "venue": "KSRI",
-        "date": "1994",
+        "date": "1994-01-01",
         "images": [],
         "category": [
             "Seminars"
@@ -155,7 +155,7 @@
         "subtitle": "Golden Jubilee of the Institute",
         "description": "Sanskrit & Medical Science (in connection with the Golden Jubilee of the Institute).",
         "venue": "KSRI",
-        "date": "1995",
+        "date": "1995-01-01",
         "images": [],
         "category": [
             "Seminars"
@@ -166,8 +166,35 @@
         "subtitle": "Golden Jubilee Valedictory function",
         "description": "Sanskrit & South Indian Languages (during Golden Jubilee Valedictory function).",
         "venue": "KSRI",
-        "date": "1996",
+        "date": "1996-01-01",
         "images": [],
+        "category": [
+            "Seminars"
+        ]
+    },
+    {
+        "title": "Ancient Indian Mathematics and Astronomy",
+        "subtitle": "70th Year Anniversary of KSRI - 4 day Workshop",
+        "description": "Ancient Indian Mathematics and Astronomy (70th Year Anniversary of KSRI) - Four day Workshop",
+        "venue": "KSRI",
+        "date": "2000-01-01",
+        "images": [],
+        "category": [
+            "Workshop"
+        ]
+    },
+    {
+        "title": "A Colloquim on \"Interpretation of Mimamsa Sutras\"",
+        "subtitle": "A Colloquim on \"Interpretation of Mimamsa Sutras\"",
+        "description": "A Colloquim on \"Interpretation of Mimamsa Sutras\" at K.S.R.I.",
+        "venue": "KSRI",
+        "date": "2000-01-01",
+        "images": [
+            {
+                "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
+                "alt": "A Colloquim on \"Interpretation of Mimamsa Sutras\""
+            }
+        ],
         "category": [
             "Seminars"
         ]
@@ -177,7 +204,7 @@
         "subtitle": "Ancient Indian Scientific Knowledge",
         "description": "Ancient Indian Scientific Knowledge (Jointly with Samskrita Academy, Chennai)",
         "venue": "Samskrita Academy, Chennai",
-        "date": "2003",
+        "date": "2003-01-01",
         "images": [],
         "category": [
             "Seminars"
@@ -188,7 +215,7 @@
         "subtitle": "Ancient Indian Polity",
         "description": "Ancient Indian Polity (Jointly with Samskrita Academy, Chennai)",
         "venue": "Samskrita Academy, Chennai",
-        "date": "2003",
+        "date": "2003-01-01",
         "images": [],
         "category": [
             "Seminars"
@@ -199,7 +226,7 @@
         "subtitle": "Religion and Philosophy of Vaishnava Agamas",
         "description": "Religion and Philosophy of Vaishnava Agamas - A three day National Seminar",
         "venue": "KSRI",
-        "date": "2008",
+        "date": "2008-01-01",
         "images": [],
         "category": [
             "Seminars"
@@ -210,7 +237,7 @@
         "subtitle": "Sanskrit Literature (Dr.V.Raghavan Birth Centenary Celebration)",
         "description": "Sanskrit Literature (Dr.V.Raghavan Birth Centenary Celebration) - Two Day Seminar",
         "venue": "KSRI",
-        "date": "2009",
+        "date": "2009-01-01",
         "images": [],
         "category": [
             "Seminars"
@@ -221,7 +248,7 @@
         "subtitle": "70th Year Anniversary of KSRI",
         "description": "Tattvatraya- Jiva- Jagat- Iswara (70th Year Anniversary of KSRI) - Two day National Seminar",
         "venue": "KSRI",
-        "date": "2015",
+        "date": "2015-01-01",
         "images": [],
         "category": [
             "Endowment Lectures"
@@ -232,7 +259,7 @@
         "subtitle": "70th Year Anniversary of KSRI",
         "description": "Sanskrit and Tamil Nadu (70th Year Anniversary of KSRI) - Two day National Seminar",
         "venue": "KSRI",
-        "date": "2016",
+        "date": "2016-01-01",
         "images": [],
         "category": [
             "Seminars"
@@ -243,7 +270,7 @@
         "subtitle": "70th Year Anniversary of KSRI",
         "description": "Environmental and Ecological Awareness in Ancient India (70th Year Anniversary of KSRI) - Two day National Seminar",
         "venue": "KSRI",
-        "date": "2016",
+        "date": "2016-01-01",
         "images": [],
         "category": [
             "Seminars"
@@ -578,7 +605,7 @@
         "subtitle": "Jīrnoddhāradasaka of Nigamajñāna Deśika – Critical edition and study",
         "description": "Presenter: Mr. K. Nagarajan<br/>\nSupervisor : Dr. K. S. Balasubramanian, Dy. Director, The KSRI<br/>",
         "venue": "KSRI In-house",
-        "date": "2020-10-07 00:00:00",
+        "date": "2020-10-07",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/02-mr.-k.-nagarajan_2.jpg",
@@ -594,7 +621,7 @@
         "subtitle": "Pārijāta Nāṭaka of Kumāra Tātācārya: A Critical Study",
         "description": "Presenter: Mr. P. C. Muralidharan<br/>\nSupervisor : Dr. K. S. Balasubramanian, Dy. Director, The KSRI<br/>",
         "venue": "KSRI In-house",
-        "date": "2020-10-08 00:00:00",
+        "date": "2020-10-08",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/03-mr.-p.-c.-muralidharan_2.jpg",
@@ -621,7 +648,7 @@
         "subtitle": "Kṣemendra's Satirical Works - A Socio-Cultural study",
         "description": "Presenter: Mr. G. Venkataraman<br/>\nSupervisor : Dr. T. V. Vasudeva, Dy. Director, The KSRI<br/>",
         "venue": "KSRI In-house",
-        "date": "2020-11-12 00:00:00",
+        "date": "2020-11-12",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/04-mr.-g.-venkataraman_2.jpg",
@@ -712,7 +739,7 @@
         "subtitle": "Sangitamuktavali In Prayoga",
         "description": "Dr. Sujatha Mohan\r\n(Head, Department of Natya, Dr.MGR Janaki College of Arts & Science for Women, Chennai) speaks on Sangitamuktavali In Prayoga",
         "venue": "Online Event",
-        "date": "2021-01-23 18:30:00",
+        "date": "2021-01-23",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/sri-r.-srinivasa-tatachari-endowment.png",
@@ -739,7 +766,7 @@
         "subtitle": "Smt. Balambal Memorial Endowment - The Samskrita Academy",
         "description": "Speaker : Lecture by Dr. P.C. Muralidharan<br/>\nThis is being organised through Cisco Webex.",
         "venue": "Online",
-        "date": "2021-03-12 18:00:00",
+        "date": "2021-03-12",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/event-invite.png",
@@ -755,7 +782,7 @@
         "subtitle": "Smt. Balambal Memorial Endowment - The Samskrita Academy",
         "description": "Speaker : Lecture by Dr. P.C. Muralidharan <br/>\nThis is being organised through Cisco Webex.",
         "venue": "Online",
-        "date": "2021-04-12 18:00:00",
+        "date": "2021-04-12",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/event-invite.png",
@@ -798,7 +825,7 @@
         "subtitle": "Concept of Trika in Natya Sastra",
         "description": "Dr. Padmaja Suresh\n https:/tksr.webex.com/join/KSRI\n6 p.m. on Saturday 20th November 2021.",
         "venue": "Webinar",
-        "date": "2021-11-20 18:00:00",
+        "date": "2021-11-20",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/concept-of-trika-in-natya-sastra.png",
@@ -814,7 +841,7 @@
         "subtitle": "SUBHĀṢITANĪVῙ  OF  ŚRĪ  VEDĀNTA  DEŚIKA",
         "description": " Speaker : Dr. O.R.Devanathan  ",
         "venue": "https:/tksr.webex.com/join/KSRI at 6.00p.m.",
-        "date": "2021-11-27  18:00:00",
+        "date": "2021-11-27",
         "images": [],
         "category": [
             "Endowment Lectures"
@@ -841,7 +868,7 @@
         "subtitle": "ĀSTHĀNAKŌLĀHALAM – A Tamil Treatise  on Indian Mathematics",
         "description": "Speaker: Dr.Sita Sundar Ram",
         "venue": "Webinar : Via ZOOM",
-        "date": "2021-12-10 18:00:00",
+        "date": "2021-12-10",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/screenshot-(47).png",
@@ -1989,7 +2016,7 @@
         "subtitle": "Sredhi Vyavahara -Progressions in Ancient Indian Mathematics ",
         "description": "Ph.D. candidate Ms. B. Vijayalakshmi, under the supervision of Dr. V. Yamuna Devi, Deputy Director, The KSRI,   submitted her synopsis on \"Sredhi Vyavahara -Progressions in Ancient Indian Mathematics\" at the Institute premises on 20th August 2024. ",
         "venue": "Sri Chandrasekharendra Saraswati Madapam, The KSRI",
-        "date": "2024-08-20 11:00 ",
+        "date": "2024-08-20",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/viji-maam.jpg",
@@ -2117,7 +2144,7 @@
         "subtitle": "75th ANNIVERSARY CELEBRATIONS -  VALEDICTORY FUNCTION",
         "description": "The Kuppuswami Sastri Research Institute is celebrating its 75th anniversary. To commemorate this milestone the Institute organized various National Workshops, Seminars and Lectures on various subjects like Bhakti, Art& Architecture, Sanskrit Literature, Ancient Indian Mathematics and Astronomy. \nThe Valedictory Function of the 75th Anniversary Celebrations will be celebrated on 13th Sepetember, 2024 at 5.00pm at The Madras Sanskrit College Premises.\n\nDr. N. Gopalaswami IAS(Retd.) will preside over the function and release the book \"ŚEṢASAMHITĀ\" and honor the prominent donors.\n\nDr. S. Ramaratnam , Chancellor, Jagadguru Kripalu University, Odisha will deliver the Valedictory address.",
         "venue": "Sri Chandrasekharendra Saraswati Madapam, The KSRI",
-        "date": "2024-09-13 05:00:00",
+        "date": "2024-09-13",
         "images": [
             {
                 "src": "https://d30y75l38k1y9.cloudfront.net/upload/75th-year-valedictory-function-green-b_page-0001.jpg",
@@ -2674,33 +2701,6 @@
         ],
         "category": [
             "Events"
-        ]
-    },
-    {
-        "title": "Ancient Indian Mathematics and Astronomy",
-        "subtitle": "70th Year Anniversary of KSRI - 4 day Workshop",
-        "description": "Ancient Indian Mathematics and Astronomy (70th Year Anniversary of KSRI) - Four day Workshop",
-        "venue": "KSRI",
-        "date": "",
-        "images": [],
-        "category": [
-            "Workshop"
-        ]
-    },
-    {
-        "title": "A Colloquim on \"Interpretation of Mimamsa Sutras\"",
-        "subtitle": "A Colloquim on \"Interpretation of Mimamsa Sutras\"",
-        "description": "A Colloquim on \"Interpretation of Mimamsa Sutras\" at K.S.R.I.",
-        "venue": "KSRI",
-        "date": null,
-        "images": [
-            {
-                "src": "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png",
-                "alt": "A Colloquim on \"Interpretation of Mimamsa Sutras\""
-            }
-        ],
-        "category": [
-            "Seminars"
         ]
     }
 ]

@@ -19,6 +19,13 @@ const bookFields = [
     rules: [(v) => !!v || "Title is required"],
     editDisabled: true,
   },
+  // author
+  {
+    key: "author",
+    label: "Author",
+    type: "text",
+    rules: [(v) => !!v || "Author is required"],
+  },
   {
     key: "subtitle",
     label: "Subtitle",
@@ -46,8 +53,15 @@ const bookFields = [
   {
     key: "publication",
     label: "Publication",
-    type: "text",
+    type: "auto-complete",
     rules: [(v) => !!v || "Publication is required"],
+    items: ["KSRI", "Samskrita Academy"],
+  },
+  {
+    key: "yearOfPublication",
+    label: "Year of Publication",
+    type: "text",
+    rules: [(v) => !!v || "Year of Publication is required"],
   },
   {
     key: "copies",

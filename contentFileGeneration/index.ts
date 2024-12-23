@@ -56,6 +56,11 @@ const pageDetails = [
   {
     endpoint: "/events",
     outputFile: "../website/content//events/events.json",
+    //  sort by date which is in yyyy-mm-dd format
+    filter: (data: any[]) =>
+      data.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+      ),
   },
   // /gallery/collections
   {
