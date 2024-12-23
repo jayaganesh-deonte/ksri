@@ -27,6 +27,18 @@ export interface Faculty {
   type: FacultyType;
   metadata?: { [key: string]: string };
   orderId?: string;
+  achievementCounts?: { [key: string]: string };
+  // teachingExperience => array of objects
+  teachingExperience?: { [key: string]: string };
+  phdCandidates?: { [key: string]: string };
+  mphilCandidates?: { [key: string]: string };
+  academicPositions?: { [key: string]: string };
+  booksPublished?: { [key: string]: string };
+  articlesPublished?: { [key: string]: string };
+  projects?: { [key: string]: string };
+  seminars?: { [key: string]: string };
+  lectures?: { [key: string]: string };
+  awards?: { [key: string]: string };
 }
 
 export interface FacultyDDB {
@@ -45,6 +57,17 @@ export interface FacultyDDB {
   type: FacultyType;
   metadata?: { [key: string]: string };
   orderId?: string;
+  achievementCounts?: { [key: string]: string };
+  teachingExperience?: { [key: string]: string };
+  phdCandidates?: { [key: string]: string };
+  mphilCandidates?: { [key: string]: string };
+  academicPositions?: { [key: string]: string };
+  booksPublished?: { [key: string]: string };
+  articlesPublished?: { [key: string]: string };
+  projects?: { [key: string]: string };
+  seminars?: { [key: string]: string };
+  lectures?: { [key: string]: string };
+  awards?: { [key: string]: string };
 }
 
 export function toDynamoDB(item: Faculty): FacultyDDB {
@@ -64,6 +87,17 @@ export function toDynamoDB(item: Faculty): FacultyDDB {
     type: item.type,
     metadata: item.metadata,
     orderId: item.orderId,
+    achievementCounts: item.achievementCounts,
+    teachingExperience: item.teachingExperience,
+    phdCandidates: item.phdCandidates,
+    mphilCandidates: item.mphilCandidates,
+    academicPositions: item.academicPositions,
+    booksPublished: item.booksPublished,
+    articlesPublished: item.articlesPublished,
+    projects: item.projects,
+    seminars: item.seminars,
+    lectures: item.lectures,
+    awards: item.awards,
   };
 }
 
@@ -85,7 +119,18 @@ export function isFacultyDDB(item: any): item is FacultyDDB {
     "profile" in item &&
     "type" in item &&
     "metadata" in item &&
-    "orderId" in item
+    "orderId" in item &&
+    "achievementCounts" in item &&
+    "teachingExperience" in item &&
+    "phdCandidates" in item &&
+    "mphilCandidates" in item &&
+    "academicPositions" in item &&
+    "booksPublished" in item &&
+    "articlesPublished" in item &&
+    "projects" in item &&
+    "seminars" in item &&
+    "lectures" in item &&
+    "awards" in item
   );
 }
 
@@ -103,6 +148,17 @@ export function fromDynamoDB(item: FacultyDDB): Faculty {
     type: item.type,
     metadata: item.metadata,
     orderId: item.orderId,
+    achievementCounts: item.achievementCounts,
+    teachingExperience: item.teachingExperience,
+    phdCandidates: item.phdCandidates,
+    mphilCandidates: item.mphilCandidates,
+    academicPositions: item.academicPositions,
+    booksPublished: item.booksPublished,
+    articlesPublished: item.articlesPublished,
+    projects: item.projects,
+    seminars: item.seminars,
+    lectures: item.lectures,
+    awards: item.awards,
   };
 }
 
@@ -121,7 +177,18 @@ export function isFaculty(item: any): item is Faculty {
     "profile" in item &&
     "type" in item &&
     "metadata" in item &&
-    "orderId" in item
+    "orderId" in item &&
+    "achievementCounts" in item &&
+    "teachingExperience" in item &&
+    "phdCandidates" in item &&
+    "mphilCandidates" in item &&
+    "academicPositions" in item &&
+    "booksPublished" in item &&
+    "articlesPublished" in item &&
+    "projects" in item &&
+    "seminars" in item &&
+    "lectures" in item &&
+    "awards" in item
   );
 }
 
@@ -142,6 +209,23 @@ export function validateFacultyDDB(item: FacultyDDB): boolean {
     (item.type === "ACADEMIC" || item.type === "NON ACADEMIC") &&
     typeof item.metadata === "object" &&
     (item.orderId === undefined || typeof item.orderId === "string")
+    // typeof item.achievementCounts === "object" &&
+    // (item.teachingExperience === undefined ||
+    //   typeof item.teachingExperience === "object") &&
+    // (item.phdCandidates === undefined ||
+    //   typeof item.phdCandidates === "object") &&
+    // (item.mphilCandidates === undefined ||
+    //   typeof item.mphilCandidates === "object") &&
+    // (item.academicPositions === undefined ||
+    //   typeof item.academicPositions === "object") &&
+    // (item.booksPublished === undefined ||
+    //   typeof item.booksPublished === "object") &&
+    // (item.articlesPublished === undefined ||
+    //   typeof item.articlesPublished === "object") &&
+    // (item.projects === undefined || typeof item.projects === "object") &&
+    // (item.seminars === undefined || typeof item.seminars === "object") &&
+    // (item.lectures === undefined || typeof item.lectures === "object") &&
+    // (item.awards === undefined || typeof item.awards === "object")
   );
 }
 
@@ -162,7 +246,7 @@ export function validateFaculty(item: Faculty): boolean {
     (item.type === "ACADEMIC" || item.type === "NON ACADEMIC") &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
-    (item.orderId === undefined || typeof item.orderId === "string")
+        Object.values(item.metadata).every((v) => typeof v === "string")))
+    // (item.orderId === undefined || typeof item.orderId === "string") &&
   );
 }

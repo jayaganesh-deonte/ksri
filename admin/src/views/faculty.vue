@@ -119,6 +119,349 @@ const facultyFields = [
     label: "Display Image",
     type: "image",
   },
+  {
+    key: "achievementCounts",
+    label: "Summary Counts",
+    isArray: true,
+    fields: [
+      {
+        key: "name",
+        label: "Name",
+        type: "text",
+      },
+      {
+        key: "count",
+        label: "Count",
+        type: "text",
+      },
+    ],
+  },
+  // teachingExperience
+  {
+    key: "teachingExperience",
+    label: "Teaching Experience",
+    isArray: true,
+    fields: [
+      {
+        key: "position",
+        label: "Position",
+        type: "text",
+      },
+      {
+        key: "duration",
+        label: "Duration",
+        type: "text",
+      },
+    ],
+  },
+  // phdCandidates
+  {
+    key: "phdCandidates",
+    label: "Phd Candidates",
+    isArray: true,
+    fields: [
+      // Name	Topic	Year of Joining	Status
+      {
+        key: "name",
+        label: "Name",
+        type: "text",
+      },
+      {
+        key: "topic",
+        label: "Topic",
+        type: "text",
+      },
+      {
+        key: "yearOfJoining",
+        label: "Year of Joining",
+        type: "text",
+      },
+      {
+        key: "status",
+        label: "Status",
+        type: "auto-complete",
+        items: [
+          "Degree awarded",
+          "Thesis submitted",
+          "Synopsis submitted",
+          "Ongoing",
+        ],
+      },
+    ],
+  },
+  // mphilCandidates
+  {
+    key: "mphilCandidates",
+    label: "Mphil Candidates",
+    isArray: true,
+    fields: [
+      // Name	Topic	Year of Joining	Status
+      {
+        key: "name",
+        label: "Name",
+        type: "text",
+      },
+      {
+        key: "topic",
+        label: "Topic",
+        type: "text",
+      },
+      {
+        key: "yearOfJoining",
+        label: "Year of Joining",
+        type: "text",
+      },
+      // {
+      //   key: "status",
+      //   label: "Status",
+      //   type: "auto-complete",
+      //   items: [
+      //     "Degree awarded",
+      //     "Thesis submitted",
+      //     "Synopsis submitted",
+      //     "Ongoing",
+      //   ],
+      // },
+    ],
+  },
+  // academicPositions
+  {
+    key: "academicPositions",
+    label: "Academic Positions",
+    isArray: true,
+    fields: [
+      // Position	Duration
+      {
+        key: "position",
+        label: "Position",
+        type: "text",
+      },
+      {
+        key: "duration",
+        label: "Duration",
+        type: "text",
+      },
+    ],
+  },
+  // booksPublished
+  {
+    key: "booksPublished",
+    label: "Books Published",
+    isArray: true,
+    fields: [
+      // S.No.	Title	Publisher	Year of publication	ISBN	Remarks
+      {
+        key: "sNo",
+        label: "S.No.",
+        type: "text",
+      },
+      {
+        key: "title",
+        label: "Title",
+        type: "text",
+      },
+      {
+        key: "publisher",
+        label: "Publisher",
+        type: "text",
+      },
+      {
+        key: "yearOfPublication",
+        label: "Year of publication",
+        type: "text",
+      },
+      {
+        key: "isbn",
+        label: "ISBN",
+        type: "text",
+      },
+      {
+        key: "remarks",
+        label: "Remarks",
+        type: "auto-complete",
+        items: ["Published", "To be published", "On-Going"],
+      },
+    ],
+  },
+  // articlesPublished
+  {
+    key: "articlesPublished",
+    label: "Articles Published",
+    isArray: true,
+    fields: [
+      // S.NO.	Title	Name of the Journal / Book / Magazine 	Month and Year	ISBN / ISSN No.	Remarks
+      {
+        key: "sNo",
+        label: "S.No.",
+        type: "text",
+      },
+      {
+        key: "title",
+        label: "Title",
+        type: "text",
+      },
+      {
+        key: "nameOfTheJournal",
+        label: "Name of the Journal / Book / Magazine",
+        type: "text",
+      },
+      {
+        key: "monthAndYear",
+        label: "Month and Year",
+        type: "text",
+      },
+      {
+        key: "isbnIssnNo",
+        label: "ISBN / ISSN No.",
+        type: "text",
+      },
+      {
+        key: "remarks",
+        label: "Remarks",
+        type: "auto-complete",
+        items: ["Published", "To be published"],
+      },
+    ],
+  },
+  // projects
+  {
+    key: "projects",
+    label: "Projects",
+    isArray: true,
+    fields: [
+      // Project Title	sponsor	Month and Year	ISBN	Remarks
+      {
+        key: "projectTitle",
+        label: "Project Title",
+        type: "text",
+      },
+      // description
+      {
+        key: "description",
+        label: "Description",
+        type: "text",
+      },
+
+      {
+        key: "sponsor",
+        label: "Sponsor",
+        type: "text",
+      },
+      {
+        key: "monthAndYear",
+        label: "Month and Year",
+        type: "text",
+      },
+      {
+        key: "isbn",
+        label: "ISBN",
+        type: "text",
+      },
+      {
+        key: "remarks",
+        label: "Remarks",
+        type: "auto-complete",
+        items: ["Completed", "On-Going", "Future Project"],
+      },
+    ],
+  },
+  // seminars
+  {
+    key: "seminars",
+    label: "Seminars",
+    isArray: true,
+    fields: [
+      // Sl.No 	Title of the paper	Seminar /Conference	Organisers	Month and Year
+      {
+        key: "slNo",
+        label: "Sl.No",
+        type: "text",
+      },
+      {
+        key: "titleOfThePaper",
+        label: "Title of the paper",
+        type: "text",
+      },
+      {
+        key: "seminarConference",
+        label: "Seminar /Conference",
+        type: "text",
+      },
+      {
+        key: "organisers",
+        label: "Organisers",
+        type: "text",
+      },
+      {
+        key: "monthAndYear",
+        label: "Month and Year",
+        type: "text",
+      },
+    ],
+  },
+  // lectures
+  {
+    key: "lectures",
+    label: "Lectures / Talks delivered",
+    isArray: true,
+    fields: [
+      // Sl.No 	TITLE OF THE TALK / LECTURE	ORGANISERS	Month and Year	YEAR
+      {
+        key: "slNo",
+        label: "Sl.No",
+        type: "text",
+      },
+      {
+        key: "titleOfTheTalk",
+        label: "TITLE OF THE TALK / LECTURE",
+        type: "text",
+      },
+      {
+        key: "organisers",
+        label: "ORGANISERS",
+        type: "text",
+      },
+      {
+        key: "monthAndYear",
+        label: "Month and Year",
+        type: "text",
+      },
+      {
+        key: "year",
+        label: "YEAR",
+        type: "text",
+      },
+    ],
+  },
+  // awards
+  {
+    key: "awards",
+    label: "Awards & Recognitions",
+    isArray: true,
+    fields: [
+      // Sl.No 	Title	Organisation	Year
+      {
+        key: "slNo",
+        label: "Sl.No",
+        type: "text",
+      },
+      {
+        key: "title",
+        label: "Title",
+        type: "text",
+      },
+      {
+        key: "organisation",
+        label: "Organisation",
+        type: "text",
+      },
+      {
+        key: "year",
+        label: "Year",
+        type: "text",
+      },
+    ],
+  },
 ];
 
 const facultyHeaders = [

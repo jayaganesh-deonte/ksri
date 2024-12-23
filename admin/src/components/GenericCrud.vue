@@ -196,7 +196,18 @@
                             v-for="subField in field.fields"
                             :key="subField.key"
                           >
+                            <!-- if type is auto-complete -->
+                            <v-autocomplete
+                              v-if="subField.type === 'auto-complete'"
+                              v-model="row[subField.key]"
+                              :items="subField.items"
+                              :multiple="subField.multiple"
+                              density="compact"
+                              hide-details
+                              variant="outlined"
+                            />
                             <v-text-field
+                              v-if="subField.type === 'text'"
                               v-model="row[subField.key]"
                               :type="subField.type"
                               variant="outlined"
