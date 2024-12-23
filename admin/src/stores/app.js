@@ -51,7 +51,7 @@ export const useAppStore = defineStore("app", {
     async getDeploymentStatus() {
       const apiEndpoint = import.meta.env.VITE_API_URL + "/deploy/status";
       // /deploy/status
-      const idToken = getUserIdToken();
+      const idToken = await getUserIdToken();
       const response = await axios.get(apiEndpoint, {
         headers: {
           Authorization: `${idToken}`,
@@ -71,7 +71,7 @@ export const useAppStore = defineStore("app", {
     async checkDeploymentStatus() {
       const apiEndpoint = import.meta.env.VITE_API_URL + "/deploy/pending";
 
-      const idToken = getUserIdToken();
+      const idToken = await getUserIdToken();
       const response = await axios.get(apiEndpoint, {
         headers: {
           Authorization: `${idToken}`,
@@ -93,7 +93,7 @@ export const useAppStore = defineStore("app", {
       // this.interval = 60000;
 
       const apiEndpoint = import.meta.env.VITE_API_URL + "/deploy";
-      const idToken = getUserIdToken();
+      const idToken = await getUserIdToken();
 
       this.isDeploymentInProgress = true;
 
