@@ -14,6 +14,7 @@
     "@mdi/font": "7.4.47",
     "aws-amplify": "^6.10.2",
     "axios": "^1.7.9",
+    "browser-image-compression": "^2.0.2",
     "roboto-fontface": "*",
     "ulidx": "^2.4.1",
     "vue": "^3.4.31",

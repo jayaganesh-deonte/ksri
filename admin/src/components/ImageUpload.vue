@@ -8,10 +8,11 @@
     >
       <div class="text-h6">{{ title }}</div>
       <!-- add button to upload new images -->
-      <v-btn color="primary" class="ml-2" @click="uploadImages">
+      <v-btn color="primary" class="ml-2" @click="openUploadImage">
         <v-icon>mdi-plus</v-icon>
         Upload
       </v-btn>
+
       <!-- hidden input to select images -->
       <input
         type="file"
@@ -24,6 +25,13 @@
     </v-card>
 
     <div class="d-flex flex-wrap ma-2" v-if="images.length > 0">
+      <!-- isUploading -->
+      <v-progress-circular
+        v-if="isUploading"
+        indeterminate
+        color="primary"
+      ></v-progress-circular>
+
       <v-card v-for="image in images" class="ma-2" :key="image" width="300">
         <v-img :src="image" alt="image" width="300">
           <div class="d-flex justify-end ma-2">
@@ -48,6 +56,8 @@ import { ref, computed } from "vue";
 
 import { uploadToS3, deleteFromS3 } from "@/services/s3";
 
+import imageCompression from "browser-image-compression";
+
 import $toast from "@/utilities/toast_notification";
 
 const swal = inject("$swal");
@@ -66,12 +76,21 @@ newImages.value = [...props.images];
 // send event to parent component
 const emit = defineEmits(["images-updated"]);
 
+let isUploading = ref(false);
+
+const openUploadImage = () => {
+  const inputElement = document.getElementById(props.title);
+  inputElement.click();
+};
+
 // upload images
 const uploadImages = async (e) => {
   // select images from input
   // click input to select images
-  const inputElement = document.getElementById(props.title);
-  inputElement.click();
+  isUploading.value = true;
+
+  // const inputElement = document.getElementById(props.title);
+  // inputElement.click();
 
   const files = e.target.files;
   console.log(files);
@@ -79,7 +98,17 @@ const uploadImages = async (e) => {
   for (let i = 0; i < files.length; i++) {
     // upload to s3
     const s3Key = `images/${files[i].name}`;
-    let uploadRes = await uploadToS3(files[i], s3Key);
+    //compress file using Imagecompression
+    const imageCompressionOption = {
+      maxSizeMB: 1,
+      alwaysKeepResolution: true,
+    };
+    const compressedFile = await imageCompression(
+      files[i],
+      imageCompressionOption
+    );
+
+    let uploadRes = await uploadToS3(compressedFile, s3Key);
     console.log(uploadRes);
 
     if (uploadRes.$metadata.httpStatusCode != 200) {
@@ -98,6 +127,8 @@ const uploadImages = async (e) => {
       emit("images-updated", newImages.value);
     }
   }
+
+  isUploading.value = false;
 };
 
 // delete image
