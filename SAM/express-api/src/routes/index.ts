@@ -45,6 +45,8 @@ import { facultyDesignationRouter } from "./facultyDesignations";
 
 import { deployRoute } from "./publish_website";
 
+import { dashboardRoute } from "./dashboard";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -91,3 +93,4 @@ routes.use(chairRouter);
 routes.use(facultyDesignationRouter);
 
 routes.use(deployRoute);
+routes.use(dashboardRoute);

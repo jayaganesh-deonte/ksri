@@ -2,7 +2,9 @@
   <div>
     <!-- in dashboard, 1st row show previous successful deployment time and also a button to trigger deployment now -->
     <!-- { "status": "SUCCEEDED", "timestamp": "2024-12-22T17:58:27.411Z" } -->
-    <div v-if="store.deploymentStatus">
+    <div
+      v-if="store.deploymentStatus && store.isDeploymentInProgress === false"
+    >
       <div>
         <v-alert
           :value="true"
@@ -30,11 +32,11 @@
         </v-card>
       </v-col>
     </v-row>
-    <!-- small info showing numbers will be updated once in a day -->
+
     <div class="d-flex justify-end ma-4">
       <div>
         <v-icon size="24">mdi-information</v-icon>
-        <span class="ml-2">Numbers shown above are updated once in a day.</span>
+        <span class="ml-2">Last updated on {{ lastUpdatedTime }}.</span>
       </div>
     </div>
   </div>
@@ -42,7 +44,9 @@
 
 <script setup>
 import { useAppStore } from "@/stores/app";
-import { onMounted } from "vue";
+import { onMounted, reactive, ref } from "vue";
+import { getUserIdToken } from "@/services/auth";
+import axios from "axios";
 
 const store = useAppStore();
 
@@ -54,12 +58,12 @@ const convertToLocalTime = (timestamp) => {
   return new Date(timestamp).toLocaleString();
 };
 
-const dashboardData = [
-  {
-    title: "Upcoming Events",
-    total: 0,
-    icon: "mdi-calendar-clock",
-  },
+let dashboardData = reactive([
+  // {
+  //   title: "Upcoming Events",
+  //   total: 0,
+  //   icon: "mdi-calendar-clock",
+  // },
   {
     title: "Total Events",
     total: 0,
@@ -114,5 +118,27 @@ const dashboardData = [
     total: 0,
     icon: "mdi-account",
   },
-];
+]);
+
+let lastUpdatedTime = ref("");
+
+const getDashboardData = async () => {
+  const apiEndpoint = `${import.meta.env.VITE_API_URL}/dashboard`;
+  const idToken = await getUserIdToken();
+  const response = await axios.get(apiEndpoint, {
+    headers: {
+      Authorization: `${idToken}`,
+    },
+  });
+  if (response.status === 200) {
+    // convert to local time
+    lastUpdatedTime.value = new Date(response.data.updatedOn).toLocaleString();
+
+    Object.assign(dashboardData, response.data.dashboardData);
+  }
+};
+
+onMounted(async () => {
+  await getDashboardData();
+});
 </script>

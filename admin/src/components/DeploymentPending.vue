@@ -53,11 +53,11 @@ onMounted(async () => {
 
   await store.getDeploymentStatus();
 
-  // run checkDeploymentStatus every 3 minutes
+  // run checkDeploymentStatus every 1 minutes
   setInterval(async () => {
     await store.checkDeploymentStatus();
     await store.getDeploymentStatus();
-  }, 180000);
+  }, store.interval);
 });
 
 const deployChanges = async () => {

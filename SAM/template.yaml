@@ -71,6 +71,45 @@ Resources:
         EntryPoints:
           - index.ts
 
+  dashboardScheduleLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${Prefix}_admin_dashboard_schedule
+      CodeUri: dashboard_stats/
+      Handler: index.handler
+      Timeout: 30
+      MemorySize: 256
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          DDB_TABLE_NAME: !Ref masterTable
+          LOG_LEVEL: INFO
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref masterTable
+      Events:
+        Schedule:
+          Type: Schedule
+          Properties:
+            Schedule: rate(3 hours)
+
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        EntryPoints:
+          - index.ts
+        External:
+          - "@aws-sdk/lib-dynamodb"
+          - "@aws-sdk/client-dynamodb"
+
   masterTable:
     Type: AWS::DynamoDB::Table
     DeletionPolicy: Retain

@@ -30,6 +30,10 @@ export const useAppStore = defineStore("app", {
     deploymentStatus: {},
     isDeploymentPending: false,
     isDeploymentInProgress: false,
+
+    // interval to check deployment status
+    // interval: 180000,
+    interval: 90000,
   }),
   actions: {
     setUser(user) {
@@ -60,6 +64,7 @@ export const useAppStore = defineStore("app", {
           this.isDeploymentInProgress = true;
         } else {
           this.isDeploymentInProgress = false;
+          // this.interval = 180000;
         }
       }
     },
@@ -84,6 +89,9 @@ export const useAppStore = defineStore("app", {
       if (this.isEditDisabledForUser) {
         return;
       }
+
+      // this.interval = 60000;
+
       const apiEndpoint = import.meta.env.VITE_API_URL + "/deploy";
       const idToken = getUserIdToken();
 
