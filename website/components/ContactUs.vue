@@ -8,7 +8,7 @@
           md="6"
           class="pa-6"
           data-aos="fade-right"
-          data-aos-delay="1000"
+          data-aos-delay="50"
         >
           <div class="sectionTitle2">Get in touch with us!</div>
           <div class="text-h6">
@@ -44,7 +44,7 @@
           md="6"
           class="leftBorder"
           data-aos="fade-left"
-          data-aos-delay="1000"
+          data-aos-delay="50"
         >
           <div class="sectionTitle2">Send A Message</div>
           <!-- create form -->
