@@ -86,11 +86,15 @@ onMounted(() => {
   // check local storage if dialog is already
   setTimeout(async () => {
     if (store.isHomeDialogContentPresent) {
-      const dialogAlreadyDisplayed =
-        await checkIfHomeDialogVisitedInLocalStorage();
-      if (!dialogAlreadyDisplayed) {
-        dialogModel.value = true;
-      }
+      // //  display dialog only once
+      // const dialogAlreadyDisplayed =
+      //   await checkIfHomeDialogVisitedInLocalStorage();
+      // if (!dialogAlreadyDisplayed) {
+      //   dialogModel.value = true;
+      // }
+
+      // display dialog on mount
+      dialogModel.value = true;
     }
   }, 1000);
 });
