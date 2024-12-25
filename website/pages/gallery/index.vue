@@ -1,20 +1,42 @@
 <template>
   <div>
-    <div v-for="subsection in collections" :key="subsection">
-      <v-card
-        class="mb-6 text-center"
-        rounded="0"
-        elevation="0"
-        color="greenBg"
-      >
-        <v-card-title class="text-h5 font-weight-bold">
-          {{ subsection }}
-        </v-card-title>
-      </v-card>
+    <div v-if="!viewAlbumName">
+      <div class="ma-2">
+        <section-title title="Gallery" />
+      </div>
+      <div class="d-flex flex-wrap ma-2">
+        <div v-for="subsection in collections" :key="subsection">
+          <!-- album card with 4 images and then  name of the collection below -->
+          <albumPreview
+            :albumName="subsection"
+            :images="galleryImages[subsection].slice(0, 4)"
+            @view-album="viewAlbum(subsection)"
+          />
+        </div>
+      </div>
+    </div>
 
-      <!-- display images -->
+    <div v-else>
+      <!-- display album name -->
+      <!-- back to all albums -->
+      <div class="text-center ma-2">
+        <v-btn
+          rounded="pill"
+          color="secondary"
+          variant="outlined"
+          @click="viewAlbumName = false"
+        >
+          View All Albums
+        </v-btn>
+      </div>
+      <div class="ma-2">
+        <div class="text-h4 text-center text-secondary font-weight-bold">
+          {{ selectedAlbum }}
+        </div>
+      </div>
+
       <div class="d-flex flex-row flex-wrap justify-center">
-        <div v-for="image in galleryImages[subsection]" :key="image" class="">
+        <div v-for="image in galleryImages[selectedAlbum]" :key="image">
           <galleryCard :image="image" />
         </div>
       </div>
@@ -33,6 +55,7 @@ useSeoMeta({
 });
 
 import galleryCard from "~/components/gallery/galleryCard.vue";
+import albumPreview from "~/components/gallery/albumPreview.vue";
 
 const collectionsData = await queryContent("gallery", "collections").findOne();
 
@@ -58,5 +81,12 @@ collections.forEach((collection) => {
     }
   });
 });
-console.log("galleryImages", galleryImages);
+
+let selectedAlbum = ref(null);
+let viewAlbumName = ref(false);
+
+const viewAlbum = (album) => {
+  selectedAlbum.value = album;
+  viewAlbumName.value = true;
+};
 </script>
