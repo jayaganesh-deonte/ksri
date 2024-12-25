@@ -10,7 +10,7 @@
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        The Library is comprised of nearly 60,000 books authored by great and
+        The Library is comprised of nearly 65,000 books authored by great and
         popular writers on variety of Sanskrit and Indological subjects like
         Dance and Music, Epigraphy, Ethics, Law, Language and Literature,
         Philosophy and Ayurveda. These books are in varied languages like in

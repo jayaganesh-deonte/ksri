@@ -26,7 +26,7 @@
             <div class="pa-4 text-white">
               <div class="text-h5 my-4">KSRI Library</div>
               <div class="my-2 text-h6">
-                The Library is comprised of nearly 60,000 books authored by
+                The Library is comprised of nearly 65,000 books authored by
                 great and popular writers on variety of Sanskrit and Indological
                 subjects.
               </div>
@@ -36,11 +36,11 @@
                     Read More
                   </div>
                 </nuxt-link>
-                <nuxt-link :to="'/library'" style="text-decoration: unset">
+                <!-- <nuxt-link :to="'/library'" style="text-decoration: unset">
                   <div class="mx-8 text-white horizontalLineOnHoverAsUnderline">
                     Library Membership
                   </div>
-                </nuxt-link>
+                </nuxt-link> -->
               </div>
             </div>
             <v-card class="pa-4" rounded="0" elevation="0">
@@ -58,14 +58,14 @@
                     Read More
                   </div>
                 </nuxt-link>
-                <nuxt-link
+                <!-- <nuxt-link
                   :to="'/library/library-on-line'"
                   style="text-decoration: unset"
                 >
                   <div class="mx-8 text-black horizontalLineOnHoverAsUnderline">
                     Get Involved with Us
                   </div>
-                </nuxt-link>
+                </nuxt-link> -->
               </div>
             </v-card>
           </div>

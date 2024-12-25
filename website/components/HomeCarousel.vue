@@ -23,7 +23,7 @@
         src="/img/home-slide-bg-2.jpg"
         title-text="KSRI LIBRARY"
         title-text-line2="In-house & Online"
-        description-text="The Library is comprised of nearly 60,000 books and 1,500 Palmleaf Manuscripts on variety of Sanskrit"
+        description-text="The Library is comprised of nearly 65,000 books and 1,500 Palmleaf Manuscripts on variety of Sanskrit"
         description-text-line2="and Indological subjects like Dance and Music, Epigraphy, Ethics, Law, Language and Literature, Philosophy and Ayurveda."
         button-text1="Library In-house"
         button-text2="Library Online"
