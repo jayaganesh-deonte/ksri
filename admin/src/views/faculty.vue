@@ -119,23 +119,23 @@ const facultyFields = [
     label: "Display Image",
     type: "image",
   },
-  {
-    key: "achievementCounts",
-    label: "Summary Counts",
-    isArray: true,
-    fields: [
-      {
-        key: "name",
-        label: "Name",
-        type: "text",
-      },
-      {
-        key: "count",
-        label: "Count",
-        type: "text",
-      },
-    ],
-  },
+  // {
+  //   key: "achievementCounts",
+  //   label: "Summary Counts",
+  //   isArray: true,
+  //   fields: [
+  //     {
+  //       key: "name",
+  //       label: "Name",
+  //       type: "text",
+  //     },
+  //     {
+  //       key: "count",
+  //       label: "Count",
+  //       type: "text",
+  //     },
+  //   ],
+  // },
   // teachingExperience
   {
     key: "teachingExperience",
@@ -462,6 +462,35 @@ const facultyFields = [
       },
     ],
   },
+  //  Extension Activities
+  {
+    key: "extensionActivities",
+    label: "Extension Activities",
+    isArray: true,
+    fields: [
+      // Sl.No 	Title	Organisation	Year
+      {
+        key: "slNo",
+        label: "Sl.No",
+        type: "text",
+      },
+      {
+        key: "title",
+        label: "Title",
+        type: "text",
+      },
+      {
+        key: "description",
+        label: "Description",
+        type: "text",
+      },
+      {
+        key: "monthAndYear",
+        label: "Month and Year",
+        type: "text",
+      },
+    ],
+  },
 ];
 
 const facultyHeaders = [
@@ -485,14 +514,14 @@ const facultyHeaders = [
     key: "subtitle",
     title: "Specialisation",
   },
-  {
-    key: "description",
-    title: "Description",
-  },
-  {
-    key: "mobile",
-    title: "Mobile",
-  },
+  // {
+  //   key: "description",
+  //   title: "Description",
+  // },
+  // {
+  //   key: "mobile",
+  //   title: "Mobile",
+  // },
   {
     key: "mail",
     title: "Email",

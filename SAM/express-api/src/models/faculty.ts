@@ -27,7 +27,7 @@ export interface Faculty {
   type: FacultyType;
   metadata?: { [key: string]: string };
   orderId?: string;
-  achievementCounts?: { [key: string]: string };
+  // achievementCounts?: { [key: string]: string };
   // teachingExperience => array of objects
   teachingExperience?: { [key: string]: string };
   phdCandidates?: { [key: string]: string };
@@ -57,7 +57,7 @@ export interface FacultyDDB {
   type: FacultyType;
   metadata?: { [key: string]: string };
   orderId?: string;
-  achievementCounts?: { [key: string]: string };
+  // achievementCounts?: { [key: string]: string };
   teachingExperience?: { [key: string]: string };
   phdCandidates?: { [key: string]: string };
   mphilCandidates?: { [key: string]: string };
@@ -87,7 +87,7 @@ export function toDynamoDB(item: Faculty): FacultyDDB {
     type: item.type,
     metadata: item.metadata,
     orderId: item.orderId,
-    achievementCounts: item.achievementCounts,
+    // // achievementCounts: item.achievementCounts,
     teachingExperience: item.teachingExperience,
     phdCandidates: item.phdCandidates,
     mphilCandidates: item.mphilCandidates,
@@ -120,7 +120,7 @@ export function isFacultyDDB(item: any): item is FacultyDDB {
     "type" in item &&
     "metadata" in item &&
     "orderId" in item &&
-    "achievementCounts" in item &&
+    // "achievementCounts" in item &&
     "teachingExperience" in item &&
     "phdCandidates" in item &&
     "mphilCandidates" in item &&
@@ -148,7 +148,7 @@ export function fromDynamoDB(item: FacultyDDB): Faculty {
     type: item.type,
     metadata: item.metadata,
     orderId: item.orderId,
-    achievementCounts: item.achievementCounts,
+    // // achievementCounts: item.achievementCounts,
     teachingExperience: item.teachingExperience,
     phdCandidates: item.phdCandidates,
     mphilCandidates: item.mphilCandidates,
@@ -178,7 +178,7 @@ export function isFaculty(item: any): item is Faculty {
     "type" in item &&
     "metadata" in item &&
     "orderId" in item &&
-    "achievementCounts" in item &&
+    // "achievementCounts" in item &&
     "teachingExperience" in item &&
     "phdCandidates" in item &&
     "mphilCandidates" in item &&
