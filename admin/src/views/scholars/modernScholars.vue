@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <generic-crud
     entityName="Modern Scholar"
     :apiEndpoint="apiEndpoint"
@@ -74,4 +74,4 @@ const scholarHeaders = [
     title: "Actions",
   },
 ];
-</script>
+</script> -->

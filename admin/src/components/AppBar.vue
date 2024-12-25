@@ -127,10 +127,10 @@ const allOptions = [
         title: "Foreign Scholars",
         path: "/foreign-scholars",
       },
-      {
-        title: "Modern Scholars",
-        path: "/modern-scholars",
-      },
+      // {
+      //   title: "Modern Scholars",
+      //   path: "/modern-scholars",
+      // },
     ],
   },
 

@@ -70,10 +70,10 @@ const subPages = [
     title: "Traditional Scholars",
     route: "/academic-and-research-pursuits/scholars-gateway/",
   },
-  {
-    title: "Modern Scholars",
-    route: "/academic-and-research-pursuits/scholars-gateway/modern-scholars",
-  },
+  // {
+  //   title: "Modern Scholars",
+  //   route: "/academic-and-research-pursuits/scholars-gateway/modern-scholars",
+  // },
   {
     title: "Foreign Scholars",
     route: "/academic-and-research-pursuits/scholars-gateway/foreign-scholars",

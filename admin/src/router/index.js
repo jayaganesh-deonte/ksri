@@ -15,7 +15,7 @@ import projects from "@/views/projects.vue";
 
 import traditionalScholars from "@/views/scholars/traditionalScholars.vue";
 import foreignScholars from "@/views/scholars/foreignScholars.vue";
-import modernScholars from "@/views/scholars/modernScholars.vue";
+// import modernScholars from "@/views/scholars/modernScholars.vue";
 
 import students from "@/views/students.vue";
 
@@ -85,12 +85,12 @@ const routes = [
     component: foreignScholars,
     meta: { requiresAuth: true },
   },
-  {
-    path: "/modern-scholars",
-    name: "modernScholars",
-    component: modernScholars,
-    meta: { requiresAuth: true },
-  },
+  // {
+  //   path: "/modern-scholars",
+  //   name: "modernScholars",
+  //   component: modernScholars,
+  //   meta: { requiresAuth: true },
+  // },
   {
     path: "/students",
     name: "students",
