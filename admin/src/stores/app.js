@@ -130,5 +130,14 @@ export const useAppStore = defineStore("app", {
         return true;
       }
     },
+    isDeleteDisabledForUser() {
+      if (this.isDeploymentInProgress) {
+        return true;
+      }
+      if (this.isSuperAdmin) {
+        return false;
+      }
+      return true;
+    },
   },
 });

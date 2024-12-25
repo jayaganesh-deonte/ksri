@@ -58,11 +58,12 @@
           >
             mdi-pencil
           </v-icon>
+
           <v-icon
             size="small"
             @click="deleteItem(item)"
-            :disabled="isEditDisabledForUser"
-            :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
+            :disabled="isDeleteDisabledForUser"
+            :class="isDeleteDisabledForUser ? 'curor-not-allowed' : ''"
           >
             mdi-delete
           </v-icon>
@@ -267,7 +268,7 @@ import { useAppStore } from "@/stores/app";
 import { storeToRefs } from "pinia";
 
 const store = useAppStore();
-const { isEditDisabledForUser } = storeToRefs(store);
+const { isEditDisabledForUser, isDeleteDisabledForUser } = storeToRefs(store);
 
 import { getUserIdToken } from "@/services/auth";
 
@@ -439,7 +440,7 @@ const updatePendingForDeployment = async () => {
 
 const deleteItem = (item) => {
   // check if delete disabled for user
-  if (isEditDisabledForUser.value) {
+  if (isDeleteDisabledForUser.value) {
     return;
   }
   swal({
