@@ -268,8 +268,8 @@ let menuOptions = computed(() => {
 
 const logout = async () => {
   await signOut();
-  localStorage.clear();
+  // localStorage.clear();
 
-  window.location.href = "/";
+  // window.location.href = "/";
 };
 </script>
