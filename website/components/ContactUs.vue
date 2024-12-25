@@ -132,6 +132,7 @@ const messageCategories = [
   "A Visitor",
   "Attend Lectures",
   "Library Membership",
+  "Digitization",
   "Others",
 ];
 

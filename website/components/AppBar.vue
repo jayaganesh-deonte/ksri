@@ -309,12 +309,12 @@ const menuOptions = reactive([
         path: "/contribute/bank-information",
         description: "List of Local/Foriegn contribution the bank particulars",
       },
-      {
-        name: "By Post",
-        path: "/contribute/by-post",
-        description:
-          "Contributions can also be sent by courier or post by making a cheque or demand draft in the name of The Kuppuswami Sastri Research Institute",
-      },
+      // {
+      //   name: "By Post",
+      //   path: "/contribute/by-post",
+      //   description:
+      //     "Contributions can also be sent by courier or post by making a cheque or demand draft in the name of The Kuppuswami Sastri Research Institute",
+      // },
     ],
   },
   {
