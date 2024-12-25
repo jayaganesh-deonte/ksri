@@ -18,7 +18,7 @@
       </div>
 
       <!-- selectedPublicationToDisplay -->
-      <div class="text-center ma-4">
+      <!-- <div class="text-center ma-4">
         <v-btn
           rounded="pill"
           class="ma-4"
@@ -36,33 +36,65 @@
         >
           {{ publication }}
         </v-btn>
-      </div>
+      </div> -->
       <!-- add search based on book name (title), author name(author) -->
 
-      <v-text-field
-        class="ma-4"
-        v-model="searchQuery"
-        prepend-inner-icon="mdi-magnify"
-        label="Search by book title or author"
-        placeholder="Search by book title or author"
-        single-line
-        variant="outlined"
-        hide-details
-      ></v-text-field>
-      <!-- book catalogue -->
-      <div class="ma-4" v-if="!showSelectedBookDetails">
-        <v-row>
-          <v-col
-            v-for="(book, index) in filteredBooks"
-            :key="book.title"
-            cols="12"
-            md="4"
-            data-aos="fade-up"
-            :data-aos-delay="100 * index"
+      <div v-if="!showSelectedBookDetails">
+        <v-text-field
+          class="ma-4"
+          v-model="searchQuery"
+          prepend-inner-icon="mdi-magnify"
+          label="Search by book title or author"
+          placeholder="Search by book title or author"
+          single-line
+          variant="outlined"
+          hide-details
+        ></v-text-field>
+        <!-- book catalogue -->
+        <div class="ma-4">
+          <v-row>
+            <v-col
+              v-for="(book, index) in filterBooksBasedOnPublication('KSRI')"
+              :key="book.title"
+              cols="12"
+              md="4"
+              data-aos="fade-up"
+              :data-aos-delay="50 * index"
+            >
+              <book-card :book="book" @viewDetails="onViewDetails" />
+            </v-col>
+          </v-row>
+        </div>
+
+        <!-- show additional publications books -->
+        <div class="">
+          <div
+            v-for="publication in additionalPublications"
+            :key="publication"
+            class="text-center"
           >
-            <book-card :book="book" @viewDetails="onViewDetails" />
-          </v-col>
-        </v-row>
+            <div class="text-h4 text-secondary">
+              Also Available ({{ publication }})
+            </div>
+            <!-- display books -->
+            <div class="ma-4">
+              <v-row>
+                <v-col
+                  v-for="(book, index) in filterBooksBasedOnPublication(
+                    publication
+                  )"
+                  :key="book.title"
+                  cols="12"
+                  md="4"
+                  data-aos="fade-up"
+                  :data-aos-delay="50 * index"
+                >
+                  <book-card :book="book" @viewDetails="onViewDetails" />
+                </v-col>
+              </v-row>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- book details -->
       <div v-else>
@@ -135,11 +167,6 @@ useSeoMeta({
   twitterDescription: description,
 });
 
-// publications
-const publicationNames = ["KSRI", "Samskrita Academy"];
-
-let selectedPublicationToDisplay = ref(publicationNames[0]);
-
 let isLoading = ref(true);
 
 const searchQuery = ref("");
@@ -147,15 +174,39 @@ const searchQuery = ref("");
 const selectedBook = reactive({});
 const showSelectedBookDetails = ref(false);
 
-const samskritaAcademyPublicationsData = await queryContent(
+// get all additionalpublications
+const additionalPublicationsData = await queryContent(
   "publications",
-  "samskritaacademypublications"
+  "additionalpublications"
 ).findOne();
+const additionalPublications = additionalPublicationsData.body;
+console.log("additionalPublications", additionalPublications);
 
-const samskritaAcademyPublications = samskritaAcademyPublicationsData.body;
+let additionalPublicationBooks = {};
+
+// for additionalPublications query content
+for (const element of additionalPublications) {
+  const additionalPublication = element;
+
+  const publicationNameForFile = additionalPublication
+    .replace(/ /g, "_")
+    .toLowerCase();
+
+  // query content
+  const additionalPublicationBooksData = await queryContent(
+    "publications",
+    publicationNameForFile
+  ).findOne();
+
+  additionalPublicationBooks[additionalPublication] =
+    additionalPublicationBooksData.body;
+}
+
 const booksData = await queryContent("publications", "books").findOne();
 
 const ksriBooks = booksData.body;
+
+additionalPublicationBooks["KSRI"] = ksriBooks;
 
 //  Sample Book Item
 // {
@@ -179,16 +230,6 @@ const ksriBooks = booksData.body;
 //     "author": "Prof. R. S. Venkatarama Sastri",
 //     "yearOfPublication": "1996"
 //   },
-let books = computed(() => {
-  // if publication is KSRI => storeBook.books
-  // if publication is Samskrita Academy => storeBook.samskritaAcademyPublicationBooks
-
-  if (selectedPublicationToDisplay.value === "KSRI") {
-    return ksriBooks;
-  } else {
-    return samskritaAcademyPublications;
-  }
-});
 
 // Add computed property for filtered books
 const filteredBooks = computed(() => {
@@ -203,6 +244,24 @@ const filteredBooks = computed(() => {
       book.subtitle?.toLowerCase().includes(query)
   );
 });
+
+const books = computed((publicationName) => {
+  return additionalPublicationBooks[publicationName];
+});
+
+const filterBooksBasedOnPublication = (publicationName) => {
+  let books = additionalPublicationBooks[publicationName];
+  const query = searchQuery.value.toLowerCase();
+
+  if (!query) return books;
+
+  return books.filter(
+    (book) =>
+      book.title?.toLowerCase().includes(query) ||
+      book.author?.toLowerCase().includes(query) ||
+      book.subtitle?.toLowerCase().includes(query)
+  );
+};
 
 const resetSelectedBook = () => {
   showSelectedBookDetails.value = false;

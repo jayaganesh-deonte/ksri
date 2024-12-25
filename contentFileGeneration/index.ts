@@ -8,7 +8,7 @@ async function fetchAndSaveData(
   endpoint: string,
   outputFile: string,
   filter?: Function
-): Promise<void> {
+): Promise<any> {
   try {
     // Make API request
     const response = await axios.get(`${API_BASE_URL}${endpoint}`);
@@ -32,6 +32,7 @@ async function fetchAndSaveData(
     writeFileSync(outputFile, jsonData);
 
     console.log(`Data successfully saved to ${outputFile}`);
+    return data;
   } catch (error) {
     console.error("Error fetching or saving data:", error);
     throw error;
@@ -99,16 +100,30 @@ const pageDetails = [
     endpoint: "/library/journals",
     outputFile: "../website/content//library/journals.json",
   },
-  // /publications/books?publication-KSRI
-  {
-    endpoint: "/publications/books?publication=KSRI",
-    outputFile: "../website/content//publications/books.json",
-  },
-  {
-    endpoint: "/publications/books?publication=Samskrita Academy",
-    outputFile:
-      "../website/content//publications/samskritaacademypublications.json",
-  },
+  // // /publications/additionalPublications
+  // {
+  //   endpoint: "/publications/additionalPublications",
+  //   outputFile: "../website/content//publications/additionalpublications.json",
+  //   // sort based on orderId and select only name and store it in additionalPublications
+  //   filter: (data: any[]) => {
+  //     additionalPublications = data
+  //       .sort((a, b) => a.orderId - b.orderId)
+  //       .map((item) => item.name);
+  //     return additionalPublications;
+  //   },
+  //   // filter: (data: any[]) =>
+  //   //   data.sort((a, b) => a.orderId - b.orderId).map((item) => item.name),
+  // },
+  // // /publications/books?publication-KSRI
+  // {
+  //   endpoint: "/publications/books?publication=KSRI",
+  //   outputFile: "../website/content//publications/books.json",
+  // },
+  // {
+  //   endpoint: "/publications/books?publication=Samskrita Academy",
+  //   outputFile:
+  //     "../website/content//publications/samskritaacademypublications.json",
+  // },
   // publications/committee-members
   {
     endpoint: "/publications/committee-members",
@@ -402,6 +417,67 @@ const saveFixedData = async (fileContent: any, outputFile: string) => {
   }
 };
 
+const fetchPublicationsAndBooks = async () => {
+  //  // /publications/additionalPublications
+  //  {
+  //   endpoint: "/publications/additionalPublications",
+  //   outputFile: "../website/content//publications/additionalpublications.json",
+  //   // sort based on orderId and select only name and store it in additionalPublications
+  //   filter: (data: any[]) => {
+  //     additionalPublications = data
+  //       .sort((a, b) => a.orderId - b.orderId)
+  //       .map((item) => item.name);
+  //     return additionalPublications;
+  //   },
+  //   // filter: (data: any[]) =>
+  //   //   data.sort((a, b) => a.orderId - b.orderId).map((item) => item.name),
+  // },
+  // // /publications/books?publication-KSRI
+  // {
+  //   endpoint: "/publications/books?publication=KSRI",
+  //   outputFile: "../website/content//publications/books.json",
+  // },
+  // {
+  //   endpoint: "/publications/books?publication=Samskrita Academy",
+  //   outputFile:
+  //     "../website/content//publications/samskritaacademypublications.json",
+  // },
+
+  // fetch additionalPublications
+  const additionalPublications = await fetchAndSaveData(
+    "/publications/additionalPublications",
+    "../website/content//publications/additionalpublications.json",
+    (data: any[]) => {
+      return data
+        .sort((a, b) => a.orderId - b.orderId)
+        .map((item) => item.name);
+    }
+  );
+
+  // store additionalPublications to json file
+  const additionalPublicationsJson = JSON.stringify(additionalPublications);
+  writeFileSync(
+    "../website/content//publications/additionalpublications.json",
+    additionalPublicationsJson
+  );
+
+  //  fetch books based on additionalPublications
+  const books = await fetchAndSaveData(
+    "/publications/books?publication=KSRI",
+    "../website/content//publications/books.json"
+  );
+
+  //  for each additionalPublication, fetch books
+  for (const publication of additionalPublications) {
+    // remove spaces
+    const publicationNameForFile = publication.replace(/ /g, "_").toLowerCase();
+    const books = await fetchAndSaveData(
+      `/publications/books?publication=${publication}`,
+      `../website/content//publications/${publicationNameForFile}.json`
+    );
+  }
+};
+
 const main = async () => {
   for (const { endpoint, outputFile, filter } of pageDetails) {
     await fetchAndSaveData(endpoint, outputFile, filter);
@@ -410,6 +486,8 @@ const main = async () => {
   for (const { fileContent, outputFile } of fixedData) {
     await saveFixedData(fileContent, outputFile);
   }
+
+  await fetchPublicationsAndBooks();
 };
 
 main();

@@ -203,6 +203,10 @@ const allOptions = [
         title: "Committee",
         path: "/publications-committee",
       },
+      {
+        title: "Additional Publications",
+        path: "additional-publications",
+      },
     ],
   },
 

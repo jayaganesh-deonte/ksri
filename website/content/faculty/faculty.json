@@ -63,10 +63,98 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2024-12-17T15:20:34.751Z",
-      "updated_at": "2024-12-22T11:11:07.870Z",
+      "updated_at": "2024-12-23T17:33:51.025Z",
       "created_by": "admin"
     },
-    "orderId": "1"
+    "orderId": "1",
+    "achievementCounts": [
+      {
+        "name": "Ph.D. Candidates",
+        "count": "10"
+      },
+      {
+        "name": "Books",
+        "count": "5"
+      },
+      {
+        "name": "Articles",
+        "count": "5"
+      }
+    ],
+    "teachingExperience": [
+      {
+        "duration": "Presently",
+        "position": "Associate Professor, The KSRI, Chennai"
+      },
+      {
+        "duration": "From Sep. 2014 -2023",
+        "position": "Assistant Professor, The KSRI, Chennai"
+      }
+    ],
+    "phdCandidates": [
+      {
+        "name": "Dr. S. Madhurambika",
+        "topic": "Sahendravilasa of Sridhara Ayyaval – Acritical Study",
+        "yearOfJoining": "1\tDr. S. Madhurambika\tSahendravilasa of Sridhara Ayyaval – Acritical Study\t2018-2022\tDegree Awarded",
+        "status": "Degree awarded"
+      }
+    ],
+    "mphilCandidates": [
+      {
+        "name": "Ms.Mrinalini",
+        "yearOfJoining": "2016-17",
+        "topic": "Sandilyopanisad- A Critical study"
+      }
+    ],
+    "academicPositions": [],
+    "booksPublished": [
+      {
+        "publisher": "Karnataka Historical Research Society, Dharwad",
+        "yearOfPublication": "2017",
+        "title": "AMARAKOÑODGHÄÖANA OF KÑÉRASVÄMIN: A SOCIO-CULTURAL STUD",
+        "sNo": "1",
+        "remarks": "Published",
+        "isbn": " "
+      }
+    ],
+    "articlesPublished": [
+      {
+        "monthAndYear": "2024",
+        "title": "A  few  yogic  practices  for  the  cure of  diseases  as  gleaned  from  some Haṭha  yoga  texts",
+        "nameOfTheJournal": "Journal of Oriental Research  Vol. XCIV, The Kuppuswami Sastri Research Institute, Chennai",
+        "sNo": "1",
+        "isbnIssnNo": "ISSN 0022-3301",
+        "remarks": "Published"
+      }
+    ],
+    "projects": [
+      {
+        "description": " A project report prepared with Dr. Ute  Husken Professor University of Oslo",
+        "sponsor": "Norway",
+        "monthAndYear": "2003",
+        "remarks": "Completed",
+        "projectTitle": "Hastigiri Mahatmya",
+        "isbn": " "
+      }
+    ],
+    "seminars": [
+      {
+        "seminarConference": "Seminar on Nature preservation-The bygone ways",
+        "monthAndYear": "2024",
+        "organisers": "Dept. of Sanskrit, JBAS college for women (Autonomous), Ch.  Feb., 29, 2024",
+        "titleOfThePaper": "Nature preservation methods",
+        "slNo": "1"
+      }
+    ],
+    "lectures": [
+      {
+        "monthAndYear": "2018",
+        "organisers": "Dept. of Sanskrit, Pondicherry University and IGNCA, 28-30th Aug., 2018",
+        "year": "",
+        "slNo": "1",
+        "titleOfTheTalk": "National Seminar on Indian Spiritual Heritage through Sanskrit Devotional Literature of South India"
+      }
+    ]
   },
   {
     "id": "01JFAK9T5ZFFHKD08N4S4ZHXXH",

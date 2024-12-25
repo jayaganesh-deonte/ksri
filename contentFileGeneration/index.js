@@ -62,7 +62,7 @@ function fetchAndSaveData(endpoint, outputFile, filter) {
                     }
                     (0, fs_1.writeFileSync)(outputFile, jsonData);
                     console.log("Data successfully saved to ".concat(outputFile));
-                    return [3 /*break*/, 3];
+                    return [2 /*return*/, data];
                 case 2:
                     error_1 = _a.sent();
                     console.error("Error fetching or saving data:", error_1);
@@ -132,15 +132,30 @@ var pageDetails = [
         endpoint: "/library/journals",
         outputFile: "../website/content//library/journals.json",
     },
-    // /publications/books?publication-KSRI
-    {
-        endpoint: "/publications/books?publication=KSRI",
-        outputFile: "../website/content//publications/books.json",
-    },
-    {
-        endpoint: "/publications/books?publication=Samskrita Academy",
-        outputFile: "../website/content//publications/samskritaacademypublications.json",
-    },
+    // // /publications/additionalPublications
+    // {
+    //   endpoint: "/publications/additionalPublications",
+    //   outputFile: "../website/content//publications/additionalpublications.json",
+    //   // sort based on orderId and select only name and store it in additionalPublications
+    //   filter: (data: any[]) => {
+    //     additionalPublications = data
+    //       .sort((a, b) => a.orderId - b.orderId)
+    //       .map((item) => item.name);
+    //     return additionalPublications;
+    //   },
+    //   // filter: (data: any[]) =>
+    //   //   data.sort((a, b) => a.orderId - b.orderId).map((item) => item.name),
+    // },
+    // // /publications/books?publication-KSRI
+    // {
+    //   endpoint: "/publications/books?publication=KSRI",
+    //   outputFile: "../website/content//publications/books.json",
+    // },
+    // {
+    //   endpoint: "/publications/books?publication=Samskrita Academy",
+    //   outputFile:
+    //     "../website/content//publications/samskritaacademypublications.json",
+    // },
     // publications/committee-members
     {
         endpoint: "/publications/committee-members",
@@ -435,6 +450,39 @@ var saveFixedData = function (fileContent, outputFile) { return __awaiter(void 0
         return [2 /*return*/];
     });
 }); };
+var fetchPublicationsAndBooks = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var additionalPublications, additionalPublicationsJson, books, _i, additionalPublications_1, publication, publicationNameForFile, books_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, fetchAndSaveData("/publications/additionalPublications", "../website/content//publications/additionalpublications.json", function (data) {
+                    return data
+                        .sort(function (a, b) { return a.orderId - b.orderId; })
+                        .map(function (item) { return item.name; });
+                })];
+            case 1:
+                additionalPublications = _a.sent();
+                additionalPublicationsJson = JSON.stringify(additionalPublications);
+                (0, fs_1.writeFileSync)("../website/content//publications/additionalpublications.json", additionalPublicationsJson);
+                return [4 /*yield*/, fetchAndSaveData("/publications/books?publication=KSRI", "../website/content//publications/books.json")];
+            case 2:
+                books = _a.sent();
+                _i = 0, additionalPublications_1 = additionalPublications;
+                _a.label = 3;
+            case 3:
+                if (!(_i < additionalPublications_1.length)) return [3 /*break*/, 6];
+                publication = additionalPublications_1[_i];
+                publicationNameForFile = publication.replace(/ /g, "_").toLowerCase();
+                return [4 /*yield*/, fetchAndSaveData("/publications/books?publication=".concat(publication), "../website/content//publications/".concat(publicationNameForFile, ".json"))];
+            case 4:
+                books_1 = _a.sent();
+                _a.label = 5;
+            case 5:
+                _i++;
+                return [3 /*break*/, 3];
+            case 6: return [2 /*return*/];
+        }
+    });
+}); };
 var main = function () { return __awaiter(void 0, void 0, void 0, function () {
     var _i, pageDetails_1, _a, endpoint, outputFile, filter, _b, fixedData_1, _c, fileContent, outputFile;
     return __generator(this, function (_d) {
@@ -465,7 +513,10 @@ var main = function () { return __awaiter(void 0, void 0, void 0, function () {
             case 7:
                 _b++;
                 return [3 /*break*/, 5];
-            case 8: return [2 /*return*/];
+            case 8: return [4 /*yield*/, fetchPublicationsAndBooks()];
+            case 9:
+                _d.sent();
+                return [2 /*return*/];
         }
     });
 }); };
