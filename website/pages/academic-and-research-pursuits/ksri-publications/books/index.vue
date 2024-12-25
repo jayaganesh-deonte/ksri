@@ -54,12 +54,11 @@
         <div class="ma-4">
           <v-row>
             <v-col
-              v-for="(book, index) in filterBooksBasedOnPublication('KSRI')"
+              v-for="book in filterBooksBasedOnPublication('KSRI')"
               :key="book.title"
               cols="12"
               md="4"
               data-aos="fade-up"
-              :data-aos-delay="50 * index"
             >
               <book-card :book="book" @viewDetails="onViewDetails" />
             </v-col>
@@ -80,14 +79,11 @@
             <div class="ma-4">
               <v-row>
                 <v-col
-                  v-for="(book, index) in filterBooksBasedOnPublication(
-                    publication
-                  )"
+                  v-for="book in filterBooksBasedOnPublication(publication)"
                   :key="book.title"
                   cols="12"
                   md="4"
                   data-aos="fade-up"
-                  :data-aos-delay="50 * index"
                 >
                   <book-card :book="book" @viewDetails="onViewDetails" />
                 </v-col>
