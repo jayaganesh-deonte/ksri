@@ -8,6 +8,7 @@ export interface Project {
   status: "Completed" | "On-Going" | "Future Projects"; // Using literal types for status
   metadata?: { [key: string]: string };
   sponsor?: string; // Optional sponsor field for projects
+  keywords: string;
 }
 
 // DynamoDB specific model
@@ -23,6 +24,7 @@ export interface ProjectDDB {
   status: string;
   metadata?: { [key: string]: string };
   sponsor?: string;
+  keywords: string;
 }
 
 // Convert DynamoDB record to application model
@@ -36,13 +38,14 @@ export function fromDynamoDB(item: ProjectDDB): Project {
     status: item.status as Project["status"],
     metadata: item.metadata,
     sponsor: item.sponsor,
+    keywords: item.keywords,
   };
 }
 
 // Convert application model to DynamoDB record
 export function toDynamoDB(project: Project): ProjectDDB {
   // Create a URL-friendly version of the title for the PK
-  console.log("project toDynamoDB", project);
+  // console.log("project toDynamoDB", project);
 
   return {
     PK: project.status,
@@ -56,6 +59,7 @@ export function toDynamoDB(project: Project): ProjectDDB {
     status: project.status,
     metadata: project.metadata,
     sponsor: project.sponsor,
+    keywords: project.keywords,
   };
 }
 
@@ -77,7 +81,8 @@ export function isProjectDDB(item: any): item is ProjectDDB {
     (typeof item.metadata === "undefined" ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&
-    (typeof item.sponsor === "undefined" || typeof item.sponsor === "string")
+    (typeof item.sponsor === "undefined" || typeof item.sponsor === "string") &&
+    typeof item.keywords === "string"
   );
 }
 

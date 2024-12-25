@@ -32,7 +32,8 @@
 
       <!-- display future projects -->
       <div v-if="activeCategory === 'Future Projects'">
-        <div
+        <displayProjects :getEventsByCategory="getEventsByCategory" />
+        <!-- <div
           v-for="(project, index) in getEventsByCategory"
           :key="project"
           data-aos="fade-up"
@@ -47,7 +48,7 @@
               <div class="text-subtitle-1">{{ project.subTitle }}</div>
             </div>
           </v-card>
-        </div>
+        </div> -->
       </div>
 
       <!-- display Ancient Indian Knowledge Series  -->
@@ -144,7 +145,7 @@ let activeCategory = ref("Completed");
 const projectButtonList = [
   "Completed",
   "On-Going",
-  "Ancient Indian Knowledge Series",
+  // "Ancient Indian Knowledge Series",
   "Future Projects",
 ];
 

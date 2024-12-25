@@ -17,6 +17,15 @@
             <div class="text-body-1" data-aos="fade-right">
               {{ project.subTitle }}
             </div>
+            <!-- display sponsor if present -->
+            <div
+              class="text-body-1 ma-2 text-secondary"
+              data-aos="fade-right"
+              v-if="project.sponsor"
+            >
+              Sponsored by
+              <v-chip color="secondary" label> {{ project.sponsor }} </v-chip>
+            </div>
           </v-col>
           <v-col cols="12" sm="3" v-if="project.completedYear">
             <v-card

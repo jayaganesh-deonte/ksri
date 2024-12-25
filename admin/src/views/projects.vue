@@ -47,11 +47,16 @@ const projectFields = [
     type: "text",
   },
   {
+    key: "keywords",
+    label: "Keywords",
+    type: "textarea",
+  },
+  {
     key: "status",
     label: "Status",
     type: "auto-complete",
     rules: [(v) => !!v || "Status is required"],
-    items: ["On-Going", "Completed"],
+    items: ["On-Going", "Completed", "Future Projects"],
     editDisabled: false,
   },
 ];
@@ -77,6 +82,7 @@ const projectHeaders = [
     key: "sponsor",
     title: "Sponsor",
   },
+
   { key: "status", title: "Status" },
   { key: "actions", title: "Actions" },
 ];
