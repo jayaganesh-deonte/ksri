@@ -45,16 +45,14 @@
         class="d-flex justify-space-around"
         :class="`${$device.isMobile ? 'flex-column' : 'flex-row'}`"
       >
-        <div class="text-body-1 my-1" v-if="item.mobile">
+        <!-- <div class="text-body-1 my-1" v-if="item.mobile">
           <div>Mobile:</div>
           {{ item.mobile }}
-        </div>
+        </div> -->
         <div class="text-body-1 my-1" v-if="item.mail">
           <div>Email:</div>
           {{ item.mail }}
         </div>
-      </div>
-      <div class="d-flex justify-center mt-2">
         <v-btn
           variant="outlined"
           color="primary"
@@ -63,6 +61,7 @@
           >View Profile</v-btn
         >
       </div>
+      <div class="d-flex justify-center mt-2"></div>
     </v-card>
   </div>
 </template>

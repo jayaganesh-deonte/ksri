@@ -8,23 +8,11 @@
       Faculty
     </div>
 
-    <div class="d-flex flex-wrap justify-center">
-      <div
-        v-for="designationName in designation"
-        :key="designationName"
-        class="d-flex flex-wrap justify-center"
-      >
-        <div
-          v-for="(item, index) in facultyItemsNew[designationName]"
-          :key="index"
-          class="ma-2"
-          :width="`${$device.isMobile ? '' : '40vw'}`"
-          :height="`${$device.isMobile ? '' : '90%'}`"
-        >
-          <FacultyCard :item="item" />
-        </div>
-      </div>
-    </div>
+    <v-row class="ma-2">
+      <v-col v-for="faculty in facultyArraySorted" :key="faculty">
+        <FacultyCard :item="faculty" />
+      </v-col>
+    </v-row>
 
     <div
       class="heading-with-line text-h4 mb-4 font-weight-bold text-primary text-center"
@@ -76,23 +64,12 @@
       Non-Academic
     </div>
 
-    <div class="d-flex flex-wrap justify-center">
-      <div
-        v-for="designationName in nonacademicdesignation"
-        :key="designationName"
-        class="d-flex"
-      >
-        <div
-          v-for="(item, index) in nonacademicItemsNew[designationName]"
-          :key="index"
-          class="ma-2"
-          :width="`${$device.isMobile ? '' : ''}`"
-          :height="`${$device.isMobile ? '' : ''}`"
-        >
-          <FacultyCard :item="item" />
-        </div>
-      </div>
-    </div>
+    <!-- display nonacademicArraySorted -->
+    <v-row class="ma-2">
+      <v-col v-for="faculty in nonacademicArraySorted" :key="faculty">
+        <FacultyCard :item="faculty" />
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -135,6 +112,17 @@ for (let designationName in designation) {
   });
 }
 
+let facultyArraySorted = [];
+// for each keys in facultyItemsNew, add it to facultyArraySorted
+for (let designationName in facultyItemsNew) {
+  // facultyArraySorted.push(facultyItemsNew[designationName]);
+  let desigArray = facultyItemsNew[designationName];
+
+  for (let i = 0; i < desigArray.length; i++) {
+    facultyArraySorted.push(desigArray[i]);
+  }
+}
+
 const nonacademicData = await queryContent("faculty", "nonacademic").findOne();
 let nonacademic = nonacademicData.body;
 
@@ -162,6 +150,16 @@ for (let designationName in nonacademicdesignation) {
   nonacademicItemsNew[nonacademicdesignation[designationName]].sort((a, b) => {
     return a.orderId - b.orderId;
   });
+}
+
+let nonacademicArraySorted = [];
+// for each keys in nonacademicItemsNew, add it to nonacademicArraySorted
+for (let designationName in nonacademicItemsNew) {
+  let desigArray = nonacademicItemsNew[designationName];
+
+  for (let i = 0; i < desigArray.length; i++) {
+    nonacademicArraySorted.push(desigArray[i]);
+  }
 }
 
 const chairData = await queryContent("chair").findOne();
