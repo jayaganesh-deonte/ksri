@@ -40,7 +40,7 @@
 
         <!-- text -->
         <div class="text-h6 my-4 defaultFont" data-aos="fade-left">
-          {{ news.text }}
+          <div v-html="news.text"></div>
         </div>
 
         <v-divider class="my-4"></v-divider>

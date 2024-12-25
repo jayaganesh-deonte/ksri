@@ -18,7 +18,9 @@
       <div class="my-2 text-h4 font-weight-bold" data-aos="fade-up">
         {{ event.title }}
       </div>
-      <div data-aos="fade-up">{{ event.description }}</div>
+      <div data-aos="fade-up">
+        <div v-html="event.description"></div>
+      </div>
 
       <!-- add one row with 3 cols for category, venue and date -->
       <v-row class="ma-4 pa-2">

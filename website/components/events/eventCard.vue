@@ -54,7 +54,7 @@
               ></div>
 
               <div class="text-start pa-0 mt-5">
-                {{ event.description }}
+                <div v-html="event.description"></div>
               </div>
               <v-chip-group class="mt-2">
                 <v-chip

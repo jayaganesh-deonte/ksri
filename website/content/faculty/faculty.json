@@ -67,20 +67,6 @@
       "created_by": "admin"
     },
     "orderId": "1",
-    "achievementCounts": [
-      {
-        "name": "Ph.D. Candidates",
-        "count": "10"
-      },
-      {
-        "name": "Books",
-        "count": "5"
-      },
-      {
-        "name": "Articles",
-        "count": "5"
-      }
-    ],
     "teachingExperience": [
       {
         "duration": "Presently",

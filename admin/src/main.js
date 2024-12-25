@@ -23,6 +23,9 @@ import ToastPlugin from "vue-toast-notification";
 //import 'vue-toast-notification/dist/theme-default.css';
 import "vue-toast-notification/dist/theme-bootstrap.css";
 
+import { QuillEditor } from "@vueup/vue-quill";
+import "@vueup/vue-quill/dist/vue-quill.snow.css";
+
 // import awsconfig from "./aws-exports";
 import awsconfig from "./aws-config";
 
@@ -34,5 +37,7 @@ registerPlugins(app);
 
 app.use(VueSweetalert2);
 app.use(ToastPlugin);
+
+app.component("QuillEditor", QuillEditor);
 
 app.mount("#app");

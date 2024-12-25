@@ -3,7 +3,7 @@
     "avatarImage": [
       "https://d30y75l38k1y9.cloudfront.net/upload/gal-img-3.png"
     ],
-    "text": "At the Reception of the Members of the Central Sanskrit Board by the K.S.R. Institute and other Sanskrit Institutions...",
+    "text": "<p>At the Reception of the Members of the <strong>Central Sanskrit Board</strong> by the K.S.R. Institute and other Sanskrit Institutions...</p>",
     "heading": " Members of the Central Sanskrit Board",
     "title": "At the Reception of the Members of the Central Sanskrit Board by the K.S.R. Institute and other Sanskrit Institutions...",
     "heading_image_url": [
@@ -12,9 +12,9 @@
     "images": [],
     "id": "01JFAM40PAZVFF27W3N67VG4NZ",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2024-12-17T15:34:53.386Z",
-      "updated_at": "2024-12-17T15:34:53.386Z",
+      "updated_at": "2024-12-25T09:43:39.599Z",
       "created_by": "admin"
     }
   },

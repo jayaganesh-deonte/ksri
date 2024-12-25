@@ -12,6 +12,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.705.0",
     "@mdi/font": "7.4.47",
+    "@vueup/vue-quill": "^1.2.0",
     "aws-amplify": "^6.10.2",
     "axios": "^1.7.9",
     "browser-image-compression": "^2.0.2",

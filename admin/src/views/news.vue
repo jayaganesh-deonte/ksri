@@ -28,7 +28,7 @@ const newsFields = [
   {
     key: "text",
     label: "News Content",
-    type: "textarea",
+    type: "editor",
     rules: [(v) => !!v || "News Content is required"],
   },
   {
@@ -60,10 +60,10 @@ const newsHeaders = [
     key: "title",
     title: "Title",
   },
-  {
-    key: "text",
-    title: "News Content",
-  },
+  // {
+  //   key: "text",
+  //   title: "News Content",
+  // },
   {
     key: "actions",
     title: "Actions",

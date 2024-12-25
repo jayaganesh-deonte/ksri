@@ -129,6 +129,16 @@
                     density="compact"
                   />
 
+                  <!-- editor -->
+
+                  <QuillEditor
+                    v-else-if="field.type === 'editor'"
+                    theme="snow"
+                    v-model:content="editedItem[field.key]"
+                    contentType="html"
+                    style="height: 300px"
+                  />
+
                   <v-autocomplete
                     v-else-if="field.type === 'auto-complete'"
                     v-model="editedItem[field.key]"

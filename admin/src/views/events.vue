@@ -34,7 +34,7 @@ const eventsFields = [
   {
     key: "description",
     label: "Description",
-    type: "textarea",
+    type: "editor",
     rules: [
       (v) => !!v || "Description is required",
       (v) => v.length <= 1000 || "Description must be 1000 characters or less",
