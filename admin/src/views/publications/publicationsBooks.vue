@@ -106,6 +106,12 @@ const bookFields = [
     rules: [(v) => !!v || "Available Number of Copies is required"],
   },
   {
+    key: "keywords",
+    label: "Search Keywords",
+    type: "text",
+    rules: [(v) => !!v || "Search Keywords is required"],
+  },
+  {
     key: "imageUrls",
     label: "Image URLs",
     type: "image",
@@ -120,6 +126,7 @@ const bookHeaders = [
   { title: "Price", key: "price" },
   { title: "Available", key: "available" },
   { title: "Publication", key: "publication" },
+
   { title: "Available Number of Copies", key: "copies" },
   { title: "Actions", key: "actions", sortable: false },
 ];

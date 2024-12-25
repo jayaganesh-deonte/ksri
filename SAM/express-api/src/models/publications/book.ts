@@ -22,6 +22,7 @@ export interface Book {
   details?: string;
   id: string;
   publication: string;
+  keywords: string;
   available: string;
   copies: string;
   metadata?: { [key: string]: any };
@@ -40,6 +41,7 @@ export interface BookDDB {
   details?: string;
   id?: string;
   publication: string;
+  keywords: string;
   available: string;
   copies: string;
   metadata?: { [key: string]: any };
@@ -56,6 +58,7 @@ export function validateBook(item: Book): boolean {
     typeof item.details === "string" &&
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
+    typeof item.keywords === "string" &&
     typeof item.available === "string" &&
     typeof item.copies === "string" &&
     typeof item.author === "string" &&
@@ -76,6 +79,7 @@ export function toDynamoDB(item: Book): BookDDB {
     details: item.details,
     id: item.id,
     publication: item.publication,
+    keywords: item.keywords,
     available: item.available,
     copies: item.copies,
     metadata: item.metadata,
@@ -93,6 +97,7 @@ export function fromDynamoDB(item: BookDDB): Book {
     details: item.details,
     id: item.SK,
     publication: item.publication,
+    keywords: item.keywords,
     available: item.available,
     copies: item.copies,
     metadata: item.metadata,
@@ -114,6 +119,7 @@ export function isBook(item: any): item is BookDDB {
     typeof item.details === "string" &&
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
+    typeof item.keywords === "string" &&
     typeof item.available === "string" &&
     typeof item.copies === "number" &&
     typeof item.author === "string" &&
@@ -135,6 +141,7 @@ export function isBookDDB(item: any): item is BookDDB {
     typeof item.details === "string" &&
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
+    typeof item.keywords === "string" &&
     typeof item.available === "string" &&
     typeof item.copies === "number" &&
     typeof item.author === "string" &&
@@ -156,6 +163,7 @@ export function validateBookDDB(item: BookDDB): boolean {
     typeof item.details === "string" &&
     typeof item.id === "string" &&
     typeof item.publication === "string" &&
+    typeof item.keywords === "string" &&
     typeof item.available === "string" &&
     typeof item.copies === "number" &&
     typeof item.author === "string" &&
