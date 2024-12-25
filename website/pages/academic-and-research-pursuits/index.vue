@@ -44,6 +44,11 @@
         <displayProjects :getEventsByCategory="getEventsByCategory" />
       </div>
 
+      <!-- if getEventsByCategory is empty, then display message -->
+      <div v-if="getEventsByCategory.length === 0">
+        <div class="text-h6 text-center">No projects found</div>
+      </div>
+
       <!-- display Ancient Indian Knowledge Series  -->
       <div v-if="activeStatus === 'Ancient Indian Knowledge Series'">
         <div
