@@ -8,11 +8,27 @@
       </div>
     </div>
     <div class="text-center my-8">
-      <nuxt-link to="/academic-and-research-pursuits/ksri-publications/books">
-        <v-btn rounded="pill" variant="outlined" color="primary">
-          List of Book Catalogue
-        </v-btn>
-      </nuxt-link>
+      <!-- display recent books in horizontal line -->
+      <div class="sectionTitle3">Books</div>
+      <v-row class="ma-2" justify="center">
+        <v-col v-for="book in recentBooks" :key="book.title" cols="10" md="3">
+          <book-card :book="book" />
+        </v-col>
+        <!-- a col to show "View All" -->
+        <v-col cols="10" md="1">
+          <nuxt-link
+            to="/academic-and-research-pursuits/ksri-publications/books"
+          >
+            <v-card
+              color="primary"
+              height="100%"
+              class="d-flex flex-column align-center justify-center font-weight-bold"
+            >
+              <div>View All</div>
+            </v-card>
+          </nuxt-link>
+        </v-col>
+      </v-row>
     </div>
     <div class="text-center my-4">
       <div class="text-h6">
@@ -212,13 +228,16 @@ const publicationCards = [
 // const publicationsOutOfStock = publicationsOutOfStockData.body;
 
 // Samskrita Academy Publications
-const samskritaAcademyPublicationsData = await queryContent(
-  "publications",
-  "samskritaacademypublications"
-).findOne();
+// const samskritaAcademyPublicationsData = await queryContent(
+//   "publications",
+//   "samskritaacademypublications"
+// ).findOne();
 
-const samskritaAcademyPublications = samskritaAcademyPublicationsData.body;
+// const samskritaAcademyPublications = samskritaAcademyPublicationsData.body;
 const booksData = await queryContent("publications", "books").findOne();
 
 const ksriBooks = booksData.body;
+
+// recent 3 books
+const recentBooks = reactive(ksriBooks.slice(0, 3));
 </script>

@@ -105,7 +105,7 @@
             color="primary"
             @click="navigateToBookCatalogue"
           >
-            List of Book Catalogue
+            Back to Catalogue
           </v-btn>
 
           <!-- show book details -->

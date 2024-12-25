@@ -39,7 +39,7 @@
             color="primary"
             to="/academic-and-research-pursuits/ksri-publications/books/"
           >
-            List of Book Catalogue
+            Back to Catalogue
           </v-btn>
         </div>
         <v-row>
