@@ -96,6 +96,10 @@ const allOptions = [
     icon: "mdi-book-education",
     children: [
       {
+        title: "Projects Series",
+        path: "/projects-series",
+      },
+      {
         title: "Projects",
         path: "/projects",
       },

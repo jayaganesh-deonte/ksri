@@ -1,15 +1,49 @@
 <template>
-  <generic-crud
-    entityName="Project"
-    :apiEndpoint="apiEndpoint"
-    :entityFields="projectFields"
-    :headers="projectHeaders"
-    :addIdToPayload="true"
-  />
+  <div>
+    <div class="text-center" v-if="isLoading">
+      <v-progress-circular indeterminate color="primary"></v-progress-circular>
+    </div>
+
+    <generic-crud
+      v-else
+      entityName="Project"
+      :apiEndpoint="apiEndpoint"
+      :entityFields="projectFields"
+      :headers="projectHeaders"
+      :addIdToPayload="true"
+    />
+  </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import { getUserIdToken } from "@/services/auth";
+import axios from "axios";
+
 const apiEndpoint = import.meta.env.VITE_API_URL + "/projects";
+
+const getProjectSeries = async () => {
+  const apiEndpoint = import.meta.env.VITE_API_URL + "/project/series";
+  const idToken = await getUserIdToken();
+
+  const response = await axios.get(apiEndpoint, {
+    headers: {
+      Authorization: `${idToken}`,
+    },
+  });
+
+  if (response.status === 200) {
+    // get names only
+    const projectSeriesWithName = response.data.map(
+      (projectSeries) => projectSeries.name
+    );
+    return projectSeriesWithName;
+  }
+};
+
+let isLoading = ref(true);
+
+const projectSeries = await getProjectSeries();
 
 // {
 //     "title": "PadukaSahasram( English and Tamil Trans.)",
@@ -59,6 +93,12 @@ const projectFields = [
     items: ["On-Going", "Completed", "Future Projects"],
     editDisabled: false,
   },
+  {
+    key: "projectSeries",
+    label: "Project Series",
+    type: "auto-complete",
+    items: projectSeries,
+  },
 ];
 
 const projectHeaders = [
@@ -82,8 +122,13 @@ const projectHeaders = [
     key: "sponsor",
     title: "Sponsor",
   },
-
+  {
+    key: "projectSeries",
+    title: "Project Series",
+  },
   { key: "status", title: "Status" },
   { key: "actions", title: "Actions" },
 ];
+
+isLoading.value = false;
 </script>

@@ -2,6 +2,7 @@ import express from "express";
 import { helloRoute } from "./HelloRoute";
 import { milestonesRoute } from "./milestones";
 import { projectRoute } from "./projects";
+import { projectSeriesRoute } from "./projectSeries";
 import { traditionalScholarRoute } from "./TraditionalScholarRoute";
 
 import { foreignScholarRoute } from "./foreignScholars";
@@ -53,6 +54,7 @@ export const routes = express.Router();
 routes.use(helloRoute);
 routes.use(milestonesRoute);
 routes.use(projectRoute);
+routes.use(projectSeriesRoute);
 routes.use(traditionalScholarRoute);
 routes.use(foreignScholarRoute);
 routes.use(studentRoute);

@@ -12,6 +12,7 @@ import { useAppStore } from "@/stores/app";
 import index from "@/views/index.vue";
 import milestone from "@/views/milestone.vue";
 import projects from "@/views/projects.vue";
+import projectsSeries from "@/views/projectsSeries.vue";
 
 import traditionalScholars from "@/views/scholars/traditionalScholars.vue";
 import foreignScholars from "@/views/scholars/foreignScholars.vue";
@@ -72,6 +73,12 @@ const routes = [
     path: "/projects",
     name: "projects",
     component: projects,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/projects-series",
+    name: "projectsSeries",
+    component: projectsSeries,
     meta: { requiresAuth: true },
   },
   {

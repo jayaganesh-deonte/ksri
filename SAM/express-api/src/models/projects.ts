@@ -9,6 +9,7 @@ export interface Project {
   metadata?: { [key: string]: string };
   sponsor?: string; // Optional sponsor field for projects
   keywords: string;
+  projectSeries?: string;
 }
 
 // DynamoDB specific model
@@ -25,6 +26,7 @@ export interface ProjectDDB {
   metadata?: { [key: string]: string };
   sponsor?: string;
   keywords: string;
+  projectSeries?: string;
 }
 
 // Convert DynamoDB record to application model
@@ -39,6 +41,7 @@ export function fromDynamoDB(item: ProjectDDB): Project {
     metadata: item.metadata,
     sponsor: item.sponsor,
     keywords: item.keywords,
+    projectSeries: item.projectSeries,
   };
 }
 
@@ -60,6 +63,7 @@ export function toDynamoDB(project: Project): ProjectDDB {
     metadata: project.metadata,
     sponsor: project.sponsor,
     keywords: project.keywords,
+    projectSeries: project.projectSeries,
   };
 }
 
@@ -82,7 +86,9 @@ export function isProjectDDB(item: any): item is ProjectDDB {
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&
     (typeof item.sponsor === "undefined" || typeof item.sponsor === "string") &&
-    typeof item.keywords === "string"
+    typeof item.keywords === "string" &&
+    (typeof item.projectSeries === "undefined" ||
+      typeof item.projectSeries === "string")
   );
 }
 
