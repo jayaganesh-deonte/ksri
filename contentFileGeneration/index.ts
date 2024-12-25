@@ -213,6 +213,14 @@ const pageDetails = [
     // sort by id in  ascending order
     filter: (data: any[]) => data.sort((a, b) => a.id - b.id),
   },
+  // /project/series
+  {
+    endpoint: "/project/series",
+    outputFile: "../website/content//projects/series.json",
+    // order by orderid and get only name
+    filter: (data: any[]) =>
+      data.sort((a, b) => a.orderId - b.orderId).map((item) => item.name),
+  },
   ///projects?status=Future Projects
   {
     endpoint: "/projects?status=Future Projects",

@@ -247,6 +247,15 @@ var pageDetails = [
         // sort by id in  ascending order
         filter: function (data) { return data.sort(function (a, b) { return a.id - b.id; }); },
     },
+    // /project/series
+    {
+        endpoint: "/project/series",
+        outputFile: "../website/content//projects/series.json",
+        // order by orderid and get only name
+        filter: function (data) {
+            return data.sort(function (a, b) { return a.orderId - b.orderId; }).map(function (item) { return item.name; });
+        },
+    },
     ///projects?status=Future Projects
     {
         endpoint: "/projects?status=Future Projects",

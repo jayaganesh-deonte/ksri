@@ -19,6 +19,12 @@ const projectFields = [
     rules: [(v) => !!v || "Name is required"],
     editDisabled: true,
   },
+  {
+    key: "orderId",
+    label: "Order Id",
+    type: "text",
+    rules: [(v) => !!v || "orderId is required"],
+  },
 ];
 
 const projectHeaders = [
@@ -26,6 +32,7 @@ const projectHeaders = [
     key: "name",
     title: "Name",
   },
+  { key: "orderId", title: "Order Id" },
   { key: "actions", title: "Actions" },
 ];
 </script>

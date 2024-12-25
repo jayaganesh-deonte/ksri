@@ -4,55 +4,48 @@
 
     <!-- add button list -->
     <div
-      class="d-flex justify-center mx-2"
+      class="d-flex justify-center align-center mx-2"
       :class="$device.isMobile ? 'flex-wrap' : 'flex-row'"
     >
-      <div v-for="category in projectButtonList" :key="category">
+      <div class="text-h6">Series:</div>
+      <!-- {{ projectSeries }} -->
+      <div v-for="series in projectSeries" :key="series">
         <v-btn
           color="primary"
-          :variant="activeCategory === category ? 'flat' : 'outlined'"
+          :variant="activeSeries === series ? 'flat' : 'outlined'"
           rounded="pill"
           class="ma-2"
-          @click="activeCategory = category"
+          @click="activeSeries = series"
+        >
+          {{ series }}
+        </v-btn>
+      </div>
+    </div>
+    <div
+      class="d-flex justify-center align-center mx-2"
+      :class="$device.isMobile ? 'flex-wrap' : 'flex-row'"
+    >
+      <div class="text-h6">Status:</div>
+      <div v-for="category in projectStatus" :key="category">
+        <v-btn
+          color="primary"
+          :variant="activeStatus === category ? 'flat' : 'outlined'"
+          rounded="pill"
+          class="ma-2"
+          @click="activeStatus = category"
         >
           {{ category }}
         </v-btn>
       </div>
     </div>
     <div class="my-8 mx-6">
-      <!-- display completed projects -->
-      <div v-if="activeCategory === 'Completed'">
+      <!-- display projects -->
+      <div>
         <displayProjects :getEventsByCategory="getEventsByCategory" />
-      </div>
-
-      <!-- display ongoing projects -->
-      <div v-if="activeCategory === 'On-Going'">
-        <displayProjects :getEventsByCategory="getEventsByCategory" />
-      </div>
-
-      <!-- display future projects -->
-      <div v-if="activeCategory === 'Future Projects'">
-        <displayProjects :getEventsByCategory="getEventsByCategory" />
-        <!-- <div
-          v-for="(project, index) in getEventsByCategory"
-          :key="project"
-          data-aos="fade-up"
-          :data-aos-delay="index * 100 + 500"
-        >
-          <v-card class="pa-4 ma-2" height="100%" rounded="0">
-            <div
-              class="text-center d-flex flex-column justify-center align-center"
-            >
-              <div class="text-h5 font-weight-bold">{{ project.title }}</div>
-              <div class="horizontalLine my-6" style="--line-width: 10%"></div>
-              <div class="text-subtitle-1">{{ project.subTitle }}</div>
-            </div>
-          </v-card>
-        </div> -->
       </div>
 
       <!-- display Ancient Indian Knowledge Series  -->
-      <div v-if="activeCategory === 'Ancient Indian Knowledge Series'">
+      <div v-if="activeStatus === 'Ancient Indian Knowledge Series'">
         <div
           v-for="(projects, category, index) in getEventsByCategory"
           :key="projects"
@@ -140,24 +133,51 @@ const ancientIndianKnowledgeSeries = await queryContent(
   "ancientindianknowledgeseries"
 ).findOne();
 
-let activeCategory = ref("Completed");
+let activeStatus = ref("All");
 
-const projectButtonList = [
+const projectStatus = [
+  "All",
   "Completed",
   "On-Going",
   // "Ancient Indian Knowledge Series",
   "Future Projects",
 ];
 
+let activeSeries = ref("All");
+let projectSeries = ref(["All"]);
+const seriesData = await queryContent("projects", "series").findOne();
+
+projectSeries.value = ["All", ...seriesData.body];
+
+let projects = [
+  ...completedprojects.body,
+  ...ongoingprojects.body,
+  ...futureprojects.body,
+];
+
 const getEventsByCategory = computed(() => {
-  if (activeCategory.value === "Completed") {
-    return completedprojects.body;
-  } else if (activeCategory.value === "On-Going") {
-    return ongoingprojects.body;
-  } else if (activeCategory.value === "Future Projects") {
-    return futureprojects.body;
-  } else if (activeCategory.value === "Ancient Indian Knowledge Series") {
-    return ancientIndianKnowledgeSeries.body[0];
+  //  return based on  activeStatus filter and activeSeries filter
+  //  for activeSeries => filter based on key with name projectSeries in project object amd if activeSeries is All, then ignore current filter
+  //  for activeStatus => filter based on key with name status in project object and if activeStatus  is All, then ignore current filter
+  //  apply both filter and return
+
+  if (activeStatus.value === "All" && activeSeries.value === "All") {
+    return projects;
+  } else if (activeStatus.value === "All" && activeSeries.value !== "All") {
+    return projects.filter((project) => {
+      return project.projectSeries === activeSeries.value;
+    });
+  } else if (activeStatus.value !== "All" && activeSeries.value === "All") {
+    return projects.filter((project) => {
+      return project.status === activeStatus.value;
+    });
+  } else {
+    return projects.filter((project) => {
+      return (
+        project.status === activeStatus.value &&
+        project.projectSeries === activeSeries.value
+      );
+    });
   }
 });
 </script>
