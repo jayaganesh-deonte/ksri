@@ -17,7 +17,7 @@
 
       <v-data-table
         class="custom-table"
-        :headers="headers"
+        :headers="booksTableHeader"
         :items="books"
         :search="searchText"
         :items-per-page-options="[
@@ -54,27 +54,27 @@ const books = booksData.body;
 const booksTableHeader = [
   {
     title: "Accession No",
-    key: "Accession No",
+    key: "accessionNo",
   },
   {
     title: "Book Title",
-    key: "Book Title",
+    key: "title",
   },
   {
     title: "Author",
-    key: "Author",
+    key: "author",
   },
   {
     title: "Editor",
-    key: "Editor",
+    key: "editor",
   },
   {
     title: "Publisher",
-    key: "Publisher",
+    key: "publisher",
   },
   {
     title: "Remarks",
-    key: "Remarks",
+    key: "remarks",
   },
 ];
 
