@@ -84,6 +84,34 @@
     }
   },
   {
+    "id": "01JFAJVAATFF36S09NE1TSSBZ3",
+    "name": "Ms.Renganayaki",
+    "course": "Ph.D.",
+    "areaOfStudy": "Surya in Sanskrit Literature - A scientific approach",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-17T15:12:39.770Z",
+      "updated_at": "2024-12-26T10:13:45.279Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJVAATKX46EAQAPQJADVK2",
+    "name": "Ms.N. Bhuvanesawri",
+    "course": "Ph.D.",
+    "areaOfStudy": "Critical Study of the play Prasanna Raghava of Jayadeva - Submitted Synopsis",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-17T15:12:39.770Z",
+      "updated_at": "2024-12-26T10:13:53.359Z",
+      "created_by": "admin"
+    }
+  },
+  {
     "id": "01JFAK0ZTHZT8ZF8HCXS5JDMEF",
     "name": "Ms.M Archana",
     "course": "Ph.D.",
@@ -122,6 +150,20 @@
       "updated_by": "admin",
       "created_at": "2024-12-17T15:15:45.616Z",
       "updated_at": "2024-12-17T15:15:45.616Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJVAATWY7EFYGGVTQ1D454",
+    "name": "Ms.Goda Devi",
+    "course": "Ph.D.",
+    "areaOfStudy": "Kasyapa Samhita- text on Vishacikitsa: A Critical study- Submitted synopsis",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-17T15:12:39.770Z",
+      "updated_at": "2024-12-26T10:14:03.719Z",
       "created_by": "admin"
     }
   },
@@ -224,6 +266,20 @@
     }
   },
   {
+    "id": "01JFAJVAATVSMTFH8256B8ZRBF",
+    "name": "Ms. S. Madhurambika",
+    "course": "Ph.D.",
+    "areaOfStudy": "Sahendra Vilasa",
+    "supervisor": "Dr. V. Yamuna Devi",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-17T15:12:39.770Z",
+      "updated_at": "2024-12-26T10:14:41.567Z",
+      "created_by": "admin"
+    }
+  },
+  {
     "id": "01JFAK0ZTH8MT00K695T4BZT4X",
     "name": "Ms. S. Anuradha",
     "course": "Ph.D.",
@@ -248,6 +304,20 @@
       "updated_by": "admin",
       "created_at": "2024-12-17T15:15:45.616Z",
       "updated_at": "2024-12-17T15:15:45.616Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJVAATVEKY72M349CYC3SF",
+    "name": "Ms. Preethi Mahesh",
+    "course": "Ph.D.",
+    "areaOfStudy": "Chennai in Sanskrit Literature - Awaiting Viva",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-17T15:12:39.770Z",
+      "updated_at": "2024-12-26T10:14:19.927Z",
       "created_by": "admin"
     }
   },
@@ -378,6 +448,20 @@
     }
   },
   {
+    "id": "01JFAJVAATDNJ4D6HHEZXACF9K",
+    "name": "Mr. S. Balakrishnan",
+    "course": "Ph.D.",
+    "areaOfStudy": "Vrttaratnasangraha of Raghunatha",
+    "supervisor": "Dr. T.V.Vasudeva",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-17T15:12:39.770Z",
+      "updated_at": "2024-12-26T10:17:18.031Z",
+      "created_by": "admin"
+    }
+  },
+  {
     "id": "01JFAK0ZTG1FMTW07BNQQG126E",
     "name": "K.Srinivasan",
     "course": "Ph.D.",
@@ -402,6 +486,20 @@
       "updated_by": "admin",
       "created_at": "2024-12-17T15:15:45.617Z",
       "updated_at": "2024-12-17T15:15:45.617Z",
+      "created_by": "admin"
+    }
+  },
+  {
+    "id": "01JFAJVAATP4KCRBX36R05W68Q",
+    "name": "K.N.Srikkanth",
+    "course": "Ph.D.",
+    "areaOfStudy": "Contribution of Sridhara and Sripati to Indian Mathematics - Viva Awaited",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-17T15:12:39.770Z",
+      "updated_at": "2024-12-26T10:16:28.591Z",
       "created_by": "admin"
     }
   },

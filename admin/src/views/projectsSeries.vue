@@ -19,18 +19,24 @@ const projectFields = [
     rules: [(v) => !!v || "Name is required"],
     editDisabled: true,
   },
-  {
-    key: "seriesType",
-    label: "Type",
-    type: "auto-complete",
-    items: ["Sub Series", "Series"],
-    rules: [(v) => !!v || "Type is required"],
-  },
+
   {
     key: "orderId",
     label: "Order Id",
     type: "text",
     rules: [(v) => !!v || "orderId is required"],
+  },
+  {
+    key: "subSeries",
+    label: "Sub Series",
+    isArray: true,
+    fields: [
+      {
+        key: "name",
+        label: "Name",
+        type: "text",
+      },
+    ],
   },
 ];
 
@@ -40,8 +46,11 @@ const projectHeaders = [
     title: "Name",
   },
   {
-    key: "seriesType",
-    title: "Type",
+    key: "subSeries",
+    title: "Sub Series",
+    value: (item) => {
+      return item.subSeries.map((sub) => sub.name).join(", ");
+    },
   },
   { key: "orderId", title: "Order Id" },
   { key: "actions", title: "Actions" },

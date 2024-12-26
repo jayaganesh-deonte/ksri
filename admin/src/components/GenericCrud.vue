@@ -266,7 +266,7 @@
 
 <script setup>
 import axios from "axios";
-import { ref, onMounted, computed, defineProps, defineEmits } from "vue";
+import { ref, onMounted, computed, defineProps, defineEmits, watch } from "vue";
 import { useToast } from "vue-toast-notification";
 import "vue-toast-notification/dist/theme-sugar.css";
 import { inject } from "vue";
@@ -307,7 +307,12 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["item-created", "item-updated", "item-deleted"]);
+const emit = defineEmits([
+  "item-created",
+  "item-updated",
+  "item-deleted",
+  "data-model-updated",
+]);
 
 const swal = inject("$swal");
 const $toast = useToast();
@@ -335,6 +340,14 @@ const defaultItem = computed(() => {
 });
 
 const editedItem = ref({ ...defaultItem.value });
+
+watch(
+  () => editedItem,
+  () => {
+    emit("data-model-updated", editedItem.value);
+  },
+  { deep: true }
+);
 
 const formTitle = computed(() => {
   return editedIndex.value === -1

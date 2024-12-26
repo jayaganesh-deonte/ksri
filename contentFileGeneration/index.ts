@@ -221,6 +221,19 @@ const pageDetails = [
     filter: (data: any[]) =>
       data.sort((a, b) => a.orderId - b.orderId).map((item) => item.name),
   },
+  //  project sub series mapping
+  {
+    endpoint: "/project/series",
+    outputFile: "../website/content//projects/subseries.json",
+    // get only name and subseries names
+    filter: (data: any[]) =>
+      data
+        .sort((a, b) => a.orderId - b.orderId)
+        .map((item) => ({
+          name: item.name,
+          subSeries: item.subSeries.map((subItem) => subItem.name),
+        })),
+  },
   ///projects?status=Future Projects
   {
     endpoint: "/projects?status=Future Projects",

@@ -256,6 +256,20 @@ var pageDetails = [
             return data.sort(function (a, b) { return a.orderId - b.orderId; }).map(function (item) { return item.name; });
         },
     },
+    //  project sub series mapping
+    {
+        endpoint: "/project/series",
+        outputFile: "../website/content//projects/subseries.json",
+        // get only name and subseries names
+        filter: function (data) {
+            return data
+                .sort(function (a, b) { return a.orderId - b.orderId; })
+                .map(function (item) { return ({
+                name: item.name,
+                subSeries: item.subSeries.map(function (subItem) { return subItem.name; }),
+            }); });
+        },
+    },
     ///projects?status=Future Projects
     {
         endpoint: "/projects?status=Future Projects",

@@ -14,6 +14,20 @@
     }
   },
   {
+    "id": "01JFAJVAAR04FG3VNFD4147CGR",
+    "name": "V.R.Srinivasan",
+    "course": "M.Phil",
+    "areaOfStudy": "Manju Ramayanam - A study",
+    "supervisor": "Dr. V. Yamuna Devi",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-17T15:12:39.769Z",
+      "updated_at": "2024-12-26T10:13:21.407Z",
+      "created_by": "admin"
+    }
+  },
+  {
     "id": "01JFAK0ZTEDJHM9MST81HXHMVC",
     "name": "R.Subasri",
     "course": "M.Phil",

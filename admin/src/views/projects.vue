@@ -16,13 +16,17 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 import { getUserIdToken } from "@/services/auth";
 import axios from "axios";
 
 const apiEndpoint = import.meta.env.VITE_API_URL + "/projects";
 
-const getProjectSeries = async (seriesType) => {
+let projectSeriesMappings = reactive({});
+
+let allSubSeries = reactive([]);
+
+const getProjectSeries = async () => {
   const apiEndpoint = import.meta.env.VITE_API_URL + "/project/series";
   const idToken = await getUserIdToken();
 
@@ -33,12 +37,22 @@ const getProjectSeries = async (seriesType) => {
   });
 
   if (response.status === 200) {
-    // filter based on seriesType
-    if (seriesType) {
-      response.data = response.data.filter(
-        (item) => item.seriesType === seriesType
+    // add name to projectSeriesMappingsData
+    let projectSeriesMappingsData = {};
+    for (const item of response.data) {
+      console.log("item", item);
+      projectSeriesMappingsData[item.name] = item.subSeries.map(
+        (subItem) => subItem.name
       );
     }
+    console.log("projectSeriesMappingsData", projectSeriesMappingsData);
+    Object.assign(projectSeriesMappings, projectSeriesMappingsData);
+    // get all allSubSeries
+    let allSubSeriesData = response.data.flatMap((item) =>
+      item.subSeries.map((subItem) => subItem.name)
+    );
+    Object.assign(allSubSeries, allSubSeriesData);
+
     // get names only
     const projectSeriesWithName = response.data.map(
       (projectSeries) => projectSeries.name
@@ -49,9 +63,7 @@ const getProjectSeries = async (seriesType) => {
 
 let isLoading = ref(true);
 
-const projectSeries = await getProjectSeries("Series");
-
-const projectSubSeries = await getProjectSeries("Sub Series");
+const projectSeries = await getProjectSeries();
 
 // {
 //     "title": "PadukaSahasram( English and Tamil Trans.)",
@@ -111,7 +123,7 @@ const projectFields = [
     key: "projectSubSeries",
     label: "Project Sub Series",
     type: "auto-complete",
-    items: projectSubSeries,
+    items: allSubSeries,
   },
 ];
 
@@ -139,6 +151,10 @@ const projectHeaders = [
   {
     key: "projectSeries",
     title: "Project Series",
+  },
+  {
+    key: "projectSubSeries",
+    title: "Project Sub Series",
   },
   { key: "status", title: "Status" },
   { key: "actions", title: "Actions" },
