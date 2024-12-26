@@ -22,7 +22,7 @@ import axios from "axios";
 
 const apiEndpoint = import.meta.env.VITE_API_URL + "/projects";
 
-const getProjectSeries = async () => {
+const getProjectSeries = async (seriesType) => {
   const apiEndpoint = import.meta.env.VITE_API_URL + "/project/series";
   const idToken = await getUserIdToken();
 
@@ -33,6 +33,12 @@ const getProjectSeries = async () => {
   });
 
   if (response.status === 200) {
+    // filter based on seriesType
+    if (seriesType) {
+      response.data = response.data.filter(
+        (item) => item.seriesType === seriesType
+      );
+    }
     // get names only
     const projectSeriesWithName = response.data.map(
       (projectSeries) => projectSeries.name
@@ -43,7 +49,9 @@ const getProjectSeries = async () => {
 
 let isLoading = ref(true);
 
-const projectSeries = await getProjectSeries();
+const projectSeries = await getProjectSeries("Series");
+
+const projectSubSeries = await getProjectSeries("Sub Series");
 
 // {
 //     "title": "PadukaSahasram( English and Tamil Trans.)",
@@ -98,6 +106,12 @@ const projectFields = [
     label: "Project Series",
     type: "auto-complete",
     items: projectSeries,
+  },
+  {
+    key: "projectSubSeries",
+    label: "Project Sub Series",
+    type: "auto-complete",
+    items: projectSubSeries,
   },
 ];
 
