@@ -82,166 +82,170 @@
 
         <v-card-text>
           <v-container>
-            <v-row>
-              <v-col v-for="field in entityFields" :key="field.key" cols="12">
-                <!-- Regular fields -->
-                <template v-if="!field.isArray">
-                  <v-text-field
-                    v-if="field.type === 'text'"
-                    v-model="editedItem[field.key]"
-                    :label="field.label"
-                    :rules="field.rules"
-                    variant="outlined"
-                    :disabled="isEditDisabled(field)"
-                    density="compact"
-                  />
+            <v-form v-model="valid" ref="form">
+              <v-row>
+                <v-col v-for="field in entityFields" :key="field.key" cols="12">
+                  <!-- Regular fields -->
+                  <template v-if="!field.isArray">
+                    <v-text-field
+                      v-if="field.type === 'text'"
+                      v-model="editedItem[field.key]"
+                      :label="field.label"
+                      :rules="field.rules"
+                      variant="outlined"
+                      :disabled="isEditDisabled(field)"
+                      density="compact"
+                    />
 
-                  <v-text-field
-                    v-else-if="field.type === 'number'"
-                    v-model="editedItem[field.key]"
-                    :label="field.label"
-                    :rules="field.rules"
-                    variant="outlined"
-                    :disabled="isEditDisabled(field)"
-                    type="number"
-                    density="compact"
-                  />
+                    <v-text-field
+                      v-else-if="field.type === 'number'"
+                      v-model="editedItem[field.key]"
+                      :label="field.label"
+                      :rules="field.rules"
+                      variant="outlined"
+                      :disabled="isEditDisabled(field)"
+                      type="number"
+                      density="compact"
+                    />
 
-                  <!-- type date -->
-                  <v-text-field
-                    v-else-if="field.type === 'date'"
-                    v-model="editedItem[field.key]"
-                    :label="field.label"
-                    :rules="field.rules"
-                    variant="outlined"
-                    :disabled="isEditDisabled(field)"
-                    type="date"
-                    density="compact"
-                  />
+                    <!-- type date -->
+                    <v-text-field
+                      v-else-if="field.type === 'date'"
+                      v-model="editedItem[field.key]"
+                      :label="field.label"
+                      :rules="field.rules"
+                      variant="outlined"
+                      :disabled="isEditDisabled(field)"
+                      type="date"
+                      density="compact"
+                    />
 
-                  <v-textarea
-                    v-else-if="field.type === 'textarea'"
-                    v-model="editedItem[field.key]"
-                    :label="field.label"
-                    :rules="field.rules"
-                    variant="outlined"
-                    :disabled="isEditDisabled(field)"
-                    density="compact"
-                  />
+                    <v-textarea
+                      v-else-if="field.type === 'textarea'"
+                      v-model="editedItem[field.key]"
+                      :label="field.label"
+                      :rules="field.rules"
+                      variant="outlined"
+                      :disabled="isEditDisabled(field)"
+                      density="compact"
+                    />
 
-                  <!-- editor -->
+                    <!-- editor -->
 
-                  <QuillEditor
-                    v-else-if="field.type === 'editor'"
-                    theme="snow"
-                    v-model:content="editedItem[field.key]"
-                    contentType="html"
-                    style="height: 300px"
-                  />
+                    <QuillEditor
+                      v-else-if="field.type === 'editor'"
+                      theme="snow"
+                      v-model:content="editedItem[field.key]"
+                      contentType="html"
+                      style="height: 300px"
+                    />
 
-                  <v-autocomplete
-                    v-else-if="field.type === 'auto-complete'"
-                    v-model="editedItem[field.key]"
-                    :label="field.label"
-                    :rules="field.rules"
-                    variant="outlined"
-                    :items="field.items"
-                    :disabled="isEditDisabled(field)"
-                    density="compact"
-                    :multiple="field.multiple"
-                  />
+                    <v-autocomplete
+                      v-else-if="field.type === 'auto-complete'"
+                      v-model="editedItem[field.key]"
+                      :label="field.label"
+                      :rules="field.rules"
+                      variant="outlined"
+                      :items="field.items"
+                      :disabled="isEditDisabled(field)"
+                      density="compact"
+                      :multiple="field.multiple"
+                    />
 
-                  <ImageUpload
-                    v-else-if="field.type === 'image'"
-                    :images="editedItem[field.key]"
-                    @images-updated="
-                      (images) => (editedItem[field.key] = images)
-                    "
-                    :key="editedItem[field.key].length"
-                    :title="field.label"
-                  />
+                    <ImageUpload
+                      v-else-if="field.type === 'image'"
+                      :images="editedItem[field.key]"
+                      @images-updated="
+                        (images) => (editedItem[field.key] = images)
+                      "
+                      :key="editedItem[field.key].length"
+                      :title="field.label"
+                    />
 
-                  <DocumentUpload
-                    v-else-if="field.type === 'document'"
-                    :files="editedItem[field.key]"
-                    @files-updated="
-                      (documents) => (editedItem[field.key] = documents)
-                    "
-                    :key="editedItem[field.key].length * 1"
-                    :title="field.label"
-                  />
-                </template>
+                    <DocumentUpload
+                      v-else-if="field.type === 'document'"
+                      :files="editedItem[field.key]"
+                      @files-updated="
+                        (documents) => (editedItem[field.key] = documents)
+                      "
+                      :key="editedItem[field.key].length * 1"
+                      :title="field.label"
+                    />
+                  </template>
 
-                <!-- Array/Sub-table fields -->
-                <template v-else>
-                  <v-card class="pa-4">
-                    <div class="d-flex justify-space-between align-center mb-4">
-                      <div class="text-h6">{{ field.label }}</div>
-                      <v-btn
-                        color="primary"
-                        size="small"
-                        @click="addSubTableRow(field.key)"
+                  <!-- Array/Sub-table fields -->
+                  <template v-else>
+                    <v-card class="pa-4">
+                      <div
+                        class="d-flex justify-space-between align-center mb-4"
                       >
-                        Add Row
-                      </v-btn>
-                    </div>
-
-                    <v-table v-if="editedItem[field.key]?.length">
-                      <thead>
-                        <tr>
-                          <th
-                            v-for="subField in field.fields"
-                            :key="subField.key"
-                          >
-                            {{ subField.label }}
-                          </th>
-                          <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr
-                          v-for="(row, index) in editedItem[field.key]"
-                          :key="index"
+                        <div class="text-h6">{{ field.label }}</div>
+                        <v-btn
+                          color="primary"
+                          size="small"
+                          @click="addSubTableRow(field.key)"
                         >
-                          <td
-                            v-for="subField in field.fields"
-                            :key="subField.key"
-                          >
-                            <!-- if type is auto-complete -->
-                            <v-autocomplete
-                              v-if="subField.type === 'auto-complete'"
-                              v-model="row[subField.key]"
-                              :items="subField.items"
-                              :multiple="subField.multiple"
-                              density="compact"
-                              hide-details
-                              variant="outlined"
-                            />
-                            <v-text-field
-                              v-if="subField.type === 'text'"
-                              v-model="row[subField.key]"
-                              :type="subField.type"
-                              variant="outlined"
-                              density="compact"
-                              hide-details
-                            />
-                          </td>
-                          <td>
-                            <v-icon
-                              size="small"
-                              @click="removeSubTableRow(field.key, index)"
-                              color="error"
+                          Add Row
+                        </v-btn>
+                      </div>
+
+                      <v-table v-if="editedItem[field.key]?.length">
+                        <thead>
+                          <tr>
+                            <th
+                              v-for="subField in field.fields"
+                              :key="subField.key"
                             >
-                              mdi-delete
-                            </v-icon>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </v-table>
-                  </v-card>
-                </template>
-              </v-col>
-            </v-row>
+                              {{ subField.label }}
+                            </th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr
+                            v-for="(row, index) in editedItem[field.key]"
+                            :key="index"
+                          >
+                            <td
+                              v-for="subField in field.fields"
+                              :key="subField.key"
+                            >
+                              <!-- if type is auto-complete -->
+                              <v-autocomplete
+                                v-if="subField.type === 'auto-complete'"
+                                v-model="row[subField.key]"
+                                :items="subField.items"
+                                :multiple="subField.multiple"
+                                density="compact"
+                                hide-details
+                                variant="outlined"
+                              />
+                              <v-text-field
+                                v-if="subField.type === 'text'"
+                                v-model="row[subField.key]"
+                                :type="subField.type"
+                                variant="outlined"
+                                density="compact"
+                                hide-details
+                              />
+                            </td>
+                            <td>
+                              <v-icon
+                                size="small"
+                                @click="removeSubTableRow(field.key, index)"
+                                color="error"
+                              >
+                                mdi-delete
+                              </v-icon>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </v-table>
+                    </v-card>
+                  </template>
+                </v-col>
+              </v-row>
+            </v-form>
           </v-container>
         </v-card-text>
 
@@ -322,6 +326,8 @@ const dialog = ref(false);
 const editedIndex = ref(-1);
 const expandedItems = ref(new Set());
 const expanded = ref([]);
+
+let valid = ref(false);
 
 // Create a default item based on entity fields
 const defaultItem = computed(() => {
@@ -518,13 +524,27 @@ const deleteItem = (item) => {
 };
 
 const close = () => {
+  // reset form
+  if (form.value) {
+    form.value.resetValidation();
+  }
+
   dialog.value = false;
   editedItem.value = { ...defaultItem.value };
   editedIndex.value = -1;
 };
 
+const form = ref(null);
+
 const save = async () => {
   try {
+    // validate form
+    console.log("validate form");
+    const { valid } = await form.value.validate();
+    console.log("valid", valid);
+    if (!valid) {
+      return;
+    }
     const payload = { ...editedItem.value };
     if (props.addIdToPayload && editedIndex.value === -1) {
       payload.id = ulid();
