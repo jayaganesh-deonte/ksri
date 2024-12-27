@@ -23,11 +23,10 @@
 
               <!-- open-on-hover -->
               <v-menu
-                open-on-hover
                 v-else
-                offset-y
-                :close-on-content-click="false"
-                transition="slide-y-transition"
+                open-on-click
+                open-on-hover
+                v-model="option.showChildren"
               >
                 <template v-slot:activator="{ props }">
                   <div
