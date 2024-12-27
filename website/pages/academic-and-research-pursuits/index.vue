@@ -10,12 +10,44 @@
       <div class="text-h6">Series:</div>
       <!-- {{ projectSeries }} -->
       <div v-for="series in projectSeries" :key="series">
+        <v-menu v-if="subSeriesMapping[series]" offset-y>
+          <template v-slot:activator="{ props }">
+            <v-btn
+              color="primary"
+              :variant="activeSeries === series ? 'flat' : 'outlined'"
+              rounded="pill"
+              class="ma-2"
+              v-bind="props"
+            >
+              {{ series }}
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item
+              v-for="sub in subSeriesMapping[series]"
+              :key="sub"
+              @click="
+                activeSubSeries = sub;
+                activeSeries = series;
+              "
+              :style="
+                activeSubSeries === sub ? 'background-color: #F0F5F0' : ''
+              "
+            >
+              <v-list-item-title>{{ sub }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
         <v-btn
           color="primary"
           :variant="activeSeries === series ? 'flat' : 'outlined'"
           rounded="pill"
           class="ma-2"
-          @click="activeSeries = series"
+          @click="
+            activeSeries = series;
+            activeSubSeries = 'All';
+          "
+          v-else
         >
           {{ series }}
         </v-btn>
@@ -149,10 +181,39 @@ const projectStatus = [
 ];
 
 let activeSeries = ref("All");
+let activeSubSeries = ref("All");
 let projectSeries = ref(["All"]);
 const seriesData = await queryContent("projects", "series").findOne();
 
 projectSeries.value = ["All", ...seriesData.body];
+
+const subSeriesData = await queryContent("projects", "subseries").findOne();
+
+const subSeries = subSeriesData.body;
+
+// subSeries = [
+//   {
+//     "name": "Ancient Indian Knowledge Series",
+//     "subSeries": [
+//       "Science",
+//       "Art and Architecture",
+//       "Social Studies",
+//       "Literature"
+//     ]
+//   }
+// ]
+
+let subSeriesMapping = {};
+
+for (const element of subSeries) {
+  subSeriesMapping[element.name] = ["All"];
+  subSeriesMapping[element.name] = [
+    ...subSeriesMapping[element.name],
+    ...element.subSeries,
+  ];
+}
+
+// subSeriesMapping = {"Ancient Indian Knowledge Series":["Science","Art and Architecture","Social Studies","Literature"]}
 
 let projects = [
   ...completedprojects.body,
@@ -161,28 +222,23 @@ let projects = [
 ];
 
 const getEventsByCategory = computed(() => {
-  //  return based on  activeStatus filter and activeSeries filter
-  //  for activeSeries => filter based on key with name projectSeries in project object amd if activeSeries is All, then ignore current filter
-  //  for activeStatus => filter based on key with name status in project object and if activeStatus  is All, then ignore current filter
-  //  apply both filter and return
+  //  return based on activeStatus filter, activeSeries filter, and activeSubSeries filter
+  //  for activeSeries => filter based on key with name projectSeries in project object and if activeSeries is All, then ignore current filter
+  //  for activeStatus => filter based on key with name status in project object and if activeStatus is All, then ignore current filter
+  //  for activeSubSeries => filter based on key with name subSeries in project object and if activeSubSeries is All, then ignore current filter
+  //  apply all filters and return
 
-  if (activeStatus.value === "All" && activeSeries.value === "All") {
-    return projects;
-  } else if (activeStatus.value === "All" && activeSeries.value !== "All") {
-    return projects.filter((project) => {
-      return project.projectSeries === activeSeries.value;
-    });
-  } else if (activeStatus.value !== "All" && activeSeries.value === "All") {
-    return projects.filter((project) => {
-      return project.status === activeStatus.value;
-    });
-  } else {
-    return projects.filter((project) => {
-      return (
-        project.status === activeStatus.value &&
-        project.projectSeries === activeSeries.value
-      );
-    });
-  }
+  return projects.filter((project) => {
+    const seriesMatch =
+      activeSeries.value === "All" ||
+      project.projectSeries === activeSeries.value;
+    const statusMatch =
+      activeStatus.value === "All" || project.status === activeStatus.value;
+    const subSeriesMatch =
+      activeSubSeries.value === "All" ||
+      project.projectSubSeries === activeSubSeries.value;
+
+    return seriesMatch && statusMatch && subSeriesMatch;
+  });
 });
 </script>
