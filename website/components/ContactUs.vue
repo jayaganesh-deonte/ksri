@@ -48,7 +48,7 @@
         >
           <div class="sectionTitle2">Send A Message</div>
           <!-- create form -->
-          <v-form>
+          <v-form ref="contactForm">
             <v-container>
               <v-row>
                 <!-- add v-checkbox group for Choose a suitable category -->
@@ -76,6 +76,7 @@
                     :type="field.type"
                     variant="outlined"
                     v-model="formData[field.label]"
+                    :rules="field.rules"
                   ></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="12" md="12">
@@ -83,10 +84,15 @@
                     v-model="formData.message"
                     label="Message"
                     variant="outlined"
+                    :rules="[(v) => !!v || 'Message is required']"
                   ></v-textarea>
                 </v-col>
               </v-row>
-              <v-btn color="primary" class="text-white" rounded="pill"
+              <v-btn
+                color="primary"
+                class="text-white"
+                rounded="pill"
+                @click="submitForm"
                 >Submit Message</v-btn
               >
             </v-container>
@@ -141,21 +147,32 @@ const formFields = [
     label: "Name",
     type: "text",
     required: true,
+    rules: [(v) => !!v || "Name is required"],
   },
   {
     label: "Email",
     type: "email",
     required: true,
+    rules: [
+      (v) => !!v || "Email is required",
+      (v) => /.+@.+\..+/.test(v) || "Email must be valid",
+    ],
   },
   {
     label: "Mobile",
     type: "tel",
     required: true,
+    rules: [
+      (v) => !!v || "Mobile number is required",
+      (v) => (v && v.length === 10) || "Mobile number must be 10 digits",
+    ],
   },
 ];
 </script>
 
 <script>
+import $toast from "~/utils/toast_notification";
+
 export default {
   data() {
     return {
@@ -169,9 +186,43 @@ export default {
     };
   },
   methods: {
-    submitForm() {
+    async submitForm() {
+      // get url from
+      const runtimeConfig = useRuntimeConfig();
+      const apiEndpoint = runtimeConfig.public.CONTACT_US_URL;
+
+      console.log("apiEndpoint: ", apiEndpoint);
+
+      const { valid } = await this.$refs.contactForm.validate();
+      console.log("formValidate: ", valid);
+      if (!valid) {
+        return;
+      }
       // Handle form submission logic here
       console.log("Form submitted:", this.formData);
+
+      // post message
+      const response = await fetch(apiEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(this.formData),
+      });
+      console.log("response: ", response);
+
+      if (response.ok) {
+        console.log("Form submitted successfully");
+        $toast.success("Thanks for your query. We will get back to you soon.", {
+          timeout: 5000,
+          position: "top-right",
+        });
+      } else {
+        $toast.error("Something went wrong. Please try again.", {
+          timeout: 5000,
+          position: "top-right",
+        });
+      }
     },
   },
 };

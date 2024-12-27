@@ -72,6 +72,56 @@ Resources:
         EntryPoints:
           - index.ts
 
+  contactUs:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${Prefix}_contact_us_api
+      CodeUri: contact_us/
+      Handler: index.handler
+      Timeout: 30
+      MemorySize: 256
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      FunctionUrlConfig:
+        AuthType: NONE
+        Cors:
+          AllowOrigins:
+            - "*"
+          AllowMethods:
+            - "*"
+          AllowHeaders:
+            - "*"
+      ReservedConcurrentExecutions: 5
+      Environment:
+        Variables:
+          DDB_TABLE_NAME: !Ref masterTable
+          POWERTOOLS_SERVICE_NAME: express-api
+          POWERTOOLS_METRICS_NAMESPACE: ksriadmin
+          LOG_LEVEL: INFO
+          USER_POOL_ID: !Ref CognitoUserPool
+          CLIENT_ID: !Ref ProdCognitoUserPoolClient
+          # ALLOWED_URL: !If
+          #   - useCustomDomainForUiCondition
+          #   - !Ref UiCustomDomain
+          #   - !Sub https://${UiDistribution.DomainName}
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref masterTable
+        - SSMParameterReadPolicy:
+            ParameterName: "*"
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        EntryPoints:
+          - index.ts
+
   dashboardScheduleLambda:
     Type: AWS::Serverless::Function
     Properties:
@@ -586,3 +636,5 @@ Outputs:
   WebsiteURL:
     Description: "URL of the website"
     Value: !GetAtt websiteDistribution.DomainName
+  contactUs:
+    Value: !GetAtt contactUsUrl.FunctionUrl

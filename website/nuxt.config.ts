@@ -23,6 +23,8 @@ export default defineNuxtConfig({
     public: {
       API_URL:
         "https://y5qgjz4d6k72e7mqjdjd2tv7hi0uattt.lambda-url.ap-south-1.on.aws/public",
+      CONTACT_US_URL:
+        "https://rnghtsjnsild54alvm6hyaac3y0uxqhv.lambda-url.ap-south-1.on.aws/",
     },
   },
   modules: [
