@@ -98,7 +98,8 @@
               </div>
             </div>
             <div class="text-body-1" data-aos="fade-left" data-aos-delay="400">
-              {{ bookInfo.details }}
+              <!-- {{ bookInfo.details }} -->
+              <div v-html="bookInfo.details"></div>
             </div>
           </v-col>
         </v-row>
@@ -108,17 +109,48 @@
 </template>
 
 <script setup>
-const samskritaAcademyPublicationsData = await queryContent(
+const additionalPublicationsData = await queryContent(
   "publications",
-  "samskritaacademypublications"
+  "additionalpublications"
 ).findOne();
+const additionalPublications = additionalPublicationsData.body;
+console.log("additionalPublications", additionalPublications);
 
-const samskritaAcademyPublications = samskritaAcademyPublicationsData.body;
+let additionalPublicationBooks = {};
+
+// for additionalPublications query content
+for (const element of additionalPublications) {
+  const additionalPublication = element;
+
+  const publicationNameForFile = additionalPublication
+    .replace(/ /g, "_")
+    .toLowerCase();
+
+  // query content
+  const additionalPublicationBooksData = await queryContent(
+    "publications",
+    publicationNameForFile
+  ).findOne();
+
+  additionalPublicationBooks[additionalPublication] =
+    additionalPublicationBooksData.body;
+}
+
 const booksData = await queryContent("publications", "books").findOne();
 
 const ksriBooks = booksData.body;
 
-let books = reactive([...ksriBooks, ...samskritaAcademyPublications]);
+additionalPublicationBooks["KSRI"] = ksriBooks;
+
+// let books = reactive([...ksriBooks, ...samskritaAcademyPublications]);
+
+let books = reactive([]);
+
+for (const [publication, publicationBooks] of Object.entries(
+  additionalPublicationBooks
+)) {
+  books.push(...publicationBooks);
+}
 
 onMounted(async () => {
   getBookInfo();

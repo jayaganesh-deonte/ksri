@@ -19,6 +19,28 @@
     }
   },
   {
+    "title": "Arthasastra Vyakhya – Chanakya tika",
+    "subtitle": " ",
+    "price": "-",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image011.jpg"
+    ],
+    "details": "",
+    "id": "01JG3CZT9TNBS7HCQD83WBRHBP",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:31:16.538Z",
+      "updated_at": "2024-12-27T06:31:16.538Z",
+      "created_by": "demo"
+    },
+    "author": " ",
+    "yearOfPublication": " "
+  },
+  {
     "title": "Sanketa Kosa - A Dictionary on Numerals - by Mar. 2009",
     "id": "01JFPQE6AHH0MEHR9BCXJV18D6",
     "publication": "KSRI",
@@ -43,6 +65,28 @@
       "updated_at": "2024-12-22T08:23:45.307Z",
       "created_by": "admin"
     }
+  },
+  {
+    "title": "Nalopakhyana – Saṅgraha",
+    "subtitle": " ",
+    "price": "₹ 3",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image027.jpg"
+    ],
+    "details": "",
+    "id": "01JG3D98T0DZNGY3C0CJME38PA",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:36:26.304Z",
+      "updated_at": "2024-12-27T06:36:26.304Z",
+      "created_by": "demo"
+    },
+    "author": "Mm. Sri Lakshmana Suri",
+    "yearOfPublication": "1974"
   },
   {
     "title": "SADRATNAMĀLĀ OF ŚAṄKARAVARMAN – Text on Indian Astronomy and Mathematics",
@@ -120,6 +164,28 @@
       "updated_at": "2024-12-22T08:23:45.743Z",
       "created_by": "admin"
     }
+  },
+  {
+    "title": "Sri Umapati Sivacharya His life, Works and Contribution to Saivism",
+    "subtitle": " ",
+    "price": " ₹ 150 $20",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image042.jpg"
+    ],
+    "details": "",
+    "id": "01JG3DGYXQTPFTE2YY3JNCZ7JT",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:40:38.327Z",
+      "updated_at": "2024-12-27T06:40:38.327Z",
+      "created_by": "demo"
+    },
+    "author": "  ",
+    "yearOfPublication": "1996"
   },
   {
     "title": "Palandumandana Prahasana, text with translation by Dr.S.S.Janaki",
@@ -224,6 +290,28 @@
     }
   },
   {
+    "title": "Saiva Rituals and Philosophy",
+    "subtitle": " ",
+    "price": "₹ 200 $20",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image029.jpg"
+    ],
+    "details": "",
+    "id": "01JG3DA8PA67BMZQ3WSWMRYH8Q",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "Yes",
+    "copies": "100",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:36:58.954Z",
+      "updated_at": "2024-12-27T06:36:58.954Z",
+      "created_by": "demo"
+    },
+    "author": " ",
+    "yearOfPublication": "2001"
+  },
+  {
     "title": "HISTORY OF GRAMMATICAL THEORIES IN TAMIL",
     "subtitle": "By P. S. Subrahmanya Sastri | The Kuppuswami  Sastri  Research  Institute,  Chennai | 1997 | Pp. xxx + 250 | $ 20;  £ 15.",
     "price": "₹ 150",
@@ -241,6 +329,50 @@
       "updated_at": "2024-12-22T08:23:46.290Z",
       "created_by": "admin"
     }
+  },
+  {
+    "title": "Kālāmukha and Pāśupaa  temples in  Dharwar ",
+    "subtitle": "",
+    "price": " ₹ 250 $15",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image023.jpg"
+    ],
+    "details": "",
+    "id": "01JG3D791CED8H3S35TK3Q1A3T",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:35:21.004Z",
+      "updated_at": "2024-12-27T06:35:21.004Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. Vasundhara Filliozat",
+    "yearOfPublication": "2001"
+  },
+  {
+    "title": "Sanskrit Astronomical Tables in England",
+    "subtitle": " ",
+    "price": "₹ 35",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image035.jpg"
+    ],
+    "details": "",
+    "id": "01JG3DDPFA8NPP5VTEY4BGGYPC",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:38:51.370Z",
+      "updated_at": "2024-12-27T06:38:51.370Z",
+      "created_by": "demo"
+    },
+    "author": "David Pingree",
+    "yearOfPublication": "1973"
   },
   {
     "title": "KŪḌIYĀṬṬAM: PRELIMINARIES AND PERFORMANCE",
@@ -535,6 +667,28 @@
     }
   },
   {
+    "title": "Tattvānusandhānam ",
+    "subtitle": " ",
+    "price": "-",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image033.jpg"
+    ],
+    "details": "",
+    "id": "01JG3DCP7MEMRZXRZKH5R8H0JD",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:38:18.356Z",
+      "updated_at": "2024-12-27T06:38:18.356Z",
+      "created_by": "demo"
+    },
+    "author": "Edited with English translation by Prof. R. Sankari Revised by Dr. T.V Vasudeva & Dr. K Srinivasan",
+    "yearOfPublication": "2008"
+  },
+  {
     "title": "Vibhramaviveka of Mandana Misra (Mimamsa Text)",
     "id": "01JFPQE5WR2BH1071FFQDPFQGY",
     "publication": "KSRI",
@@ -597,6 +751,28 @@
       "updated_at": "2024-12-22T08:23:46.290Z",
       "created_by": "admin"
     }
+  },
+  {
+    "title": "Dhvaja Stambha – Critical account of its structural and ritualistic details",
+    "subtitle": " ",
+    "price": "₹ 20",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image009.jpg"
+    ],
+    "details": "",
+    "id": "01JG3CYXP1V047H42BV6YPRE94",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:30:47.233Z",
+      "updated_at": "2024-12-27T06:30:47.233Z",
+      "created_by": "demo"
+    },
+    "author": "S S Janaki",
+    "yearOfPublication": "1988"
   },
   {
     "title": "Arthasastra with the Tika of Bhiksuprabhamati",
@@ -792,6 +968,28 @@
     }
   },
   {
+    "title": "Vedas: Traditional and Modern perspectives",
+    "subtitle": " ",
+    "price": "₹ 250",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image001.jpg"
+    ],
+    "details": "",
+    "id": "01JG3CQ60C5CVXB54NJJ8AA6HA",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:26:33.612Z",
+      "updated_at": "2024-12-27T06:26:33.612Z",
+      "created_by": "demo"
+    },
+    "author": " ",
+    "yearOfPublication": "2007"
+  },
+  {
     "title": "Arthasastra with Canakyatika",
     "id": "01JFPQE5WTD3SEWYCZW286H4YV",
     "publication": "KSRI",
@@ -869,6 +1067,28 @@
     }
   },
   {
+    "title": "Kāvyālaṇkārasūtra – Vr̥tti of Vāmana",
+    "subtitle": " ",
+    "price": "₹ 200",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image026.jpg"
+    ],
+    "details": "",
+    "id": "01JG3D869E56SG2W49DHE4BEPD",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:35:50.958Z",
+      "updated_at": "2024-12-27T06:35:50.958Z",
+      "created_by": "demo"
+    },
+    "author": "With English translation by Dr. K.K. Raja",
+    "yearOfPublication": "2005"
+  },
+  {
     "title": "THE KUPPUSWAMI SASTRI MEMORIAL VOLUME",
     "subtitle": "pub. by The Kuppuswami Sastri Research Institute, Chennai 4 | 2015",
     "price": "₹ 700",
@@ -907,6 +1127,28 @@
     }
   },
   {
+    "title": "Darśanopaniṣat",
+    "subtitle": " ",
+    "price": "₹ 70",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image020.jpg"
+    ],
+    "details": "",
+    "id": "01JG3D53NQB0YPHWKNKVW4YE70",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "Yes",
+    "copies": "100",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:34:09.975Z",
+      "updated_at": "2024-12-27T06:34:09.975Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. K.S. Balasubramanian Dr. T.V. Vasudeva",
+    "yearOfPublication": "2016"
+  },
+  {
     "title": "Grahacaranibandhana (Astrology)",
     "id": "01JFPQE5WT6XKKQ2SX9T53Y6Y0",
     "publication": "KSRI",
@@ -931,6 +1173,50 @@
       "updated_at": "2024-12-22T08:23:45.743Z",
       "created_by": "admin"
     }
+  },
+  {
+    "title": "Gadyakarṇāmr̥ta of Sakala Vidyacakravarttin",
+    "subtitle": " ",
+    "price": "₹ 40",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image022.jpg"
+    ],
+    "details": "",
+    "id": "01JG3D65S5BQZECAFHZ1F9K37C",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:34:44.901Z",
+      "updated_at": "2024-12-27T06:34:44.901Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. S S Janaki",
+    "yearOfPublication": "1981"
+  },
+  {
+    "title": "The Vīnāvāsavadatta",
+    "subtitle": " ",
+    "price": "₹ 8",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image039.jpg"
+    ],
+    "details": "",
+    "id": "01JG3DFQ5J8KDHZDSYQ7NQCCRK",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:39:57.618Z",
+      "updated_at": "2024-12-27T06:39:57.618Z",
+      "created_by": "demo"
+    },
+    "author": "Sri K V Sarma ",
+    "yearOfPublication": "1962"
   },
   {
     "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS (Vols. LXVII - LXX 1997-2000)",
@@ -989,6 +1275,28 @@
       "updated_at": "2024-12-22T08:23:45.307Z",
       "created_by": "admin"
     }
+  },
+  {
+    "title": "The Cintāmanisāranikā of Dasabala ",
+    "subtitle": " ",
+    "price": "-",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image013.jpg"
+    ],
+    "details": "",
+    "id": "01JG3D0TSKGVC6XXE7KBGYX32D",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:31:49.811Z",
+      "updated_at": "2024-12-27T06:31:49.811Z",
+      "created_by": "demo"
+    },
+    "author": "Edited by D.D. Kosambi",
+    "yearOfPublication": "1952"
   },
   {
     "title": "Srivacanabhushana of Pillai Lokacharya",
@@ -1293,22 +1601,25 @@
   },
   {
     "title": "COMPROMISES IN THE HISTORY OF ADVAITIC THOUGHT",
-    "subtitle": "Ed. by S.Kuppuswami Sastri | The Kuppuswami Sastri Research Institute,1993. | Pages 37+20.",
+    "subtitle": "The Kuppuswami Sastri Research Institute,1993. | Pages 37+20.",
     "price": "₹ 20",
     "imageUrls": [
       "https://d30y75l38k1y9.cloudfront.net/upload/compromises-in-the-history-of-advaitic-thought.jpg"
     ],
-    "details": "Ed. by S.Kuppuswami Sastri\nThe Kuppuswami Sastri Research Institute,1993.\nPages 37+20. Price: Rs.20.\nCOMPROMISES IN THE HISTORY OF ADVAITIC THOUGHT",
+    "details": "<p>Ed. by S.Kuppuswami Sastri\nThe Kuppuswami Sastri Research Institute,1993.\nPages 37+20. Price: Rs.20.\nCOMPROMISES IN THE HISTORY OF ADVAITIC THOUGHT</p>",
     "id": "01JFPQE6VJXD2BMP809AJZNQNB",
     "publication": "KSRI",
+    "keywords": " ",
     "available": "Yes",
     "copies": "10",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2024-12-22T08:23:46.290Z",
-      "updated_at": "2024-12-22T08:23:46.290Z",
+      "updated_at": "2024-12-27T06:49:05.982Z",
       "created_by": "admin"
-    }
+    },
+    "author": "Ed. by S.Kuppuswami Sastri",
+    "yearOfPublication": "1993"
   },
   {
     "title": "Sadratnamala of Sankara Varman (Astronomical text) ed. With English tr. By Dr.S.Madhavan",
@@ -1388,23 +1699,48 @@
     }
   },
   {
+    "title": "Grahacharanibandhana or Parahitagaṇita of Haridatta",
+    "subtitle": "",
+    "price": " -",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/ksri-logo.png"
+    ],
+    "details": "",
+    "id": "01JG3CWSFJPTX9BJ1E38DRVAXG",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:29:37.394Z",
+      "updated_at": "2024-12-27T06:29:37.394Z",
+      "created_by": "demo"
+    },
+    "author": "Critically edited by K.V. Sarma",
+    "yearOfPublication": "1954"
+  },
+  {
     "title": "ADVAYATĀRAKOPANIṢAT: with Roman Transliteration",
     "subtitle": "Eng. Tr. by Dr. K.S. Balasubramanian and Dr. T. V. Vasudeva | Pub. by the Kuppuswami  Sastri  Research  Institute, 84, Thiru Vi. Ka Road, Mylapore, Chennai - 600 004 | 2009. | Pp. x + 19.",
     "price": "₹ 25",
     "imageUrls": [
       "https://d30y75l38k1y9.cloudfront.net/upload/advayatrakopaniat-with-roman-transliteration.jpg"
     ],
-    "details": "“The second book in the series of KSRI Yoga Granthamālā, deals exclusively with the means to achieve Rājayoga, the means being Tāraka Yoga. This leads to the experience of Brahman, who is non-dual.   This text along with English translation and Roman transliteration also has explanation of terms and concepts provided wherever necessary. This book is the joint effort of Dr. K.S. Balasubramanian, a specialist in the field of Yogic studies and Dr. T.V. Vasudeva, an Advaita scholar”.\nDr. V. Kameswari, Director, KSRI.",
+    "details": "<p>“The second book in the series of KSRI Yoga Granthamālā, deals exclusively with the means to achieve Rājayoga, the means being <em>Tāraka Yoga</em>. This leads to the experience of Brahman, who is non-dual.   This text along with English translation and Roman transliteration also has explanation of terms and concepts provided wherever necessary. </p><p><br></p><p>This book is the joint effort of Dr. K.S. Balasubramanian, a specialist in the field of Yogic studies and Dr. T.V. Vasudeva, an Advaita scholar”.</p><p>\nDr. V. Kameswari, Director, KSRI.</p>",
     "id": "01JFPQE6VHNAARYKVM0QPHS91T",
     "publication": "KSRI",
+    "keywords": " ",
     "available": "Yes",
     "copies": "10",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2024-12-22T08:23:46.289Z",
-      "updated_at": "2024-12-22T08:23:46.289Z",
+      "updated_at": "2024-12-27T07:19:07.841Z",
       "created_by": "admin"
-    }
+    },
+    "author": "Dr. K.S. Balasubramanian and Dr. T. V. Vasudeva",
+    "yearOfPublication": "2009"
   },
   {
     "title": "Tolkappiyam (Porul - Tamil Poetics) with English Transliteration, translation and notes by Prof.P.S.Subrahmanya Sastri (II Edition)",
@@ -1458,6 +1794,28 @@
     }
   },
   {
+    "title": "Vākyakarana with the commentary Laghuprakāśikā by Sundararaja",
+    "subtitle": " ",
+    "price": "₹ 12",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image003.jpg"
+    ],
+    "details": "",
+    "id": "01JG3CRTFPJG1TCVF0DKEZ4YPR",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:27:27.350Z",
+      "updated_at": "2024-12-27T06:27:27.350Z",
+      "created_by": "demo"
+    },
+    "author": "T.S. Kuppanna Sastri & K.V Sarma",
+    "yearOfPublication": "1962"
+  },
+  {
     "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS (Vols. XCI)",
     "subtitle": "The Kuppuswami Sastri Research Institute, Chennai 4 | 2018 |   pp viii + 234 + 28",
     "price": "₹ 500",
@@ -1506,6 +1864,28 @@
       "updated_at": "2024-12-22T08:23:46.288Z",
       "created_by": "admin"
     }
+  },
+  {
+    "title": "Pratimā nātaka of Mahākavi Bhāsa Text & English Translation",
+    "subtitle": " ",
+    "price": "₹ 16",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image015.jpg"
+    ],
+    "details": "",
+    "id": "01JG3D1X2YS1GM5C4BAFVV09P8",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:32:24.926Z",
+      "updated_at": "2024-12-27T06:32:24.926Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. V. Raghavan & Dr. S. S. Janaki",
+    "yearOfPublication": "1986"
   },
   {
     "title": "Vakyakarana (Astrology)",
@@ -1656,6 +2036,50 @@
     }
   },
   {
+    "title": "Dhvanyaloka by Anandavardhana and Locana by Abhinavagupta",
+    "subtitle": " ",
+    "price": "₹ 8",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image008.jpg"
+    ],
+    "details": "",
+    "id": "01JG3CXV50Z4FPZ21E465Q2NE6",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:30:11.872Z",
+      "updated_at": "2024-12-27T06:30:11.872Z",
+      "created_by": "demo"
+    },
+    "author": "Mm. Prof. S. Kuppuswami Sastri",
+    "yearOfPublication": "1944"
+  },
+  {
+    "title": "Vibhramaviveka of Mandana Misra",
+    "subtitle": " ",
+    "price": "₹ 12",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image037.jpg"
+    ],
+    "details": "",
+    "id": "01JG3DEQKMSHWJD848NPEHZ82S",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:39:25.300Z",
+      "updated_at": "2024-12-27T06:39:25.300Z",
+      "created_by": "demo"
+    },
+    "author": "Edited by Mm. Kuppuswami Sastri",
+    "yearOfPublication": "1932"
+  },
+  {
     "title": "AṢṬĀṄGA NIGHAṆṬU",
     "subtitle": "Ed. by P.V.Sharma | English and Tamil Translation by Dr.K.S.Viswanatha Sarma | The Kuppuswami Sastri Research Institute, Madras | Diamond Jubilee Publication | 2004 | Pages: xxxv + 140 (Out of stock)",
     "price": "₹ 180",
@@ -1699,6 +2123,72 @@
       "updated_at": "2024-12-22T08:23:45.744Z",
       "created_by": "admin"
     }
+  },
+  {
+    "title": "A Primer of Indian Logic",
+    "subtitle": " ",
+    "price": "₹150",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image005.jpg"
+    ],
+    "details": "",
+    "id": "01JG3CSXDSKK7YSWT2TNH8NHXM",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:28:03.129Z",
+      "updated_at": "2024-12-27T06:28:03.129Z",
+      "created_by": "demo"
+    },
+    "author": "Mm. Prof. S. Kuppuswami Sastri",
+    "yearOfPublication": "1998"
+  },
+  {
+    "title": "Pratimā nātaka of Mahākavi Bhāsa – A study guide",
+    "subtitle": " ",
+    "price": "₹ 5",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image018.jpg"
+    ],
+    "details": "",
+    "id": "01JG3D3HEZQBZH2JH91KVQNNHP",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:33:18.559Z",
+      "updated_at": "2024-12-27T06:33:18.559Z",
+      "created_by": "demo"
+    },
+    "author": "General Editor: S S Janaki",
+    "yearOfPublication": "1987"
+  },
+  {
+    "title": "Srivacana Bhūsana of Pillai Lokacarya",
+    "subtitle": " ",
+    "price": "₹ 15",
+    "imageUrls": [
+      "https://de5byrc8ksekt.cloudfront.net/images/image031.jpg"
+    ],
+    "details": "",
+    "id": "01JG3DB3PM2TQJ4QTYKZ1M4H96",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": "0",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2024-12-27T06:37:26.612Z",
+      "updated_at": "2024-12-27T06:37:26.612Z",
+      "created_by": "demo"
+    },
+    "author": "Edition with English translation by Dr. Robert C Lester",
+    "yearOfPublication": "1979"
   },
   {
     "title": "Advayatarakopanisat Text with Eng. Tr. by Dr. K.S. Balasubramanian and Dr. T.V.Vasudeva.",
