@@ -27,3 +27,15 @@ export const batchInsert = async (items) => {
     }
   }
 };
+
+export const insertIntoDynamoDB = async (item: any) => {
+  const params = {
+    TableName: "ksri_admin_master_table",
+    Item: item,
+  };
+  try {
+    await documentClient.put(params);
+  } catch (error) {
+    console.log(error);
+  }
+};

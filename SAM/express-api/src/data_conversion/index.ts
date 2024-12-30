@@ -1,6 +1,6 @@
 import { ulid } from "ulidx";
 
-import { batchInsert } from "./ddb";
+import { batchInsert, insertIntoDynamoDB } from "./ddb";
 
 const generateMetaData = () => {
   return {
@@ -576,13 +576,20 @@ const insertNews = async () => {
   const news: News[] = require("./content/news.json");
 
   // add id to news
-  const newsWithId = news.map((news: any) => ({
-    ...news,
-    id: ulid(),
-    metadata: generateMetaData(),
-    avatarImage: [news.avatarImage],
-    heading_image_url: [news.heading_image_url],
-  }));
+  const newsWithId = [];
+  for (const newsItem of news) {
+    await new Promise((resolve) => setTimeout(resolve, 100));
+
+    console.log(newsItem);
+
+    newsWithId.push({
+      ...newsItem,
+      id: ulid(),
+      metadata: generateMetaData(),
+      avatarImage: [newsItem.avatarImage],
+      heading_image_url: [newsItem.heading_image_url],
+    });
+  }
 
   // validate news
   newsWithId.forEach((news) => {
@@ -1158,8 +1165,7 @@ const main = async () => {
   // await insertpresentGoverningBodyMembers();
   // await insertGoveringBodyPast();
   // await eventsFromAdminApp();
-
-  await downloadImages();
+  // await downloadImages();
 };
 
 main();
