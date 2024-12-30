@@ -474,35 +474,60 @@ var saveFixedData = function (fileContent, outputFile) { return __awaiter(void 0
     });
 }); };
 var fetchPublicationsAndBooks = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var additionalPublications, additionalPublicationsJson, books, _i, additionalPublications_1, publication, publicationNameForFile, books_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
+    var additionalPublications, additionalPublicationsJson, books, _i, additionalPublications_1, publication, publicationNameForFile, books_1, journals, _a, additionalPublications_2, publication, publicationNameForFile, journals_1;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
             case 0: return [4 /*yield*/, fetchAndSaveData("/publications/additionalPublications", "../website/content//publications/additionalpublications.json", function (data) {
                     return data
                         .sort(function (a, b) { return a.orderId - b.orderId; })
                         .map(function (item) { return item.name; });
                 })];
             case 1:
-                additionalPublications = _a.sent();
+                additionalPublications = _b.sent();
                 additionalPublicationsJson = JSON.stringify(additionalPublications);
                 (0, fs_1.writeFileSync)("../website/content//publications/additionalpublications.json", additionalPublicationsJson);
-                return [4 /*yield*/, fetchAndSaveData("/publications/books?publication=KSRI", "../website/content//publications/books.json")];
+                return [4 /*yield*/, fetchAndSaveData("/publications/books?publication=KSRI", "../website/content//publications/books.json", function (data) {
+                        return data.sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
+                    })];
             case 2:
-                books = _a.sent();
+                books = _b.sent();
                 _i = 0, additionalPublications_1 = additionalPublications;
-                _a.label = 3;
+                _b.label = 3;
             case 3:
                 if (!(_i < additionalPublications_1.length)) return [3 /*break*/, 6];
                 publication = additionalPublications_1[_i];
                 publicationNameForFile = publication.replace(/ /g, "_").toLowerCase();
                 return [4 /*yield*/, fetchAndSaveData("/publications/books?publication=".concat(publication), "../website/content//publications/".concat(publicationNameForFile, ".json"))];
             case 4:
-                books_1 = _a.sent();
-                _a.label = 5;
+                books_1 = _b.sent();
+                (function (data) {
+                    return data.sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
+                });
+                _b.label = 5;
             case 5:
                 _i++;
                 return [3 /*break*/, 3];
-            case 6: return [2 /*return*/];
+            case 6: return [4 /*yield*/, fetchAndSaveData("/publications/journals?publication=KSRI", "../website/content//publications/journals.json", function (data) {
+                    return data.sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
+                })];
+            case 7:
+                journals = _b.sent();
+                _a = 0, additionalPublications_2 = additionalPublications;
+                _b.label = 8;
+            case 8:
+                if (!(_a < additionalPublications_2.length)) return [3 /*break*/, 11];
+                publication = additionalPublications_2[_a];
+                publicationNameForFile = publication.replace(/ /g, "_").toLowerCase();
+                return [4 /*yield*/, fetchAndSaveData("/publications/journals?publication=".concat(publication), "../website/content//publications/".concat(publicationNameForFile, "journals.json"), function (data) {
+                        return data.sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
+                    })];
+            case 9:
+                journals_1 = _b.sent();
+                _b.label = 10;
+            case 10:
+                _a++;
+                return [3 /*break*/, 8];
+            case 11: return [2 /*return*/];
         }
     });
 }); };

@@ -485,7 +485,10 @@ const fetchPublicationsAndBooks = async () => {
   //  fetch books based on additionalPublications
   const books = await fetchAndSaveData(
     "/publications/books?publication=KSRI",
-    "../website/content//publications/books.json"
+    "../website/content//publications/books.json",
+    (data: any[]) => {
+      return data.sort((a, b) => b.yearOfPublication - a.yearOfPublication);
+    }
   );
 
   //  for each additionalPublication, fetch books
@@ -495,6 +498,31 @@ const fetchPublicationsAndBooks = async () => {
     const books = await fetchAndSaveData(
       `/publications/books?publication=${publication}`,
       `../website/content//publications/${publicationNameForFile}.json`
+    );
+    (data: any[]) => {
+      return data.sort((a, b) => b.yearOfPublication - a.yearOfPublication);
+    };
+  }
+
+  //  fetch journals
+  const journals = await fetchAndSaveData(
+    "/publications/journals?publication=KSRI",
+    "../website/content//publications/journals.json",
+    (data: any[]) => {
+      return data.sort((a, b) => b.yearOfPublication - a.yearOfPublication);
+    }
+  );
+
+  //  fetch journals based on additionalPublications
+  for (const publication of additionalPublications) {
+    // remove spaces
+    const publicationNameForFile = publication.replace(/ /g, "_").toLowerCase();
+    const journals = await fetchAndSaveData(
+      `/publications/journals?publication=${publication}`,
+      `../website/content//publications/${publicationNameForFile}journals.json`,
+      (data: any[]) => {
+        return data.sort((a, b) => b.yearOfPublication - a.yearOfPublication);
+      }
     );
   }
 };

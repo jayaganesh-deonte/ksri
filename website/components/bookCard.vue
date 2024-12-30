@@ -66,7 +66,9 @@
             :color="isHovering ? 'secondary' : 'primary'"
             text
             :to="
-              '/academic-and-research-pursuits/ksri-publications/books/' +
+              '/academic-and-research-pursuits/ksri-publications/' +
+              (isBook ? 'books' : 'journals') +
+              '/' +
               book.id
             "
             rounded="pill"
@@ -98,6 +100,11 @@ export default {
     book: {
       type: Object,
       required: true,
+    },
+    isBook: {
+      type: Boolean,
+      required: true,
+      default: true,
     },
   },
   data() {

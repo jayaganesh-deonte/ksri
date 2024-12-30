@@ -10,7 +10,7 @@
     </div>
     <div class="ma-6" v-if="!isLoading">
       <div>
-        <section-title title="KSRI Books" />
+        <section-title title="KSRI Journals" />
         <div class="sectionSubtitle2">
           KSRI has been publishing the Journal of Oriental Research periodically
           from its inception till date and it is internationally well known.
@@ -44,8 +44,8 @@
           class="ma-4"
           v-model="searchQuery"
           prepend-inner-icon="mdi-magnify"
-          label="Search by book title or author"
-          placeholder="Search by book title or author"
+          label="Search by journal title"
+          placeholder="Search by journal title"
           single-line
           variant="outlined"
           hide-details
@@ -54,13 +54,17 @@
         <div class="ma-4">
           <v-row>
             <v-col
-              v-for="book in filterBooksBasedOnPublication('KSRI')"
+              v-for="book in filteJournalsBasedOnPublication('KSRI')"
               :key="book.title"
               cols="12"
               md="4"
               data-aos="fade-up"
             >
-              <book-card :book="book" @viewDetails="onViewDetails" />
+              <book-card
+                :is-book="false"
+                :book="book"
+                @viewDetails="onViewDetails"
+              />
             </v-col>
           </v-row>
         </div>
@@ -72,22 +76,24 @@
             :key="publication"
             class="text-center"
           >
-            <div class="text-h4 text-secondary">
-              Also Available ({{ publication }})
-            </div>
-            <!-- display books -->
-            <div class="ma-4">
-              <v-row>
-                <v-col
-                  v-for="book in filterBooksBasedOnPublication(publication)"
-                  :key="book.title"
-                  cols="12"
-                  md="4"
-                  data-aos="fade-up"
-                >
-                  <book-card :book="book" @viewDetails="onViewDetails" />
-                </v-col>
-              </v-row>
+            <div v-if="filteJournalsBasedOnPublication(publication).length > 0">
+              <div class="text-h4 text-secondary">
+                Also Available ({{ publication }})
+              </div>
+              <!-- display books -->
+              <div class="ma-4">
+                <v-row>
+                  <v-col
+                    v-for="book in filteJournalsBasedOnPublication(publication)"
+                    :key="book.title"
+                    cols="12"
+                    md="4"
+                    data-aos="fade-up"
+                  >
+                    <book-card :book="book" @viewDetails="onViewDetails" />
+                  </v-col>
+                </v-row>
+              </div>
             </div>
           </div>
         </div>
@@ -155,11 +161,11 @@ const description =
   "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.";
 
 useSeoMeta({
-  title: "Books",
+  title: "Journals",
   description: description,
-  ogTitle: "Books",
+  ogTitle: "Journals",
   ogDescription: description,
-  twitterTitle: "Books",
+  twitterTitle: "Journals",
   twitterDescription: description,
 });
 
@@ -178,31 +184,30 @@ const additionalPublicationsData = await queryContent(
 const additionalPublications = additionalPublicationsData.body;
 console.log("additionalPublications", additionalPublications);
 
-let additionalPublicationBooks = {};
+let additionalPublicationJournals = {};
 
 // for additionalPublications query content
 for (const element of additionalPublications) {
   const additionalPublication = element;
 
-  const publicationNameForFile = additionalPublication
-    .replace(/ /g, "_")
-    .toLowerCase();
+  const publicationNameForFile =
+    additionalPublication.replace(/ /g, "_").toLowerCase() + "journals";
 
   // query content
-  const additionalPublicationBooksData = await queryContent(
+  const additionalPublicationJournalsData = await queryContent(
     "publications",
     publicationNameForFile
   ).findOne();
 
-  additionalPublicationBooks[additionalPublication] =
-    additionalPublicationBooksData.body;
+  additionalPublicationJournals[additionalPublication] =
+    additionalPublicationJournalsData.body;
 }
 
-const booksData = await queryContent("publications", "books").findOne();
+const booksData = await queryContent("publications", "journals").findOne();
 
 const ksriBooks = booksData.body;
 
-additionalPublicationBooks["KSRI"] = ksriBooks;
+additionalPublicationJournals["KSRI"] = ksriBooks;
 
 //  Sample Book Item
 // {
@@ -231,31 +236,31 @@ additionalPublicationBooks["KSRI"] = ksriBooks;
 const filteredBooks = computed(() => {
   const query = searchQuery.value.toLowerCase();
 
-  if (!query) return books.value;
+  if (!query) return journals.value;
 
-  return books.value.filter(
-    (book) =>
-      book.title?.toLowerCase().includes(query) ||
-      book.author?.toLowerCase().includes(query) ||
-      book.subtitle?.toLowerCase().includes(query)
+  return journals.value.filter(
+    (journal) =>
+      journal.title?.toLowerCase().includes(query) ||
+      journal.author?.toLowerCase().includes(query) ||
+      journal.subtitle?.toLowerCase().includes(query)
   );
 });
 
-const books = computed((publicationName) => {
-  return additionalPublicationBooks[publicationName];
+const journals = computed((publicationName) => {
+  return additionalPublicationJournals[publicationName];
 });
 
-const filterBooksBasedOnPublication = (publicationName) => {
-  let books = additionalPublicationBooks[publicationName];
+const filteJournalsBasedOnPublication = (publicationName) => {
+  let journals = additionalPublicationJournals[publicationName];
   const query = searchQuery.value.toLowerCase();
 
-  if (!query) return books;
+  if (!query) return journals;
 
-  return books.filter(
-    (book) =>
-      book.title?.toLowerCase().includes(query) ||
-      book.author?.toLowerCase().includes(query) ||
-      book.subtitle?.toLowerCase().includes(query)
+  return journals.filter(
+    (journal) =>
+      journal.title?.toLowerCase().includes(query) ||
+      journal.author?.toLowerCase().includes(query) ||
+      journal.subtitle?.toLowerCase().includes(query)
   );
 };
 
@@ -283,7 +288,7 @@ const onViewDetails = (book) => {
 
 const navigateToBookCatalogue = () => {
   resetSelectedBook();
-  navigateTo("/academic-and-research-pursuits/ksri-publications/books");
+  navigateTo("/academic-and-research-pursuits/ksri-publications/journals");
 };
 
 // scroll to top on selectedbook details

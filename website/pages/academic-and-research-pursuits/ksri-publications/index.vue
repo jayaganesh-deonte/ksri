@@ -30,6 +30,35 @@
         </v-col>
       </v-row>
     </div>
+
+    <div class="text-center my-8">
+      <!-- display recent Journals in horizontal line -->
+      <div class="sectionTitle3">Journals</div>
+      <v-row class="ma-2" justify="center">
+        <v-col
+          v-for="book in recentJournals"
+          :key="book.title"
+          cols="10"
+          md="3"
+        >
+          <book-card :book="book" :is-book="false" />
+        </v-col>
+        <!-- a col to show "View All" -->
+        <v-col cols="10" md="1">
+          <nuxt-link
+            to="/academic-and-research-pursuits/ksri-publications/journals"
+          >
+            <v-card
+              color="primary"
+              height="100%"
+              class="d-flex flex-column align-center justify-center font-weight-bold"
+            >
+              <div>View All</div>
+            </v-card>
+          </nuxt-link>
+        </v-col>
+      </v-row>
+    </div>
     <div class="text-center my-4">
       <div class="text-h6">
         A Committee is constituted to help the Institute in identifying the
@@ -238,6 +267,13 @@ const booksData = await queryContent("publications", "books").findOne();
 
 const ksriBooks = booksData.body;
 
+const journalsData = await queryContent("publications", "journals").findOne();
+
+const ksriJournals = journalsData.body;
+
 // recent 3 books
 const recentBooks = reactive(ksriBooks.slice(0, 3));
+
+// recent 3 journals
+const recentJournals = reactive(ksriJournals.slice(0, 3));
 </script>
