@@ -22,6 +22,7 @@ import { journalRoute } from "./library/journals";
 import { publicationBookRoute } from "./publications/book";
 import { publicationsCommitteeRouter } from "./publications/committee";
 import { additionalPublicationsRoute } from "./publications/additionalPublications";
+import { publicationJournalRoute } from "./publications/journals";
 
 import { facultyRouter } from "./faculty";
 
@@ -73,6 +74,7 @@ routes.use(journalRoute);
 routes.use(publicationBookRoute);
 routes.use(publicationsCommitteeRouter);
 routes.use(additionalPublicationsRoute);
+routes.use(publicationJournalRoute);
 
 routes.use(facultyRouter);
 

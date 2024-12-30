@@ -204,6 +204,10 @@ const allOptions = [
         path: "/publications-books",
       },
       {
+        title: "Journals",
+        path: "/publications-journals",
+      },
+      {
         title: "Committee",
         path: "/publications-committee",
       },

@@ -32,6 +32,7 @@ import journals from "@/views/library/journals.vue";
 import publicationsBooks from "@/views/publications/publicationsBooks.vue";
 import publicationCommittee from "@/views/publications/publicationCommittee.vue";
 import additionalPublications from "@/views/publications/additionalPublications.vue";
+import publicationsJournals from "@/views/publications/publicationsJournals.vue";
 
 import faculty from "@/views/faculty.vue";
 
@@ -139,6 +140,12 @@ const routes = [
     path: "/library-journals",
     name: "journals",
     component: journals,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/publications-journals",
+    name: "publicationsJournals",
+    component: publicationsJournals,
     meta: { requiresAuth: true },
   },
   {
