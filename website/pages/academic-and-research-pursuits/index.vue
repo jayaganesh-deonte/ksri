@@ -4,7 +4,7 @@
 
     <!-- add button list -->
     <div
-      class="d-flex justify-center align-center mx-2"
+      class="d-flex flex-wrap justify-center align-center mx-2"
       :class="$device.isMobile ? 'flex-wrap' : 'flex-row'"
     >
       <div class="text-h6">Series:</div>

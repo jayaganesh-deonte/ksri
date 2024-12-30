@@ -179,10 +179,16 @@ const insertLibraryBooks = async () => {
   const books = require("./content/library/books.json");
 
   const booksWithId = books.map((book: any) => ({
-    ...book,
+    accessionNo: book["accessionNo:"] ? book["accessionNo:"].toString() : "",
+    title: book.title,
+    author: book.author,
+    editor: book.editor,
+    publisher: book.publisher,
+    remarks: book.remarks,
     id: ulid(),
     metadata: generateMetaData(),
   }));
+  // console.log(booksWithId);
 
   // remove books without title from booksWithId
   const booksWithIdFiltered = booksWithId.filter(
@@ -201,12 +207,14 @@ const insertLibraryBooks = async () => {
   );
 
   // check isBookDDB
-  booksDynamoDB.forEach((book) => {
-    if (!isBookDDB(book)) {
-      console.log("Invalid book", book);
-      return console.log("Invalid book", book);
-    }
-  });
+  // booksDynamoDB.forEach((book) => {
+  //   if (!isBookDDB(book)) {
+  //     console.log("Invalid book", book);
+  //     return console.log("Invalid book", book);
+  //   }
+  // });
+
+  // console.log(booksDynamoDB);
   await batchInsert(booksDynamoDB);
 };
 
@@ -1144,7 +1152,7 @@ const main = async () => {
   // await insertEndownments();
   // await insertEvents();
   // await insertLibraryArticles();
-  // await insertLibraryBooks();
+  await insertLibraryBooks();
   // await insertLibraryJournals();
   // await insertOutOfStockPubBooks("outofstock", "No");
   // await insertOutOfStockPubBooks("forsale", "Yes");

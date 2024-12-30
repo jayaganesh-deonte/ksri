@@ -16,6 +16,7 @@
 
       <v-data-table
         class="custom-table"
+        :headers="articleHeaders"
         :items="articles"
         :search="searchText"
         :items-per-page-options="[
@@ -53,14 +54,14 @@ const articles = articlesData.body;
 
 const articleHeaders = [
   {
-    text: "Title",
-    value: "title",
+    title: "Title",
+    key: "title",
   },
-  { text: "Author", value: "author", sortable: false },
-  { text: "Journal", value: "journal", sortable: false },
-  { text: "Volume #", value: "volume", sortable: false },
-  { text: "Year", value: "year", sortable: false },
-  { text: "Remarks", value: "remarks", sortable: false },
+  { title: "Author", key: "author", sortable: false },
+  { title: "Journal", key: "journal", sortable: false },
+  { title: "Volume #", key: "volume", sortable: false },
+  { title: "Year", key: "year", sortable: false },
+  { title: "Remarks", key: "remarks", sortable: false },
 ];
 </script>
 
