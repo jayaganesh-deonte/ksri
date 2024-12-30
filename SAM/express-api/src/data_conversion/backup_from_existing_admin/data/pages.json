@@ -1,0 +1,26 @@
+{
+  "reply": "serv_ok",
+  "message": "Record found.",
+  "payload": {
+    "list": [
+      {
+        "id": "2",
+        "name": "Hello World",
+        "title": "Hello World",
+        "pageurl": "hello-world",
+        "description": "Hello World",
+        "content": "<p>Hello World Content<!slash!p>",
+        "photo": null,
+        "video": null,
+        "category": "Hello World",
+        "tag": "Hello World",
+        "user_id": "1",
+        "status": "publish",
+        "created_at": "2021-03-23 16:22:17",
+        "updated_at": "2021-03-23 16:22:17",
+        "deleted_at": null
+      }
+    ]
+  },
+  "err": false
+}
