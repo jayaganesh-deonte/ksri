@@ -30,7 +30,7 @@ collectionsRoute.get(
           ":sk": "ENTITYTYPE#GALLERY#COLLECTION",
         },
         //   id is lexagraphically sorted so sort it from old to new
-        ScanIndexForward: false,
+        ScanIndexForward: true,
       });
 
       const collections = result.Items?.map((item) =>

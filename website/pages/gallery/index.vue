@@ -4,7 +4,7 @@
       <div class="ma-2">
         <section-title title="Gallery" />
       </div>
-      <div class="d-flex flex-wrap ma-2">
+      <div class="d-flex flex-wrap justify-center ma-2">
         <div v-for="subsection in collections" :key="subsection">
           <!-- album card with 4 images and then  name of the collection below -->
           <albumPreview
