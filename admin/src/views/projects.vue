@@ -65,6 +65,32 @@ let isLoading = ref(true);
 
 const projectSeries = await getProjectSeries();
 
+let supervisors = [];
+
+const getSupervisors = async () => {
+  isLoading.value = true;
+
+  const idToken = await getUserIdToken();
+  const apiEndpoint = import.meta.env.VITE_API_URL + "/supervisor";
+
+  const response = await axios.get(apiEndpoint, {
+    headers: {
+      Authorization: `${idToken}`,
+    },
+  });
+
+  if (response.status === 200) {
+    // get names only
+    const supervisorsWithName = response.data.map(
+      (supervisor) => supervisor.name
+    );
+    Object.assign(supervisors, supervisorsWithName);
+    isLoading.value = false;
+  }
+};
+
+await getSupervisors();
+
 // {
 //     "title": "PadukaSahasram( English and Tamil Trans.)",
 //     "subTitle": "- Sri KesavaIyengar Endowment",
@@ -101,12 +127,14 @@ const projectFields = [
   {
     key: "projectInvestigator",
     label: "Project Investigator",
-    type: "text",
+    type: "auto-complete",
+    items: supervisors,
   },
   {
     key: "coProjectInvestigators",
     label: "Co-Project Investigators",
-    type: "text",
+    type: "auto-complete",
+    items: supervisors,
   },
   {
     key: "publicationStatus",
