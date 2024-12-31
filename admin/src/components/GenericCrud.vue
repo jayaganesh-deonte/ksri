@@ -24,7 +24,7 @@
           <v-icon start> mdi-file-export </v-icon>
           Export as CSV
         </v-btn> -->
-        <v-menu :close-on-content-click="false">
+        <v-menu :close-on-content-click="false" v-model="exportMenu">
           <template v-slot:activator="{ props }">
             <v-btn color="primary" class="ms-4" v-bind="props">
               <v-icon start> mdi-file-export </v-icon>
@@ -378,6 +378,7 @@ const editedIndex = ref(-1);
 const expandedItems = ref(new Set());
 const expanded = ref([]);
 
+let exportMenu = ref(false);
 let selectedColumnsToExport = ref([]);
 
 let valid = ref(false);
@@ -731,6 +732,10 @@ const exportAsCSV = () => {
   // Cleanup
   document.body.removeChild(link);
   URL.revokeObjectURL(url); // Free up memory};
+
+  // unselect all columns
+  selectedColumnsToExport.value = [];
+  exportMenu.value = false;
 };
 
 onMounted(() => {
