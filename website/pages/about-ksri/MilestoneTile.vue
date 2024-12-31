@@ -36,13 +36,13 @@
       :min-height="`${$device.isMobile ? null : '400'}`"
       class="d-flex flex-column align-center justify-center milestoneCard pa-4"
       data-aos="fade-down"
-      data-aos-delay="500"
+      data-aos-delay="300"
     >
       <div
         class="font-weight-bold text-center text-secondary ma-2"
         :class="`${$device.isMobile ? 'text-h5' : 'text-h4'}`"
         data-aos="fade-right"
-        data-aos-delay="500"
+        data-aos-delay="300"
       >
         {{ title }}
       </div>
@@ -51,7 +51,7 @@
         class="font-weight-bold text-center text-secondary ma-2"
         :class="`${$device.isMobile ? 'text-body-1' : 'text-body-1'}`"
         data-aos="fade-right"
-        data-aos-delay="500"
+        data-aos-delay="300"
       >
         {{ subTitle }}
       </div>
@@ -59,7 +59,7 @@
         class="text-center"
         :class="`${$device.isMobile ? 'text-body-1' : 'text-h6'}`"
         data-aos="fade-left"
-        data-aos-delay="500"
+        data-aos-delay="300"
       >
         <div v-html="description"></div>
       </div>
@@ -187,7 +187,7 @@ export default {
 .line {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
-  transition: stroke-dashoffset 1s ease-out;
+  transition: stroke-dashoffset 0.5s ease-out;
 }
 
 .animate-line {
@@ -195,6 +195,6 @@ export default {
 }
 
 .vertical-line {
-  transition-delay: 0.5s; /* Delay vertical line animation */
+  transition-delay: 0.3s; /* Delay vertical line animation */
 }
 </style>
