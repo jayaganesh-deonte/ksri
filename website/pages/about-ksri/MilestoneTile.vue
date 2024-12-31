@@ -46,6 +46,15 @@
       >
         {{ title }}
       </div>
+      <!-- subTitle -->
+      <div
+        class="font-weight-bold text-center text-secondary ma-2"
+        :class="`${$device.isMobile ? 'text-body-1' : 'text-body-1'}`"
+        data-aos="fade-right"
+        data-aos-delay="500"
+      >
+        {{ subTitle }}
+      </div>
       <div
         class="text-center"
         :class="`${$device.isMobile ? 'text-body-1' : 'text-h6'}`"
@@ -96,6 +105,10 @@ export default {
       required: true,
     },
     title: {
+      type: String,
+      required: true,
+    },
+    subTitle: {
       type: String,
       required: true,
     },

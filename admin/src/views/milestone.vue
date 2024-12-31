@@ -25,6 +25,13 @@ const milestoneFields = [
     rules: [(v) => !!v || "Title is required"],
     editDisabled: true,
   },
+
+  {
+    key: "subTitle",
+    label: "Sub Title",
+    type: "text",
+    rules: [(v) => !!v || "subTitle is required"],
+  },
   {
     key: "description",
     label: "Description",
@@ -36,6 +43,7 @@ const milestoneFields = [
 const milestoneHeaders = [
   { title: "Year", key: "year" },
   { title: "Title", key: "title" },
+  { title: "Sub Title", key: "subTitle" },
   // {
   //   title: "Description",
   //   key: "description",

@@ -2,6 +2,7 @@
 export interface Milestone {
   year: number;
   title: string;
+  subTitle: string;
   description: string;
   metadata?: { [key: string]: string };
 }
@@ -13,6 +14,7 @@ export interface MilestoneDDB {
   entityType: string;
   year: number;
   title: string;
+  subTitle: string;
   description: string;
   metadata?: { [key: string]: string };
 }
@@ -22,6 +24,7 @@ export function fromDynamoDB(item: MilestoneDDB): Milestone {
   return {
     year: item.year,
     title: item.title,
+    subTitle: item.subTitle,
     description: item.description,
     metadata: item.metadata,
   };
@@ -41,6 +44,7 @@ export function toDynamoDB(milestone: Milestone): MilestoneDDB {
     entityType: "ENTITYTYPE#MILESTONE",
     year: milestone.year,
     title: milestone.title,
+    subTitle: milestone.subTitle,
     description: milestone.description,
     metadata: milestone.metadata,
   };
@@ -55,6 +59,7 @@ export function isMilestoneDDB(item: any): item is MilestoneDDB {
     typeof item.entityType === "string" &&
     typeof item.year === "number" &&
     typeof item.title === "string" &&
+    typeof item.subTitle === "string" &&
     typeof item.description === "string" &&
     (typeof item.metadata === "undefined" ||
       (typeof item.metadata === "object" &&

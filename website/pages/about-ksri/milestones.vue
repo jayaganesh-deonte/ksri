@@ -8,6 +8,7 @@
         :key="milestone.year"
         :year="milestone.year"
         :title="milestone.title"
+        :subTitle="milestone.subTitle"
         :description="milestone.description"
         :isLast="index === milestones.length - 1"
         class="milestone-item"
