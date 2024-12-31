@@ -97,7 +97,7 @@
       >
         <div>
           <v-img
-            src="https://d30y75l38k1y9.cloudfront.net/upload/grantha-manuscript.jpg"
+            src="/img/library/library-racks-4.jpg"
             cover
             height="50vh"
             width="50vw"
@@ -130,10 +130,7 @@
         data-aos-delay="400"
         v-if="$device.isMobile"
       >
-        <v-img
-          src="https://d30y75l38k1y9.cloudfront.net/upload/grantha-manuscript.jpg"
-          cover
-        ></v-img>
+        <v-img src="/img/library/library-racks-4.jpg" cover></v-img>
         <div
           class="text-h6 text-start ma-2"
           data-aos="fade-up"
@@ -163,7 +160,7 @@
           data-aos="fade-right"
           data-aos-delay="900"
           class="imgOnRight"
-          src="https://d30y75l38k1y9.cloudfront.net/upload/library-focus.jpg"
+          src="/img/library/library-racks-2.jpg"
           cover
           height="50vh"
           width="50vw"
@@ -368,7 +365,7 @@ const services = [
 
 <style scoped>
 .libraryRack {
-  background-image: url(https://d30y75l38k1y9.cloudfront.net/upload/library-racks.jpg);
+  background-image: url("/img/library/library-racks-1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -403,7 +400,7 @@ const services = [
 }
 
 .supportBg {
-  background-image: url(https://d30y75l38k1y9.cloudfront.net/upload/support.jpg);
+  background-image: url("/img/library/library-racks-3.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
