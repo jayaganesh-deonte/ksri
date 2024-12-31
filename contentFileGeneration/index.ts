@@ -239,11 +239,15 @@ const pageDetails = [
   {
     endpoint: "/projects?status=Future Projects",
     outputFile: "../website/content//projects/futureprojects.json",
+    // sort by "startYear": "2005"
+    filter: (data: any[]) => data.sort((b, a) => a.startYear - b.startYear),
   },
   ///projects?status=On-Going
   {
     endpoint: "/projects?status=On-Going",
     outputFile: "../website/content//projects/ongoingprojects.json",
+    // sort by "startYear": "2005"
+    filter: (data: any[]) => data.sort((b, a) => a.startYear - b.startYear),
   },
   ///projects?status=Completed
   {
