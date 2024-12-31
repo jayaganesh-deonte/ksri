@@ -20,10 +20,53 @@
           Add {{ entityName }}
         </v-btn>
         <!-- export as CSV -->
-        <v-btn color="primary" class="ms-4" @click="exportAsCSV">
+        <!-- <v-btn color="primary" class="ms-4" @click="exportAsCSV">
           <v-icon start> mdi-file-export </v-icon>
           Export as CSV
-        </v-btn>
+        </v-btn> -->
+        <v-menu :close-on-content-click="false">
+          <template v-slot:activator="{ props }">
+            <v-btn color="primary" class="ms-4" v-bind="props">
+              <v-icon start> mdi-file-export </v-icon>
+              Export as CSV
+            </v-btn>
+          </template>
+          <v-card>
+            <v-card-title>Select Columns to Export</v-card-title>
+            <v-card-text>
+              <div v-for="header in headers" :key="header.key">
+                <v-checkbox
+                  v-if="header.key !== 'actions'"
+                  v-model="selectedColumnsToExport"
+                  :label="header.title"
+                  :value="header.key"
+                  hide-details
+                  multiple
+                />
+              </div>
+            </v-card-text>
+            <v-card-actions>
+              <!-- select all btn -->
+              <v-btn
+                color="primary"
+                size="small"
+                variant="outlined"
+                class="ms-4"
+                @click="selectAllColumnsToExport"
+              >
+                Select All
+              </v-btn>
+              <v-btn
+                color="primary"
+                variant="outlined"
+                @click="exportAsCSV"
+                size="small"
+              >
+                Export
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-menu>
       </div>
 
       <v-data-table
@@ -270,7 +313,15 @@
 
 <script setup>
 import axios from "axios";
-import { ref, onMounted, computed, defineProps, defineEmits, watch } from "vue";
+import {
+  ref,
+  onMounted,
+  computed,
+  defineProps,
+  defineEmits,
+  watch,
+  reactive,
+} from "vue";
 import { useToast } from "vue-toast-notification";
 import "vue-toast-notification/dist/theme-sugar.css";
 import { inject } from "vue";
@@ -326,6 +377,8 @@ const dialog = ref(false);
 const editedIndex = ref(-1);
 const expandedItems = ref(new Set());
 const expanded = ref([]);
+
+let selectedColumnsToExport = ref([]);
 
 let valid = ref(false);
 
@@ -612,6 +665,12 @@ const save = async () => {
   }
 };
 
+const selectAllColumnsToExport = () => {
+  selectedColumnsToExport.value = props.headers
+    .map((header) => header.key)
+    .filter((key) => key !== "actions");
+};
+
 const exportAsCSV = () => {
   // Add BOM for Excel UTF-8 detection
   const BOM = "\uFEFF";
@@ -634,16 +693,22 @@ const exportAsCSV = () => {
     return stringValue;
   };
 
+  console.log("selectedColumnsToExport", selectedColumnsToExport.value);
+
   const csvContent = items.value
     .map((item) => {
-      return props.entityFields
-        .map((field) => escapeCSVValue(item[field.key]))
+      return selectedColumnsToExport.value
+        .map((key) => escapeCSVValue(item[key]))
         .join(",");
     })
     .join("\n");
 
-  const csvHeader = props.entityFields
-    .map((field) => escapeCSVValue(field.label))
+  const csvHeader = selectedColumnsToExport.value
+    .map((key) =>
+      escapeCSVValue(
+        props.entityFields.find((header) => header.key === key).label
+      )
+    )
     .join(",");
 
   const csvData = `${BOM}${csvHeader}\n${csvContent}`;
@@ -665,7 +730,7 @@ const exportAsCSV = () => {
 
   // Cleanup
   document.body.removeChild(link);
-  URL.revokeObjectURL(url); // Free up memory
+  URL.revokeObjectURL(url); // Free up memory};
 };
 
 onMounted(() => {
