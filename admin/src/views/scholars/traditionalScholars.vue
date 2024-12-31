@@ -32,6 +32,11 @@ const scholarFields = [
     rules: [(v) => !!v || "Type is required"],
     items: ["Shastrachudamani", "Vidyavaridhi", "Traditional Study"],
   },
+  {
+    key: "year",
+    label: "Year",
+    type: "text",
+  },
 ];
 
 const scholarHeaders = [
@@ -46,6 +51,10 @@ const scholarHeaders = [
   {
     key: "type",
     title: "Type",
+  },
+  {
+    key: "year",
+    title: "Year",
   },
   {
     key: "actions",

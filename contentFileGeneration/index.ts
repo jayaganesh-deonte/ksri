@@ -160,16 +160,49 @@ const pageDetails = [
   {
     endpoint: "/students?status=Completed&course=M.Phil",
     outputFile: "../website/content//students/past/mphil.json",
+    // startedYear: item.startedYear,
+    // completedYear: item.completedYear,
+    // sort by  startedYear and completedYear if completedYear is null then sort by startedYear
+    filter: (data: any[]) =>
+      data.sort((a, b) => {
+        if (a.completedYear === null) {
+          return a.startedYear - b.startedYear;
+        }
+        if (b.completedYear === null) {
+          return a.startedYear - b.startedYear;
+        }
+        return a.completedYear - b.completedYear;
+      }),
   },
   // students/past/phd
   {
     endpoint: "/students?status=Completed&course=Ph.D.",
     outputFile: "../website/content//students/past/phd.json",
+    filter: (data: any[]) =>
+      data.sort((a, b) => {
+        if (a.completedYear === null) {
+          return a.startedYear - b.startedYear;
+        }
+        if (b.completedYear === null) {
+          return a.startedYear - b.startedYear;
+        }
+        return a.completedYear - b.completedYear;
+      }),
   },
   // students/present
   {
     endpoint: "/students?status=On-Going",
     outputFile: "../website/content//students/present/students.json",
+    filter: (data: any[]) =>
+      data.sort((a, b) => {
+        if (a.completedYear === null) {
+          return a.startedYear - b.startedYear;
+        }
+        if (b.completedYear === null) {
+          return a.startedYear - b.startedYear;
+        }
+        return a.completedYear - b.completedYear;
+      }),
   },
   // faculty
   {

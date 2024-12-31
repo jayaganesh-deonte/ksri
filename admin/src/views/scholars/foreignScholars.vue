@@ -31,6 +31,11 @@ const scholarFields = [
     type: "text",
     rules: [(v) => !!v || "Subject is required"],
   },
+  {
+    key: "year",
+    label: "Year",
+    type: "text",
+  },
 ];
 
 const scholarHeaders = [
@@ -45,6 +50,10 @@ const scholarHeaders = [
   {
     key: "subject",
     title: "Subject",
+  },
+  {
+    key: "year",
+    title: "Year",
   },
   {
     key: "actions",

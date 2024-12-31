@@ -79,6 +79,7 @@
         v-model:expanded="expanded"
         :show-expand="expandable"
         expand-on-click
+        style="overflow-x: scroll"
       >
         <!-- Sub-table expansion panel -->
         <template #expanded-row="{ item }">

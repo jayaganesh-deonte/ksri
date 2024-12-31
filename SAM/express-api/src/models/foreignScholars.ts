@@ -9,6 +9,7 @@ export interface ForeignScholar {
   name: string;
   university: string;
   subject: string;
+  year?: string;
   metadata?: { [key: string]: string };
 }
 
@@ -19,6 +20,7 @@ export interface ForeignScholarDDB {
   name: string;
   university: string;
   subject: string;
+  year?: string;
   metadata?: { [key: string]: string };
 }
 
@@ -30,6 +32,7 @@ export function toDynamoDB(scholar: ForeignScholar): ForeignScholarDDB {
     name: scholar.name,
     university: scholar.university,
     subject: scholar.subject,
+    year: scholar.year,
     metadata: scholar.metadata,
   };
 }
@@ -53,6 +56,7 @@ export function fromDynamoDB(item: ForeignScholarDDB): ForeignScholar {
     university: item.university,
     subject: item.subject,
     metadata: item.metadata,
+    year: item.year,
   };
 }
 

@@ -86,6 +86,18 @@ const studentFields = [
     items: ["On-Going", "Completed"],
     rules: [(v) => !!v || "Status is required"],
   },
+  // startedYear
+  {
+    key: "startedYear",
+    label: "Started Year",
+    type: "text",
+    rules: [(v) => !!v || "Started Year is required"],
+  },
+  {
+    key: "completedYear",
+    label: "Completed Year",
+    type: "text",
+  },
 ];
 
 const headers = [
@@ -94,6 +106,8 @@ const headers = [
   { title: "Area of Study", key: "areaOfStudy" },
   { title: "Supervisor", key: "supervisor" },
   { title: "Status", key: "status" },
+  { title: "Started Year", key: "startedYear" },
+  { title: "Completed Year", key: "completedYear" },
   { title: "Actions", key: "actions", sortable: false },
 ];
 </script>
