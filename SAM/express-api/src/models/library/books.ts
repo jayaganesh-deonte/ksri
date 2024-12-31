@@ -96,11 +96,11 @@ export function validateBook(item: Book): boolean {
   return (
     typeof item.id === "string" &&
     typeof item.title === "string" &&
-    typeof item.accessionNo === "string" &&
-    typeof item.author === "string" &&
-    typeof item.editor === "string" &&
-    typeof item.publisher === "string" &&
-    typeof item.remarks === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    typeof item.accessionNo === "string"
+    // typeof item.author === "string" &&
+    // typeof item.editor === "string" &&
+    // typeof item.publisher === "string" &&
+    // typeof item.remarks === "string" &&
+    // (item.metadata === undefined || typeof item.metadata === "object")
   );
 }

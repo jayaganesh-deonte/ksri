@@ -103,8 +103,6 @@ import {
   toDynamoDB as governingBodyMembersPastToDynamoDB,
   validateGoverningBodyMemberPast as validateGoverningBodyMemberPast,
 } from "../models/governingBodyMembersPast";
-import { title } from "process";
-import { writeFileSync } from "fs";
 
 const insertEndownments = async () => {
   // load content/contribute/endownments.json file into endownments variable
@@ -150,10 +148,24 @@ const insertEvents = async () => {
 
 const insertLibraryArticles = async () => {
   // load articles
-  const articles = require("./content/library/articles.json");
+  const articles = require("./library/articles.json");
+  //   {
+  //     "Title": "Introducing Tenessee Williams",
+  //     "Author": "Mahajan M L",
+  //     "Journal": "Nagpur University Journal (Humanities)",
+  //     "Vol_No": "XIX",
+  //     "year": "1968-69",
+  //     "Remarks": ""
+  // },
+
   // add id to articles
   const articlesWithId = articles.map((article: any) => ({
-    ...article,
+    title: article.Title,
+    author: article.Author,
+    journal: article.Journal,
+    volume: article.Vol_No.toString(),
+    year: article.year.toString(),
+    remarks: article.Remarks,
     id: ulid(),
     metadata: generateMetaData(),
   }));
@@ -169,22 +181,33 @@ const insertLibraryArticles = async () => {
   const articlesDynamoDB = articlesWithId.map((article) =>
     libArticleToDynamoDB(article)
   );
-  console.log(articlesDynamoDB);
+  // console.log(articlesDynamoDB);
   // insert articles into dynamoDB
   await batchInsert(articlesDynamoDB);
 };
 
 const insertLibraryBooks = async () => {
   // load books
-  const books = require("./content/library/books.json");
+  const books = require("./library/books.json");
+
+  console.log(books[0]);
+
+  //   {
+  //     "AccessionNumber": "0",
+  //     "BookTitle": "Cultural Heritage of IndiaVol.VI.[Science and Technology]",
+  //     "Author": "",
+  //     "Editor": "",
+  //     "Publisher": "Kolikatha: R.K.Math",
+  //     "Remarks": ""
+  // },
 
   const booksWithId = books.map((book: any) => ({
-    accessionNo: book["accessionNo:"] ? book["accessionNo:"].toString() : "",
-    title: book.title,
-    author: book.author,
-    editor: book.editor,
-    publisher: book.publisher,
-    remarks: book.remarks,
+    accessionNo: book.AccessionNumber.toString(),
+    title: book.BookTitle,
+    author: book.Author,
+    editor: book.Editor,
+    publisher: book.Publisher,
+    remarks: book.Remarks,
     id: ulid(),
     metadata: generateMetaData(),
   }));
@@ -1147,12 +1170,11 @@ const downloadImages = async () => {
     writeFileSync(filePath, buffer);
   }
 };
-
 const main = async () => {
   // await insertEndownments();
   // await insertEvents();
   // await insertLibraryArticles();
-  await insertLibraryBooks();
+  // await insertLibraryBooks();
   // await insertLibraryJournals();
   // await insertOutOfStockPubBooks("outofstock", "No");
   // await insertOutOfStockPubBooks("forsale", "Yes");
