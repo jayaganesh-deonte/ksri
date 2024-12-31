@@ -156,6 +156,11 @@ var pageDetails = [
     {
         endpoint: "/library/journals",
         outputFile: "../website/content//library/journals.json",
+        fetchItemsWithPagination: true,
+        // sort by JournalAccNo
+        filter: function (data) {
+            return data.sort(function (a, b) { return a.JournalAccNo - b.JournalAccNo; });
+        },
     },
     // // /publications/additionalPublications
     // {

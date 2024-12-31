@@ -43,9 +43,14 @@ journalRoute.post("/library/journals", async (req: Request, res: Response) => {
   }
 });
 
-// GET all journals
+// GET all journals with pagination
 journalRoute.get("/library/journals", async (req: Request, res: Response) => {
   try {
+    const limit = req.query.limit ? parseInt(req.query.limit as string) : 1000;
+    const lastEvaluatedKey = req.query.lastEvaluatedKey
+      ? JSON.parse(decodeURIComponent(req.query.lastEvaluatedKey as string))
+      : undefined;
+
     const params = {
       TableName: "ksri_admin_master_table",
       KeyConditionExpression: "entityType = :entityType",
@@ -54,10 +59,20 @@ journalRoute.get("/library/journals", async (req: Request, res: Response) => {
       },
       IndexName: "entityTypeSK",
       ScanIndexForward: false,
+      Limit: limit,
+      ExclusiveStartKey: lastEvaluatedKey,
     };
+
     const response = await documentClient.query(params);
     const journals = response.Items?.map((item: any) => fromJournalDDB(item));
-    res.json(journals);
+
+    res.json({
+      data: journals,
+      lastEvaluatedKey: response.LastEvaluatedKey
+        ? encodeURIComponent(JSON.stringify(response.LastEvaluatedKey))
+        : null,
+      count: journals?.length || 0,
+    });
   } catch (error) {
     console.error("Error fetching journals:", error);
     res.status(500).json({ error: "Failed to fetch journals" });

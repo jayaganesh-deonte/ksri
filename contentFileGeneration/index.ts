@@ -117,6 +117,10 @@ const pageDetails = [
   {
     endpoint: "/library/journals",
     outputFile: "../website/content//library/journals.json",
+    fetchItemsWithPagination: true,
+    // sort by JournalAccNo
+    filter: (data: any[]) =>
+      data.sort((a, b) => a.JournalAccNo - b.JournalAccNo),
   },
   // // /publications/additionalPublications
   // {

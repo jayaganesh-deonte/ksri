@@ -6,6 +6,8 @@
     :headers="headers"
     :addIdToPayload="true"
     :expandable="true"
+    :fetchItemsWithPagination="true"
+    :sortBy="[{ key: 'JournalAccNo', order: 'asc' }]"
   />
 </template>
 
@@ -59,7 +61,11 @@ const entityFields = [
 ];
 
 const headers = [
-  { title: "Journal Acc No", key: "JournalAccNo" },
+  {
+    title: "Journal Acc No",
+    key: "JournalAccNo",
+    value: (item) => parseInt(item.JournalAccNo),
+  },
   { title: "Journal Name", key: "JournalName" },
   { title: "Nationality", key: "Nationality" },
   { title: "Actions", key: "actions", sortable: false },

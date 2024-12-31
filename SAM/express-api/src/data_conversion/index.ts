@@ -103,6 +103,7 @@ import {
   toDynamoDB as governingBodyMembersPastToDynamoDB,
   validateGoverningBodyMemberPast as validateGoverningBodyMemberPast,
 } from "../models/governingBodyMembersPast";
+import { writeFileSync } from "fs";
 
 const insertEndownments = async () => {
   // load content/contribute/endownments.json file into endownments variable
@@ -243,7 +244,7 @@ const insertLibraryBooks = async () => {
 
 const insertLibraryJournals = async () => {
   // load journals
-  const journals = require("./content/library/journals.json");
+  const journals = require("./library/journals.json");
   // add id to journals
   const journalsWithId = journals.map((journal: any) => ({
     ...journal,
@@ -1175,7 +1176,7 @@ const main = async () => {
   // await insertEvents();
   // await insertLibraryArticles();
   // await insertLibraryBooks();
-  // await insertLibraryJournals();
+  await insertLibraryJournals();
   // await insertOutOfStockPubBooks("outofstock", "No");
   // await insertOutOfStockPubBooks("forsale", "Yes");
   // await insertsamskritaacademypublicationsBooks();
