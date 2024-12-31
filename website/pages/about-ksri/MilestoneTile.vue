@@ -52,7 +52,7 @@
         data-aos="fade-left"
         data-aos-delay="500"
       >
-        {{ description }}
+        <div v-html="description"></div>
       </div>
     </v-card>
 
@@ -174,7 +174,7 @@ export default {
 .line {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
-  transition: stroke-dashoffset 1.5s ease-out;
+  transition: stroke-dashoffset 1s ease-out;
 }
 
 .animate-line {
@@ -182,6 +182,6 @@ export default {
 }
 
 .vertical-line {
-  transition-delay: 1s; /* Delay vertical line animation */
+  transition-delay: 0.5s; /* Delay vertical line animation */
 }
 </style>

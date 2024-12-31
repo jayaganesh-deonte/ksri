@@ -28,7 +28,7 @@ const milestoneFields = [
   {
     key: "description",
     label: "Description",
-    type: "text-area",
+    type: "editor",
     rules: [(v) => !!v || "Description is required"],
   },
 ];
@@ -36,7 +36,12 @@ const milestoneFields = [
 const milestoneHeaders = [
   { title: "Year", key: "year" },
   { title: "Title", key: "title" },
-  { title: "Description", key: "description" },
+  // {
+  //   title: "Description",
+  //   key: "description",
+  //   // render html
+
+  // },
   { title: "Actions", key: "actions", sortable: false },
 ];
 </script>
