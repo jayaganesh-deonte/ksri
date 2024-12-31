@@ -5,6 +5,7 @@
     :entityFields="bookFields"
     :headers="bookHeaders"
     :addIdToPayload="true"
+    :sortBy="[{ key: 'accessionNo', order: 'asc' }]"
   />
 </template>
 
@@ -48,7 +49,11 @@ const bookFields = [
 ];
 
 const bookHeaders = [
-  { title: "Accession No.", key: "accessionNo" },
+  {
+    title: "Accession No.",
+    key: "accessionNo",
+    value: (item) => parseInt(item.accessionNo),
+  },
   { title: "Title", key: "title" },
   { title: "Author", key: "author" },
   { title: "Editor", key: "editor" },

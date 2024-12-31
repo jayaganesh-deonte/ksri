@@ -80,6 +80,8 @@
         :show-expand="expandable"
         expand-on-click
         style="overflow-x: scroll"
+        :loading="loading"
+        :sort-by="sortBy"
       >
         <!-- Sub-table expansion panel -->
         <template #expanded-row="{ item }">
@@ -361,6 +363,10 @@ const props = defineProps({
   expandable: {
     default: false,
   },
+  sortBy: {
+    type: Object,
+    required: false,
+  },
 });
 
 const emit = defineEmits([
@@ -378,6 +384,8 @@ const dialog = ref(false);
 const editedIndex = ref(-1);
 const expandedItems = ref(new Set());
 const expanded = ref([]);
+
+let loading = ref(false);
 
 let exportMenu = ref(false);
 let selectedColumnsToExport = ref([]);
@@ -468,6 +476,7 @@ const isEditDisabled = (field) => {
 
 const fetchItems = async () => {
   try {
+    loading.value = true;
     //  get id token
     const idToken = await getUserIdToken();
 
@@ -477,6 +486,7 @@ const fetchItems = async () => {
       },
     });
     items.value = response.data;
+    loading.value = false;
   } catch (error) {
     console.error(`Error fetching ${props.entityName}:`, error);
     $toast.open({
