@@ -124,10 +124,10 @@ export function validateProject(project: Partial<Project>): project is Project {
     return false;
   }
 
-  // Additional validation based on status
-  if (project.status === "Completed" && !project.completedYear) {
-    return false;
-  }
+  // // Additional validation based on status
+  // if (project.status === "Completed" && !project.completedYear) {
+  //   return false;
+  // }
 
   return true;
 }
