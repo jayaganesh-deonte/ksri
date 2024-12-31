@@ -232,6 +232,7 @@ const pageDetails = [
         .map((item) => ({
           name: item.name,
           subSeries: item.subSeries.map((subItem) => subItem.name),
+          description: item.description,
         })),
   },
   ///projects?status=Future Projects

@@ -267,6 +267,7 @@ var pageDetails = [
                 .map(function (item) { return ({
                 name: item.name,
                 subSeries: item.subSeries.map(function (subItem) { return subItem.name; }),
+                description: item.description,
             }); });
         },
     },

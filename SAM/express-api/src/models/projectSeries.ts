@@ -9,6 +9,7 @@ export interface ProjectSeries {
   name: string;
   metadata?: { [key: string]: string };
   subSeries?: string[];
+  description?: string;
 }
 
 export interface ProjectSeriesDDB {
@@ -20,6 +21,7 @@ export interface ProjectSeriesDDB {
   name: string;
   metadata?: { [key: string]: string };
   subSeries?: string[];
+  description?: string;
 }
 
 export function isProjectSeriesDDB(item: any): item is ProjectSeriesDDB {
@@ -90,6 +92,7 @@ export function toDynamoDB(projectSeries: ProjectSeries): ProjectSeriesDDB {
     metadata: projectSeries.metadata,
     // // seriesType: projectSeries.seriesType,
     subSeries: projectSeries.subSeries,
+    description: projectSeries.description,
   };
 }
 
@@ -102,5 +105,6 @@ export function fromDynamoDB(item: ProjectSeriesDDB): ProjectSeries {
     metadata: item.metadata,
     // // seriesType: item.seriesType,
     subSeries: item.subSeries,
+    description: item.description,
   };
 }

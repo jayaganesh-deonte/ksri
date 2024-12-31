@@ -19,6 +19,11 @@ const projectFields = [
     rules: [(v) => !!v || "Name is required"],
     editDisabled: true,
   },
+  {
+    key: "description",
+    label: "Description",
+    type: "text",
+  },
 
   {
     key: "orderId",
@@ -44,6 +49,10 @@ const projectHeaders = [
   {
     key: "name",
     title: "Name",
+  },
+  {
+    key: "description",
+    title: "Description",
   },
   {
     key: "subSeries",
