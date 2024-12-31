@@ -45,7 +45,12 @@ bookRoute.post("/library/books", async (req: Request, res: Response) => {
 // GET all books
 bookRoute.get("/library/books", async (req: Request, res: Response) => {
   try {
-    let params: any = {
+    const limit = req.query.limit ? parseInt(req.query.limit as string) : 1000;
+    const lastEvaluatedKey = req.query.lastEvaluatedKey
+      ? JSON.parse(decodeURIComponent(req.query.lastEvaluatedKey as string))
+      : undefined;
+
+    const params = {
       TableName: "ksri_admin_master_table",
       KeyConditionExpression: "entityType = :entityType",
       ExpressionAttributeValues: {
@@ -53,24 +58,20 @@ bookRoute.get("/library/books", async (req: Request, res: Response) => {
       },
       IndexName: "entityTypeSK",
       ScanIndexForward: false,
+      Limit: limit,
+      ExclusiveStartKey: lastEvaluatedKey,
     };
 
-    let items: any[] = [];
-    let lastEvaluatedKey = undefined;
+    const response = await documentClient.query(params);
+    const books = response.Items?.map((item) => fromDynamoDB(item as BookDDB));
 
-    do {
-      if (lastEvaluatedKey) {
-        params.ExclusiveStartKey = lastEvaluatedKey;
-      }
-      const response = await documentClient.query(params);
-      if (response.Items) {
-        items = [...items, ...response.Items];
-      }
-      lastEvaluatedKey = response.LastEvaluatedKey;
-    } while (lastEvaluatedKey);
-
-    const books = items.map((item) => fromDynamoDB(item as BookDDB));
-    res.json(books);
+    res.json({
+      data: books,
+      lastEvaluatedKey: response.LastEvaluatedKey
+        ? encodeURIComponent(JSON.stringify(response.LastEvaluatedKey))
+        : null,
+      count: books?.length || 0,
+    });
   } catch (error) {
     console.error("Error fetching books:", error);
     res.status(500).json({ error: "Failed to fetch books" });

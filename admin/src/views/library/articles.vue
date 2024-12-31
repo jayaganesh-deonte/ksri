@@ -5,6 +5,7 @@
     :entityFields="articleFields"
     :headers="articleHeaders"
     :addIdToPayload="true"
+    :fetchItemsWithPagination="true"
   />
 </template>
 

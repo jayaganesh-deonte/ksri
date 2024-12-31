@@ -367,6 +367,9 @@ const props = defineProps({
     type: Object,
     required: false,
   },
+  fetchItemsWithPagination: {
+    default: false,
+  },
 });
 
 const emit = defineEmits([
@@ -477,15 +480,40 @@ const isEditDisabled = (field) => {
 const fetchItems = async () => {
   try {
     loading.value = true;
-    //  get id token
-    const idToken = await getUserIdToken();
+    if (props.fetchItemsWithPagination) {
+      let allItems = [];
+      let lastEvaluatedKey = null;
 
-    const response = await axios.get(props.apiEndpoint, {
-      headers: {
-        Authorization: `${idToken}`,
-      },
-    });
-    items.value = response.data;
+      do {
+        //  get id token
+        const idToken = await getUserIdToken();
+
+        const response = await axios.get(props.apiEndpoint, {
+          headers: {
+            Authorization: `${idToken}`,
+          },
+          params: {
+            lastEvaluatedKey: lastEvaluatedKey,
+            limit: 10000,
+          },
+        });
+
+        allItems = allItems.concat(response.data.data);
+        lastEvaluatedKey = response.data.lastEvaluatedKey;
+      } while (lastEvaluatedKey);
+
+      items.value = allItems;
+    } else {
+      //  get id token
+      const idToken = await getUserIdToken();
+
+      const response = await axios.get(props.apiEndpoint, {
+        headers: {
+          Authorization: `${idToken}`,
+        },
+      });
+      items.value = response.data;
+    }
     loading.value = false;
   } catch (error) {
     console.error(`Error fetching ${props.entityName}:`, error);

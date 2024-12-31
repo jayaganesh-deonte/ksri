@@ -48,32 +48,37 @@ articleRoute.post("/library/articles", async (req: Request, res: Response) => {
 // READ Article
 articleRoute.get("/library/articles", async (req: Request, res: Response) => {
   try {
-    let items: any[] = [];
-    let lastEvaluatedKey = undefined;
+    // Get pagination parameters from query string
+    const limit = req.query.limit ? parseInt(req.query.limit as string) : 10;
+    const lastEvaluatedKey = req.query.lastEvaluatedKey
+      ? JSON.parse(decodeURIComponent(req.query.lastEvaluatedKey as string))
+      : undefined;
 
-    do {
-      // query table using GSI
-      const result: any = await documentClient.query({
-        TableName: ARTICLES_TABLE,
-        IndexName: "entityTypeSK",
-        KeyConditionExpression: "entityType = :sk",
-        ExpressionAttributeValues: {
-          ":sk": "ENTITYTYPE#ARTICLE",
-        },
-        ExclusiveStartKey: lastEvaluatedKey,
-        ScanIndexForward: false,
-      });
+    // query table using GSI
+    const result = await documentClient.query({
+      TableName: ARTICLES_TABLE,
+      IndexName: "entityTypeSK",
+      KeyConditionExpression: "entityType = :sk",
+      ExpressionAttributeValues: {
+        ":sk": "ENTITYTYPE#ARTICLE",
+      },
+      ScanIndexForward: false,
+      Limit: limit,
+      ExclusiveStartKey: lastEvaluatedKey,
+    });
 
-      if (result.Items) {
-        items = items.concat(result.Items);
-      }
+    const articles = result.Items?.map((item) =>
+      fromDynamoDB(item as ArticleDDB)
+    );
 
-      lastEvaluatedKey = result.LastEvaluatedKey;
-    } while (lastEvaluatedKey);
-
-    const articles = items.map((item) => fromDynamoDB(item as ArticleDDB));
-
-    res.json(articles);
+    // Return articles and pagination token if more results exist
+    res.json({
+      data: articles,
+      lastEvaluatedKey: result.LastEvaluatedKey
+        ? encodeURIComponent(JSON.stringify(result.LastEvaluatedKey))
+        : null,
+      count: articles?.length || 0,
+    });
   } catch (error) {
     console.error("Error fetching scholars:", error);
     res.status(500).json({ error: "Internal Server Error" });

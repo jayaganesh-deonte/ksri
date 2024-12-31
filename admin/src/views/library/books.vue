@@ -6,6 +6,7 @@
     :headers="bookHeaders"
     :addIdToPayload="true"
     :sortBy="[{ key: 'accessionNo', order: 'asc' }]"
+    :fetchItemsWithPagination="true"
   />
 </template>
 
