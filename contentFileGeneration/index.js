@@ -40,17 +40,38 @@ var fs_1 = require("fs");
 var axios_1 = require("axios");
 var API_BASE_URL = process.env.API_BASE_URL || "http://localhost:3001";
 // Function to fetch data from API and save to file
-function fetchAndSaveData(endpoint, outputFile, filter) {
-    return __awaiter(this, void 0, void 0, function () {
-        var response, data, jsonData, outputFolder, error_1;
+function fetchAndSaveData(endpoint_1, outputFile_1, filter_1) {
+    return __awaiter(this, arguments, void 0, function (endpoint, outputFile, filter, fetchItemsWithPagination) {
+        var data, lastEvaluatedKey, url, response, response, jsonData, outputFolder, error_1;
+        if (fetchItemsWithPagination === void 0) { fetchItemsWithPagination = false; }
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, axios_1.default.get("".concat(API_BASE_URL).concat(endpoint))];
+                    _a.trys.push([0, 8, , 9]);
+                    data = [];
+                    lastEvaluatedKey = null;
+                    if (!fetchItemsWithPagination) return [3 /*break*/, 5];
+                    _a.label = 1;
                 case 1:
+                    url = lastEvaluatedKey
+                        ? "".concat(API_BASE_URL).concat(endpoint, "?limit=10000&lastEvaluatedKey=").concat(lastEvaluatedKey)
+                        : "".concat(API_BASE_URL).concat(endpoint);
+                    return [4 /*yield*/, axios_1.default.get(url)];
+                case 2:
+                    response = _a.sent();
+                    data = data.concat(response.data.data || response.data);
+                    lastEvaluatedKey = response.data.lastEvaluatedKey;
+                    _a.label = 3;
+                case 3:
+                    if (fetchItemsWithPagination && lastEvaluatedKey) return [3 /*break*/, 1];
+                    _a.label = 4;
+                case 4: return [3 /*break*/, 7];
+                case 5: return [4 /*yield*/, axios_1.default.get("".concat(API_BASE_URL).concat(endpoint))];
+                case 6:
                     response = _a.sent();
                     data = response.data;
+                    _a.label = 7;
+                case 7:
                     // apply filter if provided
                     if (filter && Array.isArray(data)) {
                         data = filter(data);
@@ -63,11 +84,11 @@ function fetchAndSaveData(endpoint, outputFile, filter) {
                     (0, fs_1.writeFileSync)(outputFile, jsonData);
                     console.log("Data successfully saved to ".concat(outputFile));
                     return [2 /*return*/, data];
-                case 2:
+                case 8:
                     error_1 = _a.sent();
                     console.error("Error fetching or saving data:", error_1);
                     throw error_1;
-                case 3: return [2 /*return*/];
+                case 9: return [2 /*return*/];
             }
         });
     });
@@ -121,11 +142,15 @@ var pageDetails = [
     {
         endpoint: "/library/articles",
         outputFile: "../website/content//library/articles.json",
+        fetchItemsWithPagination: true,
     },
     //  /library/books
     {
         endpoint: "/library/books",
         outputFile: "../website/content//library/books.json",
+        fetchItemsWithPagination: true,
+        // sort by accessionNo
+        filter: function (data) { return data.sort(function (a, b) { return a.accessionNo - b.accessionNo; }); },
     },
     // /library/journals
     {
@@ -573,7 +598,7 @@ var fetchPublicationsAndBooks = function () { return __awaiter(void 0, void 0, v
     });
 }); };
 var main = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var _i, pageDetails_1, _a, endpoint, outputFile, filter, _b, fixedData_1, _c, fileContent, outputFile;
+    var _i, pageDetails_1, _a, endpoint, outputFile, filter, fetchItemsWithPagination, _b, fixedData_1, _c, fileContent, outputFile;
     return __generator(this, function (_d) {
         switch (_d.label) {
             case 0:
@@ -581,8 +606,8 @@ var main = function () { return __awaiter(void 0, void 0, void 0, function () {
                 _d.label = 1;
             case 1:
                 if (!(_i < pageDetails_1.length)) return [3 /*break*/, 4];
-                _a = pageDetails_1[_i], endpoint = _a.endpoint, outputFile = _a.outputFile, filter = _a.filter;
-                return [4 /*yield*/, fetchAndSaveData(endpoint, outputFile, filter)];
+                _a = pageDetails_1[_i], endpoint = _a.endpoint, outputFile = _a.outputFile, filter = _a.filter, fetchItemsWithPagination = _a.fetchItemsWithPagination;
+                return [4 /*yield*/, fetchAndSaveData(endpoint, outputFile, filter, fetchItemsWithPagination)];
             case 2:
                 _d.sent();
                 _d.label = 3;

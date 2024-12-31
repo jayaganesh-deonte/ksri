@@ -7,13 +7,27 @@ const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:3001";
 async function fetchAndSaveData(
   endpoint: string,
   outputFile: string,
-  filter?: Function
+  filter?: Function,
+  fetchItemsWithPagination: boolean = false
 ): Promise<any> {
   try {
-    // Make API request
-    const response = await axios.get(`${API_BASE_URL}${endpoint}`);
+    // Make API request with pagination support if needed
+    let data: any = [];
+    let lastEvaluatedKey = null;
+    if (fetchItemsWithPagination) {
+      do {
+        const url = lastEvaluatedKey
+          ? `${API_BASE_URL}${endpoint}?limit=10000&lastEvaluatedKey=${lastEvaluatedKey}`
+          : `${API_BASE_URL}${endpoint}`;
 
-    let data = response.data;
+        const response = await axios.get(url);
+        data = data.concat(response.data.data || response.data);
+        lastEvaluatedKey = response.data.lastEvaluatedKey;
+      } while (fetchItemsWithPagination && lastEvaluatedKey);
+    } else {
+      const response = await axios.get(`${API_BASE_URL}${endpoint}`);
+      data = response.data;
+    }
 
     // apply filter if provided
     if (filter && Array.isArray(data)) {
@@ -89,11 +103,15 @@ const pageDetails = [
   {
     endpoint: "/library/articles",
     outputFile: "../website/content//library/articles.json",
+    fetchItemsWithPagination: true,
   },
   //  /library/books
   {
     endpoint: "/library/books",
     outputFile: "../website/content//library/books.json",
+    fetchItemsWithPagination: true,
+    // sort by accessionNo
+    filter: (data: any[]) => data.sort((a, b) => a.accessionNo - b.accessionNo),
   },
   // /library/journals
   {
@@ -566,8 +584,18 @@ const fetchPublicationsAndBooks = async () => {
 };
 
 const main = async () => {
-  for (const { endpoint, outputFile, filter } of pageDetails) {
-    await fetchAndSaveData(endpoint, outputFile, filter);
+  for (const {
+    endpoint,
+    outputFile,
+    filter,
+    fetchItemsWithPagination,
+  } of pageDetails) {
+    await fetchAndSaveData(
+      endpoint,
+      outputFile,
+      filter,
+      fetchItemsWithPagination
+    );
   }
 
   for (const { fileContent, outputFile } of fixedData) {
