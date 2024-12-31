@@ -45,7 +45,7 @@ bookRoute.post("/library/books", async (req: Request, res: Response) => {
 // GET all books
 bookRoute.get("/library/books", async (req: Request, res: Response) => {
   try {
-    const params = {
+    let params: any = {
       TableName: "ksri_admin_master_table",
       KeyConditionExpression: "entityType = :entityType",
       ExpressionAttributeValues: {
@@ -54,8 +54,22 @@ bookRoute.get("/library/books", async (req: Request, res: Response) => {
       IndexName: "entityTypeSK",
       ScanIndexForward: false,
     };
-    const response = await documentClient.query(params);
-    const books = response.Items?.map((item) => fromDynamoDB(item as BookDDB));
+
+    let items: any[] = [];
+    let lastEvaluatedKey = undefined;
+
+    do {
+      if (lastEvaluatedKey) {
+        params.ExclusiveStartKey = lastEvaluatedKey;
+      }
+      const response = await documentClient.query(params);
+      if (response.Items) {
+        items = [...items, ...response.Items];
+      }
+      lastEvaluatedKey = response.LastEvaluatedKey;
+    } while (lastEvaluatedKey);
+
+    const books = items.map((item) => fromDynamoDB(item as BookDDB));
     res.json(books);
   } catch (error) {
     console.error("Error fetching books:", error);

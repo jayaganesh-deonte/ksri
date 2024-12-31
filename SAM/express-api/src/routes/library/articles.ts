@@ -48,20 +48,30 @@ articleRoute.post("/library/articles", async (req: Request, res: Response) => {
 // READ Article
 articleRoute.get("/library/articles", async (req: Request, res: Response) => {
   try {
-    // query table using GSI
-    const result = await documentClient.query({
-      TableName: ARTICLES_TABLE,
-      IndexName: "entityTypeSK",
-      KeyConditionExpression: "entityType = :sk",
-      ExpressionAttributeValues: {
-        ":sk": "ENTITYTYPE#ARTICLE",
-      },
-      ScanIndexForward: false,
-    });
+    let items: any[] = [];
+    let lastEvaluatedKey = undefined;
 
-    const articles = result.Items?.map((item) =>
-      fromDynamoDB(item as ArticleDDB)
-    );
+    do {
+      // query table using GSI
+      const result: any = await documentClient.query({
+        TableName: ARTICLES_TABLE,
+        IndexName: "entityTypeSK",
+        KeyConditionExpression: "entityType = :sk",
+        ExpressionAttributeValues: {
+          ":sk": "ENTITYTYPE#ARTICLE",
+        },
+        ExclusiveStartKey: lastEvaluatedKey,
+        ScanIndexForward: false,
+      });
+
+      if (result.Items) {
+        items = items.concat(result.Items);
+      }
+
+      lastEvaluatedKey = result.LastEvaluatedKey;
+    } while (lastEvaluatedKey);
+
+    const articles = items.map((item) => fromDynamoDB(item as ArticleDDB));
 
     res.json(articles);
   } catch (error) {
