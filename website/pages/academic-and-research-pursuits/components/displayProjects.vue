@@ -9,7 +9,7 @@
     >
       <v-card class="pa-4 borderLeft" height="100%" rounded="0">
         <v-row>
-          <v-col cols="12" :sm="project.completedYear ? '9' : '12'">
+          <v-col cols="12" :sm="display2ndColumn(project) ? 7 : 12">
             <div class="text-body-1 font-weight-bold" data-aos="fade-right">
               {{ project.title }}
             </div>
@@ -17,24 +17,63 @@
             <div class="text-body-1" data-aos="fade-right">
               {{ project.subTitle }}
             </div>
-            <!-- display sponsor if present -->
-            <div
-              class="text-body-1 ma-2 text-secondary"
-              data-aos="fade-right"
-              v-if="project.sponsor"
-            >
-              Sponsored by
-              <v-chip color="secondary" label> {{ project.sponsor }} </v-chip>
-            </div>
           </v-col>
-          <v-col cols="12" sm="3" v-if="project.completedYear">
+          <v-col cols="12" sm="5" v-if="display2ndColumn(project)">
             <v-card
               color="secondary"
               class="text-center pa-2"
               data-aos="fade-left"
+              v-if="project.completedYear"
             >
               {{ project.completedYear }}
             </v-card>
+            <!-- display publicationStatus -->
+            <v-card
+              color="greenBg"
+              class="text-center pa-2 mt-2 text-body-1"
+              data-aos="fade-left"
+              v-if="project.publicationStatus"
+            >
+              {{ project.publicationStatus }}
+            </v-card>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="12">
+            <v-simple-table>
+              <template v-slot:default>
+                <tbody>
+                  <tr v-if="project.sponsor">
+                    <td class="text-body-1 text-secondary">Sponsored by</td>
+                    <td>
+                      <v-chip color="secondary" class="ma-2" label>
+                        {{ project.sponsor }}
+                      </v-chip>
+                    </td>
+                  </tr>
+                  <tr v-if="project.projectInvestigator">
+                    <td class="text-body-1 text-secondary">
+                      Project Investigator
+                    </td>
+                    <td>
+                      <v-chip color="secondary" class="ma-2" label>
+                        {{ project.projectInvestigator }}
+                      </v-chip>
+                    </td>
+                  </tr>
+                  <tr v-if="project.coProjectInvestigators">
+                    <td class="text-body-1 text-secondary">
+                      Co-Project Investigators
+                    </td>
+                    <td>
+                      <v-chip color="secondary" class="ma-2" label>
+                        {{ project.coProjectInvestigators }}
+                      </v-chip>
+                    </td>
+                  </tr>
+                </tbody>
+              </template>
+            </v-simple-table>
           </v-col>
         </v-row>
       </v-card>
@@ -52,6 +91,15 @@ defineProps<{
 const props = defineProps({
   getEventsByCategory: Array,
 });
+
+const display2ndColumn = (item) => {
+  // return false;
+  if (item.sponsor || item.projectInvestigator || item.coProjectInvestigators) {
+    return true;
+  } else {
+    return false;
+  }
+};
 </script>
 
 <style scoped>

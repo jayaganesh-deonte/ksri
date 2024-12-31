@@ -17,14 +17,18 @@
     "title": "Monograph on Ancient Indian Mathematics",
     "subTitle": "- Canara Bank Project",
     "startYear": "2024",
+    "completedYear": "2024",
     "status": "On-Going",
     "metadata": {
       "updated_by": "demo",
       "created_at": "2024-12-19T11:39:11.583Z",
-      "updated_at": "2024-12-31T08:23:51.737Z",
+      "updated_at": "2024-12-31T08:35:06.955Z",
       "created_by": "admin"
     },
-    "sponsor": "Canara Bank"
+    "sponsor": "Canara Bank",
+    "publicationStatus": "Unpublished",
+    "projectInvestigator": "Dr. V. Yamuna Devi",
+    "coProjectInvestigators": "Dr. V. Yamuna Devi"
   },
   {
     "id": "01JFFBDWAZZJ2A6P5B5KKRTNPT",
