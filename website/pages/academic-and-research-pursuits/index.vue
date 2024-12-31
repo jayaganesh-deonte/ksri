@@ -18,8 +18,15 @@
               rounded="pill"
               class="ma-2"
               v-bind="props"
+              size="large"
             >
-              {{ series }}
+              <div class="d-flex flex-column align-center">
+                <div>{{ series }}</div>
+
+                <div class="text-caption">
+                  {{ getSeriesDescriptionFromSubSeries(series) }}
+                </div>
+              </div>
             </v-btn>
           </template>
           <v-list>
@@ -220,6 +227,14 @@ let projects = [
   ...ongoingprojects.body,
   ...futureprojects.body,
 ];
+
+const getSeriesDescriptionFromSubSeries = (nameOfSeries) => {
+  for (const element of subSeries) {
+    if (element.name === nameOfSeries) {
+      return element.description;
+    }
+  }
+};
 
 const getEventsByCategory = computed(() => {
   //  return based on activeStatus filter, activeSeries filter, and activeSubSeries filter
