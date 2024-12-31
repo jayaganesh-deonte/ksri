@@ -68,7 +68,7 @@ useSeoMeta({
 </script>
 <style scoped>
 .onlineLibBg {
-  background-image: url(https://d30y75l38k1y9.cloudfront.net/upload/library-online-fig-1.jpg);
+  background-image: url("/img/library/library-racks-1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
