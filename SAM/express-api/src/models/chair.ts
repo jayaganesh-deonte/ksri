@@ -12,6 +12,7 @@ export interface Chair {
   name: string;
   subTitle: string;
   orderId: string;
+  displayImage?: [string];
   metadata?: { [key: string]: string };
 }
 
@@ -25,6 +26,7 @@ export interface ChairDDB {
   name: string;
   subTitle: string;
   orderId: string;
+  displayImage?: string;
   metadata?: { [key: string]: string };
 }
 
@@ -39,6 +41,7 @@ export function validateChairDDB(item: ChairDDB): boolean {
     typeof item.name === "string" &&
     typeof item.subTitle === "string" &&
     typeof item.orderId === "string" &&
+    typeof item.displayImage === "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string")))
@@ -53,6 +56,7 @@ export function validateChair(item: Chair): boolean {
     typeof item.name === "string" &&
     typeof item.subTitle === "string" &&
     typeof item.orderId === "string" &&
+    // Array.isArray(item.displayImage) &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string")))
@@ -70,6 +74,7 @@ export function toDynamoDB(item: Chair): ChairDDB {
     name: item.name,
     subTitle: item.subTitle,
     orderId: item.orderId,
+    displayImage: item.displayImage ? item.displayImage[0] : "",
     metadata: item.metadata,
   };
 }
@@ -82,6 +87,7 @@ export function fromDynamoDB(item: ChairDDB): Chair {
     name: item.name,
     subTitle: item.subTitle,
     orderId: item.orderId,
+    displayImage: item.displayImage ? [item.displayImage] : undefined,
     metadata: item.metadata,
   };
 }

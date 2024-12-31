@@ -54,6 +54,11 @@ const facultyFields = [
     type: "text",
     rules: [(v) => !!v || "Sub Title is required"],
   },
+  {
+    key: "displayImage",
+    label: "Display Image",
+    type: "image",
+  },
 ];
 
 const facultyHeaders = [

@@ -31,27 +31,39 @@
           data-aos="fade-up"
           data-delay="100"
         >
-          <!-- display chair name and area of specialization in top row -->
-          <div
-            class="ma-2 d-flex justify-space-between font-weight-bold text-secondary"
-          >
-            <div>{{ item.chairName }}</div>
-            <div>{{ item.areaOfSpecialization }}</div>
-          </div>
-          <!-- name -->
-          <div class="ma-2 d-flex justify-space-between">
-            <div class="text-h6 font-weight-bold">
-              {{ item.name }}
-            </div>
-          </div>
-          <!-- subtitle -->
-          <div class="ma-2 d-flex justify-space-between">
-            <div class="">
-              {{ item.subTitle }}
-            </div>
-          </div>
-          <!-- divider -->
-          <div class="divider my-4"></div>
+          <v-row>
+            <v-col v-if="item.displayImage" cols="12" sm="12" md="5">
+              <!-- displayImage -->
+              <v-img
+                :src="item.displayImage[0]"
+                :aspect-ratio="16 / 9"
+                fit
+              ></v-img>
+            </v-col>
+            <v-col cols="12" sm="12" :md="item.displayImage ? 7 : 12">
+              <!-- display chair name and area of specialization in top row -->
+              <div
+                class="ma-2 d-flex justify-space-between font-weight-bold text-secondary"
+              >
+                <div>{{ item.chairName }}</div>
+                <div>{{ item.areaOfSpecialization }}</div>
+              </div>
+              <!-- name -->
+              <div class="ma-2 d-flex justify-space-between">
+                <div class="text-h6 font-weight-bold">
+                  {{ item.name }}
+                </div>
+              </div>
+              <!-- subtitle -->
+              <div class="ma-2 d-flex justify-space-between">
+                <div class="">
+                  {{ item.subTitle }}
+                </div>
+              </div>
+              <!-- divider -->
+              <div class="divider my-4"></div>
+            </v-col>
+          </v-row>
         </v-card>
       </div>
     </div>

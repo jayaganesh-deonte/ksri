@@ -63,18 +63,22 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2024-12-17T15:20:34.751Z",
-      "updated_at": "2024-12-23T17:33:51.025Z",
+      "updated_at": "2024-12-31T09:20:42.611Z",
       "created_by": "admin"
     },
     "orderId": "1",
     "teachingExperience": [
       {
         "duration": "Presently",
-        "position": "Associate Professor, The KSRI, Chennai"
+        "organisation": "The KSRI, Chennai",
+        "position": "Associate Professor, The KSRI, Chennai",
+        "designation": "Associate Professor"
       },
       {
         "duration": "From Sep. 2014 -2023",
-        "position": "Assistant Professor, The KSRI, Chennai"
+        "organisation": "The KSRI, Chennai",
+        "position": "Assistant Professor, The KSRI, Chennai",
+        "designation": "Assistant Professor"
       }
     ],
     "phdCandidates": [
@@ -88,8 +92,9 @@
     "mphilCandidates": [
       {
         "name": "Ms.Mrinalini",
+        "topic": "Sandilyopanisad- A Critical study",
         "yearOfJoining": "2016-17",
-        "topic": "Sandilyopanisad- A Critical study"
+        "status": "Degree awarded"
       }
     ],
     "academicPositions": [],
@@ -128,6 +133,7 @@
         "seminarConference": "Seminar on Nature preservation-The bygone ways",
         "monthAndYear": "2024",
         "organisers": "Dept. of Sanskrit, JBAS college for women (Autonomous), Ch.  Feb., 29, 2024",
+        "theme": "Seminar on Nature preservation-The bygone ways",
         "titleOfThePaper": "Nature preservation methods",
         "slNo": "1"
       }
