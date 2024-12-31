@@ -27,7 +27,7 @@
         </v-avatar>
       </v-col>
       <v-col cols="12" sm="9" md="9" class="text-start">
-        <div class="text-body-1">{{ item.title }}</div>
+        <div class="text-body-1">{{ truncatedTitle(item.title) }}</div>
         <div
           class="my-2"
           :class="isHovering ? 'text-secondary' : 'text-primary'"
@@ -54,4 +54,13 @@ const { item } = defineProps({
 });
 
 let isHovering = ref(false);
+const truncatedTitle = (title) => {
+  // truncate title if it is too long
+  const maxWords = 80;
+  const words = title.split(" ");
+  if (words.length > maxWords) {
+    return words.slice(0, maxWords).join(" ") + "...";
+  }
+  return title;
+};
 </script>
