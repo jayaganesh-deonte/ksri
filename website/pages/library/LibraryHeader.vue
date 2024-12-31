@@ -50,17 +50,17 @@ const props = defineProps({
 
 const libraryButtons = reactive([
   {
-    name: "KSRI Books",
+    name: "Books",
     path: "/library/books",
     isHovering: false,
   },
   {
-    name: "KSRI Articles",
+    name: "Articles",
     path: "/library/articles",
     isHovering: false,
   },
   {
-    name: "KSRI Journals",
+    name: "Journals",
     path: "/library/journals",
     isHovering: false,
   },

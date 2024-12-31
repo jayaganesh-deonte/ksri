@@ -9,7 +9,7 @@
     </div>
     <div class="text-center my-8">
       <!-- display recent books in horizontal line -->
-      <div class="sectionTitle3">Books</div>
+      <div class="sectionTitle3">BOOKS/MONOGRAPHS</div>
       <v-row class="ma-2" justify="center">
         <v-col v-for="book in recentBooks" :key="book.title" cols="10" md="3">
           <book-card :book="book" />
@@ -33,7 +33,7 @@
 
     <div class="text-center my-8">
       <!-- display recent Journals in horizontal line -->
-      <div class="sectionTitle3">Journals</div>
+      <div class="sectionTitle3">JOURNAL OF ORIENTAL RESEARCH</div>
       <v-row class="ma-2" justify="center">
         <v-col
           v-for="book in recentJournals"

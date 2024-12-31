@@ -159,6 +159,12 @@ const menuOptions = reactive([
     path: "/about-ksri",
     showChildren: false,
     children: [
+      {
+        name: "Vision & Mission",
+        path: "/about-ksri/vision-and-mission",
+        description:
+          "At KSRI in pursuit of our stated vision will strive to make the Institute a preferred centre of learning in India for Sanskrit language and related Indology.",
+      },
       //  Introduction & Overvie, Kuppuswami Sastri Profile,  Vision & Mission,  Milestones
       {
         name: "Introduction & Overview",
@@ -172,12 +178,7 @@ const menuOptions = reactive([
         description:
           "MAHAMAHOPADHYAYA, DARSANA KALANIDHI, VIDYAVACASPATI PROFESSOR KUPPUSWAMI SASTRI (1880-1943)",
       },
-      {
-        name: "Vision & Mission",
-        path: "/about-ksri/vision-and-mission",
-        description:
-          "At KSRI in pursuit of our stated vision will strive to make the Institute a preferred centre of learning in India for Sanskrit language and related Indology.",
-      },
+
       {
         name: "Milestones",
         path: "/about-ksri/milestones",
@@ -185,6 +186,10 @@ const menuOptions = reactive([
           "The Silver Jubilee of the Institute was organised on a grand scale with a conference of scholars of Sanskrit and Indology, enaction of Sanskrit Play, release of books etc.",
       },
     ],
+  },
+  {
+    name: "Gallery",
+    path: "/gallery",
   },
   {
     name: "Academic & Research",
@@ -315,10 +320,6 @@ const menuOptions = reactive([
       //     "Contributions can also be sent by courier or post by making a cheque or demand draft in the name of The Kuppuswami Sastri Research Institute",
       // },
     ],
-  },
-  {
-    name: "Gallery",
-    path: "/gallery",
   },
 ]);
 

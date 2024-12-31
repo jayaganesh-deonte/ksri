@@ -10,7 +10,7 @@
     </div>
     <div class="ma-6" v-if="!isLoading">
       <div>
-        <section-title title="KSRI Journals" />
+        <section-title title="JOURNAL OF ORIENTAL RESEARCH" />
         <div class="sectionSubtitle2">
           KSRI has been publishing the Journal of Oriental Research periodically
           from its inception till date and it is internationally well known.

@@ -43,11 +43,11 @@
         data-aos-delay="900"
         rounded="0"
       >
-        Presently KSRI has started its Phase 1 of digitizing all rare Palm
-        Scripts in its collection. This effort has been made possible by the
-        sponsorship, administrative and technical support of the RANE GROUP OF
-        CHENNAI, INDIA. KSRI is thankful for this patronage. Work is progressing
-        fast.
+        Under Phase 1 all the palm-leaf manuscripts in the library have been
+        digitised. The major expenditure was met with from the donation given by
+        M/s RANE group, Chennai. Presently old and rare books(more than 100-200
+        years old) are being digitised. Once the digitisation is done, the
+        Institute would upload the digitised books/manuscripts.”
       </v-card>
     </v-card>
   </div>

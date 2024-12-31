@@ -91,6 +91,10 @@ const footerLinks = reactive({
       name: "About KSRI",
       children: [
         {
+          name: "Vision & Mission",
+          path: "/about-ksri/vision-and-mission",
+        },
+        {
           name: "Introduction & Overview",
           path: "/about-ksri",
         },
@@ -98,10 +102,7 @@ const footerLinks = reactive({
           name: "Kuppuswami Sastri Profile",
           path: "/about-ksri/kuppuswami-sastri-profile",
         },
-        {
-          name: "Vision & Mission",
-          path: "/about-ksri/vision-and-mission",
-        },
+
         {
           name: "Milestones",
           path: "/about-ksri/milestones",
