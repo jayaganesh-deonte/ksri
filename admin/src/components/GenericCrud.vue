@@ -71,7 +71,15 @@
 
       <v-data-table
         :headers="headers"
-        :items="items"
+        :items="
+          items.filter((item) => {
+            return Object.keys(columnFilter).every((key) => {
+              if (!columnFilter[key]) return true;
+              const value = item[key]?.toString().toLowerCase();
+              return value?.includes(columnFilter[key].toLowerCase());
+            });
+          })
+        "
         :search="search"
         class="elevation-1"
         :items-per-page="50"
@@ -83,6 +91,39 @@
         :loading="loading"
         :sort-by="sortBy"
       >
+        <template
+          v-slot:headers="{ columns, isSorted, getSortIcon, toggleSort }"
+        >
+          <tr>
+            <template v-for="column in columns" :key="column.key">
+              <th>
+                <span
+                  class="mr-2 cursor-pointer"
+                  @click="() => toggleSort(column)"
+                  >{{ column.title }}</span
+                >
+                <template v-if="isSorted(column)">
+                  <v-icon :icon="getSortIcon(column)"></v-icon>
+                </template>
+              </th>
+            </template>
+          </tr>
+          <tr>
+            <!-- display search for each field -->
+            <th v-for="column in columns" :key="column.key">
+              <v-text-field
+                v-if="
+                  column.key !== 'actions' && column.key !== 'data-table-expand'
+                "
+                v-model="columnFilter[column.key]"
+                hide-details
+                variant="outlined"
+                density="compact"
+              />
+            </th>
+          </tr>
+        </template>
+
         <!-- Sub-table expansion panel -->
         <template #expanded-row="{ item }">
           <td :colspan="headers.length" v-if="hasSubTable(item)">
@@ -394,6 +435,8 @@ let exportMenu = ref(false);
 let selectedColumnsToExport = ref([]);
 
 let valid = ref(false);
+
+let columnFilter = reactive({});
 
 // Create a default item based on entity fields
 const defaultItem = computed(() => {
@@ -733,9 +776,22 @@ const exportAsCSV = () => {
     return stringValue;
   };
 
-  console.log("selectedColumnsToExport", selectedColumnsToExport.value);
+  // console.log("selectedColumnsToExport", selectedColumnsToExport.value);
 
-  const csvContent = items.value
+  // console.log("columnFilter", columnFilter);
+
+  // Filter items based on columnFilter before generating CSV
+  const filteredItems = items.value.filter((item) => {
+    return selectedColumnsToExport.value.every((key) => {
+      const filterValue = columnFilter[key]
+        ? columnFilter[key].toLowerCase()
+        : "";
+      const itemValue = String(item[key] || "").toLowerCase();
+      return !filterValue || itemValue.includes(filterValue);
+    });
+  });
+
+  const csvContent = filteredItems
     .map((item) => {
       return selectedColumnsToExport.value
         .map((key) => escapeCSVValue(item[key]))
