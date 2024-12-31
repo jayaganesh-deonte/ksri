@@ -143,8 +143,13 @@ const facultyFields = [
     isArray: true,
     fields: [
       {
-        key: "position",
-        label: "Position",
+        key: "designation",
+        label: "Designation",
+        type: "text",
+      },
+      {
+        key: "organisation",
+        label: "Organisation / Institution",
         type: "text",
       },
       {
@@ -211,17 +216,17 @@ const facultyFields = [
         label: "Year of Joining",
         type: "text",
       },
-      // {
-      //   key: "status",
-      //   label: "Status",
-      //   type: "auto-complete",
-      //   items: [
-      //     "Degree awarded",
-      //     "Thesis submitted",
-      //     "Synopsis submitted",
-      //     "Ongoing",
-      //   ],
-      // },
+      {
+        key: "status",
+        label: "Status",
+        type: "auto-complete",
+        items: [
+          "Degree awarded",
+          // "Thesis submitted",
+          // "Synopsis submitted",
+          "Ongoing",
+        ],
+      },
     ],
   },
   // academicPositions
@@ -237,8 +242,8 @@ const facultyFields = [
         type: "text",
       },
       {
-        key: "duration",
-        label: "Duration",
+        key: "description",
+        label: "Description",
         type: "text",
       },
     ],
@@ -353,11 +358,6 @@ const facultyFields = [
         type: "text",
       },
       {
-        key: "isbn",
-        label: "ISBN",
-        type: "text",
-      },
-      {
         key: "remarks",
         label: "Remarks",
         type: "auto-complete",
@@ -368,7 +368,7 @@ const facultyFields = [
   // seminars
   {
     key: "seminars",
-    label: "Seminars",
+    label: "Seminar / Conference",
     isArray: true,
     fields: [
       // Sl.No 	Title of the paper	Seminar /Conference	Organisers	Month and Year
@@ -383,8 +383,8 @@ const facultyFields = [
         type: "text",
       },
       {
-        key: "seminarConference",
-        label: "Seminar /Conference",
+        key: "theme",
+        label: "Theme",
         type: "text",
       },
       {
@@ -426,11 +426,6 @@ const facultyFields = [
         label: "Month and Year",
         type: "text",
       },
-      {
-        key: "year",
-        label: "YEAR",
-        type: "text",
-      },
     ],
   },
   // awards
@@ -458,6 +453,11 @@ const facultyFields = [
       {
         key: "year",
         label: "Year",
+        type: "text",
+      },
+      {
+        key: "remarks",
+        label: "Remarks",
         type: "text",
       },
     ],
