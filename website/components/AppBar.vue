@@ -5,12 +5,16 @@
         <!-- add menu Options -->
         <div v-for="option in menuOptions" :key="option.name">
           <v-card
-            :class="{ activeMenu: option.path === activeMenu.path }"
+            :class="{
+              activeMenu: option.path === activeMenu.path || option.isActive,
+            }"
             rounded="0"
             elevation="0"
             height="65"
             color="transparent"
             class="d-flex justify-center align-center mx-2 pa-2 appBarMenuItem"
+            @mouseover="option.isActive = true"
+            @mouseleave="option.isActive = false"
           >
             <div class="ma-2 text-subtitle-1 appBarMenuItem">
               <nuxt-link
@@ -56,7 +60,7 @@
                           height="150"
                           elevation="0"
                           class="ma-2 pa-2 defaultFont d-flex flex-column justify-space-between"
-                          :class="{ activeMenu: child.isActive === true }"
+                          :class="{ activeMenuChild: child.isActive === true }"
                           @mouseover="child.isActive = true"
                           @mouseleave="child.isActive = false"
                         >
@@ -387,7 +391,7 @@ const openChildMenu = (option) => {
 
 <style scoped>
 /* active menu option */
-.activeMenu {
+.activeMenuChild {
   background-color: #bf641f !important;
   color: white !important;
 }

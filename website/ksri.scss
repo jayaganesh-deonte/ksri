@@ -23,6 +23,36 @@ cursive;
     font-family: $body-font-family !important;
 }
 
+.activeMenu {
+    background-color: #bf641f !important;
+    color: white !important;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 20%;
+        background-color: white;
+        transform: translateX(-50%) translateY(-100%);
+        /* Add animation property to handle both hover and class addition */
+        animation: slideDown 0.3s ease-in-out forwards;
+    }
+}
+
+/* Create keyframes for the sliding animation */
+@keyframes slideDown {
+    from {
+        transform: translateX(-50%) translateY(-100%);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
 .appBarMenuItem {
     font-family: $body-font-family !important;
     font-weight: 700;
