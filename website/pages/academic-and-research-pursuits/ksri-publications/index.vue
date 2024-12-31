@@ -59,7 +59,7 @@
         </v-col>
       </v-row>
     </div>
-    <div class="text-center my-4">
+    <!-- <div class="text-center my-4">
       <div class="text-h6">
         A Committee is constituted to help the Institute in identifying the
         texts to be published and also in other matters related to the research
@@ -82,7 +82,7 @@
           :governingBodyMembersKey="key"
         />
       </div>
-    </div>
+    </div> -->
 
     <div class="text-center ma-6">
       <div class="sectionSubtitle" data-aos="fade-up">Overview</div>

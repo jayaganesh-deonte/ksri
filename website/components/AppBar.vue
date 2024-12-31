@@ -259,6 +259,14 @@ const menuOptions = reactive([
         name: "Faculty",
         path: "/ksri-team/faculty",
       },
+      {
+        name: "Editorial committee",
+        path: "/ksri-team/editorialCommittee",
+      },
+      {
+        name: "Research Committee",
+        path: "/ksri-team/researchCommittee",
+      },
     ],
   },
   {
