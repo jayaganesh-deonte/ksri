@@ -95,6 +95,25 @@ const projectFields = [
     label: "Completed Year",
     type: "text",
   },
+  // publicationStatus: "Published" | "Inprint" | "Unpublished";
+  // projectInvestigator: string;
+  // coProjectInvestigators: string;
+  {
+    key: "projectInvestigator",
+    label: "Project Investigator",
+    type: "text",
+  },
+  {
+    key: "coProjectInvestigators",
+    label: "Co-Project Investigators",
+    type: "text",
+  },
+  {
+    key: "publicationStatus",
+    label: "Publication Status",
+    type: "auto-complete",
+    items: ["Published", "Inprint", "Unpublished"],
+  },
   {
     key: "sponsor",
     label: "Sponsor",

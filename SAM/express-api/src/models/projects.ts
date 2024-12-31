@@ -1,4 +1,9 @@
 // Regular Project model for application use
+
+// publication status => . Published
+// . Inprint
+// .Unpublished
+
 export interface Project {
   id: string;
   title: string;
@@ -11,6 +16,9 @@ export interface Project {
   keywords: string;
   projectSeries?: string;
   projectSubSeries?: string;
+  publicationStatus: "Published" | "Inprint" | "Unpublished";
+  projectInvestigator: string;
+  coProjectInvestigators: string;
 }
 
 // DynamoDB specific model
@@ -29,6 +37,9 @@ export interface ProjectDDB {
   keywords: string;
   projectSeries?: string;
   projectSubSeries?: string;
+  publicationStatus: "Published" | "Inprint" | "Unpublished";
+  projectInvestigator: string;
+  coProjectInvestigators: string;
 }
 
 // Convert DynamoDB record to application model
@@ -45,6 +56,9 @@ export function fromDynamoDB(item: ProjectDDB): Project {
     keywords: item.keywords,
     projectSeries: item.projectSeries,
     projectSubSeries: item.projectSubSeries,
+    publicationStatus: item.publicationStatus,
+    projectInvestigator: item.projectInvestigator,
+    coProjectInvestigators: item.coProjectInvestigators,
   };
 }
 
@@ -68,6 +82,9 @@ export function toDynamoDB(project: Project): ProjectDDB {
     keywords: project.keywords,
     projectSeries: project.projectSeries,
     projectSubSeries: project.projectSubSeries,
+    publicationStatus: project.publicationStatus,
+    projectInvestigator: project.projectInvestigator,
+    coProjectInvestigators: project.coProjectInvestigators,
   };
 }
 
@@ -94,7 +111,10 @@ export function isProjectDDB(item: any): item is ProjectDDB {
     (typeof item.projectSeries === "undefined" ||
       typeof item.projectSeries === "string") &&
     (typeof item.projectSubSeries === "undefined" ||
-      typeof item.projectSubSeries === "string")
+      typeof item.projectSubSeries === "string") &&
+    typeof item.publicationStatus === "string" &&
+    typeof item.projectInvestigator === "string" &&
+    typeof item.coProjectInvestigators === "string"
   );
 }
 
