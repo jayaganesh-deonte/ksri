@@ -20,10 +20,10 @@
               v-bind="props"
               size="large"
             >
-              <div class="d-flex flex-column align-center">
+              <div class="ma-2">
                 <div>{{ series }}</div>
 
-                <div class="text-caption">
+                <div style="font-size: 0.6em" class="font-weight-light">
                   {{ getSeriesDescriptionFromSubSeries(series) }}
                 </div>
               </div>

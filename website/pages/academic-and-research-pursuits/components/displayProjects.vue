@@ -94,7 +94,12 @@ const props = defineProps({
 
 const display2ndColumn = (item) => {
   // return false;
-  if (item.sponsor || item.projectInvestigator || item.coProjectInvestigators) {
+  if (
+    item.completedYear ||
+    item.sponsor ||
+    item.projectInvestigator ||
+    item.coProjectInvestigators
+  ) {
     return true;
   } else {
     return false;
