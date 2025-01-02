@@ -14,6 +14,7 @@ export interface GoverningBodyMember {
   designation: string;
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
+  orderid: string;
 }
 
 // DynamoDB specific model
@@ -26,6 +27,7 @@ export interface GoverningBodyMemberDDB {
   designation: string;
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
+  orderid: string;
 }
 
 // Type guard to check if an object is a valid GoverningBodyMemberDDB
@@ -43,7 +45,8 @@ export function isGoverningBodyMemberDDB(
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&
-    typeof item.itemPublishStatus === "string"
+    typeof item.itemPublishStatus === "string" &&
+    typeof item.orderid === "string"
   );
 }
 
@@ -58,7 +61,8 @@ export function isGoverningBodyMember(item: any): item is GoverningBodyMember {
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&
-    typeof item.itemPublishStatus === "string"
+    typeof item.itemPublishStatus === "string" &&
+    typeof item.orderid === "string"
   );
 }
 
@@ -73,6 +77,7 @@ export function toDynamoDB(item: GoverningBodyMember): GoverningBodyMemberDDB {
     designation: item.designation,
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,
+    orderid: item.orderid,
   };
 }
 
@@ -87,6 +92,7 @@ export function fromDynamoDB(
     designation: item.designation,
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,
+    orderid: item.orderid,
   };
 }
 
@@ -102,6 +108,7 @@ export function validateGoverningBodyMember(
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&
-    typeof item.itemPublishStatus === "string"
+    typeof item.itemPublishStatus === "string" &&
+    typeof item.orderid === "string"
   );
 }

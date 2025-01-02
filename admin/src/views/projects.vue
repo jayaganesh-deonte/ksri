@@ -103,7 +103,14 @@ const projectFields = [
     label: "Title",
     type: "text",
     rules: [(v) => !!v || "Title is required"],
-    editDisabled: true,
+    // editDisabled: true,
+  },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
   },
   {
     key: "subTitle",
@@ -158,7 +165,7 @@ const projectFields = [
     type: "auto-complete",
     rules: [(v) => !!v || "Status is required"],
     items: ["On-Going", "Completed", "Future Projects"],
-    editDisabled: false,
+    // editDisabled: false,
   },
   {
     key: "projectSeries",

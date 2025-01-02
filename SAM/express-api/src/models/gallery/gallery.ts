@@ -1,5 +1,5 @@
 // {
-//     "imageUrl": "https://d30y75l38k1y9.cloudfront.net/upload/1-J4t.jpg",
+//     "imageUrl": "upload/1-J4t.jpg",
 //     "description": "Golden Jubilee Inauguration  - 1994"
 // }
 

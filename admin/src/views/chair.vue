@@ -31,7 +31,7 @@ const facultyFields = [
     label: "Name",
     type: "text",
     rules: [(v) => !!v || "Name is required"],
-    editDisabled: true,
+    // editDisabled: true,
   },
 
   {
@@ -46,7 +46,14 @@ const facultyFields = [
     label: "Chair Name",
     type: "text",
     rules: [(v) => !!v || "Chair Name is required"],
-    editDisabled: true,
+    // editDisabled: true,
+  },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
   },
   {
     key: "subTitle",

@@ -35,7 +35,7 @@
         <!-- if type is audio -->
         <div v-if="file.type === 'audio'">
           <audio controls>
-            <source :src="file.url" type="audio/mpeg" />
+            <source :src="getDocumentUrl(file.url)" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
         </div>
@@ -118,6 +118,10 @@ const emit = defineEmits(["files-updated"]);
 // Refs
 const fileInput = ref(null);
 const newFiles = ref([]);
+
+const getDocumentUrl = (docuemnt) => {
+  return import.meta.env.VITE_IMAGE_CLOUDFRONT + docuemnt;
+};
 
 const getFileType = (fileName) => {
   const extension = fileName.split(".").pop().toLowerCase();
@@ -267,8 +271,10 @@ const downloadFile = async (file) => {
   try {
     console.log("download file", file);
 
+    const url = import.meta.env.VITE_IMAGE_CLOUDFRONT + file.url;
+
     // open url in new tab
-    window.open(file.url, "_blank");
+    window.open(url, "_blank");
   } catch (error) {
     console.error("Download error:", error);
     $toast.open({

@@ -3,7 +3,7 @@
 //     "subtitle": "The Kuppuswami Sastri Research Institute, Chennai 4 | 2015 | pp 228",
 //     "price": "250",
 //     "imageUrls": [
-//         "https://d30y75l38k1y9.cloudfront.net/upload/the-journal-of-oriental-research-madras-2015-uRk.jpg"
+//         "upload/the-journal-of-oriental-research-madras-2015-uRk.jpg"
 //     ],
 //     "details": null,
 //     "id": "7682d76aaf06a6c5f319a561a4c6cce0660abe5c3ce57869fba0a80791d56e08"

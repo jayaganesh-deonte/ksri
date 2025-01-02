@@ -1,13 +1,13 @@
 // {
-//     "avatarImage": "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164550.jpg",
+//     "avatarImage": "upload/20241018_164550.jpg",
 //     "text": "The Pontiff of Uttaradi Mutt visited our institute on  17 October 2024 at 4 p.m. He evinced keen interest in our publications, library and reading some books and palm leaf manuscripts.",
 //     "details_page": "https://www.ksri.in/ksri-news/530/the-pontiff-of-uttaradi-mutt--visited-ksri",
 //     "heading": "The Pontiff of Uttaradi Mutt  visited KSRI",
 //     "title": "The Pontiff of Uttaradi Mutt visited our institute on  17 October 2024 at 4 p.m. He evinced keen interest in our publications, library and reading some books and palm leaf manuscripts.",
-//     "heading_image_url": "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164550.jpg",
+//     "heading_image_url": "upload/20241018_164550.jpg",
 //     "images": [
-//         "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164550.jpg",
-//         "https://d30y75l38k1y9.cloudfront.net/upload/20241018_164627.jpg",
+//         "upload/20241018_164550.jpg",
+//         "upload/20241018_164627.jpg",
 //     ],
 //     "id": "b7492fe067ade6e2f769cca291f5eb44659910436717dd5a21715c75d4a92875"
 // }

@@ -33,7 +33,7 @@
       ></v-progress-circular>
 
       <v-card v-for="image in images" class="ma-2" :key="image" width="300">
-        <v-img :src="image" alt="image" width="300">
+        <v-img :src="getImageUrl(image)" alt="image" width="300">
           <div class="d-flex justify-end ma-2">
             <!-- icon to delete image -->
             <v-btn
@@ -83,6 +83,10 @@ const openUploadImage = () => {
   inputElement.click();
 };
 
+const getImageUrl = (image) => {
+  return import.meta.env.VITE_IMAGE_CLOUDFRONT + image;
+};
+
 // upload images
 const uploadImages = async (e) => {
   // select images from input
@@ -120,7 +124,7 @@ const uploadImages = async (e) => {
       });
     } else {
       const cloudfront_domain = import.meta.env.VITE_IMAGE_CLOUDFRONT;
-      const image = `${cloudfront_domain}/${s3Key}`;
+      const image = `${s3Key}`;
       newImages.value.push(image);
 
       // emit event to parent component

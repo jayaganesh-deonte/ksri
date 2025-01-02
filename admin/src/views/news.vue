@@ -19,11 +19,18 @@ const newsFields = [
     rules: [(v) => !!v || "Heading is required"],
   },
   {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
+  },
+  {
     key: "title",
     label: "Title",
     type: "textarea",
     rules: [(v) => !!v || "Title is required"],
-    editDisabled: true,
+    // editDisabled: true,
   },
   {
     key: "text",

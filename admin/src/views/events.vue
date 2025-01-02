@@ -16,11 +16,18 @@ const eventsFields = [
     key: "title",
     label: "Title",
     type: "text",
-    editDisabled: true,
+    // editDisabled: true,
     rules: [
       (v) => !!v || "Title is required",
       (v) => v.length <= 200 || "Title must be 200 characters or less",
     ],
+  },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
   },
   {
     key: "subtitle",
@@ -76,6 +83,7 @@ const eventsHeaders = [
   {
     key: "category",
     title: "Category",
+    value: (v) => v.category.join(", "),
   },
   {
     key: "date",

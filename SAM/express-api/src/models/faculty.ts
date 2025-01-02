@@ -2,12 +2,12 @@
 //     "id": "",
 //     "name": "Dr.V.Kameswari",
 //     "designation": "Former Director",
-//     "displayImage": "https://d30y75l38k1y9.cloudfront.net/upload/faculty/dr-v-kameswari.jpg",
+//     "displayImage": "upload/faculty/dr-v-kameswari.jpg",
 //     "subtitle": "Areas of Specialisation: Sahitya, Language and Literature, Scientific literature",
 //     "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on ancient sciences and varied fields of their interest.",
 //     "mobile": "",
 //     "mail": "",
-//     "profile": "https://d30y75l38k1y9.cloudfront.net/upload/media/Dr.V.Kameswari CV.docx"
+//     "profile": "upload/media/Dr.V.Kameswari CV.docx"
 // }
 
 // create model

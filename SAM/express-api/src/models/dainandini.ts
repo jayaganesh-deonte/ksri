@@ -1,7 +1,7 @@
 // {
 //  id: "",
 //     audioFile:
-//       "https://d30y75l38k1y9.cloudfront.net/upload/media/mk-dainandini-2-11-24.mp3",
+//       "upload/media/mk-dainandini-2-11-24.mp3",
 //     sanskritLine1: "अनार्यमार्यवृत्तेन सत्येनानृतवादितम्।",
 //     sanskritLine2: "रिपुमप्युपकारेण वशीकुर्वन्ति साधव:॥",
 //     description:

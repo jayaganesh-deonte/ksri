@@ -17,14 +17,21 @@ const endowmentFields = [
     label: "Name",
     type: "text",
     rules: [(v) => !!v || "Name is required"],
-    editDisabled: true,
+    // editDisabled: true,
   },
   {
-    key: "id",
+    key: "orderid",
     label: "ID",
     type: "number",
     rules: [(v) => !!v || "ID is required"],
-    editDisabled: true,
+    // editDisabled: true,
+  },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
   },
   {
     key: "subtitle",
@@ -42,7 +49,7 @@ const endowmentFields = [
 ];
 
 const endowmentHeaders = [
-  { title: "ID", key: "id" },
+  { title: "ID", key: "orderid" },
   { title: "Name", key: "name" },
   { title: "Subtitle", key: "subtitle" },
   { title: "Designation", key: "designation" },

@@ -60,6 +60,13 @@ const studentFields = [
     rules: [(v) => !!v || "Name is required"],
   },
   {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
+  },
+  {
     key: "course",
     label: "Course",
     type: "auto-complete",

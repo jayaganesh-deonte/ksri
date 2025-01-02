@@ -3,7 +3,7 @@
 //     "title": "MINING AND METALLURGY",
 //     "subTitle": "A survey of Sanskrit literature would bring out the fact that the mining and metallurgical sciences were part of the social life in ancient India.",
 //     "author": "Dr. K.S. Balasubramanian, Deputy Director, K.S.R.I. Institute, Chennai",
-//     "link": "https://d30y75l38k1y9.cloudfront.net/upload/media/1 Mining and Metallurgy.pdf"
+//     "link": "upload/media/1 Mining and Metallurgy.pdf"
 // }
 
 // create model

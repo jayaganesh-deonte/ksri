@@ -13,7 +13,7 @@ export const batchInsert = async (items) => {
   for (const chunk of chunks) {
     const params = {
       RequestItems: {
-        ksri-prod_admin_master_table: chunk.map((item) => ({
+        "ksri-prod_admin_master_table": chunk.map((item) => ({
           PutRequest: {
             Item: item,
           },

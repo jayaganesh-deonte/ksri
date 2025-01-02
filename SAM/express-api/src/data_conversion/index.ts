@@ -116,6 +116,7 @@ const insertEndownments = async () => {
   const endownmentsWithId = endownments.map((endowment: any) => ({
     ...endowment,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
   }));
 
@@ -137,6 +138,7 @@ const insertEvents = async () => {
   const eventsWithId = events.map((event: any) => ({
     ...event,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
     // convert images to array of strings
     images: event.images.map((image: any) => image.src),
@@ -168,6 +170,7 @@ const insertLibraryArticles = async () => {
     year: article.year.toString(),
     remarks: article.Remarks,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
   }));
 
@@ -210,6 +213,7 @@ const insertLibraryBooks = async () => {
     publisher: book.Publisher,
     remarks: book.Remarks,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
   }));
   // console.log(booksWithId);
@@ -249,6 +253,7 @@ const insertLibraryJournals = async () => {
   const journalsWithId = journals.map((journal: any) => ({
     ...journal,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
   }));
 
@@ -275,6 +280,7 @@ const insertPublicationBooks = async () => {
   const booksWithId = books.map((book: any) => ({
     ...book,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
     available: "Yes",
     copies: "10",
@@ -318,6 +324,7 @@ const insertPublicationCommittee = async () => {
     for (const member of members) {
       const committeeMember = {
         id: ulid(),
+        itemPublishStatus: "PUBLISHED",
         name: member.name,
         designation,
         metadata: generateMetaData(),
@@ -343,6 +350,7 @@ const insertForeignScholars = async () => {
   const scholarsWithId = scholars.map((scholar: any) => ({
     ...scholar,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
   }));
 
@@ -370,6 +378,7 @@ const insertshastrachudamanis = async () => {
   const scholarsWithId = scholars.map((scholar: any) => ({
     ...scholar,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
     type: "Shastrachudamani",
   }));
@@ -395,6 +404,7 @@ const insertvidyavaridhis = async () => {
   const scholarsWithId = scholars.map((scholar: any) => ({
     ...scholar,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
     type: "Vidyavaridhi",
   }));
@@ -419,6 +429,7 @@ const insertTraditionalScholars = async () => {
   const scholarsWithId = scholars.map((scholar: any) => ({
     ...scholar,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
     type: "Traditional Study",
   }));
@@ -441,9 +452,10 @@ const insertStudents = async () => {
   // load present students
   const presentStudents: Student[] = require("./content/students/present/students.json");
 
-  const presentStudentsWithId = allStudents.map((student: any) => ({
+  const presentStudentsWithId = presentStudents.map((student: any) => ({
     ...student,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
     status: "On-Going",
   }));
@@ -456,6 +468,7 @@ const insertStudents = async () => {
   const pastMphilStudentsWithId = pastMphilStudents.map((student: any) => ({
     ...student,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
     status: "Completed",
   }));
@@ -467,6 +480,7 @@ const insertStudents = async () => {
   const pastPhdStudentsWithId = pastPhdStudents.map((student: any) => ({
     ...student,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
     status: "Completed",
   }));
@@ -496,6 +510,7 @@ const insertfaculty = async () => {
   const facultyWithId = faculty.map((faculty: any) => ({
     ...faculty,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
     displayImage: [faculty.displayImage],
     profile: [faculty.profile],
@@ -524,12 +539,12 @@ const insertGallery = async () => {
   //   {
   //     "gallery": {
   //         "KSRI Gallery Collection 1": {
-  //             "imageUrl": "https://d30y75l38k1y9.cloudfront.net/upload/1.jpg",
+  //             "imageUrl": "upload/1.jpg",
   //             "description": "Inaugration of the KSRInstitute by S.V.Ramamurthi I.C.S. on 22nd April 1945. L.to R.: K.M.Munshi, Sir.S.V.Ramamurthi, Rt.Hon'ble V.S. Srinivasa Sastri & Dr. S. Radhakrishnan"
   //         },
   //         "Memories of KSRI": [
   //             {
-  //                 "imageUrl": "https://d30y75l38k1y9.cloudfront.net/upload/1.jpg",
+  //                 "imageUrl": "upload/1.jpg",
   //                 "description": "Inaugration of the KSRInstitute by S.V.Ramamurthi I.C.S. on 22nd April 1945. L.to R.: K.M.Munshi, Sir.S.V.Ramamurthi, Rt.Hon'ble V.S. Srinivasa Sastri & Dr. S. Radhakrishnan"
   //             }
   //         ]
@@ -553,6 +568,7 @@ const insertGallery = async () => {
         imageUrl: [galleryItem.imageUrl],
         description: galleryItem.description,
         id: ulid(),
+        itemPublishStatus: "PUBLISHED",
         metadata: generateMetaData(),
       });
     }
@@ -583,6 +599,7 @@ const insertmilestones = async () => {
   const milestonesWithId = milestones.map((milestone: any) => ({
     ...milestone,
     id: ulid(),
+    itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
   }));
 
@@ -617,6 +634,7 @@ const insertNews = async () => {
     newsWithId.push({
       ...newsItem,
       id: ulid(),
+      itemPublishStatus: "PUBLISHED",
       metadata: generateMetaData(),
       avatarImage: [newsItem.avatarImage],
       heading_image_url: [newsItem.heading_image_url],
@@ -651,6 +669,7 @@ const insertProjects = async () => {
       ...project,
       status,
       id: ulid(),
+      itemPublishStatus: "PUBLISHED",
       metadata: generateMetaData(),
     }));
     allProjects = allProjects.concat(projectWithStauts);
@@ -682,6 +701,7 @@ const insertResearchArticles = async () => {
     (researchArticle: any) => ({
       ...researchArticle,
       id: ulid(),
+      itemPublishStatus: "PUBLISHED",
       metadata: generateMetaData(),
       link: [researchArticle.link],
     })
@@ -718,7 +738,9 @@ const insertpresentGoverningBodyMembers = async () => {
     const membersWithDesignation = members.map((member: any) => ({
       ...member,
       designation,
-      // id: ulid(),
+      orderid: member.orderid.toString(),
+      id: ulid(),
+      itemPublishStatus: "PUBLISHED",
       metadata: generateMetaData(),
     }));
 
@@ -726,7 +748,7 @@ const insertpresentGoverningBodyMembers = async () => {
       (member: any) => governingBodyMembersToDynamoDB(member)
     );
 
-    // console.log(membersWithDesignationDDB);
+    console.log(membersWithDesignationDDB);
     await batchInsert(membersWithDesignationDDB);
   }
 };
@@ -746,6 +768,7 @@ const insertGoveringBodyPast = async () => {
       ...member,
       designation,
       id: ulid(),
+      itemPublishStatus: "PUBLISHED",
       metadata: generateMetaData(),
     }));
 
@@ -769,6 +792,7 @@ const insertsamskritaacademypublicationsBooks = async () => {
       (samskritaacademypublicationsBook: any) => ({
         ...samskritaacademypublicationsBook,
         id: ulid(),
+        itemPublishStatus: "PUBLISHED",
         metadata: generateMetaData(),
         available: "Yes",
         copies: "10",
@@ -799,6 +823,7 @@ const insertOutOfStockPubBooks = async (filename, available) => {
     const bookWithId = {
       title: book,
       id: ulid(),
+      itemPublishStatus: "PUBLISHED",
       metadata: generateMetaData(),
       available: available,
       copies: "10",
@@ -859,7 +884,7 @@ const eventsFromAdminApp = async () => {
   //     "date": "2024-10-25",
   //     "images": [
   //         {
-  //             "src": "https://d30y75l38k1y9.cloudfront.net/upload/whatsapp-image-2024-10-25-at-4.00.17-pm.jpg",
+  //             "src": "upload/whatsapp-image-2024-10-25-at-4.00.17-pm.jpg",
   //             "alt": "NARASIMHACHARI ENDOWMENT 2024 - SANSKRIT RECITATION COMPETITION"
   //         }
   //     ],
@@ -880,7 +905,7 @@ const eventsFromAdminApp = async () => {
 
       for (const photo of photos) {
         imageUrls.push({
-          src: `https://d30y75l38k1y9.cloudfront.net/upload/${photo.photo}`,
+          src: `upload/${photo.photo}`,
           alt: event.event_name,
         });
       }
@@ -1195,7 +1220,7 @@ const main = async () => {
   // await insertResearchArticles();
   // await insertpresentGoverningBodyMembers();
   // await insertGoveringBodyPast();
-  // await eventsFromAdminApp();
+  // await eventsFromAdminApp(); // not requried to deploy to DDB
   // await downloadImages();
 };
 

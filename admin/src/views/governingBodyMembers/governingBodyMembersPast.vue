@@ -18,7 +18,14 @@ const endowmentFields = [
     label: "Name",
     type: "text",
     rules: [(v) => !!v || "Name is required"],
-    editDisabled: true,
+    // editDisabled: true,
+  },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
   },
   {
     key: "startYear",
@@ -37,7 +44,14 @@ const endowmentFields = [
     label: "Designation",
     type: "auto-complete",
     rules: [(v) => !!v || "Designation is required"],
-    items: ["President", "Vice President", "Secretary", "Treasurer", "Members"],
+    items: [
+      "Presidents",
+      "Vice-Presidents",
+      "Secretaries",
+      "Treasurers",
+      "Trustees",
+      "Members",
+    ],
   },
 ];
 
