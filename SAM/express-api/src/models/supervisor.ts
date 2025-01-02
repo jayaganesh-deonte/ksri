@@ -8,6 +8,7 @@ export interface Supervisor {
   id: string;
   name: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 export interface SupervisorDDB {
   PK: string;
@@ -16,6 +17,7 @@ export interface SupervisorDDB {
   id: string;
   name: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export function validateSupervisorDDB(item: SupervisorDDB): boolean {
@@ -27,7 +29,8 @@ export function validateSupervisorDDB(item: SupervisorDDB): boolean {
     typeof item.name === "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -37,7 +40,8 @@ export function validateSupervisor(item: Supervisor): boolean {
     typeof item.name === "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -46,16 +50,18 @@ export function fromDynamoDB(item: SupervisorDDB): Supervisor {
     id: item.id,
     name: item.name,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
 export function toDynamoDB(item: Supervisor): SupervisorDDB {
   return {
-    PK: item.name,
+    PK: "ENTITYTYPE#SUPERVISOR",
     SK: item.id,
     entityType: "ENTITYTYPE#SUPERVISOR",
     id: item.id,
     name: item.name,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }

@@ -11,6 +11,7 @@ export interface CommitteeMember {
   name: string;
   designation: "Research Committee" | "Editorial Committee";
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export interface CommitteeMemberDDB {
@@ -21,6 +22,7 @@ export interface CommitteeMemberDDB {
   name: string;
   designation: "Research Committee" | "Editorial Committee";
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 // validate the committee member
@@ -32,20 +34,22 @@ export function validateCommitteeMember(item: CommitteeMember): boolean {
       item.designation === "Editorial Committee") &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
 // to Dbb
 export function toDynamoDB(item: CommitteeMember): CommitteeMemberDDB {
   return {
-    PK: item.name,
+    PK: "ENTITYTYPE#PUBLICATION#COMMITTEEMEMBER",
     SK: item.id,
     entityType: "ENTITYTYPE#PUBLICATION#COMMITTEEMEMBER",
     id: item.id,
     name: item.name,
     designation: item.designation,
     ...(item.metadata && { metadata: item.metadata }),
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -56,6 +60,7 @@ export function fromDynamoDB(item: CommitteeMemberDDB): CommitteeMember {
     name: item.name,
     designation: item.designation,
     ...(item.metadata && { metadata: item.metadata }),
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -68,7 +73,8 @@ export function isCommitteeMember(item: any): item is CommitteeMember {
       item.designation === "Editorial Committee") &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -84,6 +90,7 @@ export function isCommitteeMemberDDB(item: any): item is CommitteeMemberDDB {
       item.designation === "Editorial Committee") &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }

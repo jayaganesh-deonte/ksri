@@ -11,6 +11,7 @@ export interface ForeignScholar {
   subject: string;
   year?: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export interface ForeignScholarDDB {
@@ -22,11 +23,12 @@ export interface ForeignScholarDDB {
   subject: string;
   year?: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export function toDynamoDB(scholar: ForeignScholar): ForeignScholarDDB {
   return {
-    PK: scholar.name,
+    PK: "ENTITYTYPE#FOREIGN_SCHOLAR",
     SK: scholar.id,
     entityType: "ENTITYTYPE#FOREIGN_SCHOLAR",
     name: scholar.name,
@@ -34,6 +36,7 @@ export function toDynamoDB(scholar: ForeignScholar): ForeignScholarDDB {
     subject: scholar.subject,
     year: scholar.year,
     metadata: scholar.metadata,
+    itemPublishStatus: scholar.itemPublishStatus,
   };
 }
 
@@ -45,7 +48,11 @@ export function isForeignScholarDDB(item: any): item is ForeignScholarDDB {
     typeof item.entityType === "string" &&
     typeof item.name === "string" &&
     typeof item.university === "string" &&
-    typeof item.subject === "string"
+    typeof item.subject === "string" &&
+    (item.metadata === undefined ||
+      (typeof item.metadata === "object" &&
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -57,6 +64,7 @@ export function fromDynamoDB(item: ForeignScholarDDB): ForeignScholar {
     subject: item.subject,
     metadata: item.metadata,
     year: item.year,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -69,7 +77,8 @@ export function isForeignScholar(item: any): item is ForeignScholar {
     typeof item.subject === "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -83,6 +92,7 @@ export function validateForeignScholar(
     typeof scholar.id === "string" &&
     (scholar.metadata === undefined ||
       (typeof scholar.metadata === "object" &&
-        Object.values(scholar.metadata).every((v) => typeof v === "string")))
+        Object.values(scholar.metadata).every((v) => typeof v === "string"))) &&
+    typeof scholar.itemPublishStatus === "string"
   );
 }

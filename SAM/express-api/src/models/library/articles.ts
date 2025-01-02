@@ -18,6 +18,7 @@ export interface Article {
   year: number;
   remarks: string;
   metadata?: { [key: string]: any };
+  itemPublishStatus: string;
 }
 
 // DynamoDB specific model
@@ -32,11 +33,12 @@ export interface ArticleDDB {
   year: number;
   remarks: string;
   metadata?: { [key: string]: any };
+  itemPublishStatus: string;
 }
 
 export function toDynamoDB(item: Article): ArticleDDB {
   return {
-    PK: item.title,
+    PK: "ENTITYTYPE#ARTICLE",
     SK: item.id,
     entityType: "ENTITYTYPE#ARTICLE",
     title: item.title,
@@ -46,6 +48,7 @@ export function toDynamoDB(item: Article): ArticleDDB {
     year: item.year,
     remarks: item.remarks,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -59,6 +62,7 @@ export function fromDynamoDB(item: ArticleDDB): Article {
     year: item.year,
     remarks: item.remarks,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -74,7 +78,8 @@ export function isArticleDDB(item: any): item is ArticleDDB {
     typeof item.volume === "string" &&
     typeof item.year === "number" &&
     typeof item.remarks === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -88,7 +93,8 @@ export function isArticle(item: any): item is Article {
     typeof item.volume === "string" &&
     typeof item.year === "number" &&
     typeof item.remarks === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -101,6 +107,7 @@ export function validateArticle(item: Article): boolean {
     typeof item.volume === "string" &&
     typeof item.year === "string" &&
     typeof item.remarks === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }

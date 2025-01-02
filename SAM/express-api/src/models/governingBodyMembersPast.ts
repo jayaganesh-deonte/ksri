@@ -15,6 +15,7 @@ export interface GoverningBodyMemberPast {
   designation: string;
   id: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export interface GoverningBodyMemberPastDDB {
@@ -26,6 +27,7 @@ export interface GoverningBodyMemberPastDDB {
   endYear: string;
   designation: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export function isGoverningBodyMemberPastDDB(
@@ -42,7 +44,8 @@ export function isGoverningBodyMemberPastDDB(
     typeof item.designation === "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -57,7 +60,8 @@ export function isGoverningBodyMemberPast(
     typeof item.designation === "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -71,7 +75,8 @@ export function validateGoverningBodyMemberPast(
     typeof item.designation === "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -88,7 +93,8 @@ export function validateGoverningBodyMemberPastDDB(
     typeof item.designation === "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -96,7 +102,7 @@ export function toDynamoDB(
   item: GoverningBodyMemberPast
 ): GoverningBodyMemberPastDDB {
   return {
-    PK: item.name,
+    PK: "ENTITYTYPE#GOVERNINGBODYMEMBERPAST",
     SK: item.id,
     entityType: "ENTITYTYPE#GOVERNINGBODYMEMBERPAST",
     name: item.name,
@@ -104,6 +110,7 @@ export function toDynamoDB(
     endYear: item.endYear,
     designation: item.designation,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 export function fromDynamoDB(
@@ -116,5 +123,6 @@ export function fromDynamoDB(
     designation: item.designation,
     id: item.SK,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }

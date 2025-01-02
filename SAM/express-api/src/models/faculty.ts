@@ -39,6 +39,7 @@ export interface Faculty {
   seminars?: { [key: string]: string };
   lectures?: { [key: string]: string };
   awards?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export interface FacultyDDB {
@@ -68,11 +69,12 @@ export interface FacultyDDB {
   seminars?: { [key: string]: string };
   lectures?: { [key: string]: string };
   awards?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export function toDynamoDB(item: Faculty): FacultyDDB {
   return {
-    PK: item.name,
+    PK: "ENTITYTYPE#FACULTY",
     SK: item.id,
     entityType: "ENTITYTYPE#FACULTY",
     id: item.id,
@@ -98,6 +100,7 @@ export function toDynamoDB(item: Faculty): FacultyDDB {
     seminars: item.seminars,
     lectures: item.lectures,
     awards: item.awards,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -130,7 +133,8 @@ export function isFacultyDDB(item: any): item is FacultyDDB {
     "projects" in item &&
     "seminars" in item &&
     "lectures" in item &&
-    "awards" in item
+    "awards" in item &&
+    "itemPublishStatus" in item
   );
 }
 
@@ -159,6 +163,7 @@ export function fromDynamoDB(item: FacultyDDB): Faculty {
     seminars: item.seminars,
     lectures: item.lectures,
     awards: item.awards,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -188,7 +193,8 @@ export function isFaculty(item: any): item is Faculty {
     "projects" in item &&
     "seminars" in item &&
     "lectures" in item &&
-    "awards" in item
+    "awards" in item &&
+    "itemPublishStatus" in item
   );
 }
 
@@ -246,7 +252,8 @@ export function validateFaculty(item: Faculty): boolean {
     (item.type === "ACADEMIC" || item.type === "NON ACADEMIC") &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
     // (item.orderId === undefined || typeof item.orderId === "string") &&
   );
 }

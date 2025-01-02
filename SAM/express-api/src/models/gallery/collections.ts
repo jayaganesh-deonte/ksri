@@ -5,7 +5,9 @@
 
 export interface Collection {
   name: string;
+  id: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export interface CollectionDDB {
@@ -14,6 +16,7 @@ export interface CollectionDDB {
   entityType: string;
   name: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export function isCollectionDDB(item: any): item is CollectionDDB {
@@ -23,7 +26,8 @@ export function isCollectionDDB(item: any): item is CollectionDDB {
     typeof item.SK === "string" &&
     typeof item.entityType === "string" &&
     typeof item.name === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -33,7 +37,8 @@ export function validateCollectionDDB(item: CollectionDDB): boolean {
     typeof item.SK === "string" &&
     typeof item.entityType === "string" &&
     typeof item.name === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -46,17 +51,20 @@ export function validateCollection(item: Collection): boolean {
 
 export function toDynamoDB(item: Collection): CollectionDDB {
   return {
-    PK: item.name,
-    SK: item.name,
+    PK: "ENTITYTYPE#GALLERY#COLLECTION",
+    SK: item.id,
     entityType: "ENTITYTYPE#GALLERY#COLLECTION",
     name: item.name,
     ...(item.metadata && { metadata: item.metadata }),
+    itemPublishStatus: "PUBLISHED",
   };
 }
 
 export function fromDynamoDB(item: CollectionDDB): Collection {
   return {
     name: item.name,
+    id: item.SK,
     ...(item.metadata && { metadata: item.metadata }),
+    itemPublishStatus: item.itemPublishStatus,
   };
 }

@@ -9,6 +9,7 @@ export interface GalleryImage {
   description: string;
   collection: string;
   metadata?: { [key: string]: any };
+  itemPublishStatus: string;
 }
 
 export interface GalleryImageDDB {
@@ -19,6 +20,7 @@ export interface GalleryImageDDB {
   description: string;
   collection: string;
   metadata?: { [key: string]: any };
+  itemPublishStatus: string;
 }
 
 export function isGalleryImageDDB(item: any): item is GalleryImageDDB {
@@ -30,7 +32,8 @@ export function isGalleryImageDDB(item: any): item is GalleryImageDDB {
     typeof item.imageUrl === "string" &&
     typeof item.description === "string" &&
     typeof item.collection === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -42,7 +45,8 @@ export function isGalleryImage(item: any): item is GalleryImage {
     typeof item.description === "string" &&
     typeof item.description === "string" &&
     typeof item.collection === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -54,19 +58,21 @@ export function validateGalleryImageDDB(item: GalleryImageDDB): boolean {
     typeof item.imageUrl === "string" &&
     typeof item.description === "string" &&
     typeof item.collection === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
 export function toDynamoDB(item: GalleryImage): GalleryImageDDB {
   return {
-    PK: item.collection,
+    PK: "ENTITYTYPE#GALLERY#IMAGE",
     SK: item.id,
     entityType: "ENTITYTYPE#GALLERY#IMAGE",
     imageUrl: item.imageUrl[0],
     description: item.description,
     collection: item.collection,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -77,6 +83,7 @@ export function fromDynamoDB(item: GalleryImageDDB): GalleryImage {
     description: item.description,
     collection: item.collection,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -86,6 +93,7 @@ export function validateGalleryImage(item: GalleryImage): boolean {
     Array.isArray(item.imageUrl) &&
     typeof item.description === "string" &&
     typeof item.collection === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }

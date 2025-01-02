@@ -14,6 +14,7 @@ export interface BankInfo {
   accountNo: string;
   ifsc: string;
   micr: string;
+  itemPublishStatus: string;
 }
 
 export interface BankInfoDDB {
@@ -25,6 +26,7 @@ export interface BankInfoDDB {
   accountNo: string;
   ifsc: string;
   micr: string;
+  itemPublishStatus: string;
 }
 
 export function isBankInfoDDB(item: any): item is BankInfoDDB {
@@ -37,13 +39,14 @@ export function isBankInfoDDB(item: any): item is BankInfoDDB {
     typeof item.bankName === "string" &&
     typeof item.accountNo === "string" &&
     typeof item.ifsc === "string" &&
-    typeof item.micr === "string"
+    typeof item.micr === "string" &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
 export function toDynamoDB(item: BankInfo): BankInfoDDB {
   return {
-    PK: item.name,
+    PK: "ENTITYTYPE#BANKINFO",
     SK: item.id,
     entityType: "ENTITYTYPE#BANKINFO",
     name: item.name,
@@ -51,6 +54,7 @@ export function toDynamoDB(item: BankInfo): BankInfoDDB {
     accountNo: item.accountNo,
     ifsc: item.ifsc,
     micr: item.micr,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -62,6 +66,7 @@ export function fromDynamoDB(item: BankInfoDDB): BankInfo {
     accountNo: item.accountNo,
     ifsc: item.ifsc,
     micr: item.micr,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -73,6 +78,7 @@ export function isBankInfo(item: any): item is BankInfo {
     typeof item.bankName === "string" &&
     typeof item.accountNo === "string" &&
     typeof item.ifsc === "string" &&
-    typeof item.micr === "string"
+    typeof item.micr === "string" &&
+    typeof item.itemPublishStatus === "string"
   );
 }

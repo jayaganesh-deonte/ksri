@@ -10,6 +10,7 @@ export interface ProjectSeries {
   metadata?: { [key: string]: string };
   subSeries?: string[];
   description?: string;
+  itemPublishStatus: string;
 }
 
 export interface ProjectSeriesDDB {
@@ -22,6 +23,7 @@ export interface ProjectSeriesDDB {
   metadata?: { [key: string]: string };
   subSeries?: string[];
   description?: string;
+  itemPublishStatus: string;
 }
 
 export function isProjectSeriesDDB(item: any): item is ProjectSeriesDDB {
@@ -35,7 +37,8 @@ export function isProjectSeriesDDB(item: any): item is ProjectSeriesDDB {
     typeof item.name === "string" &&
     (typeof item.metadata === "undefined" ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
     // typeof item.seriesType === "string"
   );
 }
@@ -50,7 +53,8 @@ export function validateProjectSeriesDDB(item: ProjectSeriesDDB): boolean {
     typeof item.name === "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
     // typeof item.seriesType === "string"
   );
 }
@@ -63,7 +67,8 @@ export function isProjectSeries(item: any): item is ProjectSeries {
     typeof item.name === "string" &&
     (typeof item.metadata === "undefined" ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
     // typeof item.seriesType === "string"
   );
 }
@@ -75,7 +80,8 @@ export function validateProjectSeries(item: ProjectSeries): boolean {
     typeof item.name === "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
     // typeof item.seriesType === "string"
   );
 }
@@ -83,7 +89,7 @@ export function validateProjectSeries(item: ProjectSeries): boolean {
 // toDynamoDB function for ProjectSeries
 export function toDynamoDB(projectSeries: ProjectSeries): ProjectSeriesDDB {
   return {
-    PK: projectSeries.name,
+    PK: "ENTITYTYPE#PROJECTSERIES",
     SK: projectSeries.id,
     orderId: projectSeries.orderId,
     entityType: "ENTITYTYPE#PROJECTSERIES",
@@ -93,6 +99,7 @@ export function toDynamoDB(projectSeries: ProjectSeries): ProjectSeriesDDB {
     // // seriesType: projectSeries.seriesType,
     subSeries: projectSeries.subSeries,
     description: projectSeries.description,
+    itemPublishStatus: projectSeries.itemPublishStatus,
   };
 }
 
@@ -106,5 +113,6 @@ export function fromDynamoDB(item: ProjectSeriesDDB): ProjectSeries {
     // // seriesType: item.seriesType,
     subSeries: item.subSeries,
     description: item.description,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }

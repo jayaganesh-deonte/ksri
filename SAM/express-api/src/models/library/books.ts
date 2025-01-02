@@ -18,6 +18,7 @@ export interface Book {
   publisher: string;
   remarks: string;
   metadata?: { [key: string]: any };
+  itemPublishStatus: string;
 }
 
 // DynamoDB specific model
@@ -32,11 +33,12 @@ export interface BookDDB {
   publisher: string;
   remarks: string;
   metadata?: { [key: string]: any };
+  itemPublishStatus: string;
 }
 
 export function toDynamoDB(item: Book): BookDDB {
   return {
-    PK: item.title,
+    PK: "ENTITYTYPE#LIBRARY#BOOK",
     SK: item.id,
     entityType: "ENTITYTYPE#LIBRARY#BOOK",
     title: item.title,
@@ -46,6 +48,7 @@ export function toDynamoDB(item: Book): BookDDB {
     publisher: item.publisher,
     remarks: item.remarks,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -59,6 +62,7 @@ export function fromDynamoDB(item: BookDDB): Book {
     publisher: item.publisher,
     remarks: item.remarks,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -74,7 +78,8 @@ export function isBookDDB(item: any): item is BookDDB {
     typeof item.editor === "string" &&
     typeof item.publisher === "string" &&
     typeof item.remarks === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -88,7 +93,8 @@ export function isBook(item: any): item is Book {
     typeof item.editor === "string" &&
     typeof item.publisher === "string" &&
     typeof item.remarks === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 

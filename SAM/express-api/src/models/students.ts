@@ -18,6 +18,7 @@ export interface Student {
   startedYear: string;
   completedYear?: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export interface StudentDDB {
@@ -32,11 +33,12 @@ export interface StudentDDB {
   startedYear: string;
   completedYear?: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export function toDynamoDB(student: Student): StudentDDB {
   return {
-    PK: student.name,
+    PK: "ENTITYTYPE#STUDENT",
     SK: student.id,
     entityType: "ENTITYTYPE#STUDENT",
     name: student.name,
@@ -47,6 +49,7 @@ export function toDynamoDB(student: Student): StudentDDB {
     startedYear: student.startedYear,
     completedYear: student.completedYear,
     metadata: student.metadata,
+    itemPublishStatus: student.itemPublishStatus,
   };
 }
 
@@ -66,7 +69,8 @@ export function isStudentDDB(item: any): item is StudentDDB {
       typeof item.completedYear === "string") &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -81,6 +85,7 @@ export function fromDynamoDB(item: StudentDDB): Student {
     startedYear: item.startedYear,
     completedYear: item.completedYear,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -97,6 +102,7 @@ export function validateStudent(student: Partial<Student>): boolean {
     typeof student.id === "string" &&
     (typeof student.metadata === "undefined" ||
       (typeof student.metadata === "object" &&
-        Object.values(student.metadata).every((v) => typeof v === "string")))
+        Object.values(student.metadata).every((v) => typeof v === "string"))) &&
+    typeof student.itemPublishStatus === "string"
   );
 }

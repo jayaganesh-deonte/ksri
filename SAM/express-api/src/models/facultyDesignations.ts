@@ -7,6 +7,7 @@ export interface FacultyDesignation {
   name: string;
   type: FacultyType;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export interface FacultyDesignationDDB {
@@ -18,6 +19,7 @@ export interface FacultyDesignationDDB {
   name: string;
   type: FacultyType;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export function validateFacultyDesignationDDB(
@@ -33,7 +35,8 @@ export function validateFacultyDesignationDDB(
     (item.type === "ACADEMIC" || item.type === "NON ACADEMIC") &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -45,13 +48,14 @@ export function validateFacultyDesignation(item: FacultyDesignation): boolean {
     (item.type === "ACADEMIC" || item.type === "NON ACADEMIC") &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
 export function toDynamoDB(item: FacultyDesignation): FacultyDesignationDDB {
   return {
-    PK: item.name,
+    PK: "ENTITYTYPE#FACULTYDESIGNATION",
     SK: item.id,
     entityType: "ENTITYTYPE#FACULTYDESIGNATION",
     id: item.id,
@@ -59,6 +63,7 @@ export function toDynamoDB(item: FacultyDesignation): FacultyDesignationDDB {
     name: item.name,
     type: item.type,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -69,5 +74,6 @@ export function fromDynamoDB(item: FacultyDesignationDDB): FacultyDesignation {
     name: item.name,
     type: item.type,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }

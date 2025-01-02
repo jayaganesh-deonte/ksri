@@ -5,6 +5,7 @@ export interface AdditionalPublication {
   name: string;
   orderId: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export interface AdditionalPublicationDDB {
@@ -15,6 +16,7 @@ export interface AdditionalPublicationDDB {
   name: string;
   orderId: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 // toDynamoDB
@@ -22,13 +24,14 @@ export function toDynamoDB(
   additionalPublication: AdditionalPublication
 ): AdditionalPublicationDDB {
   return {
-    PK: additionalPublication.name,
+    PK: "ENTITYTYPE#ADDITIONALPUBLICATION",
     SK: additionalPublication.id,
     entityType: "ENTITYTYPE#ADDITIONALPUBLICATION",
     id: additionalPublication.id,
     name: additionalPublication.name,
     orderId: additionalPublication.orderId,
     metadata: additionalPublication.metadata,
+    itemPublishStatus: additionalPublication.itemPublishStatus,
   };
 }
 
@@ -41,6 +44,7 @@ export function fromDynamoDB(
     name: additionalPublication.name,
     orderId: additionalPublication.orderId,
     metadata: additionalPublication.metadata,
+    itemPublishStatus: additionalPublication.itemPublishStatus,
   };
 }
 
@@ -56,7 +60,8 @@ export function validateAdditionalPublication(
       (typeof additionalPublication.metadata === "object" &&
         Object.values(additionalPublication.metadata).every(
           (v) => typeof v === "string"
-        )))
+        ))) &&
+    typeof additionalPublication.itemPublishStatus === "string"
   );
 }
 
@@ -74,6 +79,7 @@ export function validateAdditionalPublicationDDB(
       (typeof additionalPublication.metadata === "object" &&
         Object.values(additionalPublication.metadata).every(
           (v) => typeof v === "string"
-        )))
+        ))) &&
+    typeof additionalPublication.itemPublishStatus === "string"
   );
 }

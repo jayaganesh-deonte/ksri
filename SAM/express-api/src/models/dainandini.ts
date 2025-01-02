@@ -17,6 +17,7 @@ export interface Dainandini {
   sanskritLine2: string;
   description: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export interface DainandiniDDB {
@@ -29,6 +30,7 @@ export interface DainandiniDDB {
   sanskritLine2: string;
   description: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 // from dynamodb
@@ -41,12 +43,13 @@ export function fromDynamoDB(item: DainandiniDDB): Dainandini {
     sanskritLine2: item.sanskritLine2,
     description: item.description,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
 export function toDynamoDB(item: Dainandini): DainandiniDDB {
   return {
-    PK: item.id,
+    PK: "ENTITYTYPE#DAINANDINI",
     SK: item.id,
     entityType: "ENTITYTYPE#DAINANDINI",
     id: item.id,
@@ -55,6 +58,7 @@ export function toDynamoDB(item: Dainandini): DainandiniDDB {
     sanskritLine2: item.sanskritLine2,
     description: item.description,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -69,6 +73,9 @@ export function validateDainandini(dainandini: Dainandini): boolean {
     typeof dainandini.description === "string" &&
     (dainandini.metadata === undefined ||
       (typeof dainandini.metadata === "object" &&
-        Object.values(dainandini.metadata).every((v) => typeof v === "string")))
+        Object.values(dainandini.metadata).every(
+          (v) => typeof v === "string"
+        ))) &&
+    typeof dainandini.itemPublishStatus === "string"
   );
 }

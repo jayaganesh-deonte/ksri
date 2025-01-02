@@ -45,3 +45,14 @@ confirm_changeset = true
 capabilities = "CAPABILITY_IAM CAPABILITY_NAMED_IAM"
 parameter_overrides = "Prefix=\"ksri\" UserPoolDomain=\"ksri\" useCustomDomainForUi=\"false\" UiCustomDomain=\"\""
 image_repositories = []
+
+
+[prod.deploy.parameters]
+stack_name = "ksri-admin"
+resolve_s3 = true
+s3_prefix = "ksri-admin"
+region = "ap-south-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM CAPABILITY_NAMED_IAM"
+parameter_overrides = "Prefix=\"ksri-prod\" UserPoolDomain=\"ksri-prod\" useCustomDomainForUi=\"false\" UiCustomDomain=\"\""
+image_repositories = []

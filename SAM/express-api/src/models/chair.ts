@@ -14,6 +14,7 @@ export interface Chair {
   orderId: string;
   displayImage?: [string];
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export interface ChairDDB {
@@ -28,6 +29,7 @@ export interface ChairDDB {
   orderId: string;
   displayImage?: string;
   metadata?: { [key: string]: string };
+  itemPublishStatus: string;
 }
 
 export function validateChairDDB(item: ChairDDB): boolean {
@@ -44,7 +46,8 @@ export function validateChairDDB(item: ChairDDB): boolean {
     typeof item.displayImage === "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -59,13 +62,14 @@ export function validateChair(item: Chair): boolean {
     // Array.isArray(item.displayImage) &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string")))
+        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
 export function toDynamoDB(item: Chair): ChairDDB {
   return {
-    PK: item.name,
+    PK: "ENTITYTYPE#CHAIR",
     SK: item.id,
     entityType: "ENTITYTYPE#CHAIR",
     id: item.id,
@@ -76,6 +80,7 @@ export function toDynamoDB(item: Chair): ChairDDB {
     orderId: item.orderId,
     displayImage: item.displayImage ? item.displayImage[0] : "",
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -89,5 +94,6 @@ export function fromDynamoDB(item: ChairDDB): Chair {
     orderId: item.orderId,
     displayImage: item.displayImage ? [item.displayImage] : undefined,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }

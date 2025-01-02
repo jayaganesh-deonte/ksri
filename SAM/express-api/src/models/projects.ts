@@ -19,6 +19,7 @@ export interface Project {
   publicationStatus: "Published" | "Inprint" | "Unpublished";
   projectInvestigator: string;
   coProjectInvestigators: string;
+  itemPublishStatus: string;
 }
 
 // DynamoDB specific model
@@ -40,6 +41,7 @@ export interface ProjectDDB {
   publicationStatus: "Published" | "Inprint" | "Unpublished";
   projectInvestigator: string;
   coProjectInvestigators: string;
+  itemPublishStatus: string;
 }
 
 // Convert DynamoDB record to application model
@@ -59,6 +61,7 @@ export function fromDynamoDB(item: ProjectDDB): Project {
     publicationStatus: item.publicationStatus,
     projectInvestigator: item.projectInvestigator,
     coProjectInvestigators: item.coProjectInvestigators,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -68,7 +71,7 @@ export function toDynamoDB(project: Project): ProjectDDB {
   // console.log("project toDynamoDB", project);
 
   return {
-    PK: project.status,
+    PK: "ENTITYTYPE#PROJECT",
     SK: project.id,
     entityType: "ENTITYTYPE#PROJECT",
     id: project.id,
@@ -85,6 +88,7 @@ export function toDynamoDB(project: Project): ProjectDDB {
     publicationStatus: project.publicationStatus,
     projectInvestigator: project.projectInvestigator,
     coProjectInvestigators: project.coProjectInvestigators,
+    itemPublishStatus: project.itemPublishStatus,
   };
 }
 
@@ -114,7 +118,8 @@ export function isProjectDDB(item: any): item is ProjectDDB {
       typeof item.projectSubSeries === "string") &&
     typeof item.publicationStatus === "string" &&
     typeof item.projectInvestigator === "string" &&
-    typeof item.coProjectInvestigators === "string"
+    typeof item.coProjectInvestigators === "string" &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 

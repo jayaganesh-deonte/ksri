@@ -42,7 +42,7 @@ Resources:
             - "*"
           AllowHeaders:
             - "*"
-      ReservedConcurrentExecutions: 5
+      # ReservedConcurrentExecutions: 2
       Environment:
         Variables:
           DDB_TABLE_NAME: !Ref masterTable
@@ -92,7 +92,7 @@ Resources:
             - "*"
           AllowHeaders:
             - "*"
-      ReservedConcurrentExecutions: 5
+      # ReservedConcurrentExecutions: 5
       Environment:
         Variables:
           DDB_TABLE_NAME: !Ref masterTable
@@ -172,7 +172,7 @@ Resources:
           AttributeType: S
         - AttributeName: SK
           AttributeType: S
-        - AttributeName: entityType
+        - AttributeName: publishedStatus
           AttributeType: S
       KeySchema:
         - AttributeName: PK
@@ -184,19 +184,11 @@ Resources:
         Enabled: true
       BillingMode: PAY_PER_REQUEST
       GlobalSecondaryIndexes:
-        - IndexName: entityTypePK
+        - IndexName: PkPublishedStatusIndex
           KeySchema:
-            - AttributeName: entityType
-              KeyType: HASH
             - AttributeName: PK
-              KeyType: RANGE
-          Projection:
-            ProjectionType: ALL
-        - IndexName: entityTypeSK
-          KeySchema:
-            - AttributeName: entityType
               KeyType: HASH
-            - AttributeName: SK
+            - AttributeName: publishedStatus
               KeyType: RANGE
           Projection:
             ProjectionType: ALL

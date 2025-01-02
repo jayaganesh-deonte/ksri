@@ -32,6 +32,7 @@ export interface Journal {
   Nationality: string;
   subTable: SubJournal[];
   metadata?: { [key: string]: any };
+  itemPublishStatus: string;
 }
 
 //  create model
@@ -44,6 +45,7 @@ export interface JournalDDB {
   Nationality: string;
   subTable: SubJournal[];
   metadata?: { [key: string]: any };
+  itemPublishStatus: string;
 }
 
 // Type guard to check if an object is a valid JournalDDB
@@ -57,7 +59,8 @@ export function isJournalDDB(item: any): item is JournalDDB {
     typeof item.JournalName === "string" &&
     typeof item.Nationality === "string" &&
     Array.isArray(item.subTable) &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -70,7 +73,8 @@ export function isJournal(item: any): item is Journal {
     typeof item.JournalName === "string" &&
     typeof item.Nationality === "string" &&
     Array.isArray(item.subTable) &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -81,14 +85,16 @@ export function isSubJournal(item: any): item is SubJournal {
     typeof item.JournalVolumeNumber === "string" &&
     typeof item.PublicationYear === "string" &&
     typeof item.Volume === "string" &&
-    typeof item.JournalVolumeNumber === "string"
+    typeof item.JournalVolumeNumber === "string" &&
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
 // toDynamoDB
 export function toJournalDDB(item: Journal): JournalDDB {
   return {
-    PK: item.JournalName,
+    PK: "ENTITYTYPE#JOURNAL",
     SK: item.id,
     entityType: "ENTITYTYPE#JOURNAL",
     JournalAccNo: item.JournalAccNo,
@@ -96,6 +102,7 @@ export function toJournalDDB(item: Journal): JournalDDB {
     Nationality: item.Nationality,
     subTable: item.subTable,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -108,6 +115,7 @@ export function fromJournalDDB(item: JournalDDB): Journal {
     Nationality: item.Nationality,
     subTable: item.subTable,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
@@ -121,6 +129,7 @@ export function toDynamoDB(item: Journal): JournalDDB {
     Nationality: item.Nationality,
     subTable: item.subTable,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 

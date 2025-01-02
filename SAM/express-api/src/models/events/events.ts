@@ -17,12 +17,14 @@ export interface Event {
   images: string[];
   id: string;
   metadata?: { [key: string]: any };
+  itemPublishStatus: string;
 }
 
 export interface EventDDB extends Event {
   PK: string;
   SK: string;
   entityType: string;
+  itemPublishStatus: string;
 }
 
 export function isEvent(item: any): item is Event {
@@ -36,7 +38,8 @@ export function isEvent(item: any): item is Event {
     typeof item.date === "string" &&
     Array.isArray(item.images) &&
     typeof item.id === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -54,7 +57,8 @@ export function isEventDDB(item: any): item is EventDDB {
     typeof item.date === "string" &&
     Array.isArray(item.images) &&
     typeof item.id === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object")
+    (item.metadata === undefined || typeof item.metadata === "object") &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -68,7 +72,8 @@ export function validateEvent(event: Partial<Event>): boolean {
     typeof event.date === "string" &&
     Array.isArray(event.images) &&
     typeof event.id === "string" &&
-    (event.metadata === undefined || typeof event.metadata === "object")
+    (event.metadata === undefined || typeof event.metadata === "object") &&
+    typeof event.itemPublishStatus === "string"
   );
 }
 
@@ -83,12 +88,13 @@ export function fromDynamoDB(item: EventDDB): Event {
     images: item.images,
     id: item.id,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
 export function toDynamoDB(item: Event): EventDDB {
   return {
-    PK: item.title,
+    PK: "ENTITYTYPE#EVENT",
     SK: item.id,
     entityType: "ENTITYTYPE#EVENT",
     title: item.title,
@@ -100,5 +106,6 @@ export function toDynamoDB(item: Event): EventDDB {
     images: item.images,
     id: item.id,
     metadata: item.metadata,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }

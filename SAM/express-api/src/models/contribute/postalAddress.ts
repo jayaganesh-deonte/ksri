@@ -14,6 +14,7 @@ export interface PostalAddress {
   address: string;
   email: string;
   phone: string;
+  itemPublishStatus: string;
 }
 
 export interface PostalAddressDDB {
@@ -24,6 +25,7 @@ export interface PostalAddressDDB {
   address: string;
   email: string;
   phone: string;
+  itemPublishStatus: string;
 }
 
 export function isPostalAddressDDB(item: any): item is PostalAddressDDB {
@@ -35,7 +37,8 @@ export function isPostalAddressDDB(item: any): item is PostalAddressDDB {
     typeof item.instituteName === "string" &&
     typeof item.address === "string" &&
     typeof item.email === "string" &&
-    typeof item.phone === "string"
+    typeof item.phone === "string" &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -46,7 +49,8 @@ export function isPostalAddress(item: any): item is PostalAddress {
     typeof item.instituteName === "string" &&
     typeof item.address === "string" &&
     typeof item.email === "string" &&
-    typeof item.phone === "string"
+    typeof item.phone === "string" &&
+    typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -58,18 +62,20 @@ export function fromDynamoDB(item: PostalAddressDDB): PostalAddress {
     address: item.address,
     email: item.email,
     phone: item.phone,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
 // to DynamoDB
 export function toDynamoDB(item: PostalAddress): PostalAddressDDB {
   return {
-    PK: item.instituteName,
+    PK: "ENTITYTYPE#POSTALADDRESS",
     SK: item.id,
     entityType: "ENTITYTYPE#POSTALADDRESS",
     instituteName: item.instituteName,
     address: item.address,
     email: item.email,
     phone: item.phone,
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
