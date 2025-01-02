@@ -19,10 +19,10 @@ newsRoute.get("/news", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: NEWS_TABLE,
-      IndexName: "entityTypeSK",
-      KeyConditionExpression: "entityType = :entityType",
+      // IndexName: "entityTypeSK",
+      KeyConditionExpression: "PK = :PK",
       ExpressionAttributeValues: {
-        ":entityType": "ENTITYTYPE#NEWS",
+        ":PK": "ENTITYTYPE#NEWS",
       },
       //   id is lexagraphically sorted so sort
       ScanIndexForward: false,
