@@ -21,8 +21,8 @@ projectSeriesRoute.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: PROJECTS_TABLE,
-        IndexName: "entityTypeSK",
-        KeyConditionExpression: "entityType = :entityType",
+        // IndexName: "entityTypeSK",
+        KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#PROJECTSERIES",
         },
@@ -74,12 +74,12 @@ projectSeriesRoute.delete(
   "/project/series",
   async (req: Request, res: Response) => {
     try {
-      const { id, name } = req.body;
+      const { id } = req.body;
       // Delete item from DynamoDB
       await documentClient.delete({
         TableName: PROJECTS_TABLE,
         Key: {
-          PK: name,
+          PK: "ENTITYTYPE#PROJECTSERIES",
           SK: id,
         },
         ConditionExpression: "attribute_exists(PK)", // Ensure project exists

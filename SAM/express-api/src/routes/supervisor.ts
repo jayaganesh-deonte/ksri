@@ -50,9 +50,9 @@ supervisorRoute.get("/supervisor", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: SUPERVISORS_TABLE,
-      IndexName: "entityTypeSK",
+      // IndexName: "entityTypeSK",
       ScanIndexForward: false,
-      KeyConditionExpression: "entityType = :sk",
+      KeyConditionExpression: "PK = :sk",
       ExpressionAttributeValues: {
         ":sk": "ENTITYTYPE#SUPERVISOR",
       },
@@ -72,13 +72,13 @@ supervisorRoute.get("/supervisor", async (req: Request, res: Response) => {
 // DELETE a supervisor
 supervisorRoute.delete("/supervisor", async (req: Request, res: Response) => {
   try {
-    const { id, name } = req.body;
+    const { id } = req.body;
 
     // Delete item from DynamoDB
     await documentClient.delete({
       TableName: SUPERVISORS_TABLE,
       Key: {
-        PK: name,
+        PK: "ENTITYTYPE#SUPERVISOR",
         SK: id,
       },
     });

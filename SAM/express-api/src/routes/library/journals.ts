@@ -54,11 +54,11 @@ journalRoute.get("/library/journals", async (req: Request, res: Response) => {
 
     const params = {
       TableName: "ksri-prod_admin_master_table",
-      KeyConditionExpression: "entityType = :entityType",
+      KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#JOURNAL",
       },
-      IndexName: "entityTypeSK",
+      // IndexName: "entityTypeSK",
       ScanIndexForward: false,
       Limit: limit,
       ExclusiveStartKey: lastEvaluatedKey,
@@ -85,14 +85,14 @@ journalRoute.delete(
   "/library/journals",
   async (req: Request, res: Response) => {
     try {
-      const { id, JournalName } = req.body;
+      const { id } = req.body;
       if (!id) {
         return res.status(400).json({ error: "Journal ID is required" });
       }
       const params = {
         TableName: "ksri-prod_admin_master_table",
         Key: {
-          PK: JournalName,
+          PK: "ENTITYTYPE#JOURNAL",
           SK: id,
         },
       };

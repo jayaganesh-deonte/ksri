@@ -28,18 +28,20 @@ galleryRoute.get("/gallery", async (req: Request, res: Response) => {
     if (collection) {
       result = await documentClient.query({
         TableName: GALLERY_TABLE,
-        IndexName: "entityTypePK", //TODO
-        KeyConditionExpression: "entityType = :sk AND PK = :pk",
+        // IndexName: "CollectionSK", //TODO
+        KeyConditionExpression: "PK = :pk",
         ExpressionAttributeValues: {
-          ":sk": "ENTITYTYPE#GALLERY#IMAGE",
-          ":pk": collection,
+          ":pk": "ENTITYTYPE#GALLERY#IMAGE",
+          ":collection": collection,
         },
+        // filter
+        FilterExpression: "collection = :collection",
       });
     } else {
       result = await documentClient.query({
         TableName: GALLERY_TABLE,
-        IndexName: "entityTypeSK",
-        KeyConditionExpression: "entityType = :sk",
+        // IndexName: "entityTypeSK",
+        KeyConditionExpression: "PK = :sk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#GALLERY#IMAGE",
         },
@@ -82,11 +84,11 @@ galleryRoute.post("/gallery", async (req: Request, res: Response) => {
 // DELETE Gallery Image
 galleryRoute.delete("/gallery", async (req: Request, res: Response) => {
   try {
-    const { id, collection } = req.body;
+    const { id } = req.body;
     const params = {
       TableName: GALLERY_TABLE,
       Key: {
-        PK: collection,
+        PK: "ENTITYTYPE#GALLERY#IMAGE",
         SK: id,
       },
     };

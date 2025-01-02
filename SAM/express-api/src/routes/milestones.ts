@@ -14,11 +14,11 @@ milestonesRoute.get("/milestones", async (req: Request, res: Response) => {
   try {
     const params = {
       TableName: "ksri-prod_admin_master_table",
-      KeyConditionExpression: "entityType = :entityType",
+      KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#MILESTONE",
       },
-      IndexName: "entityTypeSK",
+      // IndexName: "entityTypeSK",
       ScanIndexForward: false,
     };
 
@@ -62,20 +62,20 @@ milestonesRoute.delete(
   "/milestones",
   async (req: Request<{ title: string; year: string }>, res: Response) => {
     try {
-      const { title, year } = req.body;
+      const { id } = req.body;
 
       // Create the same PK as in the toDynamoDB function
-      const pk = title;
+      // const pk = title;
       // .toLowerCase()
       // .replace(/[^a-z0-9]+/g, "-")
       // .replace(/(^-|-$)/g, "");
-      const sk = `${year}`;
+      // const sk = `${year}`;
 
       await documentClient.delete({
         TableName: "ksri-prod_admin_master_table",
         Key: {
-          PK: pk,
-          SK: sk,
+          PK: "ENTITYTYPE#MILESTONE",
+          SK: id,
         },
       });
 

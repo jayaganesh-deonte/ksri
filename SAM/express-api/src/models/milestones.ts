@@ -1,5 +1,6 @@
 // Regular Milestone model for application use
 export interface Milestone {
+  id: string;
   year: number;
   title: string;
   subTitle: string;
@@ -12,6 +13,7 @@ export interface Milestone {
 export interface MilestoneDDB {
   PK: string; // Will be constructed from title or other identifiers
   SK: string; // Will be constructed from year
+  id: string;
   entityType: string;
   year: number;
   title: string;
@@ -24,6 +26,7 @@ export interface MilestoneDDB {
 // Convert DynamoDB record to application model
 export function fromDynamoDB(item: MilestoneDDB): Milestone {
   return {
+    id: item.id,
     year: item.year,
     title: item.title,
     subTitle: item.subTitle,
@@ -43,7 +46,8 @@ export function toDynamoDB(milestone: Milestone): MilestoneDDB {
 
   return {
     PK: "ENTITYTYPE#MILESTONE",
-    SK: `${milestone.year}`,
+    SK: milestone.id,
+    id: milestone.id,
     entityType: "ENTITYTYPE#MILESTONE",
     year: milestone.year,
     title: milestone.title,
@@ -68,6 +72,7 @@ export function isMilestoneDDB(item: any): item is MilestoneDDB {
     (typeof item.metadata === "undefined" ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&
-    typeof item.itemPublishStatus === "string"
+    typeof item.itemPublishStatus === "string" &&
+    typeof item.id === "string"
   );
 }

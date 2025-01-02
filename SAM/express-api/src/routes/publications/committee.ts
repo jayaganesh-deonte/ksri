@@ -23,9 +23,9 @@ publicationsCommitteeRouter.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: COMMITTEE_MEMBERS_TABLE,
-        IndexName: "entityTypeSK",
+        // IndexName: "entityTypeSK",
         ScanIndexForward: false,
-        KeyConditionExpression: "entityType = :sk",
+        KeyConditionExpression: "PK = :sk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#PUBLICATION#COMMITTEEMEMBER",
         },
@@ -78,9 +78,9 @@ publicationsCommitteeRouter.delete(
   "/publications/committee-members",
   async (req: Request, res: Response) => {
     try {
-      const { id, name } = req.body;
+      const { id } = req.body;
 
-      if (!id || !name) {
+      if (!id) {
         return res.status(400).json({
           error:
             "Invalid CommitteeMember data. Ensure all required fields are present.",
@@ -91,7 +91,7 @@ publicationsCommitteeRouter.delete(
       await documentClient.delete({
         TableName: COMMITTEE_MEMBERS_TABLE,
         Key: {
-          PK: name,
+          PK: "ENTITYTYPE#PUBLICATION#COMMITTEEMEMBER",
           SK: id,
         },
       });

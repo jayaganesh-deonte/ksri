@@ -52,9 +52,9 @@ researchArticlesRoute.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: RESEARCH_ARTICLES_TABLE,
-        IndexName: "entityTypeSK",
+        // IndexName: "entityTypeSK",
         ScanIndexForward: false,
-        KeyConditionExpression: "entityType = :sk",
+        KeyConditionExpression: "PK = :sk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#RESEARCHARTICLE",
         },
@@ -76,13 +76,13 @@ researchArticlesRoute.delete(
   "/researchArticles",
   async (req: Request, res: Response) => {
     try {
-      const { id, title } = req.body;
+      const { id } = req.body;
 
       // Delete item from DynamoDB
       const params = {
         TableName: RESEARCH_ARTICLES_TABLE,
         Key: {
-          PK: title,
+          PK: "ENTITYTYPE#RESEARCHARTICLE",
           SK: id,
         },
       };

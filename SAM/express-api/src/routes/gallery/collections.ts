@@ -24,8 +24,8 @@ collectionsRoute.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: COLLECTIONS_TABLE,
-        IndexName: "entityTypeSK",
-        KeyConditionExpression: "entityType = :sk",
+        // IndexName: "entityTypeSK",
+        KeyConditionExpression: "PK = :sk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#GALLERY#COLLECTION",
         },
@@ -73,12 +73,12 @@ collectionsRoute.delete(
   "/gallery/collections",
   async (req: Request, res: Response) => {
     try {
-      const { name } = req.body;
+      const { id } = req.body;
       const params = {
         TableName: COLLECTIONS_TABLE,
         Key: {
-          PK: name,
-          SK: name,
+          PK: "ENTITYTYPE#GALLERY#COLLECTION",
+          SK: id,
         },
       };
       await documentClient.delete(params);

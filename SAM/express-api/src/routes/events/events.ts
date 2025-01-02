@@ -48,11 +48,11 @@ eventRoute.get("/events", async (req: Request, res: Response) => {
   try {
     const params = {
       TableName: EVENTS_TABLE,
-      KeyConditionExpression: "entityType = :entityType",
+      KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#EVENT",
       },
-      IndexName: "entityTypeSK",
+      // IndexName: "entityTypeSK",
       ScanIndexForward: false,
     };
 
@@ -70,7 +70,7 @@ eventRoute.get("/events", async (req: Request, res: Response) => {
 // DELETE an event
 eventRoute.delete("/events", async (req: Request, res: Response) => {
   try {
-    const { id, title } = req.body;
+    const { id } = req.body;
 
     if (!id) {
       return res.status(400).json({ error: "Event ID is required" });
@@ -79,7 +79,7 @@ eventRoute.delete("/events", async (req: Request, res: Response) => {
     const params = {
       TableName: EVENTS_TABLE,
       Key: {
-        PK: title,
+        PK: "ENTITYTYPE#EVENT",
         SK: id,
       },
     };

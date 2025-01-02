@@ -54,11 +54,11 @@ governingBodyMembersRoute.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: GOVERNING_BODY_MEMBERS_TABLE,
-        IndexName: "entityTypeSK",
+        // IndexName: "entityTypeSK",
         ScanIndexForward: false,
-        KeyConditionExpression: "entityType = :sk",
+        KeyConditionExpression: "PK = :PK",
         ExpressionAttributeValues: {
-          ":sk": "ENTITYTYPE#GOVERNINGBODYMEMBER",
+          ":PK": "ENTITYTYPE#GOVERNINGBODYMEMBER",
         },
       });
 
@@ -79,9 +79,9 @@ governingBodyMembersRoute.delete(
   "/governing-body-members",
   async (req: Request, res: Response) => {
     try {
-      const { id, name } = req.body;
+      const { id } = req.body;
 
-      if (!id || !name) {
+      if (!id) {
         return res
           .status(400)
           .json({ error: "GoverningBodyMember ID is required" });
@@ -91,7 +91,7 @@ governingBodyMembersRoute.delete(
       await documentClient.delete({
         TableName: GOVERNING_BODY_MEMBERS_TABLE,
         Key: {
-          PK: name,
+          PK: "ENTITYTYPE#GOVERNINGBODYMEMBER",
           SK: id,
         },
       });

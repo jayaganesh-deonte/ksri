@@ -66,11 +66,11 @@ newsRoute.post("/news", async (req: Request, res: Response) => {
 // DELETE News
 newsRoute.delete("/news", async (req: Request, res: Response) => {
   try {
-    const { title, id } = req.body;
+    const { id } = req.body;
     await documentClient.delete({
       TableName: NEWS_TABLE,
       Key: {
-        PK: title,
+        PK: "ENTITYTYPE#NEWS",
         SK: id,
       },
     });

@@ -53,11 +53,11 @@ bookRoute.get("/library/books", async (req: Request, res: Response) => {
 
     const params = {
       TableName: "ksri-prod_admin_master_table",
-      KeyConditionExpression: "entityType = :entityType",
+      KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#LIBRARY#BOOK",
       },
-      IndexName: "entityTypeSK",
+      // IndexName: "entityTypeSK",
       ScanIndexForward: false,
       Limit: limit,
       ExclusiveStartKey: lastEvaluatedKey,
@@ -82,17 +82,14 @@ bookRoute.get("/library/books", async (req: Request, res: Response) => {
 // DELETE a book
 bookRoute.delete("/library/books", async (req: Request, res: Response) => {
   try {
-    const { id, title } = req.body;
+    const { id } = req.body;
     if (!id) {
       return res.status(400).json({ error: "Book ID is required" });
-    }
-    if (!title) {
-      return res.status(400).json({ error: "Book title is required" });
     }
     const params = {
       TableName: "ksri-prod_admin_master_table",
       Key: {
-        PK: title,
+        PK: "ENTITYTYPE#LIBRARY#BOOK",
         SK: id,
       },
     };

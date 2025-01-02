@@ -21,8 +21,8 @@ chairRouter.get("/chair", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: CHAIR_TABLE,
-      IndexName: "entityTypeSK",
-      KeyConditionExpression: "entityType = :entityType",
+      // IndexName: "entityTypeSK",
+      KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#CHAIR",
       },
@@ -57,11 +57,11 @@ chairRouter.post("/chair", async (req: Request, res: Response) => {
 // DELETE Chair
 chairRouter.delete("/chair", async (req: Request, res: Response) => {
   try {
-    const { name, id } = req.body;
+    const { id } = req.body;
     const params = {
       TableName: CHAIR_TABLE,
       Key: {
-        PK: name,
+        PK: "ENTITYTYPE#CHAIR",
         SK: id,
       },
     };

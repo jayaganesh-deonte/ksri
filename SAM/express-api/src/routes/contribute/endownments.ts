@@ -50,11 +50,11 @@ endownmentRoute.get(
     try {
       const params = {
         TableName: "ksri-prod_admin_master_table",
-        KeyConditionExpression: "entityType = :entityType",
+        KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#ENDOWNMENT",
         },
-        IndexName: "entityTypeSK",
+        // IndexName: "entityTypeSK",
         ScanIndexForward: false,
       };
 
@@ -77,12 +77,11 @@ endownmentRoute.delete(
   async (req: Request, res: Response) => {
     try {
       const id = req.body.id;
-      const title = req.body.title;
 
       const params = {
         TableName: "ksri-prod_admin_master_table",
         Key: {
-          PK: title,
+          PK: "ENTITYTYPE#ENDOWNMENT",
           SK: id,
         },
       };

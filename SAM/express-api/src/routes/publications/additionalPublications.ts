@@ -61,8 +61,8 @@ additionalPublicationsRoute.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: ADDITIONAL_PUBLICATIONS_TABLE,
-        IndexName: "entityTypeSK",
-        KeyConditionExpression: "entityType = :entityType",
+        // IndexName: "entityTypeSK",
+        KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#ADDITIONALPUBLICATION",
         },
@@ -88,11 +88,11 @@ additionalPublicationsRoute.delete(
   "/publications/additionalPublications",
   async (req: Request, res: Response) => {
     try {
-      const { id, name } = req.body;
+      const { id } = req.body;
       const params = {
         TableName: ADDITIONAL_PUBLICATIONS_TABLE,
         Key: {
-          PK: name,
+          PK: "ENTITYTYPE#ADDITIONALPUBLICATION",
           SK: id,
         },
       };

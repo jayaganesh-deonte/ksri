@@ -20,10 +20,10 @@ homeDialogRouter.get("/homedialog", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: HOMEDIALOG_TABLE,
-      IndexName: "entityTypeSK",
-      KeyConditionExpression: "entityType = :sk",
+      // IndexName: "entityTypeSK",
+      KeyConditionExpression: "PK = :PK",
       ExpressionAttributeValues: {
-        ":sk": "ENTITYTYPE#HOMEDIALOG",
+        ":PK": "ENTITYTYPE#HOMEDIALOG",
       },
       //   id is lexagraphically sorted so sort it from old to new
       ScanIndexForward: true,
@@ -63,7 +63,7 @@ homeDialogRouter.delete("/homedialog", async (req: Request, res: Response) => {
     const params = {
       TableName: HOMEDIALOG_TABLE,
       Key: {
-        PK: id,
+        PK: "ENTITYTYPE#HOMEDIALOG",
         SK: id,
       },
     };
@@ -83,11 +83,11 @@ homeDialogRouter.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: HOMEDIALOG_TABLE,
-        IndexName: "entityTypeSK",
+        // IndexName: "entityTypeSK",
 
-        KeyConditionExpression: "entityType = :sk",
+        KeyConditionExpression: "PK = :PK",
         ExpressionAttributeValues: {
-          ":sk": "ENTITYTYPE#HOMEDIALOG",
+          ":PK": "ENTITYTYPE#HOMEDIALOG",
         },
         //   id is lexagraphically sorted so sort it from old to new
         ScanIndexForward: false,

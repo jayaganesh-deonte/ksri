@@ -59,9 +59,9 @@ publicationBookRoute.get(
         // query table using GSI
         result = await documentClient.query({
           TableName: BOOKS_TABLE,
-          IndexName: "entityTypeSK",
+          // IndexName: "entityTypeSK",
           ScanIndexForward: false,
-          KeyConditionExpression: "entityType = :sk",
+          KeyConditionExpression: "PK = :sk",
           ExpressionAttributeValues: {
             ":sk": "ENTITYTYPE#BOOK",
           },
@@ -70,12 +70,13 @@ publicationBookRoute.get(
         // query GSI entityTypePK entityType => ENTITYTYPE#BOOK and PK = publication
         result = await documentClient.query({
           TableName: BOOKS_TABLE,
-          IndexName: "entityTypePK", //TODO
-          KeyConditionExpression: "entityType = :sk AND PK = :pk",
+          KeyConditionExpression: "PK = :pk",
           ExpressionAttributeValues: {
-            ":sk": "ENTITYTYPE#BOOK",
-            ":pk": publication,
+            ":pk": "ENTITYTYPE#BOOK",
+            ":publication": publication,
           },
+          // filter
+          FilterExpression: "publication = :publication",
         });
       }
 
@@ -98,12 +99,12 @@ publicationBookRoute.delete(
   "/publications/books",
   async (req: Request, res: Response) => {
     try {
-      const { id, publication } = req.body;
+      const { id } = req.body;
 
       const params = {
         TableName: BOOKS_TABLE,
         Key: {
-          PK: publication,
+          PK: "ENTITYTYPE#BOOK",
           SK: id,
         },
       };

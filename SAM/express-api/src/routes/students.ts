@@ -66,9 +66,9 @@ studentRoute.get("/students", async (req: Request, res: Response) => {
 
     const result = await documentClient.query({
       TableName: STUDENTS_TABLE,
-      IndexName: "entityTypePK",
+      // IndexName: "entityTypePK",
       ScanIndexForward: false,
-      KeyConditionExpression: "entityType = :sk",
+      KeyConditionExpression: "PK = :sk",
       FilterExpression:
         filterExpression.length > 0
           ? filterExpression.join(" AND ")
@@ -123,13 +123,12 @@ studentRoute.put("/students", async (req: Request, res: Response) => {
 studentRoute.delete("/students", async (req: Request, res: Response) => {
   try {
     const id = req.body.id;
-    const name = req.body.name;
 
     // Delete item from DynamoDB
     await documentClient.delete({
       TableName: STUDENTS_TABLE,
       Key: {
-        PK: name,
+        PK: "ENTITYTYPE#STUDENT",
         SK: id,
       },
     });

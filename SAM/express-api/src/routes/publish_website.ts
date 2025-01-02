@@ -123,11 +123,11 @@ deployRoute.get("/deploy/history", async (req: Request, res: Response) => {
   try {
     const params = {
       TableName: PROJECTS_TABLE,
-      KeyConditionExpression: "entityType = :entityType",
+      KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#DEPLOYMENT_HISTORY",
       },
-      IndexName: "entityTypeSK",
+      // IndexName: "entityTypeSK",
       ScanIndexForward: false,
     };
 

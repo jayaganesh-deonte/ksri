@@ -20,10 +20,10 @@ marqueeTextsRouter.get("/marqueetexts", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: MARQUEETEXTS_TABLE,
-      IndexName: "entityTypeSK",
-      KeyConditionExpression: "entityType = :sk",
+      // IndexName: "entityTypeSK",
+      KeyConditionExpression: "PK = :PK",
       ExpressionAttributeValues: {
-        ":sk": "ENTITYTYPE#MARQUEETEXT",
+        ":PK": "ENTITYTYPE#MARQUEETEXT",
       },
       //   id is lexagraphically sorted so sort it from old to new
       ScanIndexForward: true,
@@ -62,11 +62,11 @@ marqueeTextsRouter.delete(
   "/marqueetexts",
   async (req: Request, res: Response) => {
     try {
-      const { name, id } = req.body;
+      const { id } = req.body;
       const params = {
         TableName: MARQUEETEXTS_TABLE,
         Key: {
-          PK: name,
+          PK: "ENTITYTYPE#MARQUEETEXT",
           SK: id,
         },
       };

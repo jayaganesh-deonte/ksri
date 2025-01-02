@@ -19,9 +19,9 @@ governingBodyMembersPastRouter.get(
   async (req: Request, res: Response) => {
     const params = {
       TableName: TABLE_NAME,
-      IndexName: "entityTypeSK",
+      // IndexName: "entityTypeSK",
       ScanIndexForward: false,
-      KeyConditionExpression: "entityType = :entityType",
+      KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#GOVERNINGBODYMEMBERPAST",
       },
@@ -73,12 +73,12 @@ governingBodyMembersPastRouter.post(
 governingBodyMembersPastRouter.delete(
   "/governing-body-members-past",
   async (req: Request, res: Response) => {
-    const { id, name } = req.body;
+    const { id } = req.body;
 
     const params = {
       TableName: TABLE_NAME,
       Key: {
-        PK: name,
+        PK: "ENTITYTYPE#GOVERNINGBODYMEMBERPAST",
         SK: id,
       },
     };

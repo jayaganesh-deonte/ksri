@@ -75,12 +75,12 @@ traditionalScholarRoute.get(
       // Prepare query parameters
       const queryParams = {
         TableName: TRADITIONAL_SCHOLARS_TABLE,
-        KeyConditionExpression: "entityType = :entityType",
+        KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#TRADITIONAL_SCHOLAR",
         },
         // use GSI entityTypeSK
-        IndexName: "entityTypeSK",
+        // IndexName: "entityTypeSK",
         ScanIndexForward: false,
       };
 
@@ -115,13 +115,13 @@ traditionalScholarRoute.delete(
       const id = req.body.id;
 
       // Create a URL-friendly version of the name
-      const pk = req.body.name;
+      // const pk = req.body.name;
 
       // Prepare delete command
       const command = new DeleteCommand({
         TableName: TRADITIONAL_SCHOLARS_TABLE,
         Key: {
-          PK: pk,
+          PK: "ENTITYTYPE#TRADITIONAL_SCHOLAR",
           SK: id,
         },
         ConditionExpression: "attribute_exists(PK)", // Ensure scholar exists
@@ -131,7 +131,7 @@ traditionalScholarRoute.delete(
         await documentClient.send(command);
         res.status(200).json({
           message: "Traditional scholar deleted successfully",
-          name: pk,
+          // name: id,
         });
       } catch (err) {
         if (

@@ -49,11 +49,11 @@ bankInfoRoute.get(
     try {
       const params = {
         TableName: TABLE_NAME,
-        KeyConditionExpression: "entityType = :entityType",
+        KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#BANKINFO",
         },
-        IndexName: "entityTypeSK",
+        // IndexName: "entityTypeSK",
         ScanIndexForward: false,
       };
 
@@ -75,17 +75,14 @@ bankInfoRoute.delete(
   "/contribute/bankInfo",
   async (req: Request, res: Response) => {
     try {
-      const { id, name } = req.body;
+      const { id } = req.body;
       if (!id) {
         return res.status(400).json({ error: "Bank info ID is required" });
-      }
-      if (!name) {
-        return res.status(400).json({ error: "Bank info name is required" });
       }
       const params = {
         TableName: TABLE_NAME,
         Key: {
-          PK: name,
+          PK: "ENTITYTYPE#BANKINFO",
           SK: id,
         },
       };

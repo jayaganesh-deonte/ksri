@@ -61,13 +61,13 @@ projectRoute.get("/projects", async (req: Request, res: Response) => {
     const { status } = req.query;
 
     // Prepare query parameters
-    // if status is present in endpoint, query GSI entityTypePK entityType => ENTITYTYPE#PROJECT and PK = status
+    // if status is present in endpoint, query GSI PKStatus PK => ENTITYTYPE#PROJECT and projectStatus = status
     let result: QueryCommandOutput;
     if (status) {
       result = await documentClient.query({
         TableName: PROJECTS_TABLE,
-        IndexName: "entityTypePK",
-        KeyConditionExpression: "entityType = :sk AND PK = :status",
+        IndexName: "PkProjectStatus",
+        KeyConditionExpression: "PK = :sk AND PK = :status",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#PROJECT",
           ":status": status,
@@ -78,8 +78,8 @@ projectRoute.get("/projects", async (req: Request, res: Response) => {
     } else {
       result = await documentClient.query({
         TableName: PROJECTS_TABLE,
-        IndexName: "entityTypeSK",
-        KeyConditionExpression: "entityType = :sk",
+        // IndexName: "entityTypeSK",
+        KeyConditionExpression: "PK = :sk",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#PROJECT",
         },
@@ -104,14 +104,14 @@ projectRoute.get("/projects", async (req: Request, res: Response) => {
 // DELETE Project
 projectRoute.delete("/projects", async (req: Request, res: Response) => {
   try {
-    const { id, status } = req.body;
+    const { id } = req.body;
 
     // Delete item from DynamoDB
     try {
       const deleteQuery = {
         TableName: PROJECTS_TABLE,
         Key: {
-          PK: status,
+          PK: "ENTITYTYPE#PROJECT",
           SK: id,
         },
         ConditionExpression: "attribute_exists(PK)", // Ensure project exists

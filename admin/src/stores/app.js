@@ -40,9 +40,9 @@ export const useAppStore = defineStore("app", {
       this.user = user;
     },
     setUserRole(groups) {
-      if (groups.includes("ksri_super_admin_group")) {
+      if (groups.includes("ksri-prod_super_admin_group")) {
         this.isSuperAdmin = true;
-      } else if (groups.includes("ksri_admin_group")) {
+      } else if (groups.includes("ksri-prod_admin_group")) {
         this.isAdmin = true;
       } else {
         this.isReadOnlyUser = true;
@@ -60,6 +60,13 @@ export const useAppStore = defineStore("app", {
       console.log(response);
       if (response.status == 200) {
         this.deploymentStatus = response.data;
+        // if deploymentStatus contains status key
+        if (!Object.keys(this.deploymentStatus).includes("status")) {
+          this.isDeploymentPending = false;
+          this.isDeploymentInProgress = false;
+          return;
+        }
+
         if (this.deploymentStatus.status == "IN_PROGRESS") {
           this.isDeploymentInProgress = true;
         } else {

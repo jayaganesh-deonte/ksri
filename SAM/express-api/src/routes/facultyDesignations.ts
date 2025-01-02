@@ -36,8 +36,8 @@ facultyDesignationRouter.get(
       // query table using GSI and filter based on designationType if provided
       const params: any = {
         TableName: FACULTY_DESIGNATION_TABLE,
-        IndexName: "entityTypeSK",
-        KeyConditionExpression: "entityType = :entityType",
+        // IndexName: "entityTypeSK",
+        KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#FACULTYDESIGNATION",
         },
@@ -96,7 +96,7 @@ facultyDesignationRouter.delete(
       const params = {
         TableName: FACULTY_DESIGNATION_TABLE,
         Key: {
-          PK: id,
+          PK: "ENTITYTYPE#FACULTYDESIGNATION",
           SK: id,
         },
       };

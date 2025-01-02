@@ -46,14 +46,14 @@ publicationJournalRoute.delete(
   "/publications/journals",
   async (req: Request, res: Response) => {
     try {
-      const { id, publication } = req.body;
+      const { id } = req.body;
       if (!id) {
         return res.status(400).json({ error: "Journal ID is required" });
       }
       const params = {
         TableName: JOURNAL_TABLE_NAME,
         Key: {
-          PK: publication,
+          PK: "ENTITYTYPE#PUBLICATION#JOURNAL",
           SK: id,
         },
       };
@@ -78,9 +78,9 @@ publicationJournalRoute.get(
         // query table using GSI
         result = await documentClient.query({
           TableName: JOURNAL_TABLE_NAME,
-          IndexName: "entityTypeSK",
+          // IndexName: "entityTypeSK",
           ScanIndexForward: false,
-          KeyConditionExpression: "entityType = :sk",
+          KeyConditionExpression: "PK = :sk",
           ExpressionAttributeValues: {
             ":sk": "ENTITYTYPE#PUBLICATION#JOURNAL",
           },
@@ -89,12 +89,14 @@ publicationJournalRoute.get(
         // query GSI entityTypePK entityType => ENTITYTYPE#BOOK and PK = publication
         result = await documentClient.query({
           TableName: JOURNAL_TABLE_NAME,
-          IndexName: "entityTypePK",
-          KeyConditionExpression: "entityType = :sk AND PK = :pk",
+          // IndexName: "entityTypePK",
+          KeyConditionExpression: "PK = :pk",
           ExpressionAttributeValues: {
-            ":sk": "ENTITYTYPE#PUBLICATION#JOURNAL",
-            ":pk": publication,
+            ":pk": "ENTITYTYPE#PUBLICATION#JOURNAL",
+            ":publication": publication,
           },
+          // filter
+          FilterExpression: "publication = :publication",
         });
       }
 

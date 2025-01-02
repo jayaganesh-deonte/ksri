@@ -20,8 +20,8 @@ dainandiniRouter.get("/dainandini", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: DAINANDINI_TABLE,
-      IndexName: "entityTypeSK",
-      KeyConditionExpression: "entityType = :entityType",
+      // IndexName: "entityTypeSK",
+      KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#DAINANDINI",
       },
@@ -61,7 +61,7 @@ dainandiniRouter.delete("/dainandini", async (req: Request, res: Response) => {
     const params = {
       TableName: DAINANDINI_TABLE,
       Key: {
-        PK: id,
+        PK: "ENTITYTYPE#DAINANDINI",
         SK: id,
       },
     };
@@ -81,8 +81,8 @@ dainandiniRouter.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: DAINANDINI_TABLE,
-        IndexName: "entityTypeSK",
-        KeyConditionExpression: "entityType = :entityType",
+        // IndexName: "entityTypeSK",
+        KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#DAINANDINI",
         },

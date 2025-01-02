@@ -34,8 +34,8 @@ facultyRouter.get("/faculty", async (req: Request, res: Response) => {
     // query table using GSI
     const params: any = {
       TableName: FACULTY_TABLE,
-      IndexName: "entityTypeSK",
-      KeyConditionExpression: "entityType = :entityType",
+      // IndexName: "entityTypeSK",
+      KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#FACULTY",
       },
@@ -90,11 +90,11 @@ facultyRouter.post("/faculty", async (req: Request, res: Response) => {
 //  DELETE Faculty
 facultyRouter.delete("/faculty", async (req: Request, res: Response) => {
   try {
-    const { name, id } = req.body;
+    const { id } = req.body;
     const params = {
       TableName: FACULTY_TABLE,
       Key: {
-        PK: name,
+        PK: "ENTITYTYPE#FACULTY",
         SK: id,
       },
     };

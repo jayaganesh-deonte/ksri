@@ -51,11 +51,11 @@ foreignScholarRoute.get(
     try {
       const params = {
         TableName: TABLE_NAME,
-        KeyConditionExpression: "entityType = :entityType",
+        KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#FOREIGN_SCHOLAR",
         },
-        IndexName: "entityTypeSK",
+        // IndexName: "entityTypeSK",
         ScanIndexForward: false,
       };
 
@@ -78,12 +78,12 @@ foreignScholarRoute.delete(
   async (req: Request, res: Response) => {
     try {
       // id from body
-      const { name, id } = req.body;
+      const { id } = req.body;
 
       await documentClient.delete({
         TableName: TABLE_NAME,
         Key: {
-          PK: name,
+          PK: "ENTITYTYPE#FOREIGN_SCHOLAR",
           SK: id,
         },
       });

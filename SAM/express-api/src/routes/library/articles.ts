@@ -58,8 +58,8 @@ articleRoute.get("/library/articles", async (req: Request, res: Response) => {
     // query table using GSI
     const result = await documentClient.query({
       TableName: ARTICLES_TABLE,
-      IndexName: "entityTypeSK",
-      KeyConditionExpression: "entityType = :sk",
+      // IndexName: "entityTypeSK",
+      KeyConditionExpression: "PK = :sk",
       ExpressionAttributeValues: {
         ":sk": "ENTITYTYPE#ARTICLE",
       },
@@ -91,16 +91,16 @@ articleRoute.delete(
   "/library/articles",
   async (req: Request, res: Response) => {
     try {
-      const { id, title } = req.body;
+      const { id } = req.body;
 
-      if (!id || !title) {
+      if (!id) {
         return res.status(400).json({ error: "Article ID is required" });
       }
 
       const params = {
         TableName: ARTICLES_TABLE,
         Key: {
-          PK: title,
+          PK: "ENTITYTYPE#ARTICLE",
           SK: id,
         },
       };
