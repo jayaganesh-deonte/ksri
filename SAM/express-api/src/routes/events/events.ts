@@ -11,7 +11,8 @@ import {
 
 export const eventRoute = express.Router();
 
-const EVENTS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const EVENTS_TABLE =
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // CREATE Event
 eventRoute.post("/events", async (req: Request, res: Response) => {

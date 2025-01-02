@@ -12,7 +12,8 @@ import {
 
 export const articleRoute = express.Router();
 
-const ARTICLES_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const ARTICLES_TABLE =
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // CREATE Article
 articleRoute.post("/library/articles", async (req: Request, res: Response) => {

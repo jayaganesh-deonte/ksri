@@ -13,7 +13,7 @@ import {
 export const publicationsCommitteeRouter = express.Router();
 
 const COMMITTEE_MEMBERS_TABLE =
-  process.env.DDB_TABLE_NAME || "ksri_admin_master_table";
+  process.env.DDB_TABLE_NAME || "ksri-prod_admin_master_table";
 
 // GET CommitteeMembers
 publicationsCommitteeRouter.get(

@@ -13,7 +13,8 @@ import { QueryCommandOutput } from "@aws-sdk/client-dynamodb";
 
 export const publicationBookRoute = express.Router();
 
-const BOOKS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const BOOKS_TABLE =
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // CREATE Book
 publicationBookRoute.post(

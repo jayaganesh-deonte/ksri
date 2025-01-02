@@ -11,7 +11,8 @@ import { QueryCommandOutput } from "@aws-sdk/lib-dynamodb";
 
 const projectRoute = Router();
 
-const PROJECTS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const PROJECTS_TABLE =
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // CREATE Project
 projectRoute.post("/projects", async (req: Request, res: Response) => {

@@ -12,7 +12,8 @@ import {
 
 export const chairRouter = express.Router();
 
-const CHAIR_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const CHAIR_TABLE =
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // GET Chair
 chairRouter.get("/chair", async (req: Request, res: Response) => {

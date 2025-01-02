@@ -13,7 +13,8 @@ import {
 
 export const journalRoute = express.Router();
 
-const JOURNALS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const JOURNALS_TABLE =
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 //  CREATE Journal
 journalRoute.post("/library/journals", async (req: Request, res: Response) => {
@@ -52,7 +53,7 @@ journalRoute.get("/library/journals", async (req: Request, res: Response) => {
       : undefined;
 
     const params = {
-      TableName: "ksri_admin_master_table",
+      TableName: "ksri-prod_admin_master_table",
       KeyConditionExpression: "entityType = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#JOURNAL",
@@ -89,7 +90,7 @@ journalRoute.delete(
         return res.status(400).json({ error: "Journal ID is required" });
       }
       const params = {
-        TableName: "ksri_admin_master_table",
+        TableName: "ksri-prod_admin_master_table",
         Key: {
           PK: JournalName,
           SK: id,

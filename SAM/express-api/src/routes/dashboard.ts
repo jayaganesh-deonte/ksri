@@ -3,7 +3,8 @@ import { documentClient } from "../db_services/dynamodbClient";
 
 export const dashboardRoute = express.Router();
 
-const DASHBOARD_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const DASHBOARD_TABLE =
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // GET Dashboard
 dashboardRoute.get("/dashboard", async (req: Request, res: Response) => {

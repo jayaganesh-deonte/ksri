@@ -11,7 +11,7 @@ import {
 
 export const newsRoute = express.Router();
 
-const NEWS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const NEWS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // GET News
 newsRoute.get("/news", async (req: Request, res: Response) => {

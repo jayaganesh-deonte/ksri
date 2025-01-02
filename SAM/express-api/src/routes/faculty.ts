@@ -12,7 +12,8 @@ import {
 
 export const facultyRouter = express.Router();
 
-const FACULTY_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const FACULTY_TABLE =
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // GET Faculty
 facultyRouter.get("/faculty", async (req: Request, res: Response) => {

@@ -13,7 +13,8 @@ import { QueryCommandOutput } from "@aws-sdk/lib-dynamodb";
 
 export const galleryRoute = express.Router();
 
-const GALLERY_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const GALLERY_TABLE =
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // GET Gallery Images
 galleryRoute.get("/gallery", async (req: Request, res: Response) => {

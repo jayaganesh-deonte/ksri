@@ -12,7 +12,7 @@ import {
 export const dainandiniRouter = express.Router();
 
 const DAINANDINI_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // GET Dainandini
 dainandiniRouter.get("/dainandini", async (req: Request, res: Response) => {

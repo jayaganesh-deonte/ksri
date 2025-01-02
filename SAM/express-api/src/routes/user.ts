@@ -20,7 +20,8 @@ const USER_POOL_ID = process.env.USER_POOL_ID ?? "ap-south-1_VHRb4I0Ig";
 // GET all users
 export const userRoute = Router();
 
-const USERS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const USERS_TABLE =
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // GET all users
 userRoute.get("/users", async (req: Request, res: Response) => {

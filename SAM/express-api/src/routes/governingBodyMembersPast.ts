@@ -11,7 +11,7 @@ import {
 
 export const governingBodyMembersPastRouter = express.Router();
 
-const TABLE_NAME = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const TABLE_NAME = process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // GET PAST GoverningBodyMembers
 governingBodyMembersPastRouter.get(

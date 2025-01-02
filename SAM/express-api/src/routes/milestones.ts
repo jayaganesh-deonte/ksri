@@ -13,7 +13,7 @@ export const milestonesRoute = express.Router();
 milestonesRoute.get("/milestones", async (req: Request, res: Response) => {
   try {
     const params = {
-      TableName: "ksri_admin_master_table",
+      TableName: "ksri-prod_admin_master_table",
       KeyConditionExpression: "entityType = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#MILESTONE",
@@ -46,7 +46,7 @@ milestonesRoute.post(
       const dynamoDBItem = toDynamoDB(milestone);
 
       await documentClient.put({
-        TableName: "ksri_admin_master_table",
+        TableName: "ksri-prod_admin_master_table",
         Item: dynamoDBItem,
       });
       res.status(200).json(milestone);
@@ -72,7 +72,7 @@ milestonesRoute.delete(
       const sk = `${year}`;
 
       await documentClient.delete({
-        TableName: "ksri_admin_master_table",
+        TableName: "ksri-prod_admin_master_table",
         Key: {
           PK: pk,
           SK: sk,

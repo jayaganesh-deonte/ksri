@@ -1176,7 +1176,7 @@ const main = async () => {
   // await insertEvents();
   // await insertLibraryArticles();
   // await insertLibraryBooks();
-  await insertLibraryJournals();
+  // await insertLibraryJournals();
   // await insertOutOfStockPubBooks("outofstock", "No");
   // await insertOutOfStockPubBooks("forsale", "Yes");
   // await insertsamskritaacademypublicationsBooks();

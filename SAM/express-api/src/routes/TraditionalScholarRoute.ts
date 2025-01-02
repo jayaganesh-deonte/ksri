@@ -17,7 +17,7 @@ import {
 
 const traditionalScholarRoute = Router();
 
-const TRADITIONAL_SCHOLARS_TABLE = "ksri_admin_master_table";
+const TRADITIONAL_SCHOLARS_TABLE = "ksri-prod_admin_master_table";
 
 // CREATE Traditional Scholar
 traditionalScholarRoute.post(

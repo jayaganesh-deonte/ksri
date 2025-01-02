@@ -10,7 +10,8 @@ import {
 
 export const studentRoute = Router();
 
-const STUDENTS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const STUDENTS_TABLE =
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // CREATE Student
 studentRoute.post("/students", async (req: Request, res: Response) => {

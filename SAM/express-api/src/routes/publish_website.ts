@@ -8,7 +8,8 @@ import {
 
 export const deployRoute = Router();
 
-const PROJECTS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+const PROJECTS_TABLE =
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // Deploy Website
 deployRoute.post("/deploy", async (req: Request, res: Response) => {

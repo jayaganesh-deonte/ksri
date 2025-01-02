@@ -13,7 +13,7 @@ import {
 export const additionalPublicationsRoute = express.Router();
 
 const ADDITIONAL_PUBLICATIONS_TABLE =
-  process.env.DDB_TABLE_NAME || "ksri_admin_master_table";
+  process.env.DDB_TABLE_NAME || "ksri-prod_admin_master_table";
 
 // CREATE Additional Publication
 additionalPublicationsRoute.post(

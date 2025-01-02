@@ -12,7 +12,7 @@ import {
 export const marqueeTextsRouter = express.Router();
 
 const MARQUEETEXTS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // GET Marquee Texts
 marqueeTextsRouter.get("/marqueetexts", async (req: Request, res: Response) => {

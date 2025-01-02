@@ -12,7 +12,7 @@ import {
 export const governingBodyMembersRoute = express.Router();
 
 const GOVERNING_BODY_MEMBERS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // CREATE GoverningBodyMember
 governingBodyMembersRoute.post(

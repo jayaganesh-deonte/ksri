@@ -13,7 +13,7 @@ import {
 export const facultyDesignationRouter = express.Router();
 
 const FACULTY_DESIGNATION_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // GET Faculty Designations
 facultyDesignationRouter.get(

@@ -16,7 +16,7 @@ import { QueryCommandOutput } from "@aws-sdk/client-dynamodb";
 export const publicationJournalRoute = express.Router();
 
 const JOURNAL_TABLE_NAME =
-  process.env.DDB_TABLE_NAME ?? "ksri_admin_master_table";
+  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // CREATE Journal
 publicationJournalRoute.post(
