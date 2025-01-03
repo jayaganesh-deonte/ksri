@@ -34,6 +34,11 @@ import {
 } from "../models/publications/book";
 
 import {
+  toDynamoDB as pubJournalToDynamoDB,
+  validateJournal as validatePublicationJournal,
+} from "../models/publications/journals";
+
+import {
   toDynamoDB as pubCommitteeToDynamoDB,
   validateCommitteeMember as validatePublicationCommittee,
 } from "../models/publications/committee";
@@ -302,6 +307,102 @@ const insertPublicationBooks = async () => {
   const booksDynamoDB = booksWithIdFiltered.map((book) =>
     pubBookToDynamoDB(book)
   );
+
+  // insert books into dynamoDB
+  await batchInsert(booksDynamoDB);
+};
+
+const insertPublicationJournals = async () => {
+  // load journals
+  const journals = require("./content/publications/journals.json");
+  // add id to journals
+
+  // {
+  //   "author": " ",
+  //   "available": "Yes",
+  //   "copies": 10,
+  //   "details": "<p>“This issue of The Journal; of Oriental Research is that it commemorates the birth centenary of Prof. V. Raghavan, a doyen of Indological studies. The corpus of the journal is divided into two parts. In the first part homage is paid to Professor Raghavan by four reputed scholars. In the second we find twenty articles written by different scholars on various aspects of Sanskrit learning. There are also a number of articles dealing with Sanskrit literature and literary criticism.  The articles, excellent in nature and diverse in subject matter, are undoubtedly the best flowers of the mental gardens of the scholars by which they have paid their homage to the immortal soul of Professor Raghavan”.\\nSitanath Acharya, Bulletin of the Ramakrishna Mission, Institute of Culture, 2011</p>",
+  //   "entityType": "ENTITYTYPE#PUBLICATION#JOURNAL",
+  //   "imageUrls": [
+  //     {
+  //       "S": "upload/the-journal-of-oriental-research-madras-2009-10.jpg"
+  //     }
+  //   ],
+  //   "keywords": " ",
+  //   "price": "₹ 300",
+  //   "publication": "KSRI",
+  //   "subtitle": "Dr. V. Raghavan Birth Centenary Commemoration Volume | The Kuppuswami Sastri Research Institute, Madras | 2000",
+  //   "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS (Vols. LXXI - LXXXII 2009-2010)",
+  //   "yearOfPublication": 2010
+  // }
+
+  // update imageUrls to be an array of strings remove S
+
+  const journalsWithId = journals.map((journal: any) => ({
+    ...journal,
+    id: ulid(),
+    itemPublishStatus: "PUBLISHED",
+    metadata: generateMetaData(),
+    imageUrls: journal.imageUrls.map((image: any) => image.S),
+  }));
+
+  // validate journals
+  journalsWithId.forEach((journal) => {
+    if (!validatePublicationJournal(journal)) {
+      return console.log("Invalid journal", journal);
+    }
+  });
+
+  // convert journals to dynamoDB format
+  const journalsDynamoDB = journalsWithId.map((journal) =>
+    pubJournalToDynamoDB(journal)
+  );
+
+  // insert journals into dynamoDB
+  await batchInsert(journalsDynamoDB);
+};
+
+const insertAllPublicationBooks = async () => {
+  //   {
+  //     "author": "",
+  //     "available": "Yes",
+  //     "copies": 10,
+  //     "details": "Muttoḷḷāyiram, the Tamil classic with translations into Sanskrit and English. Comprises of a collection of 108 choice verses found quoted at different places in the anthology entitled pura-t-tirattu. All these verses form eulogies on the rulers of the three ancient Tamil kingdoms of Pāndya, Cera, Cola in South India, suggestive of their qualities of love, philanthrophy and valour and have a distinct charm of their own. The book is provided with an informative Introduction, Notes and Glossary. It attempts to familiarise the norms and charms of early poetry to students of literature outside the land of Tamils.    “The transcomposition of Muttoḷḷāyiram is very ‘pleasing and instructive'. The language is handled causually, thus making it simple for the readers. It is hoped that this small but mammoth work will open up avenues of Tamil study to many people of the world.”\\nS.B.Darsana, Bulletin, The DCPRI  53.",
+  //     "entityType": "ENTITYTYPE#BOOK",
+  //     "imageUrls": [
+  //         {
+  //             "S": "https://d30y75l38k1y9.cloudfront.net/upload/navamuktatakam.jpg"
+  //         }
+  //     ],
+  //     "keywords": "",
+  //     "price": "₹ 85",
+  //     "publication": "KSRI",
+  //     "subtitle": "Trans composition into Sanskrit and English Verse from the Tamil Classic Muttoḷḷāyiram by A.V. Subramanian  |  The Kuppuswami Sastri Research Institute, Madras   |  1993  |  Pages: xxix + 121",
+  //     "title": "NAVAMUKTĀŚATAKAM",
+  //     "yearOfPublication": ""
+  // },
+  const books = require("./content/publications/allbooks.json");
+
+  // add id to books
+  const booksWithId = books.map((book: any) => ({
+    ...book,
+    id: ulid(),
+    itemPublishStatus: "PUBLISHED",
+    metadata: generateMetaData(),
+    imageUrls: book.imageUrls
+      ? book.imageUrls.map((image: any) => image.S)
+      : null,
+  }));
+
+  // validate books
+  booksWithId.forEach((book) => {
+    if (!validationPublicationBook(book)) {
+      return console.log("Invalid book", book);
+    }
+  });
+
+  // convert books to dynamoDB format
+  const booksDynamoDB = booksWithId.map((book) => pubBookToDynamoDB(book));
 
   // insert books into dynamoDB
   await batchInsert(booksDynamoDB);
@@ -1207,6 +1308,8 @@ const main = async () => {
   // await insertsamskritaacademypublicationsBooks();
   // await insertPublicationBooks();
   // await insertPublicationCommittee();
+  // await insertPublicationJournals();
+  // await insertAllPublicationBooks();
   // await insertForeignScholars();
   // await insertshastrachudamanis();
   // await insertvidyavaridhis();
