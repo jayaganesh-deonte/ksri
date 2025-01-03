@@ -8,6 +8,7 @@ import {
   fromDynamoDB,
   validateGoverningBodyMember,
 } from "../models/governingBodyMembers";
+import { QueryCommandInput } from "@aws-sdk/lib-dynamodb";
 
 export const governingBodyMembersRoute = express.Router();
 
@@ -48,16 +49,37 @@ governingBodyMembersRoute.get(
   "/governing-body-members",
   async (req: Request, res: Response) => {
     try {
-      // query table using GSI
-      const result = await documentClient.query({
-        TableName: process.env.DDB_TABLE_NAME,
-        // IndexName: "entityTypeSK",
-        ScanIndexForward: false,
-        KeyConditionExpression: "PK = :PK",
-        ExpressionAttributeValues: {
-          ":PK": "ENTITYTYPE#GOVERNINGBODYMEMBER",
-        },
-      });
+      const { designationStatus } = req.query;
+
+      let queryParams: QueryCommandInput;
+
+      if (!designationStatus) {
+        queryParams = {
+          TableName: process.env.DDB_TABLE_NAME,
+          KeyConditionExpression: "PK = :entityType",
+          ExpressionAttributeValues: {
+            ":entityType": "ENTITYTYPE#GOVERNINGBODYMEMBER",
+          },
+          // use GSI entityTypeSK
+          // IndexName: "entityTypeSK",
+          ScanIndexForward: false,
+        };
+      } else {
+        queryParams = {
+          TableName: process.env.DDB_TABLE_NAME,
+          KeyConditionExpression: "PK = :entityType",
+          ExpressionAttributeValues: {
+            ":entityType": "ENTITYTYPE#GOVERNINGBODYMEMBER",
+            ":designationStatus": designationStatus,
+          },
+          // use GSI entityTypeSK
+          IndexName: "entityTypeSK",
+          ScanIndexForward: false,
+          FilterExpression: "designationStatus = :designationStatus",
+        };
+      }
+
+      const result = await documentClient.query(queryParams);
 
       const governingBodyMembers = result.Items?.map((item) =>
         fromDynamoDB(item as GoverningBodyMemberDDB)

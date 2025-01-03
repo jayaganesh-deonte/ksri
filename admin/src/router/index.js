@@ -22,7 +22,7 @@ import students from "@/views/students.vue";
 
 import endowments from "@/views/endowments.vue";
 
-import governingBodyMembersPast from "@/views/governingBodyMembers/governingBodyMembersPast.vue";
+// import governingBodyMembersPast from "@/views/governingBodyMembers/governingBodyMembersPast.vue";
 import governingBodyMembersPresent from "@/views/governingBodyMembers/governingBodyMembersPresent.vue";
 
 import articles from "@/views/library/articles.vue";
@@ -114,12 +114,12 @@ const routes = [
     component: endowments,
     meta: { requiresAuth: true },
   },
-  {
-    path: "/governing-body-members-past",
-    name: "governingBodyMembersPast",
-    component: governingBodyMembersPast,
-    meta: { requiresAuth: true },
-  },
+  // {
+  //   path: "/governing-body-members-past",
+  //   name: "governingBodyMembersPast",
+  //   component: governingBodyMembersPast,
+  //   meta: { requiresAuth: true },
+  // },
   {
     path: "/governing-body-members",
     name: "governingBodyMembersPresent",

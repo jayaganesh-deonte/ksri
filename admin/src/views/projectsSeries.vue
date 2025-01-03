@@ -30,7 +30,7 @@ const projectFields = [
   {
     key: "description",
     label: "Description",
-    type: "text",
+    type: "textarea",
   },
 
   {

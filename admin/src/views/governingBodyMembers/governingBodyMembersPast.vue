@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <generic-crud
     entityName="Governing Body Members Past"
     :apiEndpoint="apiEndpoint"
@@ -62,4 +62,4 @@ const endowmentHeaders = [
   { title: "Designation", key: "designation" },
   { title: "Actions", key: "actions", sortable: false },
 ];
-</script>
+</script> -->

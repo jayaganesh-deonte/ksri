@@ -167,16 +167,17 @@ const allOptions = [
   {
     title: "Governing Body",
     icon: "mdi-account-group",
-    children: [
-      {
-        title: "Present",
-        path: "/governing-body-members",
-      },
-      {
-        title: "Past",
-        path: "/governing-body-members-past",
-      },
-    ],
+    path: "/governing-body-members",
+    // children: [
+    //   {
+    //     title: "Present",
+    //     path: "/governing-body-members",
+    //   },
+    //   {
+    //     title: "Past",
+    //     path: "/governing-body-members-past",
+    //   },
+    // ],
   },
 
   // Library

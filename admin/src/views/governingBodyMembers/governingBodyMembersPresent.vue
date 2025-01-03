@@ -47,13 +47,33 @@ const endowmentFields = [
     rules: [(v) => !!v || "Designation is required"],
     items: ["President", "Vice President", "Secretary", "Treasurer", "Members"],
   },
+  {
+    key: "designationStatus",
+    label: "Designation Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Designation Status is required"],
+    items: ["Present", "Past"],
+  },
+  {
+    key: "startYear",
+    label: "Start Year",
+    type: "text",
+  },
+  {
+    key: "endYear",
+    label: "End Year",
+    type: "text",
+  },
 ];
 
 const endowmentHeaders = [
-  { title: "ID", key: "orderid" },
+  { title: "Order ID", key: "orderid" },
   { title: "Name", key: "name" },
   { title: "Subtitle", key: "subtitle" },
   { title: "Designation", key: "designation" },
+  { title: "Designation Status", key: "designationStatus" },
+  { title: "Start Year", key: "startYear" },
+  { title: "End Year", key: "endYear" },
   { title: "Actions", key: "actions", sortable: false },
 ];
 </script>

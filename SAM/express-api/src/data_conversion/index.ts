@@ -843,6 +843,7 @@ const insertpresentGoverningBodyMembers = async () => {
       id: ulid(),
       itemPublishStatus: "PUBLISHED",
       metadata: generateMetaData(),
+      designationStatus: "Present",
     }));
 
     const membersWithDesignationDDB = membersWithDesignation.map(
@@ -868,13 +869,16 @@ const insertGoveringBodyPast = async () => {
     const membersWithDesignation = members.map((member: any) => ({
       ...member,
       designation,
+      designationStatus: "Past",
       id: ulid(),
       itemPublishStatus: "PUBLISHED",
       metadata: generateMetaData(),
+      startYear: member.startYear.toString(),
+      endYear: member.endYear.toString(),
     }));
 
     const membersWithDesignationDDB = membersWithDesignation.map(
-      (member: any) => governingBodyMembersPastToDynamoDB(member)
+      (member: any) => governingBodyMembersToDynamoDB(member)
     );
 
     // console.log(membersWithDesignationDDB);
@@ -1309,7 +1313,7 @@ const main = async () => {
   // await insertPublicationBooks();
   // await insertPublicationCommittee();
   // await insertPublicationJournals();
-  await insertAllPublicationBooks();
+  // await insertAllPublicationBooks();
   // await insertForeignScholars();
   // await insertshastrachudamanis();
   // await insertvidyavaridhis();

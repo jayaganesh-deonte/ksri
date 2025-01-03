@@ -15,6 +15,9 @@ export interface GoverningBodyMember {
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
   orderid: string;
+  designationStatus: "Present" | "Past";
+  startYear?: string;
+  endYear?: string;
 }
 
 // DynamoDB specific model
@@ -28,6 +31,9 @@ export interface GoverningBodyMemberDDB {
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
   orderid: string;
+  designationStatus: "Present" | "Past";
+  startYear?: string;
+  endYear?: string;
 }
 
 // Type guard to check if an object is a valid GoverningBodyMemberDDB
@@ -35,34 +41,42 @@ export function isGoverningBodyMemberDDB(
   item: any
 ): item is GoverningBodyMemberDDB {
   return (
-    typeof item === "object" &&
-    typeof item.PK === "string" &&
-    typeof item.SK === "string" &&
-    typeof item.entityType === "string" &&
-    typeof item.name === "string" &&
-    typeof item.subtitle === "string" &&
-    typeof item.designation === "string" &&
-    (item.metadata === undefined ||
-      (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
-    typeof item.itemPublishStatus === "string" &&
-    typeof item.orderid === "string"
+    (typeof item === "object" &&
+      typeof item.PK === "string" &&
+      typeof item.SK === "string" &&
+      typeof item.entityType === "string" &&
+      typeof item.name === "string" &&
+      typeof item.subtitle === "string" &&
+      typeof item.designation === "string" &&
+      (item.metadata === undefined ||
+        (typeof item.metadata === "object" &&
+          Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+      typeof item.itemPublishStatus === "string" &&
+      typeof item.orderid === "string" &&
+      item.designationStatus === "Present") ||
+    (item.designationStatus === "Past" &&
+      (typeof item.startYear === undefined ||
+        typeof item.startYear === "string") &&
+      (typeof item.endYear === undefined || typeof item.endYear === "string"))
   );
 }
 
 // Type guard to check if an object is a valid GoverningBodyMember
 export function isGoverningBodyMember(item: any): item is GoverningBodyMember {
   return (
-    typeof item === "object" &&
-    typeof item.id === "string" &&
-    typeof item.name === "string" &&
-    typeof item.subtitle === "string" &&
-    typeof item.designation === "string" &&
-    (item.metadata === undefined ||
-      (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
-    typeof item.itemPublishStatus === "string" &&
-    typeof item.orderid === "string"
+    (typeof item === "object" &&
+      typeof item.id === "string" &&
+      typeof item.name === "string" &&
+      typeof item.subtitle === "string" &&
+      typeof item.designation === "string" &&
+      (item.metadata === undefined ||
+        (typeof item.metadata === "object" &&
+          Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+      typeof item.itemPublishStatus === "string" &&
+      typeof item.orderid === "string" &&
+      item.designationStatus === "Present") ||
+    (item.designationStatus === "Past" &&
+      (typeof item.endYear === undefined || typeof item.endYear === "string"))
   );
 }
 
@@ -78,6 +92,9 @@ export function toDynamoDB(item: GoverningBodyMember): GoverningBodyMemberDDB {
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,
     orderid: item.orderid,
+    designationStatus: item.designationStatus,
+    startYear: item.startYear,
+    endYear: item.endYear,
   };
 }
 
@@ -93,6 +110,9 @@ export function fromDynamoDB(
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,
     orderid: item.orderid,
+    designationStatus: item.designationStatus,
+    startYear: item.startYear,
+    endYear: item.endYear,
   };
 }
 
@@ -101,14 +121,19 @@ export function validateGoverningBodyMember(
   item: GoverningBodyMember
 ): boolean {
   return (
-    typeof item.id === "string" &&
-    typeof item.name === "string" &&
-    typeof item.subtitle === "string" &&
-    typeof item.designation === "string" &&
-    (item.metadata === undefined ||
-      (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
-    typeof item.itemPublishStatus === "string" &&
-    typeof item.orderid === "string"
+    (typeof item.id === "string" &&
+      typeof item.name === "string" &&
+      typeof item.subtitle === "string" &&
+      typeof item.designation === "string" &&
+      (item.metadata === undefined ||
+        (typeof item.metadata === "object" &&
+          Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+      typeof item.itemPublishStatus === "string" &&
+      typeof item.orderid === "string" &&
+      item.designationStatus === "Present") ||
+    (item.designationStatus === "Past" &&
+      (typeof item.endYear === undefined || typeof item.endYear === "string") &&
+      (typeof item.startYear === undefined ||
+        typeof item.startYear === "string"))
   );
 }
