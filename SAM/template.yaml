@@ -505,6 +505,14 @@ Resources:
     Type: AWS::Amplify::App
     Properties:
       Name: !Sub ${Prefix}-admin-amplify
+      # redirect
+      CustomRules:
+        - Source: /<*>
+          Target: /index.html
+          Status: 404
+        - Source: </^[^.]+$|\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json)$)([^.]+$)/>
+          Target: /
+          Status: 200
   UiDistribution:
     Type: AWS::CloudFront::Distribution
     Properties:
