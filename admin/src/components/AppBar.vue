@@ -156,6 +156,10 @@ const allOptions = [
         title: "Chair",
         path: "/chair",
       },
+      {
+        title: "Advisory Board",
+        path: "/advisory-board",
+      },
     ],
   },
 

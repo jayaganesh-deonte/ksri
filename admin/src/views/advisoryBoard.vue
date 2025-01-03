@@ -1,6 +1,6 @@
 <template>
   <generic-crud
-    entityName="Publication Committee"
+    entityName="Advisory Board"
     :apiEndpoint="apiEndpoint"
     :entityFields="editorialFields"
     :headers="editorialHeaders"
@@ -9,8 +9,7 @@
 </template>
 
 <script setup>
-const apiEndpoint =
-  import.meta.env.VITE_API_URL + "/publications/committee-members";
+const apiEndpoint = import.meta.env.VITE_API_URL + "/advisory-board";
 
 const editorialFields = [
   {
@@ -21,11 +20,9 @@ const editorialFields = [
     // editDisabled: true,
   },
   {
-    key: "designation",
-    label: "Designation",
-    type: "auto-complete",
-    items: ["Research Committee", "Editorial Committee"],
-    rules: [(v) => !!v || "Designation is required"],
+    key: "subTitle",
+    label: "Sub Title",
+    type: "textarea",
   },
   {
     key: "itemPublishStatus",
@@ -46,7 +43,7 @@ const editorialFields = [
 const editorialHeaders = [
   { title: "Order Id", key: "orderId" },
   { title: "Name", key: "name" },
-  { title: "Designation", key: "designation" },
+  { title: "Sub Title", key: "subTitle" },
   { title: "Actions", key: "actions", sortable: false },
 ];
 </script>

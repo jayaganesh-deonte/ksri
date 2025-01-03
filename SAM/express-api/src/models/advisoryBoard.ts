@@ -6,34 +6,33 @@
 // }
 
 // create model
-export interface CommitteeMember {
+export interface AdvisoryBoard {
   id: string;
   name: string;
-  designation: "Research Committee" | "Editorial Committee";
+  subTitle: string;
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
   orderId: string;
 }
 
-export interface CommitteeMemberDDB {
+export interface AdvisoryMembetDDB {
   PK: string;
   SK: string;
   entityType: string;
   id: string;
   name: string;
-  designation: "Research Committee" | "Editorial Committee";
+  subTitle: string;
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
   orderId: string;
 }
 
 // validate the committee member
-export function validateCommitteeMember(item: CommitteeMember): boolean {
+export function validateCommitteeMember(item: AdvisoryBoard): boolean {
   return (
     typeof item.id === "string" &&
     typeof item.name === "string" &&
-    (item.designation === "Research Committee" ||
-      item.designation === "Editorial Committee") &&
+    typeof item.subTitle == "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&
@@ -43,14 +42,14 @@ export function validateCommitteeMember(item: CommitteeMember): boolean {
 }
 
 // to Dbb
-export function toDynamoDB(item: CommitteeMember): CommitteeMemberDDB {
+export function toDynamoDB(item: AdvisoryBoard): AdvisoryMembetDDB {
   return {
-    PK: "ENTITYTYPE#PUBLICATION#COMMITTEEMEMBER",
+    PK: "ENTITYTYPE#ADVISORY_BOARD",
     SK: item.id,
-    entityType: "ENTITYTYPE#PUBLICATION#COMMITTEEMEMBER",
+    entityType: "ENTITYTYPE#ADVISORY_BOARD",
     id: item.id,
     name: item.name,
-    designation: item.designation,
+    subTitle: item.subTitle,
     ...(item.metadata && { metadata: item.metadata }),
     itemPublishStatus: item.itemPublishStatus,
     orderId: item.orderId,
@@ -58,24 +57,23 @@ export function toDynamoDB(item: CommitteeMember): CommitteeMemberDDB {
 }
 
 // from Dbb
-export function fromDynamoDB(item: CommitteeMemberDDB): CommitteeMember {
+export function fromDynamoDB(item: AdvisoryMembetDDB): AdvisoryBoard {
   return {
     id: item.SK,
     name: item.name,
-    designation: item.designation,
+    subTitle: item.subTitle,
     ...(item.metadata && { metadata: item.metadata }),
     itemPublishStatus: item.itemPublishStatus,
     orderId: item.orderId,
   };
 }
 
-export function isCommitteeMember(item: any): item is CommitteeMember {
+export function isCommitteeMember(item: any): item is AdvisoryBoard {
   return (
     typeof item === "object" &&
     typeof item.id === "number" &&
     typeof item.name === "string" &&
-    (item.designation === "Research Committee" ||
-      item.designation === "Editorial Committee") &&
+    typeof item.subTitle == "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&
@@ -84,7 +82,7 @@ export function isCommitteeMember(item: any): item is CommitteeMember {
   );
 }
 
-export function isCommitteeMemberDDB(item: any): item is CommitteeMemberDDB {
+export function isCommitteeMemberDDB(item: any): item is AdvisoryMembetDDB {
   return (
     typeof item === "object" &&
     typeof item.PK === "string" &&
@@ -92,8 +90,7 @@ export function isCommitteeMemberDDB(item: any): item is CommitteeMemberDDB {
     typeof item.entityType === "string" &&
     typeof item.id === "string" &&
     typeof item.name === "string" &&
-    (item.designation === "Research Committee" ||
-      item.designation === "Editorial Committee") &&
+    typeof item.subTitle == "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&

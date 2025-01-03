@@ -50,6 +50,8 @@ import { deployRoute } from "./publish_website";
 
 import { dashboardRoute } from "./dashboard";
 
+import { advisoryBoardRouter } from "./advisoryBoard";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -100,3 +102,5 @@ routes.use(facultyDesignationRouter);
 
 routes.use(deployRoute);
 routes.use(dashboardRoute);
+
+routes.use(advisoryBoardRouter);
