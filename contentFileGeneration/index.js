@@ -97,69 +97,104 @@ var pageDetails = [
     {
         endpoint: "/contribute/bankInfo",
         outputFile: "../website/content//contribute/bankInfo.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+        },
     },
     {
         endpoint: "/contribute/postalAddress",
         outputFile: "../website/content//contribute/bypost.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
     },
     // endownments
     {
         endpoint: "/contribute/endownments",
         outputFile: "../website/content//contribute/endownments.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
     },
     // events
     {
         endpoint: "/events",
         outputFile: "../website/content//events/events.json",
         //  sort by date which is in yyyy-mm-dd format
+        // filter by itemPublishStatus =>"PUBLISHED"
         filter: function (data) {
-            return data.sort(function (a, b) { return new Date(b.date).getTime() - new Date(a.date).getTime(); });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return new Date(b.date).getTime() - new Date(a.date).getTime(); });
         },
     },
     // /gallery/collections
     {
         endpoint: "/gallery/collections",
         outputFile: "../website/content//gallery/collections.json",
-        // only name
-        filter: function (data) { return data.map(function (item) { return item.name; }); },
+        // filter by itemPublishStatus =>"PUBLISHED" and select only name
+        filter: function (data) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .map(function (item) { return item.name; });
+        },
     },
     // /gallery
     {
         endpoint: "/gallery",
         outputFile: "../website/content//gallery/gallery.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+        },
     },
     // governing-body-members present
     {
         endpoint: "/governing-body-members",
         outputFile: "../website/content//governingbodymembers/present.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+        },
     },
     // governing-body-members-past
     {
         endpoint: "/governing-body-members-past",
         outputFile: "../website/content//governingbodymembers/past.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+        },
     },
     // /library/articles
     {
         endpoint: "/library/articles",
         outputFile: "../website/content//library/articles.json",
         fetchItemsWithPagination: true,
+        // filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+        },
     },
     //  /library/books
     {
         endpoint: "/library/books",
         outputFile: "../website/content//library/books.json",
         fetchItemsWithPagination: true,
-        // sort by accessionNo
-        filter: function (data) { return data.sort(function (a, b) { return a.accessionNo - b.accessionNo; }); },
+        // sort by accessionNo & filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.accessionNo - b.accessionNo; });
+        },
     },
     // /library/journals
     {
         endpoint: "/library/journals",
         outputFile: "../website/content//library/journals.json",
         fetchItemsWithPagination: true,
-        // sort by JournalAccNo
+        // sort by JournalAccNo & filter by itemPublishStatus =>"PUBLISHED"
         filter: function (data) {
-            return data.sort(function (a, b) { return a.JournalAccNo - b.JournalAccNo; });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.JournalAccNo - b.JournalAccNo; });
         },
     },
     // // /publications/additionalPublications
@@ -190,34 +225,51 @@ var pageDetails = [
     {
         endpoint: "/publications/committee-members",
         outputFile: "../website/content//publications/committeemembers.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+        },
     },
     // /foreign-scholars
     {
         endpoint: "/foreign-scholars",
         outputFile: "../website/content//scholars_gateway/foreignscholars.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+        },
     },
     // /traditional-scholars
     {
         endpoint: "/traditional-scholars",
         outputFile: "../website/content//scholars_gateway/traditionalscholars.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
         filter: function (data) {
-            return data.filter(function (item) { return item.type === "Traditional Study"; });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .filter(function (item) { return item.type === "Traditional Study"; });
         },
     },
     //  shastrachudamanis
     {
         endpoint: "/traditional-scholars",
         outputFile: "../website/content//scholars_gateway/shastrachudamanis.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
         filter: function (data) {
-            return data.filter(function (item) { return item.type === "Shastrachudamani"; });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .filter(function (item) { return item.type === "Shastrachudamani"; });
         },
     },
     // vidyavaridhis
     {
         endpoint: "/traditional-scholars",
         outputFile: "../website/content//scholars_gateway/vidyavaridhis.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
         filter: function (data) {
-            return data.filter(function (item) { return item.type === "Vidyavaridhi"; });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .filter(function (item) { return item.type === "Vidyavaridhi"; });
         },
     },
     // students/past/mphil
@@ -228,7 +280,9 @@ var pageDetails = [
         // completedYear: item.completedYear,
         // sort by  startedYear and completedYear if completedYear is null then sort by startedYear
         filter: function (data) {
-            return data.sort(function (a, b) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) {
                 if (a.completedYear === null) {
                     return a.startedYear - b.startedYear;
                 }
@@ -244,7 +298,9 @@ var pageDetails = [
         endpoint: "/students?status=Completed&course=Ph.D.",
         outputFile: "../website/content//students/past/phd.json",
         filter: function (data) {
-            return data.sort(function (a, b) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) {
                 if (a.completedYear === null) {
                     return a.startedYear - b.startedYear;
                 }
@@ -260,7 +316,9 @@ var pageDetails = [
         endpoint: "/students?status=On-Going",
         outputFile: "../website/content//students/present/students.json",
         filter: function (data) {
-            return data.sort(function (a, b) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) {
                 if (a.completedYear === null) {
                     return a.startedYear - b.startedYear;
                 }
@@ -275,6 +333,10 @@ var pageDetails = [
     {
         endpoint: "/faculty?designationType=ACADEMIC",
         outputFile: "../website/content//faculty/faculty.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+        },
     },
     // /faculty/designation
     {
@@ -282,13 +344,20 @@ var pageDetails = [
         outputFile: "../website/content//faculty/designation.json",
         //  order by orderId and select only name
         filter: function (data) {
-            return data.sort(function (a, b) { return a.orderId - b.orderId; }).map(function (item) { return item.name; });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.orderId - b.orderId; })
+                .map(function (item) { return item.name; });
         },
     },
     // faculty NON ACADEMIC
     {
         endpoint: "/faculty?designationType=NON ACADEMIC",
         outputFile: "../website/content//faculty/nonacademic.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+        },
     },
     // /faculty/designation
     {
@@ -296,7 +365,10 @@ var pageDetails = [
         outputFile: "../website/content//faculty/nonacademicdesignation.json",
         //  order by orderId and select only name
         filter: function (data) {
-            return data.sort(function (a, b) { return a.orderId - b.orderId; }).map(function (item) { return item.name; });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.orderId - b.orderId; })
+                .map(function (item) { return item.name; });
         },
     },
     // milestones
@@ -304,14 +376,22 @@ var pageDetails = [
         endpoint: "/milestones",
         outputFile: "../website/content//milestones.json",
         // sort by year in descending order
-        filter: function (data) { return data.sort(function (a, b) { return b.year - a.year; }); },
+        filter: function (data) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return b.year - a.year; });
+        },
     },
     // news
     {
         endpoint: "/news",
         outputFile: "../website/content//news.json",
         // sort by id in  ascending order
-        filter: function (data) { return data.sort(function (a, b) { return a.id - b.id; }); },
+        filter: function (data) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.id - b.id; });
+        },
     },
     // /project/series
     {
@@ -319,7 +399,10 @@ var pageDetails = [
         outputFile: "../website/content//projects/series.json",
         // order by orderid and get only name
         filter: function (data) {
-            return data.sort(function (a, b) { return a.orderId - b.orderId; }).map(function (item) { return item.name; });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.orderId - b.orderId; })
+                .map(function (item) { return item.name; });
         },
     },
     //  project sub series mapping
@@ -329,6 +412,7 @@ var pageDetails = [
         // get only name and subseries names
         filter: function (data) {
             return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
                 .sort(function (a, b) { return a.orderId - b.orderId; })
                 .map(function (item) { return ({
                 name: item.name,
@@ -342,14 +426,22 @@ var pageDetails = [
         endpoint: "/projects?status=Future Projects",
         outputFile: "../website/content//projects/futureprojects.json",
         // sort by "startYear": "2005"
-        filter: function (data) { return data.sort(function (b, a) { return a.startYear - b.startYear; }); },
+        filter: function (data) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (b, a) { return a.startYear - b.startYear; });
+        },
     },
-    ///projects?status=On-Going
+    // /projects?status=On-Going
     {
         endpoint: "/projects?status=On-Going",
         outputFile: "../website/content//projects/ongoingprojects.json",
         // sort by "startYear": "2005"
-        filter: function (data) { return data.sort(function (b, a) { return a.startYear - b.startYear; }); },
+        filter: function (data) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (b, a) { return a.startYear - b.startYear; });
+        },
     },
     ///projects?status=Completed
     {
@@ -360,27 +452,41 @@ var pageDetails = [
         //   data.sort((a, b) => a.completedYear - b.completedYear),
         //  sort by descending order
         filter: function (data) {
-            return data.sort(function (a, b) { return b.completedYear - a.completedYear; });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return b.completedYear - a.completedYear; });
         },
     },
     // researchArticles
     {
         endpoint: "/researchArticles",
         outputFile: "../website/content//researcharticles.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+        },
     },
     // supervisor
     {
         endpoint: "/supervisor",
         outputFile: "../website/content//supervisor.json",
         //  from array of object, pick only name
-        filter: function (data) { return data.map(function (item) { return item.name; }); },
+        filter: function (data) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .map(function (item) { return item.name; });
+        },
     },
     // chair
     {
         endpoint: "/chair",
         outputFile: "../website/content//chair.json",
         //  order based on orderId
-        filter: function (data) { return data.sort(function (a, b) { return a.orderId - b.orderId; }); },
+        filter: function (data) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.orderId - b.orderId; });
+        },
     },
 ];
 var fixedData = [
@@ -550,6 +656,7 @@ var fetchPublicationsAndBooks = function () { return __awaiter(void 0, void 0, v
         switch (_b.label) {
             case 0: return [4 /*yield*/, fetchAndSaveData("/publications/additionalPublications", "../website/content//publications/additionalpublications.json", function (data) {
                     return data
+                        .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
                         .sort(function (a, b) { return a.orderId - b.orderId; })
                         .map(function (item) { return item.name; });
                 })];
@@ -558,7 +665,9 @@ var fetchPublicationsAndBooks = function () { return __awaiter(void 0, void 0, v
                 additionalPublicationsJson = JSON.stringify(additionalPublications);
                 (0, fs_1.writeFileSync)("../website/content//publications/additionalpublications.json", additionalPublicationsJson);
                 return [4 /*yield*/, fetchAndSaveData("/publications/books?publication=KSRI", "../website/content//publications/books.json", function (data) {
-                        return data.sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
+                        return data
+                            .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                            .sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
                     })];
             case 2:
                 books = _b.sent();
@@ -572,14 +681,18 @@ var fetchPublicationsAndBooks = function () { return __awaiter(void 0, void 0, v
             case 4:
                 books_1 = _b.sent();
                 (function (data) {
-                    return data.sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
+                    return data
+                        .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                        .sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
                 });
                 _b.label = 5;
             case 5:
                 _i++;
                 return [3 /*break*/, 3];
             case 6: return [4 /*yield*/, fetchAndSaveData("/publications/journals?publication=KSRI", "../website/content//publications/journals.json", function (data) {
-                    return data.sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
+                    return data
+                        .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                        .sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
                 })];
             case 7:
                 journals = _b.sent();
@@ -590,7 +703,9 @@ var fetchPublicationsAndBooks = function () { return __awaiter(void 0, void 0, v
                 publication = additionalPublications_2[_a];
                 publicationNameForFile = publication.replace(/ /g, "_").toLowerCase();
                 return [4 /*yield*/, fetchAndSaveData("/publications/journals?publication=".concat(publication), "../website/content//publications/".concat(publicationNameForFile, "journals.json"), function (data) {
-                        return data.sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
+                        return data
+                            .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                            .sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
                     })];
             case 9:
                 journals_1 = _b.sent();

@@ -67,10 +67,13 @@ projectRoute.get("/projects", async (req: Request, res: Response) => {
       result = await documentClient.query({
         TableName: PROJECTS_TABLE,
         IndexName: "PkProjectStatus",
-        KeyConditionExpression: "PK = :sk AND PK = :status",
+        KeyConditionExpression: "PK = :sk AND #status = :status",
         ExpressionAttributeValues: {
           ":sk": "ENTITYTYPE#PROJECT",
           ":status": status,
+        },
+        ExpressionAttributeNames: {
+          "#status": "status",
         },
         //   id is lexagraphically sorted so sort it
         ScanIndexForward: false,

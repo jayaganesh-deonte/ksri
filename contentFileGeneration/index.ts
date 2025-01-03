@@ -57,70 +57,98 @@ const pageDetails = [
   {
     endpoint: "/contribute/bankInfo",
     outputFile: "../website/content//contribute/bankInfo.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
   },
   {
     endpoint: "/contribute/postalAddress",
     outputFile: "../website/content//contribute/bypost.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
   },
   // endownments
   {
     endpoint: "/contribute/endownments",
     outputFile: "../website/content//contribute/endownments.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
   },
   // events
   {
     endpoint: "/events",
     outputFile: "../website/content//events/events.json",
     //  sort by date which is in yyyy-mm-dd format
+    // filter by itemPublishStatus =>"PUBLISHED"
     filter: (data: any[]) =>
-      data.sort(
-        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-      ),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        ),
   },
   // /gallery/collections
   {
     endpoint: "/gallery/collections",
     outputFile: "../website/content//gallery/collections.json",
-    // only name
-    filter: (data: any[]) => data.map((item) => item.name),
+    // filter by itemPublishStatus =>"PUBLISHED" and select only name
+    filter: (data: any[]) =>
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .map((item) => item.name),
   },
   // /gallery
   {
     endpoint: "/gallery",
     outputFile: "../website/content//gallery/gallery.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
   },
   // governing-body-members present
   {
     endpoint: "/governing-body-members",
     outputFile: "../website/content//governingbodymembers/present.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
   },
   // governing-body-members-past
   {
     endpoint: "/governing-body-members-past",
     outputFile: "../website/content//governingbodymembers/past.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
   },
   // /library/articles
   {
     endpoint: "/library/articles",
     outputFile: "../website/content//library/articles.json",
     fetchItemsWithPagination: true,
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
   },
   //  /library/books
   {
     endpoint: "/library/books",
     outputFile: "../website/content//library/books.json",
     fetchItemsWithPagination: true,
-    // sort by accessionNo
-    filter: (data: any[]) => data.sort((a, b) => a.accessionNo - b.accessionNo),
+    // sort by accessionNo & filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.accessionNo - b.accessionNo),
   },
   // /library/journals
   {
     endpoint: "/library/journals",
     outputFile: "../website/content//library/journals.json",
     fetchItemsWithPagination: true,
-    // sort by JournalAccNo
+    // sort by JournalAccNo & filter by itemPublishStatus =>"PUBLISHED"
     filter: (data: any[]) =>
-      data.sort((a, b) => a.JournalAccNo - b.JournalAccNo),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.JournalAccNo - b.JournalAccNo),
   },
   // // /publications/additionalPublications
   // {
@@ -150,32 +178,47 @@ const pageDetails = [
   {
     endpoint: "/publications/committee-members",
     outputFile: "../website/content//publications/committeemembers.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
   },
   // /foreign-scholars
   {
     endpoint: "/foreign-scholars",
     outputFile: "../website/content//scholars_gateway/foreignscholars.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
   },
   // /traditional-scholars
   {
     endpoint: "/traditional-scholars",
     outputFile: "../website/content//scholars_gateway/traditionalscholars.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
     filter: (data: any[]) =>
-      data.filter((item) => item.type === "Traditional Study"),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .filter((item) => item.type === "Traditional Study"),
   },
   //  shastrachudamanis
   {
     endpoint: "/traditional-scholars",
     outputFile: "../website/content//scholars_gateway/shastrachudamanis.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
     filter: (data: any[]) =>
-      data.filter((item) => item.type === "Shastrachudamani"),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .filter((item) => item.type === "Shastrachudamani"),
   },
   // vidyavaridhis
   {
     endpoint: "/traditional-scholars",
     outputFile: "../website/content//scholars_gateway/vidyavaridhis.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
     filter: (data: any[]) =>
-      data.filter((item) => item.type === "Vidyavaridhi"),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .filter((item) => item.type === "Vidyavaridhi"),
   },
 
   // students/past/mphil
@@ -186,50 +229,59 @@ const pageDetails = [
     // completedYear: item.completedYear,
     // sort by  startedYear and completedYear if completedYear is null then sort by startedYear
     filter: (data: any[]) =>
-      data.sort((a, b) => {
-        if (a.completedYear === null) {
-          return a.startedYear - b.startedYear;
-        }
-        if (b.completedYear === null) {
-          return a.startedYear - b.startedYear;
-        }
-        return a.completedYear - b.completedYear;
-      }),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => {
+          if (a.completedYear === null) {
+            return a.startedYear - b.startedYear;
+          }
+          if (b.completedYear === null) {
+            return a.startedYear - b.startedYear;
+          }
+          return a.completedYear - b.completedYear;
+        }),
   },
   // students/past/phd
   {
     endpoint: "/students?status=Completed&course=Ph.D.",
     outputFile: "../website/content//students/past/phd.json",
     filter: (data: any[]) =>
-      data.sort((a, b) => {
-        if (a.completedYear === null) {
-          return a.startedYear - b.startedYear;
-        }
-        if (b.completedYear === null) {
-          return a.startedYear - b.startedYear;
-        }
-        return a.completedYear - b.completedYear;
-      }),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => {
+          if (a.completedYear === null) {
+            return a.startedYear - b.startedYear;
+          }
+          if (b.completedYear === null) {
+            return a.startedYear - b.startedYear;
+          }
+          return a.completedYear - b.completedYear;
+        }),
   },
   // students/present
   {
     endpoint: "/students?status=On-Going",
     outputFile: "../website/content//students/present/students.json",
     filter: (data: any[]) =>
-      data.sort((a, b) => {
-        if (a.completedYear === null) {
-          return a.startedYear - b.startedYear;
-        }
-        if (b.completedYear === null) {
-          return a.startedYear - b.startedYear;
-        }
-        return a.completedYear - b.completedYear;
-      }),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => {
+          if (a.completedYear === null) {
+            return a.startedYear - b.startedYear;
+          }
+          if (b.completedYear === null) {
+            return a.startedYear - b.startedYear;
+          }
+          return a.completedYear - b.completedYear;
+        }),
   },
   // faculty
   {
     endpoint: "/faculty?designationType=ACADEMIC",
     outputFile: "../website/content//faculty/faculty.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
   },
   // /faculty/designation
   {
@@ -237,13 +289,19 @@ const pageDetails = [
     outputFile: "../website/content//faculty/designation.json",
     //  order by orderId and select only name
     filter: (data: any[]) =>
-      data.sort((a, b) => a.orderId - b.orderId).map((item) => item.name),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.orderId - b.orderId)
+        .map((item) => item.name),
   },
 
   // faculty NON ACADEMIC
   {
     endpoint: "/faculty?designationType=NON ACADEMIC",
     outputFile: "../website/content//faculty/nonacademic.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
   },
   // /faculty/designation
   {
@@ -251,7 +309,10 @@ const pageDetails = [
     outputFile: "../website/content//faculty/nonacademicdesignation.json",
     //  order by orderId and select only name
     filter: (data: any[]) =>
-      data.sort((a, b) => a.orderId - b.orderId).map((item) => item.name),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.orderId - b.orderId)
+        .map((item) => item.name),
   },
 
   // milestones
@@ -259,14 +320,20 @@ const pageDetails = [
     endpoint: "/milestones",
     outputFile: "../website/content//milestones.json",
     // sort by year in descending order
-    filter: (data: any[]) => data.sort((a, b) => b.year - a.year),
+    filter: (data: any[]) =>
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => b.year - a.year),
   },
   // news
   {
     endpoint: "/news",
     outputFile: "../website/content//news.json",
     // sort by id in  ascending order
-    filter: (data: any[]) => data.sort((a, b) => a.id - b.id),
+    filter: (data: any[]) =>
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.id - b.id),
   },
   // /project/series
   {
@@ -274,7 +341,10 @@ const pageDetails = [
     outputFile: "../website/content//projects/series.json",
     // order by orderid and get only name
     filter: (data: any[]) =>
-      data.sort((a, b) => a.orderId - b.orderId).map((item) => item.name),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.orderId - b.orderId)
+        .map((item) => item.name),
   },
   //  project sub series mapping
   {
@@ -283,6 +353,7 @@ const pageDetails = [
     // get only name and subseries names
     filter: (data: any[]) =>
       data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
         .sort((a, b) => a.orderId - b.orderId)
         .map((item) => ({
           name: item.name,
@@ -295,14 +366,20 @@ const pageDetails = [
     endpoint: "/projects?status=Future Projects",
     outputFile: "../website/content//projects/futureprojects.json",
     // sort by "startYear": "2005"
-    filter: (data: any[]) => data.sort((b, a) => a.startYear - b.startYear),
+    filter: (data: any[]) =>
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((b, a) => a.startYear - b.startYear),
   },
-  ///projects?status=On-Going
+  // /projects?status=On-Going
   {
     endpoint: "/projects?status=On-Going",
     outputFile: "../website/content//projects/ongoingprojects.json",
     // sort by "startYear": "2005"
-    filter: (data: any[]) => data.sort((b, a) => a.startYear - b.startYear),
+    filter: (data: any[]) =>
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((b, a) => a.startYear - b.startYear),
   },
   ///projects?status=Completed
   {
@@ -313,26 +390,37 @@ const pageDetails = [
     //   data.sort((a, b) => a.completedYear - b.completedYear),
     //  sort by descending order
     filter: (data: any[]) =>
-      data.sort((a, b) => b.completedYear - a.completedYear),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => b.completedYear - a.completedYear),
   },
   // researchArticles
   {
     endpoint: "/researchArticles",
     outputFile: "../website/content//researcharticles.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
   },
   // supervisor
   {
     endpoint: "/supervisor",
     outputFile: "../website/content//supervisor.json",
     //  from array of object, pick only name
-    filter: (data: any[]) => data.map((item) => item.name),
+    filter: (data: any[]) =>
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .map((item) => item.name),
   },
   // chair
   {
     endpoint: "/chair",
     outputFile: "../website/content//chair.json",
     //  order based on orderId
-    filter: (data: any[]) => data.sort((a, b) => a.orderId - b.orderId),
+    filter: (data: any[]) =>
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.orderId - b.orderId),
   },
 ];
 
@@ -530,6 +618,7 @@ const fetchPublicationsAndBooks = async () => {
     "../website/content//publications/additionalpublications.json",
     (data: any[]) => {
       return data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
         .sort((a, b) => a.orderId - b.orderId)
         .map((item) => item.name);
     }
@@ -547,7 +636,9 @@ const fetchPublicationsAndBooks = async () => {
     "/publications/books?publication=KSRI",
     "../website/content//publications/books.json",
     (data: any[]) => {
-      return data.sort((a, b) => b.yearOfPublication - a.yearOfPublication);
+      return data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => b.yearOfPublication - a.yearOfPublication);
     }
   );
 
@@ -560,7 +651,9 @@ const fetchPublicationsAndBooks = async () => {
       `../website/content//publications/${publicationNameForFile}.json`
     );
     (data: any[]) => {
-      return data.sort((a, b) => b.yearOfPublication - a.yearOfPublication);
+      return data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => b.yearOfPublication - a.yearOfPublication);
     };
   }
 
@@ -569,7 +662,9 @@ const fetchPublicationsAndBooks = async () => {
     "/publications/journals?publication=KSRI",
     "../website/content//publications/journals.json",
     (data: any[]) => {
-      return data.sort((a, b) => b.yearOfPublication - a.yearOfPublication);
+      return data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => b.yearOfPublication - a.yearOfPublication);
     }
   );
 
@@ -581,7 +676,9 @@ const fetchPublicationsAndBooks = async () => {
       `/publications/journals?publication=${publication}`,
       `../website/content//publications/${publicationNameForFile}journals.json`,
       (data: any[]) => {
-        return data.sort((a, b) => b.yearOfPublication - a.yearOfPublication);
+        return data
+          .filter((item) => item.itemPublishStatus === "PUBLISHED")
+          .sort((a, b) => b.yearOfPublication - a.yearOfPublication);
       }
     );
   }
