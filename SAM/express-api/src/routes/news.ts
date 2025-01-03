@@ -11,14 +11,12 @@ import {
 
 export const newsRoute = express.Router();
 
-const NEWS_TABLE = process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // GET News
 newsRoute.get("/news", async (req: Request, res: Response) => {
   try {
     // query table using GSI
     const result = await documentClient.query({
-      TableName: NEWS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       // IndexName: "entityTypeSK",
       KeyConditionExpression: "PK = :PK",
       ExpressionAttributeValues: {
@@ -52,7 +50,7 @@ newsRoute.post("/news", async (req: Request, res: Response) => {
     const dynamoDBItem = toDynamoDB(news);
 
     await documentClient.put({
-      TableName: NEWS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Item: dynamoDBItem,
     });
 
@@ -68,7 +66,7 @@ newsRoute.delete("/news", async (req: Request, res: Response) => {
   try {
     const { id } = req.body;
     await documentClient.delete({
-      TableName: NEWS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: "ENTITYTYPE#NEWS",
         SK: id,

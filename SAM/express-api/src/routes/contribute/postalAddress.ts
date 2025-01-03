@@ -11,8 +11,6 @@ import {
 
 export const postalAddressRoute = express.Router();
 
-const TABLE_NAME = process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE PostalAddress
 postalAddressRoute.post(
   "/contribute/postalAddress",
@@ -32,7 +30,7 @@ postalAddressRoute.post(
 
       // Put item in DynamoDB
       await documentClient.put({
-        TableName: TABLE_NAME,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: dynamoDBItem,
       });
 
@@ -50,7 +48,7 @@ postalAddressRoute.get(
   async (req: Request, res: Response) => {
     try {
       const params = {
-        TableName: TABLE_NAME,
+        TableName: process.env.DDB_TABLE_NAME,
         KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#POSTALADDRESS",
@@ -82,7 +80,7 @@ postalAddressRoute.delete(
         return res.status(400).json({ error: "Postal address ID is required" });
       }
       const params = {
-        TableName: TABLE_NAME,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#POSTALADDRESS",
           SK: id,

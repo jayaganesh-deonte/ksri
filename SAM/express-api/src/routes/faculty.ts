@@ -12,9 +12,6 @@ import {
 
 export const facultyRouter = express.Router();
 
-const FACULTY_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // GET Faculty
 facultyRouter.get("/faculty", async (req: Request, res: Response) => {
   try {
@@ -33,7 +30,7 @@ facultyRouter.get("/faculty", async (req: Request, res: Response) => {
 
     // query table using GSI
     const params: any = {
-      TableName: FACULTY_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       // IndexName: "entityTypeSK",
       KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
@@ -76,7 +73,7 @@ facultyRouter.post("/faculty", async (req: Request, res: Response) => {
 
   try {
     await documentClient.put({
-      TableName: FACULTY_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Item: facultyDDB,
     });
 
@@ -92,7 +89,7 @@ facultyRouter.delete("/faculty", async (req: Request, res: Response) => {
   try {
     const { id } = req.body;
     const params = {
-      TableName: FACULTY_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: "ENTITYTYPE#FACULTY",
         SK: id,

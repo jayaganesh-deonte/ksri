@@ -12,9 +12,6 @@ import {
 
 export const publicationsCommitteeRouter = express.Router();
 
-const COMMITTEE_MEMBERS_TABLE =
-  process.env.DDB_TABLE_NAME || "ksri-prod_admin_master_table";
-
 // GET CommitteeMembers
 publicationsCommitteeRouter.get(
   "/publications/committee-members",
@@ -22,7 +19,7 @@ publicationsCommitteeRouter.get(
     try {
       // query table using GSI
       const result = await documentClient.query({
-        TableName: COMMITTEE_MEMBERS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         // IndexName: "entityTypeSK",
         ScanIndexForward: false,
         KeyConditionExpression: "PK = :sk",
@@ -62,7 +59,7 @@ publicationsCommitteeRouter.post(
 
       // Create item in DynamoDB
       await documentClient.put({
-        TableName: COMMITTEE_MEMBERS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: dynamoDBCommitteeMember,
       });
       res.status(200).json(committeeMember);
@@ -89,7 +86,7 @@ publicationsCommitteeRouter.delete(
 
       // Delete item in DynamoDB
       await documentClient.delete({
-        TableName: COMMITTEE_MEMBERS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#PUBLICATION#COMMITTEEMEMBER",
           SK: id,

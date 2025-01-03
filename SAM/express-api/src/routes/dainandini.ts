@@ -11,15 +11,12 @@ import {
 
 export const dainandiniRouter = express.Router();
 
-const DAINANDINI_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // GET Dainandini
 dainandiniRouter.get("/dainandini", async (req: Request, res: Response) => {
   try {
     // query table using GSI
     const result = await documentClient.query({
-      TableName: DAINANDINI_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       // IndexName: "entityTypeSK",
       KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
@@ -44,7 +41,7 @@ dainandiniRouter.post("/dainandini", async (req: Request, res: Response) => {
     }
     const dainandiniDDB: DainandiniDDB = toDynamoDB(dainandini);
     await documentClient.put({
-      TableName: DAINANDINI_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Item: dainandiniDDB,
     });
     res.status(200).json(dainandini);
@@ -59,7 +56,7 @@ dainandiniRouter.delete("/dainandini", async (req: Request, res: Response) => {
   try {
     const { id } = req.body;
     const params = {
-      TableName: DAINANDINI_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: "ENTITYTYPE#DAINANDINI",
         SK: id,
@@ -80,7 +77,7 @@ dainandiniRouter.get(
     try {
       // query table using GSI
       const result = await documentClient.query({
-        TableName: DAINANDINI_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         // IndexName: "entityTypeSK",
         KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {

@@ -12,15 +12,12 @@ import {
 
 export const chairRouter = express.Router();
 
-const CHAIR_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // GET Chair
 chairRouter.get("/chair", async (req: Request, res: Response) => {
   try {
     // query table using GSI
     const result = await documentClient.query({
-      TableName: CHAIR_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       // IndexName: "entityTypeSK",
       KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
@@ -44,7 +41,7 @@ chairRouter.post("/chair", async (req: Request, res: Response) => {
   const chairDDB: ChairDDB = toDynamoDB(chair);
   try {
     await documentClient.put({
-      TableName: CHAIR_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Item: chairDDB,
     });
     res.status(200).json(chair);
@@ -59,7 +56,7 @@ chairRouter.delete("/chair", async (req: Request, res: Response) => {
   try {
     const { id } = req.body;
     const params = {
-      TableName: CHAIR_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: "ENTITYTYPE#CHAIR",
         SK: id,

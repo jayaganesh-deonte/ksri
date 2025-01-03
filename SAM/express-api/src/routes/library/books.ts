@@ -13,9 +13,6 @@ import {
 
 export const bookRoute = express.Router();
 
-const BOOKS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE Book
 bookRoute.post("/library/books", async (req: Request, res: Response) => {
   try {
@@ -33,7 +30,7 @@ bookRoute.post("/library/books", async (req: Request, res: Response) => {
 
     // Put item in DynamoDB
     await documentClient.put({
-      TableName: "ksri-prod_admin_master_table",
+      TableName: process.env.DDB_TABLE_NAME,
       Item: dynamoDBItem,
     });
     res.status(200).json(bookData);
@@ -52,7 +49,7 @@ bookRoute.get("/library/books", async (req: Request, res: Response) => {
       : undefined;
 
     const params = {
-      TableName: "ksri-prod_admin_master_table",
+      TableName: process.env.DDB_TABLE_NAME,
       KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#LIBRARY#BOOK",
@@ -87,7 +84,7 @@ bookRoute.delete("/library/books", async (req: Request, res: Response) => {
       return res.status(400).json({ error: "Book ID is required" });
     }
     const params = {
-      TableName: "ksri-prod_admin_master_table",
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: "ENTITYTYPE#LIBRARY#BOOK",
         SK: id,

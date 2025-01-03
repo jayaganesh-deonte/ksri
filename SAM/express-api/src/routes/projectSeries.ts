@@ -10,8 +10,6 @@ import {
 } from "../models/projectSeries";
 
 export const projectSeriesRoute = Router();
-const PROJECTS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
 
 // GET all project series
 projectSeriesRoute.get(
@@ -20,7 +18,7 @@ projectSeriesRoute.get(
     try {
       // query table using GSI
       const result = await documentClient.query({
-        TableName: PROJECTS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         // IndexName: "entityTypeSK",
         KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
@@ -58,7 +56,7 @@ projectSeriesRoute.post(
       const projectSeriesDDB: ProjectSeriesDDB = toDynamoDB(projectSeriesData);
       // Save to DynamoDB
       await documentClient.put({
-        TableName: PROJECTS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: projectSeriesDDB,
       });
       res.status(200).json(projectSeriesData);
@@ -77,7 +75,7 @@ projectSeriesRoute.delete(
       const { id } = req.body;
       // Delete item from DynamoDB
       await documentClient.delete({
-        TableName: PROJECTS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#PROJECTSERIES",
           SK: id,

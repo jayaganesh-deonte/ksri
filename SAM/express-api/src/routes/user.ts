@@ -20,15 +20,12 @@ const USER_POOL_ID = process.env.USER_POOL_ID ?? "ap-south-1_VHRb4I0Ig";
 // GET all users
 export const userRoute = Router();
 
-const USERS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // GET all users
 userRoute.get("/users", async (req: Request, res: Response) => {
   try {
     // query table using GSI
     const result = await documentClient.query({
-      TableName: USERS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       // IndexName: "entityTypeSK",
       ScanIndexForward: false,
       KeyConditionExpression: "PK = :sk",
@@ -53,7 +50,7 @@ userRoute.delete("/users", async (req: Request, res: Response) => {
 
     // Delete item from DynamoDB
     await documentClient.delete({
-      TableName: USERS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: name,
         SK: id,
@@ -85,7 +82,7 @@ userRoute.post("/users", async (req: Request, res: Response) => {
     const userDDB: UserDDB = toDynamoDB(user);
 
     await documentClient.put({
-      TableName: USERS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Item: userDDB,
     });
 

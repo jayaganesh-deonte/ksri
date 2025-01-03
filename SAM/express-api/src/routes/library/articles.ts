@@ -12,9 +12,6 @@ import {
 
 export const articleRoute = express.Router();
 
-const ARTICLES_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE Article
 articleRoute.post("/library/articles", async (req: Request, res: Response) => {
   try {
@@ -35,7 +32,7 @@ articleRoute.post("/library/articles", async (req: Request, res: Response) => {
 
     // Put item in DynamoDB
     await documentClient.put({
-      TableName: ARTICLES_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Item: dynamoDBItem,
     });
 
@@ -57,7 +54,7 @@ articleRoute.get("/library/articles", async (req: Request, res: Response) => {
 
     // query table using GSI
     const result = await documentClient.query({
-      TableName: ARTICLES_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       // IndexName: "entityTypeSK",
       KeyConditionExpression: "PK = :sk",
       ExpressionAttributeValues: {
@@ -98,7 +95,7 @@ articleRoute.delete(
       }
 
       const params = {
-        TableName: ARTICLES_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#ARTICLE",
           SK: id,

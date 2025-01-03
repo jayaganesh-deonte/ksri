@@ -11,9 +11,6 @@ import {
 
 export const eventRoute = express.Router();
 
-const EVENTS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE Event
 eventRoute.post("/events", async (req: Request, res: Response) => {
   try {
@@ -32,7 +29,7 @@ eventRoute.post("/events", async (req: Request, res: Response) => {
 
     // Put item in DynamoDB
     await documentClient.put({
-      TableName: EVENTS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Item: dynamoDBItem,
     });
 
@@ -47,7 +44,7 @@ eventRoute.post("/events", async (req: Request, res: Response) => {
 eventRoute.get("/events", async (req: Request, res: Response) => {
   try {
     const params = {
-      TableName: EVENTS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#EVENT",
@@ -77,7 +74,7 @@ eventRoute.delete("/events", async (req: Request, res: Response) => {
     }
 
     const params = {
-      TableName: EVENTS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: "ENTITYTYPE#EVENT",
         SK: id,

@@ -10,9 +10,6 @@ import {
 
 export const studentRoute = Router();
 
-const STUDENTS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE Student
 studentRoute.post("/students", async (req: Request, res: Response) => {
   try {
@@ -30,7 +27,7 @@ studentRoute.post("/students", async (req: Request, res: Response) => {
 
     // Put item in DynamoDB
     await documentClient.put({
-      TableName: STUDENTS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Item: dynamoDBItem,
     });
 
@@ -65,7 +62,7 @@ studentRoute.get("/students", async (req: Request, res: Response) => {
     }
 
     const result = await documentClient.query({
-      TableName: STUDENTS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       // IndexName: "entityTypePK",
       ScanIndexForward: false,
       KeyConditionExpression: "PK = :sk",
@@ -108,7 +105,7 @@ studentRoute.put("/students", async (req: Request, res: Response) => {
 
     // Update item in DynamoDB
     await documentClient.put({
-      TableName: STUDENTS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Item: dynamoDBItem,
     });
 
@@ -126,7 +123,7 @@ studentRoute.delete("/students", async (req: Request, res: Response) => {
 
     // Delete item from DynamoDB
     await documentClient.delete({
-      TableName: STUDENTS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: "ENTITYTYPE#STUDENT",
         SK: id,

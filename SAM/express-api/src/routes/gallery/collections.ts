@@ -13,9 +13,6 @@ import {
 
 export const collectionsRoute = express.Router();
 
-const COLLECTIONS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // GET Collections
 collectionsRoute.get(
   "/gallery/collections",
@@ -23,7 +20,7 @@ collectionsRoute.get(
     try {
       // query table using GSI
       const result = await documentClient.query({
-        TableName: COLLECTIONS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         // IndexName: "entityTypeSK",
         KeyConditionExpression: "PK = :sk",
         ExpressionAttributeValues: {
@@ -56,7 +53,7 @@ collectionsRoute.post(
         return res.status(400).json({ error: "Invalid collection data" });
       }
       const params = {
-        TableName: COLLECTIONS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: toDynamoDB(collection),
       };
       await documentClient.put(params);
@@ -75,7 +72,7 @@ collectionsRoute.delete(
     try {
       const { id } = req.body;
       const params = {
-        TableName: COLLECTIONS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#GALLERY#COLLECTION",
           SK: id,

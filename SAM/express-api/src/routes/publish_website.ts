@@ -8,9 +8,6 @@ import {
 
 export const deployRoute = Router();
 
-const PROJECTS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // Deploy Website
 deployRoute.post("/deploy", async (req: Request, res: Response) => {
   try {
@@ -62,7 +59,7 @@ const updateDeploymentHistory = async (metadata: any) => {
     metadata: metadata,
   };
   await documentClient.put({
-    TableName: PROJECTS_TABLE,
+    TableName: process.env.DDB_TABLE_NAME,
     Item: item,
   });
 
@@ -79,14 +76,14 @@ const updateDeploymentHistory = async (metadata: any) => {
     ttl: ttl,
   };
   await documentClient.put({
-    TableName: PROJECTS_TABLE,
+    TableName: process.env.DDB_TABLE_NAME,
     Item: deploymentHistoryItem,
   });
 };
 
 const getDeploymentStatus = async () => {
   const params = {
-    TableName: PROJECTS_TABLE,
+    TableName: process.env.DDB_TABLE_NAME,
     Key: {
       PK: "ENTITYTYPE#DEPLOYMENT",
       SK: "ENTITYTYPE#DEPLOYMENT",
@@ -122,7 +119,7 @@ deployRoute.get("/deploy/status", async (req: Request, res: Response) => {
 deployRoute.get("/deploy/history", async (req: Request, res: Response) => {
   try {
     const params = {
-      TableName: PROJECTS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       KeyConditionExpression: "PK = :entityType",
       ExpressionAttributeValues: {
         ":entityType": "ENTITYTYPE#DEPLOYMENT_HISTORY",
@@ -156,7 +153,7 @@ const updatePendingDeployment = async (status: string) => {
     status: status,
   };
   await documentClient.put({
-    TableName: PROJECTS_TABLE,
+    TableName: process.env.DDB_TABLE_NAME,
     Item: item,
   });
 };
@@ -186,7 +183,7 @@ deployRoute.post("/deploy/pending", async (req: Request, res: Response) => {
 deployRoute.get("/deploy/pending", async (req: Request, res: Response) => {
   try {
     const params = {
-      TableName: PROJECTS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: "ENTITYTYPE#DEPLOYMENT#PENDING",
         SK: "ENTITYTYPE#DEPLOYMENT#PENDING",

@@ -13,9 +13,6 @@ import { QueryCommandOutput } from "@aws-sdk/client-dynamodb";
 
 export const publicationBookRoute = express.Router();
 
-const BOOKS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE Book
 publicationBookRoute.post(
   "/publications/books",
@@ -35,7 +32,7 @@ publicationBookRoute.post(
 
       // Put item in DynamoDB
       await documentClient.put({
-        TableName: BOOKS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: dynamoDBItem,
       });
 
@@ -58,7 +55,7 @@ publicationBookRoute.get(
       if (!publication) {
         // query table using GSI
         result = await documentClient.query({
-          TableName: BOOKS_TABLE,
+          TableName: process.env.DDB_TABLE_NAME,
           // IndexName: "entityTypeSK",
           ScanIndexForward: false,
           KeyConditionExpression: "PK = :sk",
@@ -69,7 +66,7 @@ publicationBookRoute.get(
       } else {
         // query GSI entityTypePK entityType => ENTITYTYPE#BOOK and PK = publication
         result = await documentClient.query({
-          TableName: BOOKS_TABLE,
+          TableName: process.env.DDB_TABLE_NAME,
           KeyConditionExpression: "PK = :pk",
           ExpressionAttributeValues: {
             ":pk": "ENTITYTYPE#BOOK",
@@ -102,7 +99,7 @@ publicationBookRoute.delete(
       const { id } = req.body;
 
       const params = {
-        TableName: BOOKS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#BOOK",
           SK: id,

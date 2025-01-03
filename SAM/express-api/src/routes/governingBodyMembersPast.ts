@@ -11,14 +11,12 @@ import {
 
 export const governingBodyMembersPastRouter = express.Router();
 
-const TABLE_NAME = process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // GET PAST GoverningBodyMembers
 governingBodyMembersPastRouter.get(
   "/governing-body-members-past",
   async (req: Request, res: Response) => {
     const params = {
-      TableName: TABLE_NAME,
+      TableName: process.env.DDB_TABLE_NAME,
       // IndexName: "entityTypeSK",
       ScanIndexForward: false,
       KeyConditionExpression: "PK = :entityType",
@@ -58,7 +56,7 @@ governingBodyMembersPastRouter.post(
 
     try {
       await documentClient.put({
-        TableName: TABLE_NAME,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: dynamoDBItem,
       });
       res.status(200).json(governingBodyMemberPastData);
@@ -76,7 +74,7 @@ governingBodyMembersPastRouter.delete(
     const { id } = req.body;
 
     const params = {
-      TableName: TABLE_NAME,
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: "ENTITYTYPE#GOVERNINGBODYMEMBERPAST",
         SK: id,

@@ -31,7 +31,7 @@ endownmentRoute.post(
 
       // Put item in DynamoDB
       await documentClient.put({
-        TableName: "ksri-prod_admin_master_table",
+        TableName: process.env.DDB_TABLE_NAME,
         Item: dynamoDBItem,
       });
 
@@ -49,7 +49,7 @@ endownmentRoute.get(
   async (req: Request, res: Response) => {
     try {
       const params = {
-        TableName: "ksri-prod_admin_master_table",
+        TableName: process.env.DDB_TABLE_NAME,
         KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#ENDOWNMENT",
@@ -79,7 +79,7 @@ endownmentRoute.delete(
       const id = req.body.id;
 
       const params = {
-        TableName: "ksri-prod_admin_master_table",
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#ENDOWNMENT",
           SK: id,

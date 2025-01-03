@@ -15,9 +15,6 @@ import { QueryCommandOutput } from "@aws-sdk/client-dynamodb";
 
 export const publicationJournalRoute = express.Router();
 
-const JOURNAL_TABLE_NAME =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE Journal
 publicationJournalRoute.post(
   "/publications/journals",
@@ -29,7 +26,7 @@ publicationJournalRoute.post(
       }
       const journalDDB: JournalDDB = toDynamoDBJournal(journalData);
       const params = {
-        TableName: JOURNAL_TABLE_NAME,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: journalDDB,
       };
       await documentClient.put(params);
@@ -51,7 +48,7 @@ publicationJournalRoute.delete(
         return res.status(400).json({ error: "Journal ID is required" });
       }
       const params = {
-        TableName: JOURNAL_TABLE_NAME,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#PUBLICATION#JOURNAL",
           SK: id,
@@ -77,7 +74,7 @@ publicationJournalRoute.get(
       if (!publication) {
         // query table using GSI
         result = await documentClient.query({
-          TableName: JOURNAL_TABLE_NAME,
+          TableName: process.env.DDB_TABLE_NAME,
           // IndexName: "entityTypeSK",
           ScanIndexForward: false,
           KeyConditionExpression: "PK = :sk",
@@ -88,7 +85,7 @@ publicationJournalRoute.get(
       } else {
         // query GSI entityTypePK entityType => ENTITYTYPE#BOOK and PK = publication
         result = await documentClient.query({
-          TableName: JOURNAL_TABLE_NAME,
+          TableName: process.env.DDB_TABLE_NAME,
           // IndexName: "entityTypePK",
           KeyConditionExpression: "PK = :pk",
           ExpressionAttributeValues: {

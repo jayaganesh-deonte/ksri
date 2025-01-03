@@ -3,8 +3,7 @@ import { DynamoDBDocument } from "@aws-sdk/lib-dynamodb";
 
 const documentClient = DynamoDBDocument.from(new DynamoDBClient());
 
-const DDB_TABLE_NAME =
-  process.env.DDB_TABLE_NAME || "ksri-prod_admin_master_table";
+const DDB_TABLE_NAME = process.env.DDB_TABLE_NAME;
 
 let dashboardData = [
   {

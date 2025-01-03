@@ -11,9 +11,6 @@ import {
 
 export const governingBodyMembersRoute = express.Router();
 
-const GOVERNING_BODY_MEMBERS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE GoverningBodyMember
 governingBodyMembersRoute.post(
   "/governing-body-members",
@@ -34,7 +31,7 @@ governingBodyMembersRoute.post(
 
       // Put item in DynamoDB
       await documentClient.put({
-        TableName: GOVERNING_BODY_MEMBERS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: dynamoDBItem,
       });
 
@@ -53,7 +50,7 @@ governingBodyMembersRoute.get(
     try {
       // query table using GSI
       const result = await documentClient.query({
-        TableName: GOVERNING_BODY_MEMBERS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         // IndexName: "entityTypeSK",
         ScanIndexForward: false,
         KeyConditionExpression: "PK = :PK",
@@ -89,7 +86,7 @@ governingBodyMembersRoute.delete(
 
       // Delete item from DynamoDB
       await documentClient.delete({
-        TableName: GOVERNING_BODY_MEMBERS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#GOVERNINGBODYMEMBER",
           SK: id,

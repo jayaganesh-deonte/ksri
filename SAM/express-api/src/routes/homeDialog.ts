@@ -10,16 +10,13 @@ import {
 
 export const homeDialogRouter = express.Router();
 
-const HOMEDIALOG_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // GET Home Dialog
 
 homeDialogRouter.get("/homedialog", async (req: Request, res: Response) => {
   try {
     // query table using GSI
     const result = await documentClient.query({
-      TableName: HOMEDIALOG_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       // IndexName: "entityTypeSK",
       KeyConditionExpression: "PK = :PK",
       ExpressionAttributeValues: {
@@ -46,7 +43,7 @@ homeDialogRouter.post("/homedialog", async (req: Request, res: Response) => {
     const homeDialog: HomeDialog = req.body;
     const homeDialogDDB: HomeDialogDDB = toDynamoDB(homeDialog);
     await documentClient.put({
-      TableName: HOMEDIALOG_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Item: homeDialogDDB,
     });
     res.status(200).json(homeDialog);
@@ -61,7 +58,7 @@ homeDialogRouter.delete("/homedialog", async (req: Request, res: Response) => {
   try {
     const { id } = req.body;
     const params = {
-      TableName: HOMEDIALOG_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: "ENTITYTYPE#HOMEDIALOG",
         SK: id,
@@ -82,7 +79,7 @@ homeDialogRouter.get(
     try {
       // query table using GSI
       const result = await documentClient.query({
-        TableName: HOMEDIALOG_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         // IndexName: "entityTypeSK",
 
         KeyConditionExpression: "PK = :PK",

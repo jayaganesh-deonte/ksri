@@ -12,9 +12,6 @@ import {
 
 export const additionalPublicationsRoute = express.Router();
 
-const ADDITIONAL_PUBLICATIONS_TABLE =
-  process.env.DDB_TABLE_NAME || "ksri-prod_admin_master_table";
-
 // CREATE Additional Publication
 additionalPublicationsRoute.post(
   "/publications/additionalPublications",
@@ -37,7 +34,7 @@ additionalPublicationsRoute.post(
 
       // Put item in DynamoDB
       await documentClient.put({
-        TableName: ADDITIONAL_PUBLICATIONS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: additionalPublicationDDB,
       });
 
@@ -60,7 +57,7 @@ additionalPublicationsRoute.get(
     try {
       // query table using GSI
       const result = await documentClient.query({
-        TableName: ADDITIONAL_PUBLICATIONS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         // IndexName: "entityTypeSK",
         KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
@@ -90,7 +87,7 @@ additionalPublicationsRoute.delete(
     try {
       const { id } = req.body;
       const params = {
-        TableName: ADDITIONAL_PUBLICATIONS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#ADDITIONALPUBLICATION",
           SK: id,

@@ -11,15 +11,12 @@ import {
 
 export const marqueeTextsRouter = express.Router();
 
-const MARQUEETEXTS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // GET Marquee Texts
 marqueeTextsRouter.get("/marqueetexts", async (req: Request, res: Response) => {
   try {
     // query table using GSI
     const result = await documentClient.query({
-      TableName: MARQUEETEXTS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       // IndexName: "entityTypeSK",
       KeyConditionExpression: "PK = :PK",
       ExpressionAttributeValues: {
@@ -46,7 +43,7 @@ marqueeTextsRouter.post(
       }
       const marqueetextDDB: MarqueeTextDDB = toDynamoDB(marqueetext);
       await documentClient.put({
-        TableName: MARQUEETEXTS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: marqueetextDDB,
       });
       res.status(200).json(marqueetext);
@@ -64,7 +61,7 @@ marqueeTextsRouter.delete(
     try {
       const { id } = req.body;
       const params = {
-        TableName: MARQUEETEXTS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#MARQUEETEXT",
           SK: id,
@@ -86,7 +83,7 @@ marqueeTextsRouter.get(
     try {
       // query table using GSI
       const result = await documentClient.query({
-        TableName: MARQUEETEXTS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         IndexName: "entityTypeSK",
         KeyConditionExpression: "entityType = :sk",
         ExpressionAttributeValues: {

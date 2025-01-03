@@ -12,9 +12,6 @@ import {
 
 export const researchArticlesRoute = Router();
 
-const RESEARCH_ARTICLES_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE Research Article
 researchArticlesRoute.post(
   "/researchArticles",
@@ -30,7 +27,7 @@ researchArticlesRoute.post(
       // Convert to DynamoDB format
       const dynamoDBItem = toDynamoDB(researchArticleData);
       const params = {
-        TableName: RESEARCH_ARTICLES_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: dynamoDBItem,
       };
       // Save to DynamoDB
@@ -51,7 +48,7 @@ researchArticlesRoute.get(
     try {
       // query table using GSI
       const result = await documentClient.query({
-        TableName: RESEARCH_ARTICLES_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         // IndexName: "entityTypeSK",
         ScanIndexForward: false,
         KeyConditionExpression: "PK = :sk",
@@ -80,7 +77,7 @@ researchArticlesRoute.delete(
 
       // Delete item from DynamoDB
       const params = {
-        TableName: RESEARCH_ARTICLES_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#RESEARCHARTICLE",
           SK: id,

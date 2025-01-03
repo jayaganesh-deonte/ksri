@@ -17,8 +17,6 @@ import {
 
 const traditionalScholarRoute = Router();
 
-const TRADITIONAL_SCHOLARS_TABLE = "ksri-prod_admin_master_table";
-
 // CREATE Traditional Scholar
 traditionalScholarRoute.post(
   "/traditional-scholars",
@@ -39,7 +37,7 @@ traditionalScholarRoute.post(
 
       // Put item in DynamoDB
       const command = new PutCommand({
-        TableName: TRADITIONAL_SCHOLARS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: scholarDDB,
       });
 
@@ -74,7 +72,7 @@ traditionalScholarRoute.get(
     try {
       // Prepare query parameters
       const queryParams = {
-        TableName: TRADITIONAL_SCHOLARS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#TRADITIONAL_SCHOLAR",
@@ -119,7 +117,7 @@ traditionalScholarRoute.delete(
 
       // Prepare delete command
       const command = new DeleteCommand({
-        TableName: TRADITIONAL_SCHOLARS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#TRADITIONAL_SCHOLAR",
           SK: id,

@@ -11,8 +11,6 @@ import {
 
 export const foreignScholarRoute = express.Router();
 
-const TABLE_NAME = process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE Foreign Scholar
 foreignScholarRoute.post(
   "/foreign-scholars",
@@ -33,7 +31,7 @@ foreignScholarRoute.post(
 
       // Put item in DynamoDB
       await documentClient.put({
-        TableName: TABLE_NAME,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: dynamoDBItem,
       });
       res.status(200).json(scholarData);
@@ -50,7 +48,7 @@ foreignScholarRoute.get(
   async (req: Request, res: Response) => {
     try {
       const params = {
-        TableName: TABLE_NAME,
+        TableName: process.env.DDB_TABLE_NAME,
         KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#FOREIGN_SCHOLAR",
@@ -81,7 +79,7 @@ foreignScholarRoute.delete(
       const { id } = req.body;
 
       await documentClient.delete({
-        TableName: TABLE_NAME,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#FOREIGN_SCHOLAR",
           SK: id,

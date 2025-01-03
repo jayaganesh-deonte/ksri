@@ -13,9 +13,6 @@ import { QueryCommandOutput } from "@aws-sdk/lib-dynamodb";
 
 export const galleryRoute = express.Router();
 
-const GALLERY_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // GET Gallery Images
 galleryRoute.get("/gallery", async (req: Request, res: Response) => {
   try {
@@ -27,7 +24,7 @@ galleryRoute.get("/gallery", async (req: Request, res: Response) => {
 
     if (collection) {
       result = await documentClient.query({
-        TableName: GALLERY_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         // IndexName: "CollectionSK", //TODO
         KeyConditionExpression: "PK = :pk",
         ExpressionAttributeValues: {
@@ -39,7 +36,7 @@ galleryRoute.get("/gallery", async (req: Request, res: Response) => {
       });
     } else {
       result = await documentClient.query({
-        TableName: GALLERY_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         // IndexName: "entityTypeSK",
         KeyConditionExpression: "PK = :sk",
         ExpressionAttributeValues: {
@@ -68,7 +65,7 @@ galleryRoute.post("/gallery", async (req: Request, res: Response) => {
     }
 
     const params = {
-      TableName: GALLERY_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Item: toDynamoDB(galleryImage),
     };
 
@@ -86,7 +83,7 @@ galleryRoute.delete("/gallery", async (req: Request, res: Response) => {
   try {
     const { id } = req.body;
     const params = {
-      TableName: GALLERY_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: "ENTITYTYPE#GALLERY#IMAGE",
         SK: id,

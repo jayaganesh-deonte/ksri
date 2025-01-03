@@ -11,9 +11,6 @@ import { QueryCommandOutput } from "@aws-sdk/lib-dynamodb";
 
 const projectRoute = Router();
 
-const PROJECTS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE Project
 projectRoute.post("/projects", async (req: Request, res: Response) => {
   try {
@@ -30,7 +27,7 @@ projectRoute.post("/projects", async (req: Request, res: Response) => {
     // Put item in DynamoDB
     try {
       await documentClient.put({
-        TableName: PROJECTS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: projectDDB,
       });
       res.status(200).json(projectData);
@@ -65,7 +62,7 @@ projectRoute.get("/projects", async (req: Request, res: Response) => {
     let result: QueryCommandOutput;
     if (status) {
       result = await documentClient.query({
-        TableName: PROJECTS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         IndexName: "PkProjectStatus",
         KeyConditionExpression: "PK = :sk AND #status = :status",
         ExpressionAttributeValues: {
@@ -80,7 +77,7 @@ projectRoute.get("/projects", async (req: Request, res: Response) => {
       });
     } else {
       result = await documentClient.query({
-        TableName: PROJECTS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         // IndexName: "entityTypeSK",
         KeyConditionExpression: "PK = :sk",
         ExpressionAttributeValues: {
@@ -112,7 +109,7 @@ projectRoute.delete("/projects", async (req: Request, res: Response) => {
     // Delete item from DynamoDB
     try {
       const deleteQuery = {
-        TableName: PROJECTS_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#PROJECT",
           SK: id,

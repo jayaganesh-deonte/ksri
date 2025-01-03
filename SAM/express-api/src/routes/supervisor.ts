@@ -12,9 +12,6 @@ import {
 
 export const supervisorRoute = Router();
 
-const SUPERVISORS_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE Supervisor
 supervisorRoute.post("/supervisor", async (req: Request, res: Response) => {
   try {
@@ -33,7 +30,7 @@ supervisorRoute.post("/supervisor", async (req: Request, res: Response) => {
 
     // Put item in DynamoDB
     await documentClient.put({
-      TableName: SUPERVISORS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Item: dynamoDBItem,
     });
 
@@ -49,7 +46,7 @@ supervisorRoute.get("/supervisor", async (req: Request, res: Response) => {
   try {
     // query table using GSI
     const result = await documentClient.query({
-      TableName: SUPERVISORS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       // IndexName: "entityTypeSK",
       ScanIndexForward: false,
       KeyConditionExpression: "PK = :sk",
@@ -76,7 +73,7 @@ supervisorRoute.delete("/supervisor", async (req: Request, res: Response) => {
 
     // Delete item from DynamoDB
     await documentClient.delete({
-      TableName: SUPERVISORS_TABLE,
+      TableName: process.env.DDB_TABLE_NAME,
       Key: {
         PK: "ENTITYTYPE#SUPERVISOR",
         SK: id,

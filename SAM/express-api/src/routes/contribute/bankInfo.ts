@@ -11,8 +11,6 @@ import {
 
 export const bankInfoRoute = express.Router();
 
-const TABLE_NAME = process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // CREATE BankInfo
 bankInfoRoute.post(
   "/contribute/bankInfo",
@@ -31,7 +29,7 @@ bankInfoRoute.post(
       const dynamoDBItem = toDynamoDB(bankInfoData);
       // Put item in DynamoDB
       await documentClient.put({
-        TableName: TABLE_NAME,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: dynamoDBItem,
       });
       res.status(200).json(bankInfoData);
@@ -48,7 +46,7 @@ bankInfoRoute.get(
   async (req: Request, res: Response) => {
     try {
       const params = {
-        TableName: TABLE_NAME,
+        TableName: process.env.DDB_TABLE_NAME,
         KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#BANKINFO",
@@ -80,7 +78,7 @@ bankInfoRoute.delete(
         return res.status(400).json({ error: "Bank info ID is required" });
       }
       const params = {
-        TableName: TABLE_NAME,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#BANKINFO",
           SK: id,

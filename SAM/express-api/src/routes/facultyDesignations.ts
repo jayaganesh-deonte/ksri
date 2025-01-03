@@ -12,9 +12,6 @@ import {
 
 export const facultyDesignationRouter = express.Router();
 
-const FACULTY_DESIGNATION_TABLE =
-  process.env.DDB_TABLE_NAME ?? "ksri-prod_admin_master_table";
-
 // GET Faculty Designations
 facultyDesignationRouter.get(
   "/faculty/designation",
@@ -35,7 +32,7 @@ facultyDesignationRouter.get(
 
       // query table using GSI and filter based on designationType if provided
       const params: any = {
-        TableName: FACULTY_DESIGNATION_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         // IndexName: "entityTypeSK",
         KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
@@ -76,7 +73,7 @@ facultyDesignationRouter.post(
       toDynamoDB(facultyDesignation);
     try {
       await documentClient.put({
-        TableName: FACULTY_DESIGNATION_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Item: facultyDesignationDDB,
       });
       res.status(200).json(facultyDesignation);
@@ -94,7 +91,7 @@ facultyDesignationRouter.delete(
     try {
       const { id } = req.body;
       const params = {
-        TableName: FACULTY_DESIGNATION_TABLE,
+        TableName: process.env.DDB_TABLE_NAME,
         Key: {
           PK: "ENTITYTYPE#FACULTYDESIGNATION",
           SK: id,
