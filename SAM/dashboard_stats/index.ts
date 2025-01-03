@@ -100,8 +100,8 @@ let dashboardData = [
 const query = async (entityType, filter) => {
   let params: any = {
     TableName: DDB_TABLE_NAME,
-    IndexName: "entityTypePK",
-    KeyConditionExpression: "entityType = :entityTypePK",
+    //IndexName: "entityTypePK", // fd
+    KeyConditionExpression: "PK = :entityTypePK",
     ExpressionAttributeValues: {
       ":entityTypePK": entityType,
     },
