@@ -56,7 +56,7 @@ export function toDynamoDB(item: Collection): CollectionDDB {
     entityType: "ENTITYTYPE#GALLERY#COLLECTION",
     name: item.name,
     ...(item.metadata && { metadata: item.metadata }),
-    itemPublishStatus: "PUBLISHED",
+    itemPublishStatus: item.itemPublishStatus,
   };
 }
 
