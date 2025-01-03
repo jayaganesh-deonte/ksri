@@ -5,6 +5,7 @@
     :entityFields="editorialFields"
     :headers="editorialHeaders"
     :addIdToPayload="true"
+    :sortBy="[{ key: 'orderId', order: 'asc' }]"
   />
 </template>
 

@@ -9,6 +9,9 @@ export interface Supervisor {
   name: string;
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
+  orderId: string;
+  noOfphdStudents?: string;
+  vacancy?: string;
 }
 export interface SupervisorDDB {
   PK: string;
@@ -18,6 +21,9 @@ export interface SupervisorDDB {
   name: string;
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
+  orderId: string;
+  noOfphdStudents?: string;
+  vacancy?: string;
 }
 
 export function validateSupervisorDDB(item: SupervisorDDB): boolean {
@@ -30,7 +36,11 @@ export function validateSupervisorDDB(item: SupervisorDDB): boolean {
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&
-    typeof item.itemPublishStatus === "string"
+    typeof item.itemPublishStatus === "string" &&
+    typeof item.orderId === "string" &&
+    (item.noOfphdStudents === undefined ||
+      typeof item.noOfphdStudents === "string") &&
+    (item.vacancy === undefined || typeof item.vacancy === "string")
   );
 }
 
@@ -41,7 +51,11 @@ export function validateSupervisor(item: Supervisor): boolean {
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&
-    typeof item.itemPublishStatus === "string"
+    typeof item.itemPublishStatus === "string" &&
+    typeof item.orderId === "string" &&
+    (item.noOfphdStudents === undefined ||
+      typeof item.noOfphdStudents === "string") &&
+    (item.vacancy === undefined || typeof item.vacancy === "string")
   );
 }
 
@@ -51,6 +65,9 @@ export function fromDynamoDB(item: SupervisorDDB): Supervisor {
     name: item.name,
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,
+    orderId: item.orderId,
+    noOfphdStudents: item.noOfphdStudents,
+    vacancy: item.vacancy,
   };
 }
 
@@ -63,5 +80,8 @@ export function toDynamoDB(item: Supervisor): SupervisorDDB {
     name: item.name,
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,
+    orderId: item.orderId,
+    noOfphdStudents: item.noOfphdStudents,
+    vacancy: item.vacancy,
   };
 }

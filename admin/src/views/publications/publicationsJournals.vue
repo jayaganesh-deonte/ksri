@@ -10,6 +10,7 @@
       :entityFields="bookFields"
       :headers="bookHeaders"
       :addIdToPayload="true"
+      :sortBy="[{ key: 'orderId', order: 'asc' }]"
     />
   </div>
 </template>

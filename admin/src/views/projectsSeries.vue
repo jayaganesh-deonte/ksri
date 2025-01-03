@@ -5,6 +5,7 @@
     :entityFields="projectFields"
     :headers="projectHeaders"
     :addIdToPayload="true"
+    :sortBy="[{ key: 'orderId', order: 'asc' }]"
   />
 </template>
 

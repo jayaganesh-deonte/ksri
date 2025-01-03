@@ -5,6 +5,7 @@
     :entityFields="endowmentFields"
     :headers="endowmentHeaders"
     :addIdToPayload="true"
+    :sortBy="[{ key: 'orderId', order: 'asc' }]"
   />
 </template>
 

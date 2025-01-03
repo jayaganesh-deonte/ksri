@@ -5,6 +5,7 @@
     :entityFields="facultyFields"
     :headers="facultyHeaders"
     :addIdToPayload="true"
+    :sortBy="[{ key: 'orderId', order: 'asc' }]"
   />
 </template>
 
