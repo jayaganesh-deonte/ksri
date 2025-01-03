@@ -19,17 +19,27 @@ const entityFields = [
     key: "JournalAccNo",
     label: "Journal Acc No",
     type: "number",
+    rules: [(v) => !!v || "Journal Acc No is required"],
   },
   {
     key: "JournalName",
     label: "Journal Name",
     type: "text",
+    rules: [(v) => !!v || "Journal Name is required"],
+  },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
   },
   {
     key: "Nationality",
     label: "Nationality",
     type: "auto-complete",
     items: ["FOREIGN", "LOCAL"],
+    rules: [(v) => !!v || "Nationality is required"],
   },
   {
     key: "subTable",
@@ -39,17 +49,17 @@ const entityFields = [
       {
         key: "PublicationYear",
         label: "Publication Year",
-        type: "number",
+        type: "text",
       },
       {
         key: "Volume",
         label: "Volume",
-        type: "number",
+        type: "text",
       },
       {
         key: "JournalVolumeNumber#",
         label: "Volume Number",
-        type: "number",
+        type: "text",
       },
       {
         key: "JournalVolumeNumber",

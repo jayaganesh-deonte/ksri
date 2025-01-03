@@ -17,7 +17,6 @@ const bankInfoFields = [
     label: "Name",
     type: "text",
     rules: [(v) => !!v || "Name is required"],
-    editDisabled: true,
   },
   {
     key: "bankName",
@@ -42,6 +41,13 @@ const bankInfoFields = [
     label: "MICR",
     type: "text",
     rules: [(v) => !!v || "MICR is required"],
+  },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
   },
 ];
 

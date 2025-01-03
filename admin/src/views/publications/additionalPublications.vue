@@ -27,6 +27,13 @@ const editorialFields = [
     rules: [(v) => !!v || "Order Id is required"],
     editDisabled: true,
   },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
+  },
 ];
 
 const editorialHeaders = [

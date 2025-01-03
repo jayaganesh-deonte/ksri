@@ -27,7 +27,6 @@ const bankInfoFields = [
     label: "Institute Name",
     type: "text",
     rules: [(v) => !!v || "instituteName is required"],
-    editDisabled: true,
   },
   {
     key: "address",
@@ -46,6 +45,13 @@ const bankInfoFields = [
     label: "Phone",
     type: "text",
     rules: [(v) => !!v || "Phone is required"],
+  },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
   },
 ];
 

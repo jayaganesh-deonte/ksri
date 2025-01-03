@@ -18,7 +18,14 @@ const articleFields = [
     label: "Title",
     type: "text",
     rules: [(v) => !!v || "Title is required"],
-    editDisabled: true,
+    // editDisabled: true,
+  },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
   },
   {
     key: "author",

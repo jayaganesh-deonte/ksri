@@ -17,7 +17,6 @@ const endowmentFields = [
     label: "Title",
     type: "text",
     rules: [(v) => !!v || "Title is required"],
-    editDisabled: true,
   },
   {
     key: "initiatedBy",
@@ -30,6 +29,13 @@ const endowmentFields = [
     label: "Topic",
     type: "text-area",
     rules: [(v) => !!v || "Topic is required"],
+  },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
   },
 ];
 

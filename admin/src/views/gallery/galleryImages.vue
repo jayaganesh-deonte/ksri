@@ -46,6 +46,13 @@ export default {
           rules: [(v) => !!v || "Description is required"],
         },
         {
+          key: "itemPublishStatus",
+          label: "Publish Status",
+          type: "auto-complete",
+          rules: [(v) => !!v || "Publish Status is required"],
+          items: ["PUBLISHED", "DRAFT"],
+        },
+        {
           key: "collection",
           label: "Collection",
           type: "auto-complete",

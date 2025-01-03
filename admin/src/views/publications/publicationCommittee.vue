@@ -18,7 +18,7 @@ const editorialFields = [
     label: "Name",
     type: "text",
     rules: [(v) => !!v || "Name is required"],
-    editDisabled: true,
+    // editDisabled: true,
   },
   {
     key: "designation",
@@ -26,6 +26,13 @@ const editorialFields = [
     type: "auto-complete",
     items: ["Research Committee", "Editorial Committee"],
     rules: [(v) => !!v || "Designation is required"],
+  },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
   },
 ];
 

@@ -19,7 +19,7 @@ milestonesRoute.get("/milestones", async (req: Request, res: Response) => {
         ":entityType": "ENTITYTYPE#MILESTONE",
       },
       // IndexName: "entityTypeSK",
-      ScanIndexForward: false,
+      // ScanIndexForward: ,
     };
 
     const { Items } = await documentClient.query(params);

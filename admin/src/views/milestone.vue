@@ -4,6 +4,8 @@
     :apiEndpoint="apiEndpoint"
     :entityFields="milestoneFields"
     :headers="milestoneHeaders"
+    :addIdToPayload="true"
+    :sortBy="[{ key: 'year', order: 'desc' }]"
   />
 </template>
 
@@ -16,14 +18,19 @@ const milestoneFields = [
     label: "Year",
     type: "text",
     rules: [(v) => !!v || "Year is required"],
-    editDisabled: true,
   },
   {
     key: "title",
     label: "Title",
     type: "text",
     rules: [(v) => !!v || "Title is required"],
-    editDisabled: true,
+  },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
   },
 
   {
