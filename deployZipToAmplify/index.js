@@ -24,12 +24,13 @@ const { DynamoDBDocument } = require("@aws-sdk/lib-dynamodb");
 
 const documentClient = DynamoDBDocument.from(new DynamoDBClient());
 
-const S3_NAME = process.env.WEBSITE_S3_NAME || "ksri-website-zip";
-const appId = process.env.APP_ID || "djs0bgez0rna3";
+const S3_NAME = process.env.WEBSITE_S3_NAME || "ksri-prod-website-zip";
+const appId = process.env.APP_ID || "d32xensnjdvbdt";
 const branchName = process.env.BRANCH_NAME || "prod";
-const distributionId = process.env.DISTRIBUTION_ID || "E1L197RUHFCEFU";
+const distributionId = process.env.DISTRIBUTION_ID || "E2N9SU90LZFFA7";
 
-const DDB_TABLE_NAME = process.env.DDB_TABLE_NAME || "ksri_admin_master_table";
+const DDB_TABLE_NAME =
+  process.env.DDB_TABLE_NAME || "ksri-prod_admin_master_table";
 
 const uploadZipToS3 = async (zipFilePath) => {
   try {
