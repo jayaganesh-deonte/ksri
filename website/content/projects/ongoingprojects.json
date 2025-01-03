@@ -1,194 +1,206 @@
 [
   {
-    "id": "01JFFBDWAZGR2C00K4YVPAFQCN",
-    "title": "Evolution of Earth in Puranas",
-    "subTitle": "- Puranas devote quite a sizeable portion of the texts for the description of earth and its evolution (sarga-pratisharga).",
-    "startYear": "2024",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.583Z",
-      "updated_at": "2024-12-31T08:23:32.407Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFFBDWAZYX94DR42W084E5DB",
-    "title": "Monograph on Ancient Indian Mathematics",
-    "subTitle": "- Canara Bank Project",
-    "startYear": "2024",
-    "completedYear": "2024",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.583Z",
-      "updated_at": "2024-12-31T08:35:06.955Z",
-      "created_by": "admin"
-    },
-    "sponsor": "Canara Bank",
-    "publicationStatus": "Unpublished",
-    "projectInvestigator": "Dr. V. Yamuna Devi",
-    "coProjectInvestigators": "Dr. V. Yamuna Devi"
-  },
-  {
-    "id": "01JFFBDWAZZJ2A6P5B5KKRTNPT",
+    "id": "01JGM4T8Y0R3G7B7F1RA5P1BHJ",
     "title": "Encyclopaedia of Yoga",
     "subTitle": "-",
-    "startYear": "2024",
     "status": "On-Going",
     "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.583Z",
-      "updated_at": "2024-12-31T08:23:57.272Z",
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFFBDWAZZW4VTBR04XF4YAMG",
-    "title": "Vicara Sagaram Brahmasri Anna",
-    "subTitle": "- Subramanian Endowment",
-    "startYear": "2024",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.583Z",
-      "updated_at": "2024-12-31T08:24:02.486Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFFBDWAZ2TKZEZSJJA6FVX88",
+    "id": "01JGM4T8Y0A9QTAPC877S07VGX",
     "title": "Cataloguing of Palm-Leaf Manuscripts",
     "subTitle": "- The KSRI has a well-maintained collection of hundreds of ancient palm-leaf and papers manuscript.",
-    "startYear": "2024",
     "status": "On-Going",
     "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.583Z",
-      "updated_at": "2024-12-31T08:23:22.284Z",
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFYYBPBT70DC5KPS7DDBMXKA",
-    "title": "Mathematics",
-    "subTitle": "Mathematics",
-    "startYear": "2024",
+    "id": "01JGM4T8Y01E96WBAKDA82H533",
+    "title": "Encyclopaedia of Numerals Vol II ( Vol. I has been published )",
+    "subTitle": "- B.VenkataramaniEndowment",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y0JN41NVMCBXBWMRHC",
+    "title": "English Translation of Sisupalavadha",
+    "subTitle": "- Dr.S.S.JanakiEndowment",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y0NDHHHKGVV39CEWG0",
+    "title": "Vaishnava Agamas",
+    "subTitle": "- These are ancient original Sanskrit texts which give valuable information about temple architecture, rituals, installation of various deities, Yogic practices etc.",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y0P1ZYD7J45JSGXNY9",
+    "title": "English Translation of Kiratarjuniyta",
+    "subTitle": "- Dr E R Rama Bai Chair",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM55YZZDW0DRRTVBQPWCVP8",
+    "title": "mathematics",
+    "subTitle": "mathematics",
+    "startYear": "",
     "completedYear": "",
     "status": "On-Going",
     "metadata": {
       "updated_by": "demo",
-      "created_at": "2024-12-25T12:58:39.354Z",
-      "updated_at": "2024-12-31T08:24:29.460Z",
+      "created_at": "2025-01-02T18:41:54.687Z",
+      "updated_at": "2025-01-02T18:42:22.578Z",
       "created_by": "demo"
     },
     "sponsor": "",
-    "projectSeries": "Ancient Indian Knowledge Series",
-    "projectSubSeries": "Science"
+    "keywords": "",
+    "projectSeries": "",
+    "projectSubSeries": "",
+    "publicationStatus": "",
+    "projectInvestigator": "",
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFFBDWB09N7112VRJV0Q1NET",
-    "title": "English Translation of Krishi Parashara - Agricultural",
-    "subTitle": " ",
-    "startYear": "2024",
+    "id": "01JGM4T8Y0VHVSHA7FAQ04T7MY",
+    "title": "Svarodaya Science of Yoga",
+    "subTitle": "- The present project would help in knowing more about this forgotten branch of Yoga.",
     "status": "On-Going",
     "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.584Z",
-      "updated_at": "2024-12-31T08:24:23.114Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFFBDWB051GTKV9Z6YGRD1W6",
-    "title": "English Translation of Kasyapa Silpasastra",
-    "subTitle": "-",
-    "startYear": "2024",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.584Z",
-      "updated_at": "2024-12-31T08:24:15.274Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFFBDWAZ06EYFZ2TK9EYGFA4",
-    "title": "Dictionary of Geographical terms from Sanskrit Sources",
-    "subTitle": "- B.MadhavanEndowment",
-    "startYear": "2024",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.583Z",
-      "updated_at": "2024-12-31T08:23:08.862Z",
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
       "created_by": "admin"
     },
-    "keywords": " "
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFFBDWAZE99V9B56N569V185",
-    "title": "Encyclopaedia of Numerals Vol II ( Vol. I has been published )",
-    "subTitle": "- B.VenkataramaniEndowment",
-    "startYear": "2024",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.583Z",
-      "updated_at": "2024-12-31T08:23:27.711Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFFBDWB0165HDA9KXY1B8JCY",
-    "title": "English Translation of Kiratarjuniyta",
-    "subTitle": "- Dr E R Rama Bai Chair",
-    "startYear": "2024",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.584Z",
-      "updated_at": "2024-12-31T08:24:07.545Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFFBDWAZHA07F4GH8T7549Q5",
-    "title": "Vaishnava Agamas",
-    "subTitle": "- These are ancient original Sanskrit texts which give valuable information about temple architecture, rituals, installation of various deities, Yogic practices etc.",
-    "startYear": "2024",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.583Z",
-      "updated_at": "2024-12-31T08:23:36.942Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFFBDWAZJ30KRSCECFA1TTDX",
-    "title": "English Translation of Sisupalavadha",
-    "subTitle": "- Dr.S.S.JanakiEndowment",
-    "startYear": "2024",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.583Z",
-      "updated_at": "2024-12-31T08:23:44.879Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFFBDWAZ0RJ2WKAHEWXXBSCX",
+    "id": "01JGM4T8Y0B4NV6N01HJNF7CQB",
     "title": "Critical Edition of HathasanketaChandrika of Sundara Deva",
     "subTitle": "- D.P Santanam - Indic Academy Endowment",
-    "startYear": "2023",
     "status": "On-Going",
     "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-19T11:39:11.584Z",
-      "updated_at": "2024-12-31T08:23:16.612Z",
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y0XW4QPBDBMSYPDNBG",
+    "title": "Monograph on Ancient Indian Mathematics",
+    "subTitle": "- Canara Bank Project",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y0DQPRG9TQMJ8Z06V0",
+    "title": "Evolution of Earth in Puranas",
+    "subTitle": "- Puranas devote quite a sizeable portion of the texts for the description of earth and its evolution (sarga-pratisharga).",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y07X6Z4N7NSDSDMMNA",
+    "title": "Dictionary of Geographical terms from Sanskrit Sources",
+    "subTitle": "- B.MadhavanEndowment",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y00AAM3YJ1JEE8DG4K",
+    "title": "English Translation of Krishi Parashara - Agricultural",
+    "subTitle": "",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y0E7FNFBE3YMD33H83",
+    "title": "English Translation of Kasyapa Silpasastra",
+    "subTitle": "",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y0X8XVAJKPKMAEXXQX",
+    "title": "Vicara Sagaram Brahmasri Anna",
+    "subTitle": "- Subramanian Endowment",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-01-02T18:35:31.648Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
   }
 ]

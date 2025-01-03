@@ -185,7 +185,7 @@ for (const element of additionalPublications) {
   const additionalPublication = element;
 
   const publicationNameForFile = additionalPublication
-    .replace(/ /g, "_")
+    .replace(/[^a-zA-Z0-9]/g, "")
     .toLowerCase();
 
   // query content

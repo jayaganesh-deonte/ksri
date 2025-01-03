@@ -19,7 +19,7 @@
       >
         <v-avatar size="80">
           <v-img
-            :src="item.avatarImage[0]"
+            :src="getImageUrl(item.avatarImage[0])"
             :alt="item.title"
             width="80"
             fit
@@ -62,5 +62,10 @@ const truncatedTitle = (title) => {
     return words.slice(0, maxWords).join(" ") + "...";
   }
   return title;
+};
+
+const getImageUrl = (url) => {
+  const runtimeConfig = useRuntimeConfig();
+  return runtimeConfig.public.ASSET_DOMAIN + url;
 };
 </script>

@@ -1,6 +1,20 @@
 [
   {
-    "id": "01JGERS2SMMTJSTWP78B6RDYBP",
+    "id": "01JGN7KJQ84RB5YN8FRBQ4KPNX",
+    "JournalAccNo": "",
+    "JournalName": "",
+    "Nationality": "",
+    "subTable": [],
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-03T04:43:32.457Z",
+      "updated_at": "2025-01-03T04:43:32.457Z",
+      "created_by": "demo"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGN7EXRZ56WR5A5Q4A0NW2RW",
     "JournalAccNo": 1,
     "JournalName": "JOURNAL OF ASIATIQUE",
     "Nationality": "FOREIGN",
@@ -116,13 +130,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.525Z",
-      "updated_at": "2024-12-31T16:28:57.526Z",
+      "created_at": "2025-01-03T04:40:59.936Z",
+      "updated_at": "2025-01-03T04:40:59.937Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SPB18FG9JKMT14DD61",
+    "id": "01JGN7EXS141E9CB3XCE7EWQ2C",
     "JournalAccNo": 2,
     "JournalName": "ARCHIV ORIENTALINI",
     "Nationality": "FOREIGN",
@@ -142,13 +157,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.526Z",
-      "updated_at": "2024-12-31T16:28:57.526Z",
+      "created_at": "2025-01-03T04:40:59.938Z",
+      "updated_at": "2025-01-03T04:40:59.938Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SP71CMT0RA7VGVS0R2",
+    "id": "01JGN7EXS22D6MKV675D24V5A1",
     "JournalAccNo": 3,
     "JournalName": "ASIAN STUDIES PHILIPINES",
     "Nationality": "FOREIGN",
@@ -276,13 +292,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.526Z",
-      "updated_at": "2024-12-31T16:28:57.526Z",
+      "created_at": "2025-01-03T04:40:59.938Z",
+      "updated_at": "2025-01-03T04:40:59.938Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SP42DYX1V42FB8CN4F",
+    "id": "01JGN7EXS244RJRV4ZX65V8JFA",
     "JournalAccNo": 4,
     "JournalName": "BULLETIN DE I ECOLE FRANCAISE",
     "Nationality": "FOREIGN",
@@ -512,13 +529,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.526Z",
-      "updated_at": "2024-12-31T16:28:57.526Z",
+      "created_at": "2025-01-03T04:40:59.938Z",
+      "updated_at": "2025-01-03T04:40:59.938Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SP47PFNBQS34H3Q7M5",
+    "id": "01JGN7EXS2P663MQMV09THMXDH",
     "JournalAccNo": 5,
     "JournalName": "INDIAN AND BUDDHIST STUDIES",
     "Nationality": "FOREIGN",
@@ -694,13 +712,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.526Z",
-      "updated_at": "2024-12-31T16:28:57.526Z",
+      "created_at": "2025-01-03T04:40:59.938Z",
+      "updated_at": "2025-01-03T04:40:59.938Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SPWWTQFREXRWJFJZCS",
+    "id": "01JGN7EXS2EGH65DDXCK4D5WDR",
     "JournalAccNo": 6,
     "JournalName": "PHILOSOPHY EAST AND WEST QUATERLY OF ASIAN AND COMPARATIVE THOUGHT :U.S.A",
     "Nationality": "FOREIGN",
@@ -840,13 +859,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.526Z",
-      "updated_at": "2024-12-31T16:28:57.526Z",
+      "created_at": "2025-01-03T04:40:59.938Z",
+      "updated_at": "2025-01-03T04:40:59.938Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SPSAKFV1FJTM3R574X",
+    "id": "01JGN7EXS2RM4BDZG2WM6XQ32Y",
     "JournalAccNo": 7,
     "JournalName": "ROYAL ASIATIC SOCIETY,JOURNAL",
     "Nationality": "FOREIGN",
@@ -1094,13 +1114,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.526Z",
-      "updated_at": "2024-12-31T16:28:57.526Z",
+      "created_at": "2025-01-03T04:40:59.938Z",
+      "updated_at": "2025-01-03T04:40:59.938Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SPETS5Q099Q0YNHS88",
+    "id": "01JGN7EXS21Y8SBENC3A2RV6J6",
     "JournalAccNo": 8,
     "JournalName": "SCHOOL OF ORIENTAL AND AFRICA STUDIES \n(BULLETIN OF-)",
     "Nationality": "FOREIGN",
@@ -1456,13 +1477,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.526Z",
-      "updated_at": "2024-12-31T16:28:57.526Z",
+      "created_at": "2025-01-03T04:40:59.938Z",
+      "updated_at": "2025-01-03T04:40:59.938Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SP11TXGGMBGST0MY6V",
+    "id": "01JGN7EXS2935VEV9AKSHRHQAN",
     "JournalAccNo": 9,
     "JournalName": "TOYOSHI - KENKYU \nJOUNAL OF ORIENTAL RESEARCH : KYOTO UNIVERSITY ,JAPAN",
     "Nationality": "FOREIGN",
@@ -1836,13 +1858,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.526Z",
-      "updated_at": "2024-12-31T16:28:57.526Z",
+      "created_at": "2025-01-03T04:40:59.938Z",
+      "updated_at": "2025-01-03T04:40:59.939Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SPQYQRWVNCDT3D2PPP",
+    "id": "01JGN7EXS3ZJHH4CSZKQGJ1TZM",
     "JournalAccNo": 10,
     "JournalName": "WIENER ZEITSCHRIFT POR DIE KUNDE SUDA SIENS",
     "Nationality": "FOREIGN",
@@ -1994,13 +2017,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.526Z",
-      "updated_at": "2024-12-31T16:28:57.526Z",
+      "created_at": "2025-01-03T04:40:59.939Z",
+      "updated_at": "2025-01-03T04:40:59.939Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SPM69P24HMWKBNTYWQ",
+    "id": "01JGN7EXS3R5E7Q79RJV4ZN1S0",
     "JournalAccNo": 11,
     "JournalName": "ANNUAL REPORT OF THE LIBRARIAN OF CONGRESS",
     "Nationality": "FOREIGN",
@@ -2182,13 +2206,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.526Z",
-      "updated_at": "2024-12-31T16:28:57.526Z",
+      "created_at": "2025-01-03T04:40:59.939Z",
+      "updated_at": "2025-01-03T04:40:59.939Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQFYDHG51G2PDV8YV7",
+    "id": "01JGN7EXS324X4V4XASHRZN2QF",
     "JournalAccNo": 12,
     "JournalName": "EAST AND WEST QUATERLY: PUBLISIHED BY ISTITUTE ITALIANO PER 11 MEDIO ED ES TREMO ORIENTE: ROME",
     "Nationality": "FOREIGN",
@@ -2484,13 +2509,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.939Z",
+      "updated_at": "2025-01-03T04:40:59.939Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQ0GRBRKA76W2PAYG7",
+    "id": "01JGN7EXS3WQQA883A9B8TBJA7",
     "JournalAccNo": 13,
     "JournalName": "STUDIA ORIENTALIN EDITED BY FINNISH ORIENTAL SOCIETY: FINALAND",
     "Nationality": "FOREIGN",
@@ -2594,13 +2620,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.939Z",
+      "updated_at": "2025-01-03T04:40:59.939Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQXA412343P5ZTVGMN",
+    "id": "01JGN7EXS3QY9EH2VK1A1HWBFT",
     "JournalAccNo": 14,
     "JournalName": "ZEIT CHRIFT FUR KULFURA USTA USCH INSTITUTE FUR AUSLANDSBEZIEHUNGEN STUUOART.",
     "Nationality": "FOREIGN",
@@ -2758,13 +2785,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.939Z",
+      "updated_at": "2025-01-03T04:40:59.939Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQHJVTKS8TAFSWGTJX",
+    "id": "01JGN7EXS3VMG967RP7M97H2D8",
     "JournalAccNo": 15,
     "JournalName": "HISTORY OF RELIGION AN INTERNATIONAL JOURNAL FOR COMPARATIVE HISTORICAL STUDIES :CHICAGO .",
     "Nationality": "FOREIGN",
@@ -3162,13 +3190,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.939Z",
+      "updated_at": "2025-01-03T04:40:59.939Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQRPCH42XDYCCGJD3N",
+    "id": "01JGN7EXS31X6NZWDJDBGV19AV",
     "JournalAccNo": 16,
     "JournalName": "ADVENT A QUATERLY JOURNAL TO THE EXPOSITION OR SRI AUROBINDO'S VISION OF THE FUTURE AUROBINDO ASHRAM,PONDICHERRY",
     "Nationality": "INDIA",
@@ -3362,13 +3391,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.939Z",
+      "updated_at": "2025-01-03T04:40:59.939Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQHAA2666RHYJAPGT0",
+    "id": "01JGN7EXS37NZH6HBKFDB4VBA3",
     "JournalAccNo": 17,
     "JournalName": "ANDHRA HISTORICAL QUATERLY",
     "Nationality": "INDIA",
@@ -3406,13 +3436,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.939Z",
+      "updated_at": "2025-01-03T04:40:59.939Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQRTFGSB4J1XPCSQA5",
+    "id": "01JGN7EXS3NA8FTYMM4JH2Q63F",
     "JournalAccNo": 19,
     "JournalName": "ANDHRA HISTORICAL RESEARCH SOCIETY JOURNAL",
     "Nationality": "INDIA",
@@ -3510,13 +3541,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.939Z",
+      "updated_at": "2025-01-03T04:40:59.939Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQ9FWTTMM4BF9APD68",
+    "id": "01JGN7EXS3J7TWF95HSVRS5ZJH",
     "JournalAccNo": 20,
     "JournalName": "ALIGARH JOURNAL OF ORIENTAL STUDIES",
     "Nationality": "INDIA",
@@ -3578,13 +3610,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.940Z",
+      "updated_at": "2025-01-03T04:40:59.940Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQ75MFZYQESMZ235RP",
+    "id": "01JGN7EXS4EDNY976XZEF0XS6M",
     "JournalAccNo": 21,
     "JournalName": "ASIATIC SOCIETY OF BOMBAY",
     "Nationality": "INDIA",
@@ -3658,13 +3691,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.940Z",
+      "updated_at": "2025-01-03T04:40:59.940Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQBGTQFAG41C42VNZS",
+    "id": "01JGN7EXS4DYPGFFW8PKQ2MNGR",
     "JournalAccNo": 23,
     "JournalName": "ASIATIC SOCIETY OF BOMBAY PUBLISHED BY  ASIATIC SOCIETY OF BOMBAY",
     "Nationality": "INDIA",
@@ -3708,13 +3742,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.940Z",
+      "updated_at": "2025-01-03T04:40:59.940Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQ1JQZAZ3V73PW3947",
+    "id": "01JGN7EXS4VVBF2VNJ7TV5ZBCY",
     "JournalAccNo": 24,
     "JournalName": "ASIAN STUDIES , JOURNAL OF A BIANNUAL ,DEVOTED TO COMPARATIVE STUDIES OF THE LITERATURES ,LANGUAGES,ETC INSTITUTION OF ASIAN STUDIES ,SHOLLINGANALLU",
     "Nationality": "INDIA",
@@ -3824,13 +3859,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.940Z",
+      "updated_at": "2025-01-03T04:40:59.940Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQ2B9HASM0BT43EJ60",
+    "id": "01JGN7EXS4E3RDC750WCCW2F2N",
     "JournalAccNo": 25,
     "JournalName": "ANNALS OF ORIENTAL RESEARCH JOURNAL FROM MADRAS UNIVERSITY OF MADRAS",
     "Nationality": "INDIA",
@@ -3976,13 +4012,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.940Z",
+      "updated_at": "2025-01-03T04:40:59.940Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQY8FVYMZRBHS87YPV",
+    "id": "01JGN7EXS41EVHSH9ZR8CK8NR7",
     "JournalAccNo": 26,
     "JournalName": "AUROBINDO SRI ARCHIEVES AND RESEARCH : A SEMI- ANNUAL JOURNAL FROM AUROBINDO ASHRAM",
     "Nationality": "INDIA",
@@ -4014,13 +4051,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.940Z",
+      "updated_at": "2025-01-03T04:40:59.940Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQBNWGH1R8ZP7SHT7R",
+    "id": "01JGN7EXS4SSYNDQQSYZ67V5ND",
     "JournalAccNo": 28,
     "JournalName": "BARODA MUSEUM & PICTURE GALLERY ,BULLETIN",
     "Nationality": "INDIA",
@@ -4172,13 +4210,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.940Z",
+      "updated_at": "2025-01-03T04:40:59.940Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQ4ZYCAH1PH2CPTPH0",
+    "id": "01JGN7EXS406YGRNTPP34AB9WB",
     "JournalAccNo": 29,
     "JournalName": "BHARATA DHARMA A AMAGAZINE OF LIBERAL HINDUISM",
     "Nationality": "INDIA",
@@ -4252,13 +4291,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.940Z",
+      "updated_at": "2025-01-03T04:40:59.940Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQEE4WPEC9JTJMW6DC",
+    "id": "01JGN7EXS40CE9WMJR3581P24Y",
     "JournalAccNo": 30,
     "JournalName": "BHARATIYA VIDYA",
     "Nationality": "INDIA",
@@ -4296,13 +4336,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.940Z",
+      "updated_at": "2025-01-03T04:40:59.940Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQZ4JHN8D30MH0G3Z2",
+    "id": "01JGN7EXS48ZX550DY6PW60EHG",
     "JournalAccNo": 31,
     "JournalName": "BALASAMSKRITA",
     "Nationality": "INDIA",
@@ -4334,13 +4375,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.940Z",
+      "updated_at": "2025-01-03T04:40:59.940Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQEBTYAPQ0WMSA7ZDV",
+    "id": "01JGN7EXS47WDX8E76AVM1SCG9",
     "JournalAccNo": 32,
     "JournalName": "BIHAR AND ORISSA RESEARCH SOCIETY JOURNAL OF A QUATERLY JOURNAL PUBLICATION. \nBY BIHAR AND ORISSA RESEARCH SOCIETY",
     "Nationality": "INDIA",
@@ -4444,13 +4486,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.940Z",
+      "updated_at": "2025-01-03T04:40:59.940Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SQWZNQTT39N7ZX2SHT",
+    "id": "01JGN7EXS4WZJR1VVP5CVVP44S",
     "JournalAccNo": 33,
     "JournalName": "BRAHMANAMAHASAMMELANAM \nBY BENARES",
     "Nationality": "INDIA",
@@ -4464,13 +4507,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.527Z",
-      "updated_at": "2024-12-31T16:28:57.527Z",
+      "created_at": "2025-01-03T04:40:59.940Z",
+      "updated_at": "2025-01-03T04:40:59.940Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SRWV4W5AXG2R4NX8T5",
+    "id": "01JGN7EXS4MEEXK64W84EQ9DCR",
     "JournalAccNo": 34,
     "JournalName": "CEYLON HISTORICAL QUATERLY",
     "Nationality": "INDIA",
@@ -4484,13 +4528,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.528Z",
-      "updated_at": "2024-12-31T16:28:57.528Z",
+      "created_at": "2025-01-03T04:40:59.941Z",
+      "updated_at": "2025-01-03T04:40:59.941Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SRMCKBZ1PTKW429ZYH",
+    "id": "01JGN7EXS5NDH2Z64C189HTPHT",
     "JournalAccNo": 35,
     "JournalName": "CONTRIBUTIONS TO NEPALESE STUDIES QUATERLY JOURNAL OF THE RESEARCH CENTRE FOR NEPAL AND ASIAN STUDIES,NEPAL",
     "Nationality": "INDIA",
@@ -4564,13 +4609,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.528Z",
-      "updated_at": "2024-12-31T16:28:57.528Z",
+      "created_at": "2025-01-03T04:40:59.941Z",
+      "updated_at": "2025-01-03T04:40:59.941Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SRTGM7PPBWXM7WVA8F",
+    "id": "01JGN7EXS57GYPVZ0ZBFJKAX62",
     "JournalAccNo": 36,
     "JournalName": "DHARMA PRAKA SH",
     "Nationality": "INDIA",
@@ -4632,13 +4678,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.528Z",
-      "updated_at": "2024-12-31T16:28:57.528Z",
+      "created_at": "2025-01-03T04:40:59.941Z",
+      "updated_at": "2025-01-03T04:40:59.941Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SRZYK4C3N4P1V07VE1",
+    "id": "01JGN7EXS5NZ5RSM8FPWEE94PM",
     "JournalAccNo": 38,
     "JournalName": "GANGANATHA JHA RESEARCH INSTITUTE JOURNAL OF QUATERLY JOURNALFROM ALLAHABAD",
     "Nationality": "INDIA",
@@ -4802,13 +4849,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.528Z",
-      "updated_at": "2024-12-31T16:28:57.528Z",
+      "created_at": "2025-01-03T04:40:59.941Z",
+      "updated_at": "2025-01-03T04:40:59.941Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SRZR610AVCFH87PANG",
+    "id": "01JGN7EXS5GK0SZSBX1QTFCMRG",
     "JournalAccNo": 39,
     "JournalName": "GAUDIYA ,THE A MONTHLY RELIGIOUS JOURNAL : PUB  \nBY GAUDIYA MATH CHENNAI",
     "Nationality": "INDIA",
@@ -4876,13 +4924,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.528Z",
-      "updated_at": "2024-12-31T16:28:57.528Z",
+      "created_at": "2025-01-03T04:40:59.941Z",
+      "updated_at": "2025-01-03T04:40:59.941Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SR6RKY2152QM2DDX8F",
+    "id": "01JGN7EXS5Q05K71Y2AXNYKVF7",
     "JournalAccNo": 40,
     "JournalName": "GOVERNMENT MANUSCRIPTS LIBRARY",
     "Nationality": "INDIA",
@@ -5058,13 +5107,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.528Z",
-      "updated_at": "2024-12-31T16:28:57.528Z",
+      "created_at": "2025-01-03T04:40:59.942Z",
+      "updated_at": "2025-01-03T04:40:59.942Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SRHCBXSRTYH7VPM8B3",
+    "id": "01JGN7EXS6H5Y7SPVC8A7HP6HB",
     "JournalAccNo": 41,
     "JournalName": "GLORY OF INDIA",
     "Nationality": "INDIA",
@@ -5084,13 +5134,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.528Z",
-      "updated_at": "2024-12-31T16:28:57.528Z",
+      "created_at": "2025-01-03T04:40:59.942Z",
+      "updated_at": "2025-01-03T04:40:59.942Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SRQNN9VSS8DS2MZTWV",
+    "id": "01JGN7EXS6R28EHN12ZGCNJB26",
     "JournalAccNo": 42,
     "JournalName": "HINDUMITTRAN",
     "Nationality": "INDIA",
@@ -5104,13 +5155,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.528Z",
-      "updated_at": "2024-12-31T16:28:57.528Z",
+      "created_at": "2025-01-03T04:40:59.942Z",
+      "updated_at": "2025-01-03T04:40:59.942Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SR33PT48RB1EEMPVMA",
+    "id": "01JGN7EXS64SYZBTB1V2VMCKG9",
     "JournalAccNo": 43,
     "JournalName": "HINDUSTAN REVIEW A JOURNAL FROM ALLAHABAD",
     "Nationality": "INDIA",
@@ -5148,13 +5200,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.528Z",
-      "updated_at": "2024-12-31T16:28:57.528Z",
+      "created_at": "2025-01-03T04:40:59.942Z",
+      "updated_at": "2025-01-03T04:40:59.942Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SRSXG9B83CJRWXVEG4",
+    "id": "01JGN7EXS6RHMVDE9XWM22C37Y",
     "JournalAccNo": 44,
     "JournalName": "INDEX INDO - ASIATICUS",
     "Nationality": "INDIA",
@@ -5186,13 +5239,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.528Z",
-      "updated_at": "2024-12-31T16:28:57.528Z",
+      "created_at": "2025-01-03T04:40:59.942Z",
+      "updated_at": "2025-01-03T04:40:59.942Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SR4XRJG1SZEQ0CNZM4",
+    "id": "01JGN7EXS64XWVMD3BVH72EYX0",
     "JournalAccNo": 45,
     "JournalName": "INDIAN ANTIQUARY,THE A JOURNAL OF ORIENTAL RESEARCH IN ARCHAEOLOGY ,HISTORY , LITERATURE, LANGUAGE, PHILOSOPHY, RELIGION AND FOLKLORE: PUBLICATIONS BY INDOLOGICAL BOOK REPRINT CORPORATION , DELHI",
     "Nationality": "INDIA",
@@ -5236,13 +5290,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.528Z",
-      "updated_at": "2024-12-31T16:28:57.528Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SRJE42PXFV2H5C383X",
+    "id": "01JGN7EXS76R50AA05JT1AJYZE",
     "JournalAccNo": 46,
     "JournalName": "INDIAN CULTURE A JOURNAL FROM CALCUTTA",
     "Nationality": "INDIA",
@@ -5286,13 +5341,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.528Z",
-      "updated_at": "2024-12-31T16:28:57.528Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SR29CMTNZK8XTWD3FG",
+    "id": "01JGN7EXS7P774Q1HPD9VSNQGV",
     "JournalAccNo": 47,
     "JournalName": "INDIAN HISTORICAL QUATERLY",
     "Nationality": "INDIA",
@@ -5438,13 +5494,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SST4YDFFH4MT45E4KQ",
+    "id": "01JGN7EXS7NQWH4MMVXW2EGQ67",
     "JournalAccNo": 48,
     "JournalName": "INDIAN HISTORY , JOURNAL OF A JOURNAL FROM DEPT OF HISTORY UNIVERSITY OF KERALA",
     "Nationality": "INDIA",
@@ -5578,13 +5635,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SST0MDHRPDTXRPQ5M8",
+    "id": "01JGN7EXS78YG8GG2X573T0D93",
     "JournalAccNo": 49,
     "JournalName": "INDIAN MUSICIOLOGICAL SOCIETY A RESEARCH JOURNAL IN THE FIELD OF MUSIC INCLUDING FOLK MUSIC AND DANCE: A SEMI ANNUAL JOURNAL FROM BARODA",
     "Nationality": "INDIA",
@@ -5706,13 +5764,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SS1WYN3RT9J2FG3VBV",
+    "id": "01JGN7EXS7TPR2A4QAG2ARVT6N",
     "JournalAccNo": 50,
     "JournalName": "INDIAN WORLD A JOURNAL FROM CALCUTTA",
     "Nationality": "INDIA",
@@ -5738,13 +5797,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SSJHFT02223C23M31G",
+    "id": "01JGN7EXS76B42YG0F55JXWNFW",
     "JournalAccNo": 51,
     "JournalName": "INDOLOGICAL STUDIES",
     "Nationality": "INDIA",
@@ -5758,13 +5818,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SSCMZTR8YW7Y2EFVB8",
+    "id": "01JGN7EXS7FQAEKJR7XGKMPWD1",
     "JournalAccNo": 52,
     "JournalName": "INSTITUTE OF TRADITIONAL CULTURE TRADITION AND CULTURE OF SOUTH AND SOUTH EAST ASIA ON TAMIL TRADITIONAL AND \nCULTURE",
     "Nationality": "INDIA",
@@ -5874,13 +5935,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SSH2WS12JRRK8TGXBX",
+    "id": "01JGN7EXS7XS0EWJ677ZV4XW1V",
     "JournalAccNo": 54,
     "JournalName": "INDO ASIAN CULTURE",
     "Nationality": "INDIA",
@@ -5984,13 +6046,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SSHJ8DPSJXQPE7Z2KM",
+    "id": "01JGN7EXS76AJKG4AJ0KBG41N7",
     "JournalAccNo": 55,
     "JournalName": "KAMAKOTIVANI",
     "Nationality": "INDIA",
@@ -6058,13 +6121,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SS6T98GBXMAKTAX55R",
+    "id": "01JGN7EXS7RTX61A3S0C6VQWEW",
     "JournalAccNo": 56,
     "JournalName": "KALINGA HISTORICAL RESEARCH SOCIETY THE JOURNAL",
     "Nationality": "INDIA",
@@ -6090,13 +6154,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SSDY8TPS2G66VQDD38",
+    "id": "01JGN7EXS75GQDFJKDEVGC59JG",
     "JournalAccNo": 57,
     "JournalName": "KARANATAK UNIVERSITY , JOURNAL OF (SCIENCE)",
     "Nationality": "INDIA",
@@ -6116,13 +6181,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SS0CFGGAXTR1YG5Y78",
+    "id": "01JGN7EXS7DW6GSWXNR8TSDYKH",
     "JournalAccNo": 58,
     "JournalName": "KERALA STUDIES ,JOURNAL",
     "Nationality": "INDIA",
@@ -6136,13 +6202,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SS42Z7ENCJ8YRBBPPJ",
+    "id": "01JGN7EXS7N3JN38FJ580C0M5W",
     "JournalAccNo": 59,
     "JournalName": "KERALA UNIV.ORIENTAL MSS. LIBRARY",
     "Nationality": "INDIA",
@@ -6168,13 +6235,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SSY06MY4A901ZYBFYT",
+    "id": "01JGN7EXS7TR368Y3B52SS67MA",
     "JournalAccNo": 60,
     "JournalName": "KARNATAK UNIVERSITY JOURNAL OF (SOCIAL SCIENCES) PUBLICATION BY UNIVERSITY OF KARNATAKA , DHARWAD (EXTRA COPY)",
     "Nationality": "INDIA",
@@ -6272,13 +6340,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.529Z",
-      "updated_at": "2024-12-31T16:28:57.529Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SSXTHFQS9EVJAF1679",
+    "id": "01JGN7EXS7MPBZPMYY3MSFR6YP",
     "JournalAccNo": 61,
     "JournalName": "KARNATAK UNIVERSITY,JOURNAL OF (HUMANITIES)",
     "Nationality": "INDIA",
@@ -6370,13 +6439,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STEJZB1ESDCCTMXP7S",
+    "id": "01JGN7EXS77CSPEV02EWT7C5E0",
     "JournalAccNo": 62,
     "JournalName": "KAMAKOTIVANIMAKOTIVANI",
     "Nationality": "INDIA",
@@ -6426,13 +6496,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STP2Z2WVBH10MB9CA6",
+    "id": "01JGN7EXS7CD62JYP10MF1AN2K",
     "JournalAccNo": 63,
     "JournalName": "MADHYA BHARATHI JOURNAL OF THE UNIVERSITY OF SAUGAR, SAUGAR ,M.P.",
     "Nationality": "INDIA",
@@ -6572,13 +6643,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.943Z",
+      "updated_at": "2025-01-03T04:40:59.943Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2ST86BX567FEFJRB5HX",
+    "id": "01JGN7EXS7NHF7WYP18CHZ7CX5",
     "JournalAccNo": 64,
     "JournalName": "MADRAS UNIVERSITY (JOURNAL )",
     "Nationality": "INDIA",
@@ -6682,13 +6754,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STJ196SF0B6VA4ER01",
+    "id": "01JGN7EXS81D9X0QJQ19GS8RFG",
     "JournalAccNo": 65,
     "JournalName": "HAHA BODHI A MONTHLY JOURNAL OF BUDDHIST BROTHERHOOD FROM CALCUTTA",
     "Nationality": "INDIA",
@@ -6786,13 +6859,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STVCFBJV6X1N3BDK9T",
+    "id": "01JGN7EXS8MNT8NCPKCMVVMVAJ",
     "JournalAccNo": 66,
     "JournalName": "MANISHA",
     "Nationality": "INDIA",
@@ -6830,13 +6904,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STQ99BC3M4EK70M28B",
+    "id": "01JGN7EXS8EZ16FA8ADBANXWDK",
     "JournalAccNo": 67,
     "JournalName": "MANJUBHASINI",
     "Nationality": "INDIA",
@@ -6898,13 +6973,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2ST6QFJZJ3DVCCPZ8M7",
+    "id": "01JGN7EXS8FYWKPEWD3NKR62BA",
     "JournalAccNo": 68,
     "JournalName": "MANJUSHA",
     "Nationality": "INDIA",
@@ -6990,13 +7066,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2ST84M9SK2EYF3NSG95",
+    "id": "01JGN7EXS8AT1X2YN8RD7S2TRX",
     "JournalAccNo": 71,
     "JournalName": "MANJUSHA (BOUND VOLUMES)",
     "Nationality": "INDIA",
@@ -7082,13 +7159,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STQDZTBX8NWX3T0WCY",
+    "id": "01JGN7EXS86GWM8GN263Z74191",
     "JournalAccNo": 72,
     "JournalName": "MARATHWADA UNIVERSITY JOURNAL, AURANGABAD ., HALF-YEARLY",
     "Nationality": "INDIA",
@@ -7180,13 +7258,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STAF8QW9KHN49RK6K1",
+    "id": "01JGN7EXS8HMBH99X75Y9X5886",
     "JournalAccNo": 73,
     "JournalName": "MIDDLE EAST REVIEW",
     "Nationality": "INDIA",
@@ -7206,13 +7285,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STSD8Y1VMM0C0V0ZET",
+    "id": "01JGN7EXS8RFT2Z60PVKNAS564",
     "JournalAccNo": 74,
     "JournalName": "MYSORE UNIVERSITY,JOURNAL OF NEW SERIES.SECTION A ARTS. HALFYEARLY JOURNAL OF MYSORE UNIVERSITY",
     "Nationality": "INDIA",
@@ -7232,39 +7312,42 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STA7ZNF8WAJHCAB6A6",
+    "id": "01JGN7EXS8HVNY306BTFMGJRY3",
     "JournalAccNo": 75,
     "JournalName": "MUSIC ACADEMY ,JOURNAL OF",
     "Nationality": "INDIA",
     "subTable": [],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STF75S36KMSXY8D9YH",
+    "id": "01JGN7EXS8MEF16VG7G5XH1TV7",
     "JournalAccNo": 76,
     "JournalName": "MUSIC ACADEMY (SOUVENIR)",
     "Nationality": "INDIA",
     "subTable": [],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STYE0H6JV7YWFY17Y6",
+    "id": "01JGN7EXS85GNWP586FYGQ99X4",
     "JournalAccNo": 77,
     "JournalName": "MYTHIC SOCIETY",
     "Nationality": "INDIA",
@@ -7818,13 +7901,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STB60HCX2103Y3S097",
+    "id": "01JGN7EXS8NSA8QCM21YX2P117",
     "JournalAccNo": 78,
     "JournalName": "MUSIC ACADEMY ,JOURNAL OF",
     "Nationality": "INDIA",
@@ -8054,13 +8138,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STS9YSC21K5ZX52K0V",
+    "id": "01JGN7EXS8X5HHDM3YH3N8KAK5",
     "JournalAccNo": 79,
     "JournalName": "MUSIC ACADEMY (SOUVENIR)",
     "Nationality": "INDIA",
@@ -8266,13 +8351,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STGWB56YFMBGQFW7GM",
+    "id": "01JGN7EXS80MDTPPMYQTMR6RGP",
     "JournalAccNo": 80,
     "JournalName": "MYSORE ORIENTALIST ,THE ANNUAL JOURNAL PUBLISHED BY ORIENTAL RESEARCH INSTITUTE,UNIVERSITY OF MYSORE",
     "Nationality": "INDIA",
@@ -8364,13 +8450,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STR0X477PTQQR52VTX",
+    "id": "01JGN7EXS814G6PPA2V95B5AHY",
     "JournalAccNo": 81,
     "JournalName": "MYSORE UNIVERSITY",
     "Nationality": "INDIA",
@@ -8390,13 +8477,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STAVAX48J43T99RRYS",
+    "id": "01JGN7EXS8RXBZZ5C4EJJXHTZW",
     "JournalAccNo": 82,
     "JournalName": "NAGARIPRACARINI PATRIKA",
     "Nationality": "INDIA",
@@ -8518,13 +8606,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2ST33JAV42FWDBZ094C",
+    "id": "01JGN7EXS87C1HR06ADKNYW7VD",
     "JournalAccNo": 83,
     "JournalName": "NAGPUR UNIVERSITY,JOURNAL OF (HUMANITIES)",
     "Nationality": "INDIA",
@@ -8670,13 +8759,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.944Z",
+      "updated_at": "2025-01-03T04:40:59.944Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2ST2MZ1P439RQAZCZY2",
+    "id": "01JGN7EXS8P1S6538DD8ARDGRC",
     "JournalAccNo": 84,
     "JournalName": "NAIMISHIYAM INSTITUTE FOR PURANIC AND VEDIC STUDIES AND RESEARCH .HALF YEARLY SITAPUR",
     "Nationality": "INDIA",
@@ -8738,13 +8828,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STN6A1RA0KXPSMKRT2",
+    "id": "01JGN7EXS9WTDFSX00XCKR6C6B",
     "JournalAccNo": 85,
     "JournalName": "SRI NRSMHAPRIYA",
     "Nationality": "INDIA",
@@ -8800,13 +8891,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STJJGWS4E9A5FEKC5A",
+    "id": "01JGN7EXS96WGFWVDY132RSXZ2",
     "JournalAccNo": 87,
     "JournalName": "NRSIMHA PRIYA",
     "Nationality": "INDIA",
@@ -8868,13 +8960,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.530Z",
-      "updated_at": "2024-12-31T16:28:57.530Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2STNPTPZV45WHSV4GNS",
+    "id": "01JGN7EXS97Z6S0A8K0WGQ55SC",
     "JournalAccNo": 88,
     "JournalName": "ORISSA HISTORICAL RESEARCH JOURNAL",
     "Nationality": "INDIA",
@@ -8960,13 +9053,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVZGTSXT81PJ53ZRGT",
+    "id": "01JGN7EXS9JGYZ2XVF3EA4YVKQ",
     "JournalAccNo": 89,
     "JournalName": "OUR  HERITAGE",
     "Nationality": "INDIA",
@@ -9142,13 +9236,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVRPDDSQWZH48EW3PT",
+    "id": "01JGN7EXS9ZPNC7ZADKJJ7XH1B",
     "JournalAccNo": 90,
     "JournalName": "ANCIENT INDIA",
     "Nationality": "INDIA",
@@ -9174,13 +9269,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVJJ1BE0T8HT3JF199",
+    "id": "01JGN7EXS93FKFETPGWC7R8SGM",
     "JournalAccNo": 91,
     "JournalName": "PARKH A RESEARCH BULLETIN IN PUNJABI,PUBLICATION BY PUNJAB UNIVERSITY., CHANDIGARH",
     "Nationality": "INDIA",
@@ -9200,13 +9296,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVHBN38K2984NAWXNY",
+    "id": "01JGN7EXS9KJFH5YVJE6A5HM6A",
     "JournalAccNo": 92,
     "JournalName": "PHILOSOPHICAL QUATERLY,THE AN ORGAN OF THE INDIAN INSTITUTE OF PHILOSOPHY AND INDIAN PHILOSOPHICAL CONGRESS; CALCUTTA",
     "Nationality": "INDIA",
@@ -9268,13 +9365,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVXB4KF84NHVGXRE1F",
+    "id": "01JGN7EXS99JGCVXBVPNXDBVST",
     "JournalAccNo": 93,
     "JournalName": "PRACHYA PRATIBHA PUBLICATION.BY PRACHYA NIKETAN,BIRLA INSTITUTE OF ARTS AND MUSIC,BHOPAL",
     "Nationality": "INDIA",
@@ -9318,13 +9416,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SV1M2WN3NAE7AHM3AS",
+    "id": "01JGN7EXS96W3AYJ9MS0DEXTWT",
     "JournalAccNo": 95,
     "JournalName": "POONA ORIENTALIST A QUARTERLY JOURNAL TO ORIENTAL STUDIES BY ORIENTAL BOOK AGENCY ,POONA",
     "Nationality": "INDIA",
@@ -9434,13 +9533,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SV54HNDFKHN839KP3A",
+    "id": "01JGN7EXS9JHQPJNVSJZ69NP6N",
     "JournalAccNo": 96,
     "JournalName": "PRABUDDHA BHARATA",
     "Nationality": "INDIA",
@@ -9568,13 +9668,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SV1MFY5VKFXBGPSZXJ",
+    "id": "01JGN7EXS9533PQ543G09CF73N",
     "JournalAccNo": 97,
     "JournalName": "PUNJAB UNIVERSITY RESEARCH BULLETIN (ARTS) PUNJAB UNIV RESEARCH.BULLETIN (ARTS) ARTS BLOCK I (TOP FLOOR) CHANDIGARH 160 014",
     "Nationality": "INDIA",
@@ -9690,13 +9791,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SV35C9H1626CE9MWRM",
+    "id": "01JGN7EXS9CQN08GKXBWF409W0",
     "JournalAccNo": 98,
     "JournalName": "PURANA HALF-YEARLY BULLETING OF THE PURANA DEPARTMENT ALL-INDIA KASHIRAJ TRUST,VARANASI",
     "Nationality": "INDIA",
@@ -9974,13 +10076,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVSX7BR21HHN0EFE4Z",
+    "id": "01JGN7EXS964ZCJ71WM5X8YG4Z",
     "JournalAccNo": 99,
     "JournalName": "RAMAKRISHNA MISSION INSTITUTE OF CULTURE A MONTHLY JOURNAL PUBLISHED BY RAMAKRISHNA MISSION, CALCUTTA",
     "Nationality": "INDIA",
@@ -10114,13 +10217,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVV0CHS1ZFRAJV2QAV",
+    "id": "01JGN7EXS9PF3QPXD1616N4HRZ",
     "JournalAccNo": 100,
     "JournalName": "PURNATRAYI EDITOR,PURNATRAYU ,GOVT SANSKRIT COLLEGE ,TRIPUNITHURA",
     "Nationality": "INDIA",
@@ -10200,13 +10304,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SV6ZPVE8AW0WQ2B8RE",
+    "id": "01JGN7EXS98JC1A3JCMEG864GR",
     "JournalAccNo": 101,
     "JournalName": "RAMANUJA VANI ,SRI",
     "Nationality": "INDIA",
@@ -10466,13 +10571,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.945Z",
+      "updated_at": "2025-01-03T04:40:59.945Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVXR0PJ51P0B73JH24",
+    "id": "01JGN7EXS9MS465MHQAWZZJRA5",
     "JournalAccNo": 102,
     "JournalName": "RANGANATHA PADUKA PUBLICATIONS. BY SRIRANGAM SRIMAD ANDAVAN ASHRAM",
     "Nationality": "INDIA",
@@ -10492,13 +10598,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SV2B8N7PKT5YXW9N02",
+    "id": "01JGN7EXSAE091AY4629HH6N9N",
     "JournalAccNo": 103,
     "JournalName": "ROYAL ASIATIC SOCIETY OF BOMBAY , JOURNAL OF THE PUBLICATION . BY THE ASIATIC SOCIETY OF BOMBAY",
     "Nationality": "INDIA",
@@ -10692,13 +10799,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVZQ26SGVGHDGPNRQD",
+    "id": "01JGN7EXSA50DR0B59PPN8K21N",
     "JournalAccNo": 104,
     "JournalName": "ROYAL ASIATIC SOCIETY OF CEYLON JOURNAL OF PUBLICATIONS. BY THE ROYAL ASIATIC SOCIETY OF CEYLON",
     "Nationality": "INDIA",
@@ -10862,13 +10970,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SV9FYSTG9ZWDDBZNQT",
+    "id": "01JGN7EXSA764P27J6Q45P6SVP",
     "JournalAccNo": 105,
     "JournalName": "ROYAL ASIATIC SOCIETY OF CEYLON JOURNAL OF (NEW SERIES)",
     "Nationality": "INDIA",
@@ -10900,13 +11009,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVW8CRMYS8K1WQWWKJ",
+    "id": "01JGN7EXSA29BRKV154JH1D2RJ",
     "JournalAccNo": 106,
     "JournalName": "SAMSKRITARATNAKARA",
     "Nationality": "INDIA",
@@ -10956,13 +11066,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVWC2DQH4F9P00Z3XF",
+    "id": "01JGN7EXSA3BJ1R0VJD2DBCMHZ",
     "JournalAccNo": 107,
     "JournalName": "SAMSKRITA SRI",
     "Nationality": "INDIA",
@@ -11006,13 +11117,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVTRF6PGJ88HNQSSGT",
+    "id": "01JGN7EXSAKEHR92W1ASGMTZG3",
     "JournalAccNo": 108,
     "JournalName": "SAMSKRTA VIMARSHA ,JOURNAL OF RASHTRIYA SANSKRIT SANSTHAN,MIN OF EDUCATION AND SOCIAL WELFARE",
     "Nationality": "INDIA",
@@ -11056,13 +11168,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVWFSCM69A2BB9BC7D",
+    "id": "01JGN7EXSAP1R1P8HPPD5YWMD1",
     "JournalAccNo": 109,
     "JournalName": "SANSKRIT ACADEMY",
     "Nationality": "INDIA",
@@ -11082,13 +11195,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.531Z",
-      "updated_at": "2024-12-31T16:28:57.531Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SVNDMMH54TAE16RP02",
+    "id": "01JGN7EXSA11MAVGPMXTBCNBH1",
     "JournalAccNo": 110,
     "JournalName": "SAPTHAGIRI MONTHLY MAGAZINE PUB BY T.T.D",
     "Nationality": "INDIA",
@@ -11114,13 +11228,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SWE650KVECZHG2P3MG",
+    "id": "01JGN7EXSA6WBS22EP9PCEG2KB",
     "JournalAccNo": 111,
     "JournalName": "SATVAGANDHA \nMAYEEJEE-MANDIRAM , ASAFFABADAM , LAKSHMANPURAM - 226  003.MONTHLY",
     "Nationality": "INDIA",
@@ -11140,13 +11255,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SWHYT9SDE770Y6PJAY",
+    "id": "01JGN7EXSA46PM63ZR6V9Y5SZ6",
     "JournalAccNo": 112,
     "JournalName": "SRI DESIKA SEVA",
     "Nationality": "INDIA",
@@ -11178,13 +11294,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SWHHDNPMWDP5EDFVVN",
+    "id": "01JGN7EXSA13B00SYB9J7Z1FHV",
     "JournalAccNo": 113,
     "JournalName": "SRI HAYAGRIVA KRUPA",
     "Nationality": "INDIA",
@@ -11198,13 +11315,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SWZ8VE396WMWBQ38KR",
+    "id": "01JGN7EXSA3951HW1V7ZCPV20G",
     "JournalAccNo": 114,
     "JournalName": "SRI HAYAGRIVA PRIYA",
     "Nationality": "INDIA",
@@ -11224,13 +11342,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SWH5E5VXTQBAME3XC3",
+    "id": "01JGN7EXSACJ292N38PFV9X5YE",
     "JournalAccNo": 115,
     "JournalName": "SRI MADHWA SIDDHANTA MON PUB. BY SRIMAD MADHWA SIDDHANTONNAHINI SABHA",
     "Nationality": "INDIA",
@@ -11262,13 +11381,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.946Z",
+      "updated_at": "2025-01-03T04:40:59.946Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SW5ECSK4FK65PM28G8",
+    "id": "01JGN7EXSAMSG7AMQGHY3XKCJW",
     "JournalAccNo": 116,
     "JournalName": "TAMIL STUDIES ,JOURNAL OF INTERNATIONAL INSTITUTE OF TAMIL STUDIES ,MADRAS",
     "Nationality": "INDIA",
@@ -11360,13 +11480,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.948Z",
+      "updated_at": "2025-01-03T04:40:59.948Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SWTHZ90BMGSJ6DT2W1",
+    "id": "01JGN7EXSCS2V5SXA8GTXD8J2A",
     "JournalAccNo": 117,
     "JournalName": "TANJORE MAHARAJA SERPOJI'S SARASVATI MAHAL LIBRARY ,THE JOURNAL OF PUBLICATION BY THE SARASWATI MAHAL LIBTRARY THANJAVUR",
     "Nationality": "INDIA",
@@ -11530,13 +11651,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.948Z",
+      "updated_at": "2025-01-03T04:40:59.948Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SWV9CR7KGYDMBV2E4B",
+    "id": "01JGN7EXSCGQ9KMA3B3ZS3SWFF",
     "JournalAccNo": 118,
     "JournalName": "TELUGU VANI",
     "Nationality": "INDIA",
@@ -11556,13 +11678,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.948Z",
+      "updated_at": "2025-01-03T04:40:59.948Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SWFPKT5CA4QCANWSHV",
+    "id": "01JGN7EXSCNZ9RZVZNQHR3CR4Y",
     "JournalAccNo": 119,
     "JournalName": "THEOSOPHIST A JOURNAL PUB THE THEOSOPHICAL SOCIETY ,MADRAS",
     "Nationality": "INDIA",
@@ -11582,13 +11705,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.948Z",
+      "updated_at": "2025-01-03T04:40:59.948Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SW1DGXFQ9H7FSZNYRY",
+    "id": "01JGN7EXSCGZMTNFD0XAD93ETJ",
     "JournalAccNo": 120,
     "JournalName": "TRIVENI",
     "Nationality": "INDIA",
@@ -11842,13 +11966,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.949Z",
+      "updated_at": "2025-01-03T04:40:59.949Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SWRSG9W4BA6X4HDMYW",
+    "id": "01JGN7EXSDNYCR2EHX9Q426DJV",
     "JournalAccNo": 121,
     "JournalName": "UNIVERSITY OF BOMBAY ,JOURNAL OF ARTS ,HUMANITIES & SOCIAL SCIENCE & SOCIOLOGY,PUBLICATION.BY UNIVERSITY OF BOMBAY",
     "Nationality": "INDIA",
@@ -12114,13 +12239,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.949Z",
+      "updated_at": "2025-01-03T04:40:59.949Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SWEECQD0H5S389PYB1",
+    "id": "01JGN7EXSD37T11KB22T4KV61M",
     "JournalAccNo": 122,
     "JournalName": "UNIVERSITY OF CEYLON REVIEW",
     "Nationality": "INDIA",
@@ -12218,13 +12344,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.949Z",
+      "updated_at": "2025-01-03T04:40:59.949Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SW4C077VM98E2X42PH",
+    "id": "01JGN7EXSDF80WK4NQD80FS6TD",
     "JournalAccNo": 123,
     "JournalName": "UNIVERSITY OF GAUHATI ,JOURNAL OF GAUHATI UNIVERSITY,GAUHATI",
     "Nationality": "INDIA",
@@ -12394,13 +12521,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.949Z",
+      "updated_at": "2025-01-03T04:40:59.949Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SW2MD82W3FN3T59TFS",
+    "id": "01JGN7EXSD39YK00H2YMWHH76J",
     "JournalAccNo": 124,
     "JournalName": "UNIVERSITY OF POONA,JOURNAL OF HUMANITIES ., UNIVERSITY OF POONA",
     "Nationality": "INDIA",
@@ -12528,13 +12656,14 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.949Z",
+      "updated_at": "2025-01-03T04:40:59.949Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGERS2SW04XHK3JM7BAQNYRW",
+    "id": "01JGN7EXSDXH24XXJP3BJWPTD0",
     "JournalAccNo": 125,
     "JournalName": "VOICE OF SANKARA QUATERLY JOURNAL OF ADVAITA VEDANTA",
     "Nationality": "INDIA",
@@ -12728,9 +12857,10 @@
     ],
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-31T16:28:57.532Z",
-      "updated_at": "2024-12-31T16:28:57.532Z",
+      "created_at": "2025-01-03T04:40:59.949Z",
+      "updated_at": "2025-01-03T04:40:59.949Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   }
 ]

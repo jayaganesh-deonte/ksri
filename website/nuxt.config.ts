@@ -25,6 +25,7 @@ export default defineNuxtConfig({
         "https://y5qgjz4d6k72e7mqjdjd2tv7hi0uattt.lambda-url.ap-south-1.on.aws/public",
       CONTACT_US_URL:
         "https://rnghtsjnsild54alvm6hyaac3y0uxqhv.lambda-url.ap-south-1.on.aws/",
+      ASSET_DOMAIN: "https://d3dx8df9hmf5nm.cloudfront.net/",
     },
   },
   modules: [

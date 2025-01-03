@@ -1309,7 +1309,7 @@ const main = async () => {
   // await insertPublicationBooks();
   // await insertPublicationCommittee();
   // await insertPublicationJournals();
-  // await insertAllPublicationBooks();
+  await insertAllPublicationBooks();
   // await insertForeignScholars();
   // await insertshastrachudamanis();
   // await insertvidyavaridhis();

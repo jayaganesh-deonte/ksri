@@ -1,145 +1,158 @@
 [
   {
-    "id": "01JFAHR8VXRAR7Q0CB18CQY1SD",
+    "id": "01JGN83MTMXGT2Z94PSH80HEGH",
+    "name": "Dr.V.Kameswari",
+    "designation": "Editorial Committee",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-03T04:52:18.900Z",
+      "updated_at": "2025-01-03T04:52:18.900Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGN83MTMW8JZ4ESPT6BYX25A",
+    "name": "Dr.K.S.Balasubramanian",
+    "designation": "Editorial Committee",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-03T04:52:18.900Z",
+      "updated_at": "2025-01-03T04:52:18.900Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGN83MTMJK3ECJKGJ3MV7F27",
+    "name": "Dr.V.Yamuna Devi",
+    "designation": "Editorial Committee",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-03T04:52:18.900Z",
+      "updated_at": "2025-01-03T04:52:18.900Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGN83MTMEHHQB0EKPN1452CE",
     "name": "Dr.P.C.Muralidharan",
     "designation": "Editorial Committee",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.389Z",
-      "updated_at": "2024-12-17T14:53:31.389Z",
+      "created_at": "2025-01-03T04:52:18.900Z",
+      "updated_at": "2025-01-03T04:52:18.900Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFAHR8VX4TK0W183KEY26F99",
+    "id": "01JGN83MTMDW2Z825CCG7M4FK9",
+    "name": "Dr.T.V.Vasudeva",
+    "designation": "Editorial Committee",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-03T04:52:18.900Z",
+      "updated_at": "2025-01-03T04:52:18.900Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGN83MTM1A548HAMV3DG2DE5",
     "name": "Dr.V.Preethi",
     "designation": "Editorial Committee",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.389Z",
-      "updated_at": "2024-12-17T14:53:31.389Z",
+      "created_at": "2025-01-03T04:52:18.900Z",
+      "updated_at": "2025-01-03T04:52:18.900Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFAHR8VWW7S28FN1TXFGW9JR",
-    "name": "Dr.V.Kameswari",
-    "designation": "Editorial Committee",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.388Z",
-      "updated_at": "2024-12-17T14:53:31.388Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFAHR8VWAK29G941Q5GHEJ37",
-    "name": "Dr.V.Yamuna Devi",
-    "designation": "Editorial Committee",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.389Z",
-      "updated_at": "2024-12-17T14:53:31.389Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFAHR8VW9FBJH0XTM5GNFMAH",
-    "name": "Dr.T.V.Vasudeva",
-    "designation": "Editorial Committee",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.388Z",
-      "updated_at": "2024-12-17T14:53:31.388Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFAHR8VW4NKKY02F1M298YET",
+    "id": "01JGN83MSWXPW27MGWZ1QW05CJ",
     "name": "Dr.K.S.Balasubramanian",
-    "designation": "Editorial Committee",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.388Z",
-      "updated_at": "2024-12-17T14:53:31.388Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFAHR8VQWSSYRSM3GDG03DJE",
-    "name": "Dr.V.Kameswari",
     "designation": "Research Committee",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.383Z",
-      "updated_at": "2024-12-17T14:53:31.383Z",
+      "created_at": "2025-01-03T04:52:18.876Z",
+      "updated_at": "2025-01-03T04:52:18.876Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFAHR8VQMM36SC1ZZWMAABP3",
+    "id": "01JGN83MSWVMF9QZNGJQNM9JE9",
     "name": "Dr. Sita Sundar Ram",
     "designation": "Research Committee",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.383Z",
-      "updated_at": "2024-12-17T14:53:31.383Z",
+      "created_at": "2025-01-03T04:52:18.876Z",
+      "updated_at": "2025-01-03T04:52:18.876Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFAHR8VQGXN65WS9VABXCCHY",
-    "name": "Dr.V.Yamuna Devi",
-    "designation": "Research Committee",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.383Z",
-      "updated_at": "2024-12-17T14:53:31.383Z",
-      "created_by": "admin"
-    }
-  },
-  {
-    "id": "01JFAHR8VQEJQVDZCBZRGBKV6G",
+    "id": "01JGN83MSWT489ACN3QFVRCTY9",
     "name": "Prof. R.Parthasarathy",
     "designation": "Research Committee",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.383Z",
-      "updated_at": "2024-12-17T14:53:31.383Z",
+      "created_at": "2025-01-03T04:52:18.876Z",
+      "updated_at": "2025-01-03T04:52:18.876Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFAHR8VQ55W50HJZBVXGQRJ3",
+    "id": "01JGN83MSWPRH757X6BGM0VG8G",
+    "name": "Dr.V.Kameswari",
+    "designation": "Research Committee",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-03T04:52:18.876Z",
+      "updated_at": "2025-01-03T04:52:18.876Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGN83MSWB7HVXR8NH8FT9BF3",
     "name": "Dr.T.V.Vasudeva",
     "designation": "Research Committee",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.383Z",
-      "updated_at": "2024-12-17T14:53:31.383Z",
+      "created_at": "2025-01-03T04:52:18.876Z",
+      "updated_at": "2025-01-03T04:52:18.876Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFAHR8VQ0VT2CN40JKTZYR94",
-    "name": "Dr.K.S.Balasubramanian",
+    "id": "01JGN83MSW1YVQN8YHREP6575S",
+    "name": "Dr.V.Yamuna Devi",
     "designation": "Research Committee",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.383Z",
-      "updated_at": "2024-12-17T14:53:31.383Z",
+      "created_at": "2025-01-03T04:52:18.876Z",
+      "updated_at": "2025-01-03T04:52:18.876Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFAHR8VPJYH0FAARC3VBXBPM",
+    "id": "01JGN83MSSPKCKN722PBPMWQ82",
     "name": "Dr.K. Srinivasan",
     "designation": "Research Committee",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2024-12-17T14:53:31.382Z",
-      "updated_at": "2024-12-17T14:53:31.383Z",
+      "created_at": "2025-01-03T04:52:18.874Z",
+      "updated_at": "2025-01-03T04:52:18.875Z",
       "created_by": "admin"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   }
 ]

@@ -17,7 +17,7 @@
       <v-row class="ma-2">
         <v-col cols="12" md="4" class="">
           <v-img
-            :src="item.displayImage[0]"
+            :src="getImageUrl(item.displayImage[0])"
             :alt="item.name"
             width="150"
             fit
@@ -76,5 +76,10 @@ const downloadProfile = (profile) => {
   link.href = profile;
   link.target = "_blank";
   link.click();
+};
+
+const getImageUrl = (url) => {
+  const runtimeConfig = useRuntimeConfig();
+  return runtimeConfig.public.ASSET_DOMAIN + url;
 };
 </script>

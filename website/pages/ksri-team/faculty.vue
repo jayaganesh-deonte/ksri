@@ -35,7 +35,7 @@
             <v-col v-if="item.displayImage" cols="12" sm="12" md="5">
               <!-- displayImage -->
               <v-img
-                :src="item.displayImage[0]"
+                :src="getImageUrl(item.displayImage[0])"
                 :aspect-ratio="16 / 9"
                 fit
               ></v-img>
@@ -184,6 +184,11 @@ const downloadProfile = (profile) => {
   link.href = profile;
   link.target = "_blank";
   link.click();
+};
+
+const getImageUrl = (url) => {
+  const runtimeConfig = useRuntimeConfig();
+  return runtimeConfig.public.ASSET_DOMAIN + url;
 };
 </script>
 

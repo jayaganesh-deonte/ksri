@@ -1,220 +1,122 @@
 [
   {
-    "id": "01JFAK9T5ZNF78T1WJQ29TW317",
-    "name": "Dr. K.S.Balasubramanian",
-    "designation": "Director",
-    "displayImage": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/faculty/dr-k-s-balasubramanian.jpg"
-    ],
-    "subtitle": "Areas of Specialisation: Yoga, Literature, Philosophy",
-    "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on Yoga and related fields.",
-    "mobile": "9884899716",
-    "mail": "sanskritkannan@yahoo.com",
-    "profile": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/media/Dr.K.S.Balasubramanian.docx"
-    ],
-    "type": "ACADEMIC",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-17T15:20:34.751Z",
-      "updated_at": "2024-12-22T11:10:53.830Z",
-      "created_by": "admin"
-    },
-    "orderId": "1"
-  },
-  {
-    "id": "01JFAK9T5ZJVZP4JEJ8SJ76MBS",
-    "name": "Dr. T.V. Vasudeva",
-    "designation": "Deputy Director",
-    "displayImage": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/faculty/dr-t.-v.-vasudeva.jpg"
-    ],
-    "subtitle": "Areas of Specialisation: Advaita, Vyakarana, Manuscriptology, Dharma Sastra.",
-    "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on Advaita, Vyakarana and related fields.",
-    "mobile": "98846 14473",
-    "mail": "renudeva@gmail.com",
-    "profile": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/media/Dr.T.V.Vasudeva C .V.doc"
-    ],
-    "type": "ACADEMIC",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2024-12-17T15:20:34.751Z",
-      "updated_at": "2024-12-22T11:11:00.333Z",
-      "created_by": "admin"
-    },
-    "orderId": "1"
-  },
-  {
-    "id": "01JFAK9T5ZH1G8NK0MSRJEFT1C",
+    "id": "01JGM5VST7RMFAQA7MXH1WB9KH",
     "name": "Dr. V. Yamuna Devi",
     "designation": "Deputy Director/Associate Professor",
     "displayImage": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/faculty/dr-v-yamuna-devi.jpg"
+      "upload/faculty/dr-v-yamuna-devi.jpg"
     ],
     "subtitle": "Areas of Specialisation: Lexicography, Vyakarana, Literature and Dharma Sastra.",
     "description": "More than 15 years of teaching and research experience.\nGuided many M.Phil. and Ph.D Research Scholars to work on Ancient Indian Mathematics, Advaita and related fields.",
     "mobile": "044-24985320",
     "mail": "ksriphd@gmail.com",
     "profile": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/media/Dr.Yamuna C.V July 2024.pdf"
+      "upload/media/Dr.Yamuna C.V July 2024.pdf"
     ],
     "type": "ACADEMIC",
     "metadata": {
       "updated_by": "demo",
-      "created_at": "2024-12-17T15:20:34.751Z",
-      "updated_at": "2024-12-31T09:20:42.611Z",
+      "created_at": "2025-01-02T18:53:50.279Z",
+      "updated_at": "2025-01-02T18:55:33.981Z",
       "created_by": "admin"
     },
     "orderId": "1",
-    "teachingExperience": [
-      {
-        "duration": "Presently",
-        "organisation": "The KSRI, Chennai",
-        "position": "Associate Professor, The KSRI, Chennai",
-        "designation": "Associate Professor"
-      },
-      {
-        "duration": "From Sep. 2014 -2023",
-        "organisation": "The KSRI, Chennai",
-        "position": "Assistant Professor, The KSRI, Chennai",
-        "designation": "Assistant Professor"
-      }
-    ],
-    "phdCandidates": [
-      {
-        "name": "Dr. S. Madhurambika",
-        "topic": "Sahendravilasa of Sridhara Ayyaval – Acritical Study",
-        "yearOfJoining": "1\tDr. S. Madhurambika\tSahendravilasa of Sridhara Ayyaval – Acritical Study\t2018-2022\tDegree Awarded",
-        "status": "Degree awarded"
-      }
-    ],
-    "mphilCandidates": [
-      {
-        "name": "Ms.Mrinalini",
-        "topic": "Sandilyopanisad- A Critical study",
-        "yearOfJoining": "2016-17",
-        "status": "Degree awarded"
-      }
-    ],
-    "academicPositions": [],
-    "booksPublished": [
-      {
-        "publisher": "Karnataka Historical Research Society, Dharwad",
-        "yearOfPublication": "2017",
-        "title": "AMARAKOÑODGHÄÖANA OF KÑÉRASVÄMIN: A SOCIO-CULTURAL STUD",
-        "sNo": "1",
-        "remarks": "Published",
-        "isbn": " "
-      }
-    ],
-    "articlesPublished": [
-      {
-        "monthAndYear": "2024",
-        "title": "A  few  yogic  practices  for  the  cure of  diseases  as  gleaned  from  some Haṭha  yoga  texts",
-        "nameOfTheJournal": "Journal of Oriental Research  Vol. XCIV, The Kuppuswami Sastri Research Institute, Chennai",
-        "sNo": "1",
-        "isbnIssnNo": "ISSN 0022-3301",
-        "remarks": "Published"
-      }
-    ],
-    "projects": [
-      {
-        "description": " A project report prepared with Dr. Ute  Husken Professor University of Oslo",
-        "sponsor": "Norway",
-        "monthAndYear": "2003",
-        "remarks": "Completed",
-        "projectTitle": "Hastigiri Mahatmya",
-        "isbn": " "
-      }
-    ],
-    "seminars": [
-      {
-        "seminarConference": "Seminar on Nature preservation-The bygone ways",
-        "monthAndYear": "2024",
-        "organisers": "Dept. of Sanskrit, JBAS college for women (Autonomous), Ch.  Feb., 29, 2024",
-        "theme": "Seminar on Nature preservation-The bygone ways",
-        "titleOfThePaper": "Nature preservation methods",
-        "slNo": "1"
-      }
-    ],
-    "lectures": [
-      {
-        "monthAndYear": "2018",
-        "organisers": "Dept. of Sanskrit, Pondicherry University and IGNCA, 28-30th Aug., 2018",
-        "year": "",
-        "slNo": "1",
-        "titleOfTheTalk": "National Seminar on Indian Spiritual Heritage through Sanskrit Devotional Literature of South India"
-      }
-    ]
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFAK9T5ZFFHKD08N4S4ZHXXH",
+    "id": "01JGM5VST7E94TEXXWHJ1A4AMQ",
     "name": "Dr. V.Preethi",
-    "designation": "Assistant Professor",
+    "designation": "Associate Professor",
     "displayImage": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/faculty/preethi.jpg"
+      "upload/faculty/preethi.jpg"
     ],
     "subtitle": "Areas of Specialisation: Sahitya, Yoga and Manuscriptology",
     "description": "More than 13 years of teaching and research experience.",
     "mobile": "8248630164",
     "mail": "preethimahesh.krishnan@gmail.com",
     "profile": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/media/Preethi Resume 5. 8. 24.pdf"
+      "upload/media/Preethi Resume 5. 8. 24.pdf"
     ],
     "type": "ACADEMIC",
     "metadata": {
       "updated_by": "demo",
-      "created_at": "2024-12-17T15:20:34.751Z",
-      "updated_at": "2024-12-22T11:13:33.947Z",
+      "created_at": "2025-01-02T18:53:50.279Z",
+      "updated_at": "2025-01-02T18:55:27.150Z",
       "created_by": "admin"
     },
-    "orderId": "2"
+    "orderId": "2",
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFAK9T5Z03V0FD14QY1FQHK2",
-    "name": "Dr. P.C. Muralidharan",
-    "designation": "Assistant Professor",
+    "id": "01JGM5VST6ANGXV1JRMR0SKJ9Z",
+    "name": "Dr. T.V. Vasudeva",
+    "designation": "Deputy Director",
     "displayImage": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/faculty/murali.jpg"
+      "upload/faculty/dr-t.-v.-vasudeva.jpg"
     ],
-    "subtitle": "Areas of Specialisation: Sahitya, Vaishnavism",
-    "description": "20 years of teaching and research experience.",
-    "mobile": "9840135606",
-    "mail": "pcmuralidharan1981@gmail.com",
+    "subtitle": "Areas of Specialisation: Advaita, Vyakarana, Manuscriptology, Dharma Sastra.",
+    "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on Advaita, Vyakarana and related fields.",
+    "mobile": "98846 14473",
+    "mail": "renudeva@gmail.com",
     "profile": [
-      ""
+      "upload/media/Dr.T.V.Vasudeva C .V.doc"
     ],
     "type": "ACADEMIC",
     "metadata": {
       "updated_by": "demo",
-      "created_at": "2024-12-17T15:20:34.751Z",
-      "updated_at": "2024-12-22T11:13:40.701Z",
+      "created_at": "2025-01-02T18:53:50.279Z",
+      "updated_at": "2025-01-02T18:55:14.806Z",
       "created_by": "admin"
     },
-    "orderId": "1"
+    "orderId": "1",
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFAK9T5X87YTZTANWWGKADMD",
+    "id": "01JGM5VST6207YTWKR66V9N03J",
+    "name": "Dr. K.S.Balasubramanian",
+    "designation": "Director",
+    "displayImage": [
+      "upload/faculty/dr-k-s-balasubramanian.jpg"
+    ],
+    "subtitle": "Areas of Specialisation: Yoga, Literature, Philosophy",
+    "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on Yoga and related fields.",
+    "mobile": "9884899716",
+    "mail": "sanskritkannan@yahoo.com",
+    "profile": [
+      "upload/media/Dr.K.S.Balasubramanian.docx"
+    ],
+    "type": "ACADEMIC",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-02T18:53:50.278Z",
+      "updated_at": "2025-01-02T18:55:07.384Z",
+      "created_by": "admin"
+    },
+    "orderId": "1",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM5VST5HPBPC0YH6NNGEZV5",
     "name": "Dr.V.Kameswari",
     "designation": "Former Director",
     "displayImage": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/faculty/dr-v-kameswari.jpg"
+      "upload/faculty/dr-v-kameswari.jpg"
     ],
     "subtitle": "Areas of Specialisation: Sahitya, Language and Literature, Scientific literature",
     "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on ancient sciences and varied fields of their interest.",
     "mobile": " ",
     "mail": " ",
     "profile": [
-      "https://d30y75l38k1y9.cloudfront.net/upload/media/Dr.V.Kameswari CV.docx"
+      "upload/media/Dr.V.Kameswari CV.docx"
     ],
     "type": "ACADEMIC",
     "metadata": {
       "updated_by": "demo",
-      "created_at": "2024-12-17T15:20:34.750Z",
-      "updated_at": "2024-12-22T11:13:50.315Z",
+      "created_at": "2025-01-02T18:53:50.278Z",
+      "updated_at": "2025-01-02T18:54:58.708Z",
       "created_by": "admin"
     },
-    "orderId": "1"
+    "orderId": "1",
+    "itemPublishStatus": "PUBLISHED"
   }
 ]

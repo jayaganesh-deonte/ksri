@@ -676,7 +676,9 @@ var fetchPublicationsAndBooks = function () { return __awaiter(void 0, void 0, v
             case 3:
                 if (!(_i < additionalPublications_1.length)) return [3 /*break*/, 6];
                 publication = additionalPublications_1[_i];
-                publicationNameForFile = publication.replace(/ /g, "_").toLowerCase();
+                publicationNameForFile = publication
+                    .replace(/[^a-zA-Z0-9]/g, "")
+                    .toLowerCase();
                 return [4 /*yield*/, fetchAndSaveData("/publications/books?publication=".concat(publication), "../website/content//publications/".concat(publicationNameForFile, ".json"))];
             case 4:
                 books_1 = _b.sent();
@@ -701,7 +703,9 @@ var fetchPublicationsAndBooks = function () { return __awaiter(void 0, void 0, v
             case 8:
                 if (!(_a < additionalPublications_2.length)) return [3 /*break*/, 11];
                 publication = additionalPublications_2[_a];
-                publicationNameForFile = publication.replace(/ /g, "_").toLowerCase();
+                publicationNameForFile = publication
+                    .replace(/[^a-zA-Z0-9]/g, "")
+                    .toLowerCase();
                 return [4 /*yield*/, fetchAndSaveData("/publications/journals?publication=".concat(publication), "../website/content//publications/".concat(publicationNameForFile, "journals.json"), function (data) {
                         return data
                             .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })

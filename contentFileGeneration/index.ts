@@ -645,7 +645,9 @@ const fetchPublicationsAndBooks = async () => {
   //  for each additionalPublication, fetch books
   for (const publication of additionalPublications) {
     // remove spaces
-    const publicationNameForFile = publication.replace(/ /g, "_").toLowerCase();
+    const publicationNameForFile = publication
+      .replace(/[^a-zA-Z0-9]/g, "")
+      .toLowerCase();
     const books = await fetchAndSaveData(
       `/publications/books?publication=${publication}`,
       `../website/content//publications/${publicationNameForFile}.json`
@@ -670,8 +672,12 @@ const fetchPublicationsAndBooks = async () => {
 
   //  fetch journals based on additionalPublications
   for (const publication of additionalPublications) {
-    // remove spaces
-    const publicationNameForFile = publication.replace(/ /g, "_").toLowerCase();
+    // remove spaces and all special characters
+
+    const publicationNameForFile = publication
+      .replace(/[^a-zA-Z0-9]/g, "")
+      .toLowerCase();
+
     const journals = await fetchAndSaveData(
       `/publications/journals?publication=${publication}`,
       `../website/content//publications/${publicationNameForFile}journals.json`,

@@ -84,7 +84,7 @@
           md="4"
         >
           <v-img
-            :src="image"
+            :src="getImageUrl(image)"
             data-aos="fade-up"
             :data-aos-delay="index * 100"
             fit
@@ -119,6 +119,11 @@ useSeoMeta({
   twitterTitle: eventInfo.title,
   twitterDescription: eventInfo.description,
 });
+
+const getImageUrl = (url) => {
+  const runtimeConfig = useRuntimeConfig();
+  return runtimeConfig.public.ASSET_DOMAIN + url;
+};
 </script>
 
 <style scoped>

@@ -19,7 +19,11 @@
         <v-col cols="12" sm="12" class="py-2">
           <!-- image -->
           <div data-aos="fade-up" v-if="book.imageUrls">
-            <v-img :src="book.imageUrls[0]" fit height="200"></v-img>
+            <v-img
+              :src="getImageUrl(book.imageUrls[0])"
+              fit
+              height="200"
+            ></v-img>
           </div>
           <!-- else display logo -->
           <div data-aos="fade-up" v-else>
@@ -120,6 +124,10 @@ export default {
       //   name: "/academic-and-research-pursuits/ksri-publications/books",
       //   params: { id: this.book.title },
       // });
+    },
+    getImageUrl(url) {
+      const runtimeConfig = useRuntimeConfig();
+      return runtimeConfig.public.ASSET_DOMAIN + url;
     },
   },
 };

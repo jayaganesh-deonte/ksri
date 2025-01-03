@@ -11,7 +11,7 @@
         <v-row no-gutters>
           <v-col cols="6" v-for="image in images" :key="image.id">
             <v-img
-              :src="image.imageUrl[0]"
+              :src="getImageUrl(image.imageUrl[0])"
               :alt="image.description"
               height="120"
               class="ma-1"
@@ -50,5 +50,11 @@ export default {
     },
   },
   emits: ["view-album"],
+  methods: {
+    getImageUrl(url) {
+      const runtimeConfig = useRuntimeConfig();
+      return runtimeConfig.public.ASSET_DOMAIN + url;
+    },
+  },
 };
 </script>

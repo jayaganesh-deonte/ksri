@@ -1,51 +1,80 @@
 [
   {
-    "id": "01JFFDAJTZWQ1X2FH7NQ2EGPCJ",
+    "id": "01JGM6838CTMQZZEC1ZV1KMNBB",
     "chairName": "Brahmasri Anna Subramaniam Chair",
     "areaOfSpecialization": "Veda-Vedanta Studies",
     "name": "Dr. K. Srinivasan",
     "subTitle": "Former Principal &Head, Dept. of Sanskrit RKM Vivekananda College, Chennai",
     "orderId": "1",
     "displayImage": [
-      "https://de5byrc8ksekt.cloudfront.net/images/blank-profile-picture-973460_1280 (1).webp"
+      "images/blank-profile-picture-973460_1280.webp"
     ],
     "metadata": {
       "updated_by": "demo",
-      "created_at": "2024-12-19T17:53:20.893Z",
-      "updated_at": "2024-12-31T09:26:22.682Z",
+      "created_at": "2025-01-02T19:00:33.164Z",
+      "updated_at": "2025-01-02T19:00:33.164Z",
       "created_by": "demo"
-    }
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFFDA4G6DQSWFDNMARTR43S9",
+    "id": "01JGM6ACCEH657ZGH82HCFMJ1H",
     "chairName": "Dr. B. Madhavan Chair",
     "areaOfSpecialization": "Sanskrit Grammar",
     "name": "Dr. Muthulakshmi",
     "subTitle": "Research Associate, The KSRI",
-    "orderId": "2"
+    "orderId": "2",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-02T19:01:48.046Z",
+      "updated_at": "2025-01-02T19:01:48.046Z",
+      "created_by": "demo"
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFFD9Q6X9D8YS8MWE4NBST7F",
+    "id": "01JGM6B0KDYPRK9YAEVZ0T09FZ",
     "chairName": "Sanātana Dharma Chair",
     "areaOfSpecialization": "Ancient Indian Culture",
     "name": "Dr. R. Thiagarajan",
     "subTitle": "Former Prof. & Head, Dept. of Sanskrit, Presidency College, Chennai .",
-    "orderId": "3"
+    "orderId": "3",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-02T19:02:08.749Z",
+      "updated_at": "2025-01-02T19:02:08.749Z",
+      "created_by": "demo"
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFFD98TRAXYH3AVY9GW4S7TA",
+    "id": "01JGM6BKSBEXZPFW07SKTHCRE0",
     "chairName": "Dr. S.S. Janaki Chair",
     "areaOfSpecialization": "Sahitya and Allied subjects",
     "name": "Ms.V. Lalitha",
     "subTitle": " ",
-    "orderId": "4"
+    "orderId": "4",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-02T19:02:28.395Z",
+      "updated_at": "2025-01-02T19:02:28.395Z",
+      "created_by": "demo"
+    },
+    "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JFFD8SXA8GS10HD03TWN78R9",
+    "id": "01JGM6C4DBWQ295QSBRW9AXVJ5",
     "chairName": "Dr. E.R. Rama Bai Chair",
     "areaOfSpecialization": "Sanskrit Literature",
     "name": "Dr.Vasumathi Rajaram",
     "subTitle": " ",
-    "orderId": "5"
+    "orderId": "5",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-02T19:02:45.419Z",
+      "updated_at": "2025-01-02T19:02:45.419Z",
+      "created_by": "demo"
+    },
+    "itemPublishStatus": "PUBLISHED"
   }
 ]

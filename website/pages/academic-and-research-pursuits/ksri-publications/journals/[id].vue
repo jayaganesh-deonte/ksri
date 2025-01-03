@@ -54,7 +54,7 @@
                   v-for="imageUrl in journalInfo.imageUrls"
                   :key="imageUrl"
                 >
-                  <v-img :src="imageUrl" fit></v-img>
+                  <v-img :src="getImageUrl(imageUrl)" fit></v-img>
                 </v-carousel-item>
               </template>
               <template v-else>
@@ -123,7 +123,7 @@ for (const element of additionalPublications) {
   const additionalPublication = element;
 
   const publicationNameForFile = additionalPublication
-    .replace(/ /g, "_")
+    .replace(/[^a-zA-Z0-9]/g, "")
     .toLowerCase();
 
   // query content
@@ -205,5 +205,10 @@ const getBookInfo = async () => {
     twitterTitle: journal.title,
     twitterDescription: journal.subtitle,
   });
+};
+
+const getImageUrl = (url) => {
+  const runtimeConfig = useRuntimeConfig();
+  return runtimeConfig.public.ASSET_DOMAIN + url;
 };
 </script>

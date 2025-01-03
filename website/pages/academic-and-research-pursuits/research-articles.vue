@@ -49,7 +49,7 @@
                 color="primary"
                 variant="outlined"
                 rounded="pill"
-                :href="article.link"
+                :href="getImageUrl(article.link)"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -79,4 +79,9 @@ useSeoMeta({
 const researchArticlesData = await queryContent("researcharticles").findOne();
 
 const researchArticles = researchArticlesData.body;
+
+const getImageUrl = (url) => {
+  const runtimeConfig = useRuntimeConfig();
+  return runtimeConfig.public.ASSET_DOMAIN + url;
+};
 </script>

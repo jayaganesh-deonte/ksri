@@ -7,7 +7,7 @@
     @mouseover="handleMouseOver"
     @mouseleave="handleMouseLeave"
   >
-    <v-img :src="image.imageUrl[0]" fit>
+    <v-img :src="getImageUrl(image.imageUrl[0])" fit>
       <template v-slot:placeholder>
         <div class="d-flex align-center justify-center fill-height">
           <v-progress-circular
@@ -45,6 +45,11 @@ const handleMouseOver = () => {
 
 const handleMouseLeave = () => {
   isHovering.value = false;
+};
+
+const getImageUrl = (url) => {
+  const runtimeConfig = useRuntimeConfig();
+  return runtimeConfig.public.ASSET_DOMAIN + url;
 };
 </script>
 

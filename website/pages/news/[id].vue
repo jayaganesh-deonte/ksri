@@ -26,7 +26,7 @@
         </div>
         <!-- heading image -->
         <v-img
-          :src="news.avatarImage[0]"
+          :src="getImageUrl(news.avatarImage[0])"
           v-if="news.avatarImage"
           width="100%"
           height="500"
@@ -49,7 +49,7 @@
           <v-img
             v-for="(image, index) in news.images"
             :key="index"
-            :src="image"
+            :src="getImageUrl(image)"
             width="250"
             height="250"
             class="ma-2"
@@ -109,4 +109,9 @@ const fetchNews = async () => {
   }
 };
 await fetchNews();
+
+const getImageUrl = (url) => {
+  const runtimeConfig = useRuntimeConfig();
+  return runtimeConfig.public.ASSET_DOMAIN + url;
+};
 </script>
