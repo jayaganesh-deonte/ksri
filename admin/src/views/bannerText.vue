@@ -30,6 +30,13 @@ const marqueeTextFields = [
       (v) => /^\//.test(v) || "Link must be a relative path starting with /",
     ],
   },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
+  },
 ];
 
 const marqueeTextHeaders = [

@@ -36,6 +36,13 @@ const dainandiniFields = [
     type: "textarea",
     rules: [(v) => !!v || "Description is required"],
   },
+  {
+    key: "itemPublishStatus",
+    label: "Publish Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Publish Status is required"],
+    items: ["PUBLISHED", "DRAFT"],
+  },
 ];
 
 const dainandiniHeaders = [
