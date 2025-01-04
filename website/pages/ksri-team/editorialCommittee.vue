@@ -52,6 +52,8 @@ let editorialCommittee = [];
 
 console.log("publicationCommittee", publicationCommittee);
 
+publicationCommittee.body.sort((a, b) => a.orderId - b.orderId);
+
 publicationCommittee.body.forEach((member) => {
   if (publicationCommitteeKeys.includes(member.designation)) {
     committee[member.designation] = member;
