@@ -10,6 +10,7 @@
       </div>
     </v-main>
     <app-footer></app-footer>
+    <buttonUp />
   </v-app>
 </template>
 
