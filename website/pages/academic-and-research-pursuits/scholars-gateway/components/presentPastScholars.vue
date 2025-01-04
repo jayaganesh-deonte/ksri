@@ -1,5 +1,25 @@
 <template>
   <div>
+    <!-- filterBasedOnCourseBtn -->
+    <div
+      class="d-flex justify-center align-center mx-2"
+      :class="$device.isMobile ? 'flex-wrap' : 'flex-row'"
+      v-if="displayFilterBasedOnCourseBtn"
+    >
+      <div class="text-h6">Course:</div>
+      <div v-for="category in filterBasedOnCourseBtn" :key="category">
+        <v-btn
+          color="primary"
+          :variant="activeCourse === category ? 'flat' : 'outlined'"
+          rounded="pill"
+          class="ma-2"
+          @click="activeCourse = category"
+          style="text-transform: none"
+        >
+          {{ category }}
+        </v-btn>
+      </div>
+    </div>
     <!-- for courses -->
     <div v-for="course in courses" :key="course.name">
       <div v-if="hasStudentsForCourse(course)" class="my-8">
@@ -45,12 +65,28 @@ const props = defineProps({
   supervisors: { type: Array, required: true },
   mPhilStudentsBySupervisor: { type: Function, required: true },
   phdStudentsBySupervisor: { type: Function, required: true },
+  filterBasedOnCourseBtn: {
+    type: Array,
+    required: true,
+    default: ["All", "Ph.D.", "M.Phil"],
+  },
+  displayFilterBasedOnCourseBtn: {
+    type: Boolean,
+    required: true,
+    default: true,
+  },
 });
 
-const hasStudentsForCourse = (course) => {
-  console.log("hasStudentsForCourse", course.name);
+let activeCourse = ref("All");
 
-  console.log("mPhilStudentsBySupervisor");
+const hasStudentsForCourse = (course) => {
+  // basedon activeCourse
+  if (activeCourse.value != "All") {
+    if (activeCourse.value !== course.name) {
+      return false;
+    }
+  }
+
   // print props
   console.log(props.supervisors);
   // check if students are present for course and supervisor

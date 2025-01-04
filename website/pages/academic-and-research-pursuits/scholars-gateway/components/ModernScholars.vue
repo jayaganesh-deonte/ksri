@@ -8,6 +8,7 @@
           class="ma-2"
           :variant="activeButton === button ? 'flat' : 'outlined'"
           @click="activeButton = button"
+          style="text-transform: none"
         >
           {{ button }}
         </v-btn>
@@ -21,6 +22,7 @@
         :supervisors="supervisors"
         :mPhilStudentsBySupervisor="mphilStudentsBySupervisor"
         :phdStudentsBySupervisor="phdStudentsBySupervisor"
+        :displayFilterBasedOnCourseBtn="displayFilterBasedOnCourseBtn"
       />
     </div>
 
@@ -45,6 +47,11 @@ const props = defineProps({
   },
   past: {
     type: Boolean,
+    default: true,
+  },
+  displayFilterBasedOnCourseBtn: {
+    type: Boolean,
+    required: true,
     default: true,
   },
 });
@@ -124,6 +131,8 @@ const pastMPhilStudentsData = await queryContent(
 const pastMPhilStudents = pastMPhilStudentsData.body;
 
 const pastMPhilStudentsBySupervisor = (supervisor) => {
+  console.log("pastMPhilStudentsBySupervisor", supervisor);
+  console.log("pastMPhilStudents", pastMPhilStudents);
   return pastMPhilStudents.filter(
     (student) => student.supervisor === supervisor
   );

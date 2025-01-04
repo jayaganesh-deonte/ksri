@@ -48,6 +48,7 @@
             :variant="activeButton == subPage.title ? 'flat' : 'outlined'"
             class="ma-2"
             rounded="pill"
+            style="text-transform: none"
           >
             {{ subPage.title }}</v-btn
           >
@@ -71,7 +72,7 @@ const subPages = [
     route: "/academic-and-research-pursuits/scholars-gateway/",
   },
   {
-    title: "Modern Scholars",
+    title: "Ph.D./M.Phil",
     route: "/academic-and-research-pursuits/scholars-gateway/modern-scholars",
   },
   {
@@ -88,7 +89,7 @@ onMounted(() => {
   const routepage = route.path.split("/").pop();
 
   if (routepage == "modern-scholars") {
-    activeButton.value = "Modern Scholars";
+    activeButton.value = "Ph.D./M.Phil";
   } else if (routepage == "foreign-scholars") {
     activeButton.value = "Foreign Scholars";
   } else {

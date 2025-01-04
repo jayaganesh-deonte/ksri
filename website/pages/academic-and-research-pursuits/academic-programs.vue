@@ -27,15 +27,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            v-for="supervisor in supervisors"
-            :key="supervisor.id"
-            class="text-body-1"
-          >
-            <td>{{ supervisor.name }}</td>
-            <td>{{ supervisor.noOfphdStudents }}</td>
-            <td>{{ supervisor.vacancy }}</td>
-          </tr>
+          <template v-for="supervisor in supervisors" :key="supervisor.name">
+            <tr class="text-body-1" v-if="supervisor.noOfphdStudents">
+              <td>{{ supervisor.name }}</td>
+              <td>{{ supervisor.noOfphdStudents }}</td>
+              <td>{{ supervisor.vacancy }}</td>
+            </tr>
+          </template>
         </tbody>
       </v-table>
     </div>
@@ -43,7 +41,7 @@
       Currently the Scholars pursuing Research under these programs are given
       below
     </div>
-    <ModernScholars :past="false" />
+    <ModernScholars :past="false" :displayFilterBasedOnCourseBtn="false" />
 
     <div class="text-body-1">
       <a

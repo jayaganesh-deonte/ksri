@@ -12,22 +12,29 @@
       <div v-for="series in projectSeries" :key="series">
         <v-menu v-if="subSeriesMapping[series]" offset-y>
           <template v-slot:activator="{ props }">
-            <v-btn
-              color="primary"
-              :variant="activeSeries === series ? 'flat' : 'outlined'"
-              rounded="pill"
-              class="ma-2"
+            <div
               v-bind="props"
-              size="large"
+              class="d-flex align-center flex-column ma-2"
+              style="background-color: #fafbfa"
             >
-              <div class="ma-2">
-                <div>{{ series }}</div>
-
-                <div style="font-size: 0.6em" class="font-weight-light">
-                  {{ getSeriesDescriptionFromSubSeries(series) }}
+              <v-btn
+                color="primary"
+                :variant="activeSeries === series ? 'flat' : 'outlined'"
+                rounded="pill"
+                class="ma-2"
+                size="large"
+                style="text-transform: none"
+              >
+                <div class="ma-2">
+                  <div>{{ series }}</div>
                 </div>
-              </div>
-            </v-btn>
+              </v-btn>
+              <div
+                style="font-size: 0.7em"
+                class="font-weight-light text-center"
+                v-html="getSeriesDescriptionFromSubSeries(series)"
+              />
+            </div>
           </template>
           <v-list>
             <v-list-item
@@ -231,7 +238,16 @@ let projects = [
 const getSeriesDescriptionFromSubSeries = (nameOfSeries) => {
   for (const element of subSeries) {
     if (element.name === nameOfSeries) {
-      return element.description;
+      // return element.description;
+      // for /n new line in description with br tag
+      // return element.description.replace(/\n/g, "<br />");
+      // if description is empty, then return empty string
+      console.log("element.description", element.description.length);
+      if (element.description.length == 1) {
+        return "<br/> <br/>";
+      } else {
+        return element.description.replace(/\n/g, "<br />");
+      }
     }
   }
 };

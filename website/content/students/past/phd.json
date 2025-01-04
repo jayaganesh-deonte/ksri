@@ -1,171 +1,6 @@
 [
   {
-    "id": "01JGM5H4SYXXR3Y9582XR2RK1M",
-    "name": "Mr.S.Gopalan",
-    "course": "Ph.D.",
-    "areaOfStudy": "Atmajnana vivarana - a critical study",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SYXDJ47ED7MR6FERKR",
-    "name": "Mr.S.Umapathy",
-    "course": "Ph.D.",
-    "areaOfStudy": "Contribution of Rajachudamani Diksita to Skt. Literature",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SYX01ZB26K48Y6AAKR",
-    "name": "Ms.Vaishnavi Poorna",
-    "course": "Ph.D.",
-    "areaOfStudy": "Musical elements in Sanskrit Drama",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SYWE88Z9JMZG7TX19A",
-    "name": "Mr.G.Venkataraman",
-    "course": "Ph.D.",
-    "areaOfStudy": "Socio Cultural study of Kshemendra's works",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SYS1S9JH2B2KX4KJNZ",
-    "name": "Mrs.Vasumathi",
-    "course": "Ph.D.",
-    "areaOfStudy": "Commentaries of Dakshinavarthanatha",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SYQ2WEHKR174J384G3",
-    "name": "P.C.Muralidharan",
-    "course": "Ph.D.",
-    "areaOfStudy": "Parijathahara Nataka - A critical study",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SYJ69H83566B9EKSKR",
-    "name": "Ms.S.Muthulakshmi",
-    "course": "Ph.D.",
-    "areaOfStudy": "Yogic Elements in Mahakavyas",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SYD85NTHS3H5PWES40",
-    "name": "Ms. S. Anuradha",
-    "course": "Ph.D.",
-    "areaOfStudy": "Amritasiddhiyoga of Virupakshasiddha - A Critical Edition and Study",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SYANF5S21BEHD6CXNG",
-    "name": "Ms.M Archana",
-    "course": "Ph.D.",
-    "areaOfStudy": "Critical Analysis of Siva Samhita",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SYA8TZDJQ5QMWZNVXF",
-    "name": "Ms. Jayadevi",
-    "course": "Ph.D.",
-    "areaOfStudy": "Sayanacarya viracita Purusarthasudhanidhi",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SY7XYBHNP29JDDHD9D",
-    "name": "K.Nagarajan",
-    "course": "Ph.D.",
-    "areaOfStudy": "Critical study of Jirnodhara Dasaka",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SY3X6EERR2C0VQD9S3",
+    "id": "01JGR632M44BKC1T39W6XZ3QJY",
     "name": "Ms. K. Vidyuta",
     "course": "Ph.D.",
     "areaOfStudy": "Kasyapa Silpasastra on Prakara, Mandapa and Gopura Laksana",
@@ -173,29 +8,14 @@
     "status": "Completed",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
+      "created_at": "2025-01-04T08:14:46.404Z",
+      "updated_at": "2025-01-04T08:14:46.404Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGM5H4SY1WP4P0ED65W6JJT6",
-    "name": "Mr.V.Ramakrishnan",
-    "course": "Ph.D.",
-    "areaOfStudy": "Contribution of Nalladvarin to Skt. Literature",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SY0T3C0NJJTN97JXFQ",
+    "id": "01JGR632M3ZPF6PRP3MSBB2KTD",
     "name": "Mr.S.Balasubramanian",
     "course": "Ph.D.",
     "areaOfStudy": "Satasloki with comm. - a critical analysis",
@@ -203,224 +23,44 @@
     "status": "Completed",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGM5H4SXYAX119RH028MPRXY",
-    "name": "Ms. V. Umamaheswari",
+    "id": "01JGR632M3YWY7W9RYR116ZNDG",
+    "name": "K.Nagarajan",
     "course": "Ph.D.",
-    "areaOfStudy": "Amogaraghava Campu - Critical edition and study",
-    "supervisor": "Dr. V. Kameswari",
+    "areaOfStudy": "Critical study of Jirnodhara Dasaka",
+    "supervisor": "Dr. K.S.Balasubramanian",
     "status": "Completed",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGM5H4SXP6BDSJ1CTYV5MK0W",
-    "name": "Ms.K.Ramakalyani",
+    "id": "01JGR632M3YRJG10HVH0XFXRCH",
+    "name": "Mrs.Vasumathi",
     "course": "Ph.D.",
-    "areaOfStudy": "The mathematical importance of Buddhivilasini , Comm.. on Bhaskara's Lilavati",
-    "supervisor": "Dr. V. Kameswari",
+    "areaOfStudy": "Commentaries of Dakshinavarthanatha",
+    "supervisor": "Dr. T.V.Vasudeva",
     "status": "Completed",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGM5H4SXNSJ28T5S78S2Y8W0",
-    "name": "K.Srinivasan",
-    "course": "Ph.D.",
-    "areaOfStudy": "Vyayoga a Sanskrit Drama type : Theory and Practice",
-    "supervisor": "Dr. S.S. Janaki",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SXNDN6BVHTV89HJ88V",
-    "name": "T.V.Vasudeva",
-    "course": "Ph.D.",
-    "areaOfStudy": "Percepts and Practices of Samnyāsa Āśrama",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.086Z",
-      "updated_at": "2025-01-02T18:48:01.086Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SXM28KX146RK8Q01JE",
-    "name": "Dr. K.S.Balasubramanian",
-    "course": "Ph.D.",
-    "areaOfStudy": "Yoga Yajnavalkya - A Critical Study",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SXFDZNNVH98HQTEFHV",
-    "name": "Ms. B. Ramadevi",
-    "course": "Ph.D.",
-    "areaOfStudy": "Dream Motif in Sanskrit Literature",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SXEEY3ZPQZ1HHCT0XT",
-    "name": "Ms. V. Anusha",
-    "course": "Ph.D.",
-    "areaOfStudy": "Purusa Pariksa - A Socio-Cultural Study",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SXE0TW5CD6JXNKSBN9",
-    "name": "Ms. R.Subasri",
-    "course": "Ph.D.",
-    "areaOfStudy": "Women Rights in Dharmasastra",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SXDPJ4CYP5MGX0C3XY",
-    "name": "K. Srikanthan",
-    "course": "Ph.D.",
-    "areaOfStudy": "Contribution of Cakrakavi to Sanskrit Literature",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SXDGT08Q6RSZMSN2XC",
-    "name": "Ms.J.Subhadra",
-    "course": "Ph.D.",
-    "areaOfStudy": "Unnatural Phenomena (prakriti vikara) analysed in Jyotisa texts",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SX94M8N4ME3M3CMM03",
-    "name": "Ms. V. Premalatha",
-    "course": "Ph.D.",
-    "areaOfStudy": "Sthalavrkshas and their Ecological Value",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SX5ZMJDS87JB0CX8P7",
-    "name": "Ms. S.Annapurna",
-    "course": "Ph.D.",
-    "areaOfStudy": "Vidhitraya Paritrana of Venkatadhvarin - A Critical Study",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SX42BGQ83KK0QQPVZ1",
-    "name": "S.S.Rangan",
-    "course": "Ph.D.",
-    "areaOfStudy": "Critical edition & study of Tattvagunadarsa of Annayarya",
-    "supervisor": "Dr. S.S. Janaki",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SX380QWHS12GFNA61Q",
-    "name": "Ms. V. Yamunadevi",
-    "course": "Ph.D.",
-    "areaOfStudy": "Amarakosodghatana of Ksirasvamin - A critical Study",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SX30BE73DKDQJ2NVEQ",
+    "id": "01JGR632M3XTMPYQ6FX0CMD149",
     "name": "Ms.S.Anusha",
     "course": "Ph.D.",
     "areaOfStudy": "A critical analysis of Nitiprakasika, a treatise on war",
@@ -428,14 +68,239 @@
     "status": "Completed",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGM5H4SX2B2YDX2N6VKVECJR",
+    "id": "01JGR632M3XS76D7WSMW3YPS0T",
+    "name": "Ms. Jayadevi",
+    "course": "Ph.D.",
+    "areaOfStudy": "Sayanacarya viracita Purusarthasudhanidhi",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3VM51DM1PB9YFNFTQ",
+    "name": "Ms.J.Subhadra",
+    "course": "Ph.D.",
+    "areaOfStudy": "Unnatural Phenomena (prakriti vikara) analysed in Jyotisa texts",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3V7A85GZ4B8W1Q7DD",
+    "name": "Ms. V. Anusha",
+    "course": "Ph.D.",
+    "areaOfStudy": "Purusa Pariksa - A Socio-Cultural Study",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3TZWZ785BDFT2TDYW",
+    "name": "Mr.S.Gopalan",
+    "course": "Ph.D.",
+    "areaOfStudy": "Atmajnana vivarana - a critical study",
+    "supervisor": "Dr. T.V.Vasudeva",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3TYX7YCAECKKAGB38",
+    "name": "Ms.M Archana",
+    "course": "Ph.D.",
+    "areaOfStudy": "Critical Analysis of Siva Samhita",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3TSNM0WE3Q4Y9F2Y6",
+    "name": "T.V.Vasudeva",
+    "course": "Ph.D.",
+    "areaOfStudy": "Percepts and Practices of Samnyāsa Āśrama",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3R6JZA5FE2R3V4BZF",
+    "name": "Ms. R.Subasri",
+    "course": "Ph.D.",
+    "areaOfStudy": "Women Rights in Dharmasastra",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3N9JY6PW2XRDZSM47",
+    "name": "Mr.S.Umapathy",
+    "course": "Ph.D.",
+    "areaOfStudy": "Contribution of Rajachudamani Diksita to Skt. Literature",
+    "supervisor": "Dr. T.V.Vasudeva",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3MWTH1RGWQXWVDKPC",
+    "name": "Ms. B. Ramadevi",
+    "course": "Ph.D.",
+    "areaOfStudy": "Dream Motif in Sanskrit Literature",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3MQN3CKEEXKEYECSZ",
+    "name": "Ms.Vaishnavi Poorna",
+    "course": "Ph.D.",
+    "areaOfStudy": "Musical elements in Sanskrit Drama",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3KKKTXYGCBNBCVJ72",
+    "name": "Ms.S.Muthulakshmi",
+    "course": "Ph.D.",
+    "areaOfStudy": "Yogic Elements in Mahakavyas",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3KEAQTA1EWA6SA5K5",
+    "name": "Ms. S. Anuradha",
+    "course": "Ph.D.",
+    "areaOfStudy": "Amritasiddhiyoga of Virupakshasiddha - A Critical Edition and Study",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3HR9720X5NPH2YX7P",
+    "name": "Ms.K.Ramakalyani",
+    "course": "Ph.D.",
+    "areaOfStudy": "The mathematical importance of Buddhivilasini , Comm.. on Bhaskara's Lilavati",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3FKBNVDSHMMQYVH5V",
+    "name": "Ms. V. Yamunadevi",
+    "course": "Ph.D.",
+    "areaOfStudy": "Amarakosodghatana of Ksirasvamin - A critical Study",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3CTW3J62X8D664DYB",
+    "name": "Mr.V.Ramakrishnan",
+    "course": "Ph.D.",
+    "areaOfStudy": "Contribution of Nalladvarin to Skt. Literature",
+    "supervisor": "Dr. T.V.Vasudeva",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M3A0BK31C7SYN5TJKP",
     "name": "Ms.G.D.Jayalakshmi",
     "course": "Ph.D.",
     "areaOfStudy": "Jivanandana - A Critical Study",
@@ -443,14 +308,14 @@
     "status": "Completed",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGM5H4SX14PPX8J55ZNY21T6",
+    "id": "01JGR632M37GF1ZTF3PTDHEXVF",
     "name": "Ms. Sita Sundar Ram",
     "course": "Ph.D.",
     "areaOfStudy": "Krsna Daivajna's Bija Pallava - A Critical study",
@@ -458,14 +323,149 @@
     "status": "Completed",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGM5H4SX04H4MBYBYR0JKFVX",
+    "id": "01JGR632M34QDKXSX0WSM9WC63",
+    "name": "Ms. S.Annapurna",
+    "course": "Ph.D.",
+    "areaOfStudy": "Vidhitraya Paritrana of Venkatadhvarin - A Critical Study",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M328WMZYGYCFPT25QN",
+    "name": "Ms. V. Premalatha",
+    "course": "Ph.D.",
+    "areaOfStudy": "Sthalavrkshas and their Ecological Value",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M32796JWN3BKWK3R19",
+    "name": "Ms. V. Umamaheswari",
+    "course": "Ph.D.",
+    "areaOfStudy": "Amogaraghava Campu - Critical edition and study",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M31H5HTYYGD4W4Y25C",
+    "name": "Mr.G.Venkataraman",
+    "course": "Ph.D.",
+    "areaOfStudy": "Socio Cultural study of Kshemendra's works",
+    "supervisor": "Dr. T.V.Vasudeva",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.404Z",
+      "updated_at": "2025-01-04T08:14:46.404Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M319R973QCTD8PHXAE",
+    "name": "K. Srikanthan",
+    "course": "Ph.D.",
+    "areaOfStudy": "Contribution of Cakrakavi to Sanskrit Literature",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M30HB0VBCTXNJMCZJE",
+    "name": "P.C.Muralidharan",
+    "course": "Ph.D.",
+    "areaOfStudy": "Parijathahara Nataka - A critical study",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M2FR842PFMYJF6CGYZ",
+    "name": "Dr. K.S.Balasubramanian",
+    "course": "Ph.D.",
+    "areaOfStudy": "Yoga Yajnavalkya - A Critical Study",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.403Z",
+      "updated_at": "2025-01-04T08:14:46.403Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M2CPJSFD6XCZ3C554B",
+    "name": "K.Srinivasan",
+    "course": "Ph.D.",
+    "areaOfStudy": "Vyayoga a Sanskrit Drama type : Theory and Practice",
+    "supervisor": "Dr. S.S. Janaki",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.402Z",
+      "updated_at": "2025-01-04T08:14:46.402Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M2C0YW8GH2MTQNEJGW",
+    "name": "S.S.Rangan",
+    "course": "Ph.D.",
+    "areaOfStudy": "Critical edition & study of Tattvagunadarsa of Annayarya",
+    "supervisor": "Dr. S.S. Janaki",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-04T08:14:46.402Z",
+      "updated_at": "2025-01-04T08:14:46.402Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M10PYB62Z6HDQ5F35V",
     "name": "A.R.Panduranga Rao",
     "course": "Ph.D.",
     "areaOfStudy": "Critical study of Nyaya vivarana of Ananda Tirtha",
@@ -473,8 +473,8 @@
     "status": "Completed",
     "metadata": {
       "updated_by": "admin",
-      "created_at": "2025-01-02T18:48:01.085Z",
-      "updated_at": "2025-01-02T18:48:01.085Z",
+      "created_at": "2025-01-04T08:14:46.402Z",
+      "updated_at": "2025-01-04T08:14:46.402Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"

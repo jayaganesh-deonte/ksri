@@ -1318,7 +1318,7 @@ const main = async () => {
   // await insertshastrachudamanis();
   // await insertvidyavaridhis();
   // await insertTraditionalScholars();
-  // await insertStudents();
+  await insertStudents();
   // await insertfaculty();
   // await insertGallery();
   // await insertmilestones();
