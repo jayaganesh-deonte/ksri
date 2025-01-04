@@ -30,6 +30,8 @@ jobs:
 
       - name: Start local server
         working-directory: ./SAM/express-api
+        env:
+          DDB_TABLE_NAME: ${{vars.DDB_TABLE_NAME}}
         run: |
           npm install
           nohup npm run dev &
