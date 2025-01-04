@@ -32,11 +32,13 @@ const milestonesData = await queryContent("milestones").findOne();
 
 const milestones = milestonesData.body;
 
-// sort milestones by year in descending order & handle - in year
+// sort milestones by year in descending order & some year has 1998-89 like this so we need to convert it to 1998, check if - exists
 milestones.sort((a, b) => {
-  if (a.year < b.year) return 1;
-  if (a.year > b.year) return -1;
-  return 0;
+  // convert year to number and then sort
+  const yearA = a.year.split("-").map((year) => parseInt(year));
+  const yearB = b.year.split("-").map((year) => parseInt(year));
+
+  return yearB[0] - yearA[0];
 });
 </script>
 
