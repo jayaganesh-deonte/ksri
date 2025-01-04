@@ -10,8 +10,8 @@
     <div class="text-h6 text-center" data-aos="fade-up">
       The KSRI is associated closely with many organizations such as Madras
       Sanskrit College, Sanskrit Academy, Samskrita Ranga, All India Oriental
-      Conference, Rashtriya Sanskrit Sansthan, New Delhi University of Madras
-      and so on.
+      Conference, Central Sanskrit University(Formerly Rashtriya Sanskrit
+      Sansthan), New Delhi University of Madras and so on.
     </div>
     <v-row class="ma-4" align="center">
       <v-col data-aos="fade-right" cols="12" md="6">
