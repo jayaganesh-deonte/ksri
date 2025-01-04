@@ -105,9 +105,9 @@
 
 <script setup>
 const contactDetails = {
-  callUs: "044-24985320",
+  callUs: "044-24985320 / 044-29505320",
   emailUs: "ksrinst@gmail.com",
-  addressLine1: "Kuppuswami Sastri Research Institute (KSRI)",
+  addressLine1: "The Kuppuswami Sastri Research Institute (KSRI)",
   addressLine2:
     "84, Thiru vi ka Road, Mylapore, Chennai 600 004., Tamil Nadu, India",
 };

@@ -109,15 +109,21 @@ const pageDetails = [
     outputFile: "../website/content//governingbodymembers/present.json",
     // filter by itemPublishStatus =>"PUBLISHED"
     filter: (data: any[]) =>
-      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        // filter by designationStatus => "Present"
+        .filter((item) => item.designationStatus === "Present"),
   },
   // governing-body-members-past
   {
-    endpoint: "/governing-body-members-past",
+    endpoint: "/governing-body-members",
     outputFile: "../website/content//governingbodymembers/past.json",
     // filter by itemPublishStatus =>"PUBLISHED"
     filter: (data: any[]) =>
-      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        // filter by designationStatus => "Past"
+        .filter((item) => item.designationStatus === "Past"),
   },
   // /library/articles
   {
@@ -181,6 +187,16 @@ const pageDetails = [
     // filter by itemPublishStatus =>"PUBLISHED"
     filter: (data: any[]) =>
       data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
+  },
+  //  "/advisory-board"
+  {
+    endpoint: "/advisory-board",
+    outputFile: "../website/content//advisoryboard.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.orderId - b.orderId),
   },
   // /foreign-scholars
   {
@@ -410,7 +426,16 @@ const pageDetails = [
     filter: (data: any[]) =>
       data
         .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.orderId - b.orderId)
         .map((item) => item.name),
+  },
+  // supervisor details
+  {
+    endpoint: "/supervisor",
+    outputFile: "../website/content//supervisordetails.json",
+    //  from array of object, pick only name
+    filter: (data: any[]) =>
+      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
   },
   // chair
   {

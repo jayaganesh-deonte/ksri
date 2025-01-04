@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="d-flex flex-row justify-center">
+    <div class="d-flex flex-row justify-center" v-if="displayButton">
       <div v-for="button in buttons" :key="button">
         <v-btn
           rounded="pill"
@@ -37,11 +37,36 @@
 </template>
 
 <script setup>
+// props to show present and past scholars
+const props = defineProps({
+  present: {
+    type: Boolean,
+    default: true,
+  },
+  past: {
+    type: Boolean,
+    default: true,
+  },
+});
+
 import presentPastScholars from "./presentPastScholars.vue";
 
 let buttons = ["Present", "Past"];
 
 let activeButton = ref("Present");
+
+let displayButton = computed(() => {
+  // return true if both props are true
+  return props.present && props.past;
+});
+
+// set active button value based on props
+// if any prop is false, set active button to other one
+if (!props.present) {
+  activeButton.value = "Past";
+} else if (!props.past) {
+  activeButton.value = "Present";
+}
 
 const coursesData = await queryContent("courses").findOne();
 const courses = coursesData.body;

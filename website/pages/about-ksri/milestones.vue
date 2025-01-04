@@ -31,6 +31,13 @@ useSeoMeta({
 const milestonesData = await queryContent("milestones").findOne();
 
 const milestones = milestonesData.body;
+
+// sort milestones by year in descending order & handle - in year
+milestones.sort((a, b) => {
+  if (a.year < b.year) return 1;
+  if (a.year > b.year) return -1;
+  return 0;
+});
 </script>
 
 <script>

@@ -72,8 +72,9 @@
       class="heading-with-line text-h4 mb-4 font-weight-bold text-primary text-center"
       data-aos="fade-down"
       data-delay="500"
+      v-if="nonacademicArraySorted.length > 0"
     >
-      Non-Academic
+      Library
     </div>
 
     <!-- display nonacademicArraySorted -->

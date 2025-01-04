@@ -151,16 +151,22 @@ var pageDetails = [
         outputFile: "../website/content//governingbodymembers/present.json",
         // filter by itemPublishStatus =>"PUBLISHED"
         filter: function (data) {
-            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                // filter by designationStatus => "Present"
+                .filter(function (item) { return item.designationStatus === "Present"; });
         },
     },
     // governing-body-members-past
     {
-        endpoint: "/governing-body-members-past",
+        endpoint: "/governing-body-members",
         outputFile: "../website/content//governingbodymembers/past.json",
         // filter by itemPublishStatus =>"PUBLISHED"
         filter: function (data) {
-            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                // filter by designationStatus => "Past"
+                .filter(function (item) { return item.designationStatus === "Past"; });
         },
     },
     // /library/articles
@@ -228,6 +234,17 @@ var pageDetails = [
         // filter by itemPublishStatus =>"PUBLISHED"
         filter: function (data) {
             return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+        },
+    },
+    //  "/advisory-board"
+    {
+        endpoint: "/advisory-board",
+        outputFile: "../website/content//advisoryboard.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.orderId - b.orderId; });
         },
     },
     // /foreign-scholars
@@ -474,7 +491,17 @@ var pageDetails = [
         filter: function (data) {
             return data
                 .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.orderId - b.orderId; })
                 .map(function (item) { return item.name; });
+        },
+    },
+    // supervisor details
+    {
+        endpoint: "/supervisor",
+        outputFile: "../website/content//supervisordetails.json",
+        //  from array of object, pick only name
+        filter: function (data) {
+            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
         },
     },
     // chair

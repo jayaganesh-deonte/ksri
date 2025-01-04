@@ -2,7 +2,7 @@
   <div>
     <!-- for courses -->
     <div v-for="course in courses" :key="course.name">
-      <div class="my-8">
+      <div v-if="hasStudentsForCourse(course)" class="my-8">
         <div class="sectionTitle3">{{ course.name }}</div>
         <div class="text-center">
           <div data-aos="fade-up ">{{ course.subTitle }}</div>
@@ -46,4 +46,33 @@ const props = defineProps({
   mPhilStudentsBySupervisor: { type: Function, required: true },
   phdStudentsBySupervisor: { type: Function, required: true },
 });
+
+const hasStudentsForCourse = (course) => {
+  console.log("hasStudentsForCourse", course.name);
+
+  console.log("mPhilStudentsBySupervisor");
+  // print props
+  console.log(props.supervisors);
+  // check if students are present for course and supervisor
+
+  if (course.name === "M.Phil") {
+    // check if students are present for course and supervisor
+    for (let supervisor of props.supervisors) {
+      if (props.mPhilStudentsBySupervisor(supervisor).length > 0) {
+        return true;
+      }
+    }
+  }
+
+  if (course.name !== "M.Phil") {
+    // check if students are present for course and supervisor
+    for (let supervisor of props.supervisors) {
+      if (props.phdStudentsBySupervisor(supervisor).length > 0) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+};
 </script>

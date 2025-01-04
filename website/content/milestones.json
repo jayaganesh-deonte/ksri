@@ -1,27 +1,14 @@
 [
   {
-    "id": "01JGN8TK15FW3172KQD7HVT5JQ",
-    "year": "2024",
-    "title": "75th Year Anniversary Celebrations",
-    "subTitle": " ",
-    "description": "<p> </p>",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2025-01-03T05:04:50.725Z",
-      "updated_at": "2025-01-03T05:04:50.725Z",
-      "created_by": "demo"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "id": "01JGN8NH3H68T4H076QZG600AV",
     "year": 2015,
     "title": "BHĪMARATHA MAHOTSAVA",
-    "description": "The Inauguration of the 70th anniversary celebrations of the Institute was held on 29 th October 2015, Thursday at the Music Academy. Hon'ble Sri E. S. L. Narasimhan, Governor of Andhra Pradesh and Telangana, presided and delivered the Inaugural address. Swami Atmapriyanandaji Maharaj, Vice Chancellor, R.K.M. Vivekananda University, Belur, W.Bengal, delivered the Key Note Address. Hon'ble Justice R. V. Easwaran, Former Judge, Delhi High Court delivered the special address. The Valedictory Function of the 70th Anniversary Celebrations was held on Saturday, 25th February 2017. Sri M.K. Narayanan, (Former, Governor of West Bengal) presided and delivered the Valedictory Address and released Sri Padukasahasram of Sri Vedanta Desika. Sri K. Parasaran (Former Attorney General, Government of India) received the first copy .",
+    "subTitle": "70th Year Anniversary Celebrations",
+    "description": "<p>The Inauguration of the 70th anniversary celebrations of the Institute was held on 29 th October 2015, Thursday at the Music Academy. Hon'ble Sri E. S. L. Narasimhan, Governor of Andhra Pradesh and Telangana, presided and delivered the Inaugural address. Swami Atmapriyanandaji Maharaj, Vice Chancellor, R.K.M. Vivekananda University, Belur, W.Bengal, delivered the Key Note Address. Hon'ble Justice R. V. Easwaran, Former Judge, Delhi High Court delivered the special address. The Valedictory Function of the 70th Anniversary Celebrations was held on Saturday, 25th February 2017. Sri M.K. Narayanan, (Former, Governor of West Bengal) presided and delivered the Valedictory Address and released Sri Padukasahasram of Sri Vedanta Desika. Sri K. Parasaran (Former Attorney General, Government of India) received the first copy .</p>",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T05:02:04.914Z",
-      "updated_at": "2025-01-03T05:02:04.915Z",
+      "updated_at": "2025-01-04T06:19:20.699Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
@@ -36,6 +23,47 @@
       "created_at": "2025-01-03T05:02:04.915Z",
       "updated_at": "2025-01-03T05:02:04.915Z",
       "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGN8NH3K29BM3R0SQKA06GF4",
+    "year": 1971,
+    "title": "Silver Jubilee Celebrations",
+    "description": "The Silver Jubilee of the Institute was organised on a grand scale with a conference of scholars of Sanskrit and Indology, enaction of Sanskrit Play, release of books etc.",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-03T05:02:04.915Z",
+      "updated_at": "2025-01-03T05:02:04.915Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGN8NH3K437DXVHRWVV7NCRJ",
+    "year": "1995-96",
+    "title": "Golden Jubilee Commemoration Lectures",
+    "subTitle": " ",
+    "description": "<p>A series of Commemoration lectures to mark the Golden Jubilee was inaugurated by His Holiness Srimad Andavan Swamigal on 1st October 1995. The lecture series ended by July 1996.</p>",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-03T05:02:04.915Z",
+      "updated_at": "2025-01-03T17:33:55.890Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGN8TK15FW3172KQD7HVT5JQ",
+    "year": "2024",
+    "title": "75th Year Anniversary Celebrations",
+    "subTitle": " ",
+    "description": "<p> </p>",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-03T05:04:50.725Z",
+      "updated_at": "2025-01-03T05:04:50.725Z",
+      "created_by": "demo"
     },
     "itemPublishStatus": "PUBLISHED"
   },
@@ -70,32 +98,6 @@
     "year": 1981,
     "title": "Birth Centenary of Prof.S.Kuppuswami Sastri",
     "description": "The Institute commemorated the Birth-centenary of Prof.S.Kuppuswami Sastri in 1981 in a befitting manner in two sessions. Scholars from all over India and foreign working in India including a sizable number of Sri Sastriar' students took active part in the celebrations, the first session of which was held on 19,20 & 21 June 1981 at the Sanskrit College campus.",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T05:02:04.915Z",
-      "updated_at": "2025-01-03T05:02:04.915Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGN8NH3K29BM3R0SQKA06GF4",
-    "year": 1971,
-    "title": "Silver Jubilee Celebrations",
-    "description": "The Silver Jubilee of the Institute was organised on a grand scale with a conference of scholars of Sanskrit and Indology, enaction of Sanskrit Play, release of books etc.",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T05:02:04.915Z",
-      "updated_at": "2025-01-03T05:02:04.915Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGN8NH3K437DXVHRWVV7NCRJ",
-    "year": 1899,
-    "title": "Golden Jubilee Commemoration Lectures",
-    "description": "A series of Commemoration lectures to mark the Golden Jubilee was inaugurated by His Holiness Srimad Andavan Swamigal on 1st October 1995. The lecture series ended by July 1996.",
     "metadata": {
       "updated_by": "admin",
       "created_at": "2025-01-03T05:02:04.915Z",

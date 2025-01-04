@@ -163,21 +163,5 @@
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5H4SSJ6XYJ3C32YY8MNSB",
-    "name": "V.R.Srinivasan",
-    "course": "M.Phil",
-    "areaOfStudy": "Manju Ramayanam - A study",
-    "supervisor": "Dr. V. Yamuna Devi",
-    "status": "On-Going",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2025-01-02T18:48:01.081Z",
-      "updated_at": "2025-01-02T18:48:50.302Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
   }
 ]

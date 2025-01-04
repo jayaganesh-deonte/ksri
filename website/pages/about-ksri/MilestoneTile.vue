@@ -130,7 +130,7 @@ export default {
   mounted() {
     // Create intersection observer
     this.observer = new IntersectionObserver(this.handleIntersection, {
-      threshold: 0.2, // Trigger when 20% of the component is visible
+      threshold: 0.1, // Trigger when 20% of the component is visible
     });
 
     // Start observing the component

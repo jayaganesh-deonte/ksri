@@ -240,19 +240,19 @@ export function validateFaculty(item: Faculty): boolean {
     typeof item.id === "string" &&
     typeof item.name === "string" &&
     typeof item.designation === "string" &&
-    Array.isArray(item.displayImage) &&
-    item.displayImage.every((image: any) => typeof image === "string") &&
+    // Array.isArray(item.displayImage) &&
+    // item.displayImage.every((image: any) => typeof image === "string") &&
     // typeof item.displayImage  &&
     typeof item.subtitle === "string" &&
     typeof item.description === "string" &&
     typeof item.mobile === "string" &&
     typeof item.mail === "string" &&
-    Array.isArray(item.profile) &&
-    item.profile.every((profile: any) => typeof profile === "string") &&
+    // Array.isArray(item.profile) &&
+    // item.profile.every((profile: any) => typeof profile === "string") &&
     (item.type === "ACADEMIC" || item.type === "NON ACADEMIC") &&
-    (item.metadata === undefined ||
-      (typeof item.metadata === "object" &&
-        Object.values(item.metadata).every((v) => typeof v === "string"))) &&
+    // (item.metadata === undefined ||
+    //   (typeof item.metadata === "object" &&
+    //     Object.values(item.metadata).every((v) => typeof v === "string"))) &&
     typeof item.itemPublishStatus === "string"
     // (item.orderId === undefined || typeof item.orderId === "string") &&
   );

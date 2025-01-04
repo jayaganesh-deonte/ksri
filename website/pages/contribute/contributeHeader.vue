@@ -17,7 +17,7 @@
       </div>
       <v-img
         :height="$device.isMobile ? '' : '50vh'"
-        src="https://d30y75l38k1y9.cloudfront.net/upload/library-racks.jpg"
+        src="/img/library/library-racks-5.jpg"
         cover
         class="d-flex justify-center align-center"
       >

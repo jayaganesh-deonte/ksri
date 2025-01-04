@@ -219,11 +219,11 @@ const menuOptions = reactive([
         description:
           "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.",
       },
-      {
-        name: "Research Articles",
-        path: "/academic-and-research-pursuits/research-articles",
-        description: "Research articles on Indology and Sanskrit",
-      },
+      // {
+      //   name: "Research Articles",
+      //   path: "/academic-and-research-pursuits/research-articles",
+      //   description: "Research articles on Indology and Sanskrit",
+      // },
       {
         name: "Academic Programs",
         path: "/academic-and-research-pursuits/academic-programs",
@@ -266,6 +266,10 @@ const menuOptions = reactive([
       {
         name: "Research Committee",
         path: "/ksri-team/researchCommittee",
+      },
+      {
+        name: "Advisory Committee",
+        path: "/ksri-team/advisoryCommittee",
       },
     ],
   },

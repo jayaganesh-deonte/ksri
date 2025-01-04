@@ -1,5 +1,29 @@
 [
   {
+    "id": "01JGM5VST7T8C9ZMCP4V5Y8RDA",
+    "name": "Dr. P.C. Muralidharan",
+    "designation": "Assistant Professor",
+    "displayImage": [
+      "upload/faculty/murali.jpg"
+    ],
+    "subtitle": "Areas of Specialisation: Sahitya, Vaishnavism",
+    "description": "20 years of teaching and research experience.",
+    "mobile": "9840135606",
+    "mail": "pcmuralidharan1981@gmail.com",
+    "profile": [
+      ""
+    ],
+    "type": "ACADEMIC",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-02T18:53:50.279Z",
+      "updated_at": "2025-01-04T06:02:36.261Z",
+      "created_by": "admin"
+    },
+    "orderId": "1",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "id": "01JGM5VST7RMFAQA7MXH1WB9KH",
     "name": "Dr. V. Yamuna Devi",
     "designation": "Deputy Director/Associate Professor",

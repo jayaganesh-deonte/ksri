@@ -29,8 +29,8 @@
             </v-card>
             <!-- display publicationStatus -->
             <v-card
-              color="greenBg"
-              class="text-center pa-2 mt-2 text-body-1"
+              color="accentGreen"
+              class="text-center text-white pa-2 mt-2 text-body-1"
               data-aos="fade-left"
               v-if="project.publicationStatus"
             >
@@ -44,15 +44,16 @@
               <template v-slot:default>
                 <tbody>
                   <tr v-if="project.sponsor">
-                    <td class="text-body-1 text-secondary">Sponsored by</td>
+                    <td class="text-body-1 font-weight-bold">Sponsored by</td>
                     <td>
                       <v-chip color="secondary" class="ma-2" label>
                         {{ project.sponsor }}
                       </v-chip>
                     </td>
                   </tr>
+
                   <tr v-if="project.projectInvestigator">
-                    <td class="text-body-1 text-secondary">
+                    <td class="text-body-1 font-weight-bold">
                       Project Investigator
                     </td>
                     <td>
@@ -62,7 +63,7 @@
                     </td>
                   </tr>
                   <tr v-if="project.coProjectInvestigators">
-                    <td class="text-body-1 text-secondary">
+                    <td class="text-body-1 font-weight-bold">
                       Co-Project Investigators
                     </td>
                     <td>
