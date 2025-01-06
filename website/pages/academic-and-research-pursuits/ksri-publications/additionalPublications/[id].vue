@@ -10,33 +10,9 @@
     </div>
     <div class="ma-6" v-if="!isLoading">
       <div>
-        <section-title title="BOOKS/MONOGRAPHS" />
-        <div class="sectionSubtitle2">
-          KSRI has been publishing the Journal of Oriental Research periodically
-          from its inception till date and it is internationally well known.
-        </div>
+        <section-title :title="selectedAdditionalPublication" />
       </div>
 
-      <!-- selectedPublicationToDisplay -->
-      <!-- <div class="text-center ma-4">
-        <v-btn
-          rounded="pill"
-          class="ma-4"
-          v-for="publication in publicationNames"
-          :key="publication"
-          :color="
-            publication === selectedPublicationToDisplay
-              ? 'primary'
-              : 'secondary'
-          "
-          @click="selectedPublicationToDisplay = publication"
-          :variant="
-            publication === selectedPublicationToDisplay ? 'flat' : 'outlined'
-          "
-        >
-          {{ publication }}
-        </v-btn>
-      </div> -->
       <!-- add search based on book name (title), author name(author) -->
 
       <div v-if="!showSelectedBookDetails">
@@ -54,13 +30,19 @@
         <div class="ma-4">
           <v-row>
             <v-col
-              v-for="book in filterBooksBasedOnPublication('KSRI')"
+              v-for="book in filterBooksBasedOnPublication(
+                selectedAdditionalPublication
+              )"
               :key="book.title"
               cols="12"
               md="4"
               data-aos="fade-up"
             >
-              <book-card :book="book" @viewDetails="onViewDetails" />
+              <book-card
+                :book="book"
+                @viewDetails="onViewDetails"
+                :isAdditionalPublicationData="true"
+              />
             </v-col>
           </v-row>
         </div>
@@ -124,6 +106,12 @@
 </template>
 
 <script setup>
+// get id from url
+const route = useRoute();
+const id = route.params.id;
+
+const selectedAdditionalPublication = ref(id);
+
 const description =
   "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.";
 
@@ -147,23 +135,47 @@ let additionalPublicationBooks = {};
 
 const booksData = await queryContent("publications", "books").findOne();
 
+// get all additionalpublications
+const additionalPublicationsData = await queryContent(
+  "publications",
+  "additionalpublications"
+).findOne();
+const additionalPublications = additionalPublicationsData.body;
+
+// for additionalPublications query content
+for (const element of additionalPublications) {
+  const additionalPublication = element;
+
+  const publicationNameForFile =
+    additionalPublication.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() +
+    "journals";
+
+  // query content
+  const additionalPublicationJournalsData = await queryContent(
+    "publications",
+    publicationNameForFile
+  ).findOne();
+
+  // books
+  const publicationNameForBooks = additionalPublication
+    .replace(/[^a-zA-Z0-9]/g, "")
+    .toLowerCase();
+
+  // query content
+  const additionalPublicationBooksData = await queryContent(
+    "publications",
+    publicationNameForBooks
+  ).findOne();
+
+  additionalPublicationBooks[additionalPublication] = [
+    ...additionalPublicationJournalsData.body,
+    ...additionalPublicationBooksData.body,
+  ];
+}
+
 const ksriBooks = booksData.body;
 
 additionalPublicationBooks["KSRI"] = ksriBooks;
-
-// Add computed property for filtered books
-const filteredBooks = computed(() => {
-  const query = searchQuery.value.toLowerCase();
-
-  if (!query) return books.value;
-
-  return books.value.filter(
-    (book) =>
-      book.title?.toLowerCase().includes(query) ||
-      book.author?.toLowerCase().includes(query) ||
-      book.subtitle?.toLowerCase().includes(query)
-  );
-});
 
 const books = computed((publicationName) => {
   return additionalPublicationBooks[publicationName];
@@ -207,7 +219,7 @@ const onViewDetails = (book) => {
 
 const navigateToBookCatalogue = () => {
   resetSelectedBook();
-  navigateTo("/academic-and-research-pursuits/ksri-publications/books");
+  navigateTo("/academic-and-research-pursuits/ksri-publications/");
 };
 
 // scroll to top on selectedbook details

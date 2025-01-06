@@ -59,6 +59,48 @@
         </v-col>
       </v-row>
     </div>
+
+    <div
+      v-for="additionalPublication in additionalPublications"
+      :key="additionalPublication"
+    >
+      <div class="text-center my-8">
+        <!-- display recent Journals in horizontal line -->
+        <div class="sectionTitle3">
+          Also Available ({{ additionalPublication }})
+        </div>
+        <v-row class="ma-2" justify="center">
+          <v-col
+            v-for="book in recentAdditionalPublicationBooks[
+              additionalPublication
+            ]"
+            :key="book.title"
+            cols="10"
+            md="3"
+          >
+            <book-card :book="book" :is-book="true" />
+          </v-col>
+          <!-- a col to show "View All" -->
+          <v-col cols="10" md="1">
+            <nuxt-link
+              :to="
+                '/academic-and-research-pursuits/ksri-publications/additionalPublications/' +
+                additionalPublication
+              "
+            >
+              <v-card
+                color="primary"
+                height="100%"
+                class="d-flex flex-column align-center justify-center font-weight-bold"
+              >
+                <div>View All</div>
+              </v-card>
+            </nuxt-link>
+          </v-col>
+        </v-row>
+      </div>
+    </div>
+
     <!-- <div class="text-center my-4">
       <div class="text-h6">
         A Committee is constituted to help the Institute in identifying the
@@ -276,4 +318,53 @@ const recentBooks = reactive(ksriBooks.slice(0, 3));
 
 // recent 3 journals
 const recentJournals = reactive(ksriJournals.slice(0, 3));
+
+// get all additionalpublications
+const additionalPublicationsData = await queryContent(
+  "publications",
+  "additionalpublications"
+).findOne();
+const additionalPublications = additionalPublicationsData.body;
+
+let additionalPublicationBooks = {};
+
+// for additionalPublications query content
+for (const element of additionalPublications) {
+  const additionalPublication = element;
+
+  const publicationNameForFile =
+    additionalPublication.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() +
+    "journals";
+
+  // query content
+  const additionalPublicationJournalsData = await queryContent(
+    "publications",
+    publicationNameForFile
+  ).findOne();
+
+  // books
+  const publicationNameForBooks = additionalPublication
+    .replace(/[^a-zA-Z0-9]/g, "")
+    .toLowerCase();
+
+  // query content
+  const additionalPublicationBooksData = await queryContent(
+    "publications",
+    publicationNameForBooks
+  ).findOne();
+
+  additionalPublicationBooks[additionalPublication] = [
+    ...additionalPublicationJournalsData.body,
+    ...additionalPublicationBooksData.body,
+  ];
+}
+
+// recent 3 books for all additional publications
+const recentAdditionalPublicationBooks = {};
+for (const key in additionalPublicationBooks) {
+  recentAdditionalPublicationBooks[key] = additionalPublicationBooks[key].slice(
+    0,
+    3
+  );
+}
 </script>

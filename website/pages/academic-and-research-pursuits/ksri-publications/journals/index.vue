@@ -68,35 +68,6 @@
             </v-col>
           </v-row>
         </div>
-
-        <!-- show additional publications books -->
-        <div class="">
-          <div
-            v-for="publication in additionalPublications"
-            :key="publication"
-            class="text-center"
-          >
-            <div v-if="filteJournalsBasedOnPublication(publication).length > 0">
-              <div class="text-h4 text-secondary">
-                Also Available ({{ publication }})
-              </div>
-              <!-- display books -->
-              <div class="ma-4">
-                <v-row>
-                  <v-col
-                    v-for="book in filteJournalsBasedOnPublication(publication)"
-                    :key="book.title"
-                    cols="12"
-                    md="4"
-                    data-aos="fade-up"
-                  >
-                    <book-card :book="book" @viewDetails="onViewDetails" />
-                  </v-col>
-                </v-row>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <!-- book details -->
       <div v-else>
@@ -186,52 +157,11 @@ console.log("additionalPublications", additionalPublications);
 
 let additionalPublicationJournals = {};
 
-// for additionalPublications query content
-for (const element of additionalPublications) {
-  const additionalPublication = element;
-
-  const publicationNameForFile =
-    additionalPublication.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() +
-    "journals";
-
-  // query content
-  const additionalPublicationJournalsData = await queryContent(
-    "publications",
-    publicationNameForFile
-  ).findOne();
-
-  additionalPublicationJournals[additionalPublication] =
-    additionalPublicationJournalsData.body;
-}
-
 const booksData = await queryContent("publications", "journals").findOne();
 
 const ksriBooks = booksData.body;
 
 additionalPublicationJournals["KSRI"] = ksriBooks;
-
-//  Sample Book Item
-// {
-//     "title": "SAMSKṚTA SĀHITYA ITIHĀSAḤ (A History of Sanskrit Literature);",
-//     "subtitle": "Prof. R. S. Venkatarama Sastri | Golden Jubilee Publication | The Kuppuswami Sastri Research Institute, Mylapore, Chennai - 600 004 | 1996 | pp. 264 +  viii",
-//     "price": "₹ 100",
-//     "imageUrls": [
-//       "https://d30y75l38k1y9.cloudfront.net/upload/samskta-shitya-itihsa.jpg"
-//     ],
-//     "details": "“The book opens with the history of Vedic literature in which the time of Vedas, Vedic metres, Vedic rivers, trees, animals, Upaniṣad, etc. have been discussed and it is clear that we get much light and guidance in going through the entire Vedic literature. “The next part of the book is devoted to the history of  Kāvya (literary form of art), in which the details about time of poets and the contents of their creations have been highlighted. It includes Kālidāsa, Vararuci, Aśvaghoṣa, Bhāravi, Bhaṭṭi, Māgha Kṣemendra, Hemachandra, et. al. and their poetic creations. A separate section is devoted to the discussion of the historical aspect of Sanskrit drama and dramatists.  “It is a very difficult work to give a brief account of the whole Sanskrit literature in English by various Western scholars is available. But such a history in Sanskit is very rare.”\nDr. Raghunath Ghosh, Prabuddha Bharata.",
-//     "id": "01JFPQE6VJCJ7H811XBT7B3939",
-//     "publication": "KSRI",
-//     "available": "Yes",
-//     "copies": "10",
-//     "metadata": {
-//       "updated_by": "demo",
-//       "created_at": "2024-12-22T08:23:46.290Z",
-//       "updated_at": "2024-12-23T14:59:23.266Z",
-//       "created_by": "admin"
-//     },
-//     "author": "Prof. R. S. Venkatarama Sastri",
-//     "yearOfPublication": "1996"
-//   },
 
 // Add computed property for filtered books
 const filteredBooks = computed(() => {

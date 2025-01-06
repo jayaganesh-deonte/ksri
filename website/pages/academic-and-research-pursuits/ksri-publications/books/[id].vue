@@ -26,7 +26,7 @@
               color="primary"
               to="/academic-and-research-pursuits/ksri-publications/books/"
             >
-              Back to Book Catalogue
+              Back to Catalogue
             </v-btn>
           </div>
         </div>
@@ -38,8 +38,18 @@
             variant="outlined"
             color="primary"
             to="/academic-and-research-pursuits/ksri-publications/books/"
+            v-if="!isAdditionalPublication"
           >
             Back to Catalogue
+          </v-btn>
+          <v-btn
+            rounded="pill"
+            variant="outlined"
+            color="primary"
+            to="/academic-and-research-pursuits/ksri-publications/"
+            v-else
+          >
+            Back to Publications
           </v-btn>
         </div>
         <v-row>
@@ -87,6 +97,18 @@
               >
                 Price: {{ bookInfo.price }}
               </div>
+              <!-- author -->
+              <div
+                class="text-h6"
+                data-aos="fade-left"
+                data-aos-delay="300"
+                v-if="bookInfo.author"
+              >
+                Author:
+                <span class="text-secondary">
+                  {{ bookInfo.author }}
+                </span>
+              </div>
               <div
                 class="text-start pa-0 mt-5 text-danger"
                 v-if="bookInfo.available != 'Yes'"
@@ -115,6 +137,8 @@ const additionalPublicationsData = await queryContent(
 ).findOne();
 const additionalPublications = additionalPublicationsData.body;
 console.log("additionalPublications", additionalPublications);
+
+let isAdditionalPublication = ref(false);
 
 let additionalPublicationBooks = {};
 
@@ -196,8 +220,12 @@ const getBookInfo = async () => {
     bookInfo.id = book.id;
     bookInfo.available = book.available;
     bookInfo.publication = book.publication;
+    bookInfo.author = book.author;
   }
   bookInfoFetched.value = true;
+
+  // set isAdditionalPublication value
+  isAdditionalPublication.value = bookInfo.publication != "KSRI";
 
   useSeoMeta({
     title: book.title,
