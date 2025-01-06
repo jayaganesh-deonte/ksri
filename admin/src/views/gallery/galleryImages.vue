@@ -1,6 +1,6 @@
 <template>
   <generic-crud
-    entityName="Gallery"
+    entityName="Gallery Images"
     :apiEndpoint="apiEndpoint"
     :entityFields="galleryFields"
     :headers="galleryHeaders"
@@ -43,7 +43,7 @@ export default {
           key: "description",
           label: "Description",
           type: "text",
-          rules: [(v) => !!v || "Description is required"],
+          // rules: [(v) => !!v || "Description is required"],
         },
         {
           key: "itemPublishStatus",
