@@ -15,31 +15,18 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGR632KZXKSBEMG6MFADD4BC",
-    "name": "Ms. S. Madhurambika",
-    "course": "Ph.D.",
-    "areaOfStudy": "Sahendra Vilasa",
-    "supervisor": "Dr. V. Yamuna Devi",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.399Z",
-      "updated_at": "2025-01-04T08:14:46.399Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "id": "01JGR632KZS17YZ75WWPM1NFAB",
     "name": "Mr.P.S. Chandrasekharan",
     "course": "Ph.D.",
     "areaOfStudy": "Ganita Kaumudi",
     "supervisor": "Dr. V. Yamuna Devi",
     "status": "On-Going",
+    "startedYear": "2018",
+    "completedYear": "2024",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-04T08:14:46.399Z",
-      "updated_at": "2025-01-04T08:14:46.399Z",
+      "updated_at": "2025-01-06T10:30:24.692Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
@@ -50,111 +37,6 @@
     "course": "Ph.D.",
     "areaOfStudy": "Advaitic principles in Yoga vasishtha",
     "supervisor": "Dr. V. Yamuna Devi",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.399Z",
-      "updated_at": "2025-01-04T08:14:46.399Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632KZK3VAS7K6HRRMB6KX",
-    "name": "Ms.Goda Devi",
-    "course": "Ph.D.",
-    "areaOfStudy": "Kasyapa Samhita- text on Vishacikitsa: A Critical study- Submitted synopsis",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.399Z",
-      "updated_at": "2025-01-04T08:14:46.399Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632KZ9EZAMGCCDJB8XP8S",
-    "name": "Ms.Renganayaki",
-    "course": "Ph.D.",
-    "areaOfStudy": "Surya in Sanskrit Literature - A scientific approach",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.399Z",
-      "updated_at": "2025-01-04T08:14:46.399Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632KZ67F9G5C4THH2YSPV",
-    "name": "K.N.Srikkanth",
-    "course": "Ph.D.",
-    "areaOfStudy": "Contribution of Sridhara and Sripati to Indian Mathematics - Viva Awaited",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.399Z",
-      "updated_at": "2025-01-04T08:14:46.399Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632KZ47XX4NGAV109Y0WC",
-    "name": "Mrs.R.Rajalakshmi",
-    "course": "Ph.D.",
-    "areaOfStudy": "Critical analysis of Adbhuta Darpana",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.399Z",
-      "updated_at": "2025-01-04T08:14:46.399Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632KZ2EKCREMQK9HB04J3",
-    "name": "Mr. S. Balakrishnan",
-    "course": "Ph.D.",
-    "areaOfStudy": "Vrttaratnasangraha of Raghunatha",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.399Z",
-      "updated_at": "2025-01-04T08:14:46.399Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632KYXADAK4VYX7ZR5YC8",
-    "name": "Ms. Preethi Mahesh",
-    "course": "Ph.D.",
-    "areaOfStudy": "Chennai in Sanskrit Literature - Awaiting Viva",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.398Z",
-      "updated_at": "2025-01-04T08:14:46.398Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632KYK0802KP0ZTV1G6SX",
-    "name": "Ms.N. Bhuvanesawri",
-    "course": "Ph.D.",
-    "areaOfStudy": "Critical Study of the play Prasanna Raghava of Jayadeva - Submitted Synopsis",
-    "supervisor": "Dr. V. Kameswari",
     "status": "On-Going",
     "metadata": {
       "updated_by": "admin",

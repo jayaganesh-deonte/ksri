@@ -1,5 +1,304 @@
 [
   {
+    "title": "ŚIVA SVARODAYA ",
+    "subtitle": "(Text in Devanagari and Roman script with English translation and notes)",
+    "price": "250",
+    "imageUrls": [
+      "images/Sivasvarodaya.JPG"
+    ],
+    "details": "<p class=\"ql-align-justify\"><strong>&nbsp;</strong>This contains 395 verses in the form of Lord Siva's instruction to goddess Parvati on the greatness of Svara science of Yoga, how this science is useful in prognostication of future events in one's life by observing one's breathing patterns and many more interesting things.</p><p><br></p>",
+    "id": "01JGXKGQPJQDF901ZCD92YKEVP",
+    "publication": "KSRI",
+    "keywords": "Yoga",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T10:45:37.618Z",
+      "updated_at": "2025-01-06T10:45:37.618Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. K.S. Balasubramanian. Dr. T.V.Vasudeva, Dr. K Vidyuta",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "YOGA SAṄGRAHA",
+    "subtitle": " This is a critical edition of this text based on three available Mss. in different scripts. ",
+    "price": "250",
+    "imageUrls": [
+      "images/Yogasangraha.JPG"
+    ],
+    "details": "<p>In about 200 verses, it contains lot of interesting details which are not found in other Yogic texts.</p>",
+    "id": "01JGXKQXH67MTRRH8M7YAQFJYY",
+    "publication": "KSRI",
+    "keywords": "Yoga",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T10:49:32.966Z",
+      "updated_at": "2025-01-06T10:53:36.151Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. R Muthulakshmi, Dr. K.S. Balasubramanian, Dr. T.V. Vasudeva",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "GORAKṢA SAMHITĀ ",
+    "subtitle": " (Text in Devanagari and Roman script with Critical Introduction, English translation and notes)",
+    "price": "250",
+    "imageUrls": [
+      "images/Goraksha Samhita.JPG"
+    ],
+    "details": "<p>Ascribed to the legendary saint Gorakṣa, this text contains 201 verses dealing with many aspects of Hatha, Raja, Mantra Laya Yoga techniques</p>",
+    "id": "01JGXKV187Y453GE8T5CDWAVMN",
+    "publication": "KSRI",
+    "keywords": "Yoga",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T10:51:15.079Z",
+      "updated_at": "2025-01-06T10:53:16.319Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. V Preethi",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "KṚIṢI PARĀŚARA",
+    "subtitle": "(Text in Devanagari and Roman script with English translation and notes)",
+    "price": "250",
+    "imageUrls": [
+      "images/Krisiparasara.JPG"
+    ],
+    "details": "<p>This is an ancient text on agriculture</p>",
+    "id": "01JGXM3P97A355QGJFGYGN00JV",
+    "publication": "KSRI",
+    "keywords": "Agriculture, Farming, Ancient India,",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T10:55:58.760Z",
+      "updated_at": "2025-01-06T10:55:58.760Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. P.C. Muralidharan",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "GLIMPSES OF ANCIENT INDIAN MATHEMATICS",
+    "subtitle": "Ancient Indians excelled in many branches of mathematics and a glimpse of their expertise in this subject can be found in the above books. ",
+    "price": "250",
+    "imageUrls": [
+      "images/Glimpses of Maths in Ancient India.JPG"
+    ],
+    "details": "<p><br></p>",
+    "id": "01JGXM69GQKR5773B9FF2PR25X",
+    "publication": "KSRI",
+    "keywords": "Ancient Indian Mathematics",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T10:57:23.991Z",
+      "updated_at": "2025-01-06T10:57:23.991Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. V Ramakalyani",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "ANCIENT INDIAN ALGEBRA",
+    "subtitle": "Ancient Indians excelled in many branches of mathematics and a glimpse of their expertise in Algebra can be found in the above book.",
+    "price": "250",
+    "imageUrls": [
+      "images/History of Ancient Indian Algebra.JPG"
+    ],
+    "details": "",
+    "id": "01JGXM9JJ7RSW3N2189H2VG8P9",
+    "publication": "KSRI",
+    "keywords": "Ancient Indian Mathematics, Algebra",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T10:59:11.559Z",
+      "updated_at": "2025-01-06T10:59:11.559Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. Sita Sundar Ram",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "ANCIENT INDIAN SURGICAL INSTRUMENTS",
+    "subtitle": ": From Vedic time, references to  different surgeries have been recorded in our texts, especially in the Ayurvedic texts by Susruta, Charaka and Vagbhata. This book gives a glimpse of various surgical instruments used hundreds of years ago ( with illustrations) by our ancients.",
+    "price": "250",
+    "imageUrls": [
+      "images/Surgical Instruments.JPG"
+    ],
+    "details": "",
+    "id": "01JGXMDY4ZKEX6NHJ918X75VHK",
+    "publication": "KSRI",
+    "keywords": "Surgical Instruments, Surgry, Ancient Indian surgery, Charaka, Sushruta",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T11:01:34.496Z",
+      "updated_at": "2025-01-06T11:01:34.496Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. S. Gopalan",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "VAḌAVĀGNI ",
+    "subtitle": " - SUBMARINE FIRE: GEOGRAPHICAL PERSPECTIVE",
+    "price": "250",
+    "imageUrls": [
+      "images/Vadavagni.JPG"
+    ],
+    "details": "<p>Valuable geographical details on Submarine Fire are available in&nbsp;the Vedas, Itihasas and Puranas, all dating back to a distant past and the modern geography concurs with these views. In fact, our Puranas provide valuable clues to some unsolved problems in modern geography.</p>",
+    "id": "01JGXMJE901C19ZBWD252HAV0K",
+    "publication": "KSRI",
+    "keywords": "Geography, Submarine Fire, Vadavagni",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T11:04:02.080Z",
+      "updated_at": "2025-01-06T11:04:02.080Z",
+      "created_by": "demo"
+    },
+    "author": "Prof. R. Parthasarathy",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "TRADITIONAL HINDU FESTIVALS",
+    "subtitle": "- Festivities of India",
+    "price": "250",
+    "imageUrls": [
+      "images/Traditional Hindu Festivals.JPG"
+    ],
+    "details": "<p>&nbsp;India celebrates innumerable festivals throughout the year which give us an idea of the rich culture, religion, myth, arts of this great country and all these are interwoven in such festivals.</p>",
+    "id": "01JGXMQ5N0E9VHPYJ8XM7NPGCG",
+    "publication": "KSRI",
+    "keywords": " India, festivals, culture, religion, myth, arts, festivals.",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T11:06:37.088Z",
+      "updated_at": "2025-01-06T11:06:37.088Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. S. Anuradha",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "TOWN PLANNING IN ANCIENT INDIA",
+    "subtitle": "-",
+    "price": "250",
+    "imageUrls": [
+      "images/Town Planning.JPG"
+    ],
+    "details": "<p>Ancient texts and polity, Dharma Sastra, Vastu Sastra (Architecture) and Śipla Śāstra ( Iconography) and other subjects describe various cities with mansions, gardens, water bodies etc. This book gives an idea of the great planning involved in building a cities, villages, towns and other such information.</p>",
+    "id": "01JGXMVFK1QBXWDWBCK63VHP5W",
+    "publication": "KSRI",
+    "keywords": "Town planning",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T11:08:58.337Z",
+      "updated_at": "2025-01-06T11:08:58.337Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. Vasumathi Rajaram",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "EVOLUTION OF EARTH IN PURĀṆAS: ",
+    "subtitle": "Puranic and modern ideas of creation of the universe",
+    "price": "250",
+    "imageUrls": [
+      "images/Evolution of Earth.JPG"
+    ],
+    "details": "<p>The Vedas, Itihasas and Puranas give many theories on the evolution of Earth and the species living therein. We find a remarkable resemblance in Puranic and modern ideas of creation of the universe and evolution of species on the globe.</p>",
+    "id": "01JGXN7C4RBDWSJP961WZFNHNY",
+    "publication": "KSRI",
+    "keywords": "Evolution of Earth",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T11:15:28.024Z",
+      "updated_at": "2025-01-06T11:15:28.024Z",
+      "created_by": "demo"
+    },
+    "author": "Prof. R. Parthasarathy",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "PRIMER OF ANCIENT INDIAN BOTANY",
+    "subtitle": "Starting from the Vedas many texts give us information on flora and fauna . ",
+    "price": "250",
+    "imageUrls": [
+      "images/Primer of Ancient Indian Botany.JPG"
+    ],
+    "details": "<p>This book book concentrates on details regarding Taxonomy, Morphology, Hydrophytes etc. as available in ancient Indian texts.</p>",
+    "id": "01JGXNAF1SK7RAWX4K19AB0T1R",
+    "publication": "KSRI",
+    "keywords": "Plant Biology, Botanay, Ancient Indian Botany",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T11:17:09.305Z",
+      "updated_at": "2025-01-06T11:17:09.305Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. V Premalatha",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "ŚIŚUPĀLAVADHAM (VOL. I - CANTOS 1-6)  ",
+    "subtitle": "one among the five great poems of Sanskrit with rare usages of words and phrases",
+    "price": "500",
+    "imageUrls": [
+      "images/sisupalavadham.jpeg"
+    ],
+    "details": "<p>This is an authentic English translation (with the original text in Devanāgarī).</p>",
+    "id": "01JGXNX4W1CBF1914CG3NWS0P1",
+    "publication": "KSRI",
+    "keywords": "ŚIŚUPĀLAVADHAM ",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T11:27:21.473Z",
+      "updated_at": "2025-01-06T11:27:21.473Z",
+      "created_by": "demo"
+    },
+    "author": "-",
+    "yearOfPublication": "2023",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "title": "Darśanopaniṣat",
     "subtitle": " ",
     "price": "₹ 70",
