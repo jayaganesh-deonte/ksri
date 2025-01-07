@@ -1,20 +1,19 @@
 <template>
   <div>
-    <section-title title="KSRI PROJECTS & STUDIES" />
+    <section-title class="my-8" title="KSRI PROJECTS & STUDIES" />
 
     <!-- add button list -->
-    <div
+    <!-- <div
       class="d-flex flex-wrap justify-center align-center mx-2"
       :class="$device.isMobile ? 'flex-wrap' : 'flex-row'"
     >
       <div class="text-h6">Series:</div>
-      <!-- {{ projectSeries }} -->
       <div v-for="series in projectSeries" :key="series">
         <v-menu v-if="subSeriesMapping[series]" offset-y>
           <template v-slot:activator="{ props }">
             <div
               v-bind="props"
-              class="d-flex align-center flex-column ma-2"
+              class="d-flex flex-column ma-2"
               style="background-color: #fafbfa"
             >
               <v-btn
@@ -24,16 +23,19 @@
                 class="ma-2"
                 size="large"
                 style="text-transform: none"
+                height="100%"
               >
-                <div class="ma-2">
+                <div class="ma-4">
                   <div>{{ series }}</div>
+
+                  <div
+                    v-if="getSeriesDescriptionFromSubSeries(series)"
+                    style="font-size: 0.7em"
+                    class="font-weight-light text-center mt-2"
+                    v-html="getSeriesDescriptionFromSubSeries(series)"
+                  />
                 </div>
               </v-btn>
-              <div
-                style="font-size: 0.7em"
-                class="font-weight-light text-center"
-                v-html="getSeriesDescriptionFromSubSeries(series)"
-              />
             </div>
           </template>
           <v-list>
@@ -66,8 +68,8 @@
           {{ series }}
         </v-btn>
       </div>
-    </div>
-    <div
+    </div> -->
+    <!-- <div
       class="d-flex justify-center align-center mx-2"
       :class="$device.isMobile ? 'flex-wrap' : 'flex-row'"
     >
@@ -83,7 +85,112 @@
           {{ category }}
         </v-btn>
       </div>
+    </div> -->
+
+    <!-- search box for project -->
+    <div class="mx-6">
+      <v-row>
+        <v-col cols="12" md="6">
+          <v-text-field
+            v-model="searchProjects"
+            prepend-inner-icon="mdi-magnify"
+            label="Search project"
+            variant="outlined"
+            rounded="pill"
+            density="compact"
+            hide-details
+            class="ma-2"
+          ></v-text-field>
+        </v-col>
+        <!-- add two more col and then button in it to filter by status & filter by series -->
+        <v-col cols="12" md="2">
+          <v-menu offset-y>
+            <template v-slot:activator="{ props }">
+              <v-select
+                v-bind="props"
+                v-model="activeStatus"
+                :items="[]"
+                label="Filter by Status"
+                variant="outlined"
+                rounded="pill"
+                density="compact"
+                hide-details
+                class="ma-2"
+              ></v-select>
+            </template>
+            <v-list>
+              <v-list-item
+                v-for="status in projectStatus"
+                :key="status"
+                @click="activeStatus = status"
+                :style="
+                  activeStatus === status ? 'background-color: #F0F5F0' : ''
+                "
+              >
+                <v-list-item-title>{{ status }}</v-list-item-title>
+                <!-- <v-divider></v-divider> -->
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </v-col>
+        <v-col cols="12" md="4">
+          <!-- using menu & sub menu display series & sub series -->
+          <v-menu offset-y>
+            <template v-slot:activator="{ props }">
+              <v-select
+                v-bind="props"
+                v-model="activeSeries"
+                :items="['All']"
+                label="Filter by Series"
+                variant="outlined"
+                rounded="pill"
+                density="compact"
+                hide-details
+                class="ma-2"
+              ></v-select>
+            </template>
+            <v-list>
+              <!-- item to display only All -->
+              <v-list-item
+                @click="
+                  activeSeries = 'All';
+                  activeSubSeries = 'All';
+                "
+              >
+                <v-list-item-title>All</v-list-item-title>
+              </v-list-item>
+              <!-- <v-divider></v-divider> -->
+              <!-- sub series -->
+              <template v-for="series in projectSeries" :key="series">
+                <v-list-group
+                  v-model="subSeriesMapping[series]"
+                  v-if="series != 'All'"
+                >
+                  <template v-slot:activator="{ props }">
+                    <v-list-item
+                      v-bind="props"
+                      :title="series"
+                      :subtitle="getSeriesDescriptionFromSubSeries(series)"
+                    ></v-list-item>
+                  </template>
+                  <v-list-item
+                    v-for="sub in subSeriesMapping[series]"
+                    :key="sub"
+                    @click="
+                      activeSubSeries = sub;
+                      activeSeries = series;
+                    "
+                  >
+                    <v-list-item-title>{{ sub }}</v-list-item-title>
+                  </v-list-item>
+                </v-list-group>
+              </template>
+            </v-list>
+          </v-menu>
+        </v-col>
+      </v-row>
     </div>
+
     <div class="my-8 mx-6">
       <!-- display projects -->
       <div>
@@ -92,7 +199,9 @@
 
       <!-- if getEventsByCategory is empty, then display message -->
       <div v-if="getEventsByCategory.length === 0">
-        <div class="text-h6 text-center">No projects found</div>
+        <div class="text-h6 text-center">
+          No projects found for selected filter
+        </div>
       </div>
 
       <!-- display Ancient Indian Knowledge Series  -->
@@ -244,22 +353,26 @@ const getSeriesDescriptionFromSubSeries = (nameOfSeries) => {
       // if description is empty, then return empty string
       console.log("element.description", element.description.length);
       if (element.description.length == 1) {
-        return "<br/> <br/>";
+        return "";
       } else {
-        return element.description.replace(/\n/g, "<br />");
+        // return "(" + element.description.replace(/\n/g, "<br />") + ")";
+        return element.description;
       }
     }
   }
 };
 
+let searchProjects = ref("");
+
 const getEventsByCategory = computed(() => {
-  //  return based on activeStatus filter, activeSeries filter, and activeSubSeries filter
+  //  return based on activeStatus filter, activeSeries filter, activeSubSeries filter and search filter
   //  for activeSeries => filter based on key with name projectSeries in project object and if activeSeries is All, then ignore current filter
   //  for activeStatus => filter based on key with name status in project object and if activeStatus is All, then ignore current filter
   //  for activeSubSeries => filter based on key with name subSeries in project object and if activeSubSeries is All, then ignore current filter
+  //  for search => filter based on project title containing search text (case insensitive)
   //  apply all filters and return
 
-  return projects.filter((project) => {
+  let filteredProjects = projects.filter((project) => {
     const seriesMatch =
       activeSeries.value === "All" ||
       project.projectSeries === activeSeries.value;
@@ -271,5 +384,32 @@ const getEventsByCategory = computed(() => {
 
     return seriesMatch && statusMatch && subSeriesMatch;
   });
+  console.log("filteredProjects", filteredProjects);
+
+  let matchedProjects = [];
+
+  if (searchProjects.value !== "") {
+    filteredProjects.forEach((project) => {
+      let matched = false;
+      for (const key in project) {
+        if (typeof project[key] === "string") {
+          if (
+            project[key]
+              .toLowerCase()
+              .includes(searchProjects.value.toLowerCase())
+          ) {
+            matched = true;
+            break;
+          }
+        }
+      }
+      if (matched) {
+        matchedProjects.push(project);
+      }
+    });
+    filteredProjects = matchedProjects;
+  } // if search is not empty, then filter based on project all keys
+
+  return filteredProjects;
 });
 </script>

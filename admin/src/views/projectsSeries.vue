@@ -18,7 +18,7 @@ const projectFields = [
     label: "Name",
     type: "text",
     rules: [(v) => !!v || "Name is required"],
-    editDisabled: true,
+    //editDisabled: true,
   },
   {
     key: "itemPublishStatus",
