@@ -2,21 +2,21 @@
   <div class="ma-8">
     <div>
       <section-title title="ACADEMIC PROGRAMS" />
-      <div class="sectionSubtitle2">
+      <div class="sectionBody">
         KSRI is affiliated to the University of Madras and offers M.Phil. &
         Ph.D. programmes in Sanskrit. M.Phil. is not offered by University of
         Madras from 2024.
       </div>
-      <div class="sectionSubtitle2">
+      <div class="sectionBody">
         Eligiblity: Candidates who have M.A. Sanskrit and the eligibility norms
         as prescribed by the UGC and University of Madras may apply for the
         same. For applications, check the website of University of Madras.
       </div>
     </div>
     <!-- simple table with supervisors details cols Name	Number of scholars pursuing Ph.D. under them	Vacancy -->
-    <div class="ma-8">
+    <div class="ma-8 d-flex flex-column align-center">
       <div class="sectionTitle2" data-aos="fade-up">Supervisor / Guide</div>
-      <v-table>
+      <v-table :style="$device.isMobile ? '' : 'width:60%'">
         <thead>
           <tr>
             <th class="text-left text-body-1 text-secondary">Name</th>
@@ -37,18 +37,18 @@
         </tbody>
       </v-table>
     </div>
-    <div class="sectionSubtitle2">
+    <div class="ma-8 mt-16 sectionBody text-center">
       Currently the Scholars pursuing Research under these programs are given
       below
     </div>
     <ModernScholars :past="false" :displayFilterBasedOnCourseBtn="false" />
 
-    <div class="text-body-1">
+    <div class="sectionBody">
+      For research scholars who have completed their Thesis works
       <a
         href="/academic-and-research-pursuits/scholars-gateway"
         style="color: #bf641f; text-decoration: none"
-        >* For research scholars who have completed their Thesis works click
-        here.
+        >"Click here".
       </a>
     </div>
   </div>
@@ -88,17 +88,17 @@ const supervisors = supervisorsData.body.sort((a, b) =>
 }*/
 
 .v-table thead tr th {
-  background-color: #ebeeeb !important;
-  color: #0a160f !important;
+  background-color: #09341c !important;
+  color: #fff !important;
   font-weight: bold !important;
   font-size: 16px !important;
 }
 
 .v-table tbody tr:nth-child(even) {
-  background-color: #ebeeeb !important;
+  background-color: #fff !important;
 }
 
 .v-table tbody tr:nth-child(odd) {
-  background-color: white !important;
+  background-color: #f4f7f4 !important;
 }
 </style>

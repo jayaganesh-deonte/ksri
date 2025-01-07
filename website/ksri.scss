@@ -101,7 +101,7 @@ cursive;
 .sectionTitle2 {
     font-family: $body-font-family !important;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: #BF641F;
     text-align: center;
 }
@@ -120,6 +120,12 @@ cursive;
     font-weight: 700;
     // center text
     text-align: center;
+}
+
+.sectionBody {
+    font-family: $body-font-family !important;
+    font-size: 1.2rem;
+    
 }
 
 .visionMissionTitle {
