@@ -1,5 +1,5 @@
 <template>
-  <div class="ma-8">
+  <div class="mx-8">
     <div>
       <section-title title="ACADEMIC PROGRAMS" />
       <div class="sectionBody">
