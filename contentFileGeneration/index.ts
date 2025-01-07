@@ -93,6 +93,7 @@ const pageDetails = [
     filter: (data: any[]) =>
       data
         .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((b, a) => a.id - b.id)
         .map((item) => item.name),
   },
   // /gallery
@@ -686,7 +687,7 @@ const fetchPublicationsAndBooks = async () => {
 
   //  fetch journals
   const journals = await fetchAndSaveData(
-    "/publications/journals?publication=KSRI",
+    "/publications/journals",
     "../website/content//publications/journals.json",
     (data: any[]) => {
       return data

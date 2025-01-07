@@ -62,10 +62,10 @@ export function validateBook(item: Book): boolean {
     typeof item.publication === "string" &&
     typeof item.keywords === "string" &&
     typeof item.available === "string" &&
-    typeof item.copies === "string" &&
+    // typeof item.copies === "string"
     typeof item.author === "string" &&
     typeof item.yearOfPublication === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object") &&
+    // (item.metadata === undefined || typeof item.metadata === "object") &&
     typeof item.itemPublishStatus === "string"
   );
 }

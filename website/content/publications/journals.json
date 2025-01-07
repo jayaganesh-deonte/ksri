@@ -8,7 +8,6 @@
     ],
     "details": "<p> </p>",
     "id": "01JGN9MVC13X8X728KQQP4QKV9",
-    "publication": "KSRI",
     "keywords": " ",
     "available": "Yes",
     "copies": 10,
@@ -18,7 +17,6 @@
       "updated_at": "2025-01-03T05:19:11.233Z",
       "created_by": "admin"
     },
-    "author": " ",
     "yearOfPublication": 2019,
     "itemPublishStatus": "PUBLISHED"
   },
@@ -31,7 +29,6 @@
     ],
     "details": "<p>“Quite an interesting aspect of the present issue of the Journal is that it contains articles on several problems connected with our everyday life as well as articles on purely academic topics.  The present issue is very rich, valuable and consequently recommendable”.\\nJoy Bhattacharya, Bulletin of the Ramakrishna Mission, Institute of Culture, 2019</p>",
     "id": "01JGN9MVC179R5HXZFC231NH2A",
-    "publication": "KSRI",
     "keywords": " ",
     "available": "Yes",
     "copies": 10,
@@ -41,7 +38,6 @@
       "updated_at": "2025-01-03T05:19:11.233Z",
       "created_by": "admin"
     },
-    "author": " ",
     "yearOfPublication": 2017,
     "itemPublishStatus": "PUBLISHED"
   },
@@ -54,7 +50,6 @@
     ],
     "details": "<p>“The very first article is on the Tamil versions of Mahabharata by C.S.Sundaram. Three articles in Sanskrit form a special attraction, as the authors have used a simple style when dealing with sublime ideas. A sheaf of informative reviews of books makes this issue of the Journal particularly valuable for the younger generation who wish to connect India's hoary tradition with contemporary living in a creative manner”.\\nPrema Nandakumar, Parbuddha Bharata, 2015</p>",
     "id": "01JGN9MVBZZAK7BY0K46VA3ME8",
-    "publication": "KSRI",
     "keywords": " ",
     "available": "Yes",
     "copies": 10,
@@ -64,7 +59,6 @@
       "updated_at": "2025-01-03T05:19:11.233Z",
       "created_by": "admin"
     },
-    "author": " ",
     "yearOfPublication": 2014,
     "itemPublishStatus": "PUBLISHED"
   },
@@ -77,17 +71,15 @@
     ],
     "details": "<p>“This issue of The Journal; of Oriental Research is that it commemorates the birth centenary of Prof. V. Raghavan, a doyen of Indological studies. The corpus of the journal is divided into two parts. In the first part homage is paid to Professor Raghavan by four reputed scholars. In the second we find twenty articles written by different scholars on various aspects of Sanskrit learning. There are also a number of articles dealing with Sanskrit literature and literary criticism.  The articles, excellent in nature and diverse in subject matter, are undoubtedly the best flowers of the mental gardens of the scholars by which they have paid their homage to the immortal soul of Professor Raghavan”.\\nSitanath Acharya, Bulletin of the Ramakrishna Mission, Institute of Culture, 2011</p>",
     "id": "01JGN9MVC1JZZSSJN5FN5KM0DZ",
-    "publication": "KSRI",
-    "keywords": " ",
+    "keywords": "  ",
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T05:19:11.233Z",
-      "updated_at": "2025-01-03T05:19:11.233Z",
+      "updated_at": "2025-01-07T11:29:47.091Z",
       "created_by": "admin"
     },
-    "author": " ",
     "yearOfPublication": 2010,
     "itemPublishStatus": "PUBLISHED"
   }

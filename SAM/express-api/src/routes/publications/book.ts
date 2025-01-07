@@ -19,6 +19,7 @@ publicationBookRoute.post(
   async (req: Request, res: Response) => {
     try {
       const bookData: Book = req.body;
+      console.log(bookData);
 
       // Validate book data
       if (!validateBook(bookData)) {

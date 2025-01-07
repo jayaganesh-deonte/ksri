@@ -21,12 +21,12 @@ export interface Journal {
   imageUrls?: string[];
   details?: string;
   id: string;
-  publication: string;
+  //publication: string;
   keywords: string;
   available: string;
   copies: string;
   metadata?: { [key: string]: any };
-  author: string;
+  //author: string;
   yearOfPublication: string;
   itemPublishStatus: string;
 }
@@ -41,12 +41,12 @@ export interface JournalDDB {
   imageUrls?: string[];
   details?: string;
   id?: string;
-  publication: string;
+  //publication: string;
   keywords: string;
   available: string;
   copies: string;
   metadata?: { [key: string]: any };
-  author: string;
+  //author: string;
   yearOfPublication: string;
   itemPublishStatus: string;
 }
@@ -58,15 +58,15 @@ export function validateJournal(item: Journal): boolean {
     typeof item.price === "string" &&
     Array.isArray(item.imageUrls) &&
     typeof item.details === "string" &&
-    typeof item.id === "string" &&
-    typeof item.publication === "string" &&
-    typeof item.keywords === "string" &&
-    typeof item.available === "string" &&
-    typeof item.copies === "string" &&
-    typeof item.author === "string" &&
-    typeof item.yearOfPublication === "string" &&
-    (item.metadata === undefined || typeof item.metadata === "object") &&
-    typeof item.itemPublishStatus === "string"
+    typeof item.id === "string"
+    // typeof item.publication === "string" &&
+    // typeof item.keywords === "string" &&
+    // typeof item.available === "string" &&
+    // typeof item.copies === "string" &&
+    // typeof item.author === "string" &&
+    // typeof item.yearOfPublication === "string" &&
+    // (item.metadata === undefined || typeof item.metadata === "object") &&
+    // typeof item.itemPublishStatus === "string"
   );
 }
 
@@ -81,12 +81,12 @@ export function toDynamoDB(item: Journal): JournalDDB {
     imageUrls: item.imageUrls,
     details: item.details,
     id: item.id,
-    publication: item.publication,
+    //publication: "KSRI",
     keywords: item.keywords,
     available: item.available,
     copies: item.copies,
     metadata: item.metadata,
-    author: item.author,
+    //author: item.author,
     yearOfPublication: item.yearOfPublication,
     itemPublishStatus: item.itemPublishStatus,
   };
@@ -100,12 +100,12 @@ export function fromDynamoDB(item: JournalDDB): Journal {
     imageUrls: item.imageUrls,
     details: item.details,
     id: item.SK,
-    publication: item.publication,
+    //publication: item.publication,
     keywords: item.keywords,
     available: item.available,
     copies: item.copies,
     metadata: item.metadata,
-    author: item.author,
+    //author: item.author,
     yearOfPublication: item.yearOfPublication,
     itemPublishStatus: item.itemPublishStatus,
   };
@@ -123,10 +123,10 @@ export function isJournal(item: any): item is JournalDDB {
     Array.isArray(item.imageUrls) &&
     typeof item.details === "string" &&
     typeof item.id === "string" &&
-    typeof item.publication === "string" &&
+    // typeof item.publication === "string" &&
     typeof item.keywords === "string" &&
     typeof item.available === "string" &&
-    typeof item.copies === "number" &&
+    // typeof item.copies === "number" &&
     typeof item.author === "string" &&
     typeof item.yearOfPublication === "string" &&
     (item.metadata === undefined || typeof item.metadata === "object") &&
@@ -146,10 +146,10 @@ export function isJournalDDB(item: any): item is JournalDDB {
     Array.isArray(item.imageUrls) &&
     typeof item.details === "string" &&
     typeof item.id === "string" &&
-    typeof item.publication === "string" &&
+    // typeof item.publication === "string" &&
     typeof item.keywords === "string" &&
     typeof item.available === "string" &&
-    typeof item.copies === "number" &&
+    // typeof item.copies === "number" &&
     typeof item.author === "string" &&
     typeof item.yearOfPublication === "string" &&
     (item.metadata === undefined || typeof item.metadata === "object") &&
@@ -169,11 +169,11 @@ export function validateJournalDDB(item: JournalDDB): boolean {
     Array.isArray(item.imageUrls) &&
     typeof item.details === "string" &&
     typeof item.id === "string" &&
-    typeof item.publication === "string" &&
+    // typeof item.publication === "string" &&
     typeof item.keywords === "string" &&
     typeof item.available === "string" &&
-    typeof item.copies === "number" &&
-    typeof item.author === "string" &&
+    // typeof item.copies === "number" &&
+    // typeof item.author === "string" &&
     typeof item.yearOfPublication === "string" &&
     (item.metadata === undefined || typeof item.metadata === "object") &&
     typeof item.itemPublishStatus === "string"

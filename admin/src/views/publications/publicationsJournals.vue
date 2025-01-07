@@ -17,36 +17,10 @@
 
 <script setup>
 const apiEndpoint = import.meta.env.VITE_API_URL + "/publications/journals";
-import { getUserIdToken } from "@/services/auth";
-import axios from "axios";
+
 import { ref } from "vue";
 
-const getAdditionalPublications = async () => {
-  const apiUrl =
-    import.meta.env.VITE_API_URL + "/publications/additionalPublications";
-  const token = await getUserIdToken();
-
-  const response = await axios.get(apiUrl, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  if (response.status === 200) {
-    // order by orderId
-    response.data.sort((a, b) => a.orderId - b.orderId);
-
-    // get names only
-    return response.data.map((publication) => publication.name);
-  } else {
-    return [];
-  }
-};
-
 let isLoading = ref(true);
-
-const additionalPublications = await getAdditionalPublications();
-
-const allPublications = ["KSRI", ...additionalPublications];
 
 const bookFields = [
   {
@@ -63,12 +37,12 @@ const bookFields = [
     items: ["PUBLISHED", "DRAFT"],
   },
   // author
-  {
-    key: "author",
-    label: "Author",
-    type: "text",
-    rules: [(v) => !!v || "Author is required"],
-  },
+  // {
+  //   key: "author",
+  //   label: "Author",
+  //   type: "text",
+  //   rules: [(v) => !!v || "Author is required"],
+  // },
   {
     key: "subtitle",
     label: "Subtitle",
@@ -93,13 +67,13 @@ const bookFields = [
     items: ["Yes", "No"],
     rules: [(v) => !!v || "Available is required"],
   },
-  {
-    key: "publication",
-    label: "Publication",
-    type: "auto-complete",
-    rules: [(v) => !!v || "Publication is required"],
-    items: allPublications,
-  },
+  // {
+  //   key: "publication",
+  //   label: "Publication",
+  //   type: "auto-complete",
+  //   rules: [(v) => !!v || "Publication is required"],
+  //   items: allPublications,
+  // },
   {
     key: "yearOfPublication",
     label: "Year of Publication",
@@ -129,10 +103,10 @@ const bookFields = [
 const bookHeaders = [
   { title: "Title", key: "title" },
   { title: "Subtitle", key: "subtitle" },
-  { title: "Author", key: "author" },
+  // { title: "Author", key: "author" },
   { title: "Price", key: "price" },
   { title: "Available", key: "available" },
-  { title: "Publication", key: "publication" },
+  // { title: "Publication", key: "publication" },
   { title: "Year of Publication", key: "yearOfPublication" },
   { title: "Available Number of Copies", key: "copies" },
   { title: "Actions", key: "actions", sortable: false },

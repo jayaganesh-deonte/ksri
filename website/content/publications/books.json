@@ -345,29 +345,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Tattvānusandhānam ",
-    "subtitle": " ",
-    "price": "'-",
-    "imageUrls": [
-      "images/image033.jpg"
-    ],
-    "details": "",
-    "id": "01JGNDQ25V5JSWVBG4S502GSPN",
-    "publication": "KSRI",
-    "keywords": " ",
-    "available": "No",
-    "copies": 0,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-03T06:30:18.043Z",
-      "created_by": "admin"
-    },
-    "author": "Edited with English translation by Prof. R. Sankari Revised by Dr. T.V Vasudeva & Dr. K Srinivasan",
-    "yearOfPublication": 2008,
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "Vedas: Traditional and Modern perspectives",
     "subtitle": " ",
     "price": "₹ 250",
@@ -388,6 +365,29 @@
     },
     "author": " ",
     "yearOfPublication": 2007,
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "BHAGAVADGĪTĀ BIBLIOGRAPHY (Vol. II)",
+    "subtitle": "Pub. by The Kuppuswami Sastri Research Institute, Chennai 4 | 2007",
+    "price": "₹ 200",
+    "imageUrls": [
+      "upload/bhagavadgita-bibliography-vol-ii.jpg"
+    ],
+    "details": "<p>“The Bhagavadgītā Bibliography project was started by Dr. V. Raghavan in 1972. Under his able guidance Smt. Suryakumari Dwarakadas, a keen student of Sanskrit, collected the bibliographical details on the Bhagavadgītā.   \tDr. C.S. Sundaram has scrutinized, classified and arranged the already available material collected by Smt. Suryakumari and has also added some more valuable information on the subject.  \tThis monograph is in two volumes, the first volume covers the details regarding the manuscripts available in various parts of India the second volume covers the bibliographical details of the printed editions, studies and articals pertaining to the Bhagavadgītā in various languages and regions of the world atlast”.\\nDr. V. Kameswari, Director, KSRI</p>",
+    "id": "01JGNDQ25XJB9R4EA08PSEQ5PA",
+    "publication": "KSRI",
+    "keywords": "Bhagavadgītā",
+    "available": "Yes",
+    "copies": 10,
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-03T06:30:18.045Z",
+      "updated_at": "2025-01-07T11:25:14.550Z",
+      "created_by": "admin"
+    },
+    "author": " ",
+    "yearOfPublication": "2007",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -1075,27 +1075,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Palandumandana Prahasana, text with translation by Dr.S.S.Janaki",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25SNFQAVK4XFGARNQJF",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-01-03T06:30:18.041Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "Arthasastra Vyakhya – Chanakya tika",
     "subtitle": " ",
     "price": "'-",
@@ -1119,48 +1098,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Nalopakyana Sangraha (3 Editions)",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25SSC83XRMXSXWA182G",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-01-03T06:30:18.041Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Tolkappiyam (Eluttu) with English Transliteration, translation and notes Prof.P.S.Subrahmanya Sastri (II Edition)",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25SSG8EQ1XP89EBJSTX",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-01-03T06:30:18.041Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "LIFE SKETCHES OF FOUNDERS AND SUCCESSORS",
     "subtitle": "The Madras Sanskrit College Navaratna Mahotsavam Publication | The Kuppuswami Sastri Research Institute, Chennai - 4 | 1999. pp. xiv + 112.",
     "price": "₹ 100",
@@ -1177,48 +1114,6 @@
       "updated_by": "admin",
       "created_at": "2025-01-03T06:30:18.041Z",
       "updated_at": "2025-01-03T06:30:18.041Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Sanketa Kosa - A Dictionary on Numerals - by Mar. 2009",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25SZ38APQ1C6BPRYAQE",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-01-03T06:30:18.041Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Some Aspects of Sanskrit Drama and Dramaturgy by S.S.Janaki",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25T62CZDM54XNHH46E0",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-03T06:30:18.043Z",
       "created_by": "admin"
     },
     "author": "",
@@ -1299,111 +1194,6 @@
     ],
     "details": "“This book was the subject of Dr. Raghavan'a lectures at Madras and Berkeley, California in the sixties. The subject of Indian aesthetics is yet to be built up by research work and Dr. Raghavan was a unique scholar proficient in various fields. Hence his research as contained in these lectures is yet original, relevant and useful.”\\nDr. S.S. Janaki, Former Director, KSRI",
     "id": "01JGNDQ25T91CGMC9Q4AH6CCN2",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Ramabhadra Diksita and his works by Dr.A.Thiruvengadathan",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25T92CQBAX23MFRT5VW",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Manuscripts Collection of the Desamangalam Variyam by Dr.K.V.Sarma",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25TA6X0784NY35YRAFX",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Primer of Indian Logic by Prof.S.Kuppuswami Sastri (IV edition)",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25TBFB9XMHB3FEE6AM4",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Lectures on Patanjali's Mahabhasya by Prof.P.S.Subrahmanya Sastri, Vol.VII,VIII, IX, X & XI",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25TCV0XYMXD4GJ8CM8K",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Highways and Byways of Literary Criticism in Sanskrit by Prof.S.Kuppuswami Sastri",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25TD0T5JP94BQ9NGP3B",
     "publication": "KSRI",
     "keywords": "",
     "available": "Yes",
@@ -1635,27 +1425,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Umapati Sivam, His life and Contribution to Saivism, ed. Dr.S.S.Janaki",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25V566AQB5MVSQBFZ1H",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-03T06:30:18.043Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "Vibhramaviveka of Mandana Misra (Mimamsa Text)",
     "subtitle": "",
     "price": "",
@@ -1797,48 +1566,6 @@
     "publication": "KSRI",
     "keywords": "",
     "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-03T06:30:18.043Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Mm.S.Kuppuswami Sastri",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25VPXAHFWX0K9WNHYQV",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-03T06:30:18.043Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Eclipses in Hindu Life and Thought - a rationalistic analysis by Dr.S.Jayasree",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25VR92RKDND22A4AXVV",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
     "copies": 10,
     "metadata": {
       "updated_by": "admin",
@@ -2027,27 +1754,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Srinandikesakasika of Upamanyu Text with Eng. Tr. by Dr. K.S. Balasubramanian and Dr. T.V.Vasudeva.",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25WDJEARGCDJVBSEVN4",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "THE MAHĀBHĀRATA – Condensed in the Poet's own words:",
     "subtitle": "by Pandit A.M. Srinivasachariar | Tr. by Dr. V. Raghavan | Pub. by the Kuppuswami  Sastri  Research  Institute (Reprint), Chennai - 4 | 2012.  | pp. xxxii + 470.",
     "price": "₹ 200",
@@ -2056,27 +1762,6 @@
     ],
     "details": "“The Mahabharata, is, perhaps the greatest of the epics of world literature. This book is not a condensation of the story, but a judicious selection of the verses, without in any way introducing distortions. All the eighteen parvas have been covered in their essentials.  For those who have already read the original text, this book serves as a handbook for ready recollection of the incidents. For those who have not yet read the original text it is an excellent entry point for a more detailed study.”\\nNVC Swamy, Bangalore, The Vedanta Kesari, 2010",
     "id": "01JGNDQ25WDTF83MK1ZMH05CRP",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Karpuracarita Bhana ed. With Eng. Translation by Dr.S.S.Janaki",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25WEFBXXH6A0B6T7FSE",
     "publication": "KSRI",
     "keywords": "",
     "available": "Yes",
@@ -2165,27 +1850,6 @@
     ],
     "details": "“This text provides mystical interpretation of the Māheśvarasūtras of Pāṇinī's Aṣṭādhyāyī. The present edition by the Institute is mainly based on the GOML edition, in consultation with the Tanjore edition”.\\nDr. V. Kameswari, Director, KSRI",
     "id": "01JGNDQ25WHPCG1R76QR55MH7A",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Samskrita and Sangita by Dr.S.S.Janaki",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25WJ91PFJ3PNVNRW9K8",
     "publication": "KSRI",
     "keywords": "",
     "available": "Yes",
@@ -2314,27 +1978,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Bija Pallava of Krsna Daivajna (Algebra in 16th Cent. India), a critical study by Dr.Sita Sundar Ram",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25WT62W2XVCRJQABQ3Q",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "TOLKĀPPIYAM (Volume I) EZHUTH-ATIKĀRAM (With a short commentary in English)",
     "subtitle": "P.S.Subrahmanya Sastri | The Kuppuswami  Sastri  Research  Institute,  Mylapore, Chennai – 4 | 1999.",
     "price": "₹ 100",
@@ -2367,27 +2010,6 @@
     "publication": "KSRI",
     "keywords": "",
     "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "History of Grammatical Theories in Tamil by Prof.P.S.Subrahmanya Sastri (II Edition)",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25WYNHDYMR85JSF5GRA",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
     "copies": 10,
     "metadata": {
       "updated_by": "admin",
@@ -2488,27 +2110,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Tattvanusandanam by Mahadevananda Saraswati - Critical edition and tr. With critical introduction - to be released in May 2008.",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25X16W0YFJZX5ZJ7GH4",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "Siva Temple and Temple Rituals",
     "subtitle": "",
     "price": "",
@@ -2530,27 +2131,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Sanskrit & Science ed. Dr.S.S.Janaki",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25X48FJMKXJGT2AMK33",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "Vinavasavadatta (an old Sanskrit drama)",
     "subtitle": "",
     "price": "",
@@ -2560,27 +2140,6 @@
     "publication": "KSRI",
     "keywords": "",
     "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Samskrta Sahitya Itihasah (History of Sanskrit Literature) by R.S.Venkatarama Sastri",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25X54WX809BA1DQZ5DS",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
     "copies": 10,
     "metadata": {
       "updated_by": "admin",
@@ -2616,27 +2175,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Gadyakarnamrta, an Historical Kavya, ed. With critical introduction by Dr.S.S.Janaki",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25X7S9DZX21WXP6YWQ5",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "SAMSKṚTA AND SAṄGĪTA",
     "subtitle": "by Dr. S. S. Janaki | Pub. by the Kuppuswami  Sastri  Research  Institute (Reprint), Chennai - 4 | 2012. | pp. x + 338 (Out of stock)",
     "price": "₹ 400",
@@ -2645,27 +2183,6 @@
     ],
     "details": "“Dr. Janaki had served as the Director for many years and contributed remarkably to the field of Indology. This book has been published in commemoration of Dr. Janaki's Sadābhiśekam. \tThe first three articles in this collection deal with Samskṛita and its relation with Saṇgīta. The compositions of Śrī Muthusvāmi Dīkṣitar come in for detailed study from different angles in as many as six articles. Dr. Janaki's profound scholarship in astrology comes across clearly in presenting the Navagraha Kṛitis.   \tThis book is indeed a treasure house of information and knowledge and music as well as literature”.\\nPappu Venugopala Rao. The Hindu, 2012",
     "id": "01JGNDQ25X936VF294J0DDWGRQ",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Tolkappiyam (Porul - Tamil Poetics) with English Transliteration, translation and notes by Prof.P.S.Subrahmanya Sastri (II Edition)",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25XF6JVFY7RD50X2X77",
     "publication": "KSRI",
     "keywords": "",
     "available": "Yes",
@@ -2746,29 +2263,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "BHAGAVADGĪTĀ BIBLIOGRAPHY (Vol. II)",
-    "subtitle": "Pub. by The Kuppuswami Sastri Research Institute, Chennai 4 | 2007",
-    "price": "₹ 200",
-    "imageUrls": [
-      "upload/bhagavadgita-bibliography-vol-ii.jpg"
-    ],
-    "details": "“The Bhagavadgītā Bibliography project was started by Dr. V. Raghavan in 1972. Under his able guidance Smt. Suryakumari Dwarakadas, a keen student of Sanskrit, collected the bibliographical details on the Bhagavadgītā.   \tDr. C.S. Sundaram has scrutinized, classified and arranged the already available material collected by Smt. Suryakumari and has also added some more valuable information on the subject.  \tThis monograph is in two volumes, the first volume covers the details regarding the manuscripts available in various parts of India the second volume covers the bibliographical details of the printed editions, studies and articals pertaining to the Bhagavadgītā in various languages and regions of the world atlast”.\\nDr. V. Kameswari, Director, KSRI",
-    "id": "01JGNDQ25XJB9R4EA08PSEQ5PA",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "Vakyakarana (Astrology)",
     "subtitle": "",
     "price": "",
@@ -2778,27 +2272,6 @@
     "publication": "KSRI",
     "keywords": "",
     "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Women's Role in Kudiyattam by Sri L.S.Rajagopalan",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25XK2HJ2T0VWCCWCFAD",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
     "copies": 10,
     "metadata": {
       "updated_by": "admin",
@@ -2878,27 +2351,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Research in Sanskrit A classified Guide by Dr.K.V.Sarma",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25XW2BG4KNS6TSQ13FP",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "SRI PĀDUKĀSAHASRAM of Śrī Vedānta Deśika : Vol I & II",
     "subtitle": "Vol I & II | Trans-composition in Tamil by Sri R Kesava Ayyengar | English Translation by Sri D. Ramaswamy Iyangar | Pub. By The Kuppuswami Sastri Research Institute, Chennai 4 | 2017 | pp 1181.",
     "price": "₹ 800",
@@ -2915,111 +2367,6 @@
       "updated_by": "admin",
       "created_at": "2025-01-03T06:30:18.045Z",
       "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Kuppuswami Sastri Memorial Volume",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25XYGDA3HAK6XFRQPY9",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Bharata Sangraha",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25XYK3MFB0TKP1SNQWV",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "The Mahabharata(condensed in the poet's own words with Eng.Tr.)",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25XYX9VHW3SMDGVGHMM",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Compromises in the History of Advaitic Thought by Prof.S.Kuppuswami Sastri",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25Y2J46PKWEXMPMG9A6",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Navamuktasatakam Transcomposition into Sanskrit and English verse from the Tamil classic Muttollayiram by Sri A.V.Subramanian",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YBPJ0DZPSTBTKM0B8",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
       "created_by": "admin"
     },
     "author": "",
@@ -3071,27 +2418,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Advayatarakopanisat Text with Eng. Tr. by Dr. K.S. Balasubramanian and Dr. T.V.Vasudeva.",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YPT9G2EK5AV81HJCQ",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "RESEARCH IN SANSKRIT – A CLASSIFIED GUIDE TO REFERENCE SOURCE, DIRECTORIES AND BIBLIOGRAPHIES",
     "subtitle": "by K.V.Sarma  |  The Kuppuswami Sastri Research Institute, Madras  |  1993.  |  pp. 74",
     "price": "₹ 40",
@@ -3100,48 +2426,6 @@
     ],
     "details": "“The world of Sanskrit should feel blessed for this publication which will, undoubtedly, prove to be an useful tool in the hands of students and researchers in Sanskrit. The present book is intended to provide researchers in Sanskrit Language and literature information about source-books to which they could turn for the theoritical and practical knowledge they would require in the successful persecution of their research.  “The first five sections record details of publications of general research works which may be useful to every researcher. The five sections are: (1) General Information: Scope and Field of Research (2) Research Methodology (3) Dissertation Writing (4) Manuscriptology and Textual Criticism (5) Manuscripts Collections and Catalogues.   “Then follow the thirty sections into which the entire Sanskrit literature has been classifies. In each section, the respective source-books have been documented. The last section (i.e. the thirty-sixth) gives briefly source-books on modern Sanskrit writings.\\nS.A.Upadhyaya, Bharatiya Vidya, Vol. LIII, No.3-4, 1993.",
     "id": "01JGNDQ25YQHH8HBPQ53271A44",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Samskrita Vayavaharah - Spoken Sanskrit, ed. Dr.S.S.Janaki (II Edition)",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YXDKCC586BK4KN1H4",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "The Concept of Beautiful in Sanskrit Literature by Dr.V.Raghavan",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YY9GN2J5SSXPJJC9V",
     "publication": "KSRI",
     "keywords": "",
     "available": "Yes",

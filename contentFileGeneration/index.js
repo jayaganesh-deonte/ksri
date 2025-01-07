@@ -133,6 +133,7 @@ var pageDetails = [
         filter: function (data) {
             return data
                 .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (b, a) { return a.id - b.id; })
                 .map(function (item) { return item.name; });
         },
     },
@@ -718,7 +719,7 @@ var fetchPublicationsAndBooks = function () { return __awaiter(void 0, void 0, v
             case 5:
                 _i++;
                 return [3 /*break*/, 3];
-            case 6: return [4 /*yield*/, fetchAndSaveData("/publications/journals?publication=KSRI", "../website/content//publications/journals.json", function (data) {
+            case 6: return [4 /*yield*/, fetchAndSaveData("/publications/journals", "../website/content//publications/journals.json", function (data) {
                     return data
                         .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
                         .sort(function (a, b) { return b.yearOfPublication - a.yearOfPublication; });
