@@ -75,8 +75,17 @@
           items.filter((item) => {
             return Object.keys(columnFilter).every((key) => {
               if (!columnFilter[key]) return true;
-              const value = item[key]?.toString().toLowerCase();
-              return value?.includes(columnFilter[key].toLowerCase());
+              const value = item[key]
+                ?.toString()
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '');
+              return value?.includes(
+                columnFilter[key]
+                  .toLowerCase()
+                  .normalize('NFD')
+                  .replace(/[\u0300-\u036f]/g, '')
+              );
             });
           })
         "
