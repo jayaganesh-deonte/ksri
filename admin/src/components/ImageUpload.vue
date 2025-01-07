@@ -33,7 +33,12 @@
       ></v-progress-circular>
 
       <v-card v-for="image in images" class="ma-2" :key="image" width="300">
-        <v-img :src="getImageUrl(image)" alt="image" width="300">
+        <v-img
+          :src="getImageUrl(image)"
+          alt="image"
+          width="300"
+          v-if="image.length > 0"
+        >
           <div class="d-flex justify-end ma-2">
             <!-- icon to delete image -->
             <v-btn
