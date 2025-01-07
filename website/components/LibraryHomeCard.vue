@@ -10,6 +10,8 @@
             hide-delimiter-background
             continuous
             :height="$device.isMobile ? '' : ''"
+            :cycle="true"
+            interval="3000"
           >
             <v-carousel-item
               v-for="imageUrl in libraryImages"
@@ -26,8 +28,8 @@
             <div class="pa-4 text-white">
               <div class="text-h5 my-4">KSRI Library</div>
               <div class="my-2 text-h6">
-                The Library is comprised of nearly 65,000 books authored by
-                great and popular writers on variety of Sanskrit and Indological
+                The Library comprises of nearly 65,000 books authored by great
+                and popular writers on a variety of Sanskrit and Indological
                 subjects.
               </div>
               <div class="d-flex my-2 text-h6">
@@ -46,8 +48,8 @@
             <v-card class="pa-4" rounded="0" elevation="0">
               <div class="text-h5 my-4 font-weight-bold">Library Online</div>
               <div class="my-2 text-h6">
-                Presently KSRI has started its Phase 1 of digitizing all rare
-                Palm Scripts in its collection.
+                Presently KSRI has started digitizing all old and rare Palm
+                Scripts in its collection.
               </div>
               <div class="d-flex my-2 text-h6">
                 <nuxt-link
@@ -73,7 +75,7 @@
       </v-row>
       <div class="my-8">
         <div class="text-h5 font-weight-bold text-white">
-          An urgent need was felt to protect the Old and Rare Books
+          Help us protect old and rare book
         </div>
         <div class="text-h4 font-weight-bold text-white my-2">
           BECOME A SPONSOR OR VOLUNTEER FOR DIGITIZATION
@@ -107,7 +109,17 @@
 
 <script setup>
 const libraryImages = [
-  "https://d30y75l38k1y9.cloudfront.net/upload/library-aurveda.png",
+  "/img/NEW LIBRARY IMAGES/new lib 8.PNG",
+  "/img/NEW LIBRARY IMAGES/new lib 9.PNG",
+  "/img/NEW LIBRARY IMAGES/new lib 10.PNG",
+  "/img/NEW LIBRARY IMAGES/new lib 11.PNG",
+  "/img/NEW LIBRARY IMAGES/new lib 1.PNG",
+  "/img/NEW LIBRARY IMAGES/new lib 2.PNG",
+  "/img/NEW LIBRARY IMAGES/new lib 3.PNG",
+  "/img/NEW LIBRARY IMAGES/new lib 4.PNG",
+  "/img/NEW LIBRARY IMAGES/new lib 5.PNG",
+  "/img/NEW LIBRARY IMAGES/new lib 6.PNG",
+  "/img/NEW LIBRARY IMAGES/new lib 7.PNG",
 ];
 </script>
 

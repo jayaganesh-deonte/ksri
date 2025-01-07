@@ -13,6 +13,8 @@
           data-aos="fade-up"
           :data-aos-delay="`${socialMediaLinks.indexOf(link) * 200}`"
           :data-aos-duration="`${socialMediaLinks.indexOf(link) * 200}`"
+          :href="link.url"
+          target="_blank"
         >
           <v-btn
             :icon="link.icon"
@@ -31,23 +33,19 @@
 const socialMediaLinks = [
   {
     name: "Facebook",
-    url: "ksri.in",
+    url: "https://www.facebook.com/share/n4uT1gC5sb3GvXgF/?mibextid=wwXIfr",
     icon: "mdi-facebook",
   },
   {
-    name: "Twitter",
-    url: "ksri.in",
-    icon: "mdi-twitter",
-  },
-  {
-    name: "Instagram",
-    url: "ksri.in",
-    icon: "mdi-instagram",
-  },
-  {
     name: "YouTube",
-    url: "ksri.in",
+    url: "https://www.youtube.com/@kuppuswamisastriresearchin6317",
     icon: "mdi-youtube",
+  },
+  // email
+  {
+    name: "Email",
+    url: "mailto:ksrinst@gmail.com",
+    icon: "mdi-email",
   },
 ];
 

@@ -38,7 +38,7 @@
       <v-card
         color="primary pa-4  text-h6 mx-auto"
         :class="$device.isMobile ? 'my-4 text-center' : ''"
-        :width="$device.isMobile ? '80%' : '50%'"
+        :width="$device.isMobile ? '80%' : '60%'"
         data-aos="fade-up"
         data-aos-delay="900"
         rounded="0"
@@ -46,8 +46,11 @@
         Under Phase 1 all the palm-leaf manuscripts in the library have been
         digitised. The major expenditure was met with from the donation given by
         M/s RANE group, Chennai. Presently old and rare books(more than 100-200
-        years old) are being digitised. Once the digitisation is done, the
-        Institute would upload the digitised books/manuscripts.”
+        years old) are being digitised.
+
+        <br />
+        Once the digitisation is done, the Institute would upload the digitised
+        books/manuscripts.
       </v-card>
     </v-card>
   </div>

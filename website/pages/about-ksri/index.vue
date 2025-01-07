@@ -12,8 +12,7 @@
       data-aos="zoom-in"
       data-aos-delay="600"
     >
-      Dedicated to extensive work in areas of Sanskrit and related Indology
-      research.
+      Dedicated to extensive research in areas of Sanskrit and related Indology.
     </div>
     <div>
       <v-row class="my-4">
@@ -108,8 +107,8 @@
       has been blessed by the visits of great saints, statesmen and scholars
       like Kanchi Paramacharya and the Pontiffs of Kamakoti Mutt, Madhva mutts,
       Vaishnava mutts, Swami Dayananda Swamiji and others, Mahatma Gandhi,
-      Father of our nation, the National poet, Rabindranath Tagore, Pandit M
-      adan Mohan Malavia, Rajaji, Rt.Hon'ble Srinivasa Iyer, Dr.Rajendra Prasad,
+      Father of our nation, the National poet, Rabindranath Tagore, Pandit Madan
+      Mohan Malavia, Rajaji, Rt.Hon'ble Srinivasa Iyer, Dr.Rajendra Prasad,
       Dr.S.Radhakrishnan, Sri R.Venkatarman ( former Presidents of India),
       Governors of Tamil Nadu, Andhra Pradesh, Karnataka, Chief Justices of
       India, and many foreign dignitaries.

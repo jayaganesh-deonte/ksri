@@ -23,7 +23,7 @@
           India during his time and had devoted his life time to study of
           Sanskrit and Indology. He was a Professor, Editor and Author in
           Sanskrit Language and of Sanskrit heritage in other languages. He was
-          a well know literary figure of yesteryears in India and abroad after
+          a well-known literary figure of yesteryears in India and abroad after
           India. KSRI was established in 1945 as a fitting tribute to him and
           his contributions to Sanskrit heritage and related Indology.
         </div>

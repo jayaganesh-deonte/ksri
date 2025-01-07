@@ -11,9 +11,7 @@
           data-aos-delay="50"
         >
           <div class="sectionTitle2">Get in touch with us!</div>
-          <div class="text-h6">
-            KSRI has always welcome our guest query's any time!
-          </div>
+          <div class="text-h6">KSRI welcomes guest queries any time!</div>
           <div class="text-h6">
             Feel free to contact us, we are open to discuss any of your queries
             and ideas.

@@ -1,9 +1,7 @@
 <template>
   <div class="text-center">
     <div class="sectionTitle" data-aos="zoom-in">VISION & MISSION</div>
-    <div class="text-h6 defaultFont" data-aos="zoom-in" data-aos-delay="100">
-      Kuppuswami Sastri Research Institute Vision and Mission
-    </div>
+
     <!-- add two cards for vision and mission -->
     <v-row class="ma-2">
       <v-col
@@ -44,8 +42,8 @@
               <div>
                 <span class="highlightColor">Preserve </span> - in true sense of
                 perpetuity - to pass on to future generations a robust, sound,
-                modern and likerable knowledge base of Sanskrit and Indology;
-                and enjoyable communication of the same;
+                modern and likeable knowledge base of Sanskrit and Indology; and
+                enjoyable communication of the same;
               </div>
               <div class="my-6">
                 <span class="highlightColor">Preserve </span> - in true sense of
