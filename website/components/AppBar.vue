@@ -43,26 +43,30 @@
                     >
                   </div>
                 </template>
-                <v-card width="90vw">
-                  <v-row no-gutters>
+                <v-card width="95vw">
+                  <v-row class="ma-0 pa-0">
                     <v-col
                       v-for="child in option.children"
                       :key="child.name"
-                      cols="12"
-                      sm="4"
+                      :cols="12"
+                      :md="
+                        option.children.length > 3
+                          ? 4
+                          : 12 / option.children.length
+                      "
                     >
                       <nuxt-link
                         :to="child.path"
                         style="text-decoration: unset"
                       >
                         <v-card
-                          width="350"
-                          height="150"
+                          height="100%"
                           elevation="0"
-                          class="ma-2 pa-2 defaultFont d-flex flex-column justify-space-between"
+                          class="ma-1 pa-2 defaultFont d-flex flex-column justify-space-between"
                           :class="{ activeMenuChild: child.isActive === true }"
                           @mouseover="child.isActive = true"
                           @mouseleave="child.isActive = false"
+                          color="greenBg"
                         >
                           <div>
                             <div class="d-flex my-2 px-2 align-center">
