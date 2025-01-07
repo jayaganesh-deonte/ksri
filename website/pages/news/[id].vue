@@ -25,38 +25,70 @@
           </div>
         </div>
 
-        <v-img
-          :src="getImageUrl(news.avatarImage[0])"
-          v-if="news.avatarImage && news.avatarImage[0] !== null"
-          width="100%"
-          height="500"
-          fit
-          class="ma-2"
-        ></v-img>
-        <!-- heading -->
-        <div class="text-h4 text-secondary defaultFont" data-aos="fade-right">
-          {{ news.heading }}
-        </div>
-
-        <!-- text -->
-        <div class="text-h6 my-4 defaultFont" data-aos="fade-left">
-          <div v-html="news.text"></div>
-        </div>
-
-        <v-divider class="my-4"></v-divider>
-        <!-- images -->
-        <div class="text-body-1 defaultFont d-flex flex-wrap">
+        <v-card
+          elevation="0"
+          rounded="0"
+          class="ma-4 mx-auto pa-4"
+          :width="`${$device.isMobile ? '90vw' : '80vw'}`"
+        >
+          <!-- heading -->
+          <div class="text-h4 text-secondary defaultFont" data-aos="fade-right">
+            {{ news.heading }}
+          </div>
           <v-img
-            v-for="(image, index) in news.images"
-            :key="index"
-            :src="getImageUrl(image)"
-            width="250"
-            height="250"
-            class="ma-2"
+            :src="getImageUrl(news.avatarImage[0])"
+            v-if="news.avatarImage[0]"
+            width="100%"
+            height="500"
             fit
-            data-aos="fade-up"
-            :data-aos-delay="index * 100"
+            class="ma-2"
           ></v-img>
+
+          <!-- text -->
+          <div class="text-h6 my-4 defaultFont text-left" data-aos="fade-left">
+            <div v-html="news.text"></div>
+          </div>
+
+          <v-divider class="my-4"></v-divider>
+          <!-- images -->
+          <div class="text-body-1 defaultFont d-flex flex-wrap">
+            <v-img
+              v-for="(image, index) in news.images"
+              :key="index"
+              :src="getImageUrl(image)"
+              width="250"
+              height="250"
+              class="ma-2"
+              fit
+              data-aos="fade-up"
+              :data-aos-delay="index * 10"
+            ></v-img>
+          </div>
+        </v-card>
+
+        <!-- display next and previous btns -->
+        <div class="ma-8 text-center">
+          <v-btn
+            color="primary"
+            variant="outlined"
+            rounded="pill"
+            v-if="displayPreviousButton"
+            :to="`/news/${previousNewsId}`"
+            class="mx-4"
+          >
+            Previous
+          </v-btn>
+
+          <v-btn
+            color="primary"
+            variant="outlined"
+            rounded="pill"
+            v-if="displayNextButton"
+            class="mx-4"
+            :to="`/news/${nextNewsId}`"
+          >
+            Next
+          </v-btn>
         </div>
       </div>
     </div>
@@ -84,6 +116,19 @@ const newsNotFound = ref(false);
 
 const news = reactive({});
 
+let displayNextButton = ref(false);
+let displayPreviousButton = ref(false);
+
+let nextNewsId = ref("");
+let previousNewsId = ref("");
+
+const getImageUrl = (url) => {
+  const runtimeConfig = useRuntimeConfig();
+  return runtimeConfig.public.ASSET_DOMAIN + url;
+};
+
+const fetchPagination = async () => {};
+
 const fetchNews = async () => {
   try {
     console.log("fetching news", route.params.id);
@@ -102,6 +147,12 @@ const fetchNews = async () => {
       ogDescription: news.text,
       twitterTitle: news.heading,
       twitterDescription: news.text,
+      ogImage: news.avatarImage?.[0]
+        ? getImageUrl(news.avatarImage[0])
+        : undefined,
+      twitterImage: news.avatarImage?.[0]
+        ? getImageUrl(news.avatarImage[0])
+        : undefined,
     });
   } catch (error) {
     console.error(error);
@@ -110,8 +161,11 @@ const fetchNews = async () => {
 };
 await fetchNews();
 
-const getImageUrl = (url) => {
-  const runtimeConfig = useRuntimeConfig();
-  return runtimeConfig.public.ASSET_DOMAIN + url;
-};
+const pagination = storeNews.getNewsPagination(route.params.id);
+
+displayNextButton.value = pagination.displayNextButton;
+displayPreviousButton.value = pagination.displayPreviousButton;
+
+nextNewsId.value = pagination.nextNewsId;
+previousNewsId.value = pagination.previousNewsId;
 </script>

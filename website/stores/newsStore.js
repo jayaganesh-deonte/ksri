@@ -22,6 +22,32 @@ export const newsStore = async () => {
           return null;
         }
       },
+      getNewsPagination(newsId) {
+        // based on newsId from news array get below info
+        let displayNextButton = false;
+        let displayPreviousButton = false;
+
+        let nextNewsId = "";
+        let previousNewsId = "";
+
+        // get index of newsId in news array
+        const index = this.news.findIndex((n) => n.id === newsId);
+        if (index > 0) {
+          displayPreviousButton = true;
+          previousNewsId = this.news[index - 1].id;
+        }
+        if (index < this.news.length - 1) {
+          displayNextButton = true;
+          nextNewsId = this.news[index + 1].id;
+        }
+
+        return {
+          displayNextButton,
+          displayPreviousButton,
+          nextNewsId,
+          previousNewsId,
+        };
+      },
     },
   });
 
