@@ -187,11 +187,22 @@ const filteJournalsBasedOnPublication = (publicationName) => {
 
   if (!query) return journals;
 
+  const removeDiacritics = (str) =>
+    str?.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  const normalizedQuery = removeDiacritics(query);
+
   return journals.filter(
     (journal) =>
-      journal.title?.toLowerCase().includes(query) ||
-      journal.author?.toLowerCase().includes(query) ||
-      journal.subtitle?.toLowerCase().includes(query)
+      removeDiacritics(journal.title)
+        ?.toLowerCase()
+        .includes(normalizedQuery) ||
+      removeDiacritics(journal.author)
+        ?.toLowerCase()
+        .includes(normalizedQuery) ||
+      removeDiacritics(journal.subtitle)
+        ?.toLowerCase()
+        .includes(normalizedQuery)
   );
 };
 

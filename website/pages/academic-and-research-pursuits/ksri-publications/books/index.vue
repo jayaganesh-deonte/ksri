@@ -157,11 +157,21 @@ const filteredBooks = computed(() => {
 
   if (!query) return books.value;
 
+  const removeDiacritics = (str) => {
+    return str?.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  };
+
   return books.value.filter(
     (book) =>
-      book.title?.toLowerCase().includes(query) ||
-      book.author?.toLowerCase().includes(query) ||
-      book.subtitle?.toLowerCase().includes(query)
+      removeDiacritics(book.title)
+        ?.toLowerCase()
+        .includes(removeDiacritics(query)) ||
+      removeDiacritics(book.author)
+        ?.toLowerCase()
+        .includes(removeDiacritics(query)) ||
+      removeDiacritics(book.subtitle)
+        ?.toLowerCase()
+        .includes(removeDiacritics(query))
   );
 });
 
@@ -175,11 +185,21 @@ const filterBooksBasedOnPublication = (publicationName) => {
 
   if (!query) return books;
 
+  const removeDiacritics = (str) => {
+    return str?.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  };
+
   return books.filter(
     (book) =>
-      book.title?.toLowerCase().includes(query) ||
-      book.author?.toLowerCase().includes(query) ||
-      book.subtitle?.toLowerCase().includes(query)
+      removeDiacritics(book.title)
+        ?.toLowerCase()
+        .includes(removeDiacritics(query)) ||
+      removeDiacritics(book.author)
+        ?.toLowerCase()
+        .includes(removeDiacritics(query)) ||
+      removeDiacritics(book.subtitle)
+        ?.toLowerCase()
+        .includes(removeDiacritics(query))
   );
 };
 
