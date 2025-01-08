@@ -67,19 +67,19 @@ const bookFields = [
     key: "author",
     label: "Author",
     type: "text",
-    rules: [(v) => !!v || "Author is required"],
+    // rules: [(v) => !!v || "Author is required"],
   },
   {
     key: "subtitle",
     label: "Subtitle",
     type: "text",
-    rules: [(v) => !!v || "Subtitle is required"],
+    // rules: [(v) => !!v || "Subtitle is required"],
   },
   {
     key: "price",
     label: "Price",
     type: "text",
-    rules: [(v) => !!v || "Price is required"],
+    // rules: [(v) => !!v || "Price is required"],
   },
   {
     key: "details",
@@ -104,13 +104,13 @@ const bookFields = [
     key: "yearOfPublication",
     label: "Year of Publication",
     type: "text",
-    rules: [(v) => !!v || "Year of Publication is required"],
+    // rules: [(v) => !!v || "Year of Publication is required"],
   },
   {
     key: "copies",
     label: "Available Number of Copies",
     type: "number",
-    rules: [(v) => !!v || "Available Number of Copies is required"],
+    // rules: [(v) => !!v || "Available Number of Copies is required"],
   },
   {
     key: "keywords",
