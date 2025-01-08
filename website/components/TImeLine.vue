@@ -48,12 +48,12 @@ import { ref, onMounted } from "vue";
 const timeLineData = ref([
   {
     title: "Sponsors",
-    subtitle: 325,
+    subtitle: 45,
     currentValue: 0,
   },
   {
     title: "Team Members",
-    subtitle: 700,
+    subtitle: 32,
     currentValue: 0,
   },
   {
@@ -63,17 +63,17 @@ const timeLineData = ref([
   },
   {
     title: "Contributors",
-    subtitle: 1125,
+    subtitle: 2534,
     currentValue: 0,
   },
   {
     title: "Scholars",
-    subtitle: 2535,
+    subtitle: 535,
     currentValue: 0,
   },
   {
     title: "Volunteers",
-    subtitle: 781,
+    subtitle: 81,
     currentValue: 0,
   },
 ]);

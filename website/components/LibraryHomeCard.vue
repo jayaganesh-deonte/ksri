@@ -48,8 +48,8 @@
             <v-card class="pa-4" rounded="0" elevation="0">
               <div class="text-h5 my-4 font-weight-bold">Library Online</div>
               <div class="my-2 text-h6">
-                Presently KSRI has started digitizing all old and rare Palm
-                Scripts in its collection.
+                Presently KSRI has started digitizing all old and rare Palm-leaf
+                manuscripts in its collection.
               </div>
               <div class="d-flex my-2 text-h6">
                 <nuxt-link
@@ -75,7 +75,7 @@
       </v-row>
       <div class="my-8">
         <div class="text-h5 font-weight-bold text-white">
-          Help us protect old and rare book
+          Help us protect old and rare books
         </div>
         <div class="text-h4 font-weight-bold text-white my-2">
           BECOME A SPONSOR OR VOLUNTEER FOR DIGITIZATION

@@ -22,7 +22,7 @@
           data-aos-delay="250"
         >
           KSRI will be grateful to receive contributions and sponsorships for
-          its corpus and its projects. Donation will go a long way in preserving
+          its corpus and projects. Donations will go a long way in preserving
           Sanskrit and Indological Studies.
         </div>
         <div class="mt-4" data-aos="zoom-out-up" data-aos-delay="300">
