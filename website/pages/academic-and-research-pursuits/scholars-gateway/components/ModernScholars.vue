@@ -1,5 +1,25 @@
 <template>
   <div>
+    <div
+      class="d-flex justify-center align-center mx-2"
+      :class="$device.isMobile ? 'flex-wrap' : 'flex-row'"
+      v-if="displayFilterBasedOnCourseBtn"
+    >
+      <div class="text-h6">Course:</div>
+      <div v-for="category in filterBasedOnCourseBtn" :key="category">
+        <v-btn
+          color="primary"
+          :variant="activeCourse === category ? 'flat' : 'outlined'"
+          rounded="pill"
+          class="ma-2"
+          @click="activeCourse = category"
+          style="text-transform: none"
+        >
+          {{ category }}
+        </v-btn>
+      </div>
+    </div>
+
     <div class="d-flex flex-row justify-center" v-if="displayButton">
       <div v-for="button in buttons" :key="button">
         <v-btn
@@ -22,7 +42,7 @@
         :supervisors="supervisors"
         :mPhilStudentsBySupervisor="mphilStudentsBySupervisor"
         :phdStudentsBySupervisor="phdStudentsBySupervisor"
-        :displayFilterBasedOnCourseBtn="displayFilterBasedOnCourseBtn"
+        :activeCourse="activeCourse"
       />
     </div>
 
@@ -33,6 +53,7 @@
         :supervisors="supervisors"
         :mPhilStudentsBySupervisor="pastMPhilStudentsBySupervisor"
         :phdStudentsBySupervisor="pastPhdStudentsBySupervisor"
+        :activeCourse="activeCourse"
       />
     </div>
   </div>
@@ -57,6 +78,10 @@ const props = defineProps({
 });
 
 import presentPastScholars from "./presentPastScholars.vue";
+
+let filterBasedOnCourseBtn = ["All", "Ph.D.", "M.Phil"];
+
+let activeCourse = ref("All");
 
 let buttons = ["Present", "Past"];
 
