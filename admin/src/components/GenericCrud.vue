@@ -443,6 +443,11 @@ let loading = ref(false);
 let exportMenu = ref(false);
 let selectedColumnsToExport = ref([]);
 
+// add required fields into selectedColumnsToExport array so that they are pre-selected
+selectedColumnsToExport.value = props.entityFields
+  .filter((field) => field.rules)
+  .map((field) => field.key);
+
 let valid = ref(false);
 
 let columnFilter = reactive({});
