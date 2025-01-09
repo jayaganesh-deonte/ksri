@@ -796,13 +796,16 @@ const exportAsCSV = () => {
 
   // Filter items based on columnFilter before generating CSV
   const filteredItems = items.value.filter((item) => {
-    return selectedColumnsToExport.value.every((key) => {
-      const filterValue = columnFilter[key]
-        ? columnFilter[key].toLowerCase()
-        : "";
-      const itemValue = String(item[key] || "").toLowerCase();
-      return !filterValue || itemValue.includes(filterValue);
-    });
+    // First check all column filters, regardless of selected columns
+    const passesAllFilters = Object.entries(columnFilter).every(
+      ([key, value]) => {
+        if (!value) return true;
+        const itemValue = String(item[key] || "").toLowerCase();
+        return itemValue.includes(value.toLowerCase());
+      }
+    );
+
+    return passesAllFilters;
   });
 
   const csvContent = filteredItems
