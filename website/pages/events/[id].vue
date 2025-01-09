@@ -92,6 +92,31 @@
           ></v-img>
         </v-col>
       </v-row>
+
+      <!-- display next and previous btns -->
+      <div class="ma-8 text-center">
+        <v-btn
+          color="primary"
+          variant="outlined"
+          rounded="pill"
+          v-if="displayPreviousButton"
+          :to="`/events/${previousEventId}`"
+          class="mx-4"
+        >
+          Previous
+        </v-btn>
+
+        <v-btn
+          color="primary"
+          variant="outlined"
+          rounded="pill"
+          v-if="displayNextButton"
+          class="mx-4"
+          :to="`/events/${nextEventId}`"
+        >
+          Next
+        </v-btn>
+      </div>
     </v-card>
   </div>
 </template>
@@ -106,10 +131,24 @@ console.log(route.params.id);
 
 let eventInfo = reactive({});
 
+let displayNextButton = ref(false);
+let displayPreviousButton = ref(false);
+
+let nextEventId = ref("");
+let previousEventId = ref("");
+
 // get event info
 const event = await storeEvents.getEventById(route.params.id);
 
 Object.assign(eventInfo, event);
+
+const pagination = storeEvents.getEventPagination(route.params.id);
+
+displayNextButton.value = pagination.displayNextButton;
+displayPreviousButton.value = pagination.displayPreviousButton;
+
+nextEventId.value = pagination.nextEventId;
+previousEventId.value = pagination.previousEventId;
 
 useSeoMeta({
   title: eventInfo.title,

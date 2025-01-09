@@ -42,6 +42,32 @@ export const eventStore = async () => {
         }
         return null;
       },
+      getEventPagination(eventId) {
+        // based on eventId from events array get below info
+        let displayNextButton = false;
+        let displayPreviousButton = false;
+
+        let nextEventId = "";
+        let previousEventId = "";
+
+        // get index of eventId in events array
+        const index = this.events.findIndex((event) => event.id === eventId);
+        if (index > 0) {
+          displayPreviousButton = true;
+          previousEventId = this.events[index - 1].id;
+        }
+        if (index < this.events.length - 1) {
+          displayNextButton = true;
+          nextEventId = this.events[index + 1].id;
+        }
+
+        return {
+          displayNextButton,
+          displayPreviousButton,
+          nextEventId,
+          previousEventId,
+        };
+      },
     },
   });
 
