@@ -1,18 +1,18 @@
 <template>
   <div>
     <section-title title="SCHOLARS GATEWAY" />
-    <div data-aos="fade-up" data-aos-delay="500">
+    <div data-aos="fade-up" class="sectionBody" data-aos-delay="100">
       KSRI has always been a centre for Research in Sanskrit and Indology. These
       activities are carried out through in-house Scholars and a society of
       associated Scholars. KSRI has associations with renowned doyens in these
       areas, who regularly visit KSRI and are invited frequently for lectures
       and discussion forums.
     </div>
-    <div data-aos="fade-up" data-aos-delay="600">
+    <div data-aos="fade-up" class="sectionBody" data-aos-delay="100">
       Much research work is also carried out by doctorial students and project
       investigators to whom KSRI acts as a Scholars Gateway.
     </div>
-    <div data-aos="fade-up" data-aos-delay="700">
+    <div data-aos="fade-up" class="sectionBody" data-aos-delay="100">
       KSRI has published books and articles based on these research projects; in
       respective chapters, the research work completed, on-going and also
       project ideas are listed. KSRI welcomes any organization interested in
@@ -21,10 +21,10 @@
     </div>
 
     <div class="my-8">
-      <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="800">
+      <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="100">
         Invitation
       </div>
-      <div data-aos="fade-up" data-aos-delay="900">
+      <div data-aos="fade-up" class="sectionBody" data-aos-delay="100">
         KSRI all the time pursues special projects in its core areas, through
         research scholars, students and independently tough its associates.
         There are all time projects being pursued and projects on the anvil.

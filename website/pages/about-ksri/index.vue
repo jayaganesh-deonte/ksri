@@ -1,5 +1,5 @@
 <template>
-  <div class="text-start mx-4" style="background-color: #f8f8f8">
+  <div class="text-start mx-4 pa-4" style="background-color: #f8f8f8">
     <div
       class="sectionTitle text-center"
       data-aos="zoom-in"
@@ -34,22 +34,24 @@
           sm="12"
           md="6"
           lg="6"
-          class="d-flex justify-center"
+          class="d-flex"
           data-aos="fade-left"
           data-aos-delay="750"
         >
-          <div class="sectionBody">
-            The Kuppuswami Sastri Research Institute was established in 1945 as
-            a fitting tribute to the great scholar Mahamahopadhyaya, Darsana
-            Kalanidhi, Vidyavacaspati, Prof. S. Kuppuswami Sastri, who combined
-            in himself the rare combination of depth of traditional scholarship
-            and modern research acumen. Many great stalwarts and statesmen like
-            Dr. Sir. S. Radhakrishnan (Former President of India), Rt. Hon'ble
-            V.S.Srinivasa Sastri, Padmabhushan Sir K.Balasubrahmanya Iyer,
-            Padmabhushan Dr.V.Raghavan, Dr.S.S.Janaki and scores of other
-            eminent men of letters have adorned different positions to raise
-            this Institute to become an internationally reputed organization in
-            the field of Sanskrit and Indology.
+          <div class="my-auto">
+            <div class="sectionBody" style="text-align: justify">
+              The Kuppuswami Sastri Research Institute was established in 1945
+              as a fitting tribute to the great scholar Mahamahopadhyaya,
+              Darsana Kalanidhi, Vidyavacaspati, Prof. S. Kuppuswami Sastri, who
+              combined in himself the rare combination of depth of traditional
+              scholarship and modern research acumen. Many great stalwarts and
+              statesmen like Dr. Sir. S. Radhakrishnan (Former President of
+              India), Rt. Hon'ble V.S.Srinivasa Sastri, Padmabhushan Sir
+              K.Balasubrahmanya Iyer, Padmabhushan Dr.V.Raghavan, Dr.S.S.Janaki
+              and scores of other eminent men of letters have adorned different
+              positions to raise this Institute to become an internationally
+              reputed organization in the field of Sanskrit and Indology.
+            </div>
           </div>
         </v-col>
       </v-row>
@@ -171,11 +173,6 @@ useSeoMeta({
 </script>
 
 <style scoped>
-.sectionBody {
-  font-size: 1.2em;
-  color: #0a160f;
-}
-
 .overviewCard {
   background-image: url("/img/icons/box-bottom-left-flower.png"),
     url("/img/icons/overview-bottom-line.png");

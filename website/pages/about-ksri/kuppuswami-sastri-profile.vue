@@ -5,8 +5,8 @@
       subTitle="MAHAMAHOPADHYAYA, DARSANA KALANIDHI,VIDYAVACASPATI PROFESSOR KUPPUSWAMI
       SASTRI (1880-1943)"
     ></SectionSubtitle>
-    <v-row class="">
-      <v-col cols="12" sm="12" md="2"> </v-col>
+    <v-row class="mt-12">
+      <v-col cols="12" sm="12" md="1"> </v-col>
       <v-col
         cols="12"
         sm="12"
@@ -16,8 +16,8 @@
       >
         <v-img src="/img/founder.png" fit height="250" width="250"> </v-img>
       </v-col>
-      <v-col cols="12" sm="12" md="6" data-aos="fade-left" data-aos-delay="500">
-        <div class="text-h5 font-weight-bold">Introduction</div>
+      <v-col cols="12" sm="12" md="8" data-aos="fade-left" data-aos-delay="500">
+        <div class="text-h5 font-weight-bold mb-8">Introduction</div>
         <div class="text-h6">
           Mm. Prof. S. Kuppuswami Sastri was a Sanskrit Scholar of repute in
           India during his time and had devoted his life time to study of
@@ -28,7 +28,7 @@
           his contributions to Sanskrit heritage and related Indology.
         </div>
       </v-col>
-      <v-col cols="12" sm="12" md="2"> </v-col>
+      <v-col cols="12" sm="12" md="1"> </v-col>
     </v-row>
     <v-card
       elevation="0"

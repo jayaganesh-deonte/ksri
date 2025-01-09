@@ -4,7 +4,7 @@
 
     <div class="text-center my-6">
       <section-title title="List of Scholars" />
-      <div class="text-h6" data-aos="fade-up" data-aos-delay="200">
+      <div class="sectionBody" data-aos="fade-up" data-aos-delay="200">
         The Kuppuswami Sastri Research Institute provides ample opportunities
         for scholars who are interested in higher studies.
       </div>

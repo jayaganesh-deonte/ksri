@@ -4,10 +4,14 @@
 
     <div class="my-4 pa-4">
       <section-title title="TRADITIONAL SCHOLARS" />
-      <div class="sectionSubtitle" data-aos="fade-right" data-aos-delay="500">
+      <div class="sectionSubtitle" data-aos="fade-right" data-aos-delay="100">
         Indian Scholars - Traditional Study
       </div>
-      <div class="text-center" data-aos="fade-up" data-aos-delay="600">
+      <div
+        class="text-center sectionBody"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
         In the past traditional scholars of great merit were given junior/senior
         research scholarships by the Govt. of India through the Central Sanskrit
         Board/Rashtriya Sanskrit Sansthan. Scholars under this scheme produced
