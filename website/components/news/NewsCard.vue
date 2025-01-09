@@ -3,7 +3,7 @@
     class="pa-2 text-body-1 ma-2"
     color="white"
     data-aos="fade-up-right"
-    :data-aos-delay="index * 100"
+    :data-aos-delay="200"
     elevation="0"
     @mouseover="isHovering = true"
     @mouseleave="isHovering = false"

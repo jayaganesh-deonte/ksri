@@ -119,7 +119,7 @@
     <div
       class="text-h3 text-center font-weight-bold text-secondary"
       data-aos="fade-up"
-      data-aos-delay="1000"
+      data-aos-delay="100"
     >
       KSRI OVERVIEW
     </div>
@@ -129,7 +129,7 @@
       class="pa-4 my-4 d-flex justify-center align-center overviewCard"
       min-height="300"
       data-aos="fade-up"
-      data-aos-delay="1100"
+      data-aos-delay="100"
     >
       <div class="sectionBody">
         KSRI is a Registered Society, voluntary, public and a non-profit
@@ -153,7 +153,7 @@
       class="pa-4 my-4 d-flex justify-center align-center overviewCard"
       min-height="300"
       data-aos="fade-up"
-      data-aos-delay="1200"
+      data-aos-delay="100"
     >
       <div class="sectionBody">
         KSRI is well known in its area of operations in India and around the

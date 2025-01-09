@@ -2,7 +2,7 @@
   <div
     class="sectionSubtitle2 text-center"
     data-aos="zoom-in"
-    data-aos-delay="600"
+    data-aos-delay="100"
   >
     {{ subTitle }}
   </div>

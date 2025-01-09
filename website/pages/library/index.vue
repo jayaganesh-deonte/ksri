@@ -6,7 +6,7 @@
       <div class="text-h4 font-weight-bold" data-aos="fade-up">Overview</div>
 
       <div
-        class="text-h6 my-4 text-start"
+        class="sectionBody my-4 text-start"
         data-aos="fade-up"
         data-aos-delay="200"
       >
@@ -24,13 +24,13 @@
         color="greenBg"
         elevation="0"
         data-aos="zoom-in"
-        data-aos-delay="400"
+        data-aos-delay="200"
       >
         <v-img
-          src="https://d30y75l38k1y9.cloudfront.net/upload/library-secton-800x.jpg"
+          :src="getAssetUrl('upload/library-secton-800x.jpg')"
           cover
         ></v-img>
-        <div class="text-h6 text-start ma-2">
+        <div class="sectionBody text-start ma-2">
           Similarly, the Institute also has a large collection of noteworthy
           palm-leaf Manuscripts written in Grantha, Malayalam, Telugu, Tamil,
           Nandinagari, Tihilari scripts. These manuscripts contain material
@@ -107,7 +107,7 @@
           </v-img>
         </div>
         <div
-          class="text-h6 textOverlay pa-4 text-white"
+          class="sectionBody textOverlay pa-4 text-white"
           data-aos="fade-left"
           data-aos-delay="900"
         >
@@ -132,7 +132,7 @@
       >
         <v-img src="/img/library/library-racks-4.jpg" cover></v-img>
         <div
-          class="text-h6 text-start ma-2"
+          class="sectionBody text-start ma-2"
           data-aos="fade-up"
           data-aos-delay="900"
         >
@@ -167,7 +167,7 @@
         >
         </v-img>
         <v-card
-          class="text-h6 textOverlayRight pa-4"
+          class="sectionBody textOverlayRight pa-4"
           rounded="0"
           elevation="4"
           data-aos="fade-left"
@@ -195,7 +195,7 @@
           cover
         ></v-img>
         <div
-          class="text-h6 text-start ma-2"
+          class="sectionBody text-start ma-2"
           data-aos="fade-up"
           data-aos-delay="900"
         >
@@ -223,7 +223,7 @@
         Workshop
       </div>
       <v-card
-        class="mx-8 text-h6 pa-4"
+        class="mx-8 sectionBody pa-4"
         color="secondary"
         rounded="0"
         elevation="0"
@@ -253,7 +253,7 @@
         Training Programmes
       </div>
       <v-card
-        class="mx-8 my-8 text-h6 pa-4"
+        class="mx-8 my-8 sectionBody pa-4"
         color="accentGreen"
         rounded="0"
         data-aos="fade-left"
@@ -282,8 +282,8 @@
             data-aos="fade-up"
             :data-aos-delay="index * 200 + 900"
           >
-            <div class="text-h6 text-accentGreen">{{ index + 1 }}.</div>
-            <div class="text-h6 my-4">
+            <div class="sectionBody text-accentGreen">{{ index + 1 }}.</div>
+            <div class="sectionBody my-4">
               {{ service }}
             </div>
             <v-divider
@@ -313,7 +313,7 @@
         >
           Support
         </div>
-        <div class="text-h6" data-aos="fade-left" data-aos-delay="900">
+        <div class="sectionBody" data-aos="fade-left" data-aos-delay="900">
           Mainly through donations provided by the philanthropists, scholars and
           lovers of Sanskrit and culture in and around India and also abroad.
         </div>
@@ -337,7 +337,7 @@
       <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="200">
         Requirements
       </div>
-      <div class="text-h6 my-8" data-aos="fade-up" data-aos-delay="400">
+      <div class="sectionBody my-8" data-aos="fade-up" data-aos-delay="400">
         The present problem is to preserve these books in proper condition since
         they have become unbound and are in bad condition in the process of
         handling them for digitalization. The books being more than 70 years
@@ -361,6 +361,11 @@ const services = [
   "The Library is open from 10.00 a.m. to 5.00 p.m. on all days except second Saturdays and Sundays and Government Holidays.",
   "Members: Enrollment as Patrons, Fellows, Life and Reader and Borrowing Membership.",
 ];
+
+const getAssetUrl = (url) => {
+  const runtimeConfig = useRuntimeConfig();
+  return runtimeConfig.public.ASSET_DOMAIN + url;
+};
 </script>
 
 <style scoped>

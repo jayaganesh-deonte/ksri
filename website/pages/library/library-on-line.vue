@@ -8,7 +8,7 @@
       >
         KSRI LIBRARY ONLINE
       </div>
-      <div class="text-h6" data-aos="fade-up" data-aos-delay="400">
+      <div class="sectionBody" data-aos="fade-up" data-aos-delay="200">
         KSRI has already digitalized the entire collection of palm leaf
         manuscripts and paper manuscripts. Around 1100 old and rare books have
         also been digitalized.
@@ -18,11 +18,11 @@
       <div
         class="sectionSubtitle my-4"
         data-aos="fade-right"
-        data-aos-delay="600"
+        data-aos-delay="200"
       >
         Overview
       </div>
-      <div class="text-h6" data-aos="fade-left" data-aos-delay="900">
+      <div class="sectionBody" data-aos="fade-left" data-aos-delay="200">
         KSRI hopes very soon it can offer valuable service by making the stored
         knowledge available to the world online.
       </div>
@@ -32,15 +32,15 @@
       class="onlineLibBg d-flex flex-column justify-end my-8"
       :height="$device.isMobile ? '' : '50vh'"
       data-aos="fade-up"
-      data-aos-delay="900"
+      data-aos-delay="200"
       rounded="0"
     >
       <v-card
-        color="primary pa-4  text-h6 mx-auto"
+        color="primary pa-4  sectionBody mx-auto"
         :class="$device.isMobile ? 'my-4 text-center' : ''"
         :width="$device.isMobile ? '80%' : '60%'"
         data-aos="fade-up"
-        data-aos-delay="900"
+        data-aos-delay="200"
         rounded="0"
       >
         Under Phase 1 all the palm-leaf manuscripts in the library have been

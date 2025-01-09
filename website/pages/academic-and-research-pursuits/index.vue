@@ -167,11 +167,14 @@
                   v-if="series != 'All'"
                 >
                   <template v-slot:activator="{ props }">
-                    <v-list-item
-                      v-bind="props"
-                      :title="series"
-                      :subtitle="getSeriesDescriptionFromSubSeries(series)"
-                    ></v-list-item>
+                    <v-list-item v-bind="props">
+                      <!-- :title="series"
+                      :subtitle="getSeriesDescriptionFromSubSeries(series)" -->
+                      <v-list-item-title>{{ series }}</v-list-item-title>
+                      <div class="text-caption font-weight-light">
+                        {{ getSeriesDescriptionFromSubSeries(series) }}
+                      </div>
+                    </v-list-item>
                   </template>
                   <v-list-item
                     v-for="sub in subSeriesMapping[series]"
