@@ -13,7 +13,9 @@
         <section-title title="JOURNAL OF ORIENTAL RESEARCH" />
         <div class="sectionSubtitle2">
           KSRI has been publishing the Journal of Oriental Research periodically
-          from its inception till date and it is internationally well known.
+          from its inception till date and it is internationally well-known. The
+          journal is listed under the UGC CARE list of Journals - Arts &
+          Humanities No. 367 with ISSN: 0022 - 3301.
         </div>
       </div>
 
