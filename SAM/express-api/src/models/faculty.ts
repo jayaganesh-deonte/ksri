@@ -39,6 +39,7 @@ export interface Faculty {
   seminars?: { [key: string]: string };
   lectures?: { [key: string]: string };
   awards?: { [key: string]: string };
+  extensionActivities?: { [key: string]: string };
   itemPublishStatus: string;
 }
 
@@ -69,6 +70,7 @@ export interface FacultyDDB {
   seminars?: { [key: string]: string };
   lectures?: { [key: string]: string };
   awards?: { [key: string]: string };
+  extensionActivities?: { [key: string]: string };
   itemPublishStatus: string;
 }
 
@@ -100,6 +102,7 @@ export function toDynamoDB(item: Faculty): FacultyDDB {
     seminars: item.seminars,
     lectures: item.lectures,
     awards: item.awards,
+    extensionActivities: item.extensionActivities,
     itemPublishStatus: item.itemPublishStatus,
   };
 }
@@ -163,6 +166,7 @@ export function fromDynamoDB(item: FacultyDDB): Faculty {
     seminars: item.seminars,
     lectures: item.lectures,
     awards: item.awards,
+    extensionActivities: item.extensionActivities,
     itemPublishStatus: item.itemPublishStatus,
   };
 }
