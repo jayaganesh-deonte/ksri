@@ -267,6 +267,13 @@
                       :key="editedItem[field.key].length * 1"
                       :title="field.label"
                     />
+
+                    <!-- display type =component -->
+                    <component
+                      v-else-if="field.type === 'component'"
+                      :is="field.component"
+                      :editedItem="editedItem"
+                    />
                   </template>
 
                   <!-- Array/Sub-table fields -->

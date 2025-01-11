@@ -5,15 +5,17 @@
       indeterminate
       color="primary"
     ></v-progress-circular>
-    <generic-crud
-      v-if="!isLoading"
-      entityName="Faculty"
-      :apiEndpoint="apiEndpoint"
-      :entityFields="facultyFields"
-      :headers="facultyHeaders"
-      :addIdToPayload="true"
-      :sortBy="[{ key: 'orderId', order: 'asc' }]"
-    />
+
+    <div v-if="!isLoading">
+      <generic-crud
+        entityName="Faculty"
+        :apiEndpoint="apiEndpoint"
+        :entityFields="facultyFields"
+        :headers="facultyHeaders"
+        :addIdToPayload="true"
+        :sortBy="[{ key: 'orderId', order: 'asc' }]"
+      />
+    </div>
   </div>
 </template>
 
@@ -21,6 +23,8 @@
 import axios from "axios";
 import { getUserIdToken } from "@/services/auth";
 import { ref } from "vue";
+
+import FacultyCvDownloader from "@/components/FacultyCvDownloader.vue";
 
 const apiEndpoint = import.meta.env.VITE_API_URL + "/faculty";
 
@@ -56,6 +60,13 @@ let designations = await fetchFacultyDesignations();
 console.log("designations", designations);
 
 const facultyFields = [
+  // pass FacultyCvDownloader component
+  {
+    key: "facultyCvDownloader",
+    label: "Faculty CV Downloader",
+    type: "component",
+    component: FacultyCvDownloader,
+  },
   //
   {
     key: "orderId",

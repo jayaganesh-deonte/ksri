@@ -7,6 +7,8 @@
 // Plugins
 import { registerPlugins } from "@/plugins";
 
+import { PDFPlugin } from "vue3-pdfmake";
+
 // Components
 import App from "./App.vue";
 
@@ -37,6 +39,7 @@ registerPlugins(app);
 
 app.use(VueSweetalert2);
 app.use(ToastPlugin);
+app.use(PDFPlugin);
 
 app.component("QuillEditor", QuillEditor);
 
