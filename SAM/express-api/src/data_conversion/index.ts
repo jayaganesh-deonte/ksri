@@ -314,27 +314,8 @@ const insertPublicationBooks = async () => {
 
 const insertPublicationJournals = async () => {
   // load journals
-  const journals = require("./content/publications/journals.json");
+  const journals = require("./content/publications/journals-new.json");
   // add id to journals
-
-  // {
-  //   "author": " ",
-  //   "available": "Yes",
-  //   "copies": 10,
-  //   "details": "<p>“This issue of The Journal; of Oriental Research is that it commemorates the birth centenary of Prof. V. Raghavan, a doyen of Indological studies. The corpus of the journal is divided into two parts. In the first part homage is paid to Professor Raghavan by four reputed scholars. In the second we find twenty articles written by different scholars on various aspects of Sanskrit learning. There are also a number of articles dealing with Sanskrit literature and literary criticism.  The articles, excellent in nature and diverse in subject matter, are undoubtedly the best flowers of the mental gardens of the scholars by which they have paid their homage to the immortal soul of Professor Raghavan”.\\nSitanath Acharya, Bulletin of the Ramakrishna Mission, Institute of Culture, 2011</p>",
-  //   "entityType": "ENTITYTYPE#PUBLICATION#JOURNAL",
-  //   "imageUrls": [
-  //     {
-  //       "S": "upload/the-journal-of-oriental-research-madras-2009-10.jpg"
-  //     }
-  //   ],
-  //   "keywords": " ",
-  //   "price": "₹ 300",
-  //   "publication": "KSRI",
-  //   "subtitle": "Dr. V. Raghavan Birth Centenary Commemoration Volume | The Kuppuswami Sastri Research Institute, Madras | 2000",
-  //   "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS (Vols. LXXI - LXXXII 2009-2010)",
-  //   "yearOfPublication": 2010
-  // }
 
   // update imageUrls to be an array of strings remove S
 
@@ -343,7 +324,7 @@ const insertPublicationJournals = async () => {
     id: ulid(),
     itemPublishStatus: "PUBLISHED",
     metadata: generateMetaData(),
-    imageUrls: journal.imageUrls.map((image: any) => image.S),
+    // imageUrls: journal.imageUrls.map((image: any) => image.S),
   }));
 
   // validate journals
@@ -358,6 +339,7 @@ const insertPublicationJournals = async () => {
     pubJournalToDynamoDB(journal)
   );
 
+  console.log(journalsDynamoDB);
   // insert journals into dynamoDB
   await batchInsert(journalsDynamoDB);
 };
@@ -1318,7 +1300,7 @@ const main = async () => {
   // await insertshastrachudamanis();
   // await insertvidyavaridhis();
   // await insertTraditionalScholars();
-  await insertStudents();
+  // await insertStudents();
   // await insertfaculty();
   // await insertGallery();
   // await insertmilestones();

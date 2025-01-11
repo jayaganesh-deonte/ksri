@@ -312,12 +312,12 @@
     "available": "Yes",
     "copies": 100,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
+      "updated_at": "2025-01-09T06:35:36.215Z",
       "created_by": "admin"
     },
-    "author": "Dr. K.S. Balasubramanian Dr. T.V. Vasudeva",
+    "author": "Text with Eng. Tr. by Dr. K.S. Balasubramanian and Dr. T.V.Vasudeva.",
     "yearOfPublication": 2016,
     "itemPublishStatus": "PUBLISHED"
   },
@@ -450,12 +450,12 @@
     "available": "Yes",
     "copies": 100,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-01-03T06:30:18.041Z",
+      "updated_at": "2025-01-09T05:59:00.711Z",
       "created_by": "admin"
     },
-    "author": " ",
+    "author": " ed. Dr.S.S.Janaki",
     "yearOfPublication": 2001,
     "itemPublishStatus": "PUBLISHED"
   },
@@ -987,27 +987,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Cintamanisaranika of Bodhisattva Dasabala",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25SHX2TYSRAA0B2ZBAX",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-01-03T06:30:18.041Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "SADRATNAMĀLĀ OF ŚAṄKARAVARMAN – Text on Indian Astronomy and Mathematics",
     "subtitle": "with Eng. Tr. and notes by Dr. S. Madhavan | Pub. by the Kuppuswami  Sastri  Research  Institute (Revised Edition), Chennai - 4 | 2012 | Paperback | Pp. xxxviii + 299.",
     "price": "₹ 400",
@@ -1144,27 +1123,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Vedas : Traditional and Modern Perspectives ed. Dr.V.Kameswari",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25T6WMEXVKMFT0P2ER4",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "Astanga Nighantu (Medical Text) ed. By P.V.Sarma, Eng. and Tamil translation by Dr.K.S.Viswanatha Sarma",
     "subtitle": "",
     "price": "",
@@ -1255,69 +1213,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Dhvajastambha",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25TQ3AE4C4BJVFXVDK6",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Pratima Nataka Study guide",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25TQEC82ASCE8V6PZ2B",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Bhagavadgita Bibliography - II (Edn. Trs. and Studies) by Dr. C.S. Sundaram",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25TR4Z1ZVTV58W3CJ64",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "Sakkottai Inscriptions",
     "subtitle": "",
     "price": "",
@@ -1332,27 +1227,6 @@
       "updated_by": "admin",
       "created_at": "2025-01-03T06:30:18.042Z",
       "updated_at": "2025-01-03T06:30:18.042Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "The Kuppuswami Sastri Commemoration Volume",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25V04EPD6XH5715CYE5",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-03T06:30:18.043Z",
       "created_by": "admin"
     },
     "author": "",
@@ -1404,48 +1278,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Arthasastra with Canakyatika",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25V4X700X17ZHZKWEM8",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Vibhramaviveka of Mandana Misra (Mimamsa Text)",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25V67FRK24DZ2JX1R3H",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-03T06:30:18.043Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "WOMEN'S ROLE IN KŪḌIYĀṬṬAM",
     "subtitle": "by L. S. Rajagopalan | The Kuppuswami  Sastri  Research Institute,  Mylapore, Chennai | 1997 | Pages 251.",
     "price": "₹ 250",
@@ -1475,27 +1307,6 @@
     "imageUrls": null,
     "details": "",
     "id": "01JGNDQ25V9X2P9D8TJ42DYJFB",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-03T06:30:18.043Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "The Census of Astronomical Manuscripts in England.",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25VBGY87YG94JVTY9VB",
     "publication": "KSRI",
     "keywords": "",
     "available": "No",
@@ -1599,27 +1410,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Darsanopanisad, Text with Eng. Tr. by Dr. K.S. Balasubramanian and Dr. T.V.Vasudeva.",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25VYK8X1R4HW9HY312V",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-03T06:30:18.043Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "SANSKRIT AND SCIENCE",
     "subtitle": "Ed. by S.S.Janaki (Revised) | The Kuppuswami Sastri Research Institute, Chennai | 2010.",
     "price": "₹ 250",
@@ -1643,27 +1433,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Grahacaranibandhana (Astrology)",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25W1KA5214W1DN0H13C",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "SRĪMAD BHĀGAVATA – Condensed in the Poet's own words:",
     "subtitle": "by Pandit A.M. Srinivasachariar | Tr. by Dr. V. Raghavan | Pub. by the Kuppuswami  Sastri  Research  Institute (Reprint), Chennai - 4 | 2012 | pp. xxxii + 444.",
     "price": "₹ 200",
@@ -1672,27 +1441,6 @@
     ],
     "details": "“This book is the condensed version of the Bhāgavatam presented in the form of a small book of about 450 pages. It is with a sense of satisfaction that one can say that Dr.V. Raghavan has done a commendable job in keeping the spirit of the text during the abridgement.  \tThe translator has maintained a sense of proportion in abridging the text so that nothing is omitted.  This book was first published in 1937 and has seen three reprints. It is sure to see many more and is worth preserving.”\\nNVC Swamy, Bangalore, The Vedanta Kesari, 2010",
     "id": "01JGNDQ25W5Y87NEAC1JDC4378",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Kalamukha and Pasupatha temples in Dharwar by Dr.Mrs.Vasundhara Filliozat",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25W7K04RVKP79YVQN69",
     "publication": "KSRI",
     "keywords": "",
     "available": "Yes",
@@ -1888,27 +1636,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Saiva Rituals and Philosophy ed. Dr.S.S.Janaki",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25WN8ACGQ63Z2SW1Q6Q",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "KARPŪRACARITA BHĀṆA OF AMĀTYA VATSARĀJA",
     "subtitle": "Text with English translation and critical study by Dr.S.S.Janaki | The Kuppuswami Sastri Research Institute, Madras  |  1989.  (Out of stock)",
     "price": "₹ 20",
@@ -2001,27 +1728,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Srivacanabhushana of Pillai Lokacharya",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25WXM2YN93CQ5JEWZCT",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "ŚIVA TEMPLE AND TEMPLE RITUALS:",
     "subtitle": "Ed. by S.S.Janaki (Re-print) | The Kuppuswami Sastri Research Institute, Madras-600 004 | 2015. | Pages xxxiv + 333.",
     "price": "₹ 400",
@@ -2068,75 +1774,12 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Dhvanyaloka & Locana - Pt.I",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25WZHCCDE385JV2FERD",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Pratima Nataka of Bhasa (Text & Translation)",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25WZVHD19WW5APPB5JA",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "Siva Temple and Temple Rituals",
     "subtitle": "",
     "price": "",
     "imageUrls": null,
     "details": "",
     "id": "01JGNDQ25X3TAVJWTZ44MW2GS2",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Vinavasavadatta (an old Sanskrit drama)",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25X4X1WYDX2890GR8B5",
     "publication": "KSRI",
     "keywords": "",
     "available": "No",
@@ -2221,75 +1864,12 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Sadratnamala of Sankara Varman (Astronomical text) ed. With English tr. By Dr.S.Madhavan",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25XFXWWNK34S40FM3SX",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "Siva Linga Worship -Authentic documentary (in VCD) on Siva Linga worship to be performed daily the temples as prescribed in the Saiva Agamic texts. Running commentary available in English or Tamil.",
     "subtitle": "",
     "price": "",
     "imageUrls": null,
     "details": "",
     "id": "01JGNDQ25XGGTTK980T3N2HQR5",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Vakyakarana (Astrology)",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25XJST8FW1Z3Z53ZTMJ",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Bhagavadgita Bibliography - I (Manuscripts) by Dr.C.S.Sundaram",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25XSVKP57C9YWF8V2Z2",
     "publication": "KSRI",
     "keywords": "",
     "available": "Yes",
