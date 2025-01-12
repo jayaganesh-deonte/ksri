@@ -15,10 +15,7 @@
     </div>
     <v-row class="ma-4" align="center">
       <v-col data-aos="fade-right" cols="12" md="6">
-        <v-img
-          src="https://d30y75l38k1y9.cloudfront.net/upload/gal-img-1.png"
-          cover
-        ></v-img>
+        <v-img :src="getAssetUrl('upload/gal-img-1.png')" cover></v-img>
       </v-col>
       <v-col class="text-h6" cols="12" md="6">
         <div class="my-6" data-aos="fade-left" data-aos-delay="200">

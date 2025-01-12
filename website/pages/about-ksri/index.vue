@@ -24,10 +24,7 @@
           data-aos="fade-right"
           data-aos-delay="650"
         >
-          <v-img
-            src="https://d30y75l38k1y9.cloudfront.net/upload/about-ksri-fig.png"
-            fit
-          ></v-img>
+          <v-img :src="getAssetUrl('upload/about-ksri-fig.png')" fit></v-img>
         </v-col>
         <v-col
           cols="12"

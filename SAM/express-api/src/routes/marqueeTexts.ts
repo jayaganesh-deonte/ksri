@@ -84,12 +84,13 @@ marqueeTextsRouter.get(
       // query table using GSI
       const result = await documentClient.query({
         TableName: process.env.DDB_TABLE_NAME,
-        IndexName: "entityTypeSK",
-        KeyConditionExpression: "entityType = :sk",
+        // IndexName: "entityTypeSK",
+        KeyConditionExpression: "PK = :PK",
         ExpressionAttributeValues: {
-          ":sk": "ENTITYTYPE#MARQUEETEXT",
+          ":PK": "ENTITYTYPE#MARQUEETEXT",
         },
-        ScanIndexForward: false,
+        //   id is lexagraphically sorted so sort it from old to new
+        ScanIndexForward: true,
       });
       res.json(
         result.Items?.map((item) => fromDynamoDB(item as MarqueeTextDDB))

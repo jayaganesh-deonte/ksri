@@ -190,10 +190,7 @@
         data-aos-delay="400"
         v-if="$device.isMobile"
       >
-        <v-img
-          src="https://d30y75l38k1y9.cloudfront.net/upload/library-focus.jpg"
-          cover
-        ></v-img>
+        <v-img :src="getAssetUrl('upload/library-focus.jpg')" cover></v-img>
         <div
           class="sectionBody text-start ma-2"
           data-aos="fade-up"
