@@ -16,18 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: baselime/action-setup-baselime@v0.0.1
-        with:
-          baselime-api-key: ${{ secrets.BASELIME_API_KEY }} # Can be imported from Github Actions Secrets
-
-      - name: 📍Create marker
-        run: |
-          baselime mark \
-          --name Deployment \
-          --url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
-          --metadata '${{ toJson(github) }}' \
-          --service ${{ github.repository }}
-
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
