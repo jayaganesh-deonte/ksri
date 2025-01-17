@@ -624,6 +624,188 @@ Resources:
         ViewerCertificate:
           CloudFrontDefaultCertificate: true
 
+  APIDashboard:
+    Type: AWS::CloudWatch::Dashboard
+    Properties:
+      DashboardName: !Sub ${Prefix}-api-dashboard
+      DashboardBody: !Sub |
+        {
+          "widgets": [
+            {
+              "type": "log",
+              "x": 0,
+              "y": 0,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "query": "SOURCE '/aws/lambda/${Prefix}_admin_api' | fields @timestamp, statusCode, path, responseTime, userAgent, ip\n| filter component = 'middleware'\n| sort @timestamp desc\n| limit 100",
+                "region": "${AWS::Region}",
+                "title": "Recent API Requests",
+                "view": "table"
+              }
+            },
+            {
+              "type": "log",
+              "x": 12,
+              "y": 0,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "query": "SOURCE '/aws/lambda/${Prefix}_admin_api' | fields @timestamp, statusCode, path, error,username, userId, correlationId\n| filter component = 'middleware' and statusCode >= 400\n| sort @timestamp desc\n| limit 100",
+                "region": "${AWS::Region}",
+                "title": "API Errors",
+                "view": "table"
+              }
+            },
+            {
+              "type": "log",
+              "x": 0,
+              "y": 6,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "query": "SOURCE '/aws/lambda/${Prefix}_admin_api' | fields path, responseTime\n| filter component = 'middleware' and responseTime > 0\n| stats count(*) as requests, avg(responseTime) as avgResponseTime, max(responseTime) as maxResponseTime, pct(responseTime, 95) as p95ResponseTime by path\n| sort avgResponseTime desc",
+                "region": "${AWS::Region}",
+                "title": "Response Time Analysis",
+                "view": "table"
+              }
+            },
+            {
+              "type": "log",
+              "x": 12,
+              "y": 6,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "query": "SOURCE '/aws/lambda/${Prefix}_admin_api' | fields @timestamp, userId, username, path, statusCode, userAgent\n| filter component = 'middleware' and isPresent(userId)\n| sort @timestamp desc\n| limit 100",
+                "region": "${AWS::Region}",
+                "title": "User Activity",
+                "view": "table"
+              }
+            },
+            {
+              "type": "log",
+              "x": 0,
+              "y": 12,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "query": "SOURCE '/aws/lambda/${Prefix}_admin_api' | fields @timestamp, path, error, ip, userAgent, correlationId\n| filter component = 'middleware' and statusCode = 401\n| sort @timestamp desc",
+                "region": "${AWS::Region}",
+                "title": "Authentication Failures",
+                "view": "table"
+              }
+            },
+            {
+              "type": "log",
+              "x": 12,
+              "y": 12,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "query": "SOURCE '/aws/lambda/${Prefix}_admin_api' | fields path, method\n| filter component = 'middleware'\n| stats count(*) as requests by path, method\n| sort requests desc",
+                "region": "${AWS::Region}",
+                "title": "Traffic by Path",
+                "view": "table"
+              }
+            },
+            {
+              "type": "log",
+              "x": 0,
+              "y": 18,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "query": "SOURCE '/aws/lambda/${Prefix}_admin_api' | fields @timestamp, path, responseTime,username, userId, statusCode\n| filter component = 'middleware' and responseTime > 1000\n| sort responseTime desc",
+                "region": "${AWS::Region}",
+                "title": "High Response Time Requests",
+                "view": "table"
+              }
+            },
+            {
+              "type": "log",
+              "x": 12,
+              "y": 18,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "query": "SOURCE '/aws/lambda/${Prefix}_admin_api' | fields username, @timestamp\n| filter component = 'middleware' and isPresent(username)\n| stats min(@timestamp) as sessionStart, max(@timestamp) as sessionEnd, count(*) as requestCount by username\n| sort requestCount desc",
+                "region": "${AWS::Region}",
+                "title": "User Session Analysis",
+                "view": "table"
+              }
+            },
+            {
+              "type": "metric",
+              "x": 0,
+              "y": 24,
+              "width": 12,
+              "height": 6, 
+              "properties": {
+                "metrics": [
+                  ["AWS/Lambda", "Invocations", "FunctionName", "${Prefix}_admin_api", { "stat": "Sum", "period": 300 }]
+                ],
+                "region": "${AWS::Region}",
+                "title": "Lambda Requests",
+                "view": "timeSeries",
+                "stacked": false,
+                "period": 300
+              }
+            },
+            {
+              "type": "metric", 
+              "x": 12,
+              "y": 24,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "metrics": [
+                  ["AWS/Lambda", "Errors", "FunctionName", "${Prefix}_admin_api", { "stat": "Sum", "period": 300 }]
+                ],
+                "region": "${AWS::Region}",
+                "title": "Lambda Errors",
+                "view": "timeSeries",
+                "stacked": false,
+                "period": 300
+              }
+            },
+            {
+              "type": "metric",
+              "x": 0, 
+              "y": 30,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "metrics": [
+                  ["AWS/Lambda", "Duration", "FunctionName", "${Prefix}_admin_api", { "stat": "Average", "period": 300 }]
+                ],
+                "region": "${AWS::Region}",
+                "title": "Lambda Duration",
+                "view": "timeSeries",
+                "stacked": false,
+                "period": 300
+              }
+            },
+            {
+              "type": "metric",
+              "x": 12,
+              "y": 30, 
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "metrics": [
+                  ["AWS/Lambda", "ConcurrentExecutions", "FunctionName", "${Prefix}_admin_api", { "stat": "Maximum", "period": 300 }]
+                ],
+                "region": "${AWS::Region}",
+                "title": "Lambda Concurrent Executions",
+                "view": "timeSeries",
+                "stacked": false,
+                "period": 300
+              }
+            }
+          ]
+        }
+
 Outputs:
   UserPoolId:
     Value: !Ref CognitoUserPool
