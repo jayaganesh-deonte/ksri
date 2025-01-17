@@ -28,11 +28,33 @@ import "vue-toast-notification/dist/theme-bootstrap.css";
 import { QuillEditor } from "@vueup/vue-quill";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
 
+import { getWebInstrumentations, initializeFaro } from "@grafana/faro-web-sdk";
+import { TracingInstrumentation } from "@grafana/faro-web-tracing";
+
 // import awsconfig from "./aws-exports";
 import awsconfig from "./aws-config";
 
 Amplify.configure(awsconfig);
 
+initializeFaro({
+  url: "https://faro-collector-prod-ap-south-1.grafana.net/collect/b42066fce843aa2cd5d17ea4250eb0f4",
+  app: {
+    name: "ksri admin",
+    version: "1.0.0",
+    environment: "production",
+  },
+  sessionTracking: {
+    samplingRate: 1,
+    persistent: true,
+  },
+  instrumentations: [
+    // Mandatory, omits default instrumentations otherwise.
+    ...getWebInstrumentations(),
+
+    // Tracing package to get end-to-end visibility for HTTP requests.
+    new TracingInstrumentation(),
+  ],
+});
 const app = createApp(App);
 
 registerPlugins(app);
