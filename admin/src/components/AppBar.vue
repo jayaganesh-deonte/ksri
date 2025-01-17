@@ -284,6 +284,9 @@ let menuOptions = computed(() => {
 });
 
 const logout = async () => {
+  const faro = window.faro;
+  faro.api.resetUser();
+
   await signOut();
   // localStorage.clear();
 

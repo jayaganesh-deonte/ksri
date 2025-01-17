@@ -295,6 +295,13 @@ router.beforeEach(async (to, from, next) => {
         groups,
       });
       appStore.setUserRole(groups);
+
+      const faro = window.faro;
+      faro.api.setUser({
+        email: userAttributes.email,
+        id: username,
+        name: username,
+      });
     } catch (error) {
       console.error(error);
       signInWithRedirect();
