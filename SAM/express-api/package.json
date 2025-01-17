@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-lambda-powertools/logger": "^2.13.0",
+    "@aws-lambda-powertools/tracer": "^2.13.0",
     "@aws-sdk/client-cognito-identity-provider": "^3.710.0",
     "@aws-sdk/client-dynamodb": "^3.705.0",
     "@aws-sdk/client-ssm": "^3.716.0",

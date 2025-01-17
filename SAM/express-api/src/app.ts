@@ -3,8 +3,13 @@ const cors = require("cors");
 import { routes } from "./routes";
 require("dotenv").config();
 
+import { Logger } from "@aws-lambda-powertools/logger";
+
 import { CognitoJwtVerifier } from "aws-jwt-verify";
 import { CognitoJwtVerifierSingleUserPool } from "aws-jwt-verify/cognito-verifier";
+import { json } from "stream/consumers";
+
+const logger = new Logger();
 
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
@@ -42,18 +47,49 @@ const middlewareFunction = async function (
   res: Response,
   next: NextFunction
 ) {
+  // Add correlation ID for request tracking
+  const correlationId = req.headers["x-correlation-id"] || crypto.randomUUID();
+  logger.appendKeys({
+    correlationId: correlationId,
+  });
+
+  // Capture request metadata
+  const requestMetadata = {
+    path: req.originalUrl,
+    method: req.method,
+    ip: req.ip,
+    userAgent: req.headers["user-agent"],
+    timestamp: new Date().toISOString(),
+  };
+
+  logger.info("Incoming request", {
+    ...requestMetadata,
+    component: "middleware",
+  });
+
   // if the request route contains the name public in it then perform captcha auth
   const requestRoute = req.originalUrl;
   if (requestRoute.includes("public")) {
+    logger.info("Public route accessed", {
+      path: requestRoute,
+      component: "middleware",
+    });
     next();
     return;
   }
 
   if (AWS_LAMBDA_FUNCTION_NAME == undefined) {
+    logger.info("Local development environment detected", {
+      component: "middleware",
+    });
     next();
   } else {
     const Authorization = req.headers["authorization"];
     if (!Authorization) {
+      logger.warn("Authorization header missing", {
+        component: "middleware",
+        ...requestMetadata,
+      });
       return res.status(401).json({ message: "Unauthorized" });
     }
     const token = Authorization;
@@ -62,13 +98,40 @@ const middlewareFunction = async function (
         tokenUse: "id",
         clientId: CLIENT_ID,
       });
+      // Add user metadata from token payload
+      logger.appendKeys({
+        userId: payload.sub,
+        username: payload["cognito:username"] || "",
+        userGroups: payload["cognito:groups"] || [],
+      });
+
+      logger.info("Token verified successfully", {
+        component: "middleware",
+        userId: payload.sub,
+      });
       // console.log("Token is valid. Payload:", payload);
       next();
-    } catch {
+    } catch (error) {
+      logger.error("Token verification failed", {
+        component: "middleware",
+        error: error instanceof Error ? error.message : "Unknown error",
+        ...requestMetadata,
+      });
+
       console.error("Token not valid");
       return res.status(401).json({ message: "Unauthorized" });
     }
   }
+
+  // Add response logging
+  res.on("finish", () => {
+    logger.info("Request completed", {
+      component: "middleware",
+      statusCode: res.statusCode,
+      responseTime: Date.now() - new Date(requestMetadata.timestamp).getTime(),
+      ...requestMetadata,
+    });
+  });
 };
 
 // Middleware
