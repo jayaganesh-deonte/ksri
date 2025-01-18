@@ -21,6 +21,51 @@ const store = appStore();
 import { getWebInstrumentations, initializeFaro } from "@grafana/faro-web-sdk";
 import { TracingInstrumentation } from "@grafana/faro-web-tracing";
 
+const postSessionDetailsToApi = async () => {
+  try {
+    const userSession = await trackSession();
+    console.log("userSession: ", userSession);
+
+    // if isFirstTime then post
+    if (!userSession.isFirstTime) {
+      return;
+    }
+
+    const runtimeConfig = useRuntimeConfig();
+    const apiUrl = runtimeConfig.public.API_URL;
+
+    // post session details to api
+    const response = await fetch(apiUrl + "/visitorCount", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userSession),
+    });
+  } catch (e) {
+    console.log("error in postSessionDetailsToApi: ", e);
+  }
+};
+
+const getUniqueUserHash = async () => {
+  const useVisitorTracking = await trackVisitor();
+
+  console.log("useVisitorTracking: ", useVisitorTracking);
+
+  if (useVisitorTracking.is_first_time) {
+    // post visitor details to api
+    const runtimeConfig = useRuntimeConfig();
+    const apiUrl = runtimeConfig.public.API_URL;
+    const response = await fetch(apiUrl + "/uniqueVisitors", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(useVisitorTracking),
+    });
+  }
+};
+
 onMounted(async () => {
   initializeFaro({
     url: "https://faro-collector-prod-ap-south-1.grafana.net/collect/6d657c7339fbce11beb53cbcc239e65d",
@@ -44,6 +89,11 @@ onMounted(async () => {
 
   // get data from actions
   await store.getAllDataFromApi();
+
+  // post session details to api
+  await postSessionDetailsToApi();
+
+  await getUniqueUserHash();
 });
 </script>
 

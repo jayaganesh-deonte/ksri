@@ -52,6 +52,9 @@ import { dashboardRoute } from "./dashboard";
 
 import { advisoryBoardRouter } from "./advisoryBoard";
 
+import { visitorCountRoute } from "./visitorCount";
+import { uniqueVisitorsRoute } from "./uniqueVistors";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -104,3 +107,6 @@ routes.use(deployRoute);
 routes.use(dashboardRoute);
 
 routes.use(advisoryBoardRouter);
+
+routes.use(visitorCountRoute);
+routes.use(uniqueVisitorsRoute);

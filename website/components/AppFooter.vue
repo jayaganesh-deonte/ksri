@@ -43,19 +43,26 @@
       © {{ currentYear }} The Kuppuswami Sastri Research Institute All Rights
       Reserved.
     </div>
-    <div class="text-center">
-      Developed by
-      <a
-        href="https://deonte.in/"
-        target="_blank"
-        style="text-decoration: unset"
-        >deonte.in</a
-      >
+    <div class="">
+      <div class="text-center">
+        Developed by
+        <a
+          href="https://deonte.in/"
+          target="_blank"
+          style="text-decoration: unset"
+          >deonte.in</a
+        >
+      </div>
+      <!-- website visitors  count -->
+      <div class="text-center" v-if="visitorCount > 0">
+        <div>Website Visitors: {{ visitorCount }}</div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import axios from "axios";
 const footerLinks = reactive({
   links: [
     {
@@ -202,4 +209,18 @@ const footerLinks = reactive({
 });
 
 const currentYear = new Date().getFullYear();
+
+const visitorCount = ref(0);
+
+onMounted(async () => {
+  const runtimeConfig = useRuntimeConfig();
+  const apiUrl = runtimeConfig.public.API_URL + "/visitorCount";
+  try {
+    const response = await axios.get(apiUrl);
+    console.log("get visitorCount: ", response);
+    visitorCount.value = response.data.visitorCount;
+  } catch (error) {
+    console.error("Error fetching visitor count:", error);
+  }
+});
 </script>
