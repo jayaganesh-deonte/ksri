@@ -42,7 +42,7 @@ Resources:
             - "*"
           AllowHeaders:
             - "*"
-      # ReservedConcurrentExecutions: 2
+      ReservedConcurrentExecutions: 4
       Environment:
         Variables:
           DDB_TABLE_NAME: !Ref masterTable
@@ -92,7 +92,7 @@ Resources:
             - "*"
           AllowHeaders:
             - "*"
-      # ReservedConcurrentExecutions: 5
+      ReservedConcurrentExecutions: 2
       Environment:
         Variables:
           DDB_TABLE_NAME: !Ref masterTable
