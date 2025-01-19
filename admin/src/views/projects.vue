@@ -16,25 +16,19 @@
 </template>
 
 <script setup>
+import axiosInstance from "@/axios";
 import { ref, reactive } from "vue";
-import { getUserIdToken } from "@/services/auth";
-import axios from "axios";
 
-const apiEndpoint = import.meta.env.VITE_API_URL + "/projects";
+const apiEndpoint = "/projects";
 
 let projectSeriesMappings = reactive({});
 
 let allSubSeries = reactive([]);
 
 const getProjectSeries = async () => {
-  const apiEndpoint = import.meta.env.VITE_API_URL + "/project/series";
-  const idToken = await getUserIdToken();
+  const apiEndpoint = "/project/series";
 
-  const response = await axios.get(apiEndpoint, {
-    headers: {
-      Authorization: `${idToken}`,
-    },
-  });
+  const response = await axiosInstance.get(apiEndpoint);
 
   if (response.status === 200) {
     // add name to projectSeriesMappingsData
@@ -70,14 +64,9 @@ let supervisors = [];
 const getSupervisors = async () => {
   isLoading.value = true;
 
-  const idToken = await getUserIdToken();
-  const apiEndpoint = import.meta.env.VITE_API_URL + "/supervisor";
+  const apiEndpoint = "/supervisor";
 
-  const response = await axios.get(apiEndpoint, {
-    headers: {
-      Authorization: `${idToken}`,
-    },
-  });
+  const response = await axiosInstance.get(apiEndpoint);
 
   if (response.status === 200) {
     // get names only

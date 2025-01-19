@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-const apiEndpoint = import.meta.env.VITE_API_URL + "/faculty/designation";
+const apiEndpoint = "/faculty/designation";
 
 // {
 //     id, name, orderId

@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-const apiEndpoint = import.meta.env.VITE_API_URL + "/project/series";
+const apiEndpoint = "/project/series";
 
 const projectFields = [
   {

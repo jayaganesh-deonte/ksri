@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-const apiEndpoint = import.meta.env.VITE_API_URL + "/events";
+const apiEndpoint = "/events";
 
 const eventsFields = [
   {

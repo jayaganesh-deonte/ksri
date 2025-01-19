@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-const apiEndpoint = import.meta.env.VITE_API_URL + "/gallery/collections";
+const apiEndpoint = "/gallery/collections";
 
 const galleryCollectionFields = [
   {

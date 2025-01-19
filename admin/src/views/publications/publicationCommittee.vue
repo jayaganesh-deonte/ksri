@@ -10,8 +10,7 @@
 </template>
 
 <script setup>
-const apiEndpoint =
-  import.meta.env.VITE_API_URL + "/publications/committee-members";
+const apiEndpoint = "/publications/committee-members";
 
 const editorialFields = [
   {

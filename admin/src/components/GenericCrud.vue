@@ -372,7 +372,7 @@
 </template>
 
 <script setup>
-import axios from "axios";
+import axiosInstance from "@/axios";
 import {
   ref,
   onMounted,
@@ -394,8 +394,6 @@ import { storeToRefs } from "pinia";
 
 const store = useAppStore();
 const { isEditDisabledForUser, isDeleteDisabledForUser } = storeToRefs(store);
-
-import { getUserIdToken } from "@/services/auth";
 
 const props = defineProps({
   entityName: {
@@ -550,12 +548,7 @@ const fetchItems = async () => {
 
       do {
         //  get id token
-        const idToken = await getUserIdToken();
-
-        const response = await axios.get(props.apiEndpoint, {
-          headers: {
-            Authorization: `${idToken}`,
-          },
+        const response = await axiosInstance.get(props.apiEndpoint, {
           params: {
             lastEvaluatedKey: lastEvaluatedKey,
             limit: 10000,
@@ -569,13 +562,8 @@ const fetchItems = async () => {
       items.value = allItems;
     } else {
       //  get id token
-      const idToken = await getUserIdToken();
 
-      const response = await axios.get(props.apiEndpoint, {
-        headers: {
-          Authorization: `${idToken}`,
-        },
-      });
+      const response = await axiosInstance.get(props.apiEndpoint);
       items.value = response.data;
     }
     loading.value = false;
@@ -607,21 +595,10 @@ const editItem = (item) => {
 
 const updatePendingForDeployment = async () => {
   //make POST call to /deploy/pending
-  let idToken = await getUserIdToken();
 
   store.isDeploymentPending = true;
 
-  const apiEndpoint = import.meta.env.VITE_API_URL + "/deploy/pending";
-
-  await axios.post(
-    apiEndpoint,
-    {},
-    {
-      headers: {
-        Authorization: `${idToken}`,
-      },
-    }
-  );
+  await axiosInstance.post("/deploy/pending", {});
 };
 
 const deleteItem = (item) => {
@@ -640,14 +617,8 @@ const deleteItem = (item) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        //  get id token
-        const idToken = await getUserIdToken();
-
-        const response = await axios.delete(props.apiEndpoint, {
+        const response = await axiosInstance.delete(props.apiEndpoint, {
           data: item,
-          headers: {
-            Authorization: `${idToken}`,
-          },
         });
 
         if (response.status === 200) {
@@ -723,14 +694,7 @@ const save = async () => {
 
     console.log("payload", payload);
 
-    //  get id token
-    const idToken = await getUserIdToken();
-
-    const response = await axios.post(props.apiEndpoint, payload, {
-      headers: {
-        Authorization: `${idToken}`,
-      },
-    });
+    const response = await axiosInstance.post(props.apiEndpoint, payload);
 
     if (response.status === 200) {
       $toast.open({

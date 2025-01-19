@@ -10,7 +10,7 @@
 
 <script setup>
 const apiEndpoint =
-  import.meta.env.VITE_API_URL + "/governing-body-members-past";
+   "/governing-body-members-past";
 
 const endowmentFields = [
   {

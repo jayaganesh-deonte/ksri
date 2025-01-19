@@ -20,13 +20,12 @@
 </template>
 
 <script setup>
-import axios from "axios";
-import { getUserIdToken } from "@/services/auth";
 import { ref } from "vue";
 
 import FacultyCvDownloader from "@/components/FacultyCvDownloader.vue";
+import axiosInstance from "@/axios";
 
-const apiEndpoint = import.meta.env.VITE_API_URL + "/faculty";
+const apiEndpoint = "/faculty";
 
 let isLoading = ref(true);
 
@@ -41,16 +40,7 @@ let isLoading = ref(true);
 //     "profile": "https://d30y75l38k1y9.cloudfront.net/upload/media/Dr.K.S.Balasubramanian.docx"
 // }
 const fetchFacultyDesignations = async () => {
-  const idToken = await getUserIdToken();
-
-  const response = await axios.get(
-    import.meta.env.VITE_API_URL + "/faculty/designation",
-    {
-      headers: {
-        Authorization: `${idToken}`,
-      },
-    }
-  );
+  const response = await axiosInstance.get("/faculty/designation");
   // get only names
   const names = response.data.map((item) => item.name);
   return names;

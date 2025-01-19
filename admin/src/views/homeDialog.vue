@@ -11,7 +11,7 @@
 <script setup>
 // import { ref } from "vue";
 
-const apiEndpoint = import.meta.env.VITE_API_URL + "/homeDialog";
+const apiEndpoint = "/homeDialog";
 
 const homeDialogFields = [
   {

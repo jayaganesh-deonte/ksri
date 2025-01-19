@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-const apiEndpoint = import.meta.env.VITE_API_URL + "/library/journals";
+const apiEndpoint = "/library/journals";
 
 const entityFields = [
   {

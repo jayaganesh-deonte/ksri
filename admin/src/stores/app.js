@@ -1,8 +1,7 @@
 // Utilities
 // import logger from "@/utilities/logger";
 import { defineStore } from "pinia";
-import axios from "axios";
-import { getUserIdToken } from "@/services/auth";
+import axiosInstance from "@/axios";
 
 export const useAppStore = defineStore("app", {
   state: () => ({
@@ -49,15 +48,9 @@ export const useAppStore = defineStore("app", {
       }
     },
     async getDeploymentStatus() {
-      const apiEndpoint = import.meta.env.VITE_API_URL + "/deploy/status";
+      const apiEndpoint = "/deploy/status";
       // /deploy/status
-      const idToken = await getUserIdToken();
-      const response = await axios.get(apiEndpoint, {
-        headers: {
-          Authorization: `${idToken}`,
-        },
-      });
-      console.log(response);
+      const response = await axiosInstance.get(apiEndpoint);
       if (response.status == 200) {
         this.deploymentStatus = response.data;
         // if deploymentStatus contains status key
@@ -76,15 +69,9 @@ export const useAppStore = defineStore("app", {
       }
     },
     async checkDeploymentStatus() {
-      const apiEndpoint = import.meta.env.VITE_API_URL + "/deploy/pending";
+      const apiEndpoint = "/deploy/pending";
 
-      const idToken = await getUserIdToken();
-      const response = await axios.get(apiEndpoint, {
-        headers: {
-          Authorization: `${idToken}`,
-        },
-      });
-      console.log(response);
+      const response = await axiosInstance.get(apiEndpoint);
       if (response.status == 200) {
         this.deploymentStatus = response.data;
         if (this.deploymentStatus.status == "PENDING") {
@@ -99,27 +86,18 @@ export const useAppStore = defineStore("app", {
 
       // this.interval = 60000;
 
-      const apiEndpoint = import.meta.env.VITE_API_URL + "/deploy";
-      const idToken = await getUserIdToken();
+      const apiEndpoint = "/deploy";
 
       this.isDeploymentInProgress = true;
 
-      const response = await axios.post(
-        apiEndpoint,
-        {
-          metadata: {
-            created_at: new Date().toISOString(),
-            created_by: this.user.name,
-            updated_at: new Date().toISOString(),
-            updated_by: this.user.name,
-          },
+      const response = await axiosInstance.post(apiEndpoint, {
+        metadata: {
+          created_at: new Date().toISOString(),
+          created_by: this.user.name,
+          updated_at: new Date().toISOString(),
+          updated_by: this.user.name,
         },
-        {
-          headers: {
-            Authorization: `${idToken}`,
-          },
-        }
-      );
+      });
       console.log(response);
       if (response.status == 200) {
         this.isDeploymentPending = true;

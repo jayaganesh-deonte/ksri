@@ -16,21 +16,14 @@
 </template>
 
 <script setup>
-const apiEndpoint = import.meta.env.VITE_API_URL + "/publications/books";
-import { getUserIdToken } from "@/services/auth";
-import axios from "axios";
+const apiEndpoint = "/publications/books";
+import axiosInstance from "@/axios";
 import { ref } from "vue";
 
 const getAdditionalPublications = async () => {
-  const apiUrl =
-    import.meta.env.VITE_API_URL + "/publications/additionalPublications";
-  const token = await getUserIdToken();
+  const apiUrl = "/publications/additionalPublications";
 
-  const response = await axios.get(apiUrl, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const response = await axiosInstance.get(apiUrl);
   if (response.status === 200) {
     // order by orderId
     response.data.sort((a, b) => a.orderId - b.orderId);

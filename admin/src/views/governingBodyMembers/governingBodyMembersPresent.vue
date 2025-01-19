@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-const apiEndpoint = import.meta.env.VITE_API_URL + "/governing-body-members";
+const apiEndpoint = "/governing-body-members";
 
 const endowmentFields = [
   {

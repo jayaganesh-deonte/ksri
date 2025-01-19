@@ -9,14 +9,13 @@
 </template>
 
 <script>
-import { getUserIdToken } from "@/services/auth";
+import axiosInstance from "@/axios";
 
-import axios from "axios";
 export default {
   data() {
     return {
       galleryCollections: [],
-      apiEndpoint: import.meta.env.VITE_API_URL + "/gallery",
+      apiEndpoint: "/gallery",
       galleryHeaders: [
         {
           key: "description",
@@ -63,16 +62,9 @@ export default {
     },
   },
   async mounted() {
-    const idToken = await getUserIdToken();
+    const galleryCollectionUrl = "/gallery/collections";
 
-    const galleryCollectionUrl =
-      import.meta.env.VITE_API_URL + "/gallery/collections";
-
-    const response = await axios.get(galleryCollectionUrl, {
-      headers: {
-        Authorization: `${idToken}`,
-      },
-    });
+    const response = await axiosInstance.get(galleryCollectionUrl);
 
     this.galleryCollections = response.data.map(
       (collection) => collection.name

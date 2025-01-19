@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-const apiEndpoint = import.meta.env.VITE_API_URL + "/publications/journals";
+const apiEndpoint = "/publications/journals";
 
 import { ref } from "vue";
 

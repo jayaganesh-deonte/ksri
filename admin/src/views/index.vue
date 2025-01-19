@@ -43,11 +43,9 @@
 </template>
 
 <script setup>
+import axiosInstance from "@/axios";
 import { useAppStore } from "@/stores/app";
 import { onMounted, reactive, ref } from "vue";
-import { getUserIdToken } from "@/services/auth";
-import axios from "axios";
-
 const store = useAppStore();
 
 onMounted(async () => {
@@ -123,13 +121,8 @@ let dashboardData = reactive([
 let lastUpdatedTime = ref("");
 
 const getDashboardData = async () => {
-  const apiEndpoint = `${import.meta.env.VITE_API_URL}/dashboard`;
-  const idToken = await getUserIdToken();
-  const response = await axios.get(apiEndpoint, {
-    headers: {
-      Authorization: `${idToken}`,
-    },
-  });
+  const response = await axiosInstance.get("/dashboard");
+
   if (response.status === 200) {
     // convert to local time
     lastUpdatedTime.value = new Date(response.data.updatedOn).toLocaleString();

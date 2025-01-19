@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-const apiEndpoint = import.meta.env.VITE_API_URL + "/library/articles";
+const apiEndpoint = "/library/articles";
 
 const articleFields = [
   {

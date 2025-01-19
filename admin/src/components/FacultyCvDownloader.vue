@@ -1,6 +1,6 @@
 <script setup>
 import { usePDF } from "vue3-pdfmake";
-import axios from "axios";
+// import axios from "axios";
 
 const pdfmake = usePDF({
   autoInstallVFS: true,

@@ -17,13 +17,10 @@
 </template>
 
 <script setup>
-import axios from "axios";
-
+import axiosInstance from "@/axios";
 import { ref } from "vue";
 
-const apiEndpoint = import.meta.env.VITE_API_URL + "/students";
-
-import { getUserIdToken } from "@/services/auth";
+const apiEndpoint = "/students";
 
 let isLoading = ref(true);
 let supervisors = [];
@@ -31,14 +28,9 @@ let supervisors = [];
 const getSupervisors = async () => {
   isLoading.value = true;
 
-  const idToken = await getUserIdToken();
-  const apiEndpoint = import.meta.env.VITE_API_URL + "/supervisor";
+  const apiEndpoint = "/supervisor";
 
-  const response = await axios.get(apiEndpoint, {
-    headers: {
-      Authorization: `${idToken}`,
-    },
-  });
+  const response = await axiosInstance.get(apiEndpoint);
 
   if (response.status === 200) {
     // get names only
