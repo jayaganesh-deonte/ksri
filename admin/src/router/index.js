@@ -10,17 +10,17 @@ import {
 import { useAppStore } from "@/stores/app";
 
 import index from "@/views/index.vue";
-import milestone from "@/views/milestone.vue";
-import projects from "@/views/projects.vue";
-import projectsSeries from "@/views/projectsSeries.vue";
+import milestone from "@/views/institution/milestone.vue";
+import projects from "@/views/academic/projects.vue";
+import projectsSeries from "@/views/academic/projectsSeries.vue";
 
 import traditionalScholars from "@/views/scholars/traditionalScholars.vue";
 import foreignScholars from "@/views/scholars/foreignScholars.vue";
 // import modernScholars from "@/views/scholars/modernScholars.vue";
 
-import students from "@/views/students.vue";
+import students from "@/views/academic/students.vue";
 
-import endowments from "@/views/endowments.vue";
+import endowments from "@/views/institution/endowments.vue";
 
 // import governingBodyMembersPast from "@/views/governingBodyMembers/governingBodyMembersPast.vue";
 import governingBodyMembersPresent from "@/views/governingBodyMembers/governingBodyMembersPresent.vue";
@@ -34,30 +34,30 @@ import publicationCommittee from "@/views/publications/publicationCommittee.vue"
 import additionalPublications from "@/views/publications/additionalPublications.vue";
 import publicationsJournals from "@/views/publications/publicationsJournals.vue";
 
-import faculty from "@/views/faculty.vue";
+import faculty from "@/views/faculty/faculty.vue";
 
 import galleryCollections from "@/views/gallery/galleryCollections.vue";
 import galleryImages from "@/views/gallery/galleryImages.vue";
 
-import news from "@/views/news.vue";
-import events from "@/views/events.vue";
+import news from "@/views/updates/news.vue";
+import events from "@/views/updates/events.vue";
 
-import supervisor from "@/views/supervisor.vue";
-import researchArticles from "@/views/researchArticles.vue";
+import supervisor from "@/views/academic/supervisor.vue";
+import researchArticles from "@/views/academic/researchArticles.vue";
 
 import dainandini from "@/views/dainandini.vue";
-import homeDialog from "@/views/homeDialog.vue";
+import homeDialog from "@/views/updates/homeDialog.vue";
 
-import bannerText from "@/views/bannerText.vue";
+import bannerText from "@/views/updates/bannerText.vue";
 import users from "@/views/users.vue";
 
-import bankInfo from "@/views/bankInfo.vue";
-import postalAddress from "@/views/postalAddress.vue";
+import bankInfo from "@/views/institution/bankInfo.vue";
+import postalAddress from "@/views/institution/postalAddress.vue";
 
-import chair from "@/views/chair.vue";
-import facultyDesignations from "@/views/facultyDesignations.vue";
+import chair from "@/views/faculty/chair.vue";
+import facultyDesignations from "@/views/faculty/facultyDesignations.vue";
 
-import advisoryBoard from "@/views/advisoryBoard.vue";
+import advisoryBoard from "@/views/faculty/advisoryBoard.vue";
 
 const routes = [
   {
