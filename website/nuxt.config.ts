@@ -39,7 +39,11 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "nuxt-marquee",
     "@nuxt/content",
+    "nuxt-gtag",
   ],
+  gtag: {
+    id: "G-RSDND7PK45",
+  },
   app: {
     head: {
       charset: "utf-8",
