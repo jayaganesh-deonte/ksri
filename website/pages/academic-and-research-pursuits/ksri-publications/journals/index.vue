@@ -52,6 +52,7 @@
           variant="outlined"
           hide-details
         ></v-text-field>
+
         <!-- book catalogue -->
         <div class="ma-4">
           <v-row>
@@ -165,20 +166,6 @@ const ksriBooks = booksData.body;
 
 additionalPublicationJournals["KSRI"] = ksriBooks;
 
-// Add computed property for filtered books
-const filteredBooks = computed(() => {
-  const query = searchQuery.value.toLowerCase();
-
-  if (!query) return journals.value;
-
-  return journals.value.filter(
-    (journal) =>
-      journal.title?.toLowerCase().includes(query) ||
-      journal.author?.toLowerCase().includes(query) ||
-      journal.subtitle?.toLowerCase().includes(query)
-  );
-});
-
 const journals = computed((publicationName) => {
   return additionalPublicationJournals[publicationName];
 });
@@ -189,21 +176,20 @@ const filteJournalsBasedOnPublication = (publicationName) => {
 
   if (!query) return journals;
 
-  const removeDiacritics = (str) =>
-    str?.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const removeDiacritics = (str) => {
+    return str ? str.normalize("NFD").replace(/[\u0300-\u036f]/g, "") : "";
+  };
 
   const normalizedQuery = removeDiacritics(query);
 
   return journals.filter(
     (journal) =>
-      removeDiacritics(journal.title)
-        ?.toLowerCase()
-        .includes(normalizedQuery) ||
-      removeDiacritics(journal.author)
-        ?.toLowerCase()
-        .includes(normalizedQuery) ||
-      removeDiacritics(journal.subtitle)
-        ?.toLowerCase()
+      journal.title.toLowerCase().includes(normalizedQuery) ||
+      journal.subtitle?.toString().toLowerCase()?.includes(normalizedQuery) ||
+      journal.details?.toString().toLowerCase()?.includes(normalizedQuery) ||
+      journal.yearOfPublication
+        ?.toString()
+        .toLowerCase()
         .includes(normalizedQuery)
   );
 };
