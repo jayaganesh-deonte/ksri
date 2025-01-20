@@ -358,9 +358,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-03T06:30:18.043Z",
+      "updated_at": "2025-01-17T07:19:54.891Z",
       "created_by": "admin"
     },
     "author": " ",
@@ -644,6 +644,29 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
+    "title": "Mm. PROF. KUPPUSWAMI SASTRI BIRTH-CENTENARY COMMEMORATION VOLUME:  (2 parts)",
+    "subtitle": "Ed. by S. S. Janaki. |  The Kuppuswami Sastri Research, Institute, Madras,  |  1981. |  Rs. 185/- & Rs. 195/-",
+    "price": "₹ 380",
+    "imageUrls": [
+      "upload/kuppuswami-sastri-birth-centenary.jpg"
+    ],
+    "details": "<p>The present volume is of perennial interest as it contains the reprints of some of the contributions made by Mm. Prof. S. Kuppuswami Sastriar who was indisputably the most outstanding Sanskritist in the South during the first forty years of this century. Some of the reprints included are: Madana's Brahmasiddhi, Compromises in the History of Advaitic Thought, Highways and Byways of Literary Criticism in Sanskrit, Mukapancasati and the Convocation Address at the Madras University in 1936. Besides his works in Sanskrit, the Prof. was equally at home in ancient Tamil Literature as is evidenced by his Problems of Identity in the Cultural History of Ancient India dealing with Aravanavatikal of the Sangam age.\\nThe Adyar Library, Bulletin, Vol. 46, 1982.</p>",
+    "id": "01JGNDQ25X78M0H4DHX92M3D0M",
+    "publication": "KSRI",
+    "keywords": "Mm. PROF. KUPPUSWAMI SASTRI BIRTH-CENTENARY COMMEMORATION VOLUME",
+    "available": "Yes",
+    "copies": 10,
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-03T06:30:18.045Z",
+      "updated_at": "2025-01-17T07:19:00.548Z",
+      "created_by": "admin"
+    },
+    "author": "",
+    "yearOfPublication": "1981",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "title": "Srivacana Bhūsana of Pillai Lokacarya",
     "subtitle": " ",
     "price": "₹ 15",
@@ -786,7 +809,7 @@
     "subtitle": " ",
     "price": "'-",
     "imageUrls": [
-      "images/image013.jpg"
+      "images/CINTAAA.jpeg"
     ],
     "details": "",
     "id": "01JGNDQ25WQKT3F6Y58QB5G8GE",
@@ -795,9 +818,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
+      "updated_at": "2025-01-17T06:50:31.504Z",
       "created_by": "admin"
     },
     "author": "Edited by D.D. Kosambi",
@@ -809,7 +832,7 @@
     "subtitle": " ",
     "price": "₹ 8",
     "imageUrls": [
-      "images/image008.jpg"
+      "images/dhvanyaloka.jpeg"
     ],
     "details": "",
     "id": "01JGNDQ25XJDJ32JT10FH86RE0",
@@ -818,9 +841,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
+      "updated_at": "2025-01-17T07:08:05.947Z",
       "created_by": "admin"
     },
     "author": "Mm. Prof. S. Kuppuswami Sastri",
@@ -1173,16 +1196,16 @@
     "imageUrls": [
       "upload/kudiyattam-preliminaries-and-performance.jpg"
     ],
-    "details": "“This is the second book on Kūḍiyāṭṭam prepared under the A.C.Rangarajan Endowment for Indological studies by L.S.Rajagopalan and published by KSRI. “The central part of this volume is a detailed account of the Toraṇayuddha scene from Abhiṣekanāṭaka, one of the so-called Bhāsa Plays. It is a sequel to his earlier book Women's Role in Kūḍiyāṭṭam. Rajagopalan discusses all practical and theoretical aspects of the performance on the stage. A glossary and appendices on Akkitta and Araṅgutali, have been added. It is an excellent work.”\\nK. K. Raja, Adyar Library Bulletien.",
+    "details": "<p>“This is the second book on Kūḍiyāṭṭam prepared under the A.C.Rangarajan Endowment for Indological studies by L.S.Rajagopalan and published by KSRI. “The central part of this volume is a detailed account of the Toraṇayuddha scene from Abhiṣekanāṭaka, one of the so-called Bhāsa Plays. It is a sequel to his earlier book Women's Role in Kūḍiyāṭṭam. Rajagopalan discusses all practical and theoretical aspects of the performance on the stage. A glossary and appendices on Akkitta and Araṅgutali, have been added. It is an excellent work.”\\nK. K. Raja, Adyar Library Bulletien.</p>",
     "id": "01JGNDQ25TGSXH9PQ37K2CM3M3",
     "publication": "KSRI",
-    "keywords": "",
+    "keywords": "Kudiyattam",
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
+      "updated_at": "2025-01-17T06:34:33.240Z",
       "created_by": "admin"
     },
     "author": "",
@@ -1227,27 +1250,6 @@
       "updated_by": "admin",
       "created_at": "2025-01-03T06:30:18.042Z",
       "updated_at": "2025-01-03T06:30:18.042Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Kudiyattam: Preliminaries & Performance by Sri L.S.Rajagopalan",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25V1KRNR4HGTE70Q7EA",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-03T06:30:18.043Z",
       "created_by": "admin"
     },
     "author": "",
@@ -1783,29 +1785,6 @@
     "publication": "KSRI",
     "keywords": "",
     "available": "No",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Mm. PROF. KUPPUSWAMI SASTRI BIRTH-CENTENARY COMMEMORATION VOLUME:  (2 parts)",
-    "subtitle": "Ed. by S. S. Janaki. |  The Kuppuswami Sastri Research, Institute, Madras,  |  1981. |  Rs. 185/- & Rs. 195/-",
-    "price": "₹ 380",
-    "imageUrls": [
-      "upload/kuppuswami-sastri-birth-centenary.jpg"
-    ],
-    "details": "The present volume is of perennial interest as it contains the reprints of some of the contributions made by Mm. Prof. S. Kuppuswami Sastriar who was indisputably the most outstanding Sanskritist in the South during the first forty years of this century. Some of the reprints included are: Madana's Brahmasiddhi, Compromises in the History of Advaitic Thought, Highways and Byways of Literary Criticism in Sanskrit, Mukapancasati and the Convocation Address at the Madras University in 1936. Besides his works in Sanskrit, the Prof. was equally at home in ancient Tamil Literature as is evidenced by his Problems of Identity in the Cultural History of Ancient India dealing with Aravanavatikal of the Sangam age.\\nThe Adyar Library, Bulletin, Vol. 46, 1982.",
-    "id": "01JGNDQ25X78M0H4DHX92M3D0M",
-    "publication": "KSRI",
-    "keywords": "",
-    "available": "Yes",
     "copies": 10,
     "metadata": {
       "updated_by": "admin",

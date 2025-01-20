@@ -108,6 +108,12 @@ const projectFields = [
     rules: [(v) => !!v || "Sub Title is required"],
   },
   {
+    key: "description",
+    label: "Description",
+    type: "textarea",
+    // rules: [(v) => !!v || "Description is required"],
+  },
+  {
     key: "startYear",
     label: "Started Year",
     type: "text",

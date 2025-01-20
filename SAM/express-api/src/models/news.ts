@@ -79,13 +79,13 @@ export const toDynamoDB = (item: News): NewsDDB => {
 // validate News
 export function validateNews(item: News): boolean {
   return (
-    Array.isArray(item.avatarImage) &&
+    // Array.isArray(item.avatarImage) &&
     typeof item.text === "string" &&
     // typeof item.details_page === "string" &&
     typeof item.heading === "string" &&
     typeof item.title === "string" &&
-    Array.isArray(item.heading_image_url) &&
-    Array.isArray(item.images) &&
+    // Array.isArray(item.heading_image_url) &&
+    // Array.isArray(item.images) &&
     typeof item.id === "string" &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&

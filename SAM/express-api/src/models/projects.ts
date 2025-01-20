@@ -8,6 +8,7 @@ export interface Project {
   id: string;
   title: string;
   subTitle: string; // Made required since all project types have it
+  description?: string;
   startYear?: string; // Optional start year for all projects
   completedYear?: string; // Optional as only completed projects have years
   status: "Completed" | "On-Going" | "Future Projects"; // Using literal types for status
@@ -30,6 +31,7 @@ export interface ProjectDDB {
   id: string;
   title: string;
   subTitle: string;
+  description?: string;
   startYear?: string;
   completedYear?: string;
   status: string;
@@ -50,6 +52,7 @@ export function fromDynamoDB(item: ProjectDDB): Project {
     id: item.id,
     title: item.title,
     subTitle: item.subTitle,
+    description: item.description,
     startYear: item.startYear,
     completedYear: item.completedYear,
     status: item.status as Project["status"],
@@ -77,6 +80,7 @@ export function toDynamoDB(project: Project): ProjectDDB {
     id: project.id,
     title: project.title,
     subTitle: project.subTitle,
+    description: project.description,
     startYear: project.startYear,
     completedYear: project.completedYear,
     status: project.status,
@@ -102,6 +106,8 @@ export function isProjectDDB(item: any): item is ProjectDDB {
     typeof item.id === "string" &&
     typeof item.title === "string" &&
     typeof item.subTitle === "string" &&
+    (typeof item.description === "undefined" ||
+      typeof item.description === "string") &&
     typeof item.status === "string" &&
     (typeof item.startYear === "undefined" ||
       typeof item.startYear === "string") &&

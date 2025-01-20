@@ -26,29 +26,40 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGM4T8Y1A7YXJ6G1C242KGWH",
-    "title": "Cataloguing of Palm-Leaf Manuscripts",
-    "subTitle": "The KSRI has a well-maintained collection of hundreds of ancient palm-leaf and papers manuscript. However, for want of resources we have not been able to prepare a Descriptive Catalogue and also digitize the manuscripts. Once this is done and hosted on the web-site, scholars from across the globe can have easy access to them. The manuscripts are in different scripts like Grantha, Devanagari, Tigalari, Malayalam and Tamil. Some of them are of historical value too. We need at least one scholar well versed in deciphering the scripts and prepare a Descriptive Catalogue.",
-    "status": "Future Projects",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:35:31.649Z",
-      "updated_at": "2025-01-02T18:35:31.649Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "id": "01JGM4T8Y1E8HS3T2YYR2HN324",
     "title": "Vaishnava Agamas",
     "subTitle": "These are ancient original Sanskrit texts which give valuable information about temple architecture, rituals, installation of various deities, Yogic practices etc. These are still followed in many temples in India. The Institute possesses rare hand written copies of these two agama texts, each 300 pages long, with scribal errors which may have to be edited.",
     "status": "Future Projects",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-02T18:35:31.649Z",
-      "updated_at": "2025-01-02T18:35:31.649Z",
+      "updated_at": "2025-01-18T11:08:37.794Z",
       "created_by": "admin"
     },
+    "projectSeries": "Ancient Indian Knowledge Series",
+    "projectSubSeries": "Philosophy",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM55YZZDW0DRRTVBQPWCVP8",
+    "title": "Mathematics",
+    "subTitle": "mathematics",
+    "startYear": "",
+    "completedYear": "",
+    "status": "Future Projects",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-02T18:41:54.687Z",
+      "updated_at": "2025-01-18T10:26:09.522Z",
+      "created_by": "demo"
+    },
+    "sponsor": "",
+    "keywords": "",
+    "projectSeries": "Ancient Indian Knowledge Series",
+    "projectSubSeries": "Science",
+    "publicationStatus": "",
+    "projectInvestigator": "",
+    "coProjectInvestigators": "",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -57,56 +68,19 @@
     "subTitle": "There are 20 minor Upanishads dealing on various precepts and practices of Yoga. They have been collected and published as \"Yoga Upanishads' by the Adyar Library Research Centre more than fifty years ago and separate translation in English has also been published. However there are many errors in the original texts and subsequently in the translation as well. KSRI published three such Yoga Upanishads with correct \"readings' in original Sanskrit with Roman transliteration, English translation, and Notes. We would like to publish the rest of seventeen texts.",
     "status": "Future Projects",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-02T18:35:31.649Z",
-      "updated_at": "2025-01-02T18:35:31.649Z",
+      "updated_at": "2025-01-18T11:12:08.130Z",
       "created_by": "admin"
     },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM4T8Y0ATRFXCQ3V5RK74QM",
-    "title": "Svarodaya Science of Yoga",
-    "subTitle": "Yoga is one of the greatest contributions of India to the world. There are many branches of Yoga such as Karma, Jnana, Bhakti, Hatha, Laya, Mantra, and Kundalini. Svarodaya science of Yoga is very useful for the health of human being and also in predicting one's future. It is based on breathing pattern of each individual. Not many texts are available on this ancient science. The present project would help in knowing more about this forgotten branch of Yoga.",
-    "status": "Future Projects",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:35:31.649Z",
-      "updated_at": "2025-01-02T18:35:31.649Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM4T8Y1PBGJR8R9HWQJNYZQ",
-    "title": "Evolution of Earth in Puranas",
-    "subTitle": "Puranas devote quite a sizeable portion of the texts for the description of earth and its evolution (sarga-pratisharga). Usually the technique adopted in giving even difficult concepts is by means of a story, symbolic representation or allegorical stories. The present project envisages to bring out such ancient knowledge on evolution of earth, climate changes, changes in earth surface due to passage of time, the concept of deluge (pralaya) etc. with the help of recently known scientific facts. An attempt will also be made to reconstruct the geological history of earth and divide it into geological ages based on Puranic information.",
-    "status": "Future Projects",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:35:31.649Z",
-      "updated_at": "2025-01-02T18:35:31.649Z",
-      "created_by": "admin"
-    },
+    "projectSeries": "Ancient Indian Knowledge Series",
+    "projectSubSeries": "Philosophy",
     "itemPublishStatus": "PUBLISHED"
   },
   {
     "id": "01JGM4T8Y1MYRMTZTV59PF1DC3",
     "title": "Architecture and Vastu",
     "subTitle": "India's contribution to the field of architecture is unmatched. There are thousands of historical monuments / palaces/ temples which have withstood various challenges, both man-made and natural phenomena for hundreds of years. Mnasra is an ancient text, more than 1000 years old that treats architecture in various aspects.",
-    "status": "Future Projects",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:35:31.649Z",
-      "updated_at": "2025-01-02T18:35:31.649Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM4T8Y1E6KRANTBZAJ6NE0V",
-    "title": "Viracarita of Anantakavi",
-    "subTitle": "This is a Mahakavya which throws much light on the empire of Vikramaditya and Salivahanaera.This is being critically edited for the first time",
     "status": "Future Projects",
     "metadata": {
       "updated_by": "admin",

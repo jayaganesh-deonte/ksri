@@ -77,6 +77,14 @@
             </v-simple-table>
           </v-col>
         </v-row>
+        <v-row>
+          <!-- description -->
+          <v-col cols="12">
+            <div class="text-body-1" data-aos="fade-right">
+              {{ project.description }}
+            </div>
+          </v-col>
+        </v-row>
       </v-card>
     </v-col>
   </v-row>

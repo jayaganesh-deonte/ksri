@@ -17,10 +17,373 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-02T18:53:50.279Z",
-      "updated_at": "2025-01-04T06:02:36.261Z",
+      "updated_at": "2025-01-11T14:47:01.374Z",
       "created_by": "admin"
     },
     "orderId": "1",
+    "teachingExperience": [
+      {
+        "duration": "Since 2021 – till date",
+        "organisation": "The Kuppuswami Sastri Research Institute, Mylapore, Chennai",
+        "designation": "Assistant Professor"
+      },
+      {
+        "duration": "2008-2021",
+        "organisation": "Terapanth Jain Vidyalaya Mat. Hr. Sec. School, Chennai",
+        "designation": "PGT (Sanskrit)"
+      },
+      {
+        "duration": "2007-2008",
+        "organisation": "St. John's International Residential School, Chennai",
+        "designation": "TGT (Sanskrit)"
+      },
+      {
+        "duration": "2005-2007",
+        "organisation": "Devi Academy Sr. Sec. School, Chennai",
+        "designation": "TGT (Sanskrit)"
+      },
+      {
+        "duration": "2004-2005",
+        "organisation": "Chinmaya Vidyalaya Sr. Sec. School, Chennai",
+        "designation": "Sanskrit Teacher (Part-Time)"
+      }
+    ],
+    "academicPositions": [
+      {
+        "description": "for Doctoral Programme 1) The Madras Sanskrit College 2) Madras Univesrity ii) IQAC MEMBER",
+        "position": "Research Advisory Committee"
+      }
+    ],
+    "booksPublished": [
+      {
+        "publisher": "KSRI",
+        "yearOfPublication": "2023",
+        "title": "Kṛṣiparāśara with English Translation & Notes",
+        "sNo": "1",
+        "remarks": "Published",
+        "isbn": "978-81-85170-80-0"
+      },
+      {
+        "publisher": "KSRI",
+        "yearOfPublication": "2024",
+        "title": "Śeṣasaṁhitā – A Pāñcarātra Āgama text (Edited)",
+        "sNo": "2",
+        "remarks": "Published",
+        "isbn": "978-81-85170-82-4"
+      }
+    ],
+    "articlesPublished": [
+      {
+        "monthAndYear": "",
+        "title": "Ayyā Kumāratātācārya in Śatakratuvaṁśavilāsakāvyaṁ",
+        "nameOfTheJournal": "JOR. Vols.- 85-86",
+        "sNo": "1",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2021",
+        "title": "Rāmānujācārya and Aṣṭāṅgayoga",
+        "nameOfTheJournal": "Prācyā - Vol-XIII",
+        "sNo": "2",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2022",
+        "title": "Seeds of Fable in Vedic Literature",
+        "nameOfTheJournal": "Prācyā- Vol-XIV",
+        "sNo": "3",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "April, 2023",
+        "title": "Agricultural Implements in Vedic Literature",
+        "nameOfTheJournal": "Veda Vanee, e-Journal",
+        "sNo": "4",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "April, 2023",
+        "title": "Nārāyaṇīyam’s Teachings on Caturvimśatigurus\tRasikapriya, Vol.9\tApril, 2023\t\tPublished",
+        "nameOfTheJournal": "Rasikapriya, Vol.9",
+        "sNo": "5",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "May,2023",
+        "title": "Significance of Environment in the practice of Yoga",
+        "nameOfTheJournal": "JOR, Special Vol-XCIII",
+        "sNo": "6",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "June, 2024",
+        "title": "Yogatattvopaniṣad – An Introduction",
+        "nameOfTheJournal": "JOR,Vol- XCIV-XCV ",
+        "sNo": "7",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "",
+        "title": "Worship of Deities Garuḍa and Sudarśana in Śeṣasaṁhitā",
+        "nameOfTheJournal": "JOR,Vol- XCVI",
+        "sNo": "8",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      }
+    ],
+    "projects": [
+      {
+        "sponsor": "Central Sanskrit University, Delhi",
+        "monthAndYear": "",
+        "remarks": "On-Going",
+        "projectTitle": "EDITION OF BRĀHMĪYA CITRAKARMA ŚĀSTRAM (A TEXT ON ANCIENT INDIAN ICONOGRAPHY) WITH ENGLISH TRANSLATION"
+      },
+      {
+        "sponsor": "Private",
+        "monthAndYear": "May, 2023",
+        "remarks": "Completed",
+        "projectTitle": "Kṛṣiparāśara with English Translation & Notes"
+      },
+      {
+        "sponsor": "Private",
+        "monthAndYear": "Sep.2024",
+        "remarks": "Completed",
+        "projectTitle": "Śeṣasaṁhitā – A Pāñcarātra Āgama text (Edited)"
+      }
+    ],
+    "seminars": [
+      {
+        "monthAndYear": "22-03-2012",
+        "theme": "",
+        "organisers": "Dept. of Jainology, University of Madras, Chennai",
+        "titleOfThePaper": "Karma Rebirth and Healing",
+        "slNo": "1"
+      },
+      {
+        "monthAndYear": "22 & 23 Jan 2014",
+        "theme": "Ancient Sciences and Archeology",
+        "organisers": "Sri Parashakthi College for Women, Courtallam, Tamilnadu  (sponsored by ICHR)",
+        "titleOfThePaper": "Trees in Sanskrit Literature",
+        "slNo": "2"
+      },
+      {
+        "monthAndYear": "11-13 Sep 2015",
+        "theme": "",
+        "organisers": "Meenakshi College, Kodambakkam, Chennai ( conducted by Samskrita Bharati)",
+        "titleOfThePaper": "Kumāratātācārya - A Renowned Scholar in Nayak's rule",
+        "slNo": "3"
+      },
+      {
+        "monthAndYear": "28-30 Aug, 2018",
+        "theme": "Indian Spiritual heritage through Sanskrit Devotional Literature of South India",
+        "organisers": "Pondicherry University",
+        "titleOfThePaper": "Prapatti – Means to Mokṣa, The message of Abhītistava",
+        "slNo": "4"
+      },
+      {
+        "monthAndYear": "26 & 27 Mar 2021",
+        "theme": "",
+        "organisers": "Indic Academy, Bangalore",
+        "titleOfThePaper": "Rīti in Agnipurāṇa",
+        "slNo": "5"
+      },
+      {
+        "monthAndYear": "27 – 29 Dec 2021",
+        "theme": "Sanātana dharma samājaśreya",
+        "organisers": "Sanskrit Academy ( Osmania University)",
+        "titleOfThePaper": "Protection of trees through protection of Environment",
+        "slNo": "6"
+      },
+      {
+        "monthAndYear": "26 – 28 Feb 2022",
+        "theme": "Indian Scientific Heritage",
+        "organisers": "MDK Hindu Girls' College, Sonipat",
+        "titleOfThePaper": "Dress and Ornaments noted by Pāṇini",
+        "slNo": "7"
+      },
+      {
+        "monthAndYear": "26-03-22",
+        "theme": "",
+        "organisers": "Shree Raghuvanshi Lohana Mahajan Wadi, Vadodara, Gujarat",
+        "titleOfThePaper": "Yoga in Viśiṣṭādvaita Philosophy",
+        "slNo": "8"
+      },
+      {
+        "monthAndYear": "22-05-22",
+        "theme": "",
+        "organisers": "Veda Saṁskṛti Samiti, Hyderabad",
+        "titleOfThePaper": "Agricultural Implements in Vedic Literature",
+        "slNo": "9"
+      },
+      {
+        "monthAndYear": "30-05-22",
+        "theme": "Artificial Intelligence and allied Sciences in Sanskrit Literature",
+        "organisers": "Loyola College ( Chennai) Sanskrit Dept",
+        "titleOfThePaper": "Ancient India's connection with fertilization",
+        "slNo": "10"
+      },
+      {
+        "monthAndYear": "9 &10 Dec 2022",
+        "theme": "Science and Technology in Sanskrit Texts",
+        "organisers": "Assam University in collaboration with Samskritha Bharathi",
+        "titleOfThePaper": "Kuṇapajala-an Ancient Indian Technique for nourishing the Flora",
+        "slNo": "11"
+      },
+      {
+        "monthAndYear": "8 & 9 Jan 2023",
+        "theme": "Śrīmannārāyaṇīyam",
+        "organisers": "The Madras Sanskrit College, Mylapore, Chennai",
+        "titleOfThePaper": "The Philosophy of Nārāyaṇīyam",
+        "slNo": "12"
+      },
+      {
+        "monthAndYear": "21-07-23",
+        "theme": "Samskṛtavāṅmaye yoga",
+        "organisers": "Sri Sankara Arts and Science College, Enathur",
+        "titleOfThePaper": "Influence of Yoga on Tantra",
+        "slNo": "13"
+      },
+      {
+        "monthAndYear": "21 & 22 Aug 2023",
+        "theme": "Arts and Architecture",
+        "organisers": "The Kuppuswami Sastri Research Institute, Mylapore, Chennai",
+        "titleOfThePaper": "Sowing of seeds as gleaned from Kṛṣiparāśara",
+        "slNo": "14"
+      },
+      {
+        "monthAndYear": "24 & 25 Nov.23",
+        "theme": "Bhakti Literature in Sanskrit and Tamil",
+        "organisers": "The Kuppuswami Sastri Research Institute, Mylapore, Chennai",
+        "titleOfThePaper": "Garuḍa Bhakti of Śrī Vedānta Deśika",
+        "slNo": "15"
+      },
+      {
+        "monthAndYear": "11-15 Dec.2023",
+        "theme": "Bhagavad Gītā (matatraya vivecanam)",
+        "organisers": "The Madras Sanskrit College, Mylapore, Chennai",
+        "titleOfThePaper": "Participated",
+        "slNo": "16"
+      },
+      {
+        "monthAndYear": "28 & 29 March 2024",
+        "theme": "Minor Deities in Indian Art",
+        "organisers": "C.P.Ramaswami Aiyar Institute of Indological Research Centre",
+        "titleOfThePaper": "Worship of Deities Garuḍa and Sudarśana as enunciated in Śeṣa Samhitā",
+        "slNo": "17"
+      },
+      {
+        "monthAndYear": "30 & 31March 2024",
+        "theme": "Kumārasambhavamīmāmsā",
+        "organisers": "The Madras Sanskrit College",
+        "titleOfThePaper": "Kumārasambhave rativilāpa",
+        "slNo": "18"
+      },
+      {
+        "monthAndYear": "28 & 29 June, 2024",
+        "theme": "Sanskrit Literature",
+        "organisers": "The Kuppuswami Sastri Research Institute, Mylapore, Chennai",
+        "titleOfThePaper": "Participated",
+        "slNo": "19"
+      },
+      {
+        "monthAndYear": "26 & 27 July 2024",
+        "theme": "Ancient Indian Mathematics and Astronomy",
+        "organisers": "The Kuppuswami Sastri Research Institute, Mylapore, Chennai",
+        "titleOfThePaper": "Participated",
+        "slNo": "20"
+      },
+      {
+        "monthAndYear": "28 & 29 December 2024",
+        "theme": "Methodology of Research in Sanskrit",
+        "organisers": "The Madras Sanskrit College",
+        "titleOfThePaper": "tattvaśāstre śodhaviṣayacayanam",
+        "slNo": "21"
+      }
+    ],
+    "lectures": [
+      {
+        "monthAndYear": "March 12, 2021",
+        "organisers": "The Samskrita Academy, Madras",
+        "titleOfTheTalk": "Kumāratātācārya – His Life and Works",
+        "slNo": "1"
+      },
+      {
+        "monthAndYear": "Oct.6, 2022",
+        "organisers": "MOP Vaishnav College for Women",
+        "titleOfTheTalk": "Introduction to Vedas",
+        "slNo": "2"
+      },
+      {
+        "monthAndYear": "July 12, 2022",
+        "organisers": "Sri Sankara Arts and Science College, Enathur, Kanchipuram",
+        "titleOfTheTalk": "Vaishnavism and Patañjala Yoga",
+        "slNo": "3"
+      },
+      {
+        "monthAndYear": "Aug. 24, 2024",
+        "organisers": "The Samskrita Academy, Madras",
+        "titleOfTheTalk": "Pādukā Sahasram of Śrī Vedānta Deśika",
+        "slNo": "4"
+      },
+      {
+        "monthAndYear": "August 20 & 27",
+        "organisers": "All India Radio, Tamilnadu",
+        "titleOfTheTalk": "parāśararin pārvaiyil mazhayin gaṇippu matṛum vithayin payanpāṭu",
+        "slNo": "5"
+      }
+    ],
+    "awards": [
+      {
+        "organisation": "The Madras Sanskrit College, Chennai",
+        "title": "sāhitya viśārada",
+        "year": "2002",
+        "remarks": "",
+        "slNo": "1"
+      },
+      {
+        "organisation": "University of Madras",
+        "title": "Siromaṇi (Sāhitya)",
+        "year": "2001",
+        "remarks": "",
+        "slNo": "2"
+      }
+    ],
+    "extensionActivities": [
+      {
+        "date": "May 6, 2023",
+        "activity": "External Examiner for Viva Voce Examination",
+        "sNo": "1",
+        "description": "",
+        "monthAndYear": "May 6, 2023",
+        "title": "External Examiner for Viva Voce Examination for Certificate Course in Sanskrit",
+        "slNo": "1"
+      },
+      {
+        "date": "24 & 25 Nov.2023",
+        "activity": "Co-ordinator for National Seminar",
+        "sNo": "2",
+        "description": "",
+        "monthAndYear": "24 & 25 Nov.2023",
+        "title": "Co-ordinator for the National Seminar ‘Bhakti Literature in Sanskrit and Tamil’",
+        "slNo": "2"
+      },
+      {
+        "date": "22 & 23 Nov. 2024",
+        "activity": "Co-ordinator for National Seminar",
+        "sNo": "3",
+        "description": "",
+        "monthAndYear": "22 & 23 Nov. 2024",
+        "title": "Co-ordinator for the National Seminar ‘Vedāṅgas and Upavedas’",
+        "slNo": "3"
+      }
+    ],
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -41,34 +404,407 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-02T18:53:50.279Z",
-      "updated_at": "2025-01-02T18:55:33.981Z",
+      "updated_at": "2025-01-11T08:26:53.398Z",
       "created_by": "admin"
     },
     "orderId": "1",
+    "teachingExperience": [
+      {
+        "duration": "Presently",
+        "organisation": "The KSRI, Chennai",
+        "designation": "Associate Professor"
+      },
+      {
+        "duration": "From Sep. 2014 -2023",
+        "organisation": "The KSRI, Chennai",
+        "designation": "Assistant Professor"
+      },
+      {
+        "duration": "2012-14",
+        "organisation": "The KSRI, Chennai",
+        "designation": "Hon. Research Assistant"
+      },
+      {
+        "duration": "2005-2012",
+        "organisation": "Stella Maris College",
+        "designation": "Lecturer"
+      }
+    ],
+    "phdCandidates": [
+      {
+        "name": "Dr. S.Madhurambika",
+        "topic": "Sahendravilāsa of Sridhara Ayyaval – Acritical Study",
+        "yearOfJoining": "2017",
+        "status": "Degree awarded"
+      },
+      {
+        "name": "Mr.P.S.Chandrasekhar",
+        "topic": "Kshetra Ganita in Ganita Kaumudi of Narayana Pandita- A Critical Study",
+        "yearOfJoining": "2018-2023",
+        "status": "Thesis Submitted"
+      },
+      {
+        "name": "Ms. B.Vijayalakshmi",
+        "topic": "Arithmetic and Geometric Progression in Ancient Indian Mathematics A Study",
+        "yearOfJoining": "2018-2025",
+        "status": "Synopsis submitted"
+      },
+      {
+        "name": "Ms. Lavamya.V.Eswar",
+        "topic": "Yogavasishta –Vairagya and Mumukshu Kandas in the light of the commentary of Ananda Bodhendra Sarasvati",
+        "yearOfJoining": "2019-2025",
+        "status": "Synopsis submitted"
+      },
+      {
+        "name": "Mr.V. R. Srinivasan",
+        "topic": "24 Maheshvaramurtas as in Agamas",
+        "yearOfJoining": "2022-2027",
+        "status": "Ongoing"
+      }
+    ],
+    "mphilCandidates": [
+      {
+        "name": "Ms.Mrinalini",
+        "topic": "Sandilyopanisad- A Critical study",
+        "yearOfJoining": "2016-17",
+        "status": "Completed"
+      },
+      {
+        "name": "Ms.Latha",
+        "topic": "Krishnabhupaliyam",
+        "yearOfJoining": "2016-17",
+        "status": "Completed"
+      },
+      {
+        "name": "Ms.Rajalakshmi",
+        "topic": "Cola Campu",
+        "yearOfJoining": "2016-17",
+        "status": "Completed"
+      },
+      {
+        "name": "Ms.Ramya Bhatt",
+        "topic": "Significance of Vadavagni",
+        "yearOfJoining": "2016-17",
+        "status": "Completed"
+      },
+      {
+        "name": "Ms. J Mythili",
+        "topic": "Yogakundalini Upanisad",
+        "yearOfJoining": "2017-18",
+        "status": "Completed"
+      },
+      {
+        "name": "Ms. Iswarya",
+        "topic": "Yogacudamani Upanisad- A Critical study",
+        "yearOfJoining": "2018-2019",
+        "status": "Completed"
+      },
+      {
+        "name": "Mr. V.R.Srinivasan",
+        "topic": "Manjuramayana of Srinidhi – A Critical Study",
+        "yearOfJoining": "2020-21",
+        "status": "Completed"
+      },
+      {
+        "name": "Ms. Gayathri",
+        "topic": "Sammārjanī Śatakam of Asoori Ānandāl̥vār - A critical study",
+        "yearOfJoining": "2021-22",
+        "status": "Completed"
+      },
+      {
+        "name": "Mr. L. Sriram",
+        "topic": "Bharatī Manoratham of M. K. Tatachariar – A critical Study",
+        "yearOfJoining": "2022-23",
+        "status": "Completed"
+      }
+    ],
+    "academicPositions": [
+      {
+        "description": "for Doctoral Programme at The Madras Sanskrit College and The University of Madras",
+        "position": "Research Advisory Committee"
+      },
+      {
+        "description": "The Madras Sanskrit College",
+        "position": "IQAC MEMBER"
+      },
+      {
+        "description": "External Examiner conducting Viva-Voce for The University of Madras, and Certificate and Diploma Courses at the Madras Sanskrit College",
+        "position": "External Examiner conducting Viva-Voce"
+      },
+      {
+        "description": "The KSRI publications and The Samskrita Academy, Madras Publications",
+        "position": "Editorial Member"
+      }
+    ],
+    "booksPublished": [
+      {
+        "publisher": "The Samskrit Academy, Chennai",
+        "yearOfPublication": "2024",
+        "title": "SANDHI",
+        "sNo": "1",
+        "remarks": "Published",
+        "isbn": "978-81-954078-6-6"
+      },
+      {
+        "publisher": "Karnataka Historical Research Society, Dharwad",
+        "yearOfPublication": "2017",
+        "title": "AMARAKOÑODGHÄÖANA OF KÑÉRASVÄMIN: A SOCIO-CULTURAL STUDY",
+        "sNo": "2",
+        "remarks": "Published",
+        "isbn": "978-81-936580"
+      },
+      {
+        "publisher": "Karnataka Historical Research Society, Dharwad",
+        "yearOfPublication": "2017",
+        "title": "ASPECTS OF NATURE IN AMARAKOÑODGHÄÖANA OF KÑÉRASVÄMIN",
+        "sNo": "3",
+        "remarks": "Published",
+        "isbn": "078-93-87761-00-1"
+      },
+      {
+        "publisher": "The Samskrit Academy, Chennai",
+        "yearOfPublication": "2016",
+        "title": "SHRUTI GITA with Eng. Translation along with Dr. T.V. Vasudeva",
+        "sNo": "4",
+        "remarks": "Published",
+        "isbn": "978-81-931170-0-2"
+      }
+    ],
+    "articlesPublished": [
+      {
+        "monthAndYear": "2024",
+        "nameOfTheJournal": "The Festivals of India Ed. C. Rajendran",
+        "title": "Temple festival -Vajramakuta Utsava at Melkote",
+        "sNo": "1",
+        "isbnIssnNo": "ISBN 978-81-8315-546-5",
+        "remarks": "pub. by New Bharatiya Book Corporation Delhi"
+      },
+      {
+        "monthAndYear": "2024",
+        "nameOfTheJournal": "Journal of Oriental Research Vol. XCIV",
+        "title": "A few yogic practices for the cure of diseases as gleaned from some Haṭha yoga texts",
+        "sNo": "2",
+        "isbnIssnNo": "ISSN 0022-3301",
+        "remarks": "The Kuppuswami Sastri Research Institute Chennai"
+      },
+      {
+        "monthAndYear": "2023",
+        "nameOfTheJournal": "Some Aspects of Manuscriptology, MDKG College",
+        "title": "Eras used in the Indian manuscripts",
+        "sNo": "3",
+        "isbnIssnNo": "ISBN 978-93-5967-933-4",
+        "remarks": "Dibrugarh Assam"
+      },
+      {
+        "monthAndYear": "Sep 2023",
+        "nameOfTheJournal": "Pracya Vol-XV 'Āyurveda viśeṣāṅka' Dept. Of Sanskrit, M.D.K. Girls College Dibrugarh",
+        "title": "Medication for both bhavaroga and deharoga – As described in the Jñāna Bhaiṣajya Mañjarī of Gumāni",
+        "sNo": "4",
+        "isbnIssnNo": "ISSN 2278-4004",
+        "remarks": ""
+      },
+      {
+        "monthAndYear": "2023",
+        "nameOfTheJournal": "Journal of Oriental Research Vol. XCIII",
+        "title": "Avyayas as dealt with by Bhoja in Srngaraprakasa",
+        "sNo": "5",
+        "isbnIssnNo": "ISSN 0022-3301",
+        "remarks": "The Kuppuswami Sastri Research Institute Chennai"
+      },
+      {
+        "monthAndYear": "2023",
+        "nameOfTheJournal": "Journal of Madras Sanskrit College",
+        "title": "Nārāyaṇīye śabdacitravaicitryam, Rasikapriya",
+        "sNo": "6",
+        "isbnIssnNo": "ISSN 24542547",
+        "remarks": "Chennai"
+      }
+    ],
+    "projects": [
+      {
+        "description": "",
+        "monthAndYear": "2023-2025",
+        "sponsor": "CSU",
+        "remarks": "Ongoing",
+        "projectTitle": "CRITICAL EDITION OF VĪRACARITAM OF ANANTAKAVI"
+      }
+    ],
+    "seminars": [
+      {
+        "date": "Feb. 29, 2024",
+        "monthAndYear": "2024",
+        "organisers": "Dept. of Sanskrit, JBAS college for women (Autonomous), Chennai",
+        "theme": "Seminar on Nature preservation-The bygone ways",
+        "titleOfThePaper": "Nature preservation methods",
+        "slNo": "1"
+      },
+      {
+        "date": "Nov 24 & 25, 2023",
+        "monthAndYear": "2023",
+        "organisers": "The KSRI, Chennai",
+        "theme": "National Seminar on Bhakti Literature in Sanskrit and Tamil",
+        "titleOfThePaper": "Deśabhakti",
+        "slNo": "2"
+      },
+      {
+        "date": "Aug. 21 & 22, 2023",
+        "monthAndYear": "2023",
+        "organisers": "The KSRI, Chennai",
+        "theme": "National Seminar on Arts and Architecture",
+        "titleOfThePaper": "Dhātukalā- Metallurgy and Alloy making",
+        "slNo": "3"
+      },
+      {
+        "date": "January 8th and 9th, 2023",
+        "monthAndYear": "2023",
+        "organisers": "The Madras Sanskrit College & S.S.V. Patasala, Chennai jointly with Central Sanskrit University, New Delhi",
+        "theme": "International Seminar on Sriman- Narayaneeyam",
+        "titleOfThePaper": "Nārāyaṇīye śabdacitravaicitryam",
+        "slNo": "4"
+      },
+      {
+        "date": "December 9th & 10th, 2022",
+        "monthAndYear": "2022",
+        "organisers": "Sanskrit Dept., Assam University in collaboration with Samskrit Bharati",
+        "theme": "International Seminar on Science and Technology in Sanskrit texts",
+        "titleOfThePaper": "Extraction and Application of Natural Dyes as recorded in Sanskrit literature",
+        "slNo": "5"
+      },
+      {
+        "date": "April 10th, 2022",
+        "monthAndYear": "2022",
+        "organisers": "The Veda Samskriti Samiti, Hyderabad",
+        "theme": "National level Webinar on The roots of Modern science in Veda Samskrita Vanmayam",
+        "titleOfThePaper": "The health benefits of chewing Tambulam",
+        "slNo": "6"
+      },
+      {
+        "date": "March 26-27th, 2022",
+        "monthAndYear": "2022",
+        "organisers": "Indic Academy held at Cotton University, Guwahati, Assam",
+        "theme": "International Conference on Feminine in Hinduism",
+        "titleOfThePaper": "The Two less-known Women Role Models of the 17-18th Cent. C.E. Queen Dīpāmbā – the Diplomat and Āvuḍai Akkā- the Advaitin",
+        "slNo": "7"
+      },
+      {
+        "date": "February 26-28th, 2022",
+        "monthAndYear": "2022",
+        "organisers": "Dept. of Mathematics, Hindu Girls College, Sonipat, Haryana",
+        "theme": "Online National Conference on Indian Scientific Heritage",
+        "titleOfThePaper": "Some Fundamental concepts in Physics and Chemistry in sanskrit Nyaya texts",
+        "slNo": "8"
+      }
+    ],
+    "lectures": [
+      {
+        "monthAndYear": "24th Jan 2024",
+        "organisers": "The SASTRA Deemed to be University sponsored by the ICPR",
+        "slNo": "1",
+        "titleOfTheTalk": "Thoughts of science and technology in Indian philosophical systems"
+      },
+      {
+        "monthAndYear": "28th December, 2023",
+        "organisers": "IQAC and school of languages, Shri Shankarlal Sundarbai Shashun Jain College for women",
+        "slNo": "2",
+        "titleOfTheTalk": "The Importance of Journals, Articles & Indexing with respect to Patents"
+      },
+      {
+        "monthAndYear": "26th December, 2022",
+        "organisers": "Department of Sanskrit, MES Kishora Kendra Pre-University College, Bangalore",
+        "slNo": "3",
+        "titleOfTheTalk": "Relevance of Sanskrit Studies"
+      },
+      {
+        "monthAndYear": "25th August 2022",
+        "organisers": "Sarasvata Samiti, Sanskrit Club, Dept. of Sanskrit, M O P Vaishnav College for women",
+        "slNo": "4",
+        "titleOfTheTalk": "Samskrtam Samskrtishca"
+      },
+      {
+        "monthAndYear": "12th May, 2022",
+        "organisers": "Silicon Andhra University",
+        "slNo": "5",
+        "titleOfTheTalk": "Vachika Abhinaya/aspects of Sanskrit drama from Natya Shastra"
+      },
+      {
+        "monthAndYear": "28th April, 2022",
+        "organisers": "Department of Sanskrit, MGR Janaki College for women",
+        "slNo": "6",
+        "titleOfTheTalk": "Sanskrit Literature : Reflection of Life challenges"
+      }
+    ],
+    "awards": [],
+    "extensionActivities": [
+      {
+        "description": "Conducted Orientation programmes for teachers – Amrita Vidyalayam Tamilnadu and Pondicherry, three day cultural Education Camp. A session on Sanatana Dharma",
+        "monthAndYear": "30th April, 2024",
+        "title": "Teacher Orientation Programme",
+        "slNo": "1"
+      },
+      {
+        "description": "Talk on 'Values in the Ramayana' delivered in Siva Swamy Kalalaya School, Vidya Mandir School, Mylapore, and Bala Vidya Mandir, Adayar, Chennai",
+        "monthAndYear": "2015",
+        "title": "School Lectures",
+        "slNo": "2"
+      },
+      {
+        "description": "AIR TALK - Mangala ślokangalum kavigalum featured in 101.4 FM 2.45 pm Sanskrit program",
+        "monthAndYear": "23rd and 30th July 2024",
+        "title": "Radio Programme",
+        "slNo": "3"
+      },
+      {
+        "description": "Judge for the Samanyabhasanaspardha on 'Bharata svatantrya- mahotsavah Samskritagyanam Yogadaanan ca'",
+        "monthAndYear": "14th October, 2022",
+        "title": "Sanskrit Week Celebration",
+        "slNo": "4"
+      }
+    ],
     "itemPublishStatus": "PUBLISHED"
   },
   {
     "id": "01JGM5VST7E94TEXXWHJ1A4AMQ",
-    "name": "Dr. V.Preethi",
-    "designation": "Associate Professor",
+    "name": "Dr. V. Preethi",
+    "designation": "Assistant Professor",
     "displayImage": [
       "upload/faculty/preethi.jpg"
     ],
-    "subtitle": "Areas of Specialisation: Sahitya, Yoga and Manuscriptology",
-    "description": "More than 13 years of teaching and research experience.",
+    "subtitle": "Areas of Specialisation: Sahitya, Yoga, Manuscriptology, and Sanskrit Literature",
+    "description": "More than 16 years of teaching, research, and manuscriptology experience.",
     "mobile": "8248630164",
     "mail": "preethimahesh.krishnan@gmail.com",
     "profile": [
-      "upload/media/Preethi Resume 5. 8. 24.pdf"
+      "upload/media/Preethi_Profile.pdf"
     ],
     "type": "ACADEMIC",
     "metadata": {
       "updated_by": "demo",
-      "created_at": "2025-01-02T18:53:50.279Z",
-      "updated_at": "2025-01-02T18:55:27.150Z",
+      "created_at": "2025-01-11T10:00:00.000Z",
+      "updated_at": "2025-01-11T08:51:53.962Z",
       "created_by": "admin"
     },
-    "orderId": "2",
+    "orderId": "1",
+    "teachingExperience": [
+      {
+        "duration": "2021 - Present",
+        "organisation": "The Kuppuswami Sastri Research Institute",
+        "designation": "Assistant Professor"
+      },
+      {
+        "duration": "2011 - 2020",
+        "organisation": "Kumara Rani Meena Muthiah College of Arts and Science",
+        "designation": "Assistant Professor"
+      },
+      {
+        "duration": "2008 - 2011",
+        "organisation": "Ramakrishna Mission Matric. Higher Sec. School",
+        "designation": "Sanskrit Teacher"
+      }
+    ],
+    "academicPositions": [],
+    "articlesPublished": [],
+    "seminars": [],
+    "lectures": [],
     "itemPublishStatus": "PUBLISHED"
   },
   {

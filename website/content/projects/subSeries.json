@@ -12,7 +12,10 @@
   },
   {
     "name": "Indian Knowledge System",
-    "subSeries": [],
+    "subSeries": [
+      "Historical Texts",
+      "Sthalamāhātmya"
+    ],
     "description": "Sanctioned by Central Sanskrit University under \nSpecial Grants for the promotion of Pali/Prakrit/Sanskrit"
   }
 ]

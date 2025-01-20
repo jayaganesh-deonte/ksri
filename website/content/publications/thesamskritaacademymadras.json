@@ -148,23 +148,25 @@
   },
   {
     "title": "Jayanteya Gita, text with Eng. translation",
-    "subtitle": "",
+    "subtitle": "(Nimi -Navayogi - Samvada)",
     "price": "₹ 80",
-    "imageUrls": null,
+    "imageUrls": [
+      "images/JAYANTEYA GITA.jpeg"
+    ],
     "details": "",
     "id": "01JGNDQ25YHD0258CJR8PV55M8",
     "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
+    "keywords": "Jayanteya Gita",
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
+      "updated_at": "2025-01-17T10:21:07.405Z",
       "created_by": "admin"
     },
     "author": "",
-    "yearOfPublication": "",
+    "yearOfPublication": "2008",
     "itemPublishStatus": "PUBLISHED"
   },
   {
