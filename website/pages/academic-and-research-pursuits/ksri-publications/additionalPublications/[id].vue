@@ -171,6 +171,12 @@ for (const element of additionalPublications) {
     ...additionalPublicationJournalsData.body,
     ...additionalPublicationBooksData.body,
   ];
+
+  // sort additionalPublications by yearOfPublication
+
+  additionalPublicationBooks[additionalPublication].sort((a, b) => {
+    return b.yearOfPublication - a.yearOfPublication;
+  });
 }
 
 const ksriBooks = booksData.body;

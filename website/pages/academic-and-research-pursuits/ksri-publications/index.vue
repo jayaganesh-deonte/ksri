@@ -357,6 +357,11 @@ for (const element of additionalPublications) {
     ...additionalPublicationJournalsData.body,
     ...additionalPublicationBooksData.body,
   ];
+
+  // sort additionalPublicationBooks by year
+  additionalPublicationBooks[additionalPublication].sort((a, b) => {
+    return b.yearOfPublication - a.yearOfPublication;
+  });
 }
 
 // recent 3 books for all additional publications
