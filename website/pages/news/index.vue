@@ -14,6 +14,7 @@
           cols="12"
           sm="12"
           md="4"
+          class="ma-0"
         >
           <NewsCard :item="item" :index="index" />
         </v-col>

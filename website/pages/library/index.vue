@@ -280,9 +280,7 @@
             :data-aos-delay="index * 200 + 900"
           >
             <div class="sectionBody text-accentGreen">{{ index + 1 }}.</div>
-            <div class="sectionBody my-4">
-              {{ service }}
-            </div>
+            <div class="sectionBody my-4" v-html="service" />
             <v-divider
               class="my-4 mx-auto"
               width="50px"
@@ -352,7 +350,7 @@ import LibraryHeader from "./LibraryHeader.vue";
 
 const services = [
   "Reprographic services and online services are provided also institutional assistance.",
-  "60% of our catalogue can be accessed through our Website : www.ksrisanskrit.in",
+  "60% of our catalogue can be accessed through our Website : <a href='/library/books' style='text-decoration: unset;'>www.ksrisanskrit.in</a> .",
   "Separate reading room for researchers for their research.",
   "Extensive research materials including special Encyclopaedias, Descriptive Catalogues of Manuscripts in various libraries all over the world, and general reference materials are also available.",
   "The Library is open from 10.00 a.m. to 5.00 p.m. on all days except second Saturdays and Sundays and Government Holidays.",

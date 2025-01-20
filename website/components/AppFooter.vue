@@ -131,10 +131,10 @@ const footerLinks = reactive({
           name: "KSRI Publications",
           path: "/academic-and-research-pursuits/ksri-publications",
         },
-        {
-          name: "Research Articles",
-          path: "/academic-and-research-pursuits/research-articles",
-        },
+        // {
+        //   name: "Research Articles",
+        //   path: "/academic-and-research-pursuits/research-articles",
+        // },
         {
           name: "Academic Programs",
           path: "/academic-and-research-pursuits/academic-programs",

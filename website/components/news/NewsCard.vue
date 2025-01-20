@@ -56,7 +56,7 @@ const { item } = defineProps({
 let isHovering = ref(false);
 const truncatedTitle = (title) => {
   // truncate title if it is too long
-  const maxWords = 80;
+  const maxWords = 25;
   const words = title.split(" ");
   if (words.length > maxWords) {
     return words.slice(0, maxWords).join(" ") + "...";
