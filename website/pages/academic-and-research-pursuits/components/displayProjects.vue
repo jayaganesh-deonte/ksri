@@ -58,7 +58,7 @@
                     </td>
                     <td>
                       <v-chip color="secondary" class="ma-2" label>
-                        {{ project.projectInvestigator.join(", ") }}
+                        {{ projectInvestigator(project.projectInvestigator) }}
                       </v-chip>
                     </td>
                   </tr>
@@ -112,6 +112,15 @@ const display2ndColumn = (item) => {
     return true;
   } else {
     return false;
+  }
+};
+
+const projectInvestigator = (item) => {
+  // if array then join with comma
+  if (Array.isArray(item.projectInvestigator)) {
+    return item.projectInvestigator.join(", ");
+  } else {
+    return item.projectInvestigator;
   }
 };
 </script>
