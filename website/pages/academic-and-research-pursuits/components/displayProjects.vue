@@ -117,10 +117,10 @@ const display2ndColumn = (item) => {
 
 const projectInvestigator = (item) => {
   // if array then join with comma
-  if (Array.isArray(item.projectInvestigator)) {
-    return item.projectInvestigator.join(", ");
+  if (Array.isArray(item)) {
+    return item.join(", ");
   } else {
-    return item.projectInvestigator;
+    return item;
   }
 };
 </script>
