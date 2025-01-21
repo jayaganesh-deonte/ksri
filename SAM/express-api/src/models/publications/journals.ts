@@ -54,17 +54,17 @@ export interface JournalDDB {
 export function validateJournal(item: Journal): boolean {
   return (
     typeof item.title === "string" &&
-    typeof item.subtitle === "string" &&
-    typeof item.price === "string" &&
-    Array.isArray(item.imageUrls) &&
+    // typeof item.subtitle === "string" &&
+    // typeof item.price === "string" &&
+    // Array.isArray(item.imageUrls) &&
     typeof item.details === "string" &&
-    typeof item.id === "string"
+    typeof item.id === "string" &&
     // typeof item.publication === "string" &&
     // typeof item.keywords === "string" &&
     // typeof item.available === "string" &&
     // typeof item.copies === "string" &&
     // typeof item.author === "string" &&
-    // typeof item.yearOfPublication === "string" &&
+    typeof item.yearOfPublication === "string"
     // (item.metadata === undefined || typeof item.metadata === "object") &&
     // typeof item.itemPublishStatus === "string"
   );

@@ -47,13 +47,13 @@ const bookFields = [
     key: "subtitle",
     label: "Subtitle",
     type: "text",
-    rules: [(v) => !!v || "Subtitle is required"],
+    // rules: [(v) => !!v || "Subtitle is required"],
   },
   {
     key: "price",
     label: "Price",
     type: "text",
-    rules: [(v) => !!v || "Price is required"],
+    // rules: [(v) => !!v || "Price is required"],
   },
   {
     key: "details",
@@ -84,7 +84,7 @@ const bookFields = [
     key: "copies",
     label: "Available Number of Copies",
     type: "number",
-    rules: [(v) => !!v || "Available Number of Copies is required"],
+    // rules: [(v) => !!v || "Available Number of Copies is required"],
   },
   {
     key: "keywords",
