@@ -131,6 +131,7 @@ const projectFields = [
     label: "Project Investigator",
     type: "auto-complete",
     items: supervisors,
+    multiple: true,
   },
   {
     key: "coProjectInvestigators",
