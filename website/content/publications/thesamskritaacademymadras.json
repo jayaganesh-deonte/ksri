@@ -613,5 +613,98 @@
     "author": "Dr. V. Yamuna Devi",
     "yearOfPublication": "2024",
     "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "வி.கிருஷ்ணசுவாமி ஐயர்",
+    "subtitle": " V. Krishnaswamy Iyer",
+    "price": "300",
+    "imageUrls": [
+      "images/krishnaswami iyer tamil 2.jpeg",
+      "images/krishnaswami iyer tamil.jpeg"
+    ],
+    "details": "",
+    "id": "01JJ3MB1CCWC515TRQCGZ70VAZ",
+    "publication": "The Samskrita Academy, Madras",
+    "keywords": "வி.கிருஷ்ணசுவாமி ஐயர்,    V. Krishnaswamy Iyer",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-21T05:11:07.916Z",
+      "updated_at": "2025-01-21T05:27:31.357Z",
+      "created_by": "demo"
+    },
+    "author": "K Chandrashekharan",
+    "yearOfPublication": "1999",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Selections from Kalidasa",
+    "subtitle": "श्रीकालिदासकाव्य कुसुमाञ्जलि:",
+    "price": "30",
+    "imageUrls": [
+      "images/29.jpg"
+    ],
+    "details": "",
+    "id": "01JJ3MRVDC15WGYRD8XXV4PTR1",
+    "publication": "The Samskrita Academy, Madras",
+    "keywords": "Kalidasa",
+    "available": "Yes",
+    "copies": "1000",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-21T05:18:40.557Z",
+      "updated_at": "2025-01-21T05:27:16.721Z",
+      "created_by": "demo"
+    },
+    "author": "",
+    "yearOfPublication": "2020",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Śrutigītā",
+    "subtitle": "Text with Roman Transliteration, English Translation and Notes.",
+    "price": "150",
+    "imageUrls": [
+      "images/30.jpg"
+    ],
+    "details": "",
+    "id": "01JJ3MWJKW2SYKDHAXEYCSZH4N",
+    "publication": "The Samskrita Academy, Madras",
+    "keywords": "srutigita",
+    "available": "No",
+    "copies": "",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-21T05:20:42.620Z",
+      "updated_at": "2025-01-21T05:20:42.620Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. T.V. Vasudeva, Dr. V. Yamuna Devi",
+    "yearOfPublication": "2016",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Sri Tamrabharani Pūja Kalpam",
+    "subtitle": "ஸ்ரீ தாம்ரபர்ணீ பூஜா கல்பம்  மற்றும்  ஸ்ரீ தாம்ரபர்ணீ ஸஹஸ்ர நாமாவளி ஸ்ரீ தாம்ரபர்ணீ அஷ்டோத்தரஸத நாமாவளி  (ஸ்ம்ஸ்க்ருதத்திலும், தமிழிலும்)",
+    "price": "Rs. 80",
+    "imageUrls": [
+      "images/31.jpg"
+    ],
+    "details": "<p><br></p><p><br></p><p><br></p>",
+    "id": "01JJ3N7HBENMGH5QHYT13N6C9V",
+    "publication": "The Samskrita Academy, Madras",
+    "keywords": "Sri Tamrabharani Pūja Kalpam",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-21T05:26:41.774Z",
+      "updated_at": "2025-01-21T05:26:41.774Z",
+      "created_by": "demo"
+    },
+    "author": "ப்ரஹ்மஸ்ரீ ராமசுப்ரஹ்மண்ய சாஸ்திரிகள்",
+    "yearOfPublication": "2018",
+    "itemPublishStatus": "PUBLISHED"
   }
 ]

@@ -58,7 +58,7 @@
                     </td>
                     <td>
                       <v-chip color="secondary" class="ma-2" label>
-                        {{ project.projectInvestigator }}
+                        {{ project.projectInvestigator.join(", ") }}
                       </v-chip>
                     </td>
                   </tr>

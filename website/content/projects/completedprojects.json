@@ -1,5 +1,27 @@
 [
   {
+    "id": "01JJ3T2YP1SYV6BHYYATBHCSSZ",
+    "title": "TOWN PLANNING IN ANCIENT INDIA:",
+    "subTitle": " Ancient texts and polity, Dharma Sastra, Vastu Sastra (Architecture) and Śipla Śāstra ( Iconography) and other subjects describe various cities with mansions, gardens, water bodies etc. This book gives an idea of the great planning involved in building a cities, villages, towns and other such information.",
+    "startYear": "",
+    "completedYear": "2023",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-21T06:51:34.465Z",
+      "updated_at": "2025-01-21T06:51:34.465Z",
+      "created_by": "demo"
+    },
+    "sponsor": "M/s Amalgamations Private Limited",
+    "keywords": "",
+    "projectSeries": "Ancient Indian Knowledge Series",
+    "projectSubSeries": "Art and Architecture",
+    "publicationStatus": "Published",
+    "projectInvestigator": "Dr. Vasumathi Rajaram",
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "id": "01JGM4T8Y0JN41NVMCBXBWMRHC",
     "title": "English Translation of Sisupalavadha ",
     "subTitle": "Vol. I (Canto 1-6)",
@@ -160,6 +182,50 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
+    "id": "01JJ3SZFEZPS615W9ZADVV7YX2",
+    "title": "PRIMER OF ANCIENT INDIAN BOTANY",
+    "subTitle": "Starting from the Vedas many texts give us information on flora and fauna . This book book concentrates on details regarding Taxonomy, Morphology, Hydrophytes etc. as available in ancient Indian texts.",
+    "startYear": "",
+    "completedYear": "2023",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-21T06:49:40.576Z",
+      "updated_at": "2025-01-21T06:49:40.576Z",
+      "created_by": "demo"
+    },
+    "sponsor": "Sri Ramdas Kamath, Chartered Accountant, Bangalore",
+    "keywords": "",
+    "projectSeries": "Ancient Indian Knowledge Series",
+    "projectSubSeries": "Science",
+    "publicationStatus": "Published",
+    "projectInvestigator": "Dr. V. Premalatha",
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JJ3T66REDT64NQRT3JKXEJM2",
+    "title": "TRADITIONAL HINDU FESTIVALS",
+    "subTitle": " India celebrates innumerable festivals throughout the year which give us an idea of the rich culture, religion, myth, arts of this great country and all these are interwoven in such festivals.",
+    "startYear": "",
+    "completedYear": "2023",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-21T06:53:21.039Z",
+      "updated_at": "2025-01-21T06:53:21.039Z",
+      "created_by": "demo"
+    },
+    "sponsor": "Sri Ramdas Kamath, Chartered Accountant, Bangalore",
+    "keywords": "",
+    "projectSeries": "Ancient Indian Knowledge Series",
+    "projectSubSeries": "Literature",
+    "publicationStatus": "Published",
+    "projectInvestigator": "Dr. S. Anuradha",
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "id": "01JHWHCV5JX4X224TECFYGBHPW",
     "title": "History of  Ancient Indian Algebra",
     "subTitle": " Ancient Indians excelled in many branches of mathematics and a glimpse of their expertise in this subject can be found in this book. ",
@@ -191,14 +257,17 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-02T18:35:31.646Z",
-      "updated_at": "2025-01-04T06:08:42.784Z",
+      "updated_at": "2025-01-21T08:03:56.818Z",
       "created_by": "admin"
     },
     "sponsor": "Sri KesavaIyengar Endowment",
     "keywords": " ",
     "publicationStatus": "Published",
-    "projectInvestigator": "Dr. K.S.Balasubramanian",
-    "coProjectInvestigators": "Dr. T.V.Vasudeva",
+    "projectInvestigator": [
+      "Dr. K.S.Balasubramanian",
+      "Dr. T.V.Vasudeva"
+    ],
+    "coProjectInvestigators": "Dr. T.V.Vasudeva\nDr. T.V.Vasudeva",
     "itemPublishStatus": "PUBLISHED"
   },
   {
