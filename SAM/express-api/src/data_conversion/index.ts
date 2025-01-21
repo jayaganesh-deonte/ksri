@@ -1283,6 +1283,37 @@ const downloadImages = async () => {
     writeFileSync(filePath, buffer);
   }
 };
+
+const insertIksProject = async () => {
+  // iks_projects.json
+  const data = require("./content/iks_projects.json");
+  let allProjects: any[] = [];
+
+  for (const project of data) {
+    // add id & metadata: generateMetaData() to projects
+    project.id = ulid();
+    project.itemPublishStatus = "PUBLISHED";
+    project.metadata = generateMetaData();
+    allProjects.push(project);
+  }
+
+  // validate projects
+  allProjects.forEach((project) => {
+    if (!validateProject(project)) {
+      return console.log("Invalid project", project);
+    }
+  });
+
+  // convert projects to dynamoDB format
+  const projectsDynamoDB = allProjects.map((project) =>
+    projectsToDynamoDB(project)
+  );
+
+  console.log(projectsDynamoDB);
+
+  // insert projects into dynamoDB
+  await batchInsert(projectsDynamoDB);
+};
 const main = async () => {
   // await insertEndownments();
   // await insertEvents();
@@ -1311,6 +1342,7 @@ const main = async () => {
   // await insertGoveringBodyPast();
   // await eventsFromAdminApp(); // not requried to deploy to DDB
   // await downloadImages();
+  // await insertIksProject();
 };
 
 main();

@@ -780,31 +780,398 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-11T10:00:00.000Z",
-      "updated_at": "2025-01-11T08:51:53.962Z",
+      "updated_at": "2025-01-21T16:50:12.284Z",
       "created_by": "admin"
     },
     "orderId": "1",
     "teachingExperience": [
       {
         "duration": "2021 - Present",
-        "organisation": "The Kuppuswami Sastri Research Institute",
+        "organisation": "The Kuppuswami Sastri Research Institute, Chennai",
         "designation": "Assistant Professor"
       },
       {
         "duration": "2011 - 2020",
-        "organisation": "Kumara Rani Meena Muthiah College of Arts and Science",
+        "organisation": "Kumara Rani Meena Muthiah College of Arts and Science, Adyar, Chennai",
         "designation": "Assistant Professor"
       },
       {
         "duration": "2008 - 2011",
-        "organisation": "Ramakrishna Mission Matric. Higher Sec. School",
+        "organisation": "Ramakrishna Mission Matriculation Higher Secondary School",
         "designation": "Sanskrit Teacher"
       }
     ],
     "academicPositions": [],
-    "articlesPublished": [],
-    "seminars": [],
-    "lectures": [],
+    "booksPublished": [
+      {
+        "publisher": "The KSRI",
+        "yearOfPublication": "2023",
+        "title": "Gorakṣa Samhitā of Gorakṣanātha with a critical Introduction, English Translation and Notes",
+        "sNo": "1",
+        "remarks": "Published",
+        "isbn": "978-81-85170-71-8"
+      },
+      {
+        "publisher": "The Samskrita Academy, Madras",
+        "yearOfPublication": "2024",
+        "title": "Yogatattvopaniṣad",
+        "sNo": "2",
+        "remarks": "Published",
+        "isbn": "978-81-931170-9-5"
+      }
+    ],
+    "articlesPublished": [
+      {
+        "monthAndYear": "2024",
+        "title": "Padma: Floral Motif in Ancient Indian Architecture",
+        "nameOfTheJournal": "Pracya, Vol-XVI (UGC Care listed)",
+        "sNo": "1",
+        "isbnIssnNo": "2278-4004",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2024",
+        "title": "Role of Mantras in Yogic Sādhanā",
+        "nameOfTheJournal": "JOR – Yoga Special Vol. 94-95",
+        "sNo": "2",
+        "isbnIssnNo": "0022-3301",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2023",
+        "title": "Origin and development of scripts used in ancient Indian Manuscripts",
+        "nameOfTheJournal": "Some Aspects of Manuscriptology",
+        "sNo": "3",
+        "isbnIssnNo": "978-93-5967-933-4",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "May 2023",
+        "title": "Tiruvoṟṟiyūr in Sanskrit Literature",
+        "nameOfTheJournal": "Journal of Oriental Research, Madras (Vol. XCIII)",
+        "sNo": "4",
+        "isbnIssnNo": "0022-3301",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "April 2023",
+        "title": "Ancient Indian Knowledge of Oceanography",
+        "nameOfTheJournal": "Veda Vanee, E-Journal, Vol. I. issue 1",
+        "sNo": "5",
+        "isbnIssnNo": "2583-9020",
+        "remarks": "Published"
+      }
+    ],
+    "projects": [
+      {
+        "sponsor": "Private",
+        "monthAndYear": "May 2023",
+        "remarks": "Completed",
+        "projectTitle": "GORAKṢA SAMHITĀ with Critical Introduction, Eng. Translation and Notes"
+      },
+      {
+        "sponsor": "Private",
+        "monthAndYear": "",
+        "remarks": "ongoing",
+        "projectTitle": "DESCRIPTIVE CATALOGUE OF THE MANUSCRIPTS"
+      },
+      {
+        "sponsor": "CSU (Special grants for Sanskrit / Prakrit / Pali)",
+        "monthAndYear": "",
+        "remarks": "ongoing",
+        "projectTitle": "Critical Edition of TOYĀDRI MĀHĀTMYA"
+      }
+    ],
+    "seminars": [
+      {
+        "monthAndYear": "December 2024",
+        "theme": "Two-day National Seminar on An Analysis of Research Methodologies in Sanskrit Literature, 28th and 29th December 2024",
+        "organisers": "The Madras Sanskrit College, Chennai",
+        "titleOfThePaper": "Edition of Manuscripts",
+        "slNo": "1"
+      },
+      {
+        "monthAndYear": "December 2024",
+        "theme": "15th National Women's Science Congress on 6th, 7th and 8th December 2024",
+        "organisers": "Karnataka Sanskrit University, Bangalore",
+        "titleOfThePaper": "PERIODICAL CHANGES OF LANDFORM – A COMPARISON OF GEOGRAPHICAL CONCEPTS WITH PURANIC IDEAS",
+        "slNo": "2"
+      },
+      {
+        "monthAndYear": "October 2024",
+        "theme": "51st ALL INDIA ORIENTAL CONFERENCE on 24th, 25th & 26th October 2024",
+        "organisers": "Bharatiya Vidvat Parishat, Central Sanskrit University, New Delhi and Paryaya Shri Puttige Matha, Udupi",
+        "titleOfThePaper": "THE PURANIC CONCEPT OF PṚTHU: GEO-MORPHOLOGICAL CHANGES ON THE GLOBE",
+        "slNo": "3"
+      },
+      {
+        "monthAndYear": "March 2024",
+        "theme": "National Seminar on Minor Deities in Indian Art, 28th &29th March",
+        "organisers": "C.P.Ramaswami Aiyar Institute of Indological Research, Chennai",
+        "titleOfThePaper": "Two Specific forms of Mariamman in Tamilnadu",
+        "slNo": "4"
+      },
+      {
+        "monthAndYear": "December 2023",
+        "theme": "One-Day National Seminar on Tamilnadu- The Land of Protectors of Dharma (16th to 19th Cent.- Philosophers of Tamilnadu), 9th December",
+        "organisers": "Samskrita Bharati– Research wing, Chennai",
+        "titleOfThePaper": "The Versatile Philosopher – Venkatadhvarin",
+        "slNo": "5"
+      },
+      {
+        "monthAndYear": "November 2023",
+        "theme": "Two Day National Seminar Bhakti Literature in Sanskrit and Tamil, 24th & 25th November",
+        "organisers": "The Kuppuswami Sastri Research Institute and The Samskrita Academy, Madras",
+        "titleOfThePaper": "The Concept of Bhakti In Bhopadeva's Muktāphala",
+        "slNo": "6"
+      },
+      {
+        "monthAndYear": "July 2023",
+        "theme": "International Seminar on Samskruta Vaangmayee Yogah",
+        "organisers": "Department of Sanskrit, Sri Sankara Arts and Science College, Enathur Kanchipuram and ICPR",
+        "titleOfThePaper": "Role of Mantras in Yogic Sādhana",
+        "slNo": "7"
+      },
+      {
+        "monthAndYear": "April 2023",
+        "theme": "National / State level on Indian Philosophers Day",
+        "organisers": "Department of Sanskrit Studies & Research at Loyola College, Chennai and ICPR",
+        "titleOfThePaper": "Philosophy of Gorakshanatha",
+        "slNo": "8"
+      },
+      {
+        "monthAndYear": "January 2023",
+        "theme": "International Seminar on Sriman-Narayaneeyam",
+        "organisers": "The Madras Sanskrit College & S.S.V. Patasala, Chennai (jointly with Central Sanskrit University)",
+        "titleOfThePaper": "Influence of Narayaneeyam on later works",
+        "slNo": "9"
+      },
+      {
+        "monthAndYear": "December 2022",
+        "theme": "International Seminar on Science and Technology in Sanskrit Texts",
+        "organisers": "Assam University along with Samskrita Bharati, Silchar (Online)",
+        "titleOfThePaper": "Rainbows - Ancient Indian vis - a - vis Modern Scientific Views",
+        "slNo": "10"
+      },
+      {
+        "monthAndYear": "May 2022",
+        "theme": "National Seminar on Artificial Intelligence and Allied Sciences in Sanskrit literature",
+        "organisers": "Department of Sanskrit Studies & Research at Loyola College, Chennai and ICPR",
+        "titleOfThePaper": "Medical Geography from Caraka Samhitā",
+        "slNo": "11"
+      },
+      {
+        "monthAndYear": "April 2022",
+        "theme": "National Webinar on The roots of Modern science in Veda Samskrita Vanmayam, Hyderabad",
+        "organisers": "The Veda Samskriti Samiti",
+        "titleOfThePaper": "Ancient Indian knowledge of Oceanography",
+        "slNo": "12"
+      },
+      {
+        "monthAndYear": "February 2022",
+        "theme": "Three days National Conference on Indian Scientific Heritage",
+        "organisers": "Hindu College, Sonipat",
+        "titleOfThePaper": "Plant Propagation",
+        "slNo": "13"
+      },
+      {
+        "monthAndYear": "December 2021",
+        "theme": "Three days National Conference (online) on Sanatanadharma Samaajashreya",
+        "organisers": "The Sanskrit Academy, Osmania University, Hyderabad",
+        "titleOfThePaper": "Position of Patitās in Dharmaśāstra",
+        "slNo": "14"
+      },
+      {
+        "monthAndYear": "April 2021",
+        "theme": "Online International Conference on Philosophy and Praxis of Yoga- 2021, Unravelling Texts and Traditions",
+        "organisers": "Indic Academy and Indica Yoga in association with Krishnamacharya Yoga Mandiram, Chennai",
+        "titleOfThePaper": "Gorakṣa-śataka - A Unique Text of Hathayoga",
+        "slNo": "15"
+      },
+      {
+        "monthAndYear": "August 2018",
+        "theme": "Reconstruction of Spiritual Heritage through Sanskrit Devotional lyrics of South India",
+        "organisers": "Central University, Pondicherry",
+        "titleOfThePaper": "Esoteric principles of Balamukundashtaka",
+        "slNo": "16"
+      },
+      {
+        "monthAndYear": "December 2017",
+        "theme": "Three day National Seminar on Modern Writings in Sanskrit and Indian Literary Theories",
+        "organisers": "Sree Sankaracharya University of Sanskrit, Kalady, Kerala",
+        "titleOfThePaper": "Kantakaanjali – A Satirical Composition of Kantakaarjuna",
+        "slNo": "17"
+      },
+      {
+        "monthAndYear": "June 2017",
+        "theme": "Three day International Seminar on Sanskrit and Cultural Studies: New perspectives",
+        "organisers": "Sree Sankaracharya University of Sanskrit, Kalady, Kerala",
+        "titleOfThePaper": "Mahatma Gandhis Philosophy in Sanskrit Literature",
+        "slNo": "18"
+      },
+      {
+        "monthAndYear": "April 2017",
+        "theme": "9th annual conference of Ancient Sciences and Archaeological Society of India",
+        "organisers": "Vidyodaya Trust, Udupi",
+        "titleOfThePaper": "Games and Pass times of Ancient India",
+        "slNo": "19"
+      },
+      {
+        "monthAndYear": "September 2016",
+        "theme": "National Seminar on Sanskrit and Tamilnadu",
+        "organisers": "The Kuppusami Sastri Research Institute",
+        "titleOfThePaper": "Tamil works rendered in Sanskrit",
+        "slNo": "20"
+      },
+      {
+        "monthAndYear": "September 2016",
+        "theme": "Multi Lingual Conference on Language Teaching Challenges encountered and Solutions proposed",
+        "organisers": "Ethiraj college for women",
+        "titleOfThePaper": "Modes Of Addresses in Sanskrit Drama",
+        "slNo": "21"
+      },
+      {
+        "monthAndYear": "March 2016",
+        "theme": "National Seminar on Continuing creative Efforts For the Sustenance of Sanskrit",
+        "organisers": "Sri Chandrasekara Saraswati Viswa Mahavidyalaya",
+        "titleOfThePaper": "Dr. V. Raghavan – Propagator, Trendsetter, Poet and Critic",
+        "slNo": "22"
+      },
+      {
+        "monthAndYear": "September 2015",
+        "theme": "National Samskrita Seminar on Samskrita Mahasammelanam",
+        "organisers": "Meenakshi College conducted by Samskrita Bharati",
+        "titleOfThePaper": "Madras in Sarva Deva Vilasa",
+        "slNo": "23"
+      },
+      {
+        "monthAndYear": "February 2015",
+        "theme": "UGC Seminar on Science in Ancient India",
+        "organisers": "D.G. Vaishnav college in association with the KSRI",
+        "titleOfThePaper": "Plant Propagation",
+        "slNo": "24"
+      },
+      {
+        "monthAndYear": "October 2014",
+        "theme": "National Seminar",
+        "organisers": "Bijapur",
+        "titleOfThePaper": "CAT- A significant and insignificant animal",
+        "slNo": "25"
+      }
+    ],
+    "lectures": [
+      {
+        "monthAndYear": "May 2023",
+        "organisers": "Global Sanskrit Forum Uttar Pradesh Pranth",
+        "titleOfTheTalk": "Commentators – Sundari and Kamala",
+        "slNo": "1"
+      },
+      {
+        "monthAndYear": "February 2023",
+        "organisers": "Samskrita Academy, Madras",
+        "titleOfTheTalk": "Bhīṣma's Perception on Sṛṣti and Pralaya",
+        "slNo": "2"
+      },
+      {
+        "monthAndYear": "July 2022",
+        "organisers": "Sri Sankara Arts and Science College, Enathur, Kanchipuram",
+        "titleOfTheTalk": "Nātha - Śaiva Yoga and Gorakṣanātha",
+        "slNo": "3"
+      }
+    ],
+    "awards": [],
+    "extensionActivities": [
+      {
+        "date": "January 2024",
+        "activity": "Judge for the Annual Intercollegiate Competitions",
+        "sNo": "1",
+        "description": "The Sanskrit Department of Ramakrishna Mission Vivekananda College Chennai",
+        "monthAndYear": "January 2024",
+        "title": "Judge for Annual Intercollegiate Competitions",
+        "slNo": "1"
+      },
+      {
+        "date": "January 2024",
+        "activity": "Judge for the Bhagavad Gita competition",
+        "sNo": "2",
+        "description": "The Egmore Sanskrit School",
+        "monthAndYear": "January 2024",
+        "title": "Judge for Bhagavad Gita Competition",
+        "slNo": "2"
+      },
+      {
+        "date": "May 2023",
+        "activity": "External examiner for the diploma course",
+        "sNo": "3",
+        "description": "The Madras Sanskrit College Chennai",
+        "monthAndYear": "May 2023",
+        "title": "External Examiner",
+        "slNo": "3"
+      },
+      {
+        "date": "April 2022",
+        "activity": "Judge for the Annual Intramural Competition",
+        "sNo": "4",
+        "description": "Saarasvata Samiti the Sanskrit club at M.O.P. Vaishnav College for Women",
+        "monthAndYear": "April 2022",
+        "title": "Judge for Annual Intramural Competition",
+        "slNo": "4"
+      },
+      {
+        "date": "September 2018",
+        "activity": "Judge for the Bhagavad Gita competition",
+        "sNo": "5",
+        "description": "The Mylapore Academy",
+        "monthAndYear": "September 2018",
+        "title": "Judge for Bhagavad Gita Competition",
+        "slNo": "5"
+      },
+      {
+        "date": "October 2016",
+        "activity": "Judge for the Sri Narasimha Suprabhatham competition",
+        "sNo": "6",
+        "description": "Sri Gnana Vikas Sabha",
+        "monthAndYear": "October 2016",
+        "title": "Judge for Sri Narasimha Suprabhatham Competition",
+        "slNo": "6"
+      },
+      {
+        "date": "September 2016",
+        "activity": "Judge for a PPT and quiz competition",
+        "sNo": "7",
+        "description": "Sri Kanyaka Parameshwari College",
+        "monthAndYear": "September 2016",
+        "title": "Judge for PPT and Quiz Competition",
+        "slNo": "7"
+      },
+      {
+        "date": "July 2016",
+        "activity": "Delivered a radio talk on Significance of Indian Jewellery",
+        "sNo": "8",
+        "description": "M.O.P. Community Radio Station",
+        "monthAndYear": "July 2016",
+        "title": "Radio Talk on Indian Jewellery",
+        "slNo": "8"
+      },
+      {
+        "date": "June 2024",
+        "activity": "Organizing Committee Member",
+        "sNo": "9",
+        "description": "National Workshop on Sanskrit Literature, The KSRI",
+        "monthAndYear": "June 2024",
+        "title": "Organizing Committee Member for National Workshop",
+        "slNo": "9"
+      },
+      {
+        "date": "December 2023",
+        "activity": "Participant",
+        "sNo": "10",
+        "description": "Five-Day National Level Bhagavad Gita Workshop (Mata Traya Vivechanam): The Madras Sanskrit College Chennai",
+        "monthAndYear": "December 2023",
+        "title": "Bhagavad Gita Workshop Participant",
+        "slNo": "10"
+      }
+    ],
     "itemPublishStatus": "PUBLISHED"
   },
   {
