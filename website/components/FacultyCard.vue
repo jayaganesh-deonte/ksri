@@ -57,7 +57,7 @@
           variant="outlined"
           color="primary"
           rounded="pill"
-          @click="downloadProfile(item.profile[0])"
+          :to="`/ksri-team/faculty/${item.id}`"
           >View Profile</v-btn
         >
       </div>
