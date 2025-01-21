@@ -46,6 +46,8 @@
       </v-col>
     </v-row>
 
+    <Contribute class="my-12 mx-n6" />
+
     <contributeHeader />
   </div>
 </template>
