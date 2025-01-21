@@ -109,6 +109,18 @@
                   {{ bookInfo.author }}
                 </span>
               </div>
+              <!-- year of publication -->
+              <div
+                class="text-h6 text-primary my-4"
+                data-aos="fade-left"
+                data-aos-delay="300"
+              >
+                Year of Publication:
+                <span class="text-secondary">
+                  {{ bookInfo.yearOfPublication }}
+                </span>
+              </div>
+
               <div
                 class="text-start pa-0 mt-5 text-danger"
                 v-if="bookInfo.available != 'Yes'"
@@ -196,6 +208,7 @@ const bookInfo = reactive({
   id: "",
   available: "",
   publication: "",
+  yearOfPublication: "",
 });
 const getBookById = (id) => {
   // find book from book & samskritaAcademyPublicationBooks list if not found return null
@@ -221,6 +234,7 @@ const getBookInfo = async () => {
     bookInfo.available = book.available;
     bookInfo.publication = book.publication;
     bookInfo.author = book.author;
+    bookInfo.yearOfPublication = book.yearOfPublication;
   }
   bookInfoFetched.value = true;
 

@@ -81,14 +81,30 @@
                 {{ journalInfo.subtitle }}
               </div>
               <div
-                class="text-h6 text-secondary"
+                class="text-h6 text-primary my-4"
                 data-aos="fade-left"
                 data-aos-delay="300"
               >
-                Price: {{ journalInfo.price }}
+                Price:
+                <span class="text-secondary">
+                  {{ journalInfo.price }}
+                </span>
               </div>
+              <!-- year of publication -->
               <div
-                class="text-start pa-0 mt-5 text-danger"
+                class="text-h6 text-primary my-4"
+                data-aos="fade-left"
+                data-aos-delay="300"
+              >
+                Year of Publication:
+
+                <span class="text-secondary">
+                  {{ journalInfo.yearOfPublication }}
+                </span>
+              </div>
+
+              <div
+                class="pa-0 mt-5 text-danger"
                 v-if="journalInfo.available != 'Yes'"
                 data-aos-delay="400"
               >
@@ -170,6 +186,7 @@ const journalInfo = reactive({
   id: "",
   available: "",
   publication: "",
+  yearOfPublication: "",
 });
 const getBookById = (id) => {
   // find journal from journal & samskritaAcademyPublicationJournals list if not found return null
@@ -194,6 +211,7 @@ const getBookInfo = async () => {
     journalInfo.id = journal.id;
     journalInfo.available = journal.available;
     journalInfo.publication = journal.publication;
+    journalInfo.yearOfPublication = journal.yearOfPublication;
   }
   journalInfoFetched.value = true;
 

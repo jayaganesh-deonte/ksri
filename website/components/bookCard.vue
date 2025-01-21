@@ -47,18 +47,30 @@
             {{ book.subtitle }}
           </div>
           <!-- price -->
-          <div class="text-start pa-0 mt-5 text-secondary" data-aos-delay="300">
-            Price: {{ book.price }}
+          <div class="text-start pa-0 mt-5 text-primary" data-aos-delay="300">
+            Price:
+            <span class="text-secondary">
+              {{ book.price }}
+            </span>
           </div>
-          <!-- show if out of stock -->
-          <div
-            class="text-start pa-0 mt-5 text-danger"
-            v-if="book.available != 'Yes'"
-            data-aos-delay="400"
-          >
-            <v-chip color="error" label outlined rounded="pill">
-              Out of Stock
-            </v-chip>
+
+          <div class="d-flex align-center justify-space-between mr-1">
+            <!-- year of publication -->
+            <div class="text-start pa-0 mt-5 text-primary" data-aos-delay="300">
+              Year of Publication:
+              <span class="text-secondary"> {{ book.yearOfPublication }}</span>
+            </div>
+
+            <!-- show if out of stock -->
+            <div
+              class="text-start pa-0 mt-5 text-danger"
+              v-if="book.available != 'Yes'"
+              data-aos-delay="400"
+            >
+              <v-chip color="error" label outlined rounded="pill">
+                Out of Stock
+              </v-chip>
+            </div>
           </div>
         </v-col>
       </v-row>

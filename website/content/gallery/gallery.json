@@ -360,21 +360,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JHSBPPNHHDXNM535FH026RC3",
-    "imageUrl": [
-      "images/Dr. Rajendra prasad.jpg"
-    ],
-    "description": "",
-    "collection": "KSRI Archives",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2025-01-07T06:15:20.752Z",
-      "updated_at": "2025-01-17T05:27:48.618Z",
-      "created_by": "demo"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "id": "01JHSBMAZBHJTS4HWJZGHKMEYE",
     "imageUrl": [
       "images/balasub-1.jpg"
@@ -430,21 +415,6 @@
       "updated_by": "demo",
       "created_at": "2025-01-07T06:15:20.752Z",
       "updated_at": "2025-01-08T06:43:11.571Z",
-      "created_by": "demo"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGZNQM7PR48XMTWRHD4EMCFT",
-    "imageUrl": [
-      "images/birth cele-sastri-81-1.jpg"
-    ],
-    "description": "From the archives of KSRI",
-    "collection": "KSRI Archives",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2025-01-07T06:02:49.462Z",
-      "updated_at": "2025-01-07T06:02:49.462Z",
       "created_by": "demo"
     },
     "itemPublishStatus": "PUBLISHED"
