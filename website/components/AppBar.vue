@@ -13,7 +13,10 @@
             height="65"
             color="transparent"
             class="d-flex justify-center align-center mx-2 pa-2 appBarMenuItem"
-            @mouseover="option.isActive = true"
+            @mouseover="
+              option.isActive = true;
+              option.showChildren = true;
+            "
             @mouseleave="option.isActive = false"
           >
             <div class="ma-2 text-subtitle-1 appBarMenuItem">
