@@ -720,45 +720,25 @@ const fetchPublicationsAndBooks = async () => {
 };
 
 const main = async () => {
-  // for (const {
-  //   endpoint,
-  //   outputFile,
-  //   filter,
-  //   fetchItemsWithPagination,
-  // } of pageDetails) {
-  //   await fetchAndSaveData(
-  //     endpoint,
-  //     outputFile,
-  //     filter,
-  //     fetchItemsWithPagination
-  //   );
-  // }
+  for (const {
+    endpoint,
+    outputFile,
+    filter,
+    fetchItemsWithPagination,
+  } of pageDetails) {
+    await fetchAndSaveData(
+      endpoint,
+      outputFile,
+      filter,
+      fetchItemsWithPagination
+    );
+  }
 
-  // for (const { fileContent, outputFile } of fixedData) {
-  //   await saveFixedData(fileContent, outputFile);
-  // }
+  for (const { fileContent, outputFile } of fixedData) {
+    await saveFixedData(fileContent, outputFile);
+  }
 
-  // await fetchPublicationsAndBooks();
-
-  // load publication/books.json file and sort based on yearOfPublication
-  const books = require("../website/content//publications/books.json");
-
-  const sortedBooks = books.sort((a: any, b: any) => {
-    // Handle empty or missing yearOfPublication
-    if (!a.yearOfPublication) return 1;
-    if (!b.yearOfPublication) return -1;
-
-    //  get only year from date
-    const yearA = a.yearOfPublication.split("-")[0];
-    const yearB = b.yearOfPublication.split("-")[0];
-
-    return yearB - yearA;
-  });
-
-  writeFileSync(
-    "../website/content//publications/books.json",
-    JSON.stringify(sortedBooks, null, 2)
-  );
+  await fetchPublicationsAndBooks();
 };
 
 main();
