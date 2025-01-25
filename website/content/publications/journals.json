@@ -729,6 +729,24 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
+    "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS - Vol  XXIV",
+    "subtitle": " ",
+    "price": "Rs. 8 |14 Shillings",
+    "details": "",
+    "id": "01JH9RYK6YY4ZEE9M347Y5MVP3",
+    "keywords": "Vol  XXIV",
+    "available": "No",
+    "copies": "10",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-11T04:11:27.838Z",
+      "updated_at": "2025-01-24T08:00:45.725Z",
+      "created_by": "admin"
+    },
+    "yearOfPublication": "1955",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS - Vol  XXIII",
     "subtitle": "Sept 1953- June 54, Parts I_IV",
     "price": "Rs. 8 |14 Shillings",
@@ -792,6 +810,27 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
+    "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS - Vol  XXI",
+    "subtitle": "Index Vol |1951-52",
+    "price": " ",
+    "imageUrls": [
+      "images/journal ksri images 21.jpg"
+    ],
+    "details": "",
+    "id": "01JH9RYK6XV2AXBSBYF6Q82Q03",
+    "keywords": " ",
+    "available": "No",
+    "copies": "10",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-11T04:11:27.837Z",
+      "updated_at": "2025-01-24T07:59:49.381Z",
+      "created_by": "admin"
+    },
+    "yearOfPublication": "1952",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS - Vol  XVIII",
     "subtitle": "Sept 1948|Vol 18, Part I",
     "price": "Rs. 8 |14 Shillings",
@@ -831,6 +870,27 @@
       "created_by": "admin"
     },
     "yearOfPublication": "1950",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS - Vol  XVII",
+    "subtitle": "Index Volume - 1947-48",
+    "price": " ",
+    "imageUrls": [
+      "images/journal ksri images 17.jpg"
+    ],
+    "details": "<p>Index volume</p>",
+    "id": "01JH9RYK6XRB4WW6FPQHMXAE2Z",
+    "keywords": " ",
+    "available": "No",
+    "copies": "10",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-11T04:11:27.837Z",
+      "updated_at": "2025-01-24T07:59:23.957Z",
+      "created_by": "admin"
+    },
+    "yearOfPublication": "1948",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -1044,14 +1104,14 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS - Vol  V",
-    "subtitle": 1931,
+    "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS - Vol  VI",
+    "subtitle": 1932,
     "price": "",
     "imageUrls": [
-      "images/journal ksri images 5.jpg"
+      "images/journal ksri images 6.jpg"
     ],
     "details": "",
-    "id": "01JH9RYK6XDHTCSG3JE2W5Y56D",
+    "id": "01JH9RYK6XHQ1Z5QDE3SR9FPSK",
     "keywords": " ",
     "available": "No",
     "copies": "10",
@@ -1065,95 +1125,14 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS (Vol II)",
-    "subtitle": 1928,
+    "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS - Vol  V",
+    "subtitle": 1931,
     "price": "",
     "imageUrls": [
-      "images/journal ksri images 2.jpg"
+      "images/journal ksri images 5.jpg"
     ],
     "details": "",
-    "id": "01JH9RYK6WEFMC11TABMGQ6M9A",
-    "keywords": " ",
-    "available": "No",
-    "copies": "10",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-11T04:11:27.837Z",
-      "updated_at": "2025-01-11T04:11:27.837Z",
-      "created_by": "admin"
-    },
-    "yearOfPublication": 1929,
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS - Vol  XXIV",
-    "subtitle": "",
-    "price": "Rs. 8 |14 Shillings",
-    "details": "",
-    "id": "01JH9RYK6YY4ZEE9M347Y5MVP3",
-    "keywords": "",
-    "available": "No",
-    "copies": "10",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-11T04:11:27.838Z",
-      "updated_at": "2025-01-11T04:11:27.838Z",
-      "created_by": "admin"
-    },
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS - Vol  XXI",
-    "subtitle": "Index Vol |1951-52",
-    "price": " ",
-    "imageUrls": [
-      "images/journal ksri images 21.jpg"
-    ],
-    "details": "",
-    "id": "01JH9RYK6XV2AXBSBYF6Q82Q03",
-    "keywords": " ",
-    "available": "No",
-    "copies": "10",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2025-01-11T04:11:27.837Z",
-      "updated_at": "2025-01-21T09:25:03.421Z",
-      "created_by": "admin"
-    },
-    "yearOfPublication": "1951-52",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS - Vol  XVII",
-    "subtitle": "Index Volume - ",
-    "price": " ",
-    "imageUrls": [
-      "images/journal ksri images 17.jpg"
-    ],
-    "details": "Index volume",
-    "id": "01JH9RYK6XRB4WW6FPQHMXAE2Z",
-    "keywords": " ",
-    "available": "No",
-    "copies": "10",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2025-01-11T04:11:27.837Z",
-      "updated_at": "2025-01-21T09:24:28.358Z",
-      "created_by": "admin"
-    },
-    "yearOfPublication": "1947-48",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS - Vol  VI",
-    "subtitle": 1932,
-    "price": "",
-    "imageUrls": [
-      "images/journal ksri images 6.jpg"
-    ],
-    "details": "",
-    "id": "01JH9RYK6XHQ1Z5QDE3SR9FPSK",
+    "id": "01JH9RYK6XDHTCSG3JE2W5Y56D",
     "keywords": " ",
     "available": "No",
     "copies": "10",
@@ -1206,6 +1185,27 @@
       "created_by": "admin"
     },
     "yearOfPublication": 1930,
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "THE JOURNAL OF ORIENTAL RESEARCH MADRAS (Vol II)",
+    "subtitle": 1928,
+    "price": "",
+    "imageUrls": [
+      "images/journal ksri images 2.jpg"
+    ],
+    "details": "",
+    "id": "01JH9RYK6WEFMC11TABMGQ6M9A",
+    "keywords": " ",
+    "available": "No",
+    "copies": "10",
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-11T04:11:27.837Z",
+      "updated_at": "2025-01-11T04:11:27.837Z",
+      "created_by": "admin"
+    },
+    "yearOfPublication": 1929,
     "itemPublishStatus": "PUBLISHED"
   },
   {
