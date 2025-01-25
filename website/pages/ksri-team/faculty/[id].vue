@@ -541,6 +541,12 @@ const facultyData = await queryContent("faculty", "faculty").findOne();
 let faculty = facultyData.body;
 console.log("faculty", faculty);
 
+const nonAcademic = await queryContent("faculty", "nonacademic").findOne();
+let nonAcademicFaculty = nonAcademic.body;
+console.log("nonAcademicFaculty", nonAcademicFaculty);
+
+faculty = [...faculty, ...nonAcademicFaculty];
+
 // get faculty with id
 const facultyItem = faculty.find((item) => item.id === id);
 console.log("facultyItem", JSON.stringify(facultyItem));
