@@ -95,8 +95,8 @@ const bookFields = [
   },
   {
     key: "yearOfPublication",
-    label: "Year of Publication",
-    type: "text",
+    label: "Date of Publication",
+    type: "date",
     // rules: [(v) => !!v || "Year of Publication is required"],
   },
   {
@@ -126,7 +126,7 @@ const bookHeaders = [
   { title: "Price", key: "price" },
   { title: "Available", key: "available" },
   { title: "Publication", key: "publication" },
-  { title: "Year of Publication", key: "yearOfPublication" },
+  { title: "Date of Publication", key: "yearOfPublication" },
   { title: "Available Number of Copies", key: "copies" },
   { title: "Actions", key: "actions", sortable: false },
 ];

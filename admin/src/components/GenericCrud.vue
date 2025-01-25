@@ -216,6 +216,18 @@
                       density="compact"
                     />
 
+                    <!-- type month -->
+                    <v-text-field
+                      v-else-if="field.type === 'month'"
+                      v-model="editedItem[field.key]"
+                      :label="field.label"
+                      :rules="field.rules"
+                      variant="outlined"
+                      :disabled="isEditDisabled(field)"
+                      type="month"
+                      density="compact"
+                    />
+
                     <v-textarea
                       v-else-if="field.type === 'textarea'"
                       v-model="editedItem[field.key]"

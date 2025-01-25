@@ -143,44 +143,27 @@ const searchQuery = ref("");
 const selectedBook = reactive({});
 const showSelectedBookDetails = ref(false);
 
-let additionalPublicationBooks = {};
-
 const booksData = await queryContent("publications", "books").findOne();
 
 const ksriBooks = booksData.body;
 
-additionalPublicationBooks["KSRI"] = ksriBooks;
-
-// Add computed property for filtered books
-const filteredBooks = computed(() => {
-  const query = searchQuery.value.toLowerCase();
-
-  if (!query) return books.value;
-
-  const removeDiacritics = (str) => {
-    return str?.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  };
-
-  return books.value.filter(
-    (book) =>
-      removeDiacritics(book.title)
-        ?.toLowerCase()
-        .includes(removeDiacritics(query)) ||
-      removeDiacritics(book.author)
-        ?.toLowerCase()
-        .includes(removeDiacritics(query)) ||
-      removeDiacritics(book.subtitle)
-        ?.toLowerCase()
-        .includes(removeDiacritics(query))
-  );
-});
-
-const books = computed((publicationName) => {
-  return additionalPublicationBooks[publicationName];
-});
-
 const filterBooksBasedOnPublication = (publicationName) => {
-  let books = additionalPublicationBooks[publicationName];
+  // sort allBooks based on year of publication
+
+  let books = ksriBooks;
+
+  books.sort((a, b) => {
+    // Handle empty or missing yearOfPublication
+    if (!a.yearOfPublication) return 1;
+    if (!b.yearOfPublication) return -1;
+
+    //  get only year from date
+    const yearA = a.yearOfPublication.split("-")[0];
+    const yearB = b.yearOfPublication.split("-")[0];
+
+    return yearB - yearA;
+  });
+
   const query = searchQuery.value.toLowerCase();
 
   if (!query) return books;

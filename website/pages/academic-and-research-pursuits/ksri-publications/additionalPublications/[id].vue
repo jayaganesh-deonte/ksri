@@ -175,7 +175,16 @@ for (const element of additionalPublications) {
   // sort additionalPublications by yearOfPublication
 
   additionalPublicationBooks[additionalPublication].sort((a, b) => {
-    return b.yearOfPublication - a.yearOfPublication;
+    // Handle empty or missing yearOfPublication
+    if (!a.yearOfPublication) return 1;
+    if (!b.yearOfPublication) return -1;
+
+    // Compare dates using Date object comparison
+    const dateA = new Date(a.yearOfPublication);
+    const dateB = new Date(b.yearOfPublication);
+
+    // Compare timestamps to sort from newest to oldest
+    return dateB.getTime() - dateA.getTime();
   });
 }
 
@@ -189,6 +198,21 @@ const books = computed((publicationName) => {
 
 const filterBooksBasedOnPublication = (publicationName) => {
   let books = additionalPublicationBooks[publicationName];
+
+  // sort books
+  books.sort((a, b) => {
+    // Handle empty or missing yearOfPublication
+    if (!a.yearOfPublication) return 1;
+    if (!b.yearOfPublication) return -1;
+
+    // Compare dates using Date object comparison
+    const dateA = new Date(a.yearOfPublication);
+    const dateB = new Date(b.yearOfPublication);
+
+    // Compare timestamps to sort from newest to oldest
+    return dateB.getTime() - dateA.getTime();
+  });
+
   const query = searchQuery.value.toLowerCase();
 
   if (!query) return books;

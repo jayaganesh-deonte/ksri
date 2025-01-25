@@ -1,5 +1,189 @@
 [
   {
+    "title": "Vedas: Traditional and Modern perspectives",
+    "subtitle": " ",
+    "price": "₹ 250",
+    "imageUrls": [
+      "images/image001.jpg"
+    ],
+    "details": "",
+    "id": "01JGNDQ25VRQG9ST5FC6175V21",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": 0,
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-03T06:30:18.043Z",
+      "updated_at": "2025-01-25T08:37:34.173Z",
+      "created_by": "admin"
+    },
+    "author": " ",
+    "yearOfPublication": "2007-01-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Kālāmukha and Pāśupaa  temples in  Dharwar ",
+    "subtitle": "",
+    "price": " ₹ 250 $15",
+    "imageUrls": [
+      "images/image023.jpg"
+    ],
+    "details": "",
+    "id": "01JGNDQ25S45660YMP7R92QJSD",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": 0,
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-03T06:30:18.042Z",
+      "updated_at": "2025-01-25T07:34:13.662Z",
+      "created_by": "admin"
+    },
+    "author": "Dr. Vasundhara Filliozat",
+    "yearOfPublication": "2001-01-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Saiva Rituals and Philosophy",
+    "subtitle": " ",
+    "price": "₹ 200 $20",
+    "imageUrls": [
+      "images/image029.jpg"
+    ],
+    "details": "",
+    "id": "01JGNDQ25SP2GJKGEZMA3QGJGX",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "Yes",
+    "copies": 100,
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-03T06:30:18.041Z",
+      "updated_at": "2025-01-25T07:33:59.036Z",
+      "created_by": "admin"
+    },
+    "author": " ed. Dr.S.S.Janaki",
+    "yearOfPublication": "2001-01-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Sri Umapati Sivacharya His life, Works and Contribution to Saivism",
+    "subtitle": " ",
+    "price": " ₹ 150 $20",
+    "imageUrls": [
+      "images/image042.jpg"
+    ],
+    "details": "",
+    "id": "01JGNDQ25SC2KF9AW3NG7NCZK1",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": 0,
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-03T06:30:18.041Z",
+      "updated_at": "2025-01-25T07:34:43.356Z",
+      "created_by": "admin"
+    },
+    "author": "  ",
+    "yearOfPublication": "1996-01-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Dhvaja Stambha – Critical account of its structural and ritualistic details",
+    "subtitle": " ",
+    "price": "₹ 20",
+    "imageUrls": [
+      "images/image009.jpg"
+    ],
+    "details": "",
+    "id": "01JGNDQ25VZC44T6XMZ0QHRZ7K",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": 0,
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-03T06:30:18.043Z",
+      "updated_at": "2025-01-25T07:35:12.424Z",
+      "created_by": "admin"
+    },
+    "author": "S S Janaki",
+    "yearOfPublication": "1988-01-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Nalopakhyana – Saṅgraha",
+    "subtitle": " ",
+    "price": "₹ 3",
+    "imageUrls": [
+      "images/image027.jpg"
+    ],
+    "details": "",
+    "id": "01JGNDQ25S4Y69P02FESYQVC1J",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": 0,
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-03T06:30:18.041Z",
+      "updated_at": "2025-01-25T07:36:22.071Z",
+      "created_by": "admin"
+    },
+    "author": "Mm. Sri Lakshmana Suri",
+    "yearOfPublication": "1974-01-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Arthasastra Vyakhya – Chanakya tika",
+    "subtitle": " ",
+    "price": "'-",
+    "imageUrls": [
+      "images/image011.jpg"
+    ],
+    "details": "",
+    "id": "01JGNDQ25SRSYNST1BDPMK9WJP",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "No",
+    "copies": 0,
+    "metadata": {
+      "updated_by": "admin",
+      "created_at": "2025-01-03T06:30:18.041Z",
+      "updated_at": "2025-01-03T06:30:18.041Z",
+      "created_by": "admin"
+    },
+    "author": " ",
+    "yearOfPublication": " ",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "YOGA SAṄGRAHA",
+    "subtitle": " This is a critical edition of this text based on three available Mss. in different scripts. ",
+    "price": "250",
+    "imageUrls": [
+      "images/Yogasangraha.JPG"
+    ],
+    "details": "<p>In about 200 verses, it contains lot of interesting details which are not found in other Yogic texts.</p>",
+    "id": "01JGXKQXH67MTRRH8M7YAQFJYY",
+    "publication": "KSRI",
+    "keywords": "Yoga",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-06T10:49:32.966Z",
+      "updated_at": "2025-01-25T08:20:36.647Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. R Muthulakshmi, Dr. K.S. Balasubramanian, Dr. T.V. Vasudeva",
+    "yearOfPublication": "2023-12-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "title": "ŚIVA SVARODAYA ",
     "subtitle": "(Text in Devanagari and Roman script with English translation and notes)",
     "price": "250",
@@ -19,30 +203,7 @@
       "created_by": "demo"
     },
     "author": "Dr. K.S. Balasubramanian. Dr. T.V.Vasudeva, Dr. K Vidyuta",
-    "yearOfPublication": "2023",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "YOGA SAṄGRAHA",
-    "subtitle": " This is a critical edition of this text based on three available Mss. in different scripts. ",
-    "price": "250",
-    "imageUrls": [
-      "images/Yogasangraha.JPG"
-    ],
-    "details": "<p>In about 200 verses, it contains lot of interesting details which are not found in other Yogic texts.</p>",
-    "id": "01JGXKQXH67MTRRH8M7YAQFJYY",
-    "publication": "KSRI",
-    "keywords": "Yoga",
-    "available": "Yes",
-    "copies": "500",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2025-01-06T10:49:32.966Z",
-      "updated_at": "2025-01-06T10:53:36.151Z",
-      "created_by": "demo"
-    },
-    "author": "Dr. R Muthulakshmi, Dr. K.S. Balasubramanian, Dr. T.V. Vasudeva",
-    "yearOfPublication": "2023",
+    "yearOfPublication": "2023-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -65,7 +226,7 @@
       "created_by": "demo"
     },
     "author": "Dr. V Preethi",
-    "yearOfPublication": "2023",
+    "yearOfPublication": "2023-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -88,7 +249,7 @@
       "created_by": "demo"
     },
     "author": "Dr. P.C. Muralidharan",
-    "yearOfPublication": "2023",
+    "yearOfPublication": "2023-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -111,7 +272,7 @@
       "created_by": "demo"
     },
     "author": "Dr. V Ramakalyani",
-    "yearOfPublication": "2023",
+    "yearOfPublication": "2023-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -134,7 +295,7 @@
       "created_by": "demo"
     },
     "author": "Dr. Sita Sundar Ram",
-    "yearOfPublication": "2023",
+    "yearOfPublication": "2023-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -157,7 +318,7 @@
       "created_by": "demo"
     },
     "author": "Dr. S. Gopalan",
-    "yearOfPublication": "2023",
+    "yearOfPublication": "2023-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -180,7 +341,7 @@
       "created_by": "demo"
     },
     "author": "Prof. R. Parthasarathy",
-    "yearOfPublication": "2023",
+    "yearOfPublication": "2023-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -203,7 +364,7 @@
       "created_by": "demo"
     },
     "author": "Dr. S. Anuradha",
-    "yearOfPublication": "2023",
+    "yearOfPublication": "2023-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -226,7 +387,7 @@
       "created_by": "demo"
     },
     "author": "Dr. Vasumathi Rajaram",
-    "yearOfPublication": "2023",
+    "yearOfPublication": "2023-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -249,7 +410,7 @@
       "created_by": "demo"
     },
     "author": "Prof. R. Parthasarathy",
-    "yearOfPublication": "2023",
+    "yearOfPublication": "2023-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -272,7 +433,7 @@
       "created_by": "demo"
     },
     "author": "Dr. V Premalatha",
-    "yearOfPublication": "2023",
+    "yearOfPublication": "2023-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -295,7 +456,7 @@
       "created_by": "demo"
     },
     "author": "-",
-    "yearOfPublication": "2023",
+    "yearOfPublication": "2023-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -314,11 +475,11 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-09T06:35:36.215Z",
+      "updated_at": "2025-01-25T07:33:23.199Z",
       "created_by": "admin"
     },
     "author": "Text with Eng. Tr. by Dr. K.S. Balasubramanian and Dr. T.V.Vasudeva.",
-    "yearOfPublication": 2016,
+    "yearOfPublication": "2016-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -335,36 +496,13 @@
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
+      "updated_at": "2025-01-25T07:32:36.441Z",
       "created_by": "admin"
     },
     "author": "Dr. K.S. Balasubramanian and Dr. T. V. Vasudeva",
-    "yearOfPublication": 2009,
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Vedas: Traditional and Modern perspectives",
-    "subtitle": " ",
-    "price": "₹ 250",
-    "imageUrls": [
-      "images/image001.jpg"
-    ],
-    "details": "",
-    "id": "01JGNDQ25VRQG9ST5FC6175V21",
-    "publication": "KSRI",
-    "keywords": " ",
-    "available": "No",
-    "copies": 0,
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-17T07:19:54.891Z",
-      "created_by": "admin"
-    },
-    "author": " ",
-    "yearOfPublication": 2007,
+    "yearOfPublication": "2009-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -387,7 +525,7 @@
       "created_by": "admin"
     },
     "author": " ",
-    "yearOfPublication": "2007",
+    "yearOfPublication": "2007-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -404,59 +542,13 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
+      "updated_at": "2025-01-25T07:33:47.737Z",
       "created_by": "admin"
     },
     "author": "With English translation by Dr. K.K. Raja",
-    "yearOfPublication": 2005,
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Kālāmukha and Pāśupaa  temples in  Dharwar ",
-    "subtitle": "",
-    "price": " ₹ 250 $15",
-    "imageUrls": [
-      "images/image023.jpg"
-    ],
-    "details": "",
-    "id": "01JGNDQ25S45660YMP7R92QJSD",
-    "publication": "KSRI",
-    "keywords": " ",
-    "available": "No",
-    "copies": 0,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
-      "created_by": "admin"
-    },
-    "author": "Dr. Vasundhara Filliozat",
-    "yearOfPublication": 2001,
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Saiva Rituals and Philosophy",
-    "subtitle": " ",
-    "price": "₹ 200 $20",
-    "imageUrls": [
-      "images/image029.jpg"
-    ],
-    "details": "",
-    "id": "01JGNDQ25SP2GJKGEZMA3QGJGX",
-    "publication": "KSRI",
-    "keywords": " ",
-    "available": "Yes",
-    "copies": 100,
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-01-09T05:59:00.711Z",
-      "created_by": "admin"
-    },
-    "author": " ed. Dr.S.S.Janaki",
-    "yearOfPublication": 2001,
+    "yearOfPublication": "2005-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -473,36 +565,13 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
+      "updated_at": "2025-01-25T07:34:24.122Z",
       "created_by": "admin"
     },
     "author": "Mm. Prof. S. Kuppuswami Sastri",
-    "yearOfPublication": 1998,
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Sri Umapati Sivacharya His life, Works and Contribution to Saivism",
-    "subtitle": " ",
-    "price": " ₹ 150 $20",
-    "imageUrls": [
-      "images/image042.jpg"
-    ],
-    "details": "",
-    "id": "01JGNDQ25SC2KF9AW3NG7NCZK1",
-    "publication": "KSRI",
-    "keywords": " ",
-    "available": "No",
-    "copies": 0,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-01-03T06:30:18.041Z",
-      "created_by": "admin"
-    },
-    "author": "  ",
-    "yearOfPublication": 1996,
+    "yearOfPublication": "1998-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -512,20 +581,20 @@
     "imageUrls": [
       "upload/samskta-shitya-itihsa.jpg"
     ],
-    "details": "“The book opens with the history of Vedic literature in which the time of Vedas, Vedic metres, Vedic rivers, trees, animals, Upaniṣad, etc. have been discussed and it is clear that we get much light and guidance in going through the entire Vedic literature. “The next part of the book is devoted to the history of  Kāvya (literary form of art), in which the details about time of poets and the contents of their creations have been highlighted. It includes Kālidāsa, Vararuci, Aśvaghoṣa, Bhāravi, Bhaṭṭi, Māgha Kṣemendra, Hemachandra, et. al. and their poetic creations. A separate section is devoted to the discussion of the historical aspect of Sanskrit drama and dramatists.  “It is a very difficult work to give a brief account of the whole Sanskrit literature in English by various Western scholars is available. But such a history in Sanskit is very rare.”\\nDr. Raghunath Ghosh, Prabuddha Bharata.",
+    "details": "<p>“The book opens with the history of Vedic literature in which the time of Vedas, Vedic metres, Vedic rivers, trees, animals, Upaniṣad, etc. have been discussed and it is clear that we get much light and guidance in going through the entire Vedic literature. “The next part of the book is devoted to the history of  Kāvya (literary form of art), in which the details about time of poets and the contents of their creations have been highlighted. It includes Kālidāsa, Vararuci, Aśvaghoṣa, Bhāravi, Bhaṭṭi, Māgha Kṣemendra, Hemachandra, et. al. and their poetic creations. A separate section is devoted to the discussion of the historical aspect of Sanskrit drama and dramatists.  “It is a very difficult work to give a brief account of the whole Sanskrit literature in English by various Western scholars is available. But such a history in Sanskit is very rare.”\\nDr. Raghunath Ghosh, Prabuddha Bharata.</p>",
     "id": "01JGNDQ25TMH4HB5TA3SSXCJGN",
     "publication": "KSRI",
     "keywords": "SAMSKṚTA SĀHITYA ITIHĀSAḤ (A History of Sanskrit Literature);",
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
+      "updated_at": "2025-01-25T07:34:33.795Z",
       "created_by": "admin"
     },
     "author": "Prof. R. S. Venkatarama Sastri",
-    "yearOfPublication": 1996,
+    "yearOfPublication": "1996-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -542,36 +611,13 @@
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
+      "updated_at": "2025-01-25T07:34:58.642Z",
       "created_by": "admin"
     },
     "author": "Ed. by S.Kuppuswami Sastri",
-    "yearOfPublication": 1993,
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Dhvaja Stambha – Critical account of its structural and ritualistic details",
-    "subtitle": " ",
-    "price": "₹ 20",
-    "imageUrls": [
-      "images/image009.jpg"
-    ],
-    "details": "",
-    "id": "01JGNDQ25VZC44T6XMZ0QHRZ7K",
-    "publication": "KSRI",
-    "keywords": " ",
-    "available": "No",
-    "copies": 0,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-01-03T06:30:18.043Z",
-      "created_by": "admin"
-    },
-    "author": "S S Janaki",
-    "yearOfPublication": 1988,
+    "yearOfPublication": "1993-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -588,13 +634,13 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
+      "updated_at": "2025-01-25T07:35:23.722Z",
       "created_by": "admin"
     },
     "author": "General Editor: S S Janaki",
-    "yearOfPublication": 1987,
+    "yearOfPublication": "1987-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -611,13 +657,13 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
+      "updated_at": "2025-01-25T07:35:36.710Z",
       "created_by": "admin"
     },
     "author": "Dr. V. Raghavan & Dr. S. S. Janaki",
-    "yearOfPublication": 1986,
+    "yearOfPublication": "1986-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -634,13 +680,13 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
+      "updated_at": "2025-01-25T07:35:59.688Z",
       "created_by": "admin"
     },
     "author": "Dr. S S Janaki",
-    "yearOfPublication": 1981,
+    "yearOfPublication": "1981-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -663,7 +709,7 @@
       "created_by": "admin"
     },
     "author": "",
-    "yearOfPublication": "1981",
+    "yearOfPublication": "1981-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -680,36 +726,13 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
+      "updated_at": "2025-01-25T07:36:10.357Z",
       "created_by": "admin"
     },
     "author": "Edition with English translation by Dr. Robert C Lester",
-    "yearOfPublication": 1979,
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Nalopakhyana – Saṅgraha",
-    "subtitle": " ",
-    "price": "₹ 3",
-    "imageUrls": [
-      "images/image027.jpg"
-    ],
-    "details": "",
-    "id": "01JGNDQ25S4Y69P02FESYQVC1J",
-    "publication": "KSRI",
-    "keywords": " ",
-    "available": "No",
-    "copies": 0,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-01-03T06:30:18.041Z",
-      "created_by": "admin"
-    },
-    "author": "Mm. Sri Lakshmana Suri",
-    "yearOfPublication": 1974,
+    "yearOfPublication": "1979-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -726,13 +749,13 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-01-03T06:30:18.042Z",
+      "updated_at": "2025-01-25T07:36:31.656Z",
       "created_by": "admin"
     },
     "author": "David Pingree",
-    "yearOfPublication": 1973,
+    "yearOfPublication": "1973-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -749,13 +772,13 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-03T06:30:18.044Z",
+      "updated_at": "2025-01-25T07:36:53.797Z",
       "created_by": "admin"
     },
     "author": "Sri K V Sarma ",
-    "yearOfPublication": 1962,
+    "yearOfPublication": "1962-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -772,13 +795,13 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
+      "updated_at": "2025-01-25T07:36:42.528Z",
       "created_by": "admin"
     },
     "author": "T.S. Kuppanna Sastri & K.V Sarma",
-    "yearOfPublication": 1962,
+    "yearOfPublication": "1962-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -795,13 +818,13 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-03T06:30:18.045Z",
+      "updated_at": "2025-01-25T07:37:03.008Z",
       "created_by": "admin"
     },
     "author": "Critically edited by K.V. Sarma",
-    "yearOfPublication": 1954,
+    "yearOfPublication": "1954-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -820,11 +843,11 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-01-17T06:50:31.504Z",
+      "updated_at": "2025-01-25T07:37:14.025Z",
       "created_by": "admin"
     },
     "author": "Edited by D.D. Kosambi",
-    "yearOfPublication": 1952,
+    "yearOfPublication": "1952-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -843,11 +866,11 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-17T07:08:05.947Z",
+      "updated_at": "2025-01-25T07:37:23.057Z",
       "created_by": "admin"
     },
     "author": "Mm. Prof. S. Kuppuswami Sastri",
-    "yearOfPublication": 1944,
+    "yearOfPublication": "1944-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -864,13 +887,13 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
+      "updated_at": "2025-01-25T07:37:33.605Z",
       "created_by": "admin"
     },
     "author": "Edited by Mm. Kuppuswami Sastri",
-    "yearOfPublication": 1932,
+    "yearOfPublication": "1932-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -1074,29 +1097,6 @@
     },
     "author": "",
     "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Arthasastra Vyakhya – Chanakya tika",
-    "subtitle": " ",
-    "price": "'-",
-    "imageUrls": [
-      "images/image011.jpg"
-    ],
-    "details": "",
-    "id": "01JGNDQ25SRSYNST1BDPMK9WJP",
-    "publication": "KSRI",
-    "keywords": " ",
-    "available": "No",
-    "copies": 0,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-01-03T06:30:18.041Z",
-      "created_by": "admin"
-    },
-    "author": " ",
-    "yearOfPublication": " ",
     "itemPublishStatus": "PUBLISHED"
   },
   {

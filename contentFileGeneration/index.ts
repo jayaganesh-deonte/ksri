@@ -613,31 +613,6 @@ const saveFixedData = async (fileContent: any, outputFile: string) => {
 };
 
 const fetchPublicationsAndBooks = async () => {
-  //  // /publications/additionalPublications
-  //  {
-  //   endpoint: "/publications/additionalPublications",
-  //   outputFile: "../website/content//publications/additionalpublications.json",
-  //   // sort based on orderId and select only name and store it in additionalPublications
-  //   filter: (data: any[]) => {
-  //     additionalPublications = data
-  //       .sort((a, b) => a.orderId - b.orderId)
-  //       .map((item) => item.name);
-  //     return additionalPublications;
-  //   },
-  //   // filter: (data: any[]) =>
-  //   //   data.sort((a, b) => a.orderId - b.orderId).map((item) => item.name),
-  // },
-  // // /publications/books?publication-KSRI
-  // {
-  //   endpoint: "/publications/books?publication=KSRI",
-  //   outputFile: "../website/content//publications/books.json",
-  // },
-  // {
-  //   endpoint: "/publications/books?publication=Samskrita Academy",
-  //   outputFile:
-  //     "../website/content//publications/samskritaacademypublications.json",
-  // },
-
   // fetch additionalPublications
   const additionalPublications = await fetchAndSaveData(
     "/publications/additionalPublications",
@@ -662,9 +637,23 @@ const fetchPublicationsAndBooks = async () => {
     "/publications/books?publication=KSRI",
     "../website/content//publications/books.json",
     (data: any[]) => {
-      return data
-        .filter((item) => item.itemPublishStatus === "PUBLISHED")
-        .sort((a, b) => b.yearOfPublication - a.yearOfPublication);
+      return (
+        data
+          .filter((item) => item.itemPublishStatus === "PUBLISHED")
+          // yearOfPublication is 'YYYY-MM-DD' format and sometimes it is not available
+          .sort((a, b) => {
+            // Handle empty or missing yearOfPublication
+            if (!a.yearOfPublication) return 1;
+            if (!b.yearOfPublication) return -1;
+
+            // Compare dates using Date object comparison
+            const dateA = new Date(a.yearOfPublication);
+            const dateB = new Date(b.yearOfPublication);
+
+            // Compare timestamps to sort from newest to oldest
+            return dateB.getTime() - dateA.getTime();
+          })
+      );
     }
   );
 
@@ -679,9 +668,23 @@ const fetchPublicationsAndBooks = async () => {
       `../website/content//publications/${publicationNameForFile}.json`
     );
     (data: any[]) => {
-      return data
-        .filter((item) => item.itemPublishStatus === "PUBLISHED")
-        .sort((a, b) => b.yearOfPublication - a.yearOfPublication);
+      return (
+        data
+          .filter((item) => item.itemPublishStatus === "PUBLISHED")
+          // .sort((a, b) => b.yearOfPublication - a.yearOfPublication);
+          .sort((a, b) => {
+            // Handle empty or missing yearOfPublication
+            if (!a.yearOfPublication) return 1;
+            if (!b.yearOfPublication) return -1;
+
+            // Compare dates using Date object comparison
+            const dateA = new Date(a.yearOfPublication);
+            const dateB = new Date(b.yearOfPublication);
+
+            // Compare timestamps to sort from newest to oldest
+            return dateB.getTime() - dateA.getTime();
+          })
+      );
     };
   }
 
@@ -717,25 +720,45 @@ const fetchPublicationsAndBooks = async () => {
 };
 
 const main = async () => {
-  for (const {
-    endpoint,
-    outputFile,
-    filter,
-    fetchItemsWithPagination,
-  } of pageDetails) {
-    await fetchAndSaveData(
-      endpoint,
-      outputFile,
-      filter,
-      fetchItemsWithPagination
-    );
-  }
+  // for (const {
+  //   endpoint,
+  //   outputFile,
+  //   filter,
+  //   fetchItemsWithPagination,
+  // } of pageDetails) {
+  //   await fetchAndSaveData(
+  //     endpoint,
+  //     outputFile,
+  //     filter,
+  //     fetchItemsWithPagination
+  //   );
+  // }
 
-  for (const { fileContent, outputFile } of fixedData) {
-    await saveFixedData(fileContent, outputFile);
-  }
+  // for (const { fileContent, outputFile } of fixedData) {
+  //   await saveFixedData(fileContent, outputFile);
+  // }
 
-  await fetchPublicationsAndBooks();
+  // await fetchPublicationsAndBooks();
+
+  // load publication/books.json file and sort based on yearOfPublication
+  const books = require("../website/content//publications/books.json");
+
+  const sortedBooks = books.sort((a: any, b: any) => {
+    // Handle empty or missing yearOfPublication
+    if (!a.yearOfPublication) return 1;
+    if (!b.yearOfPublication) return -1;
+
+    //  get only year from date
+    const yearA = a.yearOfPublication.split("-")[0];
+    const yearB = b.yearOfPublication.split("-")[0];
+
+    return yearB - yearA;
+  });
+
+  writeFileSync(
+    "../website/content//publications/books.json",
+    JSON.stringify(sortedBooks, null, 2)
+  );
 };
 
 main();

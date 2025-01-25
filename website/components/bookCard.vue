@@ -58,7 +58,9 @@
             <!-- year of publication -->
             <div class="text-start pa-0 mt-5 text-primary" data-aos-delay="300">
               Year of Publication:
-              <span class="text-secondary"> {{ book.yearOfPublication }}</span>
+              <span class="text-secondary">
+                {{ getYearFromDate(book.yearOfPublication) }}
+              </span>
             </div>
 
             <!-- show if out of stock -->
@@ -140,6 +142,14 @@ export default {
     getImageUrl(url) {
       const runtimeConfig = useRuntimeConfig();
       return runtimeConfig.public.ASSET_DOMAIN + url;
+    },
+    getYearFromDate(date) {
+      if (!this.isBook) return date;
+
+      // if not a date or invalid date, return null
+      if (!date || isNaN(new Date(date).getTime())) return null;
+      // get year from date
+      return new Date(date).getFullYear();
     },
   },
 };

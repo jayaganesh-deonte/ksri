@@ -305,13 +305,39 @@ const publicationCards = [
 // ).findOne();
 
 // const samskritaAcademyPublications = samskritaAcademyPublicationsData.body;
-const booksData = await queryContent("publications", "books").findOne();
+let booksData = await queryContent("publications", "books").findOne();
 
-const ksriBooks = booksData.body;
+let ksriBooks = reactive(booksData.body);
+console.log("ksriBooks", ksriBooks);
+
+ksriBooks.sort((a, b) => {
+  // Handle empty or missing yearOfPublication
+  if (!a.yearOfPublication) return 1;
+  if (!b.yearOfPublication) return -1;
+
+  //  get only year from date
+  const yearA = a.yearOfPublication.split("-")[0];
+  const yearB = b.yearOfPublication.split("-")[0];
+
+  return yearB - yearA;
+});
 
 const journalsData = await queryContent("publications", "journals").findOne();
 
-const ksriJournals = journalsData.body;
+let ksriJournals = journalsData.body;
+
+ksriJournals.sort((a, b) => {
+  // Handle empty or missing yearOfPublication
+  if (!a.yearOfPublication) return 1;
+  if (!b.yearOfPublication) return -1;
+
+  // Compare dates using Date object comparison
+  const dateA = new Date(a.yearOfPublication);
+  const dateB = new Date(b.yearOfPublication);
+
+  // Compare timestamps to sort from newest to oldest
+  return dateB.getTime() - dateA.getTime();
+});
 
 // recent 3 books
 const recentBooks = reactive(ksriBooks.slice(0, 3));
@@ -360,7 +386,16 @@ for (const element of additionalPublications) {
 
   // sort additionalPublicationBooks by year
   additionalPublicationBooks[additionalPublication].sort((a, b) => {
-    return b.yearOfPublication - a.yearOfPublication;
+    // Handle empty or missing yearOfPublication
+    if (!a.yearOfPublication) return 1;
+    if (!b.yearOfPublication) return -1;
+
+    // Compare dates using Date object comparison
+    const dateA = new Date(a.yearOfPublication);
+    const dateB = new Date(b.yearOfPublication);
+
+    // Compare timestamps to sort from newest to oldest
+    return dateB.getTime() - dateA.getTime();
   });
 }
 
