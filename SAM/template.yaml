@@ -137,6 +137,7 @@ Resources:
         Variables:
           DDB_TABLE_NAME: !Ref masterTable
           LOG_LEVEL: INFO
+          S3_BUCKET_NAME: !Ref S3Bucket
       Policies:
         - DynamoDBCrudPolicy:
             TableName: !Ref masterTable
@@ -144,7 +145,13 @@ Resources:
             TableName: !Ref masterTable
         - DynamoDBWritePolicy:
             TableName: !Ref masterTable
-
+        # cloudwatch:GetMetricData
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - cloudwatch:GetMetricData
+              Resource: "*"
       Events:
         Schedule:
           Type: Schedule

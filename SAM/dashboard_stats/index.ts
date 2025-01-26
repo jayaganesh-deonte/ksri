@@ -1,9 +1,12 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocument } from "@aws-sdk/lib-dynamodb";
+import { getS3ObjectCountAndTotalSize } from "./s3_summary";
 
 const documentClient = DynamoDBDocument.from(new DynamoDBClient());
 
 const DDB_TABLE_NAME = process.env.DDB_TABLE_NAME;
+
+const S3_BUCKET_NAME = process.env.S3_BUCKET_NAME;
 
 let dashboardData = [
   {
@@ -86,14 +89,6 @@ let dashboardData = [
       },
     ],
   },
-
-  // Users for the system
-  {
-    title: "System Users",
-    total: 0,
-    icon: "mdi-account",
-    entityType: "ENTITYTYPE#USER",
-  },
 ];
 
 const query = async (entityType, filter) => {
@@ -133,6 +128,32 @@ const getDashboardStats = async () => {
       item.total = count;
     }
   }
+
+  // get s3 stats
+  const { objectCount, totalSizeBytes } = await getS3ObjectCountAndTotalSize(
+    S3_BUCKET_NAME
+  );
+
+  // append s3 stats to the dashboardData
+  dashboardData.push({
+    title: "Total Media Files",
+    total: objectCount,
+    icon: "mdi-file",
+    entityType: "",
+    filter: [],
+  });
+
+  // convert bytes to GB and round to 2 decimal places
+  const totalSizeGB =
+    Math.round((totalSizeBytes / 1024 / 1024 / 1024) * 100) / 100;
+
+  dashboardData.push({
+    title: "Total Media Size (GB)",
+    total: totalSizeGB,
+    icon: "mdi-cloud-arrow-up",
+    entityType: "",
+    filter: [],
+  });
 
   //   insert dashboardData into the ddb
   const params = {
