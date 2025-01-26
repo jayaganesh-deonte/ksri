@@ -89,6 +89,14 @@ let dashboardData = [
       },
     ],
   },
+
+  // Users for the system
+  {
+    title: "System Users",
+    total: 0,
+    icon: "mdi-account",
+    entityType: "ENTITYTYPE#USER",
+  },
 ];
 
 const query = async (entityType, filter) => {
