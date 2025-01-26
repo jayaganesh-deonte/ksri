@@ -75,7 +75,7 @@ galleryRoute.post("/gallery", async (req: Request, res: Response) => {
     let blukItems = [];
     for (const element of galleryImage.imageUrl) {
       const item: GalleryImage = {
-        id: ulid(),
+        id: galleryImage.id,
         imageUrl: [element],
         description: galleryImage.description,
         collection: galleryImage.collection,
