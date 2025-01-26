@@ -307,19 +307,20 @@ const publicationCards = [
 // const samskritaAcademyPublications = samskritaAcademyPublicationsData.body;
 let booksData = await queryContent("publications", "books").findOne();
 
-let ksriBooks = reactive(booksData.body);
-console.log("ksriBooks", ksriBooks);
+let ksriBooks = booksData.body;
 
-ksriBooks.sort((a, b) => {
-  // Handle empty or missing yearOfPublication
-  if (!a.yearOfPublication) return 1;
-  if (!b.yearOfPublication) return -1;
-
-  //  get only year from date
-  const yearA = a.yearOfPublication.split("-")[0];
-  const yearB = b.yearOfPublication.split("-")[0];
-
-  return yearB - yearA;
+ksriBooks = ksriBooks.sort((a, b) => {
+  const yearA = a.yearOfPublication.trim();
+  const yearB = b.yearOfPublication.trim();
+  if (yearA && yearB) {
+    return yearA < yearB ? 1 : -1;
+  } else if (yearA) {
+    return -1;
+  } else if (yearB) {
+    return 1;
+  } else {
+    return 0;
+  }
 });
 
 const journalsData = await queryContent("publications", "journals").findOne();

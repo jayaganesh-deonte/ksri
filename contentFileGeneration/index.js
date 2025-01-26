@@ -774,22 +774,40 @@ var fetchPublicationsAndBooks = function () { return __awaiter(void 0, void 0, v
     });
 }); };
 var main = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var books, sortedBooks;
-    return __generator(this, function (_a) {
-        books = require("../website/content//publications/books.json");
-        sortedBooks = books.sort(function (a, b) {
-            // Handle empty or missing yearOfPublication
-            if (!a.yearOfPublication)
-                return 1;
-            if (!b.yearOfPublication)
-                return -1;
-            //  get only year from date
-            var yearA = a.yearOfPublication.split("-")[0];
-            var yearB = b.yearOfPublication.split("-")[0];
-            return yearB - yearA;
-        });
-        (0, fs_1.writeFileSync)("../website/content//publications/books.json", JSON.stringify(sortedBooks, null, 2));
-        return [2 /*return*/];
+    var _i, pageDetails_1, _a, endpoint, outputFile, filter, fetchItemsWithPagination, _b, fixedData_1, _c, fileContent, outputFile;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
+            case 0:
+                _i = 0, pageDetails_1 = pageDetails;
+                _d.label = 1;
+            case 1:
+                if (!(_i < pageDetails_1.length)) return [3 /*break*/, 4];
+                _a = pageDetails_1[_i], endpoint = _a.endpoint, outputFile = _a.outputFile, filter = _a.filter, fetchItemsWithPagination = _a.fetchItemsWithPagination;
+                return [4 /*yield*/, fetchAndSaveData(endpoint, outputFile, filter, fetchItemsWithPagination)];
+            case 2:
+                _d.sent();
+                _d.label = 3;
+            case 3:
+                _i++;
+                return [3 /*break*/, 1];
+            case 4:
+                _b = 0, fixedData_1 = fixedData;
+                _d.label = 5;
+            case 5:
+                if (!(_b < fixedData_1.length)) return [3 /*break*/, 8];
+                _c = fixedData_1[_b], fileContent = _c.fileContent, outputFile = _c.outputFile;
+                return [4 /*yield*/, saveFixedData(fileContent, outputFile)];
+            case 6:
+                _d.sent();
+                _d.label = 7;
+            case 7:
+                _b++;
+                return [3 /*break*/, 5];
+            case 8: return [4 /*yield*/, fetchPublicationsAndBooks()];
+            case 9:
+                _d.sent();
+                return [2 /*return*/];
+        }
     });
 }); };
 main();
