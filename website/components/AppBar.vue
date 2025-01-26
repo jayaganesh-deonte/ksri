@@ -18,6 +18,7 @@
               option.showChildren = true;
             "
             @mouseleave="option.isActive = false"
+            @click="navigateWithOutChild(option)"
           >
             <div class="ma-2 text-subtitle-1 appBarMenuItem">
               <nuxt-link
@@ -382,6 +383,13 @@ const navigate = (option, parent) => {
 
     router.push(option.path);
   }, 400);
+};
+
+const navigateWithOutChild = (option) => {
+  // if child doesnt exist, then navigate
+  if (!option.children) {
+    navigate(option);
+  }
 };
 
 setActiveMenu();

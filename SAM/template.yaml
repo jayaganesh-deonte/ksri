@@ -809,6 +809,119 @@ Resources:
                 "stacked": false,
                 "period": 300
               }
+            },
+            {
+              "type": "metric",
+              "x": 0,
+              "y": 36,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "metrics": [
+                  ["AWS/DynamoDB", "ConsumedReadCapacityUnits", "TableName", "${Prefix}_admin_master_table", { "stat": "Sum", "period": 300 }]
+                ],
+                "region": "${AWS::Region}",
+                "title": "DynamoDB Read Capacity Units",
+                "view": "timeSeries", 
+                "stacked": false,
+                "period": 300
+              }
+            },
+            {
+              "type": "metric", 
+              "x": 12,
+              "y": 36,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "metrics": [
+                  ["AWS/DynamoDB", "ConsumedWriteCapacityUnits", "TableName", "${Prefix}_admin_master_table", { "stat": "Sum", "period": 300 }]
+                ],
+                "region": "${AWS::Region}",
+                "title": "DynamoDB Write Capacity Units", 
+                "view": "timeSeries",
+                "stacked": false,
+                "period": 300
+              }
+            },
+            {
+              "type": "metric",
+              "x": 0,
+              "y": 42,
+              "width": 12, 
+              "height": 6,
+              "properties": {
+                "metrics": [
+                  ["AWS/CloudFront", "Requests", "DistributionId", "${imageDistribution}", { "stat": "Sum", "period": 300 }],
+                  ["AWS/CloudFront", "Requests", "DistributionId", "${UiDistribution}", { "stat": "Sum", "period": 300 }],
+                  ["AWS/CloudFront", "Requests", "DistributionId", "${websiteDistribution}", { "stat": "Sum", "period": 300 }]
+                ],
+                "region": "${AWS::Region}",
+                "title": "CloudFront Requests",
+                "view": "timeSeries",
+                "stacked": false,
+                "period": 300
+              }
+            },
+            {
+              "type": "metric",
+              "x": 12,
+              "y": 42,
+              "width": 12,
+              "height": 6, 
+              "properties": {
+                "metrics": [
+                  ["AWS/CloudFront", "4xxErrorRate", "DistributionId", "${imageDistribution}", { "stat": "Average", "period": 300 }],
+                  ["AWS/CloudFront", "4xxErrorRate", "DistributionId", "${UiDistribution}", { "stat": "Average", "period": 300 }],
+                  ["AWS/CloudFront", "4xxErrorRate", "DistributionId", "${websiteDistribution}", { "stat": "Average", "period": 300 }],
+                  ["AWS/CloudFront", "5xxErrorRate", "DistributionId", "${imageDistribution}", { "stat": "Average", "period": 300 }],
+                  ["AWS/CloudFront", "5xxErrorRate", "DistributionId", "${UiDistribution}", { "stat": "Average", "period": 300 }],
+                  ["AWS/CloudFront", "5xxErrorRate", "DistributionId", "${websiteDistribution}", { "stat": "Average", "period": 300 }]
+                ],
+                "region": "${AWS::Region}", 
+                "title": "CloudFront Error Rates",
+                "view": "timeSeries",
+                "stacked": false,
+                "period": 300
+              }
+            },
+            {
+              "type": "metric",
+              "x": 0,
+              "y": 48,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "metrics": [
+                  ["AWS/CloudFront", "BytesDownloaded", "DistributionId", "${imageDistribution}", { "stat": "Sum", "period": 300 }],
+                  ["AWS/CloudFront", "BytesDownloaded", "DistributionId", "${UiDistribution}", { "stat": "Sum", "period": 300 }],
+                  ["AWS/CloudFront", "BytesDownloaded", "DistributionId", "${websiteDistribution}", { "stat": "Sum", "period": 300 }]
+                ],
+                "region": "${AWS::Region}",
+                "title": "CloudFront Bytes Downloaded",
+                "view": "timeSeries",
+                "stacked": false,
+                "period": 300
+              }
+            },
+            {
+              "type": "metric", 
+              "x": 12,
+              "y": 48,
+              "width": 12,
+              "height": 6,
+              "properties": {
+                "metrics": [
+                  ["AWS/CloudFront", "TotalErrorRate", "DistributionId", "${imageDistribution}", { "stat": "Average", "period": 300 }],
+                  ["AWS/CloudFront", "TotalErrorRate", "DistributionId", "${UiDistribution}", { "stat": "Average", "period": 300 }],
+                  ["AWS/CloudFront", "TotalErrorRate", "DistributionId", "${websiteDistribution}", { "stat": "Average", "period": 300 }]
+                ],
+                "region": "${AWS::Region}",
+                "title": "CloudFront Total Error Rate",
+                "view": "timeSeries",
+                "stacked": false, 
+                "period": 300
+              }
             }
           ]
         }
