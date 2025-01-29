@@ -117,7 +117,7 @@
               >
                 Year of Publication:
                 <span class="text-secondary">
-                  {{ bookInfo.yearOfPublication }}
+                  {{ getYearFromDate(bookInfo.yearOfPublication) }}
                 </span>
               </div>
 
