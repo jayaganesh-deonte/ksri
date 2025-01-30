@@ -71,11 +71,22 @@ galleryRoute.post("/gallery", async (req: Request, res: Response) => {
 
     console.log("galleryImage", galleryImage);
 
+    let createId = false;
+
+    // if imageUrl is an array with more than one element
+    if (
+      Array.isArray(galleryImage.imageUrl) &&
+      galleryImage.imageUrl.length > 1
+    ) {
+      createId = true;
+    }
+
     // for each imageUrl, insert as seperate item
     let blukItems = [];
     for (const element of galleryImage.imageUrl) {
       const item: GalleryImage = {
-        id: galleryImage.id,
+        // id: galleryImage.id,
+        id: createId ? ulid() : galleryImage.id,
         imageUrl: [element],
         description: galleryImage.description,
         collection: galleryImage.collection,
@@ -93,16 +104,25 @@ galleryRoute.post("/gallery", async (req: Request, res: Response) => {
     if (!tableName) {
       throw new Error("DDB_TABLE_NAME environment variable is not defined");
     }
-    params.RequestItems[tableName] = blukItems.map((item) => ({
-      PutRequest: {
-        Item: toDynamoDB(item),
-      },
-    }));
+    // Split blukItems into chunks of 20 items
+    const chunkSize = 25;
+    const chunks = [];
+    for (let i = 0; i < blukItems.length; i += chunkSize) {
+      chunks.push(blukItems.slice(i, i + chunkSize));
+    }
 
-    console.log("params", params);
+    // Process each chunk
+    for (const chunk of chunks) {
+      params.RequestItems[tableName] = chunk.map((item) => ({
+        PutRequest: {
+          Item: toDynamoDB(item),
+        },
+      }));
 
-    await documentClient.batchWrite(params);
+      console.log("params for chunk", params);
 
+      await documentClient.batchWrite(params);
+    }
     // const params = {
     //   TableName: process.env.DDB_TABLE_NAME,
     //   Item: toDynamoDB(galleryImage),

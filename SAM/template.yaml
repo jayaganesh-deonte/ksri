@@ -639,6 +639,19 @@ Resources:
         {
           "widgets": [
             {
+                "type": "log",
+                "x": 0,
+                "y": 54,
+                "width": 12, 
+                "height": 6,
+                "properties": {
+                  "query": "SOURCE '/aws/lambda/${Prefix}_admin_api' | fields @timestamp, path, responseTime, username, userId, statusCode\n| filter component = 'middleware' and method = 'POST'\n| sort @timestamp desc\n| limit 100",
+                  "region": "${AWS::Region}",
+                  "title": "POST Requests",
+                  "view": "table"
+                }
+            },
+            {
               "type": "log",
               "x": 0,
               "y": 0,
@@ -856,7 +869,7 @@ Resources:
                   ["AWS/CloudFront", "Requests", "DistributionId", "${UiDistribution}", { "stat": "Sum", "period": 300 }],
                   ["AWS/CloudFront", "Requests", "DistributionId", "${websiteDistribution}", { "stat": "Sum", "period": 300 }]
                 ],
-                "region": "${AWS::Region}",
+                "region": "us-east-1",
                 "title": "CloudFront Requests",
                 "view": "timeSeries",
                 "stacked": false,
@@ -878,7 +891,7 @@ Resources:
                   ["AWS/CloudFront", "5xxErrorRate", "DistributionId", "${UiDistribution}", { "stat": "Average", "period": 300 }],
                   ["AWS/CloudFront", "5xxErrorRate", "DistributionId", "${websiteDistribution}", { "stat": "Average", "period": 300 }]
                 ],
-                "region": "${AWS::Region}", 
+                "region": "us-east-1",
                 "title": "CloudFront Error Rates",
                 "view": "timeSeries",
                 "stacked": false,
@@ -897,7 +910,7 @@ Resources:
                   ["AWS/CloudFront", "BytesDownloaded", "DistributionId", "${UiDistribution}", { "stat": "Sum", "period": 300 }],
                   ["AWS/CloudFront", "BytesDownloaded", "DistributionId", "${websiteDistribution}", { "stat": "Sum", "period": 300 }]
                 ],
-                "region": "${AWS::Region}",
+                "region": "us-east-1",
                 "title": "CloudFront Bytes Downloaded",
                 "view": "timeSeries",
                 "stacked": false,
@@ -916,7 +929,7 @@ Resources:
                   ["AWS/CloudFront", "TotalErrorRate", "DistributionId", "${UiDistribution}", { "stat": "Average", "period": 300 }],
                   ["AWS/CloudFront", "TotalErrorRate", "DistributionId", "${websiteDistribution}", { "stat": "Average", "period": 300 }]
                 ],
-                "region": "${AWS::Region}",
+                "region": "us-east-1",
                 "title": "CloudFront Total Error Rate",
                 "view": "timeSeries",
                 "stacked": false, 

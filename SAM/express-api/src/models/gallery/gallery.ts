@@ -91,7 +91,7 @@ export function validateGalleryImage(item: GalleryImage): boolean {
   return (
     typeof item.id === "string" &&
     Array.isArray(item.imageUrl) &&
-    typeof item.description === "string" &&
+    // typeof item.description === "string" &&
     typeof item.collection === "string" &&
     (item.metadata === undefined || typeof item.metadata === "object") &&
     typeof item.itemPublishStatus === "string"
