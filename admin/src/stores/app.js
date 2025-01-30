@@ -39,9 +39,9 @@ export const useAppStore = defineStore("app", {
       this.user = user;
     },
     setUserRole(groups) {
-      if (groups.includes("ksri-prod_super_admin_group")) {
+      if (groups.includes("super_admin")) {
         this.isSuperAdmin = true;
-      } else if (groups.includes("ksri-prod_admin_group")) {
+      } else if (groups.includes("admin")) {
         this.isAdmin = true;
       } else {
         this.isReadOnlyUser = true;

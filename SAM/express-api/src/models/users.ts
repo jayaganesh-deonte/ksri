@@ -11,10 +11,7 @@
 // create model
 
 // Valid group values are: admin, super-admin, read-only
-type UserGroup =
-  | "ksri_prod_admin_group"
-  | "ksri_prod_super_admin_group"
-  | "ksri_prod_read_only_group";
+type UserGroup = "admin" | "super_admin" | "read_only";
 
 export interface User {
   id: string;
@@ -69,11 +66,7 @@ export function fromDynamoDB(item: UserDDB): User {
 // validateUser
 
 export function validateUser(item: User): boolean {
-  const validGroups: UserGroup[] = [
-    "ksri_prod_admin_group",
-    "ksri_prod_super_admin_group",
-    "ksri_prod_read_only_group",
-  ];
+  const validGroups: UserGroup[] = ["admin", "super_admin", "read_only"];
   return (
     typeof item.id === "string" &&
     typeof item.name === "string" &&

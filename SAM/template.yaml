@@ -64,6 +64,12 @@ Resources:
             TableName: !Ref masterTable
         - SSMParameterReadPolicy:
             ParameterName: "*"
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - cognito-idp:*
+              Resource: "*"
     Metadata:
       BuildMethod: esbuild
       BuildProperties:
@@ -327,27 +333,27 @@ Resources:
       MfaConfiguration: OPTIONAL
       # AliasAttributes:
       #   - email
-      # UsernameConfiguration:
-      #   CaseSensitive: true
+      UsernameConfiguration:
+        CaseSensitive: false
       EnabledMfas:
         - SOFTWARE_TOKEN_MFA
 
   CognitoAdminGroup:
     Type: AWS::Cognito::UserPoolGroup
     Properties:
-      GroupName: !Sub ${Prefix}_admin_group
+      GroupName: !Sub admin
       UserPoolId: !Ref CognitoUserPool
 
   CognitoReadOnlyGroup:
     Type: AWS::Cognito::UserPoolGroup
     Properties:
-      GroupName: !Sub ${Prefix}_read_only_group
+      GroupName: !Sub read_only
       UserPoolId: !Ref CognitoUserPool
 
   CognitoSuperAdminGroup:
     Type: AWS::Cognito::UserPoolGroup
     Properties:
-      GroupName: !Sub ${Prefix}_super_admin_group
+      GroupName: !Sub super_admin
       UserPoolId: !Ref CognitoUserPool
 
   CognitoUserPoolDomain:

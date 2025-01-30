@@ -15,7 +15,7 @@ import {
   deleteUserFromCognito,
 } from "../cognito_services/cognito";
 
-const USER_POOL_ID = process.env.USER_POOL_ID ?? "ap-south-1_yotyg8eId";
+const USER_POOL_ID = process.env.USER_POOL_ID ?? "ap-south-1_ek3xlbP5c";
 
 // GET all users
 export const userRoute = Router();
@@ -46,19 +46,19 @@ userRoute.get("/users", async (req: Request, res: Response) => {
 // DELETE a user
 userRoute.delete("/users", async (req: Request, res: Response) => {
   try {
-    const { id, name } = req.body;
+    const { id, email } = req.body;
 
     // Delete item from DynamoDB
     await documentClient.delete({
       TableName: process.env.DDB_TABLE_NAME,
       Key: {
-        PK: name,
+        PK: "ENTITYTYPE#USER",
         SK: id,
       },
       //   ConditionExpression: "attribute_exists(id)",
     });
     const cognitoResponse = await deleteUserFromCognito({
-      name: name,
+      name: email,
       userPoolId: USER_POOL_ID,
     });
     console.log("cognitoResponse", cognitoResponse);
