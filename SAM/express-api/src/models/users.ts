@@ -12,9 +12,9 @@
 
 // Valid group values are: admin, super-admin, read-only
 type UserGroup =
-  | "ksri_admin_group"
-  | "ksri_super_admin_group"
-  | "ksri_read_only_group";
+  | "ksri_prod_admin_group"
+  | "ksri_prod_super_admin_group"
+  | "ksri_prod_read_only_group";
 
 export interface User {
   id: string;
@@ -29,7 +29,6 @@ export interface User {
 export interface UserDDB {
   PK: string;
   SK: string;
-  entityType: string;
   name: string;
   email: string;
   phoneNumber: string;
@@ -42,9 +41,8 @@ export interface UserDDB {
 
 export function toDynamoDB(item: User): UserDDB {
   return {
-    PK: item.name,
+    PK: "ENTITYTYPE#USER",
     SK: item.id,
-    entityType: "ENTITYTYPE#USER",
     name: item.name,
     email: item.email,
     phoneNumber: item.phoneNumber,
@@ -72,17 +70,17 @@ export function fromDynamoDB(item: UserDDB): User {
 
 export function validateUser(item: User): boolean {
   const validGroups: UserGroup[] = [
-    "ksri_admin_group",
-    "ksri_super_admin_group",
-    "ksri_read_only_group",
+    "ksri_prod_admin_group",
+    "ksri_prod_super_admin_group",
+    "ksri_prod_read_only_group",
   ];
   return (
     typeof item.id === "string" &&
     typeof item.name === "string" &&
     typeof item.email === "string" &&
-    typeof item.phoneNumber === "string" &&
+    // typeof item.phoneNumber === "string" &&
     validGroups.includes(item.group) &&
-    Array.isArray(item.displayImage) &&
+    // Array.isArray(item.displayImage) &&
     (item.metadata === undefined ||
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string")))

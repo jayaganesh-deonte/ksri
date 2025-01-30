@@ -15,7 +15,7 @@ import {
   deleteUserFromCognito,
 } from "../cognito_services/cognito";
 
-const USER_POOL_ID = process.env.USER_POOL_ID ?? "ap-south-1_VHRb4I0Ig";
+const USER_POOL_ID = process.env.USER_POOL_ID ?? "ap-south-1_yotyg8eId";
 
 // GET all users
 export const userRoute = Router();
@@ -87,7 +87,7 @@ userRoute.post("/users", async (req: Request, res: Response) => {
     });
 
     const cognitoResponse = await createUserInCognito({
-      name: user.name,
+      name: user.email,
       email: user.email,
       userPoolId: USER_POOL_ID,
       group: user.group,

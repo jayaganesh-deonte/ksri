@@ -325,6 +325,10 @@ Resources:
       AdminCreateUserConfig:
         AllowAdminCreateUserOnly: true
       MfaConfiguration: OPTIONAL
+      # AliasAttributes:
+      #   - email
+      # UsernameConfiguration:
+      #   CaseSensitive: true
       EnabledMfas:
         - SOFTWARE_TOKEN_MFA
 

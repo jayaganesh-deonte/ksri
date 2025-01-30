@@ -43,19 +43,19 @@ const userFields = [
     key: "phoneNumber",
     label: "Phone Number",
     type: "text",
-    rules: [
-      (v) => !!v || "Phone Number is required",
-      (v) => v.length <= 10 || "Phone Number must be 10 characters or less",
-    ],
+    // rules: [
+    //   (v) => !!v || "Phone Number is required",
+    //   (v) => v.length <= 10 || "Phone Number must be 10 characters or less",
+    // ],
   },
   {
     key: "group",
     label: "Group",
     type: "auto-complete",
     items: [
-      "ksri_admin_group",
-      "ksri_super_admin_group",
-      "ksri_read_only_group",
+      "ksri_prod_admin_group",
+      "ksri_prod_super_admin_group",
+      "ksri_prod_read_only_group",
     ],
 
     rules: [(v) => !!v || "Group is required"],
