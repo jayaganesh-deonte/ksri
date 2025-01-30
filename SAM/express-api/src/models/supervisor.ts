@@ -52,10 +52,10 @@ export function validateSupervisor(item: Supervisor): boolean {
       (typeof item.metadata === "object" &&
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&
     typeof item.itemPublishStatus === "string" &&
-    typeof item.orderId === "string" &&
-    (item.noOfphdStudents === undefined ||
-      typeof item.noOfphdStudents === "string") &&
-    (item.vacancy === undefined || typeof item.vacancy === "string")
+    typeof item.orderId === "string"
+    // (item.noOfphdStudents === undefined ||
+    //   typeof item.noOfphdStudents === "string") &&
+    // (item.vacancy === undefined || typeof item.vacancy === "string")
   );
 }
 

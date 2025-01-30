@@ -38,13 +38,13 @@ const galleryCollectionFields = [
     key: "noOfphdStudents",
     label: "No of Phd Students",
     type: "text",
-    rules: [(v) => !!v || "No of Phd Students is required"],
+    // rules: [(v) => !!v || "No of Phd Students is required"],
   },
   {
     key: "vacancy",
     label: "Vacancy",
     type: "text",
-    rules: [(v) => !!v || "Vacancy is required"],
+    // rules: [(v) => !!v || "Vacancy is required"],
   },
 ];
 
