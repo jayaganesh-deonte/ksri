@@ -1,5 +1,40 @@
 [
   {
+    "id": "01JKAQV0T0N51XEG717J5XY2SJ",
+    "name": "Dr. Vidyuta K",
+    "designation": "Assistant Professor",
+    "displayImage": [
+      null
+    ],
+    "subtitle": "Silpasastra, Literature, Yoga and Ancient Indian Mathematics",
+    "description": "3 years of teaching and 10 years of research experience\t",
+    "mobile": " ",
+    "mail": "div.hor.88@gmail.com",
+    "profile": [
+      null
+    ],
+    "type": "ACADEMIC",
+    "metadata": {
+      "updated_by": "dhara0622@gmail.com",
+      "created_at": "2025-02-05T09:42:40.192Z",
+      "updated_at": "2025-02-05T10:13:54.790Z",
+      "created_by": "dhara0622@gmail.com"
+    },
+    "orderId": "2",
+    "teachingExperience": [],
+    "phdCandidates": [],
+    "mphilCandidates": [],
+    "academicPositions": [],
+    "booksPublished": [],
+    "articlesPublished": [],
+    "projects": [],
+    "seminars": [],
+    "lectures": [],
+    "awards": [],
+    "extensionActivities": [],
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "id": "01JGM5VST7T8C9ZMCP4V5Y8RDA",
     "name": "Dr. P.C. Muralidharan",
     "designation": "Assistant Professor",
@@ -771,7 +806,7 @@
     ],
     "subtitle": "Areas of Specialisation: Sahitya, Yoga, Manuscriptology, and Sanskrit Literature",
     "description": "More than 16 years of teaching, research, and manuscriptology experience.",
-    "mobile": "8248630164",
+    "mobile": " ",
     "mail": "preethimahesh.krishnan@gmail.com",
     "profile": [
       "upload/media/Preethi_Profile.pdf"
@@ -780,7 +815,7 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-11T10:00:00.000Z",
-      "updated_at": "2025-01-21T16:50:12.284Z",
+      "updated_at": "2025-01-30T16:05:33.861Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -822,10 +857,34 @@
     ],
     "articlesPublished": [
       {
+        "monthAndYear": "-",
+        "title": "Astronomical Observatory of Chennai",
+        "nameOfTheJournal": "The KSRI",
+        "sNo": "1",
+        "isbnIssnNo": "-",
+        "remarks": "To Be Published"
+      },
+      {
+        "monthAndYear": "-",
+        "title": "Two Specific Forms of Māriamman in Tamil Nadu",
+        "nameOfTheJournal": "C.P. R. Centre",
+        "sNo": "2",
+        "isbnIssnNo": "-",
+        "remarks": "To Be Published"
+      },
+      {
+        "monthAndYear": "-",
+        "title": "Plant Propagation",
+        "nameOfTheJournal": "Hindu College, Sonipat",
+        "sNo": "3",
+        "isbnIssnNo": "-",
+        "remarks": "To Be Published"
+      },
+      {
         "monthAndYear": "2024",
         "title": "Padma: Floral Motif in Ancient Indian Architecture",
         "nameOfTheJournal": "Pracya, Vol-XVI (UGC Care listed)",
-        "sNo": "1",
+        "sNo": "4",
         "isbnIssnNo": "2278-4004",
         "remarks": "Published"
       },
@@ -833,7 +892,7 @@
         "monthAndYear": "2024",
         "title": "Role of Mantras in Yogic Sādhanā",
         "nameOfTheJournal": "JOR – Yoga Special Vol. 94-95",
-        "sNo": "2",
+        "sNo": "5",
         "isbnIssnNo": "0022-3301",
         "remarks": "Published"
       },
@@ -841,15 +900,23 @@
         "monthAndYear": "2023",
         "title": "Origin and development of scripts used in ancient Indian Manuscripts",
         "nameOfTheJournal": "Some Aspects of Manuscriptology",
-        "sNo": "3",
+        "sNo": "6",
         "isbnIssnNo": "978-93-5967-933-4",
         "remarks": "Published"
       },
       {
+        "monthAndYear": "To be published",
+        "title": "Influence of Narāyanīyam on later works",
+        "nameOfTheJournal": "Rasikapriya (Issue - 9) – The Madras Sanskrit College, Chennai",
+        "sNo": "7",
+        "isbnIssnNo": "-",
+        "remarks": "To Be Published"
+      },
+      {
         "monthAndYear": "May 2023",
         "title": "Tiruvoṟṟiyūr in Sanskrit Literature",
-        "nameOfTheJournal": "Journal of Oriental Research, Madras (Vol. XCIII)",
-        "sNo": "4",
+        "nameOfTheJournal": "Journal of Oriental Research, Madras (Vol. XCIII) (UGC Care listed)",
+        "sNo": "8",
         "isbnIssnNo": "0022-3301",
         "remarks": "Published"
       },
@@ -857,8 +924,56 @@
         "monthAndYear": "April 2023",
         "title": "Ancient Indian Knowledge of Oceanography",
         "nameOfTheJournal": "Veda Vanee, E-Journal, Vol. I. issue 1",
-        "sNo": "5",
+        "sNo": "9",
         "isbnIssnNo": "2583-9020",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "September 2022",
+        "title": "Life Lessons From Caturvimsati Gurus",
+        "nameOfTheJournal": "Pracya, Vol-XIV (UGC Care listed)",
+        "sNo": "10",
+        "isbnIssnNo": "2278-4004",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "March 2022",
+        "title": "Architecture in Mahābhārata",
+        "nameOfTheJournal": "Proceedings of the National Conference on The Mahabharata in Indian Art and Culture",
+        "sNo": "11",
+        "isbnIssnNo": "978-93-85459-12-2",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "March 2021",
+        "title": "Kaṇṭakāñjali – A Satirical composition of Kaṇṭakārjuna",
+        "nameOfTheJournal": "90th Anniversary Commemoration Volume - The Samskrita Academy, Madras",
+        "sNo": "12",
+        "isbnIssnNo": "978-81-954078-0-4",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "September 2019",
+        "title": "Nagapatiinam - Renowned Buddhist Centre",
+        "nameOfTheJournal": "Pracya, Vol-XI (UGC Care listed)",
+        "sNo": "13",
+        "isbnIssnNo": "2278-4004",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "September 2018",
+        "title": "Visnu Stotras in Garudapurana",
+        "nameOfTheJournal": "Pracya, Vol-X (UGC Care listed)",
+        "sNo": "14",
+        "isbnIssnNo": "2278-4004",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2017/2018",
+        "title": "Mahatma Gandhi's Philosophy in Sanskrit Literature",
+        "nameOfTheJournal": "Sanskrit and Cultural Studies: New Perspectives",
+        "sNo": "15",
+        "isbnIssnNo": "978-93-5311-549-4",
         "remarks": "Published"
       }
     ],
@@ -1183,19 +1298,107 @@
     ],
     "subtitle": "Areas of Specialisation: Advaita, Vyakarana, Manuscriptology, Dharma Sastra.",
     "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on Advaita, Vyakarana and related fields.",
-    "mobile": "98846 14473",
+    "mobile": "  ",
     "mail": "renudeva@gmail.com",
     "profile": [
       "upload/media/Dr.T.V.Vasudeva C .V.doc"
     ],
     "type": "ACADEMIC",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:53:50.279Z",
-      "updated_at": "2025-01-02T18:55:14.806Z",
+      "updated_at": "2025-02-01T09:48:51.294Z",
       "created_by": "admin"
     },
     "orderId": "1",
+    "teachingExperience": [
+      {
+        "duration": "2001-Present",
+        "organisation": "The Kuppuswami Sastri Research Institute",
+        "designation": "Deputy Director "
+      },
+      {
+        "duration": "1982-2001",
+        "organisation": "The Kuppuswami Sastri Research Institute",
+        "designation": "Research scholar "
+      }
+    ],
+    "academicPositions": [
+      {
+        "description": "for all books published by KSRI from 1985 including Patanjali’s Mahabhashya translated into English by P.S.Subramania Sastry, Vol. I –XIV",
+        "position": "Member  Editorial Committee "
+      },
+      {
+        "description": "Reviewed more than 50 for our own journal and other leading journals on philosophy, Sanskrit Literature, Religion etc.,",
+        "position": "Reviewer"
+      },
+      {
+        "description": "University of Madras",
+        "position": "Member, Doctoral committee, "
+      },
+      {
+        "description": "Institute of Tamil Studies , Govt of Tamil Nadu, for Tirukural Marathi translation.",
+        "position": "Supervisor"
+      },
+      {
+        "description": "Bharatidasan  University, Trichirapalli",
+        "position": "External Examiner "
+      },
+      {
+        "description": "Edited ancient texts from palm-leaf manuscripts in  Devanagari, Grantha, Tamil, and other prominent scripts.",
+        "position": "Editor"
+      }
+    ],
+    "booksPublished": [
+      {
+        "publisher": "",
+        "yearOfPublication": "",
+        "title": "",
+        "sNo": "",
+        "remarks": "",
+        "isbn": ""
+      }
+    ],
+    "articlesPublished": [
+      {
+        "monthAndYear": "",
+        "title": "",
+        "nameOfTheJournal": "",
+        "sNo": "",
+        "isbnIssnNo": "",
+        "remarks": ""
+      }
+    ],
+    "projects": [
+      {
+        "description": "Critical Edition of Dakshinavartanatha’s Dipika commentary of the Kumarasmbhava",
+        "sponsor": "",
+        "monthAndYear": "",
+        "remarks": "",
+        "projectTitle": "Critical Edition of Dakshinavartanatha’s Dipika commentary of the Kumarasmbhava"
+      },
+      {
+        "description": "Assisted in the  project",
+        "sponsor": "",
+        "monthAndYear": "",
+        "remarks": "",
+        "projectTitle": "Critical Edition of Aghorasivacaryapaddhati "
+      }
+    ],
+    "lectures": [
+      {
+        "monthAndYear": "",
+        "organisers": "Universities of Torino and Milan",
+        "slNo": "1",
+        "titleOfTheTalk": "Vedic Religion and Literature"
+      },
+      {
+        "monthAndYear": "2016",
+        "organisers": "Gitananda Ashram in Italy",
+        "slNo": "2",
+        "titleOfTheTalk": "Vedic literature"
+      }
+    ],
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -1207,19 +1410,229 @@
     ],
     "subtitle": "Areas of Specialisation: Yoga, Literature, Philosophy",
     "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on Yoga and related fields.",
-    "mobile": "9884899716",
+    "mobile": " ",
     "mail": "sanskritkannan@yahoo.com",
     "profile": [
       "upload/media/Dr.K.S.Balasubramanian.docx"
     ],
     "type": "ACADEMIC",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:53:50.278Z",
-      "updated_at": "2025-01-02T18:55:07.384Z",
+      "updated_at": "2025-02-06T11:15:40.661Z",
       "created_by": "admin"
     },
     "orderId": "1",
+    "teachingExperience": [
+      {
+        "duration": "June 2023-Present",
+        "organisation": "The Kuppuswami Sastri Research Institute,  Mylapore, Chennai – 600 004.  ",
+        "designation": "Director"
+      },
+      {
+        "duration": "2001-2023",
+        "organisation": "The Kuppuswami Sastri Research Institute, Mylapore, Chennai – 600 004.  ",
+        "designation": "Deputy Director "
+      },
+      {
+        "duration": "April 2007-May 2008",
+        "organisation": "Sahaj Marg Spirituality Foundation ",
+        "designation": "Asst. Director(Research)"
+      },
+      {
+        "duration": "1983",
+        "organisation": "The Kuppuswami Sastri Research Institute,  Mylapore, Chennai – 600 004.  ",
+        "designation": "Research Assistant"
+      }
+    ],
+    "phdCandidates": [
+      {
+        "name": "",
+        "topic": "",
+        "yearOfJoining": "",
+        "status": ""
+      }
+    ],
+    "academicPositions": [
+      {
+        "description": "",
+        "position": "\tSecretary"
+      }
+    ],
+    "booksPublished": [
+      {
+        "publisher": "The KSRI",
+        "yearOfPublication": "2016",
+        "title": "Darśanopanisat",
+        "sNo": "1",
+        "remarks": "Published",
+        "isbn": "81-85170-32-0"
+      },
+      {
+        "publisher": "The KSRI",
+        "yearOfPublication": "2009",
+        "title": "Advayatarakopanisat",
+        "sNo": "2",
+        "remarks": "Published",
+        "isbn": "978-81-85170-41-1"
+      },
+      {
+        "publisher": "The KSRI",
+        "yearOfPublication": "2009",
+        "title": "Amr̥tanādopaniṣat",
+        "sNo": "3",
+        "remarks": "Published",
+        "isbn": "978-91-85170-40-4"
+      },
+      {
+        "publisher": "The KSRI",
+        "yearOfPublication": "2009",
+        "title": "SriNandikesaKashika",
+        "sNo": "4",
+        "remarks": "Published",
+        "isbn": "978-81-85170-42-8"
+      },
+      {
+        "publisher": "The KSRI",
+        "yearOfPublication": "2015",
+        "title": "Dhyanabindupanisad",
+        "sNo": "5",
+        "remarks": "Published",
+        "isbn": "978-81-85170-40-4"
+      }
+    ],
+    "projects": [
+      {
+        "description": "",
+        "sponsor": "ASHTADASHI",
+        "monthAndYear": "",
+        "remarks": "",
+        "projectTitle": ""
+      },
+      {
+        "description": "3 BOOKS - YOGABIJA VIVEKA MARTANDA",
+        "sponsor": "IKS 1",
+        "monthAndYear": "",
+        "remarks": "",
+        "projectTitle": ""
+      }
+    ],
+    "seminars": [
+      {
+        "monthAndYear": "",
+        "theme": "\tInternational Yoga Festival (special speaker)",
+        "organisers": "Central University, Pondicherry",
+        "titleOfThePaper": "",
+        "slNo": "1"
+      },
+      {
+        "monthAndYear": "",
+        "theme": "\tInternational Yoga Festival ",
+        "organisers": "University of Madras, Central University, Pondicherry, Jodhpur University and so on.",
+        "titleOfThePaper": "",
+        "slNo": "2"
+      },
+      {
+        "monthAndYear": "",
+        "theme": "\tInternational Yoga Festival",
+        "organisers": "Jodhpur University ",
+        "titleOfThePaper": "",
+        "slNo": "3"
+      },
+      {
+        "monthAndYear": "2002",
+        "theme": "International conferences ",
+        "organisers": "1.\tSwitzerland at Lusanne, Berne, Geneva",
+        "titleOfThePaper": "",
+        "slNo": "4"
+      },
+      {
+        "monthAndYear": "2003",
+        "theme": "International conferences  ",
+        "organisers": "2.\tParis, France ",
+        "titleOfThePaper": "",
+        "slNo": "5"
+      },
+      {
+        "monthAndYear": "2007",
+        "theme": "International conferences",
+        "organisers": "3.\tSingapore and Malaysia ",
+        "titleOfThePaper": "",
+        "slNo": "6"
+      },
+      {
+        "monthAndYear": "2008",
+        "theme": "International Conference ",
+        "organisers": "Torino Spiritualita, Italy",
+        "titleOfThePaper": "",
+        "slNo": "7"
+      },
+      {
+        "monthAndYear": "April 2011",
+        "theme": "Yoga Exchange Program ",
+        "organisers": "Berlin Germany",
+        "titleOfThePaper": "",
+        "slNo": "8"
+      },
+      {
+        "monthAndYear": "",
+        "theme": "Lectures in Indian embassy",
+        "organisers": "Italy & Denmark",
+        "titleOfThePaper": "",
+        "slNo": "9"
+      }
+    ],
+    "awards": [
+      {
+        "organisation": "R.K.M. Vivekananda College, Mylapore, Chennai. ",
+        "title": "Gold Medal for best performance in Studies, Hinduism and Social work Gold Medal for best performance in Studies, Hinduism and Social work Gold Medal for best performance in Studies, Hinduism and Social work ",
+        "year": "1982",
+        "remarks": "",
+        "slNo": "1"
+      },
+      {
+        "organisation": "University of Madras 1982.",
+        "title": "Gold Medal ",
+        "year": "1982",
+        "remarks": "",
+        "slNo": "2"
+      },
+      {
+        "organisation": "Sanskrit Department, Rajah’s College, Tiruvaiyaru",
+        "title": "Yoga Sastra Pracharaka",
+        "year": "",
+        "remarks": "",
+        "slNo": "3"
+      },
+      {
+        "organisation": "Sanskrit Department, Rajah’s College, Tiruvaiyaru",
+        "title": "Sahitya Visarada",
+        "year": "",
+        "remarks": "",
+        "slNo": "4"
+      },
+      {
+        "organisation": "Sanskrit Department, Rajah’s College, Tiruvaiyaru",
+        "title": "Yoga Kala Kalapa ",
+        "year": "",
+        "remarks": "",
+        "slNo": "5"
+      },
+      {
+        "organisation": "The Heartfulness Institute, USA",
+        "title": "\tLife time Award \tLife time Award ",
+        "year": "2019",
+        "remarks": "",
+        "slNo": "6"
+      },
+      {
+        "organisation": "Indic Academy",
+        "title": "\tLife Time Award ",
+        "year": "",
+        "remarks": "",
+        "slNo": "7"
+      }
+    ],
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -1227,7 +1640,7 @@
     "name": "Dr.V.Kameswari",
     "designation": "Former Director",
     "displayImage": [
-      "upload/faculty/dr-v-kameswari.jpg"
+      "images/faculty-dr-v-kameswari.jpg"
     ],
     "subtitle": "Areas of Specialisation: Sahitya, Language and Literature, Scientific literature",
     "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on ancient sciences and varied fields of their interest.",
@@ -1240,7 +1653,7 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-02T18:53:50.278Z",
-      "updated_at": "2025-01-02T18:54:58.708Z",
+      "updated_at": "2025-01-30T10:31:04.382Z",
       "created_by": "admin"
     },
     "orderId": "1",

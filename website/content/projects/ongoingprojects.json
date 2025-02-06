@@ -127,6 +127,56 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
+    "id": "01JJVF08P8DHFTXC49WMXHTW1B",
+    "title": "Rare manuscript on Yoga",
+    "subTitle": " ",
+    "description": "",
+    "startYear": "2022",
+    "completedYear": "",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-30T11:19:38.440Z",
+      "updated_at": "2025-01-30T11:19:38.440Z",
+      "created_by": "demo"
+    },
+    "sponsor": "Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Ashtaadashi ",
+    "projectSubSeries": "Science",
+    "publicationStatus": "",
+    "projectInvestigator": [
+      "Dr. T.V.Vasudeva"
+    ],
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JJVEWSCRW9H9KWMTKPFBKWDD",
+    "title": "Bija Prabodha of  Ramakrishna -  Bijaganita of Bhaskaracharya  ",
+    "subTitle": "Editing & Publishing of Manuscripts Project",
+    "description": "",
+    "startYear": "2022",
+    "completedYear": "",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-30T11:17:44.472Z",
+      "updated_at": "2025-01-30T11:17:44.472Z",
+      "created_by": "demo"
+    },
+    "sponsor": "Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Ashtaadashi ",
+    "projectSubSeries": "Science",
+    "publicationStatus": "",
+    "projectInvestigator": [
+      "Dr. Sita Sundar Ram"
+    ],
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "id": "01JGM4T8Y0E7FNFBE3YMD33H83",
     "title": "English Translation of Kasyapa Silpasastra",
     "subTitle": "",

@@ -145,13 +145,14 @@
   {
     "id": "01JGM4T8Y0DQPRG9TQMJ8Z06V0",
     "title": "Evolution of Earth in Puranas",
-    "subTitle": "- Puranas devote quite a sizeable portion of the texts for the description of earth and its evolution (sarga-pratisharga). Puranas devote quite a sizeable portion of the texts for the description of earth and its evolution (sarga-pratisharga). Usually the technique adopted in giving even difficult concepts is by means of a story, symbolic representation or allegorical stories. The present project envisages to bring out such ancient knowledge on evolution of earth, climate changes, changes in earth surface due to passage of time, the concept of deluge (pralaya) etc. with the help of recently known scientific facts. An attempt will also be made to reconstruct the geological history of earth and divide it into geological ages based on Puranic information.",
+    "subTitle": " ",
+    "description": "- Puranas devote quite a sizeable portion of the texts for the description of earth and its evolution (sarga-pratisharga). Puranas devote quite a sizeable portion of the texts for the description of earth and its evolution (sarga-pratisharga). Usually the technique adopted in giving even difficult concepts is by means of a story, symbolic representation or allegorical stories. The present project envisages to bring out such ancient knowledge on evolution of earth, climate changes, changes in earth surface due to passage of time, the concept of deluge (pralaya) etc. with the help of recently known scientific facts. An attempt will also be made to reconstruct the geological history of earth and divide it into geological ages based on Puranic information.",
     "completedYear": "2023",
     "status": "Completed",
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-02T18:35:31.648Z",
-      "updated_at": "2025-01-18T11:17:50.338Z",
+      "updated_at": "2025-01-28T06:52:16.516Z",
       "created_by": "admin"
     },
     "sponsor": "Sri P.R. Kannan",
@@ -566,6 +567,31 @@
       "updated_at": "2025-01-02T18:35:31.648Z",
       "created_by": "admin"
     },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JJVEYYFRSPJTTWG3NGJWWMGR",
+    "title": "Rare manuscript on Yoga",
+    "subTitle": " ",
+    "description": "",
+    "startYear": "2022",
+    "completedYear": "",
+    "status": "Completed",
+    "metadata": {
+      "updated_by": "demo",
+      "created_at": "2025-01-30T11:18:55.224Z",
+      "updated_at": "2025-01-30T11:18:55.224Z",
+      "created_by": "demo"
+    },
+    "sponsor": "Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Ashtaadashi ",
+    "projectSubSeries": "Science",
+    "publicationStatus": "",
+    "projectInvestigator": [
+      "Dr. K.S.Balasubramanian"
+    ],
+    "coProjectInvestigators": "",
     "itemPublishStatus": "PUBLISHED"
   }
 ]
