@@ -184,7 +184,7 @@ const footerLinks = reactive({
         },
         {
           name: "KSRI News",
-          path: "/news",
+          path: "/events/news",
         },
       ],
     },

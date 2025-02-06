@@ -315,7 +315,7 @@ const menuOptions = reactive([
       },
       {
         name: "KSRI News",
-        path: "/news",
+        path: "/events/news",
         description: "KSRI latest news & announcement, articles",
       },
     ],

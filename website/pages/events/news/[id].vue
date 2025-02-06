@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="ma-8 text-center">
-        <v-btn color="primary" variant="outlined" to="/news/">
+        <v-btn color="primary" variant="outlined" to="/events/news/">
           Back to News
         </v-btn>
       </div>
@@ -73,7 +73,7 @@
             variant="outlined"
             rounded="pill"
             v-if="displayPreviousButton"
-            :to="`/news/${previousNewsId}`"
+            :to="`/events/news/${previousNewsId}`"
             class="mx-4"
           >
             Previous
@@ -85,7 +85,7 @@
             rounded="pill"
             v-if="displayNextButton"
             class="mx-4"
-            :to="`/news/${nextNewsId}`"
+            :to="`/events/news/${nextNewsId}`"
           >
             Next
           </v-btn>

@@ -7,7 +7,7 @@
     elevation="0"
     @mouseover="isHovering = true"
     @mouseleave="isHovering = false"
-    :to="'/news/' + item.id"
+    :to="'/events/news/' + item.id"
   >
     <v-row>
       <v-col
