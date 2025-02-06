@@ -51,12 +51,19 @@
                 <div class="text-h6 mb-4 text-grey-darken-1">
                   {{ selectedFaculty.designation }}
                 </div>
+                <div class="text-h6 mb-4">
+                  Educational Qualification:
+                  {{ selectedFaculty.educationalQualification }}
+                </div>
+
                 <div class="text-subtitle-1 mb-4" style="white-space: pre-line">
                   {{ selectedFaculty.subtitle }}
                 </div>
+
                 <div class="text-body-1 mb-4" style="white-space: pre-line">
                   {{ selectedFaculty.description }}
                 </div>
+
                 <div class="d-flex align-center mb-2">
                   <v-icon icon="mdi-email" class="mr-2" />
                   <span>{{ selectedFaculty.mail }}</span>
@@ -96,6 +103,7 @@
                 </v-card>
               </div>
             </v-row>
+
             <!-- displayd Teaching Experience -->
             <div
               v-if="
@@ -103,7 +111,7 @@
                 selectedFaculty.teachingExperience.length > 0
               "
             >
-              <section-title title="Teaching Experience" />
+              <section-title title="Professional Experience" />
               <!-- simple table  -->
               <div
                 class="ma-8 d-flex flex-column align-center"

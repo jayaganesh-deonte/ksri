@@ -20,6 +20,7 @@ export interface Faculty {
   designation: string;
   displayImage: [string];
   subtitle: string;
+  educationalQualification?: string;
   description: string;
   mobile: string;
   mail: string;
@@ -52,6 +53,7 @@ export interface FacultyDDB {
   designation: string;
   displayImage: string;
   subtitle: string;
+  educationalQualification?: string;
   description: string;
   mobile: string;
   mail: string;
@@ -85,6 +87,7 @@ export function toDynamoDB(item: Faculty): FacultyDDB {
     displayImage: item.displayImage[0],
     subtitle: item.subtitle,
     description: item.description,
+    educationalQualification: item.educationalQualification,
     mobile: item.mobile,
     mail: item.mail,
     profile: item.profile[0],
@@ -149,6 +152,7 @@ export function fromDynamoDB(item: FacultyDDB): Faculty {
     displayImage: [item.displayImage],
     subtitle: item.subtitle,
     description: item.description,
+    educationalQualification: item.educationalQualification,
     mobile: item.mobile,
     mail: item.mail,
     profile: [item.profile],

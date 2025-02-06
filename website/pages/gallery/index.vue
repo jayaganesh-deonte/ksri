@@ -88,5 +88,7 @@ let viewAlbumName = ref(false);
 const viewAlbum = (album) => {
   selectedAlbum.value = album;
   viewAlbumName.value = true;
+
+  window.scrollTo(0, 0);
 };
 </script>

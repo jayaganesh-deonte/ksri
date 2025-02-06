@@ -4,10 +4,11 @@
     "name": "Dr. Vidyuta K",
     "designation": "Assistant Professor",
     "displayImage": [
-      null
+      "images/Vid Passport_Photo.jpeg"
     ],
     "subtitle": "Silpasastra, Literature, Yoga and Ancient Indian Mathematics",
     "description": "3 years of teaching and 10 years of research experience\t",
+    "educationalQualification": " ",
     "mobile": " ",
     "mail": "div.hor.88@gmail.com",
     "profile": [
@@ -15,23 +16,464 @@
     ],
     "type": "ACADEMIC",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-02-05T09:42:40.192Z",
-      "updated_at": "2025-02-05T10:13:54.790Z",
+      "updated_at": "2025-02-06T18:44:03.210Z",
       "created_by": "dhara0622@gmail.com"
     },
     "orderId": "2",
-    "teachingExperience": [],
+    "teachingExperience": [
+      {
+        "duration": "2021-Present",
+        "organisation": "The Kuppuswami Sastri Research Institute, Chennai",
+        "designation": "Assistant Professor"
+      },
+      {
+        "duration": "2014-2020",
+        "organisation": "The Kuppuswami Sastri Research Institute, Chennai",
+        "designation": "Research Assistant"
+      }
+    ],
     "phdCandidates": [],
     "mphilCandidates": [],
     "academicPositions": [],
-    "booksPublished": [],
-    "articlesPublished": [],
-    "projects": [],
-    "seminars": [],
+    "booksPublished": [
+      {
+        "publisher": "Karnataka Historical Research Society, Dharwad",
+        "yearOfPublication": "2017",
+        "title": "Devaprāsāda As In Viśvakarma Vāstuśāstra (Study On Temple Architecture)",
+        "sNo": "1",
+        "remarks": "Published",
+        "isbn": "978-81-936580-3-1"
+      },
+      {
+        "publisher": "The Kuppuswami Sastri Research Institute, Chennai",
+        "yearOfPublication": "2023",
+        "title": "Śivasvarodaya with Eng. Tr. and Notes",
+        "sNo": "2",
+        "remarks": "Published along with Dr. K. S. Balasbramanian and Dr. T. V. Vasudeva",
+        "isbn": "978-81-85170-69-5"
+      },
+      {
+        "publisher": "The Kuppuswami Sastri Research Institute, Chennai",
+        "yearOfPublication": "",
+        "title": "Kāśyapa Śilpaśāstra – Critical Edition with Eng. Trans.",
+        "sNo": "3",
+        "remarks": "On going",
+        "isbn": ""
+      },
+      {
+        "publisher": "The Kuppuswami Sastri Research Institute, Chennai",
+        "yearOfPublication": "",
+        "title": "Jñāṉakuṟaḷ (A rare tamil Yoga text) by Saint Poetess Auvaiyār",
+        "sNo": "4",
+        "remarks": "To be published",
+        "isbn": ""
+      }
+    ],
+    "articlesPublished": [
+      {
+        "monthAndYear": "Sept. 2024",
+        "title": "Ṣaḍvargas of a Temple Structure",
+        "nameOfTheJournal": "Prācyā, Vol. XVI, Vāstuvidyaviśeṣamkaḥ",
+        "sNo": "1",
+        "isbnIssnNo": "2278-4004",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "Jul 2024",
+        "title": "King Bhoja's Knowledge of Yantras (Mechanical Devices) in Samarāṅgaṇa Sūtradhāra",
+        "nameOfTheJournal": "vEda vaaNee, An Electronic Veda Journal, Veda Samkruti Samiti, Hyderabad, Vol. 2, Issue 2",
+        "sNo": "2",
+        "isbnIssnNo": "2583-9020",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2024",
+        "title": "Sculptural Depictions of Yogic Postures",
+        "nameOfTheJournal": "Journal of Oriental Research, Madras, Vol. XCIV-XCV",
+        "sNo": "3",
+        "isbnIssnNo": "0022-3301",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2021",
+        "title": "Śilpivarga: Etymology and Constituents",
+        "nameOfTheJournal": "Journal of Oriental Research, Madras, Vol. XCII",
+        "sNo": "4",
+        "isbnIssnNo": "0022-3301",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "March 2021",
+        "title": "Texts on Śilpaśastra – A Brief Survey",
+        "nameOfTheJournal": "Samskrita Academy 90th Anniversary Commemoration Volume, Samskrita Academy, Chennai",
+        "sNo": "5",
+        "isbnIssnNo": "978-81-954078-0-4",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2020",
+        "title": "Purāṇas on the Parvatas of the World",
+        "nameOfTheJournal": "Indic Today, web publication",
+        "sNo": "6",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2019",
+        "title": "Saṅgam Literature and Vaidika Mārga",
+        "nameOfTheJournal": "Land of Dharma, Infinity Foundation, Chennai",
+        "sNo": "7",
+        "isbnIssnNo": "978-81-934537-4-2",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "Sept. 2018",
+        "title": "Geodetic Survey and Mapping in the Purāṇas",
+        "nameOfTheJournal": "Prācyā, Vol. X, Purāṇa Special",
+        "sNo": "8",
+        "isbnIssnNo": "2278-4004",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2018",
+        "title": "Śata-Stambha Maṇḍapas as given by Viśvakarma",
+        "nameOfTheJournal": "Ancient Sciences and Archarology, Journal of the Ancient Sciences & Archaeological Society of India, Vol. VII",
+        "sNo": "9",
+        "isbnIssnNo": "978-938758-71-51",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2017",
+        "title": "Nyāya-Vaiśeṣika on Concept of Matter",
+        "nameOfTheJournal": "International Conference on Science and Spirituality in Literature, Shri Sakthikailassh Women's College, Salem",
+        "sNo": "10",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2017",
+        "title": "Kuiper Belt, Oort Cloud: A Puranic Insight",
+        "nameOfTheJournal": "International Seminar on Sanskrit and Cultural Studies: New Prespectives, Sree Sankaracharya University of Sanskrit, Kalady, Kerala",
+        "sNo": "11",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "June 2017",
+        "title": "Arthaśāstra on Economic and Commercial Geography",
+        "nameOfTheJournal": "Prācya, Vol. IX, Smṛti Special",
+        "sNo": "12",
+        "isbnIssnNo": "2278-4004",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "March 2016",
+        "title": "Strīrājya-Concept in Sanskrit Literature",
+        "nameOfTheJournal": "Prācya, Vol. VIII 'Rājanīti Special'",
+        "sNo": "13",
+        "isbnIssnNo": "2278-4004",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2015",
+        "title": "Approximations of Pi",
+        "nameOfTheJournal": "UGC Seminar on Science in Ancient India, D.G. Vaishnav College, Chennai",
+        "sNo": "14",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2016",
+        "title": "Amnesty viś-a-viś Sanskrit Literature and Inscriptions",
+        "nameOfTheJournal": "Sūtra, Smṛti and Sāstra (Select Papers), 16th WSC, Vol. 2, Bangkok, Thailand",
+        "sNo": "15",
+        "isbnIssnNo": "978-81-932319-2-0",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2013",
+        "title": "Approximations of π from Astronomy and Architecture Schools of Kerala",
+        "nameOfTheJournal": "5th International Conference on Application and Challenges in Vedic/Ancient Indian Mathematics and Astronomy, National Institute of Vedic Sciences, Bangalore",
+        "sNo": "16",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2013",
+        "title": "Axioms as Idioms and Proverbs: Rāmāyaṇa's influence on Society",
+        "nameOfTheJournal": "International Conference on the Ramayana in Literature, Society and the Arts, C.P.R. Institute of Indological Research, Chennai",
+        "sNo": "17",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2011",
+        "title": "Nephology (Study of Clouds) – A Bird's eye view",
+        "nameOfTheJournal": "4th International Conference on Life Sciences and Associated Technology in Ancient India, National Institute of Vedic Sciences, Mulbagal",
+        "sNo": "18",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      }
+    ],
+    "projects": [
+      {
+        "description": " ",
+        "sponsor": "Guided Research and Book writing Fellowship, Indic Academy",
+        "monthAndYear": "2019",
+        "remarks": "On-Going",
+        "projectTitle": "Svara Science of Yoga and Human Health"
+      },
+      {
+        "description": "",
+        "sponsor": "Central Sanskrit University",
+        "monthAndYear": "Nov. 2023-2025",
+        "remarks": "On-Going",
+        "projectTitle": "Critical edition of Sārasvatīya Citrakarma Śāstram (A text on Ancient Indian Iconography) with English translation"
+      }
+    ],
+    "seminars": [
+      {
+        "monthAndYear": "Jul. 2024",
+        "theme": "Crossroads and Byroads: Consonance in Indian Classical Writings and Visual Performing Arts",
+        "organisers": "The Adyar Library and Research Centre, 19th – 20th July 2024.",
+        "titleOfThePaper": "Yogāsanas in Sculpture",
+        "slNo": "1"
+      },
+      {
+        "monthAndYear": "Aug. 2023",
+        "theme": "National Seminar on Arts & Architecture",
+        "organisers": "The Kuppuswami Sastri Research Institute, 21st – 22nd Aug 2023.",
+        "titleOfThePaper": "Architecture and the Mind",
+        "slNo": "2"
+      },
+      {
+        "monthAndYear": "Dec. 2021",
+        "theme": "Three day National Seminar – Sanatana Dharma - Samajashreya",
+        "organisers": "Sanskrit Academy, Osmania University, 27th-29th Dec 2021.",
+        "titleOfThePaper": "Temple Construction and Maintenance as Pūrta Dharma",
+        "remarks": "Chosen as the Best Paper",
+        "slNo": "3"
+      },
+      {
+        "monthAndYear": "Apr. 2021",
+        "theme": "Online International Conference on Philosophy and Praxis of Yoga – Hatha Yoga: Unravelling texts & traditions",
+        "organisers": "Indic Academy & Indica Yoga with Krishnamacharya Yoga mandiram, 24th & 25th April 2021.",
+        "titleOfThePaper": "Description of Nāḍīs in Haṭhayoga texts",
+        "slNo": "4"
+      },
+      {
+        "monthAndYear": "March 2021",
+        "theme": "Online Conference on Puranas & Indic Knowledge Systems",
+        "organisers": "Indic Academy, 26th & 27th of March 2021.",
+        "titleOfThePaper": "Purāṇas on the Parvatas of the World",
+        "slNo": "5"
+      },
+      {
+        "monthAndYear": "Feb. 2020",
+        "theme": "International Conference on Philosophy and Praxis of Yoga – Issues of Authenticity, Integrity & Ingenuity",
+        "organisers": "Indic Academy with Ramaiah Restoration Hospital, Bangalore, 15 & 16th Feb., 2020.",
+        "titleOfThePaper": "Sculptural Depictions of Yogic postures",
+        "slNo": "6"
+      },
+      {
+        "monthAndYear": "Aug. 2018",
+        "theme": "National Seminar on Indian Spiritual Heritage through Sanskrit Devotional Literature of South India",
+        "organisers": "Dept. of Sanskrit, Pondicherry University and IGNCA, 28-30th Aug., 2018",
+        "titleOfThePaper": "Śaiva Agamic and Iconographical details as in the Caturdaśa Rāgamālikā",
+        "slNo": "7"
+      },
+      {
+        "monthAndYear": "Dec. 2017",
+        "theme": "Swadeshi Indology-3: Tamil Nadu – The land of Dharma",
+        "organisers": "Infinity Foundation, IIT Madras, Chennai, 22-24th Dec., 2017.",
+        "titleOfThePaper": "Saṅgam Literature and Vaidika Mārga",
+        "remarks": "Chosen as the Best Paper",
+        "slNo": "8"
+      },
+      {
+        "monthAndYear": "Aug. 2017",
+        "theme": "National Seminar on Pristine Glory of Kanchipuram",
+        "organisers": "Dept. of Sanskrit and Indian Culture, SCSVMV University & Chennai 2000 Plus trust, Kanchipuram, 12-13th Aug., 2017.",
+        "titleOfThePaper": "Mahendravarman I: The Royal Architect",
+        "slNo": "9"
+      },
+      {
+        "monthAndYear": "July 2017",
+        "theme": "International Conference on Science and Spirituality in Literature",
+        "organisers": "Shri Sakthikailassh Women's College, Salem, 29th July, 2017.",
+        "titleOfThePaper": "Nyāya-Vaiśeṣika on the Concept of Matter",
+        "slNo": "10"
+      },
+      {
+        "monthAndYear": "June 2017",
+        "theme": "International Seminar on Sanskrit and Cultural Studies: New Perspectives",
+        "organisers": "Sree Sankaracharya University of Sanskrit, Kalady, 5-7th June, 2017.",
+        "titleOfThePaper": "Kuiper Belt, Oort Cloud: A Puranic Insight",
+        "slNo": "11"
+      },
+      {
+        "monthAndYear": "Apr. 2017",
+        "theme": "9th Annual Conference of ASASI",
+        "organisers": "ASASI and Vidyodaya Trust, Udupi, 17-18th April, 2017.",
+        "titleOfThePaper": "Samarāṅgaṇa Sūtradhāra on Mechanical Contrivances",
+        "slNo": "12"
+      },
+      {
+        "monthAndYear": "Sept. 2016",
+        "theme": "National Seminar on Sanskrit and Tamil Nadu",
+        "organisers": "The Kuppuswami Sastri Research Institute, Chennai, 16- 17th Sept., 2016.",
+        "titleOfThePaper": "Development of Kaumaram in Tamil Nadu",
+        "slNo": "13"
+      },
+      {
+        "monthAndYear": "Mar. 2016",
+        "theme": "National Seminar on Continuing Creative Efforts for the Sustenance of Sanskrit",
+        "organisers": "Sri Chandrasekharendra Saraswati Viswa Mahavidyalaya, Enathur, 3-4 March, 2016.",
+        "titleOfThePaper": "Sanskrit Scholar, Art-Historian: Dr. C. Sivaramamurti",
+        "slNo": "14"
+      },
+      {
+        "monthAndYear": "June-July 2015",
+        "theme": "16th World Sanskrit Conference",
+        "organisers": "Sanskrit Studies Centre, Silpakorn University, Bangkok, 28th June – 2nd July, 2015.",
+        "titleOfThePaper": "An Amnesty as gleaned from the Smṛtis and other Sanskrit texts",
+        "slNo": "15"
+      },
+      {
+        "monthAndYear": "Mar. 2015",
+        "theme": "National Seminar on Art and Architecture: Reflections from Tamil Sangam Literature co-related with Archeological evidences.",
+        "organisers": "MCC, Reach Foundation and CICT, Chennai, March, 2015.",
+        "titleOfThePaper": "The Stupa Architecture",
+        "slNo": "16"
+      },
+      {
+        "monthAndYear": "Feb. 2015",
+        "theme": "UGC Seminar on Science in Ancient India",
+        "organisers": "Dept. of Physics, D.G. Vaishnav College and K.S.R. Institute, Chennai, 27-28th Feb., 2015.",
+        "titleOfThePaper": "Approximations of π",
+        "slNo": "17"
+      },
+      {
+        "monthAndYear": "Sept. 2014",
+        "theme": "International Conference on the 900th Birth Anniversary of Bhāskarācārya: Bhāskara 900",
+        "organisers": "Vidya Prasarak Mandal, Thane, 19th -21st Sept., 2014.",
+        "titleOfThePaper": "Sūryaprakāśa of Sūryadāsa – A Review",
+        "slNo": "18"
+      },
+      {
+        "monthAndYear": "March 2014",
+        "theme": "National Seminar on Rasa Theory",
+        "organisers": "Dept. of Sanskrit and Indian Culture, SCSVMV University, Kanchipuram, 27-28th March, 2014.",
+        "titleOfThePaper": "A Glimpse into Some Minor Rasas",
+        "slNo": "19"
+      },
+      {
+        "monthAndYear": "March 2014",
+        "theme": "National Seminar on Material Culture of Iron Age as Reflected in Sangam Literature",
+        "organisers": "CICT and Reach Foundation, Vivekananda College, Chennai, 11-13th March, 2014.",
+        "titleOfThePaper": "Metal Industry During Vedic Period",
+        "slNo": "20"
+      },
+      {
+        "monthAndYear": "Jan. 2014",
+        "theme": "VII National Conference on Ancient Sciences and Archaeology",
+        "organisers": "Ancient Sciences and Archaeological Society of India and Dept. of History, Sri Parasakthi College for Women, Courtallam, 22-23rd Jan., 2014.",
+        "titleOfThePaper": "Śata-Stambha Maṇḍapas as given by Viśvakarma",
+        "slNo": "21"
+      },
+      {
+        "monthAndYear": "Dec. 2013",
+        "theme": "5th International Conference on Application and Challenges in Vedic/Ancient Indian Mathematics and Astronomy",
+        "organisers": "National Institute of Vedic Sciences, Bangalore, 20-22 Dec., 2013.",
+        "titleOfThePaper": "Approximations of π from Astronomy and Architecture Schools of Kerala",
+        "slNo": "22"
+      },
+      {
+        "monthAndYear": "March 2013",
+        "theme": "All India Sanskrit Women Scholar's Conference on Empowerment of Women in Sanskrit Literature",
+        "organisers": "Rashtriya Sanskrit Vidyapeetha, Tirupati, 7-8th March, 2013.",
+        "titleOfThePaper": "Strirājya-Concept in Sanskrit Literature",
+        "slNo": "23"
+      },
+      {
+        "monthAndYear": "Feb. 2013",
+        "theme": "International Conference on the Ramayana in Literature, Society and the Arts",
+        "organisers": "C.P.R. Institute of Indological Research, 1-2nd Feb., 2013.",
+        "titleOfThePaper": "Axioms as Idioms and Proverbs – Rāmāyaṇa's Influence on the Society",
+        "slNo": "24"
+      },
+      {
+        "monthAndYear": "Dec. 2011",
+        "theme": "4th International Conference on Life Sciences & Associated Technology in Ancient India",
+        "organisers": "National Institute of Vedic Sciences, Mulbagal, 23-25 Dec, 2011.",
+        "titleOfThePaper": "Nephology (Study of Clouds) – A Bird's Eye View",
+        "slNo": "25"
+      },
+      {
+        "monthAndYear": "June 2010",
+        "theme": "45th Session of All India Oriental Conference.",
+        "organisers": "Rashtriya Sanskrit Vidyapeetha, Tirupati. 2nd- 4th June, 2010.",
+        "titleOfThePaper": "Jñāṉakuṟaḷ – An Appraisal",
+        "slNo": "26"
+      }
+    ],
     "lectures": [],
-    "awards": [],
-    "extensionActivities": [],
+    "awards": [
+      {
+        "organisation": "Sanskrit Academy, Osmania University, Hyderabad",
+        "title": "Best Paper Award",
+        "year": "2021",
+        "remarks": "My paper titled “Temple Construction and Maintenance as Pūrta Dharma” was selected as the Best Paper in the Three day National Seminar.",
+        "slNo": "1"
+      },
+      {
+        "organisation": "Infinity Foundation, Chennai",
+        "title": "Best Paper Award",
+        "year": "2017",
+        "remarks": "My Paper titled “Saṅgam Literature and Vaidika Mārga” was selected as the Best Paper in the Conference.",
+        "slNo": "2"
+      }
+    ],
+    "extensionActivities": [
+      {
+        "description": "Have helped in the typesetting and aligning of many books that were published by KSRI.",
+        "monthAndYear": "2008-2017",
+        "title": "Assistance in Publications of KSRI",
+        "slNo": "1"
+      },
+      {
+        "description": "Have helped in the typesetting and aligning of many books that were published by the Samskrita Academy.",
+        "monthAndYear": "2008-2013",
+        "title": "Assistance in other Publications",
+        "slNo": "2"
+      },
+      {
+        "description": "1.\tNational Seminar on “Sanskrit and Tamil Nadu”, 16-17th Sep., 2016\n2.\tNational Seminar on “Environmental and Ecological awareness in Ancient India”, 8-9th July, 2016\n3.\tWorkshop on “Ancient Indian Mathematics and Astronomy”, 6-9th Jan., 2016.\n4.\tNational Seminar on “Tattvatraya”, 30-31st Oct., 2015.",
+        "monthAndYear": "2015-2016",
+        "title": "Assistance and participation in Seminars/Workshops of the Institute",
+        "slNo": "3"
+      },
+      {
+        "description": "1.\tTemple Architecture and Iconography (Level 4): “Eight-day Online Textutal Workshop on Mayamatam”, from 8th Nov. 2020 till 3rd Jan. 2021 (Every Sunday).\n2.\tNPTEL Workshop on “Mathematics in India: From Vedic Period to Modern Times”, 15-28th May, 2013.",
+        "monthAndYear": "May 2013; Nov. 2020-Jan. 2021",
+        "title": "Participation in other Workshops",
+        "slNo": "4"
+      },
+      {
+        "description": "In the inter-school Sanskrit Recitation and Drama competitions.",
+        "monthAndYear": "",
+        "title": "Judge",
+        "slNo": "5"
+      },
+      {
+        "description": "For Foreign Scholars from Europe and Canada",
+        "monthAndYear": "",
+        "title": "Sanskrit Classes",
+        "slNo": "6"
+      }
+    ],
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -43,6 +485,7 @@
     ],
     "subtitle": "Areas of Specialisation: Sahitya, Vaishnavism",
     "description": "20 years of teaching and research experience.",
+    "educationalQualification": "Sahitya Siromani, M.A., M.Phil, Ph.D.",
     "mobile": "9840135606",
     "mail": "pcmuralidharan1981@gmail.com",
     "profile": [
@@ -52,7 +495,7 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-02T18:53:50.279Z",
-      "updated_at": "2025-01-11T14:47:01.374Z",
+      "updated_at": "2025-02-06T17:56:58.130Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -430,6 +873,7 @@
     ],
     "subtitle": "Areas of Specialisation: Lexicography, Vyakarana, Literature and Dharma Sastra.",
     "description": "More than 15 years of teaching and research experience.\nGuided many M.Phil. and Ph.D Research Scholars to work on Ancient Indian Mathematics, Advaita and related fields.",
+    "educationalQualification": "M.A. M.Phil, Ph.D. Sanskrit",
     "mobile": "044-24985320",
     "mail": "ksriphd@gmail.com",
     "profile": [
@@ -439,7 +883,7 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-02T18:53:50.279Z",
-      "updated_at": "2025-01-11T08:26:53.398Z",
+      "updated_at": "2025-02-06T17:56:42.666Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -806,6 +1250,7 @@
     ],
     "subtitle": "Areas of Specialisation: Sahitya, Yoga, Manuscriptology, and Sanskrit Literature",
     "description": "More than 16 years of teaching, research, and manuscriptology experience.",
+    "educationalQualification": "B.A., M.A., M.Phil., Ph.D.",
     "mobile": " ",
     "mail": "preethimahesh.krishnan@gmail.com",
     "profile": [
@@ -815,7 +1260,7 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-11T10:00:00.000Z",
-      "updated_at": "2025-01-30T16:05:33.861Z",
+      "updated_at": "2025-02-06T17:57:13.491Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -1298,6 +1743,7 @@
     ],
     "subtitle": "Areas of Specialisation: Advaita, Vyakarana, Manuscriptology, Dharma Sastra.",
     "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on Advaita, Vyakarana and related fields.",
+    "educationalQualification": "M.A. (Sanskrit), Ph.D. (Dharmasastra)",
     "mobile": "  ",
     "mail": "renudeva@gmail.com",
     "profile": [
@@ -1305,9 +1751,9 @@
     ],
     "type": "ACADEMIC",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-01-02T18:53:50.279Z",
-      "updated_at": "2025-02-01T09:48:51.294Z",
+      "updated_at": "2025-02-06T17:56:11.537Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -1410,6 +1856,7 @@
     ],
     "subtitle": "Areas of Specialisation: Yoga, Literature, Philosophy",
     "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on Yoga and related fields.",
+    "educationalQualification": "M.A. Sanskrit, Ph.D. Hatha Yoga, Ph.D. Yoga",
     "mobile": " ",
     "mail": "sanskritkannan@yahoo.com",
     "profile": [
@@ -1417,9 +1864,9 @@
     ],
     "type": "ACADEMIC",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-01-02T18:53:50.278Z",
-      "updated_at": "2025-02-06T11:15:40.661Z",
+      "updated_at": "2025-02-06T18:22:32.984Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -1447,16 +1894,212 @@
     ],
     "phdCandidates": [
       {
-        "name": "",
-        "topic": "",
+        "name": "K.Nagarajan",
+        "topic": "Critical study of Jirnodhara Dasaka",
         "yearOfJoining": "",
-        "status": ""
+        "status": "Thesis Submitted"
+      },
+      {
+        "name": "Ms. Jayadevi",
+        "topic": "Sayanacarya viracita Purusarthasudhanidhi",
+        "yearOfJoining": "",
+        "status": "Thesis Submitted"
+      },
+      {
+        "name": "Ms.M Archana",
+        "topic": "Critical Analysis of Siva Samhita",
+        "yearOfJoining": "",
+        "status": "Thesis Submitted"
+      },
+      {
+        "name": "Ms.Vaishnavi Poorna",
+        "topic": "Musical elements in Sanskrit Drama",
+        "yearOfJoining": "",
+        "status": "Thesis Submitted"
+      },
+      {
+        "name": "Ms.S.Muthulakshmi",
+        "topic": "Yogic Elements in Mahakavyas",
+        "yearOfJoining": "",
+        "status": "Thesis Submitted"
+      },
+      {
+        "name": "Ms. S. Anuradha",
+        "topic": "Amritasiddhiyoga of Virupakshasiddha - A Critical Edition and Study",
+        "yearOfJoining": "",
+        "status": "Thesis Submitted"
+      },
+      {
+        "name": "P.C.Muralidharan",
+        "topic": "Parijathahara Nataka - A critical study",
+        "yearOfJoining": "",
+        "status": "Thesis Submitted"
+      },
+      {
+        "name": "K.N.Srikkanth",
+        "topic": "Contribution of Sridhara and Sripati to Indian Mathematics",
+        "yearOfJoining": "",
+        "status": "Thesis Submitted"
+      }
+    ],
+    "mphilCandidates": [
+      {
+        "name": "Ms.Vibha Raghav",
+        "topic": "Goraksha Samhita - A Critical Study",
+        "yearOfJoining": "",
+        "status": "Degree Awarded"
+      },
+      {
+        "name": "Mr.S.Margabandhu",
+        "topic": "Yogic elements in Mrgendra Agama",
+        "yearOfJoining": "",
+        "status": "Degree Awarded"
+      },
+      {
+        "name": "Mr K.P. Srikanth",
+        "topic": "Dosapariharas in Brhatparasara Horasastra",
+        "yearOfJoining": "",
+        "status": "Degree Awarded"
+      },
+      {
+        "name": "Ms. S. Anuradha",
+        "topic": "Varahopanisad",
+        "yearOfJoining": "",
+        "status": "Degree Awarded"
+      },
+      {
+        "name": "Mr. S. Nagarajan",
+        "topic": "Yogapada of Matanga Parameswaragama",
+        "yearOfJoining": "",
+        "status": "Degree Awarded"
+      },
+      {
+        "name": "Ms.S.Padmapriya",
+        "topic": "Karani in Ganitasastra - An analysis",
+        "yearOfJoining": "",
+        "status": "Degree Awarded"
+      },
+      {
+        "name": "Mr. K. Nagarajan",
+        "topic": "Yogabija",
+        "yearOfJoining": "",
+        "status": "Degree Awarded"
       }
     ],
     "academicPositions": [
       {
+        "duration": "from June 2023",
         "description": "",
-        "position": "\tSecretary"
+        "position": "Director",
+        "organization": "The Kuppuswami Sastri Research Institute Mylapore Chennai India"
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "Deputy Director",
+        "organization": "The Kuppuswami Sastri Research Institute Mylapore Chennai India"
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "Member Governing Body",
+        "organization": "The Kuppuswami Sastri Research Institute"
+      },
+      {
+        "duration": "from 1985",
+        "description": "more than 70 books and many volumes of Journal of Oriental Research till date",
+        "position": "Member – Editorial Board for all the publications",
+        "organization": "The Kuppuswami Sastri Research Institute"
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "Member – Editorial Board for all the publications",
+        "organization": "Samskrita Ranga, Chennai"
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "Member – Editorial Board for all the publications",
+        "organization": "Samskrita Academy, Chennai"
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "Secretary",
+        "organization": "The Samskrita Academy Madras"
+      },
+      {
+        "duration": "Apr.07-May 08",
+        "description": "",
+        "position": "Asst. Director",
+        "organization": "Sahaj Marg Spirituality Foundation Chennai"
+      },
+      {
+        "duration": "",
+        "description": "A research wing of Shri Ram Chandra Mission A worldwide Spiritual Organization",
+        "position": "Honorary Director (Research)",
+        "organization": "Sahaj Marg Research and Training Institute (SMRTI)"
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "External Examiner for M.Phil (Sanskrit)",
+        "organization": "Bharatidasan University"
+      },
+      {
+        "duration": "",
+        "description": "Reviewed more than 70 books on Sanskrit Literature, Philosophy, Religion, Yoga, etc. in Indological Journals / Magazines",
+        "position": "Book Reviewer",
+        "organization": ""
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "Question paper setter",
+        "organization": "Bharatidasan University for UG (Sanskrit)"
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "Member Doctoral Committee (Sanskrit)",
+        "organization": "Univ. of Madras"
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "Member Doctoral Committee (Sanskrit)",
+        "organization": "Madurai Kamaraj University Madurai"
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "Member Doctoral Committee",
+        "organization": "SCSVMV University Kanchipuram"
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "Member Doctoral Committee (Sanskrit)",
+        "organization": "Presidency College Chennai"
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "Academic Council Member",
+        "organization": "D.G. Vaishnav College (Arumbakkam Chennai) for Sanskrit"
+      },
+      {
+        "duration": "from 2010",
+        "description": "",
+        "position": "Academic Council Member for the Board in Sanskrit",
+        "organization": "The Madurai Kamaraj University Madurai"
+      },
+      {
+        "duration": "",
+        "description": "",
+        "position": "Life Member",
+        "organization": "All India Oriental Conference BORI"
       }
     ],
     "booksPublished": [
@@ -1644,6 +2287,7 @@
     ],
     "subtitle": "Areas of Specialisation: Sahitya, Language and Literature, Scientific literature",
     "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on ancient sciences and varied fields of their interest.",
+    "educationalQualification": "B.A. (Economics), M.A. (Sanskrit), Ph.D.",
     "mobile": " ",
     "mail": " ",
     "profile": [
@@ -1653,7 +2297,7 @@
     "metadata": {
       "updated_by": "demo",
       "created_at": "2025-01-02T18:53:50.278Z",
-      "updated_at": "2025-01-30T10:31:04.382Z",
+      "updated_at": "2025-02-06T17:56:26.742Z",
       "created_by": "admin"
     },
     "orderId": "1",

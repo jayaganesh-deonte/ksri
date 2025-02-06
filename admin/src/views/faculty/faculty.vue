@@ -106,6 +106,12 @@ const facultyFields = [
     rules: [(v) => !!v || "Description is required"],
   },
   {
+    key: "educationalQualification",
+    label: "Educational Qualification",
+    type: "text",
+    rules: [(v) => !!v || "Educational Qualification is required"],
+  },
+  {
     key: "mobile",
     label: "Mobile",
     type: "text",
@@ -117,12 +123,12 @@ const facultyFields = [
     type: "text",
     rules: [(v) => !!v || "Email is required"],
   },
-  {
-    key: "profile",
-    label: "Profile Document",
-    type: "document",
-    rules: [(v) => !!v || "Profile Document is required"],
-  },
+  // {
+  //   key: "profile",
+  //   label: "Profile Document",
+  //   type: "document",
+  //   rules: [(v) => !!v || "Profile Document is required"],
+  // },
   {
     key: "displayImage",
     label: "Display Image",
