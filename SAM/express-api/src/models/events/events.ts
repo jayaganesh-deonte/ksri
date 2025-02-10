@@ -67,7 +67,7 @@ export function validateEvent(event: Partial<Event>): boolean {
     typeof event.title === "string" &&
     typeof event.subtitle === "string" &&
     typeof event.description === "string" &&
-    Array.isArray(event.category) &&
+    // Array.isArray(event.category) &&
     typeof event.venue === "string" &&
     typeof event.date === "string" &&
     Array.isArray(event.images) &&
