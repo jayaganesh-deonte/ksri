@@ -23,7 +23,7 @@ const homeDialogFields = [
   {
     key: "description",
     label: "Description",
-    type: "textarea",
+    type: "editor",
     rules: [(v) => !!v || "Description is required"],
   },
   {
@@ -55,10 +55,10 @@ const homeDialogHeaders = [
     key: "title",
     title: "Title",
   },
-  {
-    key: "description",
-    title: "Description",
-  },
+  // {
+  //   key: "description",
+  //   title: "Description",
+  // },
   {
     key: "buttonText",
     title: "Button Text",

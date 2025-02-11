@@ -16,9 +16,9 @@
     ],
     "type": "ACADEMIC",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-02-05T09:42:40.192Z",
-      "updated_at": "2025-02-06T18:44:03.210Z",
+      "updated_at": "2025-02-07T09:53:38.960Z",
       "created_by": "dhara0622@gmail.com"
     },
     "orderId": "2",
@@ -493,9 +493,9 @@
     ],
     "type": "ACADEMIC",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:53:50.279Z",
-      "updated_at": "2025-02-06T17:56:58.130Z",
+      "updated_at": "2025-02-07T09:53:21.040Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -783,6 +783,13 @@
         "organisers": "The Madras Sanskrit College",
         "titleOfThePaper": "tattvaśāstre śodhaviṣayacayanam",
         "slNo": "21"
+      },
+      {
+        "monthAndYear": "24-26 Oct. 2024",
+        "theme": "Indian Knowledge Systems",
+        "organisers": "\tAll India Oriental Research Conference, Udipi \t",
+        "titleOfThePaper": "Candra vākyas in Sanskrit and Tamil\t",
+        "slNo": "22"
       }
     ],
     "lectures": [
@@ -1258,9 +1265,9 @@
     ],
     "type": "ACADEMIC",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-11T10:00:00.000Z",
-      "updated_at": "2025-02-06T17:57:13.491Z",
+      "updated_at": "2025-02-07T06:54:05.803Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -1742,7 +1749,7 @@
       "upload/faculty/dr-t.-v.-vasudeva.jpg"
     ],
     "subtitle": "Areas of Specialisation: Advaita, Vyakarana, Manuscriptology, Dharma Sastra.",
-    "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on Advaita, Vyakarana and related fields.",
+    "description": "More than 40 years of teaching and research experience.\nGuided many Research Scholars to work on Advaita, Vyakarana and related fields.",
     "educationalQualification": "M.A. (Sanskrit), Ph.D. (Dharmasastra)",
     "mobile": "  ",
     "mail": "renudeva@gmail.com",
@@ -1751,9 +1758,9 @@
     ],
     "type": "ACADEMIC",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:53:50.279Z",
-      "updated_at": "2025-02-06T17:56:11.537Z",
+      "updated_at": "2025-02-10T05:59:23.122Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -1767,6 +1774,36 @@
         "duration": "1982-2001",
         "organisation": "The Kuppuswami Sastri Research Institute",
         "designation": "Research scholar "
+      },
+      {
+        "duration": "",
+        "organisation": "The Kuppuswami Sastri Research Institute.",
+        "designation": "Member Governing Body"
+      },
+      {
+        "duration": "",
+        "organisation": "The Kuppuswami Sastri Research Institute from 1985. (more than70 books and many volumes of Journal of Oriental Research till date)",
+        "designation": "Member – Editorial Board for all the publications"
+      },
+      {
+        "duration": "",
+        "organisation": "Samskrita Academy, Chennai",
+        "designation": "Member – Editorial Board for all the publications"
+      },
+      {
+        "duration": "",
+        "organisation": "Univ. of Madras.",
+        "designation": "Member  Doctoral Committee (Sanskrit)"
+      },
+      {
+        "duration": "",
+        "organisation": "SASTRA Thanjavur",
+        "designation": "Member Doctoral Committee (Sanskrit)"
+      },
+      {
+        "duration": "",
+        "organisation": "SCSVMV University, Enathur",
+        "designation": "Member Doctoral Committee (Sanskrit)"
       }
     ],
     "academicPositions": [
@@ -1797,12 +1834,44 @@
     ],
     "booksPublished": [
       {
-        "publisher": "",
-        "yearOfPublication": "",
-        "title": "",
-        "sNo": "",
-        "remarks": "",
-        "isbn": ""
+        "publisher": "The KSRI",
+        "yearOfPublication": "2016",
+        "title": "Darśanopanisat",
+        "sNo": "1",
+        "remarks": "Published",
+        "isbn": "81-85170-32-0"
+      },
+      {
+        "publisher": "The KSRI",
+        "yearOfPublication": "2009",
+        "title": "Advayatarakopanisat",
+        "sNo": "2",
+        "remarks": "Published",
+        "isbn": "978-81-85170-41-1"
+      },
+      {
+        "publisher": "The KSRI",
+        "yearOfPublication": "2009",
+        "title": "Amr̥tanādopaniṣat",
+        "sNo": "3",
+        "remarks": "Published",
+        "isbn": "978-91-85170-40-4"
+      },
+      {
+        "publisher": "The KSRI",
+        "yearOfPublication": "2009",
+        "title": "SriNandikesaKashika",
+        "sNo": "4",
+        "remarks": "Published",
+        "isbn": "978-81-85170-42-8"
+      },
+      {
+        "publisher": "The KSRI",
+        "yearOfPublication": "2015",
+        "title": "Dhyanabindupanisad",
+        "sNo": "5",
+        "remarks": "Published",
+        "isbn": "978-81-85170-40-4"
       }
     ],
     "articlesPublished": [
@@ -1855,7 +1924,7 @@
       "upload/faculty/dr-k-s-balasubramanian.jpg"
     ],
     "subtitle": "Areas of Specialisation: Yoga, Literature, Philosophy",
-    "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on Yoga and related fields.",
+    "description": "More than 40 years of teaching and research experience.\nGuided many Research Scholars to work on Yoga and related fields.",
     "educationalQualification": "M.A. Sanskrit, Ph.D. Hatha Yoga, Ph.D. Yoga",
     "mobile": " ",
     "mail": "sanskritkannan@yahoo.com",
@@ -1864,9 +1933,9 @@
     ],
     "type": "ACADEMIC",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:53:50.278Z",
-      "updated_at": "2025-02-06T18:22:32.984Z",
+      "updated_at": "2025-02-10T05:56:23.753Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -1989,39 +2058,27 @@
     "academicPositions": [
       {
         "duration": "from June 2023",
-        "description": "",
+        "description": "Kuppuswami Sastri Research Institute",
         "position": "Director",
         "organization": "The Kuppuswami Sastri Research Institute Mylapore Chennai India"
       },
       {
         "duration": "",
-        "description": "",
+        "description": "Kuppuswami Sastri Research Institute",
         "position": "Deputy Director",
         "organization": "The Kuppuswami Sastri Research Institute Mylapore Chennai India"
       },
       {
         "duration": "",
-        "description": "",
+        "description": "Kuppuswami Sastri Research Institute",
         "position": "Member Governing Body",
         "organization": "The Kuppuswami Sastri Research Institute"
       },
       {
         "duration": "from 1985",
-        "description": "more than 70 books and many volumes of Journal of Oriental Research till date",
+        "description": "The Kuppuswami Sastri Research Institute from 1985. (more than70 books and many volumes of Journal of Oriental Research till date)",
         "position": "Member – Editorial Board for all the publications",
         "organization": "The Kuppuswami Sastri Research Institute"
-      },
-      {
-        "duration": "",
-        "description": "",
-        "position": "Member – Editorial Board for all the publications",
-        "organization": "Samskrita Ranga, Chennai"
-      },
-      {
-        "duration": "",
-        "description": "",
-        "position": "Member – Editorial Board for all the publications",
-        "organization": "Samskrita Academy, Chennai"
       },
       {
         "duration": "",
@@ -2100,6 +2157,14 @@
         "description": "",
         "position": "Life Member",
         "organization": "All India Oriental Conference BORI"
+      },
+      {
+        "description": "Samskrita Ranga, Chennai",
+        "position": "Member – Editorial Board for all the publications"
+      },
+      {
+        "description": "Samskrita Academy, Chennai",
+        "position": "Member – Editorial Board for all the publications"
       }
     ],
     "booksPublished": [
@@ -2142,6 +2207,30 @@
         "sNo": "5",
         "remarks": "Published",
         "isbn": "978-81-85170-40-4"
+      },
+      {
+        "publisher": "Karnataka Historical Research Society, Dharwad",
+        "yearOfPublication": "2017",
+        "title": "Yoga Yagnavalkya - A critical Study",
+        "sNo": "6",
+        "remarks": "Published",
+        "isbn": ""
+      },
+      {
+        "publisher": "The KSRI",
+        "yearOfPublication": "2023",
+        "title": "Sivasvarodaya",
+        "sNo": "7",
+        "remarks": "Published",
+        "isbn": "978-81-85170-69-5"
+      },
+      {
+        "publisher": "",
+        "yearOfPublication": "",
+        "title": "",
+        "sNo": "8",
+        "remarks": "",
+        "isbn": ""
       }
     ],
     "projects": [
@@ -2149,15 +2238,29 @@
         "description": "",
         "sponsor": "ASHTADASHI",
         "monthAndYear": "",
-        "remarks": "",
-        "projectTitle": ""
+        "remarks": "On-Going",
+        "projectTitle": "YOGA MANUSCRIPTS"
       },
       {
-        "description": "3 BOOKS - YOGABIJA VIVEKA MARTANDA",
-        "sponsor": "IKS 1",
+        "description": "",
+        "sponsor": "IKS",
         "monthAndYear": "",
-        "remarks": "",
-        "projectTitle": ""
+        "remarks": "On-Going",
+        "projectTitle": "YOGABĪJA"
+      },
+      {
+        "description": "",
+        "sponsor": "IKS",
+        "monthAndYear": "",
+        "remarks": "On-Going",
+        "projectTitle": "YOGA SŪTRA OF BLIND YOGI"
+      },
+      {
+        "description": "",
+        "sponsor": "IKS",
+        "monthAndYear": "",
+        "remarks": "On-Going",
+        "projectTitle": "VIVEKA MĀRTAṆḌA"
       }
     ],
     "seminars": [
@@ -2286,7 +2389,7 @@
       "images/faculty-dr-v-kameswari.jpg"
     ],
     "subtitle": "Areas of Specialisation: Sahitya, Language and Literature, Scientific literature",
-    "description": "More than 35 years of teaching and research experience.\nGuided many Research Scholars to work on ancient sciences and varied fields of their interest.",
+    "description": "More than 40 years of teaching and research experience.\nGuided many Research Scholars to work on ancient sciences and varied fields of their interest.",
     "educationalQualification": "B.A. (Economics), M.A. (Sanskrit), Ph.D.",
     "mobile": " ",
     "mail": " ",
@@ -2295,9 +2398,9 @@
     ],
     "type": "ACADEMIC",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:53:50.278Z",
-      "updated_at": "2025-02-06T17:56:26.742Z",
+      "updated_at": "2025-02-07T06:53:40.295Z",
       "created_by": "admin"
     },
     "orderId": "1",

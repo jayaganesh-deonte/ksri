@@ -14,7 +14,9 @@
         </div>
       </v-card>
       <v-card-text>
-        <div class="text-h6">{{ store.homeDialogContent.description }}</div>
+        <div class="text-h6">
+          <div v-html="store.homeDialogContent.description" />
+        </div>
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
