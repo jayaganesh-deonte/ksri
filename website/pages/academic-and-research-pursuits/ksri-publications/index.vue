@@ -3,8 +3,12 @@
     <div>
       <section-title title="KSRI PUBLICATIONS" />
       <div class="sectionSubtitle2">
-        KSRI has been publishing the Journal of Oriental Research periodically
-        from its inception till date and it is internationally well known.
+        As a premier Institution in the field of research, KSRI has involved
+        itself actively in the pursuit of excellence in its field of
+        specialisation. In order to remain competitive and abreast of the
+        requirement of Scholars, it is essential that the enhancement of
+        Knowledge and Professional Expertise are maintained at a sufficiently
+        higher level.
       </div>
     </div>
     <div class="text-center my-8">
@@ -126,7 +130,7 @@
       </div>
     </div> -->
 
-    <div class="text-center ma-6">
+    <!-- <div class="text-center ma-6">
       <div class="sectionSubtitle" data-aos="fade-up">Overview</div>
       <div class="text-h6" data-aos="fade-up">
         As a premier Institution in the field of research, KSRI has involved
@@ -136,21 +140,51 @@
         Knowledge and Professional Expertise are maintained at a sufficiently
         higher level.
       </div>
-    </div>
-    <div class="text-center">
-      <v-card
-        class="ma-4 pa-6 d-flex flex-column justify-space-between align-center"
-        rounded="0"
-        v-for="publicationCard in publicationCards"
-        :key="publicationCard.title"
-        data-aos="fade-up"
-      >
-        <div class="text-h5" data-aos="fade-right">
-          {{ publicationCard.title }}
+    </div> -->
+    <div>
+      <v-card class="ma-4 pa-6" rounded="0" data-aos="fade-up">
+        <div class="d-flex flex-column align-center justify-center">
+          <div class="text-h5" data-aos="fade-right">
+            Milestones in KSRI Publication
+          </div>
+          <div class="horizontalLine my-3" style="--line-width: 10%"></div>
         </div>
-        <div class="horizontalLine my-3" style="--line-width: 10%"></div>
-        <div data-aos="fade-left">
-          {{ publicationCard.description }}
+        <div data-aos="fade-left" class="text-left">
+          Publications of the Institute have received wide acclaim and
+          appreciation from scholars all over the world and have been reviewed
+          in the National Dailies like "The Hindu", Academic Journals and other
+          magazines in India and Abroad.
+        </div>
+        <div class="text-left ml-8">
+          • KSRI takes pride in announcing the publication of the most ancient
+          Tamil text on grammar "Tolkappiyam" with Roman transliteration and
+          English translation.
+        </div>
+        <div class="text-left ml-8">
+          • "Artha Sastra" of Kautilya, acclaimed as the best source of
+          information on ancient Indian Polity and Economics was published for
+          the first time with two lesser known commentaries.
+        </div>
+        <div class="text-left ml-8">
+          • Publication of "Lectures on Patanjali's Mahabhashya" by
+          Dr.P.S.Subrahmanya Sastri and "A critical study on Bija Pallava", a
+          16th Century Text on Algebra have received appreciation from around
+          the world.
+        </div>
+        <div class="text-left ml-8">
+          • As a mark of the 75th year Anniversary Celebrations of the KSRI, 12
+          monographs covering varied topics under Indian Knowledge Series were
+          published and released.
+        </div>
+        <div class="mt-8">
+          To name a few - Ancient Indian Surgical Instruments, Primer to Ancient
+          Indian Botany, Town planning in Ancient India, Vadavagni- Submarine
+          fire: Geographical perspective, Evolution of Earth etc.
+        </div>
+        <div class="">
+          These publications pave the way for sharing of knowledge and
+          information, assimilation of ideas and expertise for preservation and
+          upkeep of archives.
         </div>
       </v-card>
     </div>
@@ -268,20 +302,20 @@ committee = {
 console.log("committee", committee);
 
 const publicationCards = [
-  {
-    title: "The Journal of Oriental Research",
-    description:
-      "Initiated by Professor S. Kuppuswami Sastri in 1927, the 'Journal of Oriental Research' is a reputed internationally acclaimed magazine covering various aspects involved in Sanskrit and Indological studies. The publication of this magazine was entrusted to the Institute from 1944. 91 Volumes of the journal have been published so far. The Journal, admittedly reputed for original research and scientific investigation, carries general, critical and research articles on diverse indological subjects. Some rare texts, critically edited and appear serially as supplementary to the original volumes later get published as independent books.",
-  },
-  {
-    title: "Books/Monographs/Reprints",
-    description:
-      "Books and Monographs are being published periodically as an endeavour to promote Sanskrit and Indological Studies. They cover a wide range of subjects which include Vedic Studies, Yoga, Literature, Language, Grammar, Philosophy, Religion, Mathematics, Astronomy, Astrology, Medical Science, Ayurveda, Arthasastra, Purva Mimamsa, Advaita, Nyaya, Vaishnavism, Saivism, Arts, Science, etc. Around 100 Books and Monographs including critical editions of hitherto unpublished manuscripts on different aspects of Sanskrit and Indology have also been published so far.",
-  },
-  {
-    title: "Milestones in KSRI Publication",
-    description: `Publications of the Institute have received wide acclaim and appreciation from scholars all over the world and have been reviewed in the National Dailies like "The Hindu", Academic Journals and other magazines in India and Abroad. KSRI takes pride in announcing the publication of the most ancient Tamil text on grammar "Tolkappiyam" with Roman transliteration and English translation. "Artha Sastra" of Kautilya, acclaimed as the best source of information on ancient Indian Polity and Economics was published for the first time with two lesser known commentaries. Publication of "Lectures on Patanjali's Mahabhashya" by Dr.P.S.Subrahmanya Sastri and "A critical study on Bija Pallava", a 16th Century Text on Algebra have received appreciation from around the world. It had been conducting Seminars, Conferences and Workshops which pave the way for sharing of knowledge and information, assimilation of ideas and expertise for preservation and upkeep of archives.`,
-  },
+  // {
+  //   title: "The Journal of Oriental Research",
+  //   description:
+  //     "Initiated by Professor S. Kuppuswami Sastri in 1927, the 'Journal of Oriental Research' is a reputed internationally acclaimed magazine covering various aspects involved in Sanskrit and Indological studies. The publication of this magazine was entrusted to the Institute from 1944. 91 Volumes of the journal have been published so far. The Journal, admittedly reputed for original research and scientific investigation, carries general, critical and research articles on diverse indological subjects. Some rare texts, critically edited and appear serially as supplementary to the original volumes later get published as independent books.",
+  // },
+  // {
+  //   title: "Books/Monographs/Reprints",
+  //   description:
+  //     "Books and Monographs are being published periodically as an endeavour to promote Sanskrit and Indological Studies. They cover a wide range of subjects which include Vedic Studies, Yoga, Literature, Language, Grammar, Philosophy, Religion, Mathematics, Astronomy, Astrology, Medical Science, Ayurveda, Arthasastra, Purva Mimamsa, Advaita, Nyaya, Vaishnavism, Saivism, Arts, Science, etc. Around 100 Books and Monographs including critical editions of hitherto unpublished manuscripts on different aspects of Sanskrit and Indology have also been published so far.",
+  // },
+  // {
+  //   title: "Milestones in KSRI Publication",
+  //   description: `Publications of the Institute have received wide acclaim and appreciation from scholars all over the world and have been reviewed in the National Dailies like "The Hindu", Academic Journals and other magazines in India and Abroad. KSRI takes pride in announcing the publication of the most ancient Tamil text on grammar "Tolkappiyam" with Roman transliteration and English translation. "Artha Sastra" of Kautilya, acclaimed as the best source of information on ancient Indian Polity and Economics was published for the first time with two lesser known commentaries. Publication of "Lectures on Patanjali's Mahabhashya" by Dr.P.S.Subrahmanya Sastri and "A critical study on Bija Pallava", a 16th Century Text on Algebra have received appreciation from around the world. It had been conducting Seminars, Conferences and Workshops which pave the way for sharing of knowledge and information, assimilation of ideas and expertise for preservation and upkeep of archives.`,
+  // },
 ];
 
 // const publicationsForSaleData = await queryContent(

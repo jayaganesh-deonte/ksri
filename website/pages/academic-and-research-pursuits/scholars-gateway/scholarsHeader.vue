@@ -8,7 +8,7 @@
       areas, who regularly visit KSRI and are invited frequently for lectures
       and discussion forums.
     </div>
-    <div data-aos="fade-up" class="sectionBody" data-aos-delay="100">
+    <!-- <div data-aos="fade-up" class="sectionBody" data-aos-delay="100">
       Much research work is also carried out by doctorial students and project
       investigators to whom KSRI acts as a Scholars Gateway.
     </div>
@@ -18,21 +18,22 @@
       project ideas are listed. KSRI welcomes any organization interested in
       sponsoring any of the project ideas listed and also individuals who would
       like to pursue such specific projects.
-    </div>
+    </div> -->
 
     <div class="my-8">
       <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="100">
-        Invitation
+        Invitation for Project Assistance and Sponsorship
       </div>
       <div data-aos="fade-up" class="sectionBody" data-aos-delay="100">
-        KSRI all the time pursues special projects in its core areas, through
-        research scholars, students and independently tough its associates.
-        There are all time projects being pursued and projects on the anvil.
+        KSRI has published books and articles based on various research
+        projects. KSRI pursues special projects in its core areas, through
+        research scholars, students and independently through its associates.
         There are also project ideas which can be discussed and formalized by
-        sponsors and scholars. KSRI invites all interested persons and
-        organizations to join together with its scholars and pursue the passion.
-        Below are the information on Scholars' Gateway, Special projects and
-        studies and projects for discussions.
+        sponsors and scholars. KSRI welcomes any organization interested in
+        sponsoring any of the project ideas listed in the
+        <a href="/academic-and-research-pursuits/">Projects & Studies</a>
+        section. It invites all interested persons and organizations to join
+        with its scholars and pursue the passion.
       </div>
     </div>
 

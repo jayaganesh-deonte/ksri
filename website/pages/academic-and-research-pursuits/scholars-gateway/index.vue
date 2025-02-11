@@ -12,18 +12,18 @@
         data-aos="fade-up"
         data-aos-delay="150"
       >
-        In the past traditional scholars of great merit were given junior/senior
-        research scholarships by the Govt. of India through the Central Sanskrit
-        Board/Rashtriya Sanskrit Sansthan. Scholars under this scheme produced
-        valuable texts, Sastra texts/topics, Literature, Agama texts,
-        Dramaturgical texts etc. Diverse categories of research - traditional,
-        modern, inter-disciplinary etc. by Indian and foreign scholars, were
-        officially started from 1983 within the campus as regular academic work.
-        Besides there was an all round improvement in other academic activities.
-        Special mention has to be made about the efforts taken by the Institute
-        in the field of Saiva and Vaishnava Agamic Studies. No other institution
-        in South India except the concerned departments in the University of
-        Madras has taken up these studies.
+        In the past, traditional scholars of great merit were given
+        junior/senior research scholarships by the Govt. of India through the
+        Central Sanskrit Board/Rashtriya Sanskrit Sansthan. Scholars under this
+        scheme produced valuable texts on Sastras, Literature, Agamas, and
+        Dramaturgy etc. Diverse categories of research - traditional, modern,
+        inter-disciplinary etc. by Indian and foreign scholars, were officially
+        started from 1983 within the campus as regular academic work. Besides
+        there was an all-round improvement in other academic activities. Special
+        mention has to be made about the efforts taken by the Institute in the
+        field of Saiva and Vaishnava Agamic Studies. No other institution in
+        South India except the concerned departments in the University of Madras
+        has taken up these studies.
       </div>
 
       <v-row class="ma-2">

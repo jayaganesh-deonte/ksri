@@ -2,10 +2,9 @@
   <div>
     <div class="text-center my-4">
       <div class="text-h6">
-        A Committee is constituted to help the Institute in identifying the
-        texts to be published and also in other matters related to the research
-        work of the Institute. At present the following scholars are the
-        members.
+        The editorial committee performs a thorough scrutiny in the edition of
+        The Journal of Oriental Research and other publications being brought
+        out by the KSRI.
       </div>
     </div>
     <div>

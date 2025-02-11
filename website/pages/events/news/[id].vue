@@ -19,10 +19,10 @@
       <div class="ma-8 text-center">
         <div class="my-8">
           <section-title title="KSRI News Update" />
-          <div class="sectionSubtitle2 text-black mb-8">
+          <!-- <div class="sectionSubtitle2 text-black mb-8">
             KSRI is an enabler of research for Indian and foreign scholars in
             their Doctorate pursuits.
-          </div>
+          </div> -->
         </div>
 
         <v-card

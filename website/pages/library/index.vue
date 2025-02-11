@@ -15,8 +15,7 @@
         Dance and Music, Epigraphy, Ethics, Law, Language and Literature,
         Philosophy and Ayurveda. These books are in varied languages like in
         Sanskrit, Tamil, Telugu, Kannada, Malayalam, English, German and French.
-        Besides books the library has journals and back volumes. The collection
-        has received and continues generous donations of books.
+        Besides books the library has journals and back volumes.
       </div>
 
       <v-card
@@ -127,7 +126,7 @@
         color="greenBg"
         elevation="0"
         data-aos="zoom-in"
-        data-aos-delay="400"
+        data-aos-delay="200"
         v-if="$device.isMobile"
       >
         <v-img src="/img/library/library-racks-4.jpg" cover></v-img>
@@ -143,64 +142,6 @@
           preserving by adopting the new techniques. The academic staff of the
           Institute help the readers in understanding the texts and suggest
           books for further studies.
-        </div>
-      </v-card>
-    </div>
-
-    <div class="mx-2 my-8">
-      <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="500">
-        Focus on Digitization of Mss. and Rare Books
-      </div>
-      <div
-        class="imageWithTextAlignedToRight"
-        style="height: 50vh"
-        v-if="!$device.isMobile"
-      >
-        <v-img
-          data-aos="fade-right"
-          data-aos-delay="900"
-          class="imgOnRight"
-          src="/img/library/library-racks-2.jpg"
-          cover
-          height="50vh"
-          width="50vw"
-        >
-        </v-img>
-        <v-card
-          class="sectionBody textOverlayRight pa-4"
-          rounded="0"
-          elevation="4"
-          data-aos="fade-left"
-          data-aos-delay="900"
-        >
-          Realising the importance of the collection, the Institute is trying to
-          digitize the old books (70- 100 years old) and the Manuscripts. Under
-          the Millennium Project envisaged by the former President Dr.A.P.J.
-          Abdul Kalam, the Tirumala Tirupati Devasthanam has digitalized nearly
-          3000 books published before 1950 on various subjects.
-        </v-card>
-      </div>
-
-      <!-- for mobile -->
-      <v-card
-        class="my-4"
-        color="greenBg"
-        elevation="0"
-        data-aos="zoom-in"
-        data-aos-delay="400"
-        v-if="$device.isMobile"
-      >
-        <v-img :src="getAssetUrl('upload/library-focus.jpg')" cover></v-img>
-        <div
-          class="sectionBody text-start ma-2"
-          data-aos="fade-up"
-          data-aos-delay="900"
-        >
-          Realising the importance of the collection, the Institute is trying to
-          digitize the old books (70- 100 years old) and the Manuscripts. Under
-          the Millennium Project envisaged by the former President Dr.A.P.J.
-          Abdul Kalam, the Tirumala Tirupati Devasthanam has digitalized nearly
-          3000 books published before 1950 on various subjects.
         </div>
       </v-card>
     </div>
@@ -277,7 +218,7 @@
             md="4"
             class="d-flex flex-column justify-space-around align-center text-center services pa-8"
             data-aos="fade-up"
-            :data-aos-delay="index * 200 + 900"
+            :data-aos-delay="index * 300"
           >
             <div class="sectionBody text-accentGreen">{{ index + 1 }}.</div>
             <div class="sectionBody my-4" v-html="service" />
@@ -295,7 +236,7 @@
     <v-card
       elevation="0"
       rounded="0"
-      height="50vh"
+      height="40vh"
       class="supportBg d-flex flex-column justify-center"
       data-aos="fade-up"
       data-aos-delay="500"
@@ -308,38 +249,45 @@
         >
           Support
         </div>
-        <div class="sectionBody" data-aos="fade-left" data-aos-delay="900">
+        <!-- <div class="sectionBody" data-aos="fade-left" data-aos-delay="900">
           Mainly through donations provided by the philanthropists, scholars and
           lovers of Sanskrit and culture in and around India and also abroad.
-        </div>
+        </div> -->
       </v-card>
-
-      <div class="text-center my-5" data-aos="fade-up" data-aos-delay="900">
-        <v-btn
-          rounded="pill"
-          class="text-secondary"
-          size="large"
-          :to="'/contribute'"
-          >Contribute</v-btn
-        >
-      </div>
     </v-card>
 
     <div
       class="text-center mx-auto d-flex flex-column justify-center"
       :style="$device.isMobile ? '' : 'width: 70vw; margin: 0 auto;'"
     >
-      <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="200">
+      <!-- <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="200">
         Requirements
-      </div>
-      <div class="sectionBody my-8" data-aos="fade-up" data-aos-delay="400">
+      </div> -->
+      <div class="sectionBody my-8" data-aos="fade-up" data-aos-delay="200">
         The present problem is to preserve these books in proper condition since
         they have become unbound and are in bad condition in the process of
-        handling them for digitalization. The books being more than 70 years
-        old, some even 120 years old ordinary binding cannot be carried out to
+        handling them for digitization. The books being more than 70 years old,
+        some even 120 years old ordinary binding cannot be carried out to
         preserve them in proper condition. We have been advised by the officials
         of the Tamilnadu Archives and Govt. Museum to adopt a new system called
-        Photolam System which is quite costly.
+        Photolam System which is quite costly. The implementation of this system
+        is mainly possible through the donations provided by the
+        philanthropists, scholars and lovers of Sanskrit and culture in and
+        around India and also abroad.
+      </div>
+      <div class="d-flex align-center justify-center pa-4">
+        <div
+          class="font-weight-bold text-h5 my-8"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Kindly contribute for a noble cause.
+        </div>
+        <div class="text-center mx-5" data-aos="fade-up" data-aos-delay="200">
+          <v-btn rounded="pill" size="large" color="primary" :to="'/contribute'"
+            >Contribute</v-btn
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -349,7 +297,7 @@
 import LibraryHeader from "./LibraryHeader.vue";
 
 const services = [
-  "Reprographic services and online services are provided also institutional assistance.",
+  "Reprographic services are provided by the Library.",
   "60% of our catalogue can be accessed through our Website : <a href='/library/books' style='text-decoration: unset;'>www.ksri.in/library/books</a> .",
   "Separate reading room for researchers for their research.",
   "Extensive research materials including special Encyclopaedias, Descriptive Catalogues of Manuscripts in various libraries all over the world, and general reference materials are also available.",
@@ -363,7 +311,7 @@ const getAssetUrl = (url) => {
 };
 </script>
 
-<style scoped>
+<style>
 .libraryRack {
   background-image: url("/img/library/library-racks-1.jpg");
   background-size: cover;

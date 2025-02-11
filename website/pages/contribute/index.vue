@@ -5,7 +5,7 @@
 </template>
 <script setup>
 const description =
-  "We earnestly solicit contributions from lovers of Sanskrit and Indian culture to help us by contributing their mite in preserving our ancient treasure. Contribution received by Sponsor, Membership, Projects & Corpus";
+  "We earnestly solicit contributions from lovers of Sanskrit and Indian culture to help us by contributing their mite in preserving our ancient treasure.";
 
 useSeoMeta({
   title: "Contribute",

@@ -12,8 +12,15 @@
       <div>
         <section-title title="BOOKS/MONOGRAPHS" />
         <div class="sectionSubtitle2">
-          KSRI has been publishing the Journal of Oriental Research periodically
-          from its inception till date and it is internationally well known.
+          Books and Monographs are being published periodically as an endeavour
+          to promote Sanskrit and Indological Studies. They cover a wide range
+          of subjects which include Vedic Studies, Yoga, Literature, Language,
+          Grammar, Philosophy, Religion, Mathematics, Astronomy, Astrology,
+          Medical Science, Ayurveda, Arthasastra, Purva Mimamsa, Advaita, Nyaya,
+          Vaishnavism, Saivism, Arts, Science, etc. Around 100 Books and
+          Monographs including critical editions of hitherto unpublished
+          manuscripts on different aspects of Sanskrit and Indology have also
+          been published so far.
         </div>
       </div>
 

@@ -12,6 +12,19 @@
       <div>
         <section-title title="JOURNAL OF ORIENTAL RESEARCH" />
         <div class="sectionSubtitle2">
+          Initiated by professor S. Kuppuswami Sastri in 1927, the 'Journal of
+          Oriental Research' is a reputed internationally acclaimed magazine
+          covering various aspects involved in Sanskrit and Indological studies.
+          The publication of this magazine was entrusted to the Institute from
+          1944. More than 95 volumes of the journal have been published so far.
+          The Journal, reputed for original research and scientific
+          investigation, carries general, critical and research articles on
+          diverse indological subjects. Some rare texts, critically edited and
+          appear serially as supplementary to the original volumes later get
+          published as independent books.
+        </div>
+        <br />
+        <div class="sectionSubtitle2">
           KSRI has been publishing the Journal of Oriental Research periodically
           from its inception till date and it is internationally well-known. The
           journal is listed under the UGC CARE list of Journals - Arts &

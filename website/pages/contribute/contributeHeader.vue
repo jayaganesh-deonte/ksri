@@ -12,9 +12,9 @@
     </v-card>
 
     <v-card rounded="0" class="ma-4">
-      <div class="text-h6 text-center ma-4" data-aos="fade-up">
+      <!-- <div class="text-h6 text-center ma-4" data-aos="fade-up">
         Contribution received by Sponsor, Membership, Projects & Corpus
-      </div>
+      </div> -->
       <v-img
         :height="$device.isMobile ? '' : '50vh'"
         src="/img/library/library-racks-5.jpg"
@@ -22,7 +22,7 @@
         class="d-flex justify-center align-center"
       >
         <v-card color="primary" class="ma-4 pa-4 text-h6 text-center">
-          Corpus: The Institute if facing acute financial constraints
+          Corpus: The Institute is facing acute financial constraints
           Nevertheless its past record and present contribution to the cause of
           Sanskrit and Indian culture is unmatched. To continue to march ahead
           and to train youngsters in this noble task, it requires sound
