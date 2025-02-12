@@ -102,7 +102,7 @@ Resources:
       Environment:
         Variables:
           DDB_TABLE_NAME: !Ref masterTable
-          POWERTOOLS_SERVICE_NAME: express-api
+          POWERTOOLS_SERVICE_NAME: contact-us
           POWERTOOLS_METRICS_NAMESPACE: ksriadmin
           LOG_LEVEL: INFO
           USER_POOL_ID: !Ref CognitoUserPool
@@ -111,6 +111,9 @@ Resources:
           #   - useCustomDomainForUiCondition
           #   - !Ref UiCustomDomain
           #   - !Sub https://${UiDistribution.DomainName}
+          FROM_EMAIL: "info@ksri.in"
+          TO_EMAIL: "ksrinst@gmail.com"
+
       Policies:
         - DynamoDBCrudPolicy:
             TableName: !Ref masterTable
@@ -120,6 +123,14 @@ Resources:
             TableName: !Ref masterTable
         - SSMParameterReadPolicy:
             ParameterName: "*"
+        # ses:SendEmail
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - ses:SendEmail
+                - ses:SendRawEmail
+              Resource: "*"
     Metadata:
       BuildMethod: esbuild
       BuildProperties:
