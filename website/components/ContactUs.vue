@@ -91,6 +91,8 @@
                 class="text-white"
                 rounded="pill"
                 @click="submitForm"
+                :loading="isSendingMessage"
+                :disabled="isSendingMessage"
                 >Submit Message</v-btn
               >
             </v-container>
@@ -181,10 +183,12 @@ export default {
         Mobile: "",
         message: "",
       },
+      isSendingMessage: false,
     };
   },
   methods: {
     async submitForm() {
+      this.isSendingMessage = true;
       // get url from
       const runtimeConfig = useRuntimeConfig();
       const apiEndpoint = runtimeConfig.public.CONTACT_US_URL;
@@ -194,6 +198,12 @@ export default {
       const { valid } = await this.$refs.contactForm.validate();
       console.log("formValidate: ", valid);
       if (!valid) {
+        this.isSendingMessage = false;
+        // show message fill all fields
+        $toast.error("Please fill all the fields", {
+          timeout: 5000,
+          position: "top-right",
+        });
         return;
       }
       // Handle form submission logic here
@@ -221,6 +231,7 @@ export default {
           position: "top-right",
         });
       }
+      this.isSendingMessage = false;
     },
   },
 };
