@@ -3,7 +3,9 @@
     "title": "National Seminar on Vedāṅgas and Upavedas",
     "subtitle": "National Seminar on Vedāṅgas and Upavedas",
     "description": "<p>THE SAMSKRITA ACADEMY MADRAS &amp; THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE jointly organized a two-day NATIONAL SEMINAR ON UPAVEDAS &amp; VEDANGAS on 22nd &amp; 23rd NOVEMBER, 2024. </p>",
-    "category": "Seminars",
+    "category": [
+      "Seminars"
+    ],
     "venue": "Sri Chandrasekharendra Saraswati Mandapam, KSRI",
     "date": "2024-11-22",
     "images": [
@@ -150,7 +152,7 @@
     "subtitle": "75th ANNIVERSARY CELEBRATIONS -  VALEDICTORY FUNCTION",
     "description": "The Kuppuswami Sastri Research Institute is celebrating its 75th anniversary. To commemorate this milestone the Institute organized various National Workshops, Seminars and Lectures on various subjects like Bhakti, Art& Architecture, Sanskrit Literature, Ancient Indian Mathematics and Astronomy. \nThe Valedictory Function of the 75th Anniversary Celebrations will be celebrated on 13th Sepetember, 2024 at 5.00pm at The Madras Sanskrit College Premises.\n\nDr. N. Gopalaswami IAS(Retd.) will preside over the function and release the book \"ŚEṢASAMHITĀ\" and honor the prominent donors.\n\nDr. S. Ramaratnam , Chancellor, Jagadguru Kripalu University, Odisha will deliver the Valedictory address.",
     "category": [
-      "Upcoming"
+      "Events"
     ],
     "venue": "Sri Chandrasekharendra Saraswati Madapam, The KSRI",
     "date": "2024-09-13",

@@ -1935,7 +1935,7 @@
     "metadata": {
       "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:53:50.278Z",
-      "updated_at": "2025-02-10T05:56:23.753Z",
+      "updated_at": "2025-02-17T06:49:25.769Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -2225,12 +2225,78 @@
         "isbn": "978-81-85170-69-5"
       },
       {
-        "publisher": "",
+        "publisher": "M.A. syllabus of Sastra University, Thanjavur.",
         "yearOfPublication": "",
-        "title": "",
+        "title": "2.\tPatanjali Yoga sutras with Eng. Trans. And notes ",
         "sNo": "8",
         "remarks": "",
         "isbn": ""
+      }
+    ],
+    "articlesPublished": [
+      {
+        "monthAndYear": "",
+        "title": "Varnasrama dharma in Yoga Yajnavalkya",
+        "nameOfTheJournal": "Pracya, Assam",
+        "sNo": "1.",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "",
+        "title": "Sundaradeva – Author of Hathasanketacandrika",
+        "nameOfTheJournal": "J.O.R.Vol.88-89 ",
+        "sNo": "2",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "July 2017",
+        "title": "Yoga and Human Integration",
+        "nameOfTheJournal": "Science and Spirituality in Literature,HFN, Salem, ",
+        "sNo": "3",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "",
+        "title": "Sri Ramanuja and Vaisnava Agamas",
+        "nameOfTheJournal": "Sri Ramanuja Trust, Trichy ",
+        "sNo": "4",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": " 2017",
+        "title": "Hathasanketa Candrika racayita Sundaradeva",
+        "nameOfTheJournal": "Journal of Oriental Research Vo.88-90",
+        "sNo": "5",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "",
+        "title": "Jnanakkural of Auvaiyar  ",
+        "nameOfTheJournal": " JOR (Vol.  91-92)",
+        "sNo": "6",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "",
+        "title": "Unpublished Mss. in Alankara Sastra",
+        "nameOfTheJournal": " Dr. C.S. Radhakrishnan Felicitation Volume ",
+        "sNo": "7",
+        "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "",
+        "title": "",
+        "nameOfTheJournal": "",
+        "sNo": "",
+        "isbnIssnNo": "",
+        "remarks": ""
       }
     ],
     "projects": [
@@ -2321,11 +2387,160 @@
         "slNo": "8"
       },
       {
-        "monthAndYear": "",
-        "theme": "Lectures in Indian embassy",
-        "organisers": "Italy & Denmark",
+        "monthAndYear": "Oct.-Nov.2016",
+        "theme": "",
+        "organisers": "a.\tAt the Parliament of Italy, RomeItaly & Denmark",
         "titleOfThePaper": "",
         "slNo": "9"
+      },
+      {
+        "monthAndYear": "Oct.-Nov.2016",
+        "theme": "",
+        "organisers": ".\tIndian Embassy, RomeItaly",
+        "titleOfThePaper": "",
+        "slNo": "10"
+      },
+      {
+        "monthAndYear": "Oct.-Nov.2016",
+        "theme": "",
+        "organisers": "Gregoriana University, VaticanItaly",
+        "titleOfThePaper": "",
+        "slNo": "11"
+      },
+      {
+        "monthAndYear": "Oct.-Nov.2016",
+        "theme": "",
+        "organisers": "University of VeniceItaly",
+        "titleOfThePaper": "",
+        "slNo": "12"
+      },
+      {
+        "monthAndYear": "Oct.-Nov.2016",
+        "theme": "",
+        "organisers": "University of MilanItaly",
+        "titleOfThePaper": "",
+        "slNo": "13"
+      },
+      {
+        "monthAndYear": "Oct.-Nov.2016",
+        "theme": "",
+        "organisers": "University of TorinoItaly",
+        "titleOfThePaper": "",
+        "slNo": "14"
+      },
+      {
+        "monthAndYear": "Oct.-Nov.2016",
+        "theme": "",
+        "organisers": "SMSF, Copenhagen, Denmark Italy",
+        "titleOfThePaper": "",
+        "slNo": "15"
+      },
+      {
+        "monthAndYear": "21st Aug.2016.",
+        "theme": "",
+        "organisers": "Theosophical Society, Adyar ",
+        "titleOfThePaper": "Sahaj Marg Meditation",
+        "slNo": "16"
+      },
+      {
+        "monthAndYear": "",
+        "theme": "",
+        "organisers": "",
+        "titleOfThePaper": "",
+        "slNo": "17"
+      },
+      {
+        "monthAndYear": "27th Aug. 2017",
+        "theme": "",
+        "organisers": "Theosophical Society, Adyar, ",
+        "titleOfThePaper": "”Origin and Development of Yoga",
+        "slNo": "18"
+      },
+      {
+        "monthAndYear": "27th July 2017",
+        "theme": "International seminar on “Science and Spirituality in Literature” ",
+        "organisers": "HFN and Sakti  Women’s College, Salem ",
+        "titleOfThePaper": "Heart centred Yoga",
+        "slNo": "19"
+      },
+      {
+        "monthAndYear": "Sept. 2017.",
+        "theme": "",
+        "organisers": "Sri Krishnamacharya, Chennai",
+        "titleOfThePaper": "Yoga Upanishads",
+        "slNo": "20"
+      },
+      {
+        "monthAndYear": "22-24 Dec. 2017",
+        "theme": "Swadeshi Indology conference-3 ",
+        "organisers": "IIT, Madras,",
+        "titleOfThePaper": "Jnanakkural – A Unique text",
+        "slNo": "21"
+      },
+      {
+        "monthAndYear": "4th Oct. 2017 ",
+        "theme": "",
+        "organisers": "organised jointly by the Dept. of Sanskrit and Indian Culture, Sri Chandrasekharendra Saraswathi Viswa Mahavidyalaya, Enathur and French Institute of Indology, Pondicherry.",
+        "titleOfThePaper": "Unpublished Mss. on Advaita at the International Seminar on Unpublished      Mss. ",
+        "slNo": "22"
+      },
+      {
+        "monthAndYear": "16th Feb. 2020",
+        "theme": "Seminar on Yoga",
+        "organisers": " Indic Academy, Bangalore",
+        "titleOfThePaper": "Svara Science of Yoga ",
+        "slNo": "23"
+      },
+      {
+        "monthAndYear": "",
+        "theme": "",
+        "organisers": "",
+        "titleOfThePaper": "",
+        "slNo": ""
+      }
+    ],
+    "lectures": [
+      {
+        "monthAndYear": "16th July 2019.",
+        "organisers": "TMSSM Library, Tanjore",
+        "slNo": "1",
+        "titleOfTheTalk": "Chandas Sastra"
+      },
+      {
+        "monthAndYear": "29th Sept. 2019",
+        "organisers": "BORI, Pune",
+        "slNo": "2",
+        "titleOfTheTalk": "The Contribution of the KSRI to Sanskrit and Indology"
+      },
+      {
+        "monthAndYear": "Oct. 1, 2019",
+        "organisers": "Inauguration of the Sanskrit Association at the Sitalakshmi Achi Women's College, Pallathur, Karaikudi",
+        "slNo": "3",
+        "titleOfTheTalk": "Sanskrit and Science"
+      },
+      {
+        "monthAndYear": "15-17th Oct. 2019.",
+        "organisers": "International Conference on Oneness organized by the Indic Academy at the Chinmaya Visvamahavidyalaya, Cochin.",
+        "slNo": "4",
+        "titleOfTheTalk": "Yoga and Advaita"
+      },
+      {
+        "monthAndYear": " 16th Feb. 2020 ",
+        "organisers": "Indic Academy on Bangalore",
+        "slNo": "5",
+        "titleOfTheTalk": "Early Tamil Schools of Yoga"
+      },
+      {
+        "monthAndYear": "25th Feb. 2020.",
+        "organisers": "Vedas and Darsanas, The Bharatiya Vidya Bhavan, Pudukkode, Kerala",
+        "slNo": "6",
+        "titleOfTheTalk": "Origin and Development of Yoga"
+      },
+      {
+        "monthAndYear": "",
+        "organisers": "",
+        "slNo": "",
+        "titleOfTheTalk": ""
       }
     ],
     "awards": [
@@ -2377,6 +2592,20 @@
         "year": "",
         "remarks": "",
         "slNo": "7"
+      }
+    ],
+    "extensionActivities": [
+      {
+        "description": "Presided a session at the Seminar on Silappadikaram and Sanskrit under the auspices of Samskrita Bharati on",
+        "monthAndYear": " 27th April 2019.",
+        "title": "Presided a session",
+        "slNo": "1"
+      },
+      {
+        "description": "",
+        "monthAndYear": "",
+        "title": "",
+        "slNo": "2"
       }
     ],
     "itemPublishStatus": "PUBLISHED"
