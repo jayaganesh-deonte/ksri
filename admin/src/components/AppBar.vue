@@ -262,6 +262,21 @@ const allOptions = [
       },
     ],
   },
+  // donation
+  {
+    title: "Donation",
+    icon: "mdi-cash",
+    children: [
+      {
+        title: "Donation",
+        path: "/donation",
+      },
+      // {
+      //   title: "Donation Category",
+      //   path: "/donation-category",
+      // },
+    ],
+  },
 ];
 
 let menuOptions = computed(() => {

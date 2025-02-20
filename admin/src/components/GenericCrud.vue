@@ -158,7 +158,7 @@
           <v-icon
             size="small"
             @click="deleteItem(item)"
-            :disabled="isDeleteDisabledForUser"
+            :disabled="isDeleteDisabledForUser || !isDeleteEnabledForItem"
             :class="isDeleteDisabledForUser ? 'curor-not-allowed' : ''"
           >
             mdi-delete
@@ -437,6 +437,20 @@ const props = defineProps({
   fetchItemsWithPagination: {
     default: false,
   },
+  fixedValues: {
+    type: Object,
+    required: false,
+  },
+  updateItemPendingForDeployment: {
+    default: false,
+    type: Boolean,
+    required: false,
+  },
+  isDeleteEnabledForItem: {
+    default: true,
+    type: Boolean,
+    required: false,
+  },
 });
 
 const emit = defineEmits([
@@ -683,6 +697,11 @@ const save = async () => {
     const { valid } = await form.value.validate();
     console.log("valid", valid);
     if (!valid) {
+      $toast.open({
+        type: "error",
+        position: "top-right",
+        message: "Please fill all the required fields",
+      });
       return;
     }
     const payload = { ...editedItem.value };
@@ -704,6 +723,15 @@ const save = async () => {
       };
     }
 
+    // append fixedValues to payload if not exists
+    if (props.fixedValues) {
+      for (const [key, value] of Object.entries(props.fixedValues)) {
+        if (!payload[key]) {
+          payload[key] = value;
+        }
+      }
+    }
+
     console.log("payload", payload);
 
     const response = await axiosInstance.post(props.apiEndpoint, payload);
@@ -718,7 +746,9 @@ const save = async () => {
       await fetchItems();
 
       // update pending for deployment
-      await updatePendingForDeployment();
+      if (props.updateItemPendingForDeployment) {
+        await updatePendingForDeployment();
+      }
 
       // Emit events for parent component to listen
       if (editedIndex.value === -1) {
@@ -729,6 +759,12 @@ const save = async () => {
 
       close();
     } else {
+      // get error message
+      console.log("response", response.data);
+      const errorMessage = response.data
+        ? response.data.error
+        : "There was some error. Please try again";
+      console.error("errorMessage", errorMessage);
       $toast.open({
         type: "error",
         position: "top-right",
@@ -737,10 +773,13 @@ const save = async () => {
     }
   } catch (error) {
     console.error(`Error saving ${props.entityName}:`, error);
+    const errorMessage = error.response.data
+      ? error.response.data.error
+      : "There was some error. Please try again";
     $toast.open({
       type: "error",
       position: "top-right",
-      message: "There was some error. Please try again",
+      message: errorMessage,
     });
   }
 };

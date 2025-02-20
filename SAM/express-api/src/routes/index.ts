@@ -55,6 +55,8 @@ import { advisoryBoardRouter } from "./advisoryBoard";
 import { visitorCountRoute } from "./visitorCount";
 import { uniqueVisitorsRoute } from "./uniqueVistors";
 
+import { paymentRouter } from "./payments/payment";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -110,3 +112,5 @@ routes.use(advisoryBoardRouter);
 
 routes.use(visitorCountRoute);
 routes.use(uniqueVisitorsRoute);
+
+routes.use(paymentRouter);

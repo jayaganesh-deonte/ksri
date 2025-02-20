@@ -59,6 +59,8 @@ import facultyDesignations from "@/views/faculty/facultyDesignations.vue";
 
 import advisoryBoard from "@/views/faculty/advisoryBoard.vue";
 
+import donation from "@/views/donation/donation.vue"
+
 const routes = [
   {
     path: "/",
@@ -262,6 +264,12 @@ const routes = [
     path: "/advisory-board",
     name: "advisoryBoard",
     component: advisoryBoard,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/donation",
+    name: "donation",
+    component: donation,
     meta: { requiresAuth: true },
   },
 ];

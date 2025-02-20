@@ -202,6 +202,8 @@ Resources:
           AttributeType: S
         - AttributeName: status
           AttributeType: S
+        - AttributeName: paymentDate
+          AttributeType: S
       KeySchema:
         - AttributeName: PK
           KeyType: HASH
@@ -233,6 +235,14 @@ Resources:
             - AttributeName: collection
               KeyType: HASH
             - AttributeName: SK
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+        - IndexName: PaymentDateIndex
+          KeySchema:
+            - AttributeName: PK
+              KeyType: HASH
+            - AttributeName: paymentDate
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
