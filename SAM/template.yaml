@@ -78,6 +78,8 @@ Resources:
         Target: es2020
         EntryPoints:
           - index.ts
+        External:
+          - pdfmake
 
   contactUs:
     Type: AWS::Serverless::Function

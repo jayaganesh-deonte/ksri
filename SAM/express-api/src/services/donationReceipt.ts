@@ -7,8 +7,8 @@ import { Payment } from "../models/payments/payment";
 // Define font files
 const fonts = {
   Roboto: {
-    normal: path.resolve("./fonts/Roboto-Regular.ttf"),
-    bold: path.resolve("./fonts/Roboto-Bold.ttf"),
+    normal: path.join(__dirname, "fonts/Roboto-Regular.ttf"),
+    bold: path.join(__dirname, "fonts/Roboto-Bold.ttf"),
   },
 };
 
