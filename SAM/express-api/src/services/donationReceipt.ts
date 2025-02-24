@@ -129,7 +129,16 @@ const generateReceiptPDF = async (data: Payment) => {
                     text: [
                       { text: "Address: ", fontSize: 11 },
                       {
-                        text: "  " + receiptData.address + "  ",
+                        text:
+                          "  " +
+                          receiptData.address +
+                          ", " +
+                          receiptData.city +
+                          ", " +
+                          receiptData.state +
+                          ", " +
+                          receiptData.country +
+                          "  ",
                         fontSize: 11,
                         decoration: "underline",
                       },

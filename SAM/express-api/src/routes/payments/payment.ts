@@ -35,6 +35,7 @@ async function getPayments(req: Request, res: Response) {
       ":startDate": startDate,
       ":endDate": endDate,
     },
+    ScanIndexForward: false,
   };
 
   try {
@@ -204,7 +205,7 @@ paymentRouter.post("/payments/manual", async (req: Request, res: Response) => {
         "public/receipt/donation?emailId=" +
         payment.email +
         "&paymentRefId=" +
-        payment.orderId,
+        payment.paymentRefId,
       paymentRefId: payment.orderId,
     };
 
