@@ -51,6 +51,7 @@ Resources:
           LOG_LEVEL: INFO
           USER_POOL_ID: !Ref CognitoUserPool
           CLIENT_ID: !Ref ProdCognitoUserPoolClient
+          BASE_URL: "https://ksri.in/"
           # ALLOWED_URL: !If
           #   - useCustomDomainForUiCondition
           #   - !Ref UiCustomDomain

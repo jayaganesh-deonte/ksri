@@ -56,6 +56,7 @@ import { visitorCountRoute } from "./visitorCount";
 import { uniqueVisitorsRoute } from "./uniqueVistors";
 
 import { paymentRouter } from "./payments/payment";
+import { receiptRouter } from "./payments/receipt";
 
 export const routes = express.Router();
 
@@ -114,3 +115,4 @@ routes.use(visitorCountRoute);
 routes.use(uniqueVisitorsRoute);
 
 routes.use(paymentRouter);
+routes.use(receiptRouter);

@@ -1,6 +1,9 @@
+import { convertAmountToWords } from "../../services/convertAmountToWords";
+
 export interface Payment {
   paymentType: string;
   amount: number;
+  amountInWords?: string;
   paymentDate: string;
   paymentStatus: string;
   name: string;
@@ -24,6 +27,7 @@ export interface PaymentDDB {
   entityType: string;
   paymentType: string;
   amount: number;
+  amountInWords: string;
   paymentDate: string;
   paymentStatus: string;
   name: string;
@@ -75,6 +79,7 @@ export function toDynamoDB(item: Payment): PaymentDDB {
     entityType: `ENTITYTYPE#PAYMENT`,
     paymentType: item.paymentType,
     amount: item.amount,
+    amountInWords: convertAmountToWords(item.amount),
     paymentDate: item.paymentDate,
     paymentStatus: item.paymentStatus,
     name: item.name,
@@ -97,6 +102,7 @@ export function fromDynamoDB(item: PaymentDDB): Payment {
   return {
     paymentType: item.paymentType,
     amount: item.amount,
+    amountInWords: item.amountInWords,
     paymentDate: item.paymentDate,
     paymentStatus: item.paymentStatus,
     name: item.name,

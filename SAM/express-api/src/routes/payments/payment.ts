@@ -10,6 +10,8 @@ import {
   validatePayment,
 } from "../../models/payments/payment";
 
+import { EmailService } from "../../services/sendEmail";
+
 export const paymentRouter = express.Router();
 
 async function getPayments(req: Request, res: Response) {
@@ -153,6 +155,8 @@ paymentRouter.put("/payments", async (req: Request, res: Response) => {
 //  CREATE Manual payment entry
 paymentRouter.post("/payments/manual", async (req: Request, res: Response) => {
   try {
+    const emailService = await EmailService.init();
+
     const payment: Payment = req.body;
 
     if (!validatePayment(payment)) {
@@ -185,6 +189,30 @@ paymentRouter.post("/payments/manual", async (req: Request, res: Response) => {
       TableName: process.env.DDB_TABLE_NAME,
       Item: paymentDDB,
     });
+
+    const BASE_URL = process.env.BASE_URL || "http://ksri.in/";
+
+    // send email
+    const emailDataVariables = {
+      name: payment.name,
+      address: payment.address + ", " + payment.city + ", " + payment.state,
+      amountInWords: paymentDDB.amountInWords,
+      paymentMethod: payment.paymentMethod,
+      date: payment.paymentDate,
+      receiptLink:
+        BASE_URL +
+        "public/receipt/donation?emailId=" +
+        payment.email +
+        "&paymentRefId=" +
+        payment.orderId,
+      paymentRefId: payment.orderId,
+    };
+
+    const emailResponse = await emailService.sendEmail(
+      payment.email,
+      emailDataVariables
+    );
+    console.log("Email response:", emailResponse);
 
     res.status(200).json(payment);
   } catch (error) {

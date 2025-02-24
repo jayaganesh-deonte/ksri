@@ -302,7 +302,7 @@ router.beforeEach(async (to, from, next) => {
         email: userAttributes.email,
         groups,
       });
-      appStore.setUserRole(groups);
+      await appStore.setUserRole(groups);
 
       const faro = window.faro;
       faro.api.setUser({
