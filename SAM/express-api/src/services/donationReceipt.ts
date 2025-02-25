@@ -14,6 +14,14 @@ const fonts = {
 
 const printer = new pdfmake(fonts);
 
+const capitalizeFirstLetter = (str: string) => {
+  // split by space and capitalize first letter of each word
+  return str
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
+
 // Function to generate receipt PDF
 const generateReceiptPDF = async (data: Payment) => {
   const paymentDate = new Date(data.paymentDate);
@@ -118,29 +126,31 @@ const generateReceiptPDF = async (data: Payment) => {
                     text: [
                       { text: "Received with thanks from ", fontSize: 11 },
                       {
-                        text: "  " + receiptData.name + "  ",
+                        text:
+                          " " + capitalizeFirstLetter(receiptData.name) + " ",
                         fontSize: 11,
-                        decoration: "underline",
+                        // decoration: "underline",
+                        bold: true,
                       },
                     ],
                     margin: [0, 0, 0, 15],
                   },
                   {
                     text: [
-                      { text: "Address: ", fontSize: 11 },
+                      { text: "Address: ", fontSize: 11, bold: true },
                       {
                         text:
-                          "  " +
-                          receiptData.address +
+                          " " +
+                          capitalizeFirstLetter(receiptData.address) +
                           ", " +
-                          receiptData.city +
+                          capitalizeFirstLetter(receiptData.city) +
                           ", " +
-                          receiptData.state +
+                          capitalizeFirstLetter(receiptData.state) +
                           ", " +
-                          receiptData.country +
-                          "  ",
+                          capitalizeFirstLetter(receiptData.country) +
+                          " ",
                         fontSize: 11,
-                        decoration: "underline",
+                        // decoration: "underline",
                       },
                     ],
                     margin: [0, 0, 0, 15],
@@ -149,11 +159,17 @@ const generateReceiptPDF = async (data: Payment) => {
                     text: [
                       { text: "Rupees ", fontSize: 11 },
                       {
-                        text: "  " + receiptData.amountInWords + " Only  ",
+                        text:
+                          " " +
+                          capitalizeFirstLetter(
+                            receiptData.amountInWords || ""
+                          ) +
+                          " Only ",
                         fontSize: 11,
-                        decoration: "underline",
+                        bold: true,
+                        // decoration: "underline",
                       },
-                      { text: " by ", fontSize: 11 },
+                      { text: "by ", fontSize: 11 },
                       {
                         text: receiptData.paymentMethod,
                         fontSize: 11,
@@ -178,9 +194,10 @@ const generateReceiptPDF = async (data: Payment) => {
                                 text: [
                                   { text: "Rs. ", fontSize: 11 },
                                   {
-                                    text: "  " + receiptData.amount + "  ",
+                                    text: " " + receiptData.amount + " ",
                                     fontSize: 11,
-                                    decoration: "underline",
+                                    bold: true,
+                                    // decoration: "underline",
                                   },
                                 ],
                                 alignment: "left",
