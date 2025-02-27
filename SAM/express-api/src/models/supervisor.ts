@@ -12,6 +12,7 @@ export interface Supervisor {
   orderId: string;
   noOfphdStudents?: string;
   vacancy?: string;
+  period?: string;
 }
 export interface SupervisorDDB {
   PK: string;
@@ -24,6 +25,7 @@ export interface SupervisorDDB {
   orderId: string;
   noOfphdStudents?: string;
   vacancy?: string;
+  period?: string;
 }
 
 export function validateSupervisorDDB(item: SupervisorDDB): boolean {
@@ -68,6 +70,7 @@ export function fromDynamoDB(item: SupervisorDDB): Supervisor {
     orderId: item.orderId,
     noOfphdStudents: item.noOfphdStudents,
     vacancy: item.vacancy,
+    period: item.period,
   };
 }
 
@@ -83,5 +86,6 @@ export function toDynamoDB(item: Supervisor): SupervisorDDB {
     orderId: item.orderId,
     noOfphdStudents: item.noOfphdStudents,
     vacancy: item.vacancy,
+    period: item.period,
   };
 }
