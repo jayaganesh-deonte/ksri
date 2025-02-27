@@ -36,7 +36,7 @@ const galleryCollectionFields = [
   },
   {
     key: "noOfphdStudents",
-    label: "No of Phd Students",
+    label: "No of Research Scholars",
     type: "text",
     // rules: [(v) => !!v || "No of Phd Students is required"],
   },
@@ -46,12 +46,18 @@ const galleryCollectionFields = [
     type: "text",
     // rules: [(v) => !!v || "Vacancy is required"],
   },
+  {
+    key: "period",
+    label: "Period",
+    type: "text",
+    // rules: [(v) => !!v || "Vacancy is required"],
+  },
 ];
 
 const headers = [
   { title: "Order Id", key: "orderId" },
   { title: "Name", key: "name" },
-  { title: "No. of Ph.D. Students", key: "noOfphdStudents" },
+  { title: "No. of Research Scholars", key: "noOfphdStudents" },
   { title: "Vacancy", key: "vacancy" },
   { title: "Actions", key: "actions", sortable: false },
 ];
