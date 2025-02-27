@@ -117,6 +117,24 @@ const footerLinks = reactive({
       ],
     },
     {
+      name: "KSRI Publications",
+      path: "/ksri-publications",
+      children: [
+        {
+          name: "Books",
+          path: "/ksri-publications/books/",
+        },
+        {
+          name: "Journals",
+          path: "/ksri-publications/journals/",
+        },
+        // {
+        //   name: "Additional Publications",
+        //   path: "/ksri-publications/additionalPublications/",
+        // },
+      ],
+    },
+    {
       name: "Academic & Research",
       children: [
         {
@@ -127,10 +145,7 @@ const footerLinks = reactive({
           name: "Scholars Gateway",
           path: "/academic-and-research-pursuits/scholars-gateway",
         },
-        {
-          name: "KSRI Publications",
-          path: "/academic-and-research-pursuits/ksri-publications",
-        },
+
         // {
         //   name: "Research Articles",
         //   path: "/academic-and-research-pursuits/research-articles",

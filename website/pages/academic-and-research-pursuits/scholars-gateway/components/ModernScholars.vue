@@ -115,7 +115,7 @@ const presentStudentsData = await queryContent(
 const presentStudents = presentStudentsData.body;
 
 const mphilStudents = computed(() => {
-  return presentStudents.filter((student) => student.course === "M.Phil");
+  return presentStudents.filter((student) => student.course === "M.Phil.");
 });
 
 const mphilStudentsBySupervisor = (supervisor) => {

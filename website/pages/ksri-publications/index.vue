@@ -20,9 +20,7 @@
         </v-col>
         <!-- a col to show "View All" -->
         <v-col cols="10" md="1">
-          <nuxt-link
-            to="/academic-and-research-pursuits/ksri-publications/books"
-          >
+          <nuxt-link to="/ksri-publications/books">
             <v-card
               color="primary"
               height="100%"
@@ -49,9 +47,7 @@
         </v-col>
         <!-- a col to show "View All" -->
         <v-col cols="10" md="1">
-          <nuxt-link
-            to="/academic-and-research-pursuits/ksri-publications/journals"
-          >
+          <nuxt-link to="/ksri-publications/journals">
             <v-card
               color="primary"
               height="100%"
@@ -88,7 +84,7 @@
           <v-col cols="10" md="1">
             <nuxt-link
               :to="
-                '/academic-and-research-pursuits/ksri-publications/additionalPublications/' +
+                '/ksri-publications/additionalPublications/' +
                 additionalPublication
               "
             >
@@ -254,7 +250,7 @@ useSeoMeta({
   twitterDescription: description,
 });
 
-import publicationForSale from "../components/publicationForSale.vue";
+import publicationForSale from "../academic-and-research-pursuits/components/publicationForSale.vue";
 const publicationCommittee = await queryContent(
   "publications",
   "committeemembers"

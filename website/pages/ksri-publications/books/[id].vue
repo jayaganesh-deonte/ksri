@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="!journalInfoFetched" class="d-flex justify-center ma-6">
+    <div v-if="!bookInfoFetched" class="d-flex justify-center ma-6">
       <!-- show loader -->
       <v-progress-circular
         size="100"
@@ -9,24 +9,24 @@
       ></v-progress-circular>
     </div>
     <div v-else>
-      <!-- display journal details -->
-      <!-- two cols, 1st col with image as carousel, 2nd col with journal details, title, subtitle, price and then details -->
-      <div v-if="journalNotFound" class="d-flex justify-center ma-6">
+      <!-- display book details -->
+      <!-- two cols, 1st col with image as carousel, 2nd col with book details, title, subtitle, price and then details -->
+      <div v-if="bookNotFound" class="d-flex justify-center ma-6">
         <!-- 404 component -->
         <div class="d-flex flex-column justify-center align-center">
           <div class="text-h1 text-secondary">404</div>
-          <div class="text-h4 text-secondary">Journal Not Found</div>
+          <div class="text-h4 text-secondary">Book Not Found</div>
           <div class="text-body-1 text-secondary">
-            The Journal you are looking for does not exist.
+            The book you are looking for does not exist.
           </div>
           <div class="d-flex justify-center ma-4">
             <v-btn
               rounded="pill"
               variant="outlined"
               color="primary"
-              to="/academic-and-research-pursuits/ksri-publications/journals/"
+              to="/ksri-publications/books/"
             >
-              Back to Book Catalogue
+              Back to Catalogue
             </v-btn>
           </div>
         </div>
@@ -37,9 +37,19 @@
             rounded="pill"
             variant="outlined"
             color="primary"
-            to="/academic-and-research-pursuits/ksri-publications/journals/"
+            to="/ksri-publications/books/"
+            v-if="!isAdditionalPublication"
           >
             Back to Catalogue
+          </v-btn>
+          <v-btn
+            rounded="pill"
+            variant="outlined"
+            color="primary"
+            to="/ksri-publications/"
+            v-else
+          >
+            Back to Publications
           </v-btn>
         </div>
         <v-row>
@@ -49,9 +59,9 @@
               hide-delimiter-background
               show-arrows-on-hover
             >
-              <template v-if="journalInfo.imageUrls">
+              <template v-if="bookInfo.imageUrls">
                 <v-carousel-item
-                  v-for="imageUrl in journalInfo.imageUrls"
+                  v-for="imageUrl in bookInfo.imageUrls"
                   :key="imageUrl"
                 >
                   <v-img :src="getImageUrl(imageUrl)" fit></v-img>
@@ -75,19 +85,28 @@
                 data-aos="fade-left"
                 data-aos-delay="100"
               >
-                {{ journalInfo.title }}
+                {{ bookInfo.title }}
               </div>
               <div class="text-h6" data-aos="fade-left" data-aos-delay="200">
-                {{ journalInfo.subtitle }}
+                {{ bookInfo.subtitle }}
               </div>
               <div
-                class="text-h6 text-primary my-4"
+                class="text-h6 text-secondary"
                 data-aos="fade-left"
                 data-aos-delay="300"
               >
-                Price:
+                Price: {{ bookInfo.price }}
+              </div>
+              <!-- author -->
+              <div
+                class="text-h6"
+                data-aos="fade-left"
+                data-aos-delay="300"
+                v-if="bookInfo.author"
+              >
+                Author:
                 <span class="text-secondary">
-                  {{ journalInfo.price }}
+                  {{ bookInfo.author }}
                 </span>
               </div>
               <!-- year of publication -->
@@ -97,15 +116,14 @@
                 data-aos-delay="300"
               >
                 Year of Publication:
-
                 <span class="text-secondary">
-                  {{ journalInfo.yearOfPublication }}
+                  {{ getYearFromDate(bookInfo.yearOfPublication) }}
                 </span>
               </div>
 
               <div
-                class="pa-0 mt-5 text-danger"
-                v-if="journalInfo.available != 'Yes'"
+                class="text-start pa-0 mt-5 text-danger"
+                v-if="bookInfo.available != 'Yes'"
                 data-aos-delay="400"
               >
                 <v-chip color="error" label outlined rounded="pill">
@@ -114,8 +132,8 @@
               </div>
             </div>
             <div class="text-body-1" data-aos="fade-left" data-aos-delay="400">
-              <!-- {{ journalInfo.details }} -->
-              <div v-html="journalInfo.details"></div>
+              <!-- {{ bookInfo.details }} -->
+              <div v-html="bookInfo.details"></div>
             </div>
           </v-col>
         </v-row>
@@ -132,7 +150,9 @@ const additionalPublicationsData = await queryContent(
 const additionalPublications = additionalPublicationsData.body;
 console.log("additionalPublications", additionalPublications);
 
-let additionalPublicationJournals = {};
+let isAdditionalPublication = ref(false);
+
+let additionalPublicationBooks = {};
 
 // for additionalPublications query content
 for (const element of additionalPublications) {
@@ -143,41 +163,43 @@ for (const element of additionalPublications) {
     .toLowerCase();
 
   // query content
-  const additionalPublicationJournalsData = await queryContent(
+  const additionalPublicationBooksData = await queryContent(
     "publications",
-    publicationNameForFile + "journals"
+    publicationNameForFile
   ).findOne();
 
-  additionalPublicationJournals[additionalPublication] =
-    additionalPublicationJournalsData.body;
+  additionalPublicationBooks[additionalPublication] =
+    additionalPublicationBooksData.body;
 }
 
-const journalsData = await queryContent("publications", "journals").findOne();
+const booksData = await queryContent("publications", "books").findOne();
 
-const ksriJournals = journalsData.body;
+const ksriBooks = booksData.body;
 
-additionalPublicationJournals["KSRI"] = ksriJournals;
+additionalPublicationBooks["KSRI"] = ksriBooks;
 
-let journals = reactive([]);
+// let books = reactive([...ksriBooks, ...samskritaAcademyPublications]);
 
-for (const [publication, publicationJournals] of Object.entries(
-  additionalPublicationJournals
+let books = reactive([]);
+
+for (const [publication, publicationBooks] of Object.entries(
+  additionalPublicationBooks
 )) {
-  journals.push(...publicationJournals);
+  books.push(...publicationBooks);
 }
 
 onMounted(async () => {
   getBookInfo();
 });
 
-// get journal id from route
+// get book id from route
 const route = useRoute();
 
-const journalInfoFetched = ref(false);
+const bookInfoFetched = ref(false);
 
-const journalNotFound = ref(false);
+const bookNotFound = ref(false);
 
-const journalInfo = reactive({
+const bookInfo = reactive({
   title: "",
   subtitle: "",
   price: "",
@@ -189,39 +211,43 @@ const journalInfo = reactive({
   yearOfPublication: "",
 });
 const getBookById = (id) => {
-  // find journal from journal & samskritaAcademyPublicationJournals list if not found return null
-  const journal = journals.find((journal) => journal.id === id);
-  if (journal) {
-    return journal;
+  // find book from book & samskritaAcademyPublicationBooks list if not found return null
+  const book = books.find((book) => book.id === id);
+  if (book) {
+    return book;
   }
   return null;
 };
-// get journals
+// get books
 const getBookInfo = async () => {
-  const journal = getBookById(route.params.id);
+  const book = getBookById(route.params.id);
 
-  if (journal == null) {
-    journalNotFound.value = true;
+  if (book == null) {
+    bookNotFound.value = true;
   } else {
-    journalInfo.title = journal.title;
-    journalInfo.subtitle = journal.subtitle;
-    journalInfo.price = journal.price;
-    journalInfo.imageUrls = journal.imageUrls;
-    journalInfo.details = journal.details;
-    journalInfo.id = journal.id;
-    journalInfo.available = journal.available;
-    journalInfo.publication = journal.publication;
-    journalInfo.yearOfPublication = journal.yearOfPublication;
+    bookInfo.title = book.title;
+    bookInfo.subtitle = book.subtitle;
+    bookInfo.price = book.price;
+    bookInfo.imageUrls = book.imageUrls;
+    bookInfo.details = book.details;
+    bookInfo.id = book.id;
+    bookInfo.available = book.available;
+    bookInfo.publication = book.publication;
+    bookInfo.author = book.author;
+    bookInfo.yearOfPublication = book.yearOfPublication;
   }
-  journalInfoFetched.value = true;
+  bookInfoFetched.value = true;
+
+  // set isAdditionalPublication value
+  isAdditionalPublication.value = bookInfo.publication != "KSRI";
 
   useSeoMeta({
-    title: journal.title,
-    description: journal.subtitle,
-    ogTitle: journal.title,
-    ogDescription: journal.subtitle,
-    twitterTitle: journal.title,
-    twitterDescription: journal.subtitle,
+    title: book.title,
+    description: book.subtitle,
+    ogTitle: book.title,
+    ogDescription: book.subtitle,
+    twitterTitle: book.title,
+    twitterDescription: book.subtitle,
   });
 };
 
