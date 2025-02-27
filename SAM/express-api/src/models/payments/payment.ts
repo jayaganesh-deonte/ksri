@@ -14,6 +14,10 @@ export interface Payment {
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
   paymentMethod: string;
+  panNumber: string;
+  aadharNumber?: string;
+  passportNumber?: string;
+  passportExpiryDate?: string;
   address: string;
   city: string;
   state: string;
@@ -38,6 +42,10 @@ export interface PaymentDDB {
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
   paymentMethod: string;
+  panNumber: string;
+  aadharNumber?: string;
+  passportNumber?: string;
+  passportExpiryDate?: string;
   address: string;
   city: string;
   state: string;
@@ -90,6 +98,10 @@ export function toDynamoDB(item: Payment): PaymentDDB {
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,
     paymentMethod: item.paymentMethod,
+    panNumber: item.panNumber,
+    aadharNumber: item.aadharNumber,
+    passportNumber: item.passportNumber,
+    passportExpiryDate: item.passportExpiryDate,
     address: item.address,
     city: item.city,
     state: item.state,
@@ -113,6 +125,10 @@ export function fromDynamoDB(item: PaymentDDB): Payment {
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,
     paymentMethod: item.paymentMethod,
+    panNumber: item.panNumber,
+    aadharNumber: item.aadharNumber,
+    passportNumber: item.passportNumber,
+    passportExpiryDate: item.passportExpiryDate,
     address: item.address,
     city: item.city,
     state: item.state,
@@ -137,6 +153,7 @@ export function validatePayment(item: Payment): boolean {
         Object.values(item.metadata).every((v) => typeof v === "string"))) &&
     typeof item.itemPublishStatus === "string" &&
     typeof item.paymentMethod === "string" &&
+    typeof item.panNumber === "string" &&
     typeof item.address === "string" &&
     typeof item.city === "string" &&
     typeof item.state === "string" &&

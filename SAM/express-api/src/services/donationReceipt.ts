@@ -2,6 +2,7 @@ import pdfmake from "pdfmake";
 import { TDocumentDefinitions } from "pdfmake/interfaces";
 
 import path from "path";
+import fs from "fs";
 import { Payment } from "../models/payments/payment";
 
 // Define font files
@@ -31,6 +32,11 @@ const generateReceiptPDF = async (data: Payment) => {
 
   const receiptData = { ...data, paymentDate: paymentDateFormatted };
 
+  // Read the logo file as base64
+  // Assuming the logo is in the assets folder relative to this file
+  const logoPath = path.join(__dirname, "fonts/ksri-logo-primary.png");
+  const logoBase64 = fs.readFileSync(logoPath).toString("base64");
+
   const docDefinition: TDocumentDefinitions = {
     pageSize: "A4",
     pageMargins: [40, 40, 40, 40],
@@ -42,7 +48,7 @@ const generateReceiptPDF = async (data: Payment) => {
             [
               {
                 stack: [
-                  // Header section
+                  // Header section with contact info
                   {
                     columns: [
                       {
@@ -60,28 +66,52 @@ const generateReceiptPDF = async (data: Payment) => {
                     ],
                     margin: [0, 0, 0, 10],
                   },
+                  // Logo and Institute Name in columns
                   {
-                    text: "THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE",
-                    style: "header",
-                    alignment: "center",
-                    margin: [0, 0, 0, 5],
-                  },
-                  {
-                    text: "(Regd. S.No. 32/1944-45 dated 24-2-1945)",
-                    alignment: "center",
-                    fontSize: 11,
-                    margin: [0, 0, 0, 5],
-                  },
-                  {
-                    text: "84, Thiru Vi. Ka. Road, Mylapore, Chennai - 600 004.",
-                    alignment: "center",
-                    fontSize: 11,
-                    margin: [0, 0, 0, 5],
-                  },
-                  {
-                    text: "www.ksri.in",
-                    alignment: "center",
-                    fontSize: 11,
+                    columns: [
+                      {
+                        // Logo on the left
+                        image: `data:image/png;base64,${logoBase64}`,
+                        width: 80,
+                        alignment: "center",
+                      },
+                      {
+                        // Institute details stack on the right
+                        stack: [
+                          {
+                            text: "THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE",
+                            style: "header",
+                            alignment: "center",
+                          },
+                          {
+                            text: "(Regd. S.No. 32/1944-45 dated 24-2-1945)",
+                            alignment: "center",
+                            fontSize: 11,
+                            margin: [0, 5, 0, 0],
+                          },
+                          {
+                            text: "84, Thiru Vi. Ka. Road, Mylapore, Chennai - 600 004.",
+                            alignment: "center",
+                            fontSize: 11,
+                            margin: [0, 5, 0, 0],
+                          },
+                          {
+                            text: "www.ksri.in",
+                            alignment: "center",
+                            fontSize: 11,
+                            margin: [0, 5, 0, 0],
+                          },
+
+                          {
+                            text: "PAN: AAATT0629E",
+                            alignment: "center",
+                            fontSize: 11,
+                            margin: [0, 5, 0, 0],
+                          },
+                        ],
+                        width: "*",
+                      },
+                    ],
                     margin: [0, 0, 0, 15],
                   },
                   // Receipt heading
@@ -129,8 +159,14 @@ const generateReceiptPDF = async (data: Payment) => {
                         text:
                           " " + capitalizeFirstLetter(receiptData.name) + " ",
                         fontSize: 11,
-                        // decoration: "underline",
                         bold: true,
+                      },
+                      // add pan in brackets
+                      {
+                        text: receiptData.panNumber
+                          ? " (PAN: " + receiptData.panNumber + ") "
+                          : " ",
+                        fontSize: 11,
                       },
                     ],
                     margin: [0, 0, 0, 15],
@@ -150,14 +186,23 @@ const generateReceiptPDF = async (data: Payment) => {
                           capitalizeFirstLetter(receiptData.country) +
                           " ",
                         fontSize: 11,
-                        // decoration: "underline",
                       },
                     ],
                     margin: [0, 0, 0, 15],
                   },
+                  // {
+                  //   text: [
+                  //     { text: "PAN: ", fontSize: 11, bold: true },
+                  //     {
+                  //       text: receiptData.panNumber,
+                  //       fontSize: 11,
+                  //     },
+                  //   ],
+                  //   margin: [0, 0, 0, 15],
+                  // },
                   {
                     text: [
-                      { text: "Rupees ", fontSize: 11 },
+                      { text: "Rupees", fontSize: 11 },
                       {
                         text:
                           " " +
@@ -167,11 +212,24 @@ const generateReceiptPDF = async (data: Payment) => {
                           " Only ",
                         fontSize: 11,
                         bold: true,
-                        // decoration: "underline",
                       },
                       { text: "by ", fontSize: 11 },
                       {
                         text: receiptData.paymentMethod,
+                        fontSize: 11,
+                      },
+                      {
+                        text:
+                          receiptData.paymentMethod !== "Cash"
+                            ? "with Transaction ID: "
+                            : "",
+                        fontSize: 11,
+                      },
+                      {
+                        text:
+                          receiptData.paymentMethod !== "Cash"
+                            ? receiptData.paymentRefId
+                            : "",
                         fontSize: 11,
                       },
                       { text: " Towards ", fontSize: 11 },
@@ -197,7 +255,6 @@ const generateReceiptPDF = async (data: Payment) => {
                                     text: " " + receiptData.amount + " ",
                                     fontSize: 11,
                                     bold: true,
-                                    // decoration: "underline",
                                   },
                                 ],
                                 alignment: "left",
@@ -278,11 +335,5 @@ const generateReceiptPDF = async (data: Payment) => {
     pdfDoc.end();
   });
 };
-
-// const main = async () => {
-//   const data = { "paymentType": "Donation", "amount": "999", "amountInWords": "Nine Hundred And Ninety Nine Rupees", "paymentDate": "2025-02-24", "paymentStatus": "COMPLETED", "name": "Jaya Ganesh", "orderId": 1, "email": "jayaganesh111999@gmail.com", "phoneNumber": "9585894742", "paymentRefId": "24022025", "metadata": { "updated_by": "demo", "created_at": "2025-02-24T03:42:11.868Z", "updated_at": "2025-02-24T03:42:11.868Z", "created_by": "demo" }, "itemPublishStatus": "PUBLISHED", "paymentMethod": "UPI", "address": "Flat T1, Mithun SKy Garden, Sri Balaji Nagar, Santhosapuram, Medavakkam", "city": "Chennai", "state": "Tamil Nadu", "zip": "600073", "country": "India" }
-//   const pdfBuffer = await generateReceiptPDF(data);
-//   fs.writeFileSync("receipt.pdf", pdfBuffer);
-// };
 
 export { generateReceiptPDF };

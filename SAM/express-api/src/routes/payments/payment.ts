@@ -197,6 +197,7 @@ paymentRouter.post("/payments/manual", async (req: Request, res: Response) => {
     const emailDataVariables = {
       name: payment.name,
       address: payment.address + ", " + payment.city + ", " + payment.state,
+      panNumber: payment.panNumber,
       amountInWords: paymentDDB.amountInWords,
       paymentMethod: payment.paymentMethod,
       date: payment.paymentDate,

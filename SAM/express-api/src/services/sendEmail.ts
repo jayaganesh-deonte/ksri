@@ -6,6 +6,7 @@ let apiDetails: any;
 interface EmailDataVariables {
   name: string;
   address: string;
+  panNumber: string;
   amountInWords: string;
   paymentMethod: string;
   date: string;
@@ -60,9 +61,6 @@ export class EmailService {
         email: email,
         dataVariables: emailDataVariables,
       };
-      console.log("Email request:", request);
-      console.log("Email API URL:", this.apiUrl);
-      console.log("Email API Key:", this.apiKey);
       const response = await axios.post(this.apiUrl, request, {
         headers: {
           Authorization: `Bearer ${this.apiKey}`,
