@@ -442,7 +442,7 @@ const props = defineProps({
     required: false,
   },
   updateItemPendingForDeployment: {
-    default: false,
+    default: true,
     type: Boolean,
     required: false,
   },
