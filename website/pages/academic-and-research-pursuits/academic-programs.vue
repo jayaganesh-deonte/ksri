@@ -29,7 +29,10 @@
         </thead>
         <tbody>
           <template v-for="supervisor in supervisors" :key="supervisor.name">
-            <tr class="text-body-1" v-if="supervisor.noOfphdStudents">
+            <tr
+              class="text-body-1 text-center"
+              v-if="supervisor.noOfphdStudents"
+            >
               <td>{{ supervisor.name }}</td>
               <td>{{ supervisor.period }}</td>
               <td>{{ supervisor.noOfphdStudents }}</td>

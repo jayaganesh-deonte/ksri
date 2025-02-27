@@ -502,7 +502,9 @@ var pageDetails = [
         outputFile: "../website/content//supervisordetails.json",
         //  from array of object, pick only name
         filter: function (data) {
-            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.orderId - b.orderId; });
         },
     },
     // chair

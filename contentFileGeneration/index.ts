@@ -436,7 +436,9 @@ const pageDetails = [
     outputFile: "../website/content//supervisordetails.json",
     //  from array of object, pick only name
     filter: (data: any[]) =>
-      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.orderId - b.orderId),
   },
   // chair
   {
