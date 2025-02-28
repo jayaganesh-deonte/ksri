@@ -34,7 +34,7 @@ const generateReceiptPDF = async (data: Payment) => {
 
   // Read the logo file as base64
   // Assuming the logo is in the assets folder relative to this file
-  const logoPath = path.join(__dirname, "fonts/ksri-logo-primary.png");
+  const logoPath = path.join(__dirname, "fonts/ksri_logo_bw.jpg");
   const logoBase64 = fs.readFileSync(logoPath).toString("base64");
 
   const docDefinition: TDocumentDefinitions = {
