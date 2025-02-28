@@ -74,7 +74,7 @@
                         >
                           <div>
                             <div class="d-flex my-2 px-2 align-center">
-                              <v-icon size="small">
+                              <v-icon size="small" color="primary">
                                 mdi-book-open-blank-variant
                               </v-icon>
                               <!-- if active set color -->
@@ -204,12 +204,6 @@ const menuOptions = reactive([
     path: "/gallery",
   },
   {
-    name: "KSRI Publications",
-    path: "/ksri-publications",
-    description:
-      "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.",
-  },
-  {
     name: "Academic & Research",
     path: "/academic-and-research-pursuits",
     showChildren: false,
@@ -281,6 +275,13 @@ const menuOptions = reactive([
         path: "/ksri-team/advisoryCommittee",
       },
     ],
+  },
+
+  {
+    name: "Publications",
+    path: "/ksri-publications",
+    description:
+      "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.",
   },
   {
     name: "Library",

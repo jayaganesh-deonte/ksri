@@ -116,24 +116,7 @@ const footerLinks = reactive({
         },
       ],
     },
-    {
-      name: "KSRI Publications",
-      path: "/ksri-publications",
-      children: [
-        {
-          name: "Books",
-          path: "/ksri-publications/books/",
-        },
-        {
-          name: "Journals",
-          path: "/ksri-publications/journals/",
-        },
-        // {
-        //   name: "Additional Publications",
-        //   path: "/ksri-publications/additionalPublications/",
-        // },
-      ],
-    },
+
     {
       name: "Academic & Research",
       children: [
@@ -175,6 +158,24 @@ const footerLinks = reactive({
           name: "Faculty",
           path: "/ksri-team/faculty",
         },
+      ],
+    },
+    {
+      name: "Publications",
+      path: "/ksri-publications",
+      children: [
+        {
+          name: "Books",
+          path: "/ksri-publications/books/",
+        },
+        {
+          name: "Journals",
+          path: "/ksri-publications/journals/",
+        },
+        // {
+        //   name: "Additional Publications",
+        //   path: "/ksri-publications/additionalPublications/",
+        // },
       ],
     },
     {

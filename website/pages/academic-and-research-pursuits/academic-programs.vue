@@ -33,19 +33,20 @@
               class="text-body-1 text-center"
               v-if="supervisor.noOfphdStudents"
             >
-              <td>{{ supervisor.name }}</td>
+              <td class="text-left">{{ supervisor.name }}</td>
               <td>{{ supervisor.period }}</td>
               <td>{{ supervisor.noOfphdStudents }}</td>
               <td>{{ supervisor.vacancy }}</td>
             </tr>
           </template>
           <!-- last row with colspan 4 with text For more details about research scholars and their Thesis "Click here". -->
-          <tr style="background-color: orange">
-            <td colspan="4" class="text-center text-h6">
+          <tr style="background-color: #bf641f !important">
+            <td colspan="4" class="text-center text-white text-h6">
               For more details about research scholars and their Thesis
               <a
                 href="/academic-and-research-pursuits/scholars-gateway"
-                style="color: #bf641f; text-decoration: none; font-weight: bold"
+                style="text-decoration: none; font-weight: bold"
+                class="text-white"
                 >"Click here".
               </a>
             </td>
