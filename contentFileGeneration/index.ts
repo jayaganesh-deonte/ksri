@@ -240,7 +240,7 @@ const pageDetails = [
 
   // students/past/mphil
   {
-    endpoint: "/students?status=Completed&course=M.Phil",
+    endpoint: "/students?status=Completed&course=M.Phil.",
     outputFile: "../website/content//students/past/mphil.json",
     // startedYear: item.startedYear,
     // completedYear: item.completedYear,
@@ -436,7 +436,9 @@ const pageDetails = [
     outputFile: "../website/content//supervisordetails.json",
     //  from array of object, pick only name
     filter: (data: any[]) =>
-      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.orderId - b.orderId),
   },
   // chair
   {

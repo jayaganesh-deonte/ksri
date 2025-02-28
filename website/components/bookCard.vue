@@ -84,7 +84,7 @@
             :color="isHovering ? 'secondary' : 'primary'"
             text
             :to="
-              '/academic-and-research-pursuits/ksri-publications/' +
+              '/ksri-publications/' +
               (isBook ? 'books' : 'journals') +
               '/' +
               book.id
@@ -135,7 +135,7 @@ export default {
       console.log("Read more clicked for book:", this.book);
       // navigate to book details page
       // this.$router.push({
-      //   name: "/academic-and-research-pursuits/ksri-publications/books",
+      //   name: "/ksri-publications/books",
       //   params: { id: this.book.title },
       // });
     },

@@ -219,7 +219,7 @@ const onViewDetails = (book) => {
 
 const navigateToBookCatalogue = () => {
   resetSelectedBook();
-  navigateTo("/academic-and-research-pursuits/ksri-publications/books");
+  navigateTo("/ksri-publications/books");
 };
 
 // scroll to top on selectedbook details

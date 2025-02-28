@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <app-bar></app-bar>
-    <v-main class="my-6">
+    <v-main class="my-0">
       <slot />
       <div class="socialMediaFooter">
         <Dainandini class="mt-12" />

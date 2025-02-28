@@ -3,9 +3,9 @@
     <div>
       <section-title title="ACADEMIC PROGRAMS" />
       <div class="sectionBody">
-        KSRI is affiliated to the University of Madras and offers M.Phil. &
-        Ph.D. programmes in Sanskrit. M.Phil. is not offered by University of
-        Madras from 2024.
+        KSRI is affiliated to the University of Madras and offers Ph.D.
+        programmes in Sanskrit. M.Phil. is not offered by University of Madras
+        from 2024.
       </div>
       <div class="sectionBody">
         Eligiblity: Candidates who have M.A. Sanskrit and the eligibility norms
@@ -20,20 +20,37 @@
         <thead>
           <tr>
             <th class="text-left text-body-1 text-secondary">Name</th>
+            <th class="text-left text-body-1 text-secondary">Period</th>
             <th class="text-left text-body-1 text-secondary">
-              Number of scholars pursuing Ph.D. under them
+              Number of Research Scholars
             </th>
             <th class="text-left text-body-1 text-secondary">Vacancy</th>
           </tr>
         </thead>
         <tbody>
           <template v-for="supervisor in supervisors" :key="supervisor.name">
-            <tr class="text-body-1" v-if="supervisor.noOfphdStudents">
-              <td>{{ supervisor.name }}</td>
+            <tr
+              class="text-body-1 text-center"
+              v-if="supervisor.noOfphdStudents"
+            >
+              <td class="text-left">{{ supervisor.name }}</td>
+              <td>{{ supervisor.period }}</td>
               <td>{{ supervisor.noOfphdStudents }}</td>
               <td>{{ supervisor.vacancy }}</td>
             </tr>
           </template>
+          <!-- last row with colspan 4 with text For more details about research scholars and their Thesis "Click here". -->
+          <tr style="background-color: #bf641f !important">
+            <td colspan="4" class="text-center text-white text-h6">
+              For more details about research scholars and their Thesis
+              <a
+                href="/academic-and-research-pursuits/scholars-gateway"
+                style="text-decoration: none; font-weight: bold"
+                class="text-white"
+                >"Click here".
+              </a>
+            </td>
+          </tr>
         </tbody>
       </v-table>
     </div>
@@ -42,15 +59,6 @@
       below
     </div>
     <ModernScholars :past="false" :displayFilterBasedOnCourseBtn="false" />
-
-    <div class="sectionBody">
-      For research scholars who have completed their Thesis works
-      <a
-        href="/academic-and-research-pursuits/scholars-gateway"
-        style="color: #bf641f; text-decoration: none"
-        >"Click here".
-      </a>
-    </div>
   </div>
 </template>
 
@@ -58,13 +66,13 @@
 useSeoMeta({
   title: "Academic Programs",
   description:
-    "KSRI is affiliated to the University of Madras and offers M.Phil and Ph.D programs. Scholars pursuing Research under these programs",
+    "KSRI is affiliated to the University of Madras and offers Ph.D programs. Scholars pursuing Research under these programs",
   ogTitle: "Academic Programs",
   ogDescription:
-    "KSRI is affiliated to the University of Madras and offers M.Phil and Ph.D programs. Scholars pursuing Research under these programs",
+    "KSRI is affiliated to the University of Madras and offers Ph.D programs. Scholars pursuing Research under these programs",
   twitterTitle: "Academic Programs",
   twitterDescription:
-    "KSRI is affiliated to the University of Madras and offers M.Phil and Ph.D programs. Scholars pursuing Research under these programs",
+    "KSRI is affiliated to the University of Madras and offers Ph.D programs. Scholars pursuing Research under these programs",
 });
 import ModernScholars from "./scholars-gateway/components/ModernScholars.vue";
 

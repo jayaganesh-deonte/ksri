@@ -292,7 +292,7 @@ var pageDetails = [
     },
     // students/past/mphil
     {
-        endpoint: "/students?status=Completed&course=M.Phil",
+        endpoint: "/students?status=Completed&course=M.Phil.",
         outputFile: "../website/content//students/past/mphil.json",
         // startedYear: item.startedYear,
         // completedYear: item.completedYear,
@@ -502,7 +502,9 @@ var pageDetails = [
         outputFile: "../website/content//supervisordetails.json",
         //  from array of object, pick only name
         filter: function (data) {
-            return data.filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; });
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.orderId - b.orderId; });
         },
     },
     // chair
