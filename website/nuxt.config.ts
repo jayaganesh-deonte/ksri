@@ -20,12 +20,22 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
+    WORKING_KEY: process.env.WORKING_KEY,
+    ACCESS_CODE: process.env.ACCESS_CODE,
+    MERCHANT_ID: process.env.MERCHANT_ID,
+    CC_AVENUE_DOMAIN: process.env.CC_AVENUE_DOMAIN,
+    REDIRECT_URL: process.env.REDIRECT_URL,
     public: {
-      API_URL:
-        "https://e46whjmsdlau67mdtiprezbcgu0gpksa.lambda-url.ap-south-1.on.aws/public",
+      API_URL: "https://preview.ksri.in/public",
+      // API_URL: "http://localhost:3001/public",
       CONTACT_US_URL:
         "https://k6k5z57jue2xojyecp4dvmab640dxzeb.lambda-url.ap-south-1.on.aws/",
       ASSET_DOMAIN: "https://d3dx8df9hmf5nm.cloudfront.net/",
+      WORKING_KEY: process.env.WORKING_KEY,
+      ACCESS_CODE: process.env.ACCESS_CODE,
+      MERCHANT_ID: process.env.MERCHANT_ID,
+      CC_AVENUE_DOMAIN: process.env.CC_AVENUE_DOMAIN,
+      REDIRECT_URL: process.env.REDIRECT_URL,
     },
   },
   modules: [

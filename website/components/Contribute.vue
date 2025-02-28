@@ -26,7 +26,7 @@
           Sanskrit and Indological Studies.
         </div>
         <div class="mt-4" data-aos="zoom-out-up" data-aos-delay="300">
-          <v-btn rounded="pill" color="secondary" :to="'/contribute'"
+          <v-btn rounded="pill" color="secondary" :to="'/payment/donation/'"
             >Contribute</v-btn
           >
         </div>

@@ -284,7 +284,11 @@
           Kindly contribute for a noble cause.
         </div>
         <div class="text-center mx-5" data-aos="fade-up" data-aos-delay="200">
-          <v-btn rounded="pill" size="large" color="primary" :to="'/contribute'"
+          <v-btn
+            rounded="pill"
+            size="large"
+            color="primary"
+            :to="'/payment/donation/'"
             >Contribute</v-btn
           >
         </div>

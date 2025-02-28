@@ -57,6 +57,7 @@ import { uniqueVisitorsRoute } from "./uniqueVistors";
 
 import { paymentRouter } from "./payments/payment";
 import { receiptRouter } from "./payments/receipt";
+import { handlePaymentRouter } from "./payments/handleResponse";
 
 export const routes = express.Router();
 
@@ -116,3 +117,5 @@ routes.use(uniqueVisitorsRoute);
 
 routes.use(paymentRouter);
 routes.use(receiptRouter);
+
+routes.use(handlePaymentRouter);

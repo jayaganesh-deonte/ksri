@@ -12,7 +12,10 @@ import {
 
 import { EmailService } from "../../services/sendEmail";
 
-export const paymentRouter = express.Router();
+import { ConfigureCCAvenue, OrderParams } from "../../services/ccavenueUtils";
+import { convertAmountToWords } from "../../services/convertAmountToWords";
+
+const paymentRouter = express.Router();
 
 async function getPayments(req: Request, res: Response) {
   let { startDate, endDate } = req.query;
@@ -123,26 +126,7 @@ paymentRouter.put("/payments", async (req: Request, res: Response) => {
   const { paymentRefId, paymentStatus } = req.body;
   try {
     // get new OrderID
-    const orderId = await getNewOrderId();
-
-    const params = {
-      TableName: process.env.DDB_TABLE_NAME,
-      Key: {
-        PK: "ENTITYTYPE#PAYMENT",
-        SK: paymentRefId,
-      },
-      UpdateExpression:
-        "SET paymentStatus = :paymentStatus , orderId = :orderId",
-      ExpressionAttributeValues: {
-        ":paymentStatus": paymentStatus,
-        ":orderId": orderId,
-      },
-      ReturnValues: "UPDATED_NEW" as const,
-    };
-    const result = await documentClient.update(params);
-    if (!result.Attributes) {
-      throw new Error("Failed to update payment status");
-    }
+    await updatePaymentStatus(paymentRefId, paymentStatus, "");
 
     res.status(200).json({
       message: "Payment status updated successfully",
@@ -222,3 +206,123 @@ paymentRouter.post("/payments/manual", async (req: Request, res: Response) => {
     res.status(500).json({ error: "Failed to create Payment" });
   }
 });
+
+// GET encrypted payment URL
+paymentRouter.post(
+  "/public/payments/initiatePayment",
+  async (req: Request, res: Response) => {
+    // 1. generate encrypted url for payment
+    // 2. store payment details in dynamodb as initiated
+    // 3. return encrypted url to client
+    try {
+      let orderParams: OrderParams = req.body;
+
+      // merchant_id: string;
+      // redirect_url: string;
+      // cancel_url: string;
+
+      if (
+        process.env.MERCHANT_ID === undefined ||
+        process.env.REDIRECT_URL === undefined
+      ) {
+        throw new Error("MERCHANT_ID is not defined in environment variables");
+      }
+
+      orderParams.merchant_id = process.env.MERCHANT_ID;
+      orderParams.redirect_url =
+        process.env.REDIRECT_URL +
+        "/public/api/payment/donation/handleResponse";
+      orderParams.cancel_url =
+        process.env.REDIRECT_URL +
+        "/public/api/payment/donation/handleResponse";
+
+      const ccavenueUtils = new ConfigureCCAvenue();
+
+      const encryptedData = ccavenueUtils.getEncryptedOrder(orderParams);
+
+      const ACCESS_CODE = process.env.ACCESS_CODE;
+      // Redirect to CCAvenue payment page
+      const paymentUrl = `https://${process.env.CC_AVENUE_DOMAIN}.ccavenue.com/transaction/transaction.do?command=initiateTransaction&encRequest=${encryptedData}&access_code=${ACCESS_CODE}`;
+
+      // convert orderParam to Payment object
+      const payment: Payment = {
+        paymentType: "Donation",
+        amount: Number(orderParams.amount),
+        amountInWords: convertAmountToWords(Number(orderParams.amount)),
+        paymentDate: new Date().toISOString().split("T")[0],
+        paymentStatus: "initiated",
+        name: orderParams.billing_name,
+        orderId: "PENDING",
+        email: orderParams.billing_email,
+        phoneNumber: orderParams.billing_tel,
+        paymentRefId: orderParams.order_id,
+        paymentMethod: "ccavenue",
+        panNumber: orderParams.merchant_param1,
+        aadharNumber: orderParams.merchant_param2,
+        passportNumber: orderParams.merchant_param3,
+        passportExpiryDate: orderParams.merchant_param4,
+        address: orderParams.billing_address,
+        city: orderParams.billing_city,
+        state: orderParams.billing_state,
+        zip: orderParams.billing_zip,
+        country: orderParams.billing_country,
+        itemPublishStatus: "PUBLISHED",
+      };
+
+      // store payment details in dynamodb as initiated
+      const paymentDDB = toDynamoDB(payment);
+
+      console.log("PaymentDDB:", paymentDDB);
+
+      const dbRes = await documentClient.put({
+        TableName: process.env.DDB_TABLE_NAME,
+        Item: paymentDDB,
+      });
+      console.log("Payment stored in DDB:", dbRes);
+
+      res.status(200).json({ paymentUrl });
+    } catch (error) {
+      console.error("Error creating Payment:", error);
+      res.status(500).json({ error: "Failed to create Payment" });
+    }
+  }
+);
+async function updatePaymentStatus(
+  paymentRefId: any,
+  paymentStatus: any,
+  paymentMethod: string
+) {
+  let orderId;
+  if (paymentStatus == "COMPLETED") {
+    orderId = await getNewOrderId();
+  } else {
+    orderId = "FAILED";
+  }
+
+  console.log("orderId", orderId);
+  console.log("paymentStatus", paymentStatus);
+  console.log("paymentMethod", paymentMethod);
+
+  const params = {
+    TableName: process.env.DDB_TABLE_NAME,
+    Key: {
+      PK: "ENTITYTYPE#PAYMENT",
+      SK: paymentRefId,
+    },
+    UpdateExpression:
+      "SET paymentStatus = :paymentStatus , orderId = :orderId, paymentMethod = :paymentMethod ",
+    ExpressionAttributeValues: {
+      ":paymentStatus": paymentStatus,
+      ":orderId": orderId,
+      ":paymentMethod": paymentMethod,
+    },
+    ReturnValues: "ALL_NEW" as const,
+  };
+  const result = await documentClient.update(params);
+  if (!result.Attributes) {
+    throw new Error("Failed to update payment status");
+  }
+  return result.Attributes as PaymentDDB;
+}
+
+export { paymentRouter, updatePaymentStatus };

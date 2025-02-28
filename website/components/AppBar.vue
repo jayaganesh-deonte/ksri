@@ -328,6 +328,12 @@ const menuOptions = reactive([
     showChildren: false,
     children: [
       //  Endowments, Bank Information,  By Post
+
+      {
+        name: "Contribute Now",
+        path: "/payment/donation/",
+        // description: "Contribute Now",
+      },
       {
         name: "Endowments",
         path: "/contribute/endowments",
