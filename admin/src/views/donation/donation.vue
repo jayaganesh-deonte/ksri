@@ -15,7 +15,7 @@
 
 <script setup>
 const apiEndpoint = "/payments/manual";
-// import DonationReceiptPdf from "@/components/DonationReceiptPdf.vue";
+import DonationReceiptPdf from "@/components/DonationReceiptPdf.vue";
 
 const fixedValues = {
   paymentType: "Donation",
@@ -23,12 +23,12 @@ const fixedValues = {
 };
 
 const donationFields = [
-  // {
-  //   key: "donationReceiptPdf",
-  //   label: "Donation Receipt",
-  //   type: "component",
-  //   component: DonationReceiptPdf,
-  // },
+  {
+    key: "donationReceiptPdf",
+    label: "Donation Receipt",
+    type: "component",
+    component: DonationReceiptPdf,
+  },
   // {
   //   key: "paymentType",
   //   label: "Payment Type",

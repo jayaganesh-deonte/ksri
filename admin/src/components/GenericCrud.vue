@@ -285,6 +285,8 @@
                       v-else-if="field.type === 'component'"
                       :is="field.component"
                       :editedItem="editedItem"
+                      v-bind="field.props || {}"
+                      @update:editedItem="(val) => (editedItem = val)"
                     />
                   </template>
 
