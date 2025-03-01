@@ -221,7 +221,7 @@ const generateReceiptPDF = async (data: Payment) => {
                       {
                         text:
                           receiptData.paymentMethod !== "Cash"
-                            ? "with Transaction ID: "
+                            ? " with Transaction ID: "
                             : "",
                         fontSize: 11,
                       },
