@@ -22,39 +22,41 @@ async function getPayments(req: Request, res: Response) {
 
   //   if startDate and endDate are not provided, the default it to current month
   if (!startDate || !endDate) {
-    const now = new Date("2025-02-20");
-    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
-    const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
-    startDate = startOfMonth.toISOString().split("T")[0];
-    endDate = endOfMonth.toISOString().split("T")[0];
-  }
-  const params = {
-    TableName: process.env.DDB_TABLE_NAME,
-    IndexName: "PaymentDateIndex",
-    KeyConditionExpression:
-      "PK = :PK AND paymentDate BETWEEN :startDate AND :endDate",
-    ExpressionAttributeValues: {
-      ":PK": "ENTITYTYPE#PAYMENT",
-      ":startDate": startDate,
-      ":endDate": endDate,
-    },
-    ScanIndexForward: false,
-  };
+    const now = new Date();
+    const startOfMonth = new Date(now.getFullYear(), now.getMonth() - 6, 1);
+    const endOfMonth = new Date(now);
+    startDate = startOfMonth.toLocaleDateString("en-CA"); // Format as YYYY-MM-DD
+    endDate = endOfMonth.toLocaleDateString("en-CA"); // Format as YYYY-MM-DD  }
+    const params = {
+      TableName: process.env.DDB_TABLE_NAME,
+      IndexName: "PaymentDateIndex",
+      KeyConditionExpression:
+        "PK = :PK AND paymentDate BETWEEN :startDate AND :endDate",
+      ExpressionAttributeValues: {
+        ":PK": "ENTITYTYPE#PAYMENT",
+        ":startDate": startDate,
+        ":endDate": endDate,
+      },
+      ScanIndexForward: false,
+    };
 
-  try {
-    const result = await documentClient.query(params);
-    const payments: Payment[] =
-      result.Items?.map((item: Record<string, any>) => {
-        const paymentDDB = item as PaymentDDB;
-        // if (!validatePaymentDDB(paymentDDB)) {
-        //   throw new Error("Invalid payment data");
-        // }
-        return fromDynamoDB(paymentDDB);
-      }) || [];
-    res.json(payments);
-  } catch (error) {
-    console.error("Error fetching payments:", error);
-    res.status(500).json({ error: "Error fetching payments" });
+    console.log("getPayments params", params);
+
+    try {
+      const result = await documentClient.query(params);
+      const payments: Payment[] =
+        result.Items?.map((item: Record<string, any>) => {
+          const paymentDDB = item as PaymentDDB;
+          // if (!validatePaymentDDB(paymentDDB)) {
+          //   throw new Error("Invalid payment data");
+          // }
+          return fromDynamoDB(paymentDDB);
+        }) || [];
+      res.json(payments);
+    } catch (error) {
+      console.error("Error fetching payments:", error);
+      res.status(500).json({ error: "Error fetching payments" });
+    }
   }
 }
 
