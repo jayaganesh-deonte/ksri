@@ -9,6 +9,7 @@
     :updateItemPendingForDeployment="false"
     :isEditEnabledForItem="false"
     :isDeleteEnabledForItem="false"
+    :sortBy="[{ key: 'orderId', order: 'desc' }]"
   />
 </template>
 
