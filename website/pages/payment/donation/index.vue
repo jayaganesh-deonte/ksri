@@ -15,7 +15,6 @@
 
 <style>
 .tulipBackground {
-  background-image: url("/img/icons/footer-background-flower.png");
   background-repeat: repeat;
   background-size: auto;
 }
