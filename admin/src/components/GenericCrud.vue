@@ -843,7 +843,9 @@ const exportAsCSV = () => {
   const csvHeader = selectedColumnsToExport.value
     .map((key) =>
       escapeCSVValue(
-        props.entityFields.find((header) => header.key === key).label
+        props.entityFields.find((header) => header.key === key)?.label ||
+          props.headers.find((header) => header.key === key)?.title ||
+          key
       )
     )
     .join(",");
