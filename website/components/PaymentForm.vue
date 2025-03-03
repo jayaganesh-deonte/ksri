@@ -28,7 +28,6 @@
               <div class="text-center text-h4 font-weight-bold">
                 The Kuppuswami Sastri Research Institute
               </div>
-              <!-- 84, Thiru vi ka Road, Mylapore, Chennai 600 004., Tamil Nadu, India -->
               <div class="text-center text-h6">
                 84, Thiru vi ka Road, Mylapore,
               </div>
@@ -45,128 +44,76 @@
             </v-card-title>
             <v-card-text>
               <v-form ref="donationForm">
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.billing_name"
-                  label="Name"
-                  variant="outlined"
-                  :rules="requiredRule"
-                ></v-text-field>
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.billing_email"
-                  label="Email"
-                  variant="outlined"
-                  :rules="emailRule"
-                ></v-text-field>
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.billing_tel"
-                  label="Phone"
-                  variant="outlined"
-                  :rules="requiredRule"
-                ></v-text-field>
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.billing_address"
-                  label="Address"
-                  variant="outlined"
-                  :rules="requiredRule"
-                ></v-text-field>
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.billing_city"
-                  label="City"
-                  variant="outlined"
-                  :rules="requiredRule"
-                ></v-text-field>
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.billing_state"
-                  label="State"
-                  variant="outlined"
-                  :rules="requiredRule"
-                ></v-text-field>
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.billing_zip"
-                  label="ZIP Code"
-                  variant="outlined"
-                  :rules="requiredRule"
-                ></v-text-field>
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.billing_country"
-                  label="Country"
-                  variant="outlined"
-                  :rules="requiredRule"
-                ></v-text-field>
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.amount"
-                  label="Amount"
-                  variant="outlined"
-                  type="number"
-                  min="1"
-                  :rules="amountRule"
-                ></v-text-field>
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.merchant_param1"
-                  label="PAN Number"
-                  variant="outlined"
-                  :rules="requiredRule"
-                ></v-text-field>
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.merchant_param2"
-                  label="Aadhar Number"
-                  variant="outlined"
-                ></v-text-field>
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.merchant_param3"
-                  label="Passport Number"
-                  variant="outlined"
-                ></v-text-field>
-                <v-text-field
-                  density="compact"
-                  v-model="orderDetails.merchant_param4"
-                  label="Passport Expiry Date"
-                  variant="outlined"
-                  type="date"
-                ></v-text-field>
-                <!-- check box  -->
-                <v-checkbox
-                  v-model="orderDetails.agree"
-                  label=" Declaration : I am a Indian Citizen, Residing in India Or I am
-      Residing Abroad holding valid Indian Passport (Donations to be
-      remitted only in INR) "
-                  :rules="[(v) => !!v || 'You must agree to continue!']"
-                ></v-checkbox>
+                <div
+                  class="form-field"
+                  v-for="field in formFields"
+                  :key="field.key"
+                >
+                  <div class="field-label">
+                    {{ field.label }}
+                    <span v-if="field.required" class="required-marker">*</span>
+                  </div>
+                  <div class="field-input">
+                    <v-text-field
+                      v-if="
+                        field.type !== 'textarea' &&
+                        field.type !== 'checkbox' &&
+                        field.type !== 'date'
+                      "
+                      density="compact"
+                      v-model="orderDetails[field.key]"
+                      variant="outlined"
+                      :type="field.type || 'text'"
+                      :min="field.min"
+                      :rules="field.required ? field.rules || requiredRule : []"
+                    ></v-text-field>
+
+                    <v-textarea
+                      v-else-if="field.type === 'textarea'"
+                      density="compact"
+                      v-model="orderDetails[field.key]"
+                      variant="outlined"
+                      :rules="field.required ? field.rules || requiredRule : []"
+                      rows="3"
+                    ></v-textarea>
+
+                    <v-text-field
+                      v-else-if="field.type === 'date'"
+                      density="compact"
+                      v-model="orderDetails[field.key]"
+                      variant="outlined"
+                      type="date"
+                      :rules="field.required ? field.rules || requiredRule : []"
+                    ></v-text-field>
+                  </div>
+                </div>
+
+                <!-- checkbox for declaration -->
+                <div class="form-field mt-4">
+                  <v-checkbox
+                    v-model="orderDetails.agree"
+                    :rules="[(v) => !!v || 'You must agree to continue!']"
+                  >
+                    <template v-slot:label>
+                      <div>
+                        Declaration <span class="required-marker">*</span>: I am
+                        a Indian Citizen, Residing in India Or I am Residing
+                        Abroad holding valid Indian Passport (Donations to be
+                        remitted only in INR)
+                      </div>
+                    </template>
+                  </v-checkbox>
+                </div>
               </v-form>
-              <!-- <v-divider class="my-4"></v-divider> -->
-              <!-- <div>
-          Donations are exempt u/s 35(1)(iii) / 80GGAof Income Tax Act..1961
-          vide notification No.102/2007 (F.No 203/68/2004/ ITA-II)
-        </div> -->
 
               <v-alert
                 text=""
                 title="Donations are exempt u/s 35(1)(iii) / 80GGAof Income Tax Act..1961
-          vide notification No.102/2007 (F.No 203/68/2004/ ITA-II)"
+                vide notification No.102/2007 (F.No 203/68/2004/ ITA-II)"
                 type="info"
                 variant="tonal"
+                class="mt-4"
               ></v-alert>
-              <!-- 
-        <v-alert
-          text="Those wishing to donate towards Corpus Fund kindly contact
-          the Institute directly. This link is only for donations towards
-          research purposes and related activities."
-          title="Note:"
-          type="info"
-          variant="tonal"
-        ></v-alert> -->
 
               <v-divider class="my-4"></v-divider>
 
@@ -226,7 +173,6 @@
 </template>
 
 <script>
-// import ccavenueUtilsConfigure from "../utils/ccavenueUtils";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
@@ -244,6 +190,90 @@ export default {
         (v) => !!v || "E-mail is required",
         (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
       ],
+      formFields: [
+        {
+          key: "billing_name",
+          label: "Name",
+          required: true,
+          placeholder: "Name",
+        },
+        {
+          key: "billing_email",
+          label: "Email",
+          required: true,
+          placeholder: "Please enter email",
+          rules: this.emailRule,
+        },
+        {
+          key: "billing_tel",
+          label: "Mobile Number",
+          required: true,
+          placeholder: "Please enter mobile number",
+        },
+        {
+          key: "billing_address",
+          label: "Address",
+          required: true,
+          placeholder: "Address",
+        },
+        {
+          key: "billing_city",
+          label: "City",
+          required: true,
+          placeholder: "City",
+        },
+        {
+          key: "billing_state",
+          label: "State",
+          required: true,
+          placeholder: "State",
+        },
+        {
+          key: "billing_zip",
+          label: "Pincode",
+          required: true,
+          placeholder: "Pincode",
+        },
+        {
+          key: "billing_country",
+          label: "Country",
+          required: true,
+          placeholder: "Country",
+        },
+        {
+          key: "amount",
+          label: "Amount",
+          required: true,
+          type: "number",
+          min: 1,
+          rules: this.amountRule,
+          placeholder: "Amount",
+        },
+        {
+          key: "merchant_param1",
+          label: "PAN",
+          required: true,
+          placeholder: "PAN",
+        },
+        {
+          key: "merchant_param2",
+          label: "Aadhaar No.",
+          required: false,
+          placeholder: "Aadhaar No.",
+        },
+        {
+          key: "merchant_param3",
+          label: "Passport Number (For Indian Citizens living abroad)",
+          required: false,
+          placeholder: "Passport Number",
+        },
+        {
+          key: "merchant_param4",
+          label: "Passport Expiry Date",
+          required: false,
+          type: "date",
+        },
+      ],
       orderDetails: {
         billing_name: "",
         billing_email: "",
@@ -256,13 +286,12 @@ export default {
         amount: 0,
         currency: "INR",
         language: "EN",
-
-        merchant_param1: "", //PAN Number
-        merchant_param2: "", // aadhar number
-        merchant_param3: "", // passport number
-        merchant_param4: "", // passport expiry date
-
+        merchant_param1: "", // PAN Number
+        merchant_param2: "", // Aadhaar number
+        merchant_param3: "", // Passport number
+        merchant_param4: "", // Passport expiry date
         order_id: "",
+        agree: false,
       },
     };
   },
@@ -315,5 +344,23 @@ export default {
 <style scoped>
 .v-container {
   max-width: 500px;
+}
+.required-marker {
+  color: red;
+  margin-left: 2px;
+}
+.form-field {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.field-label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+.field-input {
+  width: 100%;
 }
 </style>
