@@ -8,6 +8,8 @@ import { EmailService } from "../../services/sendEmail";
 import { ConfigureCCAvenue } from "../../services/ccavenueUtils";
 import { Logger } from "@aws-lambda-powertools/logger";
 
+import { publishToEventBridge } from "../../services/eventBridge";
+
 const ccavenueUtils = new ConfigureCCAvenue();
 
 const logger = new Logger();
@@ -38,6 +40,7 @@ handlePaymentRouter.post(
       }
 
       // Process the encrypted response
+      await ccavenueUtils.init();
       const data = ccavenueUtils.redirectResponseToJson(encResp);
 
       logger.info("decrypted data", { data: data });
@@ -93,6 +96,18 @@ handlePaymentRouter.post(
           emailDataVariables
         );
         // console.log("Email response:", emailResponse);
+
+        // publish event to event bridge
+        const eventBridgeResponse = await publishToEventBridge(
+          process.env.EVENT_BUS_NAME || "default",
+          "ksriApi",
+          "payment.completed",
+          {
+            payment: payment,
+          }
+        );
+
+        logger.info("EventBridge response:", { eventBridgeResponse });
       }
 
       // Determine redirect URL based on payment status

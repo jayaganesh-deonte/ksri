@@ -22,6 +22,32 @@ Conditions:
     - !Ref useCustomDomainForUi
     - "true"
 Resources:
+  customEventBus:
+    Type: AWS::Events::EventBus
+    Properties:
+      Name: !Sub ${Prefix}-ksri-event-bus
+
+  # log group to have all events from event bus
+  eventBusLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/events/${Prefix}-ksri-event-bus-logs
+      RetentionInDays: 30
+
+  eventBusLogRule:
+    Type: AWS::Events::Rule
+    Properties:
+      EventBusName: !GetAtt customEventBus.Name
+      Name: !Sub ${Prefix}-ksri-event-bus-log-rule
+      Description: "Rule to log all events from the event bus"
+      State: ENABLED
+      EventPattern:
+        source:
+          - prefix: ""
+      Targets:
+        - Id: LogTarget
+          Arn: !GetAtt eventBusLogGroup.Arn
+
   expressAPI:
     Type: AWS::Serverless::Function
     Properties:
@@ -42,7 +68,7 @@ Resources:
             - "*"
           AllowHeaders:
             - "*"
-      ReservedConcurrentExecutions: 4
+      ReservedConcurrentExecutions: 15
       Environment:
         Variables:
           DDB_TABLE_NAME: !Ref masterTable
@@ -53,6 +79,8 @@ Resources:
           CLIENT_ID: !Ref ProdCognitoUserPoolClient
           BASE_URL: "https://ksri.in/"
           EMAIL_PARAM_NAME: "/loops/ksri/key"
+          EVENT_BUS_NAME: !GetAtt customEventBus.Name
+          CC_AVENUE_CREDS: "/ksri/ccavenue"
           # ALLOWED_URL: !If
           #   - useCustomDomainForUiCondition
           #   - !Ref UiCustomDomain
@@ -66,6 +94,13 @@ Resources:
             TableName: !Ref masterTable
         - SSMParameterReadPolicy:
             ParameterName: "*"
+        # event bridge publish permission
+        - Statement:
+            - Effect: Allow
+              Action:
+                - events:*
+
+              Resource: !GetAtt customEventBus.Arn
         - Version: "2012-10-17"
           Statement:
             - Effect: Allow
@@ -81,6 +116,151 @@ Resources:
           - index.ts
         External:
           - pdfmake
+
+  paymentSuccessHandler:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${Prefix}_payment_success_handler
+      CodeUri: express-api/src/payment_success_response
+      Handler: index.handler
+      Timeout: 30
+      MemorySize: 256
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      ReservedConcurrentExecutions: 2
+      Environment:
+        Variables:
+          DDB_TABLE_NAME: !Ref masterTable
+          POWERTOOLS_SERVICE_NAME: contact-us
+          POWERTOOLS_METRICS_NAMESPACE: ksriadmin
+          LOG_LEVEL: INFO
+          GOOGLE_API_PARAM_NAME: "/google/drive"
+          FOLDER_ID: "1QBKEAi06NfwFrL752rP8r-CC-fbzkqM5"
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref masterTable
+        - SSMParameterReadPolicy:
+            ParameterName: "*"
+      Events:
+        PaymentCompletedEvent:
+          Type: EventBridgeRule
+          Properties:
+            EventBusName: !GetAtt customEventBus.Name
+            Pattern:
+              detail-type:
+                - payment.completed
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        EntryPoints:
+          - index.ts
+        External:
+          - pdfmake
+
+  eventBridgeRoleToSQS:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub ${Prefix}_eventBridge_to_SQS_role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: events.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Policies:
+        - PolicyName: EventBridgeToSQSPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - sqs:SendMessage
+                Resource: !GetAtt paymentInitQueue.Arn
+
+  paymentInitEventRuleToSQS:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: "Rule to send payment init event to SQS"
+      EventBusName: !GetAtt customEventBus.Name
+      Name: !Sub ${Prefix}_payment_init_event_to_sqs
+      State: ENABLED
+      EventPattern:
+        detail-type:
+          - payment.initiate
+      Targets:
+        - Id: SendEventToSQS
+          Arn: !GetAtt paymentInitQueue.Arn
+          RoleArn: !GetAtt eventBridgeRoleToSQS.Arn
+
+          # DeadLetterConfig:
+          #   Arn: !GetAtt paymentInitDlq.Arn
+
+  paymentInitQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub ${Prefix}_payment_init_queue
+      VisibilityTimeout: 30
+      DelaySeconds: 900
+
+  paymentInit:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${Prefix}_payment_init_handler
+      CodeUri: express-api/src/payment_init/
+      Handler: index.handler
+      Timeout: 30
+      MemorySize: 256
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      ReservedConcurrentExecutions: 2
+      Environment:
+        Variables:
+          DDB_TABLE_NAME: !Ref masterTable
+          POWERTOOLS_SERVICE_NAME: contact-us
+          POWERTOOLS_METRICS_NAMESPACE: ksriadmin
+          LOG_LEVEL: INFO
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref masterTable
+        - SSMParameterReadPolicy:
+            ParameterName: "*"
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - sqs:SendMessage
+                - sqs:ReceiveMessage
+                - sqs:DeleteMessage
+                - sqs:GetQueueAttributes
+              Resource: !GetAtt paymentInitQueue.Arn
+      Events:
+        SQSEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt paymentInitQueue.Arn
+            BatchSize: 1
+
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        EntryPoints:
+          - index.ts
 
   contactUs:
     Type: AWS::Serverless::Function

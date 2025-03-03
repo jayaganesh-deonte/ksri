@@ -11,8 +11,13 @@ import {
 } from "../../models/payments/payment";
 
 import { EmailService } from "../../services/sendEmail";
+import { publishToEventBridge } from "../../services/eventBridge";
 
-import { ConfigureCCAvenue, OrderParams } from "../../services/ccavenueUtils";
+import {
+  ConfigureCCAvenue,
+  OrderParams,
+  getCcAvenueCred,
+} from "../../services/ccavenueUtils";
 import { convertAmountToWords } from "../../services/convertAmountToWords";
 
 const paymentRouter = express.Router();
@@ -223,28 +228,24 @@ paymentRouter.post(
       // redirect_url: string;
       // cancel_url: string;
 
-      if (
-        process.env.MERCHANT_ID === undefined ||
-        process.env.REDIRECT_URL === undefined
-      ) {
-        throw new Error("MERCHANT_ID is not defined in environment variables");
-      }
+      const ccAvenueCreds = await getCcAvenueCred();
 
-      orderParams.merchant_id = process.env.MERCHANT_ID;
+      orderParams.merchant_id = ccAvenueCreds.merchatId;
       orderParams.redirect_url =
-        process.env.REDIRECT_URL +
+        ccAvenueCreds.redirectUrl +
         "/public/api/payment/donation/handleResponse";
       orderParams.cancel_url =
-        process.env.REDIRECT_URL +
+        ccAvenueCreds.redirectUrl +
         "/public/api/payment/donation/handleResponse";
 
       const ccavenueUtils = new ConfigureCCAvenue();
+      await ccavenueUtils.init();
 
       const encryptedData = ccavenueUtils.getEncryptedOrder(orderParams);
 
-      const ACCESS_CODE = process.env.ACCESS_CODE;
+      const ACCESS_CODE = ccAvenueCreds.accessCode;
       // Redirect to CCAvenue payment page
-      const paymentUrl = `https://${process.env.CC_AVENUE_DOMAIN}.ccavenue.com/transaction/transaction.do?command=initiateTransaction&encRequest=${encryptedData}&access_code=${ACCESS_CODE}`;
+      const paymentUrl = `https://${ccAvenueCreds.ccAvenueDomain}.ccavenue.com/transaction/transaction.do?command=initiateTransaction&encRequest=${encryptedData}&access_code=${ACCESS_CODE}`;
 
       // convert orderParam to Payment object
       const payment: Payment = {
@@ -252,7 +253,7 @@ paymentRouter.post(
         amount: Number(orderParams.amount),
         amountInWords: convertAmountToWords(Number(orderParams.amount)),
         paymentDate: new Date().toISOString().split("T")[0],
-        paymentStatus: "initiated",
+        paymentStatus: "INITIATED",
         name: orderParams.billing_name,
         orderId: "PENDING",
         email: orderParams.billing_email,
@@ -281,6 +282,17 @@ paymentRouter.post(
         Item: paymentDDB,
       });
       console.log("Payment stored in DDB:", dbRes);
+
+      // publish event to event bridge
+      const eventBridgeResponse = await publishToEventBridge(
+        process.env.EVENT_BUS_NAME || "default",
+        "ksriApi",
+        "payment.initiate",
+        {
+          payment: paymentDDB,
+        }
+      );
+      console.log("EventBridge response:", eventBridgeResponse);
 
       res.status(200).json({ paymentUrl });
     } catch (error) {

@@ -1,4 +1,5 @@
 import * as crypto from "crypto";
+import { getSSMParameter } from "./ssmParam";
 
 interface InitOptions {
   working_key: string;
@@ -29,13 +30,38 @@ interface OrderParams {
   cancel_url: string;
 }
 
+interface CCAvenueCreds {
+  accessCode: string;
+  workingKey: string;
+  merchatId: string;
+  ccAvenueDomain: string;
+  redirectUrl: string;
+}
+
+const ccAvenueParamName = process.env.CC_AVENUE_CREDS;
+
+let ccAvenueCreds: CCAvenueCreds;
+
 class ConfigureCCAvenue {
   private initOptions: InitOptions;
 
   constructor() {
+    // get ccAvenueCreds from ssm param and store it in ccAvenueCreds param if it is empty
     let initOptions: InitOptions = {
-      working_key: process.env.WORKING_KEY || "",
-      merchant_id: process.env.MERCHANT_ID || "",
+      working_key: "",
+      merchant_id: "",
+    };
+    this.initOptions = initOptions;
+  }
+
+  async init() {
+    if (!ccAvenueCreds) {
+      const response = await getCcAvenueCred();
+      ccAvenueCreds = response;
+    }
+    let initOptions: InitOptions = {
+      working_key: ccAvenueCreds.workingKey,
+      merchant_id: ccAvenueCreds.merchatId,
     };
     this.initOptions = initOptions;
   }
@@ -128,5 +154,17 @@ class ConfigureCCAvenue {
   }
 }
 
+async function getCcAvenueCred() {
+  if (!ccAvenueParamName) {
+    throw new Error("CC Avenue param name is requried");
+  }
+  const ccAvenueCredsParamRes = await getSSMParameter(ccAvenueParamName, true);
+  if (!ccAvenueCredsParamRes) {
+    throw new Error("Failed to get ccAvenueCredsParam");
+  }
+  // ccAvenueCreds = JSON.parse(ccAvenueCredsParamRes);
+  return JSON.parse(ccAvenueCredsParamRes) as CCAvenueCreds;
+}
+
 // export default ccavenueUtils;
-export { ConfigureCCAvenue, OrderParams };
+export { ConfigureCCAvenue, OrderParams, getCcAvenueCred };

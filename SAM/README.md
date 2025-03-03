@@ -11,4 +11,10 @@ npm init -y
 npm i pdfmake
 cd ../../..
 
+cp -r express-api/fonts .aws-sam/build/paymentSuccessHandler/
+cd .aws-sam/build/paymentSuccessHandler
+npm init -y
+npm i pdfmake
+cd ../../..
+
 sam deploy --config-env prod
