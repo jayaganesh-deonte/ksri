@@ -221,6 +221,11 @@ const donationHeaders = [
     key: "paymentMethod",
     title: "Payment Method",
   },
+  {
+    key: "metadata",
+    title: "Created By",
+    value: (item) => `${item.metadata ? item.metadata.created_by : "System"}`,
+  },
 
   {
     key: "actions",

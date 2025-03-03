@@ -835,7 +835,14 @@ const exportAsCSV = () => {
   const csvContent = filteredItems
     .map((item) => {
       return selectedColumnsToExport.value
-        .map((key) => escapeCSVValue(item[key]))
+        .map((key) => {
+          // Check if there's a header with a value function for this key
+          const header = props.headers.find((h) => h.key === key);
+          if (header && typeof header.value === "function") {
+            return escapeCSVValue(header.value(item));
+          }
+          return escapeCSVValue(item[key]);
+        })
         .join(",");
     })
     .join("\n");
