@@ -7,7 +7,7 @@ export const handler = async (event: any) => {
     const eventBridgeMessage = JSON.parse(record.body);
     // console.log("eventBridgeMessage", eventBridgeMessage);
     // console.log("detail", eventBridgeMessage.detail);
-    const payment: PaymentDDB = eventBridgeMessage.detail;
+    const payment: PaymentDDB = eventBridgeMessage.detail.payment;
 
     const PK = payment.PK;
     const SK = payment.SK;
@@ -20,6 +20,7 @@ export const handler = async (event: any) => {
         SK: SK,
       },
     };
+    console.log("params", params);
     const result = await documentClient.get(params);
     const paymentDDB = result.Item as PaymentDDB;
     // console.log("paymentDDB", paymentDDB);
@@ -40,6 +41,7 @@ export const handler = async (event: any) => {
         },
         ReturnValues: "ALL_NEW" as const,
       };
+      console.log("updateParams", updateParams);
       const updateResult = await documentClient.update(updateParams);
       console.log("updateResult", updateResult);
     }

@@ -210,6 +210,14 @@ Resources:
       QueueName: !Sub ${Prefix}_payment_init_queue
       VisibilityTimeout: 30
       DelaySeconds: 900
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt paymentInitQueueDLQ.Arn
+        maxReceiveCount: 3
+
+  paymentInitQueueDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub ${Prefix}_payment_init_queue_dlq
 
   paymentInit:
     Type: AWS::Serverless::Function
