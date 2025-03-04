@@ -77,10 +77,10 @@ function authenticateWithCredentials(credentials: ServiceAccountCredentials) {
     // Create a JWT auth client using the service account credentials
     const auth = new google.auth.JWT(
       credentials.client_email,
-      null,
+      undefined,
       credentials.private_key,
       ["https://www.googleapis.com/auth/drive"],
-      null
+      undefined
     );
 
     return auth;
@@ -240,45 +240,190 @@ interface ListFilesResult {
   details?: any;
 }
 
-// function listFilesInFolder(props: ListFilesProps): any {
-//   console.log("test");
-//   // try {
-//   //   // Get credentials from SSM
-//   //   const credentials = await getCredentialsFromSSM(
-//   //     props.ssmParameterName,
-//   //     props.region
-//   //   );
+async function listFilesInFolder(
+  props: ListFilesProps
+): Promise<ListFilesResult> {
+  console.log("test");
+  try {
+    // Get credentials from SSM
+    const credentials = await getCredentialsFromSSM(
+      props.ssmParameterName,
+      props.region
+    );
 
-//   //   // Authenticate
-//   //   const auth = authenticateWithCredentials(credentials);
+    // Authenticate
+    const auth = authenticateWithCredentials(credentials);
 
-//   //   // Create a Drive client
-//   //   const drive = google.drive({ version: "v3", auth });
+    // Create a Drive client
+    const drive = google.drive({ version: "v3", auth });
 
-//   //   console.log(`Listing files in folder ID: ${props.folderID}...`);
-//   // } catch (error) {
-//   //   const errorResponse: ListFilesResult = {
-//   //     success: false,
-//   //     error: error instanceof Error ? error.message : String(error),
-//   //     details:
-//   //       error instanceof Error && "response" in error
-//   //         ? (error as any).response?.data
-//   //         : null,
-//   //   };
+    console.log(`Listing files in folder ID: ${props.folderID}...`);
 
-//   //   console.error(JSON.stringify(errorResponse, null, 2));
-//   //   return errorResponse;
-//   // }
-// }
+    // Set up query parameters
+    const queryParams = {
+      q: `'${props.folderID}' in parents and trashed=false`,
+      pageSize: props.pageSize || 100,
+      fields:
+        "nextPageToken, files(id, name, mimeType, webViewLink, createdTime, modifiedTime, size)",
+      orderBy: props.orderBy || "name",
+      pageToken: props.pageToken,
+    };
 
-const listAll = () => {
-  console.log("listFilesInFolder");
+    // Execute the query
+    const response = await drive.files.list(queryParams);
+
+    // Process the results
+    const files =
+      response.data.files?.map((file) => ({
+        id: file.id || "",
+        name: file.name || "",
+        mimeType: file.mimeType || "",
+        isFolder: file.mimeType === "application/vnd.google-apps.folder",
+        webViewLink: file.webViewLink || "",
+        createdTime: file.createdTime || "",
+        modifiedTime: file.modifiedTime || "",
+        size: file.size || "",
+      })) || [];
+
+    const result: ListFilesResult = {
+      success: true,
+      files,
+      nextPageToken: response.data.nextPageToken ?? undefined,
+    };
+
+    return result;
+  } catch (error) {
+    const errorResponse: ListFilesResult = {
+      success: false,
+      error: error instanceof Error ? error.message : String(error),
+      details:
+        error instanceof Error && "response" in error
+          ? (error as any).response?.data
+          : null,
+    };
+
+    console.error(JSON.stringify(errorResponse, null, 2));
+    return errorResponse;
+  }
+}
+
+// create a folder
+/**
+ * Creates a new folder in Google Drive
+ */
+interface CreateFolderProps {
+  folderName: string;
+  parentFolderID: string;
+  ssmParameterName: string;
+  region?: string;
+}
+
+interface CreateFolderResult {
+  success: boolean;
+  folder?: {
+    id: string;
+    name: string;
+    webViewLink: string;
+    createdTime: string;
+  };
+  message?: string;
+  error?: string;
+  details?: any;
+}
+
+async function createFolder(
+  props: CreateFolderProps
+): Promise<CreateFolderResult> {
+  try {
+    // Get credentials from SSM
+    const credentials = await getCredentialsFromSSM(
+      props.ssmParameterName,
+      props.region
+    );
+
+    // Authenticate
+    const auth = authenticateWithCredentials(credentials);
+
+    // Create a Drive client
+    const drive = google.drive({ version: "v3", auth });
+
+    // Set up folder metadata
+    const folderMetadata: drive_v3.Schema$File = {
+      name: props.folderName,
+      mimeType: "application/vnd.google-apps.folder",
+    };
+
+    // If parent folder ID is provided, set it as the parent
+    if (props.parentFolderID) {
+      folderMetadata.parents = [props.parentFolderID];
+    }
+
+    console.log(`Creating folder "${props.folderName}" in Google Drive...`);
+
+    // Create the folder
+    const response = await drive.files.create({
+      requestBody: folderMetadata,
+      fields: "id,name,webViewLink,createdTime",
+    });
+
+    const result: CreateFolderResult = {
+      success: true,
+      folder: {
+        id: response.data.id || "",
+        name: response.data.name || "",
+        webViewLink: response.data.webViewLink || "",
+        createdTime: response.data.createdTime || "",
+      },
+      message: `Folder created successfully! Folder ID: ${response.data.id}`,
+    };
+
+    // Log in JSON format
+    console.log(JSON.stringify(result, null, 2));
+
+    return result;
+  } catch (error) {
+    const errorResponse: CreateFolderResult = {
+      success: false,
+      error: error instanceof Error ? error.message : String(error),
+      details:
+        error instanceof Error && "response" in error
+          ? (error as any).response?.data
+          : null,
+    };
+
+    console.error(JSON.stringify(errorResponse, null, 2));
+    return errorResponse;
+  }
+}
+
+/**
+ * Returns the current financial year in the format "YYYY-YYYY"
+ * Financial year is considered to start from April 1st and end on March 31st
+ * @returns string representing the current financial year
+ */
+function getCurrentFinancialYear(): string {
+  const today = new Date();
+  const currentMonth = today.getMonth(); // 0-indexed (0 = January, 11 = December)
+  const currentYear = today.getFullYear();
+
+  // If current month is January to March (0-2), financial year started in previous calendar year
+  // Otherwise financial year started in current calendar year
+  const financialYearStart = currentMonth < 3 ? currentYear - 1 : currentYear;
+  const financialYearEnd = financialYearStart + 1;
+
+  return `${financialYearStart}-${financialYearEnd}`;
+}
+
+export {
+  uploadFileToDrive,
+  listFilesInFolder,
+  createFolder,
+  getCurrentFinancialYear,
 };
 
-export { uploadFileToDrive, listAll };
 // Example of how to use the functions when importing:
+
 /*
-import { uploadFileToDrive, listFilesInFolder } from './gdrive-utils';
 
 async function main() {
   try {
@@ -289,48 +434,52 @@ async function main() {
       ssmParameterName: '/myapp/google-drive-credentials',
       region: 'us-east-1'
     });
-    
+
     if (uploadResult.success) {
       console.log('Upload successful:', uploadResult.file?.webViewLink);
     } else {
       console.error('Upload failed:', uploadResult.error);
     }
-    
+
     // Example: List files in a folder
     const listResult = await listFilesInFolder({
-      folderID: 'google-drive-folder-id',
-      pageSize: 100,  // optional
-      orderBy: 'name', // optional
-      ssmParameterName: '/myapp/google-drive-credentials',
-      region: 'us-east-1'
+      folderID: "1QBKEAi06NfwFrL752rP8r-CC-fbzkqM5",
+      pageSize: 100, // optional
+      orderBy: "name", // optional
+      ssmParameterName: "/google/drive",
+      region: "ap-south-1",
     });
-    
+
     if (listResult.success) {
-      console.log('Files found:', listResult.files?.length);
-      
+      console.log("Files found:", listResult.files?.length);
+
       // Print folders first, then files
-      const folders = listResult.files?.filter(f => f.isFolder) || [];
-      const files = listResult.files?.filter(f => !f.isFolder) || [];
-      
-      console.log('Folders:');
-      folders.forEach(folder => {
+      const folders = listResult.files?.filter((f: any) => f.isFolder) || [];
+      const files = listResult.files?.filter((f: any) => !f.isFolder) || [];
+
+      console.log("Folders:");
+      folders.forEach((folder: any) => {
         console.log(`- ${folder.name} (ID: ${folder.id})`);
       });
-      
-      console.log('Files:');
-      files.forEach(file => {
+
+      console.log("Files:");
+      files.forEach((file: any) => {
         console.log(`- ${file.name} (ID: ${file.id})`);
       });
-      
+
       // If there are more files (pagination)
       if (listResult.nextPageToken) {
-        console.log('More files available. Use nextPageToken for the next page.');
+        console.log(
+          "More files available. Use nextPageToken for the next page."
+        );
       }
     } else {
-      console.error('Listing failed:', listResult.error);
+      console.error("Listing failed:", listResult.error);
     }
   } catch (error) {
-    console.error('Error:', error);
+    console.error("Error:", error);
   }
 }
+
+main();
 */
