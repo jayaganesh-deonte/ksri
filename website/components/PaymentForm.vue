@@ -44,9 +44,23 @@
             </v-card-title>
             <v-card-text>
               <v-form ref="donationForm">
+                <!-- Donor Type Selection -->
+                <div class="form-field">
+                  <div class="field-label">
+                    Donor Type <span class="required-marker">*</span>
+                  </div>
+                  <div class="field-input">
+                    <v-radio-group v-model="donorType" inline>
+                      <v-radio label="Indian Citizen" value="indian"></v-radio>
+                      <v-radio label="NRI" value="nri"></v-radio>
+                    </v-radio-group>
+                  </div>
+                </div>
+
+                <!-- Common form fields -->
                 <div
                   class="form-field"
-                  v-for="field in formFields"
+                  v-for="field in commonFormFields"
                   :key="field.key"
                 >
                   <div class="field-label">
@@ -88,6 +102,76 @@
                   </div>
                 </div>
 
+                <!-- Indian Citizen ID fields -->
+                <div v-if="donorType === 'indian'">
+                  <div class="form-field">
+                    <div class="field-label">
+                      PAN <span class="required-marker">*</span>
+                    </div>
+                    <div class="field-input">
+                      <v-text-field
+                        density="compact"
+                        v-model="orderDetails.merchant_param1"
+                        variant="outlined"
+                        placeholder="PAN Number"
+                        :rules="panRules"
+                      ></v-text-field>
+                    </div>
+                  </div>
+
+                  <div class="form-field">
+                    <div class="field-label">
+                      Aadhaar No. <span class="required-marker">*</span>
+                    </div>
+                    <div class="field-input">
+                      <v-text-field
+                        density="compact"
+                        v-model="orderDetails.merchant_param2"
+                        variant="outlined"
+                        placeholder="Aadhaar Number"
+                        :rules="aadhaarRules"
+                      ></v-text-field>
+                    </div>
+                  </div>
+                  <div class="text-caption text-grey mt-n4 mb-4">
+                    Either PAN or Aadhaar is mandatory
+                  </div>
+                </div>
+
+                <!-- NRI ID fields -->
+                <div v-if="donorType === 'nri'">
+                  <div class="form-field">
+                    <div class="field-label">
+                      Passport Number <span class="required-marker">*</span>
+                    </div>
+                    <div class="field-input">
+                      <v-text-field
+                        density="compact"
+                        v-model="orderDetails.merchant_param3"
+                        variant="outlined"
+                        placeholder="Passport Number"
+                        :rules="passportRules"
+                      ></v-text-field>
+                    </div>
+                  </div>
+
+                  <div class="form-field">
+                    <div class="field-label">
+                      Passport Expiry Date
+                      <span class="required-marker">*</span>
+                    </div>
+                    <div class="field-input">
+                      <v-text-field
+                        density="compact"
+                        v-model="orderDetails.merchant_param4"
+                        variant="outlined"
+                        type="date"
+                        :rules="requiredRule"
+                      ></v-text-field>
+                    </div>
+                  </div>
+                </div>
+
                 <!-- checkbox for declaration -->
                 <div class="form-field mt-4">
                   <v-checkbox
@@ -96,10 +180,14 @@
                   >
                     <template v-slot:label>
                       <div>
-                        Declaration <span class="required-marker">*</span>: I am
-                        a Indian Citizen, Residing in India Or I am Residing
-                        Abroad holding valid Indian Passport (Donations to be
-                        remitted only in INR)
+                        Declaration <span class="required-marker">*</span>:
+                        <span v-if="donorType === 'indian'">
+                          I am an Indian Citizen, Residing in India.
+                        </span>
+                        <span v-else>
+                          I am Residing Abroad holding valid Indian Passport
+                          (Donations to be remitted only in INR).
+                        </span>
                       </div>
                     </template>
                   </v-checkbox>
@@ -179,6 +267,7 @@ import { v4 as uuidv4 } from "uuid";
 export default {
   data() {
     return {
+      donorType: "indian", // Default value - indian or nri
       openDialog: false,
       isLoading: false,
       amountRule: [
@@ -190,7 +279,22 @@ export default {
         (v) => !!v || "E-mail is required",
         (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
       ],
-      formFields: [
+      panRules: [
+        (v) =>
+          !v || /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(v) || "Invalid PAN format",
+        (v) => this.validateIndianID(),
+      ],
+      aadhaarRules: [
+        (v) => !v || /^\d{12}$/.test(v) || "Aadhaar must be 12 digits",
+        (v) => this.validateIndianID(),
+      ],
+      passportRules: [
+        (v) => !!v || "Passport number is required",
+        (v) =>
+          /^[A-Z][0-9]{7}$/.test(v) ||
+          "Invalid passport format (e.g., A1234567)",
+      ],
+      commonFormFields: [
         {
           key: "billing_name",
           label: "Name",
@@ -249,30 +353,6 @@ export default {
           rules: this.amountRule,
           placeholder: "Amount",
         },
-        {
-          key: "merchant_param1",
-          label: "PAN",
-          required: true,
-          placeholder: "PAN",
-        },
-        {
-          key: "merchant_param2",
-          label: "Aadhaar No.",
-          required: false,
-          placeholder: "Aadhaar No.",
-        },
-        {
-          key: "merchant_param3",
-          label: "Passport Number (For Indian Citizens living abroad)",
-          required: false,
-          placeholder: "Passport Number",
-        },
-        {
-          key: "merchant_param4",
-          label: "Passport Expiry Date",
-          required: false,
-          type: "date",
-        },
       ],
       orderDetails: {
         billing_name: "",
@@ -296,11 +376,44 @@ export default {
     };
   },
   methods: {
+    validateIndianID() {
+      // For Indian citizens, at least one of PAN or Aadhaar must be provided
+      if (this.donorType === "indian") {
+        const hasPAN = !!this.orderDetails.merchant_param1;
+        const hasAadhaar = !!this.orderDetails.merchant_param2;
+
+        if (!hasPAN && !hasAadhaar) {
+          return "Either PAN or Aadhaar is required";
+        }
+      }
+      return true;
+    },
     async openAlertDialog() {
+      // Validate form
       const { valid } = await this.$refs.donationForm.validate();
       console.log("Form validation result:", valid);
+
       if (!valid) {
         return;
+      }
+
+      // Additional validation for donor type specific fields
+      if (this.donorType === "indian") {
+        const hasPAN = !!this.orderDetails.merchant_param1;
+        const hasAadhaar = !!this.orderDetails.merchant_param2;
+
+        if (!hasPAN && !hasAadhaar) {
+          alert("Either PAN or Aadhaar is required for Indian citizens");
+          return;
+        }
+      } else if (this.donorType === "nri") {
+        const hasPassport = !!this.orderDetails.merchant_param3;
+        const hasExpiry = !!this.orderDetails.merchant_param4;
+
+        if (!hasPassport || !hasExpiry) {
+          alert("Both Passport Number and Expiry Date are required for NRIs");
+          return;
+        }
       }
 
       this.openDialog = true;
@@ -308,14 +421,24 @@ export default {
     async processPayment() {
       const runtimeConfig = useRuntimeConfig();
       try {
-        // validate the form
+        // validate the form again to be sure
         const { valid } = await this.$refs.donationForm.validate();
         console.log("Form validation result:", valid);
         if (!valid) {
           return;
         }
+
         this.isLoading = true;
         const API_URL = runtimeConfig.public.API_URL;
+
+        // Clear irrelevant fields based on donor type
+        if (this.donorType === "indian") {
+          this.orderDetails.merchant_param3 = "";
+          this.orderDetails.merchant_param4 = "";
+        } else {
+          this.orderDetails.merchant_param1 = "";
+          this.orderDetails.merchant_param2 = "";
+        }
 
         // generate uuid for order_id
         this.orderDetails.order_id = uuidv4();
@@ -335,6 +458,18 @@ export default {
       } catch (error) {
         this.isLoading = false;
         console.error("Error encrypting order data:", error);
+      }
+    },
+  },
+  watch: {
+    // Clear values when donor type changes
+    donorType(newValue) {
+      if (newValue === "indian") {
+        this.orderDetails.merchant_param3 = "";
+        this.orderDetails.merchant_param4 = "";
+      } else {
+        this.orderDetails.merchant_param1 = "";
+        this.orderDetails.merchant_param2 = "";
       }
     },
   },

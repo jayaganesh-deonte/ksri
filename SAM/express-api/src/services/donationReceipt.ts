@@ -164,8 +164,12 @@ const generateReceiptPDF = async (data: Payment) => {
                       // add pan in brackets
                       {
                         text: receiptData.panNumber
-                          ? " (PAN: " + receiptData.panNumber + ") "
-                          : " ",
+                          ? ` (PAN: ${receiptData.panNumber}) `
+                          : receiptData.aadharNumber
+                          ? ` (Aadhar: ${receiptData.aadharNumber}) `
+                          : receiptData.passportNumber
+                          ? ` (Passport: ${receiptData.passportNumber}) `
+                          : "",
                         fontSize: 11,
                       },
                     ],

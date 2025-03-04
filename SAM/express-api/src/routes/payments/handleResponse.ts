@@ -72,30 +72,41 @@ handlePaymentRouter.post(
       const BASE_URL = process.env.BASE_URL || "http://ksri.in/";
 
       if (orderStatus == "Success") {
-        // send email
-        const emailDataVariables = {
-          name: payment.name,
-          address: payment.address + ", " + payment.city + ", " + payment.state,
-          panNumber: payment.panNumber,
-          amountInWords: payment.amountInWords,
-          paymentMethod: payment.paymentMethod,
-          date: payment.paymentDate,
-          receiptLink:
-            BASE_URL +
-            "public/receipt/donation?emailId=" +
-            payment.email +
-            "&paymentRefId=" +
-            payment.paymentRefId,
-          paymentRefId: payment.orderId,
-        };
+        try {
+          const idNumber = payment.panNumber
+            ? `PAN: ${payment.panNumber}`
+            : payment.aadharNumber
+            ? `Aadhar: ${payment.aadharNumber}`
+            : payment.passportNumber
+            ? `Passport: ${payment.passportNumber}`
+            : ""; // send email
+          const emailDataVariables = {
+            name: payment.name,
+            address:
+              payment.address + ", " + payment.city + ", " + payment.state,
+            panNumber: idNumber,
+            amountInWords: payment.amountInWords,
+            paymentMethod: payment.paymentMethod,
+            date: payment.paymentDate,
+            receiptLink:
+              BASE_URL +
+              "public/receipt/donation?emailId=" +
+              payment.email +
+              "&paymentRefId=" +
+              payment.paymentRefId,
+            paymentRefId: payment.orderId,
+          };
 
-        // console.log("emailDataVariables", emailDataVariables);
+          // console.log("emailDataVariables", emailDataVariables);
 
-        const emailResponse = await emailService.sendEmail(
-          payment.email,
-          emailDataVariables
-        );
-        // console.log("Email response:", emailResponse);
+          const emailResponse = await emailService.sendEmail(
+            payment.email,
+            emailDataVariables
+          );
+          // console.log("Email response:", emailResponse);
+        } catch (error) {
+          console.error("Error processing CCAvenue request:", error);
+        }
 
         // publish event to event bridge
         const eventBridgeResponse = await publishToEventBridge(
