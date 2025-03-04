@@ -136,7 +136,7 @@ Resources:
           POWERTOOLS_METRICS_NAMESPACE: ksriadmin
           LOG_LEVEL: INFO
           GOOGLE_API_PARAM_NAME: "/google/drive"
-          FOLDER_ID: "1QBKEAi06NfwFrL752rP8r-CC-fbzkqM5"
+          FOLDER_ID: "1qt1gT7MD6asR2KUPwTbDxr0s0AAs3KkA"
       Policies:
         - DynamoDBCrudPolicy:
             TableName: !Ref masterTable

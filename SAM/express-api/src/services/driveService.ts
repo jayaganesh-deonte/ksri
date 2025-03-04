@@ -443,7 +443,7 @@ async function main() {
 
     // Example: List files in a folder
     const listResult = await listFilesInFolder({
-      folderID: "1QBKEAi06NfwFrL752rP8r-CC-fbzkqM5",
+      folderID: "1qt1gT7MD6asR2KUPwTbDxr0s0AAs3KkA",
       pageSize: 100, // optional
       orderBy: "name", // optional
       ssmParameterName: "/google/drive",
