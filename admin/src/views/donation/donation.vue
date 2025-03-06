@@ -1,21 +1,33 @@
 <template>
-  <generic-crud
-    entityName="Donation"
-    :apiEndpoint="apiEndpoint"
-    :entityFields="donationFields"
-    :headers="donationHeaders"
-    :addIdToPayload="true"
-    :fixedValues="fixedValues"
-    :updateItemPendingForDeployment="false"
-    :isEditEnabledForItem="false"
-    :isDeleteEnabledForItem="false"
-    :sortBy="[{ key: 'orderId', order: 'desc' }]"
-  />
+  <div>
+    <div class="d-flex ma-4 justify-end">
+      <downloadForm10BDVue
+        :donationData="donationData"
+        :isDisabled="isDisabled"
+      />
+    </div>
+    <generic-crud
+      entityName="Donation"
+      :apiEndpoint="apiEndpoint"
+      :entityFields="donationFields"
+      :headers="donationHeaders"
+      :addIdToPayload="true"
+      :fixedValues="fixedValues"
+      :updateItemPendingForDeployment="false"
+      :isEditEnabledForItem="false"
+      :isDeleteEnabledForItem="false"
+      :sortBy="[{ key: 'orderId', order: 'desc' }]"
+      @all-items="hanldeAllItems"
+    />
+  </div>
 </template>
 
 <script setup>
 const apiEndpoint = "/payments/manual";
 import DonationReceiptPdf from "@/components/DonationReceiptPdf.vue";
+import downloadForm10BDVue from "@/components/downloadForm10BD.vue";
+
+import { reactive, ref } from "vue";
 
 const fixedValues = {
   paymentType: "Donation",
@@ -216,7 +228,6 @@ const donationHeaders = [
   //   key: "phoneNumber",
   //   title: "Phone Number",
   // },
-
   {
     key: "paymentMethod",
     title: "Payment Method",
@@ -232,4 +243,13 @@ const donationHeaders = [
     title: "Actions",
   },
 ];
+
+let donationData = reactive([]);
+let isDisabled = ref(true);
+
+const hanldeAllItems = (items) => {
+  // console.log("all items", items);
+  Object.assign(donationData, items);
+  isDisabled.value = items.length === 0;
+};
 </script>

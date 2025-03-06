@@ -460,6 +460,7 @@ const emit = defineEmits([
   "item-updated",
   "item-deleted",
   "data-model-updated",
+  "all-items",
 ]);
 
 const swal = inject("$swal");
@@ -594,6 +595,7 @@ const fetchItems = async () => {
       const response = await axiosInstance.get(props.apiEndpoint);
       items.value = response.data;
     }
+    emit("all-items", items.value);
     loading.value = false;
   } catch (error) {
     console.error(`Error fetching ${props.entityName}:`, error);
