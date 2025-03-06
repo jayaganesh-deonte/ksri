@@ -211,10 +211,10 @@ const footerLinks = reactive({
           name: "Endowments",
           path: "/contribute/endowments",
         },
-        {
-          name: "Bank Information",
-          path: "/contribute/bank-information",
-        },
+        // {
+        //   name: "Bank Information",
+        //   path: "/contribute/bank-information",
+        // },
         {
           name: "By Post",
           path: "/contribute/by-post",

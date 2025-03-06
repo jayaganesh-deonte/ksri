@@ -204,6 +204,12 @@
               ></v-alert>
 
               <v-divider class="my-4"></v-divider>
+              <!-- <div class="d-flex justify-center align-center">
+                <vue-turnstile
+                  site-key="0x4AAAAAAA_f8DfogI0a5s5t"
+                  v-model="token"
+                />
+              </div> -->
 
               <v-card
                 class="d-flex align-center justify-space-between pa-8"
@@ -244,15 +250,31 @@
       <v-card>
         <v-card-title class="text-h6 font-weight-bold">Note:</v-card-title>
         <v-card-text class="text-h6">
-          Those wishing to donate towards Corpus Fund kindly contact the
-          Institute directly. This link is only for donations towards research
-          purposes and related activities.
+          Those wishing to donate towards Corpus Fund / Endowments kindly
+          contact the Institute directly. This link is only for donations
+          towards research purposes and related activities.
         </v-card-text>
+        <div class="d-flex justify-center align-center">
+          <vue-turnstile site-key="0x4AAAAAAA_f8DfogI0a5s5t" v-model="token" />
+        </div>
         <v-card-actions>
-          <v-btn color="primary" @click="openDialog = false">Close</v-btn>
-          <!-- procced to pay -->
-          <v-btn color="secondary" variant="outlined" @click="processPayment"
-            >Proceed to Pay</v-btn
+          <v-btn
+            color="primary"
+            @click="
+              openDialog = false;
+              token = '';
+            "
+          >
+            Close</v-btn
+          >
+          <!-- proceed to pay -->
+          <v-btn
+            color="secondary"
+            variant="outlined"
+            @click="processPayment"
+            :disabled="!token"
+          >
+            Proceed to Pay</v-btn
           >
         </v-card-actions>
       </v-card>
@@ -263,10 +285,13 @@
 <script>
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import VueTurnstile from "vue-turnstile";
+import $toast from "~/utils/toast_notification";
 
 export default {
   data() {
     return {
+      token: "",
       donorType: "indian", // Default value - indian or nri
       openDialog: false,
       isLoading: false,
@@ -375,6 +400,7 @@ export default {
       },
     };
   },
+  components: { VueTurnstile },
   methods: {
     validateIndianID() {
       // For Indian citizens, at least one of PAN or Aadhaar must be provided
@@ -394,6 +420,11 @@ export default {
       console.log("Form validation result:", valid);
 
       if (!valid) {
+        // show notification
+        $toast.error("Please fill all mandatory fields", {
+          timeout: 5000,
+          position: "top-right",
+        });
         return;
       }
 
@@ -446,7 +477,12 @@ export default {
         // init payment by sending order details to the /payments/initiatePayment
         const response = await axios.post(
           `${API_URL}/payments/initiatePayment`,
-          this.orderDetails
+          this.orderDetails,
+          {
+            headers: {
+              Authorization: this.token,
+            },
+          }
         );
         console.log("Payment initiated:", response.data);
 

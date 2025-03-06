@@ -19,6 +19,7 @@ import {
   getCcAvenueCred,
 } from "../../services/ccavenueUtils";
 import { convertAmountToWords } from "../../services/convertAmountToWords";
+import { validateCloudflareTurnstileToken } from "../../services/cloudflareTurnstile";
 
 const paymentRouter = express.Router();
 
@@ -221,6 +222,13 @@ paymentRouter.post(
     // 1. generate encrypted url for payment
     // 2. store payment details in dynamodb as initiated
     // 3. return encrypted url to client
+    try {
+      const validateToken = await validateCloudflareTurnstileToken(req);
+      console.log("validateToken", validateToken);
+    } catch (error) {
+      console.error("Error validating token:", error);
+    }
+
     try {
       let orderParams: OrderParams = req.body;
 

@@ -340,11 +340,11 @@ const menuOptions = reactive([
         description:
           "Create an endowment to perpetuate the memory of your dear ones to hold a lecture annually in their names...",
       },
-      {
-        name: "Bank Information",
-        path: "/contribute/bank-information",
-        description: "List of Local/Foriegn contribution the bank particulars",
-      },
+      // {
+      //   name: "Bank Information",
+      //   path: "/contribute/bank-information",
+      //   description: "List of Local/Foriegn contribution the bank particulars",
+      // },
       // {
       //   name: "By Post",
       //   path: "/contribute/by-post",
