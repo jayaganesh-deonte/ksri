@@ -157,7 +157,9 @@ const generateReceiptPDF = async (data: Payment) => {
                       { text: "Received with thanks from ", fontSize: 11 },
                       {
                         text:
-                          " " + capitalizeFirstLetter(receiptData.name) + " ",
+                          " Mr./Ms./Mrs." +
+                          capitalizeFirstLetter(receiptData.name) +
+                          " ",
                         fontSize: 11,
                         bold: true,
                       },
@@ -295,6 +297,27 @@ const generateReceiptPDF = async (data: Payment) => {
                       ],
                     },
                   },
+                  {
+                    text: "* In the case of online payment, No signature is required for the  automatically generated e-receipt.",
+                    fontSize: 10,
+                    alignment: "center",
+                    margin: [2, 2, 2, 2],
+                  },
+                  // {
+                  //   table: {
+                  //     widths: ["*"],
+                  //     body: [
+                  //       [
+                  //         {
+                  //           text: "In the case of online payment, No signature is required for the  automatically generated e-receipt.",
+                  //           fontSize: 10,
+                  //           alignment: "center",
+                  //           margin: [2, 2, 2, 2],
+                  //         },
+                  //       ],
+                  //     ],
+                  //   },
+                  // },
                 ],
               },
             ],
