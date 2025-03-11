@@ -19,8 +19,7 @@ eventRoute.post("/events", async (req: Request, res: Response) => {
     // Validate event data
     if (!validateEvent(eventData)) {
       return res.status(400).json({
-        error:
-          "Invalid event data. Ensure title, initiatedBy and topic are present.",
+        error: "Invalid event data. Ensure all fields are present",
       });
     }
 

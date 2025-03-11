@@ -94,6 +94,17 @@
       </v-row>
     </div>
 
+    <v-alert
+      class="ma-8 font-weight-bold text-body-1"
+      type="info"
+      variant="tonal"
+      color="secondary"
+      data-aos="zoom-in"
+    >
+      Those wishing to donate towards Corpus Fund / Endowments kindly contact
+      the Institute directly.
+    </v-alert>
+
     <contributeHeader />
   </div>
 </template>
