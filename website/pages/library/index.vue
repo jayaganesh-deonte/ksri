@@ -49,7 +49,7 @@
           class="text-h5 libraryRack d-flex justify-center align-center"
           :class="$device.isMobile ? '' : 'mx-6'"
           width="100%"
-          :height="$device.isMobile ? '' : '70vh'"
+          :height="$device.isMobile ? '' : '50vh'"
           data-aos="fade-up"
           data-aos-delay="200"
         >
@@ -58,7 +58,7 @@
               color="secondary my-16 pa-4"
               elevation="0"
               rounded="0"
-              :width="$device.isMobile ? '' : '70vw'"
+              :width="$device.isMobile ? '' : '50vw'"
               data-aos="fade-right"
               data-aos-delay="900"
               :class="$device.isMobile ? 'mx-2' : ''"
@@ -72,7 +72,7 @@
               :class="$device.isMobile ? 'mx-2' : ''"
               elevation="0"
               rounded="0"
-              :width="$device.isMobile ? '' : '70vw'"
+              :width="$device.isMobile ? '' : '50vw'"
               data-aos="fade-left"
               data-aos-delay="900"
             >
@@ -89,11 +89,7 @@
       <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="200">
         Human Resources
       </div>
-      <div
-        class="imageWithTextAlignedToRight"
-        style="height: 50vh"
-        v-if="!$device.isMobile"
-      >
+      <div style="height: 40vh" class="d-flex" v-if="!$device.isMobile">
         <div>
           <v-img
             src="/img/library/library-racks-4.jpg"
@@ -106,17 +102,20 @@
           </v-img>
         </div>
         <div
-          class="sectionBody textOverlay pa-4 text-white"
+          class="sectionBody pa-4 text-white text-center d-flex justify-center align-center"
           data-aos="fade-left"
           data-aos-delay="900"
+          style="background-color: #bf641f"
         >
-          The Kuppuswami Sastri Research Institute's Library is a Closed Access
-          system with its own special classification of subjects as it is a
-          special library dealing with books specifically on Sanskrit and
-          Indological studies. The library staff are trained in maintaining and
-          preserving by adopting the new techniques. The academic staff of the
-          Institute help the readers in understanding the texts and suggest
-          books for further studies.
+          <div>
+            The Kuppuswami Sastri Research Institute's Library is a Closed
+            Access system with its own special classification of subjects as it
+            is a special library dealing with books specifically on Sanskrit and
+            Indological studies. The library staff are trained in maintaining
+            and preserving by adopting the new techniques. The academic staff of
+            the Institute help the readers in understanding the texts and
+            suggest books for further studies.
+          </div>
         </div>
       </div>
 

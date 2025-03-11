@@ -30,7 +30,7 @@
             <v-img src="/img/ksri-logo.png" fit height="200"></v-img>
           </div>
           <div
-            class="text-start pa-0"
+            class="text-start pa-0 text-uppercase font-weight-bold"
             :class="!isHovering ? 'text-secondary' : 'text-primary'"
           >
             {{ book.title }}
@@ -47,18 +47,24 @@
             {{ book.subtitle }}
           </div>
           <!-- price -->
-          <div class="text-start pa-0 mt-5 text-primary" data-aos-delay="300">
+          <div
+            class="text-start pa-0 mt-5 text-primary font-weight-bold"
+            data-aos-delay="300"
+          >
             Price:
-            <span class="text-secondary">
+            <span class="text-secondary font-weight-bold">
               {{ book.price }}
             </span>
           </div>
 
           <div class="d-flex align-center justify-space-between mr-1">
             <!-- year of publication -->
-            <div class="text-start pa-0 mt-5 text-primary" data-aos-delay="300">
+            <div
+              class="text-start pa-0 mt-5 text-primary font-weight-bold"
+              data-aos-delay="300"
+            >
               Year of Publication:
-              <span class="text-secondary">
+              <span class="text-secondary font-weight-bold">
                 {{ getYearFromDate(book.yearOfPublication) }}
               </span>
             </div>

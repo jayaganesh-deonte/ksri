@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <app-bar></app-bar>
-    <v-main class="my-0" style="background-color: #f0f5f0">
+    <v-main class="my-0" style="background-color: #c9dfcb">
       <slot />
       <div class="socialMediaFooter">
         <Dainandini class="mt-12" />
