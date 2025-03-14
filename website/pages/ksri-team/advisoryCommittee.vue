@@ -3,7 +3,10 @@
     <!-- <div class="text-center my-4">
       <div class="text-h6">Advisory</div>
     </div> -->
-    <div>
+    <div
+      style="background-color: white"
+      class="d-flex flex-column align-center"
+    >
       <!-- <div v-for="key in publicationCommitteeKeys" class="ma-6" :key="key">
         <div
           class="sectionTitle3 my-2"
@@ -20,7 +23,7 @@
       </div> -->
 
       <div
-        class="sectionTitle3 my-2"
+        class="sectionTitle3 my-8"
         data-aos="zoom-in"
         data-aos-duration="1000"
         data-aos-delay="400"

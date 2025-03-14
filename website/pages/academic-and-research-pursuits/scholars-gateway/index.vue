@@ -8,7 +8,7 @@
         Indian Scholars - Traditional Study
       </div>
       <div
-        class="text-center sectionBody"
+        class="text-justify sectionBody"
         data-aos="fade-up"
         data-aos-delay="150"
       >
@@ -41,7 +41,7 @@
             height="100%"
             elevation="0"
             rounded="0"
-            class="ma-2 d-flex flex-column justify-space-between"
+            class="ma-2 pa-2 d-flex flex-column justify-space-between"
           >
             <div
               class="text-h6 text-secondary font-weight-bold"

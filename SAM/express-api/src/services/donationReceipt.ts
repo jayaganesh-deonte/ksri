@@ -157,7 +157,7 @@ const generateReceiptPDF = async (data: Payment) => {
                       { text: "Received with thanks from ", fontSize: 11 },
                       {
                         text:
-                          " Mr./Ms./Mrs." +
+                          " Mr./Ms." +
                           capitalizeFirstLetter(receiptData.name) +
                           " ",
                         fontSize: 11,

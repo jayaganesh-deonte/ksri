@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ma-8">
     <div class="text-center my-12">
       <div
         class="text-h4 text-secondary font-weight-bold"
@@ -18,23 +18,21 @@
       <div class="sectionSubtitle my-4" data-aos="fade-up">
         Focus on Digitization of Mss. and Rare Books
       </div>
-      <div
-        class="imageWithTextAlignedToRight"
-        style="height: 50vh"
-        v-if="!$device.isMobile"
-      >
-        <v-img
-          class="imgOnRight"
-          src="/img/library/library-racks-2.jpg"
-          cover
-          height="50vh"
-          width="50vw"
-        >
-        </v-img>
+      <div class="d-flex" style="height: 40vh" v-if="!$device.isMobile">
+        <div>
+          <v-img
+            class=""
+            src="/img/library/library-racks-2.jpg"
+            cover
+            height="40vh"
+            width="50vw"
+          >
+          </v-img>
+        </div>
         <v-card
-          class="sectionBody textOverlayRight pa-4"
+          class="sectionBody font-weight-bold d-flex align-center pa-2"
           rounded="0"
-          elevation="4"
+          elevation="1"
           data-aos="fade-left"
         >
           Realising the importance of the collection, the Institute is trying to
@@ -93,22 +91,24 @@
       <v-card
         color="primary pa-4  sectionBody mx-auto"
         :class="$device.isMobile ? 'my-4 text-center' : ''"
-        :width="$device.isMobile ? '80%' : '60%'"
+        :width="$device.isMobile ? '80%' : '40%'"
         data-aos="fade-up"
         data-aos-delay="200"
         rounded="0"
       >
-        Under Phase 1 all the palm-leaf manuscripts in the library have been
-        digitised. The major expenditure was met with from the donation given by
-        M/s RANE group, Chennai. Presently old and rare books(more than 100-200
-        years old) are being digitised. Thanks to the donations from some
-        philanthropists and corporate groups like Dr. Reddy’s Foundation, M/s
-        Brakes India Private Ltd., we are in the process of digitising more than
-        1000 books.
+        <div class="ma-2 font-weight-bold">
+          Under Phase 1 all the palm-leaf manuscripts in the library have been
+          digitised. The major expenditure was met with from the donation given
+          by M/s RANE group, Chennai. Presently old and rare books(more than
+          100-200 years old) are being digitised. Thanks to the donations from
+          some philanthropists and corporate groups like Dr. Reddy’s Foundation,
+          M/s Brakes India Private Ltd., we are in the process of digitising
+          more than 1000 books.
 
-        <br />
-        Once the digitisation is done, the Institute would upload the digitised
-        books/manuscripts.
+          <br />
+          Once the digitisation is done, the Institute would upload the
+          digitised books/manuscripts.
+        </div>
       </v-card>
     </v-card>
   </div>

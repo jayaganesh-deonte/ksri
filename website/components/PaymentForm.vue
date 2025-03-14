@@ -61,6 +61,15 @@
                       ></v-radio>
                     </v-radio-group>
                   </div>
+                  <v-alert
+                    color="primary"
+                    class="ma-2 font-weight-bold"
+                    variant="outlined"
+                  >
+                    * Note: KSRI has not registered under the FCRA and hence
+                    cannot accept donations from persons who are not Indian
+                    Citizens.
+                  </v-alert>
                 </div>
 
                 <!-- Common form fields -->
@@ -181,7 +190,7 @@
                   </div>
                   <div
                     v-if="donorType === 'nri'"
-                    class="text-caption text-grey mt-1"
+                    class="text-caption font-weight-bold text-grey"
                   >
                     If NRI Citizen does not have PAN, fill as FFFPF9999F
                   </div>
@@ -247,14 +256,12 @@
                   >
                     <template v-slot:label>
                       <div>
-                        Declaration <span class="required-marker">*</span>:
-                        <span v-if="donorType === 'indian'">
-                          I am an Indian Citizen, Residing in India.
+                        <span>
+                          Declaration: I am a Indian Citizen, Residing in India
+                          Or I am Residing Abroad holding valid Indian Passport
+                          (Donations to be remitted only in INR)”
                         </span>
-                        <span v-else>
-                          I am Residing Abroad holding valid Indian Passport
-                          (Donations to be remitted only in INR).
-                        </span>
+                        <span class="required-marker">*</span>
                       </div>
                     </template>
                   </v-checkbox>
@@ -305,10 +312,6 @@
           </v-card>
         </v-col>
       </v-row>
-      <v-alert color="primary" class="ma-2" variant="outlined">
-        * Note: KSRI has not registered under the FCRA and hence cannot accept
-        donations from persons who are not Indian Citizens.
-      </v-alert>
     </v-card>
     <!-- add dialog box with note -->
     <v-dialog v-model="openDialog" max-width="500" persistent>
@@ -723,7 +726,7 @@ export default {
   max-width: 500px;
 }
 .required-marker {
-  color: red;
+  color: green;
   margin-left: 2px;
 }
 .form-field {

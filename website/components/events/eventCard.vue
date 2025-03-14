@@ -36,7 +36,7 @@
             <!-- Title and Details Column -->
             <v-col cols="12" sm="10" class="py-2">
               <div
-                class="text-h5 text-start pa-0"
+                class="text-h5 text-start pa-0 font-weight-bold"
                 :class="isHovering ? 'text-secondary' : 'text-primary'"
               >
                 {{ event.title }}
@@ -54,7 +54,7 @@
               ></div>
 
               <div class="text-start pa-0 mt-5">
-                <div v-html="event.description"></div>
+                <div v-html="event.subtitle"></div>
               </div>
               <v-chip-group class="mt-2">
                 <v-chip

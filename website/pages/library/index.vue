@@ -46,19 +46,19 @@
           Preservation of Manuscripts and Books
         </div>
         <v-card
-          class="text-h5 libraryRack d-flex justify-center align-center"
+          class="text-h5 libraryRack font-weight-bold d-flex justify-center align-center"
           :class="$device.isMobile ? '' : 'mx-6'"
           width="100%"
           :height="$device.isMobile ? '' : '50vh'"
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          <div class="">
+          <div class="text-justify">
             <v-card
-              color="secondary my-16 pa-4"
+              color="secondary my-16 pa-8"
               elevation="0"
               rounded="0"
-              :width="$device.isMobile ? '' : '50vw'"
+              :width="$device.isMobile ? '' : '40vw'"
               data-aos="fade-right"
               data-aos-delay="900"
               :class="$device.isMobile ? 'mx-2' : ''"
@@ -68,11 +68,11 @@
               conditioned stack room.
             </v-card>
             <v-card
-              color="primary my-16 pa-4"
+              color="primary my-16 pa-8"
               :class="$device.isMobile ? 'mx-2' : ''"
               elevation="0"
               rounded="0"
-              :width="$device.isMobile ? '' : '50vw'"
+              :width="$device.isMobile ? '' : '40vw'"
               data-aos="fade-left"
               data-aos-delay="900"
             >
@@ -102,7 +102,7 @@
           </v-img>
         </div>
         <div
-          class="sectionBody pa-4 text-white text-center d-flex justify-center align-center"
+          class="sectionBody text-justify pa-4 text-h6 font-weight-bold text-white d-flex justify-center align-center"
           data-aos="fade-left"
           data-aos-delay="900"
           style="background-color: #bf641f"
@@ -129,11 +129,7 @@
         v-if="$device.isMobile"
       >
         <v-img src="/img/library/library-racks-4.jpg" cover></v-img>
-        <div
-          class="sectionBody text-start ma-2"
-          data-aos="fade-up"
-          data-aos-delay="900"
-        >
+        <div class="sectionBody ma-2" data-aos="fade-up" data-aos-delay="900">
           The Kuppuswami Sastri Research Institute's Library is a Closed Access
           system with its own special classification of subjects as it is a
           special library dealing with books specifically on Sanskrit and
@@ -160,7 +156,8 @@
         Workshop
       </div>
       <v-card
-        class="mx-8 sectionBody pa-4"
+        class="mx-auto sectionBody pa-4"
+        width="50vw"
         color="secondary"
         rounded="0"
         elevation="0"
@@ -190,7 +187,8 @@
         Training Programmes
       </div>
       <v-card
-        class="mx-8 my-8 sectionBody pa-4"
+        class="mx-auto sectionBody pa-4"
+        width="50vw"
         color="accentGreen"
         rounded="0"
         data-aos="fade-left"
@@ -204,10 +202,17 @@
     </v-card>
 
     <div>
-      <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="sectionSubtitle mt-4" data-aos="fade-up" data-aos-delay="200">
         Services
       </div>
-      <div>
+      <v-card elevation="0" rounded="0" class="my-2">
+        <v-card-text>
+          <div v-for="(service, index) in services" :key="index">
+            <div class="sectionBody my-4" v-html="service" />
+          </div>
+        </v-card-text>
+      </v-card>
+      <!-- <div>
         <v-row>
           <v-col
             v-for="(service, index) in services"
@@ -219,7 +224,7 @@
             data-aos="fade-up"
             :data-aos-delay="index * 300"
           >
-            <div class="sectionBody text-accentGreen">{{ index + 1 }}.</div>
+            <div class="sectionBody">❖</div>
             <div class="sectionBody my-4" v-html="service" />
             <v-divider
               class="my-4 mx-auto"
@@ -229,7 +234,7 @@
             />
           </v-col>
         </v-row>
-      </div>
+      </div> -->
     </div>
 
     <v-card
@@ -300,12 +305,12 @@
 import LibraryHeader from "./LibraryHeader.vue";
 
 const services = [
-  "Reprographic services are provided by the Library.",
-  "60% of our catalogue can be accessed through our Website : <a href='/library/books' style='text-decoration: unset;'>www.ksri.in/library/books</a> .",
-  "Separate reading room for researchers for their research.",
-  "Extensive research materials including special Encyclopaedias, Descriptive Catalogues of Manuscripts in various libraries all over the world, and general reference materials are also available.",
-  "The Library is open from 10.00 a.m. to 5.00 p.m. on all days except second Saturdays and Sundays and Government Holidays.",
-  "Members: Enrollment as Patrons, Fellows, Life and Reader and Borrowing Membership.",
+  "❖ Reprographic services are provided by the Library.",
+  "❖ 60% of our catalogue can be accessed through our Website : <a href='/library/books' style='text-decoration: unset;'>www.ksri.in/library/books</a> .",
+  "❖ Separate reading room for researchers for their research.",
+  "❖ Extensive research materials including special Encyclopaedias, Descriptive Catalogues of Manuscripts in various libraries all over the world, and general reference materials are also available.",
+  "❖ The Library is open from 10.00 a.m. to 5.00 p.m. on all days except second Saturdays and Sundays and Government Holidays.",
+  "❖ Members: Enrollment as Patrons, Fellows, Life and Reader and Borrowing Membership.",
 ];
 
 const getAssetUrl = (url) => {

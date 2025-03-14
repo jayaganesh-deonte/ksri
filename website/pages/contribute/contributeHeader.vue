@@ -11,7 +11,7 @@
       </div>
     </v-card>
 
-    <v-card rounded="0" class="ma-4">
+    <v-card rounded="0" class="ma-0">
       <!-- <div class="text-h6 text-center ma-4" data-aos="fade-up">
         Contribution received by Sponsor, Membership, Projects & Corpus
       </div> -->
@@ -21,7 +21,11 @@
         cover
         class="d-flex justify-center align-center"
       >
-        <v-card color="primary" class="ma-4 pa-4 text-h6 text-center">
+        <v-card
+          color="primary"
+          width="40vw"
+          class="ma-4 mx-auto text-justify pa-4 text-h6 text-center"
+        >
           Corpus: The Institute is facing acute financial constraints
           Nevertheless its past record and present contribution to the cause of
           Sanskrit and Indian culture is unmatched. To continue to march ahead
@@ -31,7 +35,7 @@
         </v-card>
       </v-img>
       <v-card
-        class="text-h6 pa-4 text-center"
+        class="text-h6 text-justify pa-4 text-center"
         color="secondary"
         elevation="0"
         rounded="0"
