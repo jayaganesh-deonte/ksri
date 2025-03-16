@@ -1,5 +1,5 @@
 <template>
-  <div class="text-start mx-4 pa-4" style="background-color: #f8f8f8">
+  <div class="text-start mx-4 pa-4" style="">
     <div
       class="sectionTitle text-center"
       data-aos="zoom-in"

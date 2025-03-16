@@ -1,5 +1,5 @@
 <template>
-  <v-card width="90vw" class="mx-2" elevation="0">
+  <v-card width="90vw" class="mx-2" elevation="0" color="transparent">
     <div v-for="key in governingBodyMemberKeys" class="my-4" :key="key">
       <div
         class="sectionTitle3 my-2"

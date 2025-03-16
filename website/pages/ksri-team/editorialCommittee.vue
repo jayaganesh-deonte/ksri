@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: white" class="d-flex flex-column align-center">
+  <div style="" class="d-flex flex-column align-center">
     <div class="text-center my-4">
       <div class="text-h6">
         The editorial committee performs a thorough scrutiny in the edition of

@@ -29,8 +29,8 @@
             </v-card>
             <!-- display publicationStatus -->
             <v-card
-              color="accentGreen"
-              class="text-center text-white pa-2 mt-2 text-body-1"
+              color="primary"
+              class="text-center font-weight-bold text-white pa-2 mt-2 text-body-1"
               data-aos="fade-left"
               v-if="project.publicationStatus"
             >
@@ -46,9 +46,15 @@
                   <tr v-if="project.sponsor">
                     <td class="text-body-1 font-weight-bold">Sponsored by</td>
                     <td>
-                      <v-chip color="secondary" class="ma-2" label>
+                      <v-card
+                        elevation="0"
+                        rounded="2"
+                        color="secondary"
+                        class="ma-2 pa-2 font-weight-bold"
+                        variant="tonal"
+                      >
                         {{ project.sponsor }}
-                      </v-chip>
+                      </v-card>
                     </td>
                   </tr>
 
@@ -57,9 +63,15 @@
                       Project Investigator
                     </td>
                     <td>
-                      <v-chip color="secondary" class="ma-2" label>
+                      <v-card
+                        elevation="0"
+                        rounded="2"
+                        color="secondary"
+                        class="ma-2 pa-1"
+                        variant="tonal"
+                      >
                         {{ projectInvestigator(project.projectInvestigator) }}
-                      </v-chip>
+                      </v-card>
                     </td>
                   </tr>
                   <tr v-if="project.coProjectInvestigators">
@@ -67,9 +79,15 @@
                       Co-Project Investigators
                     </td>
                     <td>
-                      <v-chip color="secondary" class="ma-2" label>
+                      <v-card
+                        elevation="0"
+                        rounded="2"
+                        color="secondary"
+                        class="ma-2 pa-1"
+                        variant="tonal"
+                      >
                         {{ project.coProjectInvestigators }}
-                      </v-chip>
+                      </v-card>
                     </td>
                   </tr>
                 </tbody>

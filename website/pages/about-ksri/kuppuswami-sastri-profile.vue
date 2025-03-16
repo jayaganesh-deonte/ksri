@@ -57,7 +57,7 @@
       <div class="sectionTitle2" data-aos="fade-up" data-aos-delay="500">
         Mm. Prof. S. Kuppuswami Sastri - Career Details
       </div>
-      <div>
+      <div class="d-flex flex-column justify-start align-center">
         <v-card
           v-for="(item, index) in careerDetails"
           :key="index"
@@ -67,6 +67,7 @@
           min-height="100"
           data-aos="fade-up"
           :data-aos-delay="index * 100 + 500"
+          :width="$device.isMobile ? '' : '40vw'"
         >
           <div
             class="d-flex"

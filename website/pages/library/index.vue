@@ -49,16 +49,16 @@
           class="text-h5 libraryRack font-weight-bold d-flex justify-center align-center"
           :class="$device.isMobile ? '' : 'mx-6'"
           width="100%"
-          :height="$device.isMobile ? '' : '50vh'"
           data-aos="fade-up"
           data-aos-delay="200"
+          rounded="0"
         >
           <div class="text-justify">
             <v-card
               color="secondary my-16 pa-8"
               elevation="0"
               rounded="0"
-              :width="$device.isMobile ? '' : '40vw'"
+              :max-width="$device.isMobile ? '' : '40vw'"
               data-aos="fade-right"
               data-aos-delay="900"
               :class="$device.isMobile ? 'mx-2' : ''"
@@ -72,7 +72,7 @@
               :class="$device.isMobile ? 'mx-2' : ''"
               elevation="0"
               rounded="0"
-              :width="$device.isMobile ? '' : '40vw'"
+              :max-width="$device.isMobile ? '' : '40vw'"
               data-aos="fade-left"
               data-aos-delay="900"
             >
@@ -201,11 +201,16 @@
       </v-card>
     </v-card>
 
-    <div>
+    <div class="d-flex flex-column justify-center align-center">
       <div class="sectionSubtitle mt-4" data-aos="fade-up" data-aos-delay="200">
         Services
       </div>
-      <v-card elevation="0" rounded="0" class="my-2">
+      <v-card
+        elevation="0"
+        rounded="0"
+        class="my-2"
+        :width="$device.isMobile ? '' : '60vw'"
+      >
         <v-card-text>
           <div v-for="(service, index) in services" :key="index">
             <div class="sectionBody my-4" v-html="service" />

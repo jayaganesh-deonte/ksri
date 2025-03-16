@@ -83,7 +83,7 @@
 
     <v-card
       class="onlineLibBg d-flex flex-column justify-end my-8"
-      :height="$device.isMobile ? '' : '50vh'"
+      :min-height="$device.isMobile ? '' : '50vh'"
       data-aos="fade-up"
       data-aos-delay="200"
       rounded="0"

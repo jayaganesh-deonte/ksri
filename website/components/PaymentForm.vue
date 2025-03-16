@@ -47,7 +47,7 @@
                 <!-- Donor Type Selection -->
                 <div class="form-field">
                   <div class="field-label">
-                    Donor Type <span class="required-marker">*</span>
+                    Donor Type <span class="green-marker">*</span>
                   </div>
                   <div class="field-input">
                     <v-radio-group v-model="donorType" inline>
@@ -726,6 +726,11 @@ export default {
   max-width: 500px;
 }
 .required-marker {
+  color: red;
+  margin-left: 2px;
+}
+
+.green-marker {
   color: green;
   margin-left: 2px;
 }

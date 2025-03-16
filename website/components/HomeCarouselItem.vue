@@ -1,106 +1,75 @@
 <template>
   <v-carousel-item :src="src" cover class="fade-in">
-    <v-card
-      color="transparent"
-      height="50%"
-      class="d-flex flex-column justify-end"
-      rounded="0"
-      elevation="0"
-    >
+    <div style="height: 100%; width: 100%">
       <v-card
+        color="transparent"
+        height="100%"
+        class="d-flex flex-column justify-end align-center text-white text-center pb-4"
         rounded="0"
         elevation="0"
-        class="d-flex justify-center align-center"
-        :class="`${
-          $device.isMobile
-            ? 'flex-column carouselHeaderMobile'
-            : 'flex-row carouselHeaderDesktop'
-        }`"
       >
-        <div>
-          <v-img
-            :src="ksriLogo"
-            fit
-            :width="$device.isMobile ? 130 : 200"
-            :class="`${$device.isMobile ? '' : 'ml-auto mr-4'}`"
-            @mouseover="changeLogo"
-            @mouseleave="changeLogo"
+        <v-card
+          color="rgb(255,255,255,0.5)"
+          rounded="0"
+          elevation="0"
+          class="pa-4"
+        >
+          <div style="backdrop-filter: blur(2px)" color="">
+            <div
+              class="font-weight-bold defaultFont text-primary fade-left"
+              style="--delay: 0.5s"
+              :class="`${$device.isMobile ? 'text-h6' : 'text-h3'}`"
+            >
+              {{ titleText }}
+              <br />
+              {{ titleTextLine2 }}
+            </div>
+            <div
+              class="defaultFont pa-4 fade-left text-primary"
+              style="--delay: 0.8s"
+              :class="`${$device.isMobile ? 'text-body-1' : 'text-h5'}`"
+            >
+              {{ descriptionText }}
+              <br v-if="!$device.isMobile" />
+              {{ descriptionTextLine2 }}
+            </div>
+          </div>
+          <div
+            class="d-flex justify-center align-center fade-left"
+            style="--delay: 1s"
+            :class="`${$device.isMobile ? 'flex-column ' : 'flex-row'}`"
           >
-          </v-img>
-        </div>
-        <div>
-          <v-card-item>
-            <v-card-text
-              class="font-weight-bold defaultFont text-gold text-center"
-              :class="`${$device.isMobile ? 'text-h6' : 'text-h4'}`"
-            >
-              THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE (KSRI)
-            </v-card-text>
-          </v-card-item>
-        </div>
-      </v-card>
-    </v-card>
-    <v-card
-      color="transparent"
-      height="50%"
-      class="d-flex flex-column justify-center align-center text-white text-center"
-      rounded="0"
-      elevation="0"
-    >
-      <div style="backdrop-filter: blur(2px)">
-        <div
-          class="font-weight-bold defaultFont fade-left"
-          style="--delay: 0.5s"
-          :class="`${$device.isMobile ? 'text-h6' : 'text-h3'}`"
-        >
-          {{ titleText }}
-          <br />
-          {{ titleTextLine2 }}
-        </div>
-        <div
-          class="defaultFont pa-4 fade-left"
-          style="--delay: 0.8s"
-          :class="`${$device.isMobile ? 'text-body-1' : 'text-h5'}`"
-        >
-          {{ descriptionText }}
-          <br v-if="!$device.isMobile" />
-          {{ descriptionTextLine2 }}
-        </div>
-      </div>
-      <div
-        class="d-flex justify-center align-center fade-left"
-        style="--delay: 1s"
-        :class="`${$device.isMobile ? 'flex-column ' : 'flex-row'}`"
-      >
-        <div :class="`${$device.isMobile ? 'mb-2' : 'mr-4'}`">
-          <nuxt-link :to="buttonText1Route">
-            <v-btn
-              width="100%"
-              rounded="pill"
-              :color="button1Color"
-              size="large"
-              @mouseover="changeButtonColorOnHover(1)"
-              @mouseleave="resetButtonColor(1)"
-            >
-              {{ buttonText1 }}
-            </v-btn>
-          </nuxt-link>
-        </div>
+            <div :class="`${$device.isMobile ? 'mb-2' : 'mr-4'}`">
+              <nuxt-link :to="buttonText1Route">
+                <v-btn
+                  width="100%"
+                  rounded="pill"
+                  :color="button1Color"
+                  size="large"
+                  @mouseover="changeButtonColorOnHover(1)"
+                  @mouseleave="resetButtonColor(1)"
+                >
+                  {{ buttonText1 }}
+                </v-btn>
+              </nuxt-link>
+            </div>
 
-        <nuxt-link :to="buttonText2Route">
-          <v-btn
-            width="100%"
-            rounded="pill"
-            :color="button2Color"
-            size="large"
-            @mouseover="changeButtonColorOnHover(2)"
-            @mouseleave="resetButtonColor(2)"
-          >
-            {{ buttonText2 }}
-          </v-btn>
-        </nuxt-link>
-      </div>
-    </v-card>
+            <nuxt-link :to="buttonText2Route">
+              <v-btn
+                width="100%"
+                rounded="pill"
+                :color="button2Color"
+                size="large"
+                @mouseover="changeButtonColorOnHover(2)"
+                @mouseleave="resetButtonColor(2)"
+              >
+                {{ buttonText2 }}
+              </v-btn>
+            </nuxt-link>
+          </div>
+        </v-card>
+      </v-card>
+    </div>
   </v-carousel-item>
 </template>
 
@@ -110,7 +79,7 @@ export default {
   data() {
     return {
       button1Color: "white",
-      button2Color: "secondary",
+      button2Color: "primary",
       logoPrimary: "/img/ksri-logo-primary.png",
       logoSecondary: "/img/ksri-logo-secondary.png",
       ksriLogo: "/img/ksri-logo-primary.png",

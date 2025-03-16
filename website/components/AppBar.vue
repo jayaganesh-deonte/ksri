@@ -1,6 +1,57 @@
 <template>
   <div v-if="$device.isDesktop">
-    <v-app-bar id="app-bar" color="primary" height="70">
+    <v-card
+      id="app-bar"
+      color="primary"
+      rounded="0"
+      elevation="0"
+      class="d-flex flex-column"
+    >
+      <v-card
+        color="primary"
+        height="50%"
+        class="d-flex flex-column justify-end ma-2"
+        rounded="0"
+        elevation="0"
+      >
+        <v-card
+          rounded="0"
+          elevation="0"
+          class="d-flex justify-center align-center"
+          :class="`${$device.isMobile ? 'flex-column ' : 'flex-row '}`"
+          color="primary"
+        >
+          <div>
+            <v-img
+              src="/img/ksri-logo-primary.png"
+              fit
+              :width="$device.isMobile ? 100 : 100"
+              :class="`${$device.isMobile ? '' : 'ml-auto mr-4'}`"
+              @mouseover="changeLogo"
+              @mouseleave="changeLogo"
+            >
+            </v-img>
+          </div>
+          <div>
+            <v-card-item>
+              <v-card-text
+                class="font-weight-bold defaultFont text-gold text-center"
+              >
+                <div :class="`${$device.isMobile ? 'text-h6' : 'text-h4'}`">
+                  THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE (KSRI)
+                </div>
+                <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
+                  (Regd. S.No. 32/1944-45, Dt. 24-2-1945)
+                </div>
+
+                <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
+                  No. 84, Thiru Vi Ka Road, Mylapore, Chennai - 600 004.
+                </div>
+              </v-card-text>
+            </v-card-item>
+          </div>
+        </v-card>
+      </v-card>
       <div class="d-flex mx-auto">
         <!-- add menu Options -->
         <div v-for="option in menuOptions" :key="option.name">
@@ -102,7 +153,7 @@
           </v-card>
         </div>
       </div>
-    </v-app-bar>
+    </v-card>
   </div>
   <span v-else>
     <!-- nav drawer -->

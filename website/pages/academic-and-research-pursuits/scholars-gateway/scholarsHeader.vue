@@ -45,14 +45,14 @@
       <div v-for="subPage in subPages" :key="subPage">
         <nuxt-link :to="subPage.route">
           <v-btn
-            color="primary"
+            :color="activeButton == subPage.title ? 'primary' : 'secondary'"
             :variant="activeButton == subPage.title ? 'flat' : 'outlined'"
-            class="ma-2"
+            class="ma-2 hover-effect"
             rounded="pill"
             style="text-transform: none"
           >
-            {{ subPage.title }}</v-btn
-          >
+            {{ subPage.title }}
+          </v-btn>
         </nuxt-link>
       </div>
     </div>
@@ -98,3 +98,10 @@ onMounted(() => {
   }
 });
 </script>
+
+<style>
+.hover-effect:hover {
+  background-color: var(--v-primary-base) !important;
+  color: #09341c !important;
+}
+</style>

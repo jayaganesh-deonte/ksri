@@ -12,7 +12,7 @@
       >
         <div v-for="(category, index) in storeEvents.categories" :key="index">
           <v-btn
-            color="primary"
+            color="secondary"
             rounded="pill"
             :variant="activeCategory === category ? 'flat' : 'outlined'"
             class="ma-2"
