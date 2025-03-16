@@ -7,14 +7,15 @@
       elevation="6"
       :width="`${$device.isMobile ? '' : '70%'}`"
     >
-      <v-row>
-        <!-- show logo in 1st col -->
+      <v-row style="overflow: scroll">
+        <!-- Fixed first column with logo -->
         <v-col
           cols="12"
           sm="12"
           md="6"
           class="d-flex flex-column text-center align-center"
           v-if="!$device.isMobile"
+          style="position: sticky; left: 0; z-index: 2; background-color: white"
         >
           <div class="ma-4 pa-4">
             <v-img
@@ -37,7 +38,9 @@
             </div>
           </div>
         </v-col>
-        <v-col cols="12" sm="12" md="6">
+
+        <!-- Scrollable second column with form -->
+        <v-col cols="12" sm="12" md="6" class="scrollable-column">
           <v-card class="pa-5" color="#FCFCFC">
             <v-card-title class="text-h5 font-weight-bold">
               Contribute Now
@@ -259,7 +262,7 @@
                         <span>
                           Declaration: I am a Indian Citizen, Residing in India
                           Or I am Residing Abroad holding valid Indian Passport
-                          (Donations to be remitted only in INR)”
+                          (Donations to be remitted only in INR)"
                         </span>
                         <span class="required-marker">*</span>
                       </div>
@@ -752,5 +755,12 @@ export default {
   min-width: 100px;
   flex-grow: 0;
   flex-shrink: 0;
+}
+
+.scrollable-column {
+  scrollbar-color: green;
+  scrollbar-width: thin;
+  overflow: scroll;
+  max-height: 80vh;
 }
 </style>
