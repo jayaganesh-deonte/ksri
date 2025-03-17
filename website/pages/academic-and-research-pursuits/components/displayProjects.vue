@@ -45,13 +45,14 @@
                 <tbody>
                   <tr v-if="project.sponsor">
                     <td class="text-body-1 font-weight-bold">Sponsored by</td>
-                    <td>
+                    <td style="max-width: 70%">
                       <v-card
                         elevation="0"
                         rounded="2"
                         color="secondary"
                         class="ma-2 pa-2 font-weight-bold"
                         variant="tonal"
+                        style="word-break: break-word; white-space: normal"
                       >
                         {{ project.sponsor }}
                       </v-card>
@@ -62,13 +63,14 @@
                     <td class="text-body-1 font-weight-bold">
                       Project Investigator
                     </td>
-                    <td>
+                    <td style="max-width: 70%">
                       <v-card
                         elevation="0"
                         rounded="2"
                         color="secondary"
                         class="ma-2 pa-2 font-weight-bold"
                         variant="tonal"
+                        style="word-break: break-word; white-space: normal"
                       >
                         {{ projectInvestigator(project.projectInvestigator) }}
                       </v-card>
@@ -78,13 +80,14 @@
                     <td class="text-body-1 font-weight-bold">
                       Co-Project Investigators
                     </td>
-                    <td>
+                    <td style="max-width: 70%">
                       <v-card
                         elevation="0"
                         rounded="2"
                         color="secondary"
                         class="ma-2 pa-2 font-weight-bold"
                         variant="tonal"
+                        style="word-break: break-word; white-space: normal"
                       >
                         {{ project.coProjectInvestigators }}
                       </v-card>
