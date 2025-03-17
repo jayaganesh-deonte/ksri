@@ -38,7 +38,7 @@
         :key="index"
         class="d-flex justify-start align-center pa-2 text-start text-h6 ma-2"
         elevation="0"
-        color="white"
+        :color="cardColor"
         min-height="100"
         data-aos="fade-up"
         :width="$device.isMobile ? '' : '40vw'"
@@ -62,7 +62,7 @@
 
 <script>
 export default {
-  props: ["title", "editedInfo"],
+  props: ["title", "editedInfo", "cardColor"],
 };
 </script>
 

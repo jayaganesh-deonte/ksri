@@ -89,9 +89,9 @@
       rounded="0"
     >
       <v-card
-        color="primary pa-4  sectionBody mx-auto"
-        :class="$device.isMobile ? 'my-4 text-center' : ''"
-        :width="$device.isMobile ? '80%' : '40%'"
+        color="primary pa-4 ma-6 sectionBody mx-auto"
+        :class="$device.isMobile ? ' text-center' : ''"
+        :max-width="$device.isMobile ? '80%' : '40%'"
         data-aos="fade-up"
         data-aos-delay="200"
         rounded="0"

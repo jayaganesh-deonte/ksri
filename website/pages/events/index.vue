@@ -11,15 +11,26 @@
         :class="$device.isMobile ? 'flex-wrap' : 'flex-row'"
       >
         <div v-for="(category, index) in storeEvents.categories" :key="index">
-          <v-btn
-            color="secondary"
-            rounded="pill"
-            :variant="activeCategory === category ? 'flat' : 'outlined'"
-            class="ma-2"
-            @click="activeCategory = category"
-          >
-            {{ category }}
-          </v-btn>
+          <v-hover>
+            <template v-slot:default="{ isHovering, props }">
+              <v-btn
+                v-bind="props"
+                :color="
+                  activeCategory === category
+                    ? 'primary'
+                    : isHovering
+                    ? 'primary'
+                    : 'secondary'
+                "
+                rounded="pill"
+                :variant="activeCategory === category ? 'flat' : 'flat'"
+                class="ma-2"
+                @click="activeCategory = category"
+              >
+                {{ category }}
+              </v-btn>
+            </template>
+          </v-hover>
         </div>
       </div>
     </div>
@@ -90,3 +101,9 @@ const selectedEvents = computed(() => {
   }
 });
 </script>
+
+<style scoped>
+.eventsCategoryBtn:hover {
+  color: red;
+}
+</style>

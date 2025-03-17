@@ -245,26 +245,25 @@
     <v-card
       elevation="0"
       rounded="0"
-      height="40vh"
+      height="30vh"
       class="supportBg d-flex flex-column justify-center"
       data-aos="fade-up"
       data-aos-delay="500"
     >
-      <v-card color="secondary" class="pa-4 text-center my-5" rounded="0">
-        <div
-          class="text-h3 font-weight-bold my-4"
-          data-aos="fade-right"
-          data-aos-delay="900"
-        >
-          Support
-        </div>
-        <!-- <div class="sectionBody" data-aos="fade-left" data-aos-delay="900">
-          Mainly through donations provided by the philanthropists, scholars and
-          lovers of Sanskrit and culture in and around India and also abroad.
-        </div> -->
-      </v-card>
     </v-card>
-
+    <v-card color="secondary" class="pa-4 text-center" rounded="0">
+      <div
+        class="text-h3 font-weight-bold"
+        data-aos="fade-right"
+        data-aos-delay="900"
+      >
+        Support
+      </div>
+      <!-- <div class="sectionBody" data-aos="fade-left" data-aos-delay="900">
+        Mainly through donations provided by the philanthropists, scholars and
+        lovers of Sanskrit and culture in and around India and also abroad.
+      </div> -->
+    </v-card>
     <div
       class="text-center mx-auto d-flex flex-column justify-center"
       :style="$device.isMobile ? '' : 'width: 70vw; margin: 0 auto;'"

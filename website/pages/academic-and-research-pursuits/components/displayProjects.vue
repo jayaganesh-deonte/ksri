@@ -67,7 +67,7 @@
                         elevation="0"
                         rounded="2"
                         color="secondary"
-                        class="ma-2 pa-1"
+                        class="ma-2 pa-2 font-weight-bold"
                         variant="tonal"
                       >
                         {{ projectInvestigator(project.projectInvestigator) }}
@@ -83,7 +83,7 @@
                         elevation="0"
                         rounded="2"
                         color="secondary"
-                        class="ma-2 pa-1"
+                        class="ma-2 pa-2 font-weight-bold"
                         variant="tonal"
                       >
                         {{ project.coProjectInvestigators }}

@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-2" style="background-color: white">
+  <div class="mx-2" style="">
     <section-title title="Endowments" id="endowments" />
 
     <div

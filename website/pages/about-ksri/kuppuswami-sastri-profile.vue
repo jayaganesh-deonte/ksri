@@ -161,9 +161,17 @@
     </v-container>
     <v-divider />
 
-    <EditedAuthoredCard title="Edited" :editedInfo="editedInfo" />
+    <EditedAuthoredCard
+      title="Edited"
+      :editedInfo="editedInfo"
+      cardColor="primary"
+    />
     <v-divider />
-    <EditedAuthoredCard title="Authored" :editedInfo="authored" />
+    <EditedAuthoredCard
+      title="Authored"
+      :editedInfo="authored"
+      cardColor="secondary"
+    />
     <div class="text-h6 text-center" data-aos="fade-up" data-aos-delay="500">
       Presided over sections in the All India Oriental Conferences, Indian
       Philosophical Congress, Kanchipuram Parishads, and the Advaita Sabha of
