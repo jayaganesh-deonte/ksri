@@ -120,6 +120,7 @@ const fileInput = ref(null);
 const newFiles = ref([]);
 
 const getDocumentUrl = (docuemnt) => {
+  console.log("getDocumentUrl", docuemnt);
   return import.meta.env.VITE_IMAGE_CLOUDFRONT + docuemnt;
 };
 
@@ -236,11 +237,24 @@ const uploadFiles = async (e) => {
         };
         newFiles.value.push(newFile);
 
-        // Emit updated files
-        emit(
-          "files-updated",
-          newFiles.value.map((f) => f.url)
-        );
+        // for each newFiles
+        for (let file of newFiles.value) {
+          // remove cloudfront_domain from file.url
+          file.url = file.url.replace(cloudfront_domain, "");
+          console.log("file.url", file.url);
+          // remove leading / from file.url
+          file.url = file.url.replace(/^\//, "");
+
+          // Log the updated files array
+          console.log(
+            "Updated files:",
+            newFiles.value.map((f) => f.url)
+          );
+          emit(
+            "files-updated",
+            newFiles.value.map((f) => f.url)
+          );
+        }
 
         $toast.open({
           type: "success",

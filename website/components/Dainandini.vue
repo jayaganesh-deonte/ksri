@@ -13,9 +13,7 @@
           </template>
           <div class="text-h4 ml-4 defaultFont">Dainandini</div>
         </v-list-item>
-        <audio controls>
-          <source :src="getDainandini.audioFile" />
-        </audio>
+        <audio :src="getAssetUrl(getDainandini.audioFile)" controls></audio>
       </v-col>
       <v-col
         class="text-h6 defaultFont borderLeft pa-4"
