@@ -1,5 +1,8 @@
 <template>
   <div class="sun-editor-container">
+    <div class="text-secondary text-end">
+      * Add max of 1 image to editor under 50KB of size
+    </div>
     <div ref="suneditorElement"></div>
   </div>
 </template>
