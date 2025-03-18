@@ -1,12 +1,18 @@
 <template>
-  <!-- create dialog component -->
+  <!-- create dialog component with transition -->
   <v-dialog
     v-model="dialogModel"
     width="auto"
     v-if="store.isHomeDialogContentPresent"
     persistent
+    content-class="unfold-dialog scroll-dialog"
+    transition="unfold-transition"
   >
-    <v-card>
+    <v-card color="pageBackground" class="unfold-content scroll-content">
+      <!-- Decorative scroll top element -->
+      <div class="scroll-top-edge"></div>
+      <!-- Decorative scroll bottom element -->
+      <div class="scroll-bottom-edge"></div>
       <v-card color="secondary" rounded="0" elevation="0">
         <div class="ma-2 d-flex justify-space-between">
           <span class="text-h5">{{ store.homeDialogContent.title }}</span>
@@ -74,14 +80,24 @@ const checkIfHomeDialogVisitedInLocalStorage = async () => {
 const openDialogLink = () => {
   closeDialog();
 
-  const router = useRouter();
+  // const router = useRouter();
 
-  router.push(store.homeDialogContent.buttonLink);
+  // router.push(store.homeDialogContent.buttonLink);
+
+  // open url in new window
+  const url = store.homeDialogContent.buttonLink;
+  window.open(url, "_blank");
 };
 
 const closeDialog = async () => {
-  dialogModel.value = false;
-  await storeHomeDialogVisitedInLocalStorage();
+  // Add a class to play the closing animation
+  document.querySelector(".scroll-content")?.classList.add("closing");
+
+  // Wait for animation to complete before actually closing
+  setTimeout(async () => {
+    dialogModel.value = false;
+    await storeHomeDialogVisitedInLocalStorage();
+  }, 500);
 };
 
 onMounted(() => {
@@ -101,3 +117,141 @@ onMounted(() => {
   }, 1000);
 });
 </script>
+
+<style scoped>
+/* Custom transitions for the dialog */
+:deep(.unfold-transition-enter-active),
+:deep(.unfold-transition-leave-active) {
+  transition: all 0.6s ease-in-out;
+}
+
+:deep(.unfold-transition-enter-from) {
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+}
+
+:deep(.unfold-transition-leave-to) {
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+}
+
+:deep(.unfold-dialog) {
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+:deep(.scroll-dialog) {
+  overflow-y: visible !important;
+}
+
+.scroll-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-content.closing .scroll-bottom-edge {
+  animation: roll-up-bottom 0.5s ease-in forwards;
+}
+
+@keyframes roll-up-bottom {
+  0% {
+    transform: scaleY(1) translateY(0);
+    height: 20px;
+  }
+  100% {
+    transform: scaleY(0) translateY(-10px);
+    height: 50px;
+  }
+}
+
+.scroll-top-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to bottom, rgba(139, 69, 19, 0.6), transparent);
+  border-radius: 4px 4px 0 0;
+  z-index: 1;
+}
+
+.scroll-bottom-edge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to top, rgba(139, 69, 19, 0.6), transparent);
+  border-radius: 0 0 4px 4px;
+  z-index: 1;
+  animation: unroll-bottom 1s ease-out;
+  transform-origin: bottom;
+}
+
+:deep(.unfold-content) {
+  animation: scroll-unfurl 0.8s ease-out;
+  transform-origin: top;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 8px 8px;
+  position: relative;
+  overflow: hidden !important;
+}
+
+@keyframes scroll-unfurl {
+  0% {
+    transform: translateY(-100%) scaleY(0.1);
+    opacity: 0.3;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+  20% {
+    transform: translateY(-60%) scaleY(0.2);
+    opacity: 0.6;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+  }
+  40% {
+    transform: translateY(-30%) scaleY(0.4);
+    opacity: 0.7;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+  }
+  60% {
+    transform: translateY(-15%) scaleY(0.6);
+    opacity: 0.8;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+  }
+  80% {
+    transform: translateY(-5%) scaleY(0.9);
+    opacity: 0.9;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+@keyframes unroll-bottom {
+  0% {
+    transform: scaleY(0) translateY(-10px);
+    opacity: 0;
+    height: 40px;
+  }
+  50% {
+    transform: scaleY(0.5) translateY(-5px);
+    height: 30px;
+  }
+  100% {
+    transform: scaleY(1) translateY(0);
+    opacity: 1;
+    height: 20px;
+  }
+}
+</style>

@@ -38,7 +38,7 @@ const homeDialogFields = [
     type: "text",
     rules: [
       (v) => !!v || "Button Link is required",
-      (v) => /^\//.test(v) || "Link must be a relative path starting with /",
+      // (v) => /^\//.test(v) || "Link must be a relative path starting with /",
     ],
   },
   {

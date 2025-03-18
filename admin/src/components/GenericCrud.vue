@@ -242,7 +242,6 @@
                     <SunEditorComponent
                       v-if="field.type === 'editor'"
                       v-model="editedItem[field.key]"
-                      :height="'300px'"
                       :toolbar="'essential'"
                       :contentType="'html'"
                     />
