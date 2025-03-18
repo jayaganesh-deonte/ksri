@@ -23,7 +23,7 @@
         <v-btn
           rounded="pill"
           color="secondary"
-          variant="outlined"
+          variant="flat"
           @click="viewAlbumName = false"
         >
           View All Albums

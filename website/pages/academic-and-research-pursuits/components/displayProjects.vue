@@ -10,7 +10,10 @@
       <v-card class="pa-4 borderLeft" height="100%" rounded="0">
         <v-row>
           <v-col cols="12" :sm="display2ndColumn(project) ? 7 : 12">
-            <div class="text-h6 font-weight-bold" data-aos="fade-right">
+            <div
+              class="text-h6 font-weight-bold text-uppercase"
+              data-aos="fade-right"
+            >
               {{ project.title }}
             </div>
             <div class="horizontalLine my-4" style="--line-width: 20%"></div>

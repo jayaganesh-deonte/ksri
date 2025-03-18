@@ -1,9 +1,9 @@
 <template>
   <div class="mx-4">
-    <SectionTitle title="MM. PROF. KUPPUSWAMI SASTRI" />
+    <SectionTitle title="Mm. PROF. KUPPUSWAMI SASTRI" />
     <SectionSubtitle
-      subTitle="MAHAMAHOPADHYAYA, DARSANA KALANIDHI,VIDYAVACASPATI PROFESSOR KUPPUSWAMI
-      SASTRI (1880-1943)"
+      subTitle="Mahamahopadhyaya, Darsana Kalanidhi,Vidyavacaspati Professor Kuppuswami
+      Sastri (1880-1943)"
     ></SectionSubtitle>
     <v-row class="mt-12">
       <v-col cols="12" sm="12" md="1"> </v-col>

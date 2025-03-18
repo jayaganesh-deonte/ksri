@@ -821,6 +821,6 @@ export default {
   scrollbar-color: green;
   scrollbar-width: thin;
   overflow: scroll;
-  max-height: 80vh;
+  max-height: 100vh;
 }
 </style>

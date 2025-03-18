@@ -27,7 +27,7 @@ const endowmentFields = [
   {
     key: "topic",
     label: "Topic",
-    type: "text-area",
+    type: "textarea",
     rules: [(v) => !!v || "Topic is required"],
   },
   {

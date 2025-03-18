@@ -24,7 +24,7 @@
           data-aos="fade-right"
           data-aos-delay="650"
         >
-          <v-img :src="getAssetUrl('upload/about-ksri-fig.png')" fit></v-img>
+          <v-img src="/img/home-slide-bg-1.jpg" fit></v-img>
         </v-col>
         <v-col
           cols="12"

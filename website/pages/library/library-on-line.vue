@@ -18,30 +18,27 @@
       <div class="sectionSubtitle my-4" data-aos="fade-up">
         Focus on Digitization of Mss. and Rare Books
       </div>
-      <div class="d-flex" style="height: 40vh" v-if="!$device.isMobile">
-        <div>
-          <v-img
-            class=""
-            src="/img/library/library-racks-2.jpg"
-            cover
-            height="40vh"
-            width="50vw"
+      <v-row>
+        <v-col class="ma-0 pa-0">
+          <v-img class="" src="/img/library/library-racks-2.jpg" cover> </v-img>
+        </v-col>
+        <v-col class="ma-0 pa-0">
+          <v-card
+            class="sectionBody font-weight-bold d-flex text-justify align-center pa-2 ma-0"
+            rounded="0"
+            elevation="0"
+            height="100%"
+            data-aos="fade-left"
           >
-          </v-img>
-        </div>
-        <v-card
-          class="sectionBody font-weight-bold d-flex align-center pa-2"
-          rounded="0"
-          elevation="1"
-          data-aos="fade-left"
-        >
-          Realising the importance of the collection, the Institute is trying to
-          digitize the old books (70- 100 years old) and the Manuscripts. Under
-          the Millennium Project envisaged by the former President Dr.A.P.J.
-          Abdul Kalam, the Tirumala Tirupati Devasthanam has digitalized nearly
-          3000 books published before 1950 on various subjects.
-        </v-card>
-      </div>
+            Realising the importance of the collection, the Institute is trying
+            to digitize the old books (70- 100 years old) and the Manuscripts.
+            Under the Millennium Project envisaged by the former President
+            Dr.A.P.J. Abdul Kalam, the Tirumala Tirupati Devasthanam has
+            digitalized nearly 3000 books published before 1950 on various
+            subjects.
+          </v-card>
+        </v-col>
+      </v-row>
 
       <!-- for mobile -->
       <v-card
