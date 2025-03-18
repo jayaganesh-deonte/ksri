@@ -59,6 +59,7 @@
 <script setup>
 import { ref, computed } from "vue";
 
+import { ulid } from "ulidx";
 import { uploadToS3, deleteFromS3 } from "@/services/s3";
 
 import imageCompression from "browser-image-compression";
@@ -106,8 +107,7 @@ const uploadImages = async (e) => {
 
   for (let i = 0; i < files.length; i++) {
     // upload to s3
-    const s3Key = `images/${files[i].name}`;
-    //compress file using Imagecompression
+    const s3Key = `images/${ulid()}`;
     const imageCompressionOption = {
       maxSizeMB: 1,
       alwaysKeepResolution: true,

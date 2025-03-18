@@ -79,6 +79,8 @@
 
 <script setup>
 import { ref, computed, inject } from "vue";
+
+import { ulid } from "ulidx";
 import { uploadToS3, deleteFromS3 } from "@/services/s3";
 import $toast from "@/utilities/toast_notification";
 
@@ -236,7 +238,7 @@ const uploadFiles = async (e) => {
     try {
       // Generate S3 key with timestamp to prevent overwriting
       //   const timestamp = Date.now();
-      const s3Key = `files/${file.name}`;
+      const s3Key = `files/${ulid()}`;
 
       // Upload to S3
       const uploadRes = await uploadToS3(file, s3Key);
