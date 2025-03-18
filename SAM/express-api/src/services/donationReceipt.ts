@@ -72,7 +72,7 @@ const generateReceiptPDF = async (data: Payment) => {
                       {
                         // Logo on the left
                         image: `data:image/png;base64,${logoBase64}`,
-                        width: 80,
+                        width: 65,
                         alignment: "center",
                       },
                       {
@@ -82,6 +82,7 @@ const generateReceiptPDF = async (data: Payment) => {
                             text: "THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE",
                             style: "header",
                             alignment: "center",
+                            margin: [0, 15, 0, 0],
                           },
                           {
                             text: "(Regd. S.No. 32/1944-45 dated 24-2-1945)",
@@ -96,17 +97,10 @@ const generateReceiptPDF = async (data: Payment) => {
                             margin: [0, 5, 0, 0],
                           },
                           {
-                            text: "www.ksri.in",
-                            alignment: "center",
-                            fontSize: 11,
-                            margin: [0, 5, 0, 0],
-                          },
-
-                          {
                             text: "PAN: AAATT0629E",
-                            alignment: "center",
+                            width: 140, // Fixed width for PAN number
                             fontSize: 11,
-                            margin: [0, 5, 0, 0],
+                            alignment: "center",
                           },
                         ],
                         width: "*",
@@ -114,39 +108,82 @@ const generateReceiptPDF = async (data: Payment) => {
                     ],
                     margin: [0, 0, 0, 15],
                   },
-                  // Receipt heading
-                  {
-                    text: "RECEIPT",
-                    alignment: "center",
-                    fontSize: 14,
-                    bold: true,
-                    margin: [0, 0, 0, 15],
-                  },
-                  // Receipt number and date
+                  // Receipt heading with PAN and RECEIPT in same line
                   {
                     columns: [
                       {
-                        text: [
-                          { text: "No. ", fontSize: 11 },
-                          {
-                            text: receiptData.orderId,
-                            fontSize: 11,
-                            bold: true,
-                          },
-                        ],
+                        text: "RECEIPT",
+                        fontSize: 14,
+                        bold: true,
                         width: "*",
-                        alignment: "left",
+                        alignment: "center",
+                      },
+                      // {
+                      //   text: "", // Empty space on right to balance the layout
+                      //   width: 140, // Match the width of PAN on left side
+                      // },
+                    ],
+                    margin: [0, 0, 0, 15],
+                  },
+                  // Receipt number and date - RIGHT ALIGNED
+                  {
+                    columns: [
+                      {
+                        // Tax exemption notice on left
+                        table: {
+                          widths: ["*"],
+                          body: [
+                            [
+                              {
+                                text: "Donations are exempt 100% U/S 35(1) (iii) and U/S 80GGA of I.T.Act. 1961 Vide Notification No. 102 / 2007 (F. No. 203 / 68 / 2004 / ITA-II)",
+                                fontSize: 10,
+                                alignment: "left",
+                                margin: [2, 2, 2, 2],
+                              },
+                            ],
+                          ],
+                        },
+                        width: "50%",
                       },
                       {
-                        text: [
-                          { text: "Date: ", fontSize: 11 },
+                        // Right side with right-aligned receipt number and date
+                        stack: [
                           {
-                            text: receiptData.paymentDate,
-                            fontSize: 11,
+                            columns: [
+                              {
+                                text: "No.  ",
+                                width: 192,
+                                fontSize: 11,
+                                alignment: "right",
+                              },
+                              {
+                                text: receiptData.orderId,
+                                width: "*",
+                                fontSize: 11,
+                                bold: true,
+                                alignment: "left",
+                              },
+                            ],
+                          },
+                          {
+                            columns: [
+                              {
+                                text: "Date:  ",
+                                width: 200,
+                                fontSize: 11,
+                                alignment: "right",
+                              },
+                              {
+                                text: receiptData.paymentDate,
+                                width: "*",
+                                fontSize: 11,
+                                alignment: "left",
+                              },
+                            ],
+                            margin: [0, 5, 0, 0],
                           },
                         ],
-                        width: "auto",
-                        alignment: "right",
+                        width: "40%",
                       },
                     ],
                     margin: [0, 0, 0, 20],
@@ -175,7 +212,7 @@ const generateReceiptPDF = async (data: Payment) => {
                         fontSize: 11,
                       },
                     ],
-                    margin: [0, 0, 0, 15],
+                    margin: [0, 10, 0, 10],
                   },
                   {
                     text: [
@@ -194,7 +231,7 @@ const generateReceiptPDF = async (data: Payment) => {
                         fontSize: 11,
                       },
                     ],
-                    margin: [0, 0, 0, 15],
+                    margin: [0, 0, 0, 10],
                   },
                   // {
                   //   text: [
@@ -224,27 +261,52 @@ const generateReceiptPDF = async (data: Payment) => {
                         text: receiptData.paymentMethod,
                         fontSize: 11,
                       },
+                      // {
+                      //   text:
+                      //     receiptData.paymentMethod !== "Cash"
+                      //       ? " with Transaction ID: "
+                      //       : "",
+                      //   fontSize: 11,
+                      // },
+                      // {
+                      //   text:
+                      //     receiptData.paymentMethod !== "Cash"
+                      //       ? receiptData.paymentRefId
+                      //       : "",
+                      //   fontSize: 11,
+                      // },
+                      // { text: " Towards ", fontSize: 11 },
+                      // {
+                      //   text: "donation for Research Activities.",
+                      //   fontSize: 11,
+                      // },
+                    ],
+                    margin: [0, 0, 0, 10],
+                  },
+                  {
+                    text: [
                       {
                         text:
                           receiptData.paymentMethod !== "Cash"
-                            ? " with Transaction ID: "
+                            ? " with Transaction ID: " +
+                              receiptData.paymentRefId
                             : "",
                         fontSize: 11,
                       },
-                      {
-                        text:
-                          receiptData.paymentMethod !== "Cash"
-                            ? receiptData.paymentRefId
-                            : "",
-                        fontSize: 11,
-                      },
+                      // {
+                      //   text:
+                      //     receiptData.paymentMethod !== "Cash"
+                      //       ? receiptData.paymentRefId
+                      //       : "",
+                      //   fontSize: 11,
+                      // },
                       { text: " Towards ", fontSize: 11 },
                       {
                         text: "donation for Research Activities.",
                         fontSize: 11,
                       },
                     ],
-                    margin: [0, 0, 0, 15],
+                    margin: [0, 0, 0, 0],
                   },
                   // Amount box and Secretary in same line
                   {
@@ -281,22 +343,7 @@ const generateReceiptPDF = async (data: Payment) => {
                     ],
                     margin: [0, 20, 0, 20],
                   },
-                  // Tax exemption notice at bottom
-                  {
-                    table: {
-                      widths: ["*"],
-                      body: [
-                        [
-                          {
-                            text: "Donations are exempt 100% U/S 35(1) (iii) and U/S 80GGA of I.T.Act. 1961 Vide Notification No. 102 / 2007 (F. No. 203 / 68 / 2004 / ITA-II)",
-                            fontSize: 10,
-                            alignment: "center",
-                            margin: [2, 2, 2, 2],
-                          },
-                        ],
-                      ],
-                    },
-                  },
+
                   {
                     text: "* In the case of online payment, No signature is required for the  automatically generated e-receipt.",
                     fontSize: 10,
