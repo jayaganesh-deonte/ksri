@@ -18,6 +18,18 @@
       higher purpose of satisfaction to the person creating the endowments.
     </div>
 
+    <div class="d-flex justify-center align-center">
+      <v-card
+        class="ma-4 pa-4 font-weight-bold text-h6"
+        type="info"
+        color="secondary"
+        data-aos="zoom-in"
+        :width="$device.isMobile ? '' : '60vw'"
+      >
+        Those wishing to donate towards Corpus Fund / Endowments kindly contact
+        the Institute directly.
+      </v-card>
+    </div>
     <div
       class="text-h5 font-weight-bold text-center"
       data-aos="fade-up"
@@ -93,17 +105,6 @@
         </v-col>
       </v-row>
     </div>
-
-    <v-alert
-      class="ma-8 font-weight-bold text-body-1"
-      type="info"
-      variant="tonal"
-      color="secondary"
-      data-aos="zoom-in"
-    >
-      Those wishing to donate towards Corpus Fund / Endowments kindly contact
-      the Institute directly.
-    </v-alert>
 
     <contributeHeader />
   </div>

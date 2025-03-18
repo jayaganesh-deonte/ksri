@@ -28,7 +28,7 @@
       </v-col>
       <v-col cols="12" sm="9" md="9" class="text-start">
         <div class="text-body-1 font-weight-bold">
-          {{ truncatedTitle(item.title) }}
+          {{ truncatedTitle(item.heading) }}
         </div>
         <div
           class="my-2"

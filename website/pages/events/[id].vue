@@ -12,14 +12,18 @@
     </div>
     <v-card rounded="0" class="my-4 pa-4">
       <!-- add subtitle -->
-      <div class="text-subtitle-1 font-weight-bold" data-aos="fade-up">
-        {{ event.subtitle }}
-      </div>
-      <div class="my-2 text-h4 font-weight-bold" data-aos="fade-up">
+
+      <div
+        class="my-2 text-h4 font-weight-bold text-secondary text-uppercase"
+        data-aos="fade-up"
+      >
         {{ event.title }}
       </div>
-      <div data-aos="fade-up">
-        <div v-html="event.description"></div>
+      <div
+        class="text-subtitle-1 font-weight-bold text-primary"
+        data-aos="fade-up"
+      >
+        {{ event.subtitle }}
       </div>
 
       <!-- add one row with 3 cols for category, venue and date -->
@@ -61,6 +65,10 @@
           <div>{{ event.date }}</div>
         </v-col>
       </v-row>
+
+      <div data-aos="fade-up">
+        <div v-html="event.description"></div>
+      </div>
 
       <v-divider />
 

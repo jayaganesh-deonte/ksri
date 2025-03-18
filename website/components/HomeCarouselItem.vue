@@ -4,33 +4,43 @@
       <v-card
         color="transparent"
         height="100%"
-        class="d-flex flex-column justify-end align-center text-white text-center pb-4"
+        class="d-flex flex-column justify-end align-center text-white text-center pb-0"
         rounded="0"
         elevation="0"
+        width="100vw"
       >
         <v-card
-          color="rgb(255,255,255,0.5)"
+          color="rgb(203, 179, 117,0.8)"
           rounded="0"
           elevation="0"
           class="pa-4"
+          width="80vw"
         >
           <div style="backdrop-filter: blur(2px)" color="">
             <div
               class="font-weight-bold defaultFont text-primary fade-left"
-              style="--delay: 0.5s"
-              :class="`${$device.isMobile ? 'text-h6' : 'text-h3'}`"
+              style="
+                --delay: 0.5s;
+                text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+                  1px 1px 0 #fff;
+              "
+              :class="`${$device.isMobile ? 'text-h6' : 'text-h5'}`"
             >
               {{ titleText }}
-              <br />
+
               {{ titleTextLine2 }}
             </div>
             <div
-              class="defaultFont pa-4 fade-left text-primary"
-              style="--delay: 0.8s"
-              :class="`${$device.isMobile ? 'text-body-1' : 'text-h5'}`"
+              class="defaultFont pa-0 ma-0 fade-left text-primary font-weight-bold"
+              style="
+                --delay: 0.5s;
+                text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+                  1px 1px 0 #fff;
+              "
+              :class="`${$device.isMobile ? 'text-body-1' : 'text-body-1'}`"
             >
               {{ descriptionText }}
-              <br v-if="!$device.isMobile" />
+              <!-- <br v-if="!$device.isMobile" /> -->
               {{ descriptionTextLine2 }}
             </div>
           </div>
@@ -45,7 +55,8 @@
                   width="100%"
                   rounded="pill"
                   :color="button1Color"
-                  size="large"
+                  size="medium"
+                  class="pa-2"
                   @mouseover="changeButtonColorOnHover(1)"
                   @mouseleave="resetButtonColor(1)"
                 >
@@ -59,7 +70,8 @@
                 width="100%"
                 rounded="pill"
                 :color="button2Color"
-                size="large"
+                size="medium"
+                class="pa-2"
                 @mouseover="changeButtonColorOnHover(2)"
                 @mouseleave="resetButtonColor(2)"
               >

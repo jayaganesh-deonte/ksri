@@ -35,6 +35,11 @@
               <div class="text-center text-h6">
                 Chennai 600 004., Tamil Nadu, India
               </div>
+
+              <div class="text-center text-h6">
+                Phone: 044-24985320 / 044-29505320
+              </div>
+              <div class="text-center text-h6">Email: ksrinst@gmail.com</div>
             </div>
           </div>
         </v-col>
@@ -69,9 +74,16 @@
                     class="ma-2 font-weight-bold"
                     variant="outlined"
                   >
-                    * Note: KSRI has not registered under the FCRA and hence
-                    cannot accept donations from persons who are not Indian
-                    Citizens.
+                    NOTE:
+                    <br />
+                    1) KSRI has not registered under the FCRA and hence cannot
+                    accept donations from persons who are not Indian Citizens.
+
+                    <br /><br />
+                    2) Those wishing to donate towards Corpus Fund / Endowments
+                    / Projects, kindly contact the Institute directly. This link
+                    is only for donations towards research purposes and related
+                    activities.
                   </v-alert>
                 </div>
 
@@ -177,8 +189,24 @@
                   </div>
                 </div>
 
-                <!-- PAN field (required for both Indian and NRI) -->
-                <div class="form-field">
+                <!-- Add this right after the donor type selection -->
+                <div class="form-field" v-if="donorType === 'indian'">
+                  <div class="field-label">
+                    Do you have PAN? <span class="required-marker">*</span>
+                  </div>
+                  <div class="field-input">
+                    <v-radio-group v-model="hasPAN" inline>
+                      <v-radio label="Yes, I have PAN" :value="true"></v-radio>
+                      <v-radio
+                        label="No, I don't have PAN"
+                        :value="false"
+                      ></v-radio>
+                    </v-radio-group>
+                  </div>
+                </div>
+
+                <!-- Modify the PAN field (show only if hasPAN is true) -->
+                <div class="form-field" v-if="hasPAN || donorType === 'nri'">
                   <div class="field-label">
                     PAN <span class="required-marker">*</span>
                   </div>
@@ -193,14 +221,17 @@
                   </div>
                   <div
                     v-if="donorType === 'nri'"
-                    class="text-caption font-weight-bold text-grey"
+                    class="text-caption font-weight-bold text-black"
                   >
                     If NRI Citizen does not have PAN, fill as FFFPF9999F
                   </div>
                 </div>
 
-                <!-- Aadhaar (only for Indian citizens) -->
-                <div v-if="donorType === 'indian'" class="form-field">
+                <!-- Modify the Aadhaar field (show only if hasPAN is false) -->
+                <div
+                  v-if="donorType === 'indian' && !hasPAN"
+                  class="form-field"
+                >
                   <div class="field-label">
                     Aadhaar No. <span class="required-marker">*</span>
                   </div>
@@ -365,6 +396,7 @@ export default {
     return {
       token: "",
       donorType: "indian", // Default value - indian or nri
+      hasPAN: true,
       openDialog: false,
       isLoading: false,
       // For mobile number input
@@ -453,6 +485,7 @@ export default {
           label: "Pincode/Zip Code",
           required: true,
           placeholder: "Pincode/Zip Code",
+          type: "number",
         },
         {
           key: "billing_email",
@@ -568,13 +601,18 @@ export default {
     },
 
     validateIndianID() {
-      // For Indian citizens, at least one of PAN or Aadhaar must be provided
+      // For Indian citizens, logic depends on PAN availability
       if (this.donorType === "indian") {
-        const hasPAN = !!this.orderDetails.merchant_param1;
-        const hasAadhaar = !!this.orderDetails.merchant_param2;
-
-        if (!hasPAN && !hasAadhaar) {
-          return "Either PAN or Aadhaar is required";
+        if (this.hasPAN) {
+          // If they have PAN, it must be provided
+          if (!this.orderDetails.merchant_param1) {
+            return "PAN is required";
+          }
+        } else {
+          // If they don't have PAN, Aadhaar must be provided
+          if (!this.orderDetails.merchant_param2) {
+            return "Aadhaar is required";
+          }
         }
       }
       return true;
@@ -613,12 +651,22 @@ export default {
 
       // Additional validation for donor type specific fields
       if (this.donorType === "indian") {
-        const hasPAN = !!this.orderDetails.merchant_param1;
-        const hasAadhaar = !!this.orderDetails.merchant_param2;
-
-        if (!hasPAN && !hasAadhaar) {
-          alert("Either PAN or Aadhaar is required for Indian citizens");
-          return;
+        if (this.hasPAN) {
+          if (!this.orderDetails.merchant_param1) {
+            $toast.error("PAN is required for Indian citizens", {
+              timeout: 5000,
+              position: "top-right",
+            });
+            return;
+          }
+        } else {
+          if (!this.orderDetails.merchant_param2) {
+            $toast.error("Aadhaar is required when PAN is not available", {
+              timeout: 5000,
+              position: "top-right",
+            });
+            return;
+          }
         }
       } else if (this.donorType === "nri") {
         const hasPAN = !!this.orderDetails.merchant_param1;
@@ -694,9 +742,21 @@ export default {
       if (newValue === "indian") {
         this.orderDetails.merchant_param3 = "";
         this.orderDetails.merchant_param4 = "";
+        // Reset PAN availability to default when switching to Indian
+        this.hasPAN = true;
       } else if (newValue === "nri") {
         this.orderDetails.merchant_param2 = "";
         this.displayedAadhaar = "";
+      }
+    },
+    hasPAN(newValue) {
+      if (newValue) {
+        // If they have PAN, clear Aadhaar
+        this.orderDetails.merchant_param2 = "";
+        this.displayedAadhaar = "";
+      } else {
+        // If they don't have PAN, clear PAN
+        this.orderDetails.merchant_param1 = "";
       }
     },
 

@@ -14,9 +14,6 @@
               {{ project.title }}
             </div>
             <div class="horizontalLine my-4" style="--line-width: 20%"></div>
-            <div class="text-body-1" data-aos="fade-right">
-              {{ project.subTitle }}
-            </div>
           </v-col>
           <v-col cols="12" sm="5" v-if="display2ndColumn(project)">
             <v-card
@@ -37,6 +34,11 @@
               {{ project.publicationStatus }}
             </v-card>
           </v-col>
+        </v-row>
+        <v-row>
+          <div class="text-body-1 ma-4 text-justify" data-aos="fade-right">
+            {{ project.subTitle }}
+          </div>
         </v-row>
         <v-row>
           <v-col cols="12">

@@ -2,7 +2,7 @@
   <div>
     <v-carousel
       hide-delimiters
-      :style="`${$device.isMobile ? 'height: 100vh' : 'height: 90vh'}`"
+      :style="`${$device.isMobile ? 'height: 100vh' : 'height: 90vh;'}`"
       cycle
       continuous
       interval="8000"

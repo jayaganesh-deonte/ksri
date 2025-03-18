@@ -68,39 +68,42 @@
   {
     "id": "01JGM4T8Y0P1ZYD7J45JSGXNY9",
     "title": "English Translation of Kiratarjuniya",
-    "subTitle": "- Dr E R Rama Bai Chair",
+    "subTitle": " ",
     "status": "On-Going",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:35:31.648Z",
-      "updated_at": "2025-01-20T11:08:06.212Z",
+      "updated_at": "2025-03-17T05:46:11.968Z",
       "created_by": "admin"
     },
+    "sponsor": "- Dr E R Rama Bai Chair",
     "itemPublishStatus": "PUBLISHED"
   },
   {
     "id": "01JGM4T8Y0B4NV6N01HJNF7CQB",
     "title": "Critical Edition of Haṭhasaṅketa Chandrika of Sundara Deva",
-    "subTitle": "- D.P Santanam - Indic Academy Endowment",
+    "subTitle": " ",
     "status": "On-Going",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:35:31.648Z",
-      "updated_at": "2025-01-20T11:07:48.763Z",
+      "updated_at": "2025-03-17T05:44:10.216Z",
       "created_by": "admin"
     },
+    "sponsor": "- D.P Santanam - Indic Academy Endowment",
     "itemPublishStatus": "PUBLISHED"
   },
   {
     "id": "01JGM4T8Y1E6KRANTBZAJ6NE0V",
     "title": "Viracarita of Anantakavi",
-    "subTitle": "This is a Mahakavya which throws much light on the empire of Vikramaditya and Salivahanaera.This is being critically edited for the first time",
+    "subTitle": " ",
+    "description": "This is a Mahakavya which throws much light on the empire of Vikramaditya and Salivahanaera.This is being critically edited for the first time",
     "startYear": "2024",
     "status": "On-Going",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:35:31.649Z",
-      "updated_at": "2025-01-20T11:08:37.003Z",
+      "updated_at": "2025-03-17T05:49:51.097Z",
       "created_by": "admin"
     },
     "sponsor": "Central Sanskrit University",
@@ -238,14 +241,15 @@
   {
     "id": "01JGM4T8Y0X8XVAJKPKMAEXXQX",
     "title": "Vicara Sagaram Brahmasri Anna",
-    "subTitle": "- Subramanian Endowment",
+    "subTitle": " ",
     "status": "On-Going",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:35:31.648Z",
-      "updated_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-03-17T05:46:27.153Z",
       "created_by": "admin"
     },
+    "sponsor": "- Subramanian Endowment",
     "itemPublishStatus": "PUBLISHED"
   }
 ]

@@ -89,35 +89,40 @@
       <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="200">
         Human Resources
       </div>
-      <div style="height: 40vh" class="d-flex" v-if="!$device.isMobile">
-        <div>
-          <v-img
-            src="/img/library/library-racks-4.jpg"
-            cover
-            height="50vh"
-            width="50vw"
-            data-aos="fade-right"
-            data-aos-delay="900"
-          >
-          </v-img>
-        </div>
-        <div
-          class="sectionBody text-justify pa-4 text-h6 font-weight-bold text-white d-flex justify-center align-center"
-          data-aos="fade-left"
-          data-aos-delay="900"
-          style="background-color: #bf641f"
-        >
+      <v-row class="d-flex" v-if="!$device.isMobile">
+        <v-col class="ma-0 pa-0">
           <div>
-            The Kuppuswami Sastri Research Institute's Library is a Closed
-            Access system with its own special classification of subjects as it
-            is a special library dealing with books specifically on Sanskrit and
-            Indological studies. The library staff are trained in maintaining
-            and preserving by adopting the new techniques. The academic staff of
-            the Institute help the readers in understanding the texts and
-            suggest books for further studies.
+            <v-img
+              src="/img/library/library-racks-4.jpg"
+              cover
+              data-aos="fade-right"
+              data-aos-delay="900"
+            >
+            </v-img>
           </div>
-        </div>
-      </div>
+        </v-col>
+        <v-col class="ma-0 pa-0">
+          <v-card
+            height="100%"
+            elevation="0"
+            rounded="0"
+            class="sectionBody text-justify pa-4 text-h6 font-weight-bold text-white d-flex justify-center align-center"
+            data-aos="fade-left"
+            data-aos-delay="900"
+            style="background-color: #bf641f"
+          >
+            <div>
+              The Kuppuswami Sastri Research Institute's Library is a Closed
+              Access system with its own special classification of subjects as
+              it is a special library dealing with books specifically on
+              Sanskrit and Indological studies. The library staff are trained in
+              maintaining and preserving by adopting the new techniques. The
+              academic staff of the Institute help the readers in understanding
+              the texts and suggest books for further studies.
+            </div>
+          </v-card>
+        </v-col>
+      </v-row>
 
       <!-- for mobile: image in bg on 1st card and text in 2nd card aligned to center -->
       <v-card
@@ -156,7 +161,7 @@
         Workshop
       </div>
       <v-card
-        class="mx-auto sectionBody pa-4"
+        class="mx-auto sectionBody pa-4 ma-4"
         width="50vw"
         color="secondary"
         rounded="0"
@@ -187,7 +192,7 @@
         Training Programmes
       </div>
       <v-card
-        class="mx-auto sectionBody pa-4"
+        class="mx-auto sectionBody pa-4 ma-4"
         width="50vw"
         color="accentGreen"
         rounded="0"
@@ -213,7 +218,10 @@
       >
         <v-card-text>
           <div v-for="(service, index) in services" :key="index">
-            <div class="sectionBody my-4" v-html="service" />
+            <div
+              class="sectionBody my-4 text-primary font-weight-bold"
+              v-html="service"
+            />
           </div>
         </v-card-text>
       </v-card>
@@ -245,13 +253,13 @@
     <v-card
       elevation="0"
       rounded="0"
-      height="30vh"
+      height="40vh"
       class="supportBg d-flex flex-column justify-center"
       data-aos="fade-up"
       data-aos-delay="500"
     >
     </v-card>
-    <v-card color="secondary" class="pa-4 text-center" rounded="0">
+    <v-card color="secondary" class="pa-3 text-center" rounded="0">
       <div
         class="text-h3 font-weight-bold"
         data-aos="fade-right"

@@ -1,6 +1,7 @@
 <!-- src/pages/index.vue -->
 <template>
   <div class="my-n6 mb-n6 tulipBackground">
+    <Contribute class="mt-10" :displayContributeButton="false" />
     <PaymentForm />
   </div>
 </template>
