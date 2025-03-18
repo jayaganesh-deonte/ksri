@@ -7,7 +7,7 @@
     <!-- display buttons to filter events -->
     <div>
       <div
-        class="d-flex justify-center my-8"
+        class="d-flex justify-center mt-8"
         :class="$device.isMobile ? 'flex-wrap' : 'flex-row'"
       >
         <div v-for="(category, index) in storeEvents.categories" :key="index">
@@ -33,6 +33,16 @@
           </v-hover>
         </div>
       </div>
+    </div>
+
+    <!-- for endowment lectures -->
+    <div
+      v-if="activeCategory === 'Endowment Lectures'"
+      class="d-flex justify-center align-center text-center text-h6 font-weight-bold text-primary mb-8"
+    >
+      <a href="/contribute/endowments"
+        >Click here for list of Endowment Lectures</a
+      >
     </div>
 
     <!-- display events -->

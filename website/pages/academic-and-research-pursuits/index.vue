@@ -100,6 +100,7 @@
             density="compact"
             hide-details
             class="ma-2"
+            bg-color="white"
           ></v-text-field>
         </v-col>
         <!-- add two more col and then button in it to filter by status & filter by series -->
@@ -116,6 +117,7 @@
                 density="compact"
                 hide-details
                 class="ma-2"
+                bg-color="white"
               ></v-select>
             </template>
             <v-list>
@@ -147,6 +149,7 @@
                 density="compact"
                 hide-details
                 class="ma-2"
+                bg-color="white"
               ></v-select>
             </template>
             <v-list>

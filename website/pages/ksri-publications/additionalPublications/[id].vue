@@ -16,16 +16,24 @@
       <!-- add search based on book name (title), author name(author) -->
 
       <div v-if="!showSelectedBookDetails">
-        <v-text-field
-          class="ma-4"
-          v-model="searchQuery"
-          prepend-inner-icon="mdi-magnify"
-          label="Search by book title or author"
-          placeholder="Search by book title or author"
-          single-line
-          variant="outlined"
-          hide-details
-        ></v-text-field>
+        <v-row>
+          <v-col cols="12" md="4" data-aos="fade-up"> </v-col>
+          <v-col cols="12" md="4" data-aos="fade-up">
+            <v-text-field
+              class="ma-4"
+              v-model="searchQuery"
+              prepend-inner-icon="mdi-magnify"
+              label="Search by book title or author"
+              placeholder="Search by book title or author"
+              single-line
+              variant="outlined"
+              hide-details
+              bg-color="white"
+              rounded="pill"
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" md="4" data-aos="fade-up"> </v-col>
+        </v-row>
         <!-- book catalogue -->
         <div class="ma-4">
           <v-row>

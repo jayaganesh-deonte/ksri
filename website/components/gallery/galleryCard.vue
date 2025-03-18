@@ -17,7 +17,7 @@
         </div>
       </template>
     </v-img>
-    <div class="text-body-1">
+    <div class="text-body-1 text-primary ma-1">
       {{ image.description }}
     </div>
     <div

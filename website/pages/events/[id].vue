@@ -84,22 +84,22 @@
           fit
         ></v-img>
       </div> -->
-      <v-row class="ma-4 pa-2">
-        <v-col
-          v-for="(image, index) in event.images"
-          :key="index"
-          cols="12"
-          md="4"
-        >
-          <v-img
-            :src="getImageUrl(image)"
-            data-aos="fade-up"
-            :data-aos-delay="index * 100"
-            fit
-            :height="`${$device.isMobile ? '' : '30vh'}`"
-          ></v-img>
-        </v-col>
-      </v-row>
+      <v-card color="rgb(191, 100, 31,0.5)" elevation="0" rounded="0">
+        <v-row class="ma-1 pa-1">
+          <v-col
+            v-for="(image, index) in event.images"
+            :key="index"
+            cols="12"
+            md="3"
+            class="ma-0 pa-1"
+          >
+            <v-img
+              :src="getImageUrl(image)"
+              fit
+              :height="`${$device.isMobile ? '' : '30vh'}`"
+            ></v-img>
+          </v-col> </v-row
+      ></v-card>
 
       <!-- display next and previous btns -->
       <div class="ma-8 text-center">
