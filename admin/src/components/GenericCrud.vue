@@ -238,14 +238,13 @@
                       density="compact"
                     />
 
-                    <!-- editor -->
-
-                    <QuillEditor
-                      v-else-if="field.type === 'editor'"
-                      theme="snow"
-                      v-model:content="editedItem[field.key]"
-                      contentType="html"
-                      style="height: 300px"
+                    <!-- Replace the QuillEditor with SunEditor -->
+                    <SunEditorComponent
+                      v-if="field.type === 'editor'"
+                      v-model="editedItem[field.key]"
+                      :height="'300px'"
+                      :toolbar="'essential'"
+                      :contentType="'html'"
                     />
 
                     <v-autocomplete
@@ -402,6 +401,7 @@ import { inject } from "vue";
 import { ulid } from "ulidx";
 import ImageUpload from "./ImageUpload.vue";
 import DocumentUpload from "./DocumentUpload.vue";
+import SunEditorComponent from "./SunEditorComponent.vue";
 
 import { useAppStore } from "@/stores/app";
 import { storeToRefs } from "pinia";
@@ -476,6 +476,17 @@ let loading = ref(false);
 
 let exportMenu = ref(false);
 let selectedColumnsToExport = ref([]);
+
+// Quill editor options
+const options = {
+  debug: "info",
+  modules: {
+    toolbar: ["bold", "italic", "underline"],
+  },
+  placeholder: "Compose an epic...",
+  readOnly: true,
+  theme: "snow",
+};
 
 // add required fields into selectedColumnsToExport array so that they are pre-selected
 selectedColumnsToExport.value = props.entityFields

@@ -65,7 +65,6 @@
           <div>{{ event.date }}</div>
         </v-col>
       </v-row>
-
       <div data-aos="fade-up">
         <div v-html="event.description"></div>
       </div>
