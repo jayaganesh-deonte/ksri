@@ -1,7 +1,7 @@
 <template>
   <div class="floating-icons-panel">
-    <v-card elevation="2" class="icon-panel">
-      <v-list dense>
+    <v-card elevation="2" class="icon-panel" rounded="0">
+      <v-list dense style="background-color: rgb(203, 179, 117, 0.5)">
         <template v-for="(link, index) in socialMediaLinks" :key="link.name">
           <v-list-item :href="link.url" target="_blank" class="icon-item">
             <v-list-item-icon>

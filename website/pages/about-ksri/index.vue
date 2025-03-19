@@ -142,9 +142,18 @@
         in various capacities. The selfless services rendered by them at the
         helm ensured that the Institution remains widely acclaimed and reputed
         both within India and Abroad.
+
+        <br />
+        <br />
+
+        KSRI is well known in its area of operations in India and around the
+        world. KSRI has associations with the renowned University of Madras and
+        many other Indian and international academic institutions. KSRI is an
+        enabler of research for Indian and foreign scholars in their Doctorate
+        pursuits.
       </div>
     </v-card>
-    <v-card
+    <!-- <v-card
       elevation="0"
       rounded="0"
       class="pa-4 my-4 d-flex justify-center align-center overviewCard"
@@ -159,7 +168,7 @@
         enabler of research for Indian and foreign scholars in their Doctorate
         pursuits.
       </div>
-    </v-card>
+    </v-card> -->
   </div>
 </template>
 

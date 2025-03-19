@@ -2,7 +2,7 @@
   <!-- create dialog component with transition -->
   <v-dialog
     v-model="dialogModel"
-    width="auto"
+    :width="$device.isMobile ? '' : '50vw'"
     v-if="store.isHomeDialogContentPresent"
     persistent
     content-class="unfold-dialog scroll-dialog"
@@ -20,12 +20,23 @@
         </div>
       </v-card>
       <v-card-text>
-        <div class="text-h6">
-          <div v-html="store.homeDialogContent.description" />
+        <div class="sun-editor-editable">
+          <div
+            v-html="store.homeDialogContent.description"
+            class="sun-editor-editable"
+          />
         </div>
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
+        <v-btn
+          color="secondary"
+          variant="flat"
+          rounded="pill"
+          @click="dialogModel = false"
+        >
+          close
+        </v-btn>
         <v-btn
           color="primary"
           variant="flat"
@@ -38,6 +49,10 @@
     </v-card>
   </v-dialog>
 </template>
+
+<style>
+@import "https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css";
+</style>
 
 <script setup>
 // import store
