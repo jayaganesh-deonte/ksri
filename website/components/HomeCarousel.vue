@@ -7,29 +7,17 @@
       continuous
       interval="8000"
     >
-      <home-carousel-item
-        src="/img/home-slide-bg-1.jpg"
-        title-text="CENTRE FOR SANSKRIT"
-        title-text-line2="& INDOLOGY RESEARCH"
-        description-text="Chennai-based private, non-profit organization established in 1945 to conduct world-class research in Sanskrit"
-        description-text-line2=" literature and history, cultures, and religions of India"
-        button-text1="About KSRI"
-        :button-text1-route="'/about-ksri'"
-        button-text2="Get Involved with us"
-        :button-text2-route="'/contact-us'"
-      />
-
-      <home-carousel-item
-        src="/img/home-slide-bg-2.jpg"
-        title-text="KSRI LIBRARY"
-        title-text-line2="In-house & Online"
-        description-text="The Library is comprised of nearly 65,000 books and 1,500 Palmleaf Manuscripts on variety of Sanskrit"
-        description-text-line2="and Indological subjects like Dance and Music, Epigraphy, Ethics, Law, Language and Literature, Philosophy and Ayurveda."
-        button-text1="Library In-house"
-        button-text2="Library Online"
-        :button-text1-route="'/library'"
-        :button-text2-route="'/library/library-on-line'"
-      />
+      <template v-for="(item, index) in slideshowData" :key="index">
+        <home-carousel-item
+          :src="getAssetUrl(item.image[0])"
+          :title-text="item.titleText"
+          :description-text="item.descriptionText"
+          :button-text1="item.buttonText1"
+          :button-text2="item.buttonText2"
+          :button-text1-route="item.buttonText1Route"
+          :button-text2-route="item.buttonText2Route"
+        />
+      </template>
     </v-carousel>
   </div>
 </template>
@@ -41,6 +29,30 @@ export default {
     return {
       button1Color: "white",
       button2Color: "secondary",
+      slideshowData: [
+        {
+          src: "/img/home-slide-bg-1.jpg",
+          image: ["/home-slide-bg-1.jpg"],
+          titleText: "CENTRE FOR SANSKRIT & INDOLOGY RESEARCH",
+          descriptionText:
+            "Chennai-based private, non-profit organization established in 1945 to conduct world-class research in Sanskrit literature and history, cultures, and religions of India",
+          buttonText1: "About KSRI",
+          buttonText1Route: "/about-ksri",
+          buttonText2: "Get Involved with us",
+          buttonText2Route: "/contact-us",
+        },
+        {
+          src: "/img/home-slide-bg-2.jpg",
+          image: ["/home-slide-bg-2.jpg"],
+          titleText: "KSRI LIBRARY In-house & Online",
+          descriptionText:
+            "The Library is comprised of nearly 65,000 books and 1,500 Palmleaf Manuscripts on variety of Sanskrit and Indological subjects like Dance and Music, Epigraphy, Ethics, Law, Language and Literature, Philosophy and Ayurveda.",
+          buttonText1: "Library In-house",
+          buttonText2: "Library Online",
+          buttonText1Route: "/library",
+          buttonText2Route: "/library/library-on-line",
+        },
+      ],
     };
   },
   methods: {
@@ -58,6 +70,12 @@ export default {
         this.button2Color = "secondary";
       }
     },
+  },
+  async mounted() {
+    const slideshowData = await queryContent("slideshow").findOne();
+    console.log("slideshowData", slideshowData.body);
+
+    this.slideshowData = slideshowData.body;
   },
 };
 </script>

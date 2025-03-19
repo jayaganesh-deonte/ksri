@@ -1,0 +1,42 @@
+[
+  {
+    "id": "01JPQPN2RZR99RAQK2V02MM1NV",
+    "orderId": "1",
+    "image": [
+      "images/01JPQPN0A75AXCG812DECME74D"
+    ],
+    "metadata": {
+      "updated_by": "contactus@deonte.in",
+      "created_at": "2025-03-19T17:19:10.111Z",
+      "updated_at": "2025-03-19T17:24:38.230Z",
+      "created_by": "contactus@deonte.in"
+    },
+    "itemPublishStatus": "PUBLISHED",
+    "titleText": "CENTRE FOR SANSKRIT & INDOLOGY RESEARCH",
+    "descriptionText": "Chennai-based private, non-profit organization established in 1945 to conduct world-class research in Sanskrit literature and history, cultures, and religions of India",
+    "buttonText1": "About KSRI",
+    "buttonText1Route": "/about-ksri",
+    "buttonText2": "Get Involved with us",
+    "buttonText2Route": "/contact-us"
+  },
+  {
+    "id": "01JPQPPHTBGR33B8T9Y20TJ0J5",
+    "orderId": "2",
+    "image": [
+      "images/01JPQPPFS456PBTN925WTK11D4"
+    ],
+    "metadata": {
+      "updated_by": "contactus@deonte.in",
+      "created_at": "2025-03-19T17:19:58.283Z",
+      "updated_at": "2025-03-19T17:25:13.278Z",
+      "created_by": "contactus@deonte.in"
+    },
+    "itemPublishStatus": "PUBLISHED",
+    "titleText": "KSRI LIBRARY In-house & Online",
+    "descriptionText": "The Library is comprised of nearly 65,000 books and 1,500 Palmleaf Manuscripts on variety of Sanskrit and Indological subjects like Dance and Music, Epigraphy, Ethics, Law, Language and Literature, Philosophy and Ayurveda.",
+    "buttonText1": "Library In-house",
+    "buttonText1Route": "Library Online",
+    "buttonText2": "/library",
+    "buttonText2Route": "/library/library-on-line"
+  }
+]

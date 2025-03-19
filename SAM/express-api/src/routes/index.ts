@@ -59,6 +59,8 @@ import { paymentRouter } from "./payments/payment";
 import { receiptRouter } from "./payments/receipt";
 import { handlePaymentRouter } from "./payments/handleResponse";
 
+import { slideShowRoute } from "./slideShow";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -119,3 +121,5 @@ routes.use(paymentRouter);
 routes.use(receiptRouter);
 
 routes.use(handlePaymentRouter);
+
+routes.use(slideShowRoute);

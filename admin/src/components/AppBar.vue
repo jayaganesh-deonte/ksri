@@ -70,6 +70,11 @@ const allOptions = [
     icon: "mdi-newspaper",
     children: [
       {
+        title: "Home Slide Show",
+        path: "/slide-show",
+        icon: "mdi-image",
+      },
+      {
         title: "Home Dialog",
         path: "/home-dialog",
         icon: "mdi-post-outline",

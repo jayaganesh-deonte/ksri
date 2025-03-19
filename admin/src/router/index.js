@@ -61,6 +61,8 @@ import advisoryBoard from "@/views/faculty/advisoryBoard.vue";
 
 import donation from "@/views/donation/donation.vue"
 
+import slideShow from "@/views/updates/slideShow.vue";
+
 const routes = [
   {
     path: "/",
@@ -223,6 +225,13 @@ const routes = [
     name: "bannerText",
     component: bannerText,
     meta: { requiresAuth: true },
+  },
+  {
+    path: "/slide-show",
+    name: "slideShow",
+    component: slideShow,
+    meta: { requiresAuth: true },
+
   },
   {
     path: "/events",

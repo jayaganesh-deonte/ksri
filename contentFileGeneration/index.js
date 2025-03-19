@@ -518,6 +518,17 @@ var pageDetails = [
                 .sort(function (a, b) { return a.orderId - b.orderId; });
         },
     },
+    // slideshow
+    {
+        endpoint: "/slideshow",
+        outputFile: "../website/content/slideshow.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
+        filter: function (data) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.orderId - b.orderId; });
+        },
+    },
 ];
 var fixedData = [
     {

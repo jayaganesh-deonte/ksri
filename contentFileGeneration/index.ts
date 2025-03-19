@@ -450,6 +450,16 @@ const pageDetails = [
         .filter((item) => item.itemPublishStatus === "PUBLISHED")
         .sort((a, b) => a.orderId - b.orderId),
   },
+  // slideshow
+  {
+    endpoint: "/slideshow",
+    outputFile: "../website/content/slideshow.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.orderId - b.orderId),
+  },
 ];
 
 const fixedData = [
