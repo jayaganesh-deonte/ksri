@@ -299,6 +299,8 @@ const ancientIndianKnowledgeSeries = await queryContent(
   "ancientindianknowledgeseries"
 ).findOne();
 
+const slideshowData = await queryContent("slideshow").findOne();
+
 let activeStatus = ref("All");
 
 const projectStatus = [

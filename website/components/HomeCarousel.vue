@@ -32,7 +32,7 @@ export default {
       slideshowData: [
         {
           src: "/img/home-slide-bg-1.jpg",
-          image: ["/home-slide-bg-1.jpg"],
+          image: ["home-slide-bg-1.jpg"],
           titleText: "CENTRE FOR SANSKRIT & INDOLOGY RESEARCH",
           descriptionText:
             "Chennai-based private, non-profit organization established in 1945 to conduct world-class research in Sanskrit literature and history, cultures, and religions of India",
@@ -43,7 +43,7 @@ export default {
         },
         {
           src: "/img/home-slide-bg-2.jpg",
-          image: ["/home-slide-bg-2.jpg"],
+          image: ["home-slide-bg-2.jpg"],
           titleText: "KSRI LIBRARY In-house & Online",
           descriptionText:
             "The Library is comprised of nearly 65,000 books and 1,500 Palmleaf Manuscripts on variety of Sanskrit and Indological subjects like Dance and Music, Epigraphy, Ethics, Law, Language and Literature, Philosophy and Ayurveda.",
