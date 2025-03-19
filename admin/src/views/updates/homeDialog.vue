@@ -21,6 +21,11 @@ const homeDialogFields = [
     rules: [(v) => !!v || "Title is required"],
   },
   {
+    key: "backgroundColor",
+    label: "Background Color",
+    type: "color-picker",
+  },
+  {
     key: "description",
     label: "Description",
     type: "editor",

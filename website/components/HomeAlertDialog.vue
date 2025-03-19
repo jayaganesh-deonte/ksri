@@ -8,22 +8,42 @@
     content-class="unfold-dialog scroll-dialog"
     transition="unfold-transition"
   >
-    <v-card color="pageBackground" class="unfold-content scroll-content">
+    <v-card
+      class="unfold-content scroll-content"
+      :style="`background-color: ${
+        store.homeDialogContent.backgroundColor || 'white'
+      }`"
+    >
       <!-- Decorative scroll top element -->
       <div class="scroll-top-edge"></div>
       <!-- Decorative scroll bottom element -->
       <div class="scroll-bottom-edge"></div>
-      <v-card color="secondary" rounded="0" elevation="0">
+      <v-card
+        color="secondary"
+        rounded="0"
+        elevation="0"
+        :style="`background-color: ${
+          store.homeDialogContent.backgroundColor || 'white'
+        }`"
+      >
         <div class="ma-2 d-flex justify-space-between">
           <span class="text-h5">{{ store.homeDialogContent.title }}</span>
           <v-btn icon="mdi-close" variant="text" @click="closeDialog"></v-btn>
         </div>
       </v-card>
       <v-card-text>
-        <div class="sun-editor-editable">
+        <div
+          class="sun-editor-editable"
+          :style="`background-color: ${
+            store.homeDialogContent.backgroundColor || 'white'
+          }`"
+        >
           <div
             v-html="store.homeDialogContent.description"
             class="sun-editor-editable"
+            :style="`background-color: ${
+              store.homeDialogContent.backgroundColor || 'white'
+            }`"
           />
         </div>
       </v-card-text>

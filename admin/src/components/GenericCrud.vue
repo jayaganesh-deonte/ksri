@@ -282,6 +282,14 @@
                       :title="field.label"
                     />
 
+                    <ColorPicker
+                      v-else-if="field.type === 'color-picker'"
+                      :files="editedItem[field.key]"
+                      @selectedColor="
+                        (documents) => (editedItem[field.key] = documents)
+                      "
+                    />
+
                     <!-- display type =component -->
                     <component
                       v-else-if="field.type === 'component'"
@@ -405,6 +413,7 @@ import { ulid } from "ulidx";
 import ImageUpload from "./ImageUpload.vue";
 import DocumentUpload from "./DocumentUpload.vue";
 import SunEditorComponent from "./SunEditorComponent.vue";
+import ColorPicker from "./ColorPicker.vue";
 
 import { useAppStore } from "@/stores/app";
 import { storeToRefs } from "pinia";
