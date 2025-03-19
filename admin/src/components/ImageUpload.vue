@@ -37,7 +37,7 @@
           :src="getImageUrl(image)"
           alt="image"
           width="300"
-          v-if="image.length > 0"
+          v-if="image && image.length > 0"
         >
           <div class="d-flex justify-end ma-2">
             <!-- icon to delete image -->
@@ -131,7 +131,11 @@ const uploadImages = async (e) => {
       const cloudfront_domain = import.meta.env.VITE_IMAGE_CLOUDFRONT;
       const image = `${s3Key}`;
       newImages.value.push(image);
+      console.log("newImages.value", newImages.value);
 
+      // if any null value exists in newImages.value, remove it
+      newImages.value = newImages.value.filter((i) => i !== null);
+      console.log("newImages.value", newImages.value);
       // emit event to parent component
       emit("images-updated", newImages.value);
     }
