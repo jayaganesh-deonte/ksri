@@ -93,7 +93,7 @@ const pageDetails = [
     filter: (data: any[]) =>
       data
         .filter((item) => item.itemPublishStatus === "PUBLISHED")
-        .sort((b, a) => a.id - b.id)
+        .sort((a, b) => a.orderId - b.orderId)
         .map((item) => item.name),
   },
   // /gallery

@@ -1335,7 +1335,7 @@
     "imageUrls": [
       "images/yoga tattvopanishad.PNG"
     ],
-    "details": "<p>This text contains 142 verses dealing with many aspects of&nbsp;Haṭha Yoga including Prāṇāyāma with Praṇava, mudras and bandhas&nbsp;and also it is the only text which gives the description of mātrā.</p>",
+    "details": "<p><span style=\"font-size: 18px\">This text contains 142 verses dealing with many aspects of&nbsp;Haṭha Yoga including Prāṇāyāma with Praṇava, mudras and bandhas&nbsp;and also it is the only text which gives the description of mātrā.</span></p>",
     "id": "01JJBVABV569Q0JJK2HMDTBZY0",
     "publication": "The Samskrita Academy, Madras",
     "keywords": "Yoga",
@@ -1344,7 +1344,7 @@
     "metadata": {
       "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-24T09:47:01.349Z",
-      "updated_at": "2025-03-18T10:11:23.930Z",
+      "updated_at": "2025-03-19T07:47:00.210Z",
       "created_by": "demo"
     },
     "author": "Dr. V. Preethi",

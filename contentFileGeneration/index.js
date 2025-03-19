@@ -133,7 +133,7 @@ var pageDetails = [
         filter: function (data) {
             return data
                 .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
-                .sort(function (b, a) { return a.id - b.id; })
+                .sort(function (a, b) { return a.orderId - b.orderId; })
                 .map(function (item) { return item.name; });
         },
     },
