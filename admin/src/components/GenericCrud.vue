@@ -261,8 +261,10 @@
                     <ImageUpload
                       v-else-if="field.type === 'image'"
                       :images="
-                        Array.isArray(editedItem[field.key])
-                          ? editedItem[field.key]
+                        editedItem[field.key]
+                          ? Array.isArray(editedItem[field.key])
+                            ? editedItem[field.key]
+                            : []
                           : []
                       "
                       @images-updated="

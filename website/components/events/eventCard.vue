@@ -17,24 +17,32 @@
           <!-- First Row with Two Columns -->
           <v-row>
             <!-- Date Column -->
-            <v-col cols="12" sm="2" class="py-2">
-              <v-card
-                :color="isHovering ? 'secondary' : 'accentGreen'"
-                class="text-white"
-                elevation="0"
-                rounded="0"
+            <v-col cols="12" sm="3" class="text-center">
+              <!-- {{ event.avatarImage }} -->
+              <v-avatar
+                size="100%"
+                v-if="event.avatarImage && event.avatarImage.length > 0"
               >
-                <v-card-text class="text-center">
-                  <!-- <div class="text-h6">{{ formatDate(event.date)[0] }}</div>
-                  <div class="text-h6">{{ formatDate(event.date)[1] }}</div>
-                  <div class="text-h6">{{ formatDate(event.date)[2] }}</div> -->
-                  <div class="text-h6">{{ formatDate(event.date) }}</div>
-                </v-card-text>
-              </v-card>
+                <v-img
+                  :src="getAssetUrl(event.avatarImage[0])"
+                  :alt="event.title"
+                  class="rounded-lg"
+                  rounded
+                  aspect-ratio="1"
+                />
+              </v-avatar>
+
+              <v-img
+                v-else
+                src="/img/ksri_logo_bw.jpg"
+                :alt="event.title"
+                aspect-ratio="1"
+                class="my-auto"
+              />
             </v-col>
 
             <!-- Title and Details Column -->
-            <v-col cols="12" sm="10" class="py-2">
+            <v-col cols="12" sm="9" class="py-2">
               <div
                 class="text-h5 text-start pa-0 font-weight-bold"
                 :class="isHovering ? 'text-secondary' : 'text-primary'"
