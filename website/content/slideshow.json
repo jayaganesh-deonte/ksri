@@ -38,5 +38,25 @@
     "buttonText1Route": "/library",
     "buttonText2": "Library Online",
     "buttonText2Route": "/library/library-on-line"
+  },
+  {
+    "id": "01JPS62XPBRFZ3WGM1F76RG2G0",
+    "orderId": "3",
+    "image": [
+      "images/01JPS62RR5EKFQWS44NJQCZPHJ"
+    ],
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-20T07:08:06.731Z",
+      "updated_at": "2025-03-20T07:42:49.578Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "itemPublishStatus": "PUBLISHED",
+    "titleText": "KSRI Publications",
+    "descriptionText": "As a mark of the 75th year Anniversary Celebrations of the KSRI, 12 monographs covering varied topics under Indian Knowledge Series were published and released.",
+    "buttonText1": "Publications",
+    "buttonText1Route": "/ksri-publications/books",
+    "buttonText2": "Journal",
+    "buttonText2Route": "/ksri-publications/journals"
   }
 ]

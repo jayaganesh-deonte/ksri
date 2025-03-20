@@ -176,6 +176,31 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
+    "id": "01JPQ0AWQYSDEJZVBB364BZ5VP",
+    "title": "Vibhramaviveka",
+    "subTitle": " - Mandana Miśra",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "19.03.2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-19T10:49:07.582Z",
+      "updated_at": "2025-03-20T05:29:13.648Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "The Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "Philosophy",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Sudarshan Krishna"
+    ],
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "id": "01JJVF08P8DHFTXC49WMXHTW1B",
     "title": "Rare manuscript on Yoga",
     "subTitle": " ",

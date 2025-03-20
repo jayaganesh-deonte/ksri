@@ -57,9 +57,9 @@
     ],
     "id": "01JP28PXW1YQX8TBWBQT7H1YNJ",
     "metadata": {
-      "updated_by": "contactus@deonte.in",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-03-11T09:31:27.490Z",
-      "updated_at": "2025-03-19T16:57:33.983Z",
+      "updated_at": "2025-03-20T07:45:13.761Z",
       "created_by": "dhara0622@gmail.com"
     },
     "itemPublishStatus": "PUBLISHED"
@@ -74,18 +74,19 @@
     "venue": "Sri Chandrashekhara Saraswati Hall",
     "date": "2025-01-10",
     "images": [
-      "images/1.jpeg",
-      "images/2.jpeg",
-      "images/3.jpeg",
-      "images/4.jpeg",
-      "images/5.jpeg"
+      "images/01JPS74HC2YJWJ4BZGH9FVVAR8",
+      "images/01JPS74HRNA33GNZJN0PNYHTA2",
+      "images/01JPS754CYR967PQ8S0HPFSX8G",
+      "images/01JPS754R5PBAWJE9ZFMY50K4N"
     ],
-    "avatarImage": [],
+    "avatarImage": [
+      "images/01JPS74A3VK0BFW6T0G09JPGJZ"
+    ],
     "id": "01JNZ9S0XZ5SE6VN93WQ0MZFJY",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-03-10T05:52:21.439Z",
-      "updated_at": "2025-03-10T05:52:21.439Z",
+      "updated_at": "2025-03-20T07:27:17.858Z",
       "created_by": "dhara0622@gmail.com"
     },
     "itemPublishStatus": "PUBLISHED"
@@ -454,7 +455,7 @@
   {
     "title": "National Workshop on Sanskrit Literature ",
     "subtitle": "National Workshop on Sanskrit Literature  – 28 & 29 of June 2024",
-    "description": "The Kuppuswami Sastri Research Institute is celebrating its 75th anniversary.  To commemorate this milestone the institute organized a Two day National Workshop on Sanskrit Literature on 28th and 29th of June 2024.",
+    "description": "<p>The Kuppuswami Sastri Research Institute is celebrating its 75th anniversary.  To commemorate this milestone the institute organized a Two day National Workshop on Sanskrit Literature on 28th and 29th of June 2024.</p>",
     "category": [
       "Workshop"
     ],
@@ -504,9 +505,9 @@
     "avatarImage": [],
     "id": "01JGM4NDJ61R85TS9SAYC2M9PF",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-02T18:32:52.550Z",
-      "updated_at": "2025-01-02T18:32:52.550Z",
+      "updated_at": "2025-03-20T07:27:28.850Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"

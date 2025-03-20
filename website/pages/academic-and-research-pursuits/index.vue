@@ -418,6 +418,16 @@ const getEventsByCategory = computed(() => {
     filteredProjects = matchedProjects;
   } // if search is not empty, then filter based on project all keys
 
+  // sort the filterProjects to show publicationStatus as Upcoming first and then other status
+  filteredProjects.sort((a, b) => {
+    if (a.publicationStatus === "Upcoming") {
+      return -1;
+    }
+    if (b.publicationStatus === "Upcoming") {
+      return 1;
+    }
+    return 0;
+  });
   return filteredProjects;
 });
 </script>

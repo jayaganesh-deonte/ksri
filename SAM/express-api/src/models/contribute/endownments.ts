@@ -12,6 +12,7 @@ export interface Endownment {
   title: string;
   initiatedBy: string;
   topic: string;
+  orderId: string;
   metadata?: { [key: string]: any };
   itemPublishStatus: string;
 }
@@ -23,6 +24,7 @@ export interface EndownmentDDB {
   title: string;
   initiatedBy: string;
   topic: string;
+  orderId: string;
   metadata?: { [key: string]: any };
   itemPublishStatus: string;
 }
@@ -59,6 +61,7 @@ export function fromDynamoDB(item: EndownmentDDB): Endownment {
     title: item.title,
     initiatedBy: item.initiatedBy,
     topic: item.topic,
+    orderId: item.orderId,
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,
   };
@@ -84,6 +87,7 @@ export function toDynamoDB(item: Endownment): EndownmentDDB {
     title: item.title,
     initiatedBy: item.initiatedBy,
     topic: item.topic,
+    orderId: item.orderId,
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,
   };

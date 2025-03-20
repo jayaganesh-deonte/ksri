@@ -129,7 +129,19 @@ const endownmentsData = await queryContent(
   "endownments"
 ).findOne();
 
-const endownments = endownmentsData.body;
+let endownments = endownmentsData.body;
+
+// sort endownments based on orderId and then by id
+endownments.sort((a, b) => {
+  if (a.orderId < b.orderId) {
+    return -1;
+  }
+  if (a.orderId > b.orderId) {
+    return 1;
+  }
+
+  return 0;
+});
 
 const scrollTo = () => {
   const endowments = document.getElementById("endowments");

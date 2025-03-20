@@ -7,6 +7,7 @@
     persistent
     content-class="unfold-dialog scroll-dialog"
     transition="unfold-transition"
+    scrollable
   >
     <v-card
       class="unfold-content scroll-content"
@@ -31,7 +32,7 @@
           <v-btn icon="mdi-close" variant="text" @click="closeDialog"></v-btn>
         </div>
       </v-card>
-      <v-card-text>
+      <v-card-text style="overflow-y: auto; max-height: 60vh">
         <div
           class="sun-editor-editable"
           :style="`background-color: ${

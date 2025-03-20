@@ -11,6 +11,7 @@ const myCustomTheme = {
     surface: "#FFFFFF",
     primary: "#09341C",
     secondary: "#BF641F",
+    floatginButtonGreen: "",
     accent: "#F0F5F0",
     darkGreen: "#091F13",
     accentGreen: "#abbe88",

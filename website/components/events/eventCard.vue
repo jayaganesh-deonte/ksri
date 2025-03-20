@@ -17,20 +17,16 @@
           <!-- First Row with Two Columns -->
           <v-row>
             <!-- Date Column -->
-            <v-col cols="12" sm="3" class="text-center">
+            <v-col cols="12" sm="3" class="d-flex flex-column">
               <!-- {{ event.avatarImage }} -->
-              <v-avatar
-                size="100%"
+
+              <v-img
+                :src="getAssetUrl(event.avatarImage[0])"
                 v-if="event.avatarImage && event.avatarImage.length > 0"
-              >
-                <v-img
-                  :src="getAssetUrl(event.avatarImage[0])"
-                  :alt="event.title"
-                  class="rounded-lg"
-                  rounded
-                  aspect-ratio="1"
-                />
-              </v-avatar>
+                :alt="event.title"
+                class="my-auto"
+                aspect-ratio="1"
+              />
 
               <v-img
                 v-else
@@ -39,6 +35,23 @@
                 aspect-ratio="1"
                 class="my-auto"
               />
+
+              <v-card
+                :color="isHovering ? 'secondary' : 'secondary lighten-2'"
+                class="text-white mt-2 font-weight-bold"
+                height="50"
+                elevation="0"
+                rounded="0"
+              >
+                <v-card-text class="text-center">
+                  <!-- <div class="text-h6">{{ formatDate(event.date)[0] }}</div>
+                  <div class="text-h6">{{ formatDate(event.date)[1] }}</div>
+                  <div class="text-h6">{{ formatDate(event.date)[2] }}</div> -->
+                  <div class="text-body-1 font-weight-bold">
+                    {{ formatDate(event.date) }}
+                  </div>
+                </v-card-text>
+              </v-card>
             </v-col>
 
             <!-- Title and Details Column -->
