@@ -1,7 +1,8 @@
 <template>
   <v-app id="app">
     <app-bar></app-bar>
-    <v-main class="my-0">
+    <v-main class="my-0" style="background-color: #c9dfcb">
+      <FloatingIcon />
       <slot />
       <div class="socialMediaFooter">
         <Dainandini class="mt-12" />
@@ -123,5 +124,15 @@ onMounted(async () => {
   background-image: url("/img/icons/footer-background-flower.png");
   background-repeat: repeat;
   background-size: auto;
+}
+
+.bg {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url("/img/freepik__adjust__65503.png");
+  background-repeat: repeat;
+  background-size: 600px;
 }
 </style>

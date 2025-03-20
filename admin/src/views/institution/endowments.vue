@@ -27,8 +27,14 @@ const endowmentFields = [
   {
     key: "topic",
     label: "Topic",
-    type: "text-area",
+    type: "textarea",
     rules: [(v) => !!v || "Topic is required"],
+  },
+  {
+    key: "orderId",
+    label: "Order Id",
+    type: "text",
+    rules: [(v) => !!v || "orderId is required"],
   },
   {
     key: "itemPublishStatus",
@@ -43,6 +49,7 @@ const endowmentHeaders = [
   { title: "Title", key: "title" },
   { title: "Initiated By", key: "initiatedBy" },
   { title: "Topic", key: "topic" },
+  { key: "orderId", title: "Order Id" },
   { title: "Actions", key: "actions", sortable: false },
 ];
 </script>

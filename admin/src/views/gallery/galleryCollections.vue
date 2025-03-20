@@ -20,6 +20,13 @@ const galleryCollectionFields = [
     // editDisabled: true,
   },
   {
+    key: "orderId",
+    label: "Order Id",
+    type: "number",
+    rules: [(v) => !!v || "Order Id is required"],
+    // editDisabled: true,
+  },
+  {
     key: "itemPublishStatus",
     label: "Publish Status",
     type: "auto-complete",
@@ -30,6 +37,7 @@ const galleryCollectionFields = [
 
 const headers = [
   { title: "Name", key: "name" },
+  { title: "Order Id", key: "orderId" },
   { title: "Actions", key: "actions", sortable: false },
 ];
 </script>

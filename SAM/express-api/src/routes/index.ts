@@ -55,6 +55,12 @@ import { advisoryBoardRouter } from "./advisoryBoard";
 import { visitorCountRoute } from "./visitorCount";
 import { uniqueVisitorsRoute } from "./uniqueVistors";
 
+import { paymentRouter } from "./payments/payment";
+import { receiptRouter } from "./payments/receipt";
+import { handlePaymentRouter } from "./payments/handleResponse";
+
+import { slideShowRoute } from "./slideShow";
+
 export const routes = express.Router();
 
 routes.use(helloRoute);
@@ -110,3 +116,10 @@ routes.use(advisoryBoardRouter);
 
 routes.use(visitorCountRoute);
 routes.use(uniqueVisitorsRoute);
+
+routes.use(paymentRouter);
+routes.use(receiptRouter);
+
+routes.use(handlePaymentRouter);
+
+routes.use(slideShowRoute);

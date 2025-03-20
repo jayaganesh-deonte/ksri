@@ -37,7 +37,7 @@
           :src="getImageUrl(image)"
           alt="image"
           width="300"
-          v-if="image.length > 0"
+          v-if="image && image.length > 0"
         >
           <div class="d-flex justify-end ma-2">
             <!-- icon to delete image -->
@@ -59,6 +59,7 @@
 <script setup>
 import { ref, computed } from "vue";
 
+import { ulid } from "ulidx";
 import { uploadToS3, deleteFromS3 } from "@/services/s3";
 
 import imageCompression from "browser-image-compression";
@@ -106,8 +107,7 @@ const uploadImages = async (e) => {
 
   for (let i = 0; i < files.length; i++) {
     // upload to s3
-    const s3Key = `images/${files[i].name}`;
-    //compress file using Imagecompression
+    const s3Key = `images/${ulid()}`;
     const imageCompressionOption = {
       maxSizeMB: 1,
       alwaysKeepResolution: true,
@@ -131,7 +131,11 @@ const uploadImages = async (e) => {
       const cloudfront_domain = import.meta.env.VITE_IMAGE_CLOUDFRONT;
       const image = `${s3Key}`;
       newImages.value.push(image);
+      console.log("newImages.value", newImages.value);
 
+      // if any null value exists in newImages.value, remove it
+      newImages.value = newImages.value.filter((i) => i !== null);
+      console.log("newImages.value", newImages.value);
       // emit event to parent component
       emit("images-updated", newImages.value);
     }

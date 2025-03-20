@@ -21,6 +21,11 @@ const homeDialogFields = [
     rules: [(v) => !!v || "Title is required"],
   },
   {
+    key: "backgroundColor",
+    label: "Background Color",
+    type: "color-picker",
+  },
+  {
     key: "description",
     label: "Description",
     type: "editor",
@@ -38,7 +43,7 @@ const homeDialogFields = [
     type: "text",
     rules: [
       (v) => !!v || "Button Link is required",
-      (v) => /^\//.test(v) || "Link must be a relative path starting with /",
+      // (v) => /^\//.test(v) || "Link must be a relative path starting with /",
     ],
   },
   {

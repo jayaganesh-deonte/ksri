@@ -57,6 +57,13 @@ const userFields = [
     rules: [(v) => !!v || "Group is required"],
   },
   {
+    key: "userRoles",
+    label: "User Roles",
+    type: "auto-complete",
+    multiple: true,
+    items: ["finance"],
+  },
+  {
     key: "displayImage",
     label: "Display Image",
     type: "image",

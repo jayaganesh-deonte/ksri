@@ -12,14 +12,18 @@
     </div>
     <v-card rounded="0" class="my-4 pa-4">
       <!-- add subtitle -->
-      <div class="text-subtitle-1 font-weight-bold" data-aos="fade-up">
-        {{ event.subtitle }}
-      </div>
-      <div class="my-2 text-h4 font-weight-bold" data-aos="fade-up">
+
+      <div
+        class="my-2 text-h4 font-weight-bold text-secondary text-uppercase"
+        data-aos="fade-up"
+      >
         {{ event.title }}
       </div>
-      <div data-aos="fade-up">
-        <div v-html="event.description"></div>
+      <div
+        class="text-subtitle-1 font-weight-bold text-primary"
+        data-aos="fade-up"
+      >
+        {{ event.subtitle }}
       </div>
 
       <!-- add one row with 3 cols for category, venue and date -->
@@ -61,6 +65,9 @@
           <div>{{ event.date }}</div>
         </v-col>
       </v-row>
+      <div data-aos="fade-up">
+        <div v-html="event.description"></div>
+      </div>
 
       <v-divider />
 
@@ -76,22 +83,22 @@
           fit
         ></v-img>
       </div> -->
-      <v-row class="ma-4 pa-2">
-        <v-col
-          v-for="(image, index) in event.images"
-          :key="index"
-          cols="12"
-          md="4"
-        >
-          <v-img
-            :src="getImageUrl(image)"
-            data-aos="fade-up"
-            :data-aos-delay="index * 100"
-            fit
-            :height="`${$device.isMobile ? '' : '30vh'}`"
-          ></v-img>
-        </v-col>
-      </v-row>
+      <v-card color="rgb(191, 100, 31,0.5)" elevation="0" rounded="0">
+        <v-row class="ma-1 pa-1">
+          <v-col
+            v-for="(image, index) in event.images"
+            :key="index"
+            cols="12"
+            md="3"
+            class="ma-0 pa-1"
+          >
+            <v-img
+              :src="getImageUrl(image)"
+              fit
+              :height="`${$device.isMobile ? '' : '30vh'}`"
+            ></v-img>
+          </v-col> </v-row
+      ></v-card>
 
       <!-- display next and previous btns -->
       <div class="ma-8 text-center">

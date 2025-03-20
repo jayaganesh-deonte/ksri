@@ -13,29 +13,29 @@
     >
       <div v-for="button in libraryButtons" :key="button.name">
         <v-btn
-          :color="button.isHovering ? 'secondary' : 'primary'"
+          color="primary"
           rounded="pill"
           variant="flat"
           class="ma-2"
           :to="button.path"
-          @mouseover="button.isHovering = true"
-          @mouseleave="button.isHovering = false"
           v-if="button.name == activeButtonName"
         >
           {{ button.name }}
         </v-btn>
-        <v-btn
-          color="primary"
-          rounded="pill"
-          :variant="button.isHovering ? 'flat' : 'outlined'"
-          class="ma-2"
-          :to="button.path"
-          @mouseover="button.isHovering = true"
-          @mouseleave="button.isHovering = false"
-          v-else
-        >
-          {{ button.name }}
-        </v-btn>
+        <v-hover v-else>
+          <template v-slot:default="{ isHovering, props }">
+            <v-btn
+              v-bind="props"
+              :color="isHovering ? 'primary' : 'secondary'"
+              rounded="pill"
+              :variant="isHovering ? 'flat' : 'flat'"
+              class="ma-2"
+              :to="button.path"
+            >
+              {{ button.name }}
+            </v-btn>
+          </template>
+        </v-hover>
       </div>
     </div>
     <v-divider class="my-6" />
@@ -44,9 +44,9 @@
 
 <script setup>
 // props to show active button
-const props = defineProps({
-  activeButtonName: String,
-});
+// const props = defineProps({
+//   activeButtonName: String,
+// });
 
 const libraryButtons = reactive([
   {
@@ -65,4 +65,20 @@ const libraryButtons = reactive([
     isHovering: false,
   },
 ]);
+
+let activeButtonName = ref("Books");
+
+// from route check the activeButtonName
+onMounted(() => {
+  // from router path check the activeButtonName
+  const path = useRoute().path;
+  console.log("path", path);
+
+  // set activeButtonName
+  libraryButtons.forEach((button) => {
+    if (path.includes(button.name.toLowerCase())) {
+      activeButtonName.value = button.name;
+    }
+  });
+});
 </script>

@@ -100,6 +100,7 @@
             density="compact"
             hide-details
             class="ma-2"
+            bg-color="white"
           ></v-text-field>
         </v-col>
         <!-- add two more col and then button in it to filter by status & filter by series -->
@@ -116,6 +117,7 @@
                 density="compact"
                 hide-details
                 class="ma-2"
+                bg-color="white"
               ></v-select>
             </template>
             <v-list>
@@ -147,6 +149,7 @@
                 density="compact"
                 hide-details
                 class="ma-2"
+                bg-color="white"
               ></v-select>
             </template>
             <v-list>
@@ -296,6 +299,8 @@ const ancientIndianKnowledgeSeries = await queryContent(
   "ancientindianknowledgeseries"
 ).findOne();
 
+const slideshowData = await queryContent("slideshow").findOne();
+
 let activeStatus = ref("All");
 
 const projectStatus = [
@@ -413,6 +418,16 @@ const getEventsByCategory = computed(() => {
     filteredProjects = matchedProjects;
   } // if search is not empty, then filter based on project all keys
 
+  // sort the filterProjects to show publicationStatus as Upcoming first and then other status
+  filteredProjects.sort((a, b) => {
+    if (a.publicationStatus === "Upcoming") {
+      return -1;
+    }
+    if (b.publicationStatus === "Upcoming") {
+      return 1;
+    }
+    return 0;
+  });
   return filteredProjects;
 });
 </script>

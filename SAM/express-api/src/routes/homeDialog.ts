@@ -85,9 +85,13 @@ homeDialogRouter.get(
         KeyConditionExpression: "PK = :PK",
         ExpressionAttributeValues: {
           ":PK": "ENTITYTYPE#HOMEDIALOG",
+          ":status": "PUBLISHED",
         },
         //   id is lexagraphically sorted so sort it from old to new
         ScanIndexForward: false,
+
+        // filter only status published
+        FilterExpression: "itemPublishStatus = :status",
       });
 
       const homeDialogs =

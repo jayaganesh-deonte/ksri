@@ -4,7 +4,7 @@
     <HomeCarousel />
     <Dainandini />
     <HomeFounderIntro />
-    <VisionAndMission class="mt-12" />
+    <v-card> <VisionAndMission class="mt-12" /> </v-card>
     <Contribute class="mt-12" />
     <LibraryHomeCard class="mt-12" />
     <TImeLine />

@@ -68,6 +68,12 @@ const eventsFields = [
     rules: [(v) => !!v || "Date is required"],
   },
   {
+    key: "avatarImage",
+    label: "Avatar Image",
+    type: "image",
+    rules: [(v) => !!v || "Avatar Image is required"],
+  },
+  {
     key: "images",
     label: "Event Images",
     type: "image",

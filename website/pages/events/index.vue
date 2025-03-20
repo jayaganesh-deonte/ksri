@@ -7,21 +7,42 @@
     <!-- display buttons to filter events -->
     <div>
       <div
-        class="d-flex justify-center my-8"
+        class="d-flex justify-center mt-8"
         :class="$device.isMobile ? 'flex-wrap' : 'flex-row'"
       >
         <div v-for="(category, index) in storeEvents.categories" :key="index">
-          <v-btn
-            color="primary"
-            rounded="pill"
-            :variant="activeCategory === category ? 'flat' : 'outlined'"
-            class="ma-2"
-            @click="activeCategory = category"
-          >
-            {{ category }}
-          </v-btn>
+          <v-hover>
+            <template v-slot:default="{ isHovering, props }">
+              <v-btn
+                v-bind="props"
+                :color="
+                  activeCategory === category
+                    ? 'primary'
+                    : isHovering
+                    ? 'primary'
+                    : 'secondary'
+                "
+                rounded="pill"
+                :variant="activeCategory === category ? 'flat' : 'flat'"
+                class="ma-2"
+                @click="activeCategory = category"
+              >
+                {{ category }}
+              </v-btn>
+            </template>
+          </v-hover>
         </div>
       </div>
+    </div>
+
+    <!-- for endowment lectures -->
+    <div
+      v-if="activeCategory === 'Endowment Lectures'"
+      class="d-flex justify-center align-center text-center text-h6 font-weight-bold text-primary mb-8"
+    >
+      <a href="/contribute/endowments"
+        >Click here for list of Endowment Lectures</a
+      >
     </div>
 
     <!-- display events -->
@@ -90,3 +111,9 @@ const selectedEvents = computed(() => {
   }
 });
 </script>
+
+<style scoped>
+.eventsCategoryBtn:hover {
+  color: red;
+}
+</style>

@@ -8,7 +8,7 @@
         Indian Scholars - Traditional Study
       </div>
       <div
-        class="text-center sectionBody"
+        class="text-justify sectionBody"
         data-aos="fade-up"
         data-aos-delay="150"
       >
@@ -41,7 +41,7 @@
             height="100%"
             elevation="0"
             rounded="0"
-            class="ma-2 d-flex flex-column justify-space-between"
+            class="ma-2 pa-2 d-flex flex-column justify-space-between"
           >
             <div
               class="text-h6 text-secondary font-weight-bold"
@@ -67,12 +67,18 @@
       <v-row>
         <v-col data-aos="fade-right">
           <v-card class="pa-4 ma-2">
-            <div class="text-h6" data-aos="fade-up">
+            <v-card
+              class="text-h6 pa-2"
+              data-aos="fade-up"
+              color="primary"
+              rounded="0"
+              elevation="0"
+            >
               <v-icon color="accentGreen">mdi-information</v-icon>
 
               Scholars have obtained Vidyavaridhi (equivalent to Ph.D.),
               affiliated to the Rashtriya Sanskrit Sansthan, New Delhi.
-            </div>
+            </v-card>
 
             <v-divider
               thickness="3"
@@ -80,7 +86,7 @@
               class="my-6"
             ></v-divider>
 
-            <div class="sectionTitle3 text-start">
+            <div class="sectionTitle3 text-start text-primary">
               Vidyavaridhi (Ph.D, New Delhi) (1983-1995)
             </div>
 
@@ -116,12 +122,18 @@
         </v-col>
         <v-col data-aos="fade-left">
           <v-card class="pa-4 ma-2">
-            <div class="text-h6" data-aos="fade-up">
+            <v-card
+              class="text-h6 pa-2"
+              data-aos="fade-up"
+              color="primary"
+              rounded="0"
+              elevation="0"
+            >
               <v-icon color="accentGreen">mdi-information</v-icon>
 
               Scholars were awarded Shastrachudamani for undertaking research in
               various topics.
-            </div>
+            </v-card>
 
             <v-divider
               thickness="3"
@@ -129,7 +141,7 @@
               class="my-6"
             ></v-divider>
 
-            <div class="sectionTitle3 text-start">
+            <div class="sectionTitle3 text-start text-primary">
               Shastrachudamani (New Delhi) (1983-1995)
             </div>
 

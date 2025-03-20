@@ -46,19 +46,19 @@
           Preservation of Manuscripts and Books
         </div>
         <v-card
-          class="text-h5 libraryRack d-flex justify-center align-center"
+          class="text-h5 libraryRack font-weight-bold d-flex justify-center align-center"
           :class="$device.isMobile ? '' : 'mx-6'"
           width="100%"
-          :height="$device.isMobile ? '' : '70vh'"
           data-aos="fade-up"
           data-aos-delay="200"
+          rounded="0"
         >
-          <div class="">
+          <div class="text-justify">
             <v-card
-              color="secondary my-16 pa-4"
+              color="secondary my-16 pa-8"
               elevation="0"
               rounded="0"
-              :width="$device.isMobile ? '' : '70vw'"
+              :max-width="$device.isMobile ? '' : '40vw'"
               data-aos="fade-right"
               data-aos-delay="900"
               :class="$device.isMobile ? 'mx-2' : ''"
@@ -68,11 +68,11 @@
               conditioned stack room.
             </v-card>
             <v-card
-              color="primary my-16 pa-4"
+              color="primary my-16 pa-8"
               :class="$device.isMobile ? 'mx-2' : ''"
               elevation="0"
               rounded="0"
-              :width="$device.isMobile ? '' : '70vw'"
+              :max-width="$device.isMobile ? '' : '40vw'"
               data-aos="fade-left"
               data-aos-delay="900"
             >
@@ -89,36 +89,40 @@
       <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="200">
         Human Resources
       </div>
-      <div
-        class="imageWithTextAlignedToRight"
-        style="height: 50vh"
-        v-if="!$device.isMobile"
-      >
-        <div>
-          <v-img
-            src="/img/library/library-racks-4.jpg"
-            cover
-            height="50vh"
-            width="50vw"
-            data-aos="fade-right"
+      <v-row class="d-flex" v-if="!$device.isMobile">
+        <v-col class="ma-0 pa-0">
+          <div>
+            <v-img
+              src="/img/library/library-racks-4.jpg"
+              cover
+              data-aos="fade-right"
+              data-aos-delay="900"
+            >
+            </v-img>
+          </div>
+        </v-col>
+        <v-col class="ma-0 pa-0">
+          <v-card
+            height="100%"
+            elevation="0"
+            rounded="0"
+            class="sectionBody text-justify pa-4 text-h6 font-weight-bold text-white d-flex justify-center align-center"
+            data-aos="fade-left"
             data-aos-delay="900"
+            style="background-color: #bf641f"
           >
-          </v-img>
-        </div>
-        <div
-          class="sectionBody textOverlay pa-4 text-white"
-          data-aos="fade-left"
-          data-aos-delay="900"
-        >
-          The Kuppuswami Sastri Research Institute's Library is a Closed Access
-          system with its own special classification of subjects as it is a
-          special library dealing with books specifically on Sanskrit and
-          Indological studies. The library staff are trained in maintaining and
-          preserving by adopting the new techniques. The academic staff of the
-          Institute help the readers in understanding the texts and suggest
-          books for further studies.
-        </div>
-      </div>
+            <div>
+              The Kuppuswami Sastri Research Institute's Library is a Closed
+              Access system with its own special classification of subjects as
+              it is a special library dealing with books specifically on
+              Sanskrit and Indological studies. The library staff are trained in
+              maintaining and preserving by adopting the new techniques. The
+              academic staff of the Institute help the readers in understanding
+              the texts and suggest books for further studies.
+            </div>
+          </v-card>
+        </v-col>
+      </v-row>
 
       <!-- for mobile: image in bg on 1st card and text in 2nd card aligned to center -->
       <v-card
@@ -130,11 +134,7 @@
         v-if="$device.isMobile"
       >
         <v-img src="/img/library/library-racks-4.jpg" cover></v-img>
-        <div
-          class="sectionBody text-start ma-2"
-          data-aos="fade-up"
-          data-aos-delay="900"
-        >
+        <div class="sectionBody ma-2" data-aos="fade-up" data-aos-delay="900">
           The Kuppuswami Sastri Research Institute's Library is a Closed Access
           system with its own special classification of subjects as it is a
           special library dealing with books specifically on Sanskrit and
@@ -161,7 +161,8 @@
         Workshop
       </div>
       <v-card
-        class="mx-8 sectionBody pa-4"
+        class="mx-auto sectionBody pa-4 ma-4"
+        width="50vw"
         color="secondary"
         rounded="0"
         elevation="0"
@@ -191,7 +192,8 @@
         Training Programmes
       </div>
       <v-card
-        class="mx-8 my-8 sectionBody pa-4"
+        class="mx-auto sectionBody pa-4 ma-4"
+        width="50vw"
         color="accentGreen"
         rounded="0"
         data-aos="fade-left"
@@ -204,11 +206,26 @@
       </v-card>
     </v-card>
 
-    <div>
-      <div class="sectionSubtitle my-4" data-aos="fade-up" data-aos-delay="200">
+    <div class="d-flex flex-column justify-center align-center">
+      <div class="sectionSubtitle mt-4" data-aos="fade-up" data-aos-delay="200">
         Services
       </div>
-      <div>
+      <v-card
+        elevation="0"
+        rounded="0"
+        class="my-2"
+        :width="$device.isMobile ? '' : '60vw'"
+      >
+        <v-card-text>
+          <div v-for="(service, index) in services" :key="index">
+            <div
+              class="sectionBody my-4 text-primary font-weight-bold"
+              v-html="service"
+            />
+          </div>
+        </v-card-text>
+      </v-card>
+      <!-- <div>
         <v-row>
           <v-col
             v-for="(service, index) in services"
@@ -220,7 +237,7 @@
             data-aos="fade-up"
             :data-aos-delay="index * 300"
           >
-            <div class="sectionBody text-accentGreen">{{ index + 1 }}.</div>
+            <div class="sectionBody">❖</div>
             <div class="sectionBody my-4" v-html="service" />
             <v-divider
               class="my-4 mx-auto"
@@ -230,7 +247,7 @@
             />
           </v-col>
         </v-row>
-      </div>
+      </div> -->
     </div>
 
     <v-card
@@ -241,21 +258,20 @@
       data-aos="fade-up"
       data-aos-delay="500"
     >
-      <v-card color="secondary" class="pa-4 text-center my-5" rounded="0">
-        <div
-          class="text-h3 font-weight-bold my-4"
-          data-aos="fade-right"
-          data-aos-delay="900"
-        >
-          Support
-        </div>
-        <!-- <div class="sectionBody" data-aos="fade-left" data-aos-delay="900">
-          Mainly through donations provided by the philanthropists, scholars and
-          lovers of Sanskrit and culture in and around India and also abroad.
-        </div> -->
-      </v-card>
     </v-card>
-
+    <v-card color="secondary" class="pa-3 text-center" rounded="0">
+      <div
+        class="text-h3 font-weight-bold"
+        data-aos="fade-right"
+        data-aos-delay="900"
+      >
+        Support
+      </div>
+      <!-- <div class="sectionBody" data-aos="fade-left" data-aos-delay="900">
+        Mainly through donations provided by the philanthropists, scholars and
+        lovers of Sanskrit and culture in and around India and also abroad.
+      </div> -->
+    </v-card>
     <div
       class="text-center mx-auto d-flex flex-column justify-center"
       :style="$device.isMobile ? '' : 'width: 70vw; margin: 0 auto;'"
@@ -297,12 +313,12 @@
 import LibraryHeader from "./LibraryHeader.vue";
 
 const services = [
-  "Reprographic services are provided by the Library.",
-  "60% of our catalogue can be accessed through our Website : <a href='/library/books' style='text-decoration: unset;'>www.ksri.in/library/books</a> .",
-  "Separate reading room for researchers for their research.",
-  "Extensive research materials including special Encyclopaedias, Descriptive Catalogues of Manuscripts in various libraries all over the world, and general reference materials are also available.",
-  "The Library is open from 10.00 a.m. to 5.00 p.m. on all days except second Saturdays and Sundays and Government Holidays.",
-  "Members: Enrollment as Patrons, Fellows, Life and Reader and Borrowing Membership.",
+  "❖ Reprographic services are provided by the Library.",
+  "❖ 60% of our catalogue can be accessed through our Website : <a href='/library/books' style='text-decoration: unset;'>www.ksri.in/library/books</a> .",
+  "❖ Separate reading room for researchers for their research.",
+  "❖ Extensive research materials including special Encyclopaedias, Descriptive Catalogues of Manuscripts in various libraries all over the world, and general reference materials are also available.",
+  "❖ The Library is open from 10.00 a.m. to 5.00 p.m. on all days except second Saturdays and Sundays and Government Holidays.",
+  "❖ Members: Enrollment as Patrons, Fellows, Life and Reader and Borrowing Membership.",
 ];
 
 const getAssetUrl = (url) => {

@@ -47,16 +47,29 @@
       <!-- add search based on book name (title), author name(author) -->
 
       <div v-if="!showSelectedBookDetails">
-        <v-text-field
-          class="ma-4"
-          v-model="searchQuery"
-          prepend-inner-icon="mdi-magnify"
-          label="Search by book title or author"
-          placeholder="Search by book title or author"
-          single-line
-          variant="outlined"
-          hide-details
-        ></v-text-field>
+        <v-row>
+          <v-col cols="12" md="4" data-aos="fade-up"> </v-col>
+          <v-col cols="12" md="4" data-aos="fade-up">
+            <v-text-field
+              class="ma-4"
+              v-model="searchQuery"
+              prepend-inner-icon="mdi-magnify"
+              label="Search by book title or author"
+              placeholder="Search by book title or author"
+              single-line
+              variant="outlined"
+              hide-details
+              bg-color="white"
+              color="white"
+              rounded="pill"
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" md="4" data-aos="fade-up"> </v-col>
+        </v-row>
+        <div class="d-flex justify-center align-center">
+          <div></div>
+        </div>
+
         <!-- book catalogue -->
         <div class="ma-4">
           <v-row>
@@ -155,11 +168,16 @@ const booksData = await queryContent("publications", "books").findOne();
 const ksriBooks = booksData.body;
 
 const filterBooksBasedOnPublication = (publicationName) => {
-  // sort allBooks based on year of publication
-
+  // sort allBooks based on availability first, then year of publication
   let books = ksriBooks;
 
   books.sort((a, b) => {
+    // First sort by availability (Yes comes before No)
+    if (a.available !== b.available) {
+      return a.available === "Yes" ? -1 : 1;
+    }
+
+    // Then sort by year of publication (most recent first)
     const yearA = a.yearOfPublication.trim();
     const yearB = b.yearOfPublication.trim();
     if (yearA && yearB) {

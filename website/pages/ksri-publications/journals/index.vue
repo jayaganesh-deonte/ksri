@@ -55,16 +55,24 @@
       <!-- add search based on book name (title), author name(author) -->
 
       <div v-if="!showSelectedBookDetails">
-        <v-text-field
-          class="ma-4"
-          v-model="searchQuery"
-          prepend-inner-icon="mdi-magnify"
-          label="Search by journal title"
-          placeholder="Search by journal title"
-          single-line
-          variant="outlined"
-          hide-details
-        ></v-text-field>
+        <v-row>
+          <v-col cols="12" md="4" data-aos="fade-up"> </v-col>
+          <v-col cols="12" md="4" data-aos="fade-up">
+            <v-text-field
+              class="ma-4"
+              v-model="searchQuery"
+              prepend-inner-icon="mdi-magnify"
+              label="Search by journal title"
+              placeholder="Search by journal title"
+              single-line
+              variant="outlined"
+              hide-details
+              bg-white="white"
+              rounded="pill"
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" md="4" data-aos="fade-up"> </v-col>
+        </v-row>
 
         <!-- book catalogue -->
         <div class="ma-4">
@@ -185,6 +193,28 @@ const journals = computed((publicationName) => {
 
 const filteJournalsBasedOnPublication = (publicationName) => {
   let journals = additionalPublicationJournals[publicationName];
+
+  // Sort journals by availability first (Yes comes before No)
+  journals.sort((a, b) => {
+    // First sort by availability (Yes comes before No)
+    if (a.available !== b.available) {
+      return a.available === "Yes" ? -1 : 1;
+    }
+
+    // Then sort by year of publication (most recent first)
+    const yearA = a.yearOfPublication?.toString().trim();
+    const yearB = b.yearOfPublication?.toString().trim();
+    if (yearA && yearB) {
+      return yearA < yearB ? 1 : -1;
+    } else if (yearA) {
+      return -1;
+    } else if (yearB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+
   const query = searchQuery.value.toLowerCase();
 
   if (!query) return journals;

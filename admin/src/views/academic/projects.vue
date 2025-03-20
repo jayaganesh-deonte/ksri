@@ -142,7 +142,7 @@ const projectFields = [
     key: "publicationStatus",
     label: "Publication Status",
     type: "auto-complete",
-    items: ["Published", "Inprint", "Unpublished"],
+    items: ["Published", "Upcoming", "Unpublished"],
   },
   {
     key: "sponsor",

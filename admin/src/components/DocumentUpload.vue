@@ -79,6 +79,8 @@
 
 <script setup>
 import { ref, computed, inject } from "vue";
+
+import { ulid } from "ulidx";
 import { uploadToS3, deleteFromS3 } from "@/services/s3";
 import $toast from "@/utilities/toast_notification";
 
@@ -93,6 +95,7 @@ const props = defineProps({
     type: Array,
     default: () => [
       "image/*",
+      "audio/*",
       ".pdf",
       ".doc",
       ".docx",
@@ -100,6 +103,20 @@ const props = defineProps({
       ".mp3",
       ".wav",
       ".m4a",
+      ".aac",
+      ".ogg",
+      ".flac",
+      ".wma",
+      ".alac",
+      ".aiff",
+      ".ape",
+      ".opus",
+      ".amr",
+      ".au",
+      ".mid",
+      ".midi",
+      ".pcm",
+      ".dsd",
     ],
   },
   maxFileSize: {
@@ -120,6 +137,7 @@ const fileInput = ref(null);
 const newFiles = ref([]);
 
 const getDocumentUrl = (docuemnt) => {
+  console.log("getDocumentUrl", docuemnt);
   return import.meta.env.VITE_IMAGE_CLOUDFRONT + docuemnt;
 };
 
@@ -220,7 +238,7 @@ const uploadFiles = async (e) => {
     try {
       // Generate S3 key with timestamp to prevent overwriting
       //   const timestamp = Date.now();
-      const s3Key = `files/${file.name}`;
+      const s3Key = `files/${ulid()}`;
 
       // Upload to S3
       const uploadRes = await uploadToS3(file, s3Key);
@@ -236,11 +254,24 @@ const uploadFiles = async (e) => {
         };
         newFiles.value.push(newFile);
 
-        // Emit updated files
-        emit(
-          "files-updated",
-          newFiles.value.map((f) => f.url)
-        );
+        // for each newFiles
+        for (let file of newFiles.value) {
+          // remove cloudfront_domain from file.url
+          file.url = file.url.replace(cloudfront_domain, "");
+          console.log("file.url", file.url);
+          // remove leading / from file.url
+          file.url = file.url.replace(/^\//, "");
+
+          // Log the updated files array
+          console.log(
+            "Updated files:",
+            newFiles.value.map((f) => f.url)
+          );
+          emit(
+            "files-updated",
+            newFiles.value.map((f) => f.url)
+          );
+        }
 
         $toast.open({
           type: "success",

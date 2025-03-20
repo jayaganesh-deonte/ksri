@@ -82,9 +82,12 @@ dainandiniRouter.get(
         KeyConditionExpression: "PK = :entityType",
         ExpressionAttributeValues: {
           ":entityType": "ENTITYTYPE#DAINANDINI",
+          ":itemPublishStatus": "PUBLISHED",
         },
         //   id is lexagraphically sorted so sort it from old to new
         ScanIndexForward: false,
+        // filter published
+        FilterExpression: "itemPublishStatus = :itemPublishStatus",
       });
       res.json(
         result.Items?.map((item) => fromDynamoDB(item as DainandiniDDB))

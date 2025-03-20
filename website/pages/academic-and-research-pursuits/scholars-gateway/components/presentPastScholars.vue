@@ -3,7 +3,9 @@
     <!-- for courses -->
     <div v-for="course in courses" :key="course.name">
       <div v-if="hasStudentsForCourse(course)" class="my-8">
-        <div class="sectionTitle3">{{ course.name }}</div>
+        <div class="sectionTitle3 font-weight-bold text-center">
+          {{ course.name }}
+        </div>
         <div class="text-center">
           <div data-aos="fade-up ">{{ course.subTitle }}</div>
         </div>

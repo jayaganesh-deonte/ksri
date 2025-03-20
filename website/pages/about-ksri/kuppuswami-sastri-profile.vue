@@ -1,9 +1,9 @@
 <template>
   <div class="mx-4">
-    <SectionTitle title="MM. PROF. KUPPUSWAMI SASTRI" />
+    <SectionTitle title="Mm. PROF. KUPPUSWAMI SASTRI" />
     <SectionSubtitle
-      subTitle="MAHAMAHOPADHYAYA, DARSANA KALANIDHI,VIDYAVACASPATI PROFESSOR KUPPUSWAMI
-      SASTRI (1880-1943)"
+      subTitle="Mahamahopadhyaya, Darsana Kalanidhi,Vidyavacaspati Professor Kuppuswami
+      Sastri (1880-1943)"
     ></SectionSubtitle>
     <v-row class="mt-12">
       <v-col cols="12" sm="12" md="1"> </v-col>
@@ -57,7 +57,7 @@
       <div class="sectionTitle2" data-aos="fade-up" data-aos-delay="500">
         Mm. Prof. S. Kuppuswami Sastri - Career Details
       </div>
-      <div>
+      <div class="d-flex flex-column justify-start align-center">
         <v-card
           v-for="(item, index) in careerDetails"
           :key="index"
@@ -67,6 +67,7 @@
           min-height="100"
           data-aos="fade-up"
           :data-aos-delay="index * 100 + 500"
+          :width="$device.isMobile ? '' : '40vw'"
         >
           <div
             class="d-flex"
@@ -160,9 +161,17 @@
     </v-container>
     <v-divider />
 
-    <EditedAuthoredCard title="Edited" :editedInfo="editedInfo" />
+    <EditedAuthoredCard
+      title="Edited"
+      :editedInfo="editedInfo"
+      cardColor="primary"
+    />
     <v-divider />
-    <EditedAuthoredCard title="Authored" :editedInfo="authored" />
+    <EditedAuthoredCard
+      title="Authored"
+      :editedInfo="authored"
+      cardColor="secondary"
+    />
     <div class="text-h6 text-center" data-aos="fade-up" data-aos-delay="500">
       Presided over sections in the All India Oriental Conferences, Indian
       Philosophical Congress, Kanchipuram Parishads, and the Advaita Sabha of

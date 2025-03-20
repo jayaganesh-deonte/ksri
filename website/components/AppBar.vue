@@ -1,7 +1,61 @@
 <template>
   <div v-if="$device.isDesktop">
-    <v-app-bar id="app-bar" color="primary" height="70">
-      <div class="d-flex mx-auto">
+    <v-card
+      id="app-bar"
+      color="primary"
+      rounded="0"
+      elevation="0"
+      class="d-flex flex-column"
+    >
+      <v-card
+        color="primary"
+        height="50%"
+        class="d-flex flex-column justify-end ma-2"
+        rounded="0"
+        elevation="0"
+      >
+        <v-card
+          rounded="0"
+          elevation="0"
+          class="d-flex justify-center align-center"
+          :class="`${$device.isMobile ? 'flex-column ' : 'flex-row '}`"
+          color="primary"
+        >
+          <div>
+            <v-img
+              src="/img/ksri-logo-primary.png"
+              fit
+              :width="$device.isMobile ? 100 : 100"
+              :class="`${$device.isMobile ? '' : 'ml-auto mr-4'}`"
+              @mouseover="changeLogo"
+              @mouseleave="changeLogo"
+            >
+            </v-img>
+          </div>
+          <div>
+            <v-card-item class="ma-0 pa-0">
+              <v-card-text
+                class="font-weight-bold defaultFont text-gold text-center"
+              >
+                <div
+                  class="font-weight-bold pa-0"
+                  :class="`${$device.isMobile ? 'text-h6' : 'text-h4'}`"
+                >
+                  THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE
+                </div>
+                <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
+                  (Regd. S.No. 32/1944-45, Dt. 24-2-1945)
+                </div>
+
+                <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
+                  No. 84, Thiru Vi Ka Road, Mylapore, Chennai - 600 004.
+                </div>
+              </v-card-text>
+            </v-card-item>
+          </div>
+        </v-card>
+      </v-card>
+      <div class="d-flex mx-auto mt-0">
         <!-- add menu Options -->
         <div v-for="option in menuOptions" :key="option.name">
           <v-card
@@ -102,18 +156,64 @@
           </v-card>
         </div>
       </div>
-    </v-app-bar>
+    </v-card>
   </div>
   <span v-else>
     <!-- nav drawer -->
 
-    <v-app-bar id="app-bar" color="primary" height="70">
-      <v-app-bar-nav-icon @click="mobileNavDrawer = !mobileNavDrawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-app-bar-nav-icon>
-      <nuxt-link to="/" style="text-decoration: unset">
-        <v-app-bar-title class="text-white">The KSRI</v-app-bar-title>
-      </nuxt-link>
+    <v-app-bar
+      id="app-bar"
+      color="primary"
+      height="150"
+      scroll-behavior="elevate"
+      density="compact"
+    >
+      <v-card
+        width="100vw"
+        class="ma-0 pa-1"
+        color="primary"
+        elevation="0"
+        rounded="0"
+      >
+        <v-row justify="center" align="center">
+          <v-col cols="auto">
+            <v-img
+              src="/img/ksri-logo-primary.png"
+              fit
+              :width="$device.isMobile ? 60 : 60"
+              @mouseover="changeLogo"
+              @mouseleave="changeLogo"
+            >
+            </v-img>
+          </v-col>
+          <v-col justify="center" class="text-gold text-center">
+            <div class="text-body-1 mb-1">
+              THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE
+            </div>
+            <div
+              :class="$device.isMobile ? ' mb-1' : 'text-h6'"
+              style="font-size: 0.6rem"
+            >
+              (Regd. S.No. 32/1944-45, Dt. 24-2-1945)
+            </div>
+
+            <div
+              :class="$device.isMobile ? '' : 'text-h6'"
+              style="font-size: 0.6rem"
+            >
+              No. 84, Thiru Vi Ka Road, Mylapore, Chennai - 600 004.
+            </div>
+          </v-col>
+        </v-row>
+        <v-row class="mt-0">
+          <v-app-bar-nav-icon
+            class="mx-2"
+            @click="mobileNavDrawer = !mobileNavDrawer"
+          >
+            <v-icon>mdi-menu</v-icon>
+          </v-app-bar-nav-icon>
+        </v-row>
+      </v-card>
     </v-app-bar>
     <v-navigation-drawer v-model="mobileNavDrawer" temporary>
       <v-list nav dense>
@@ -263,7 +363,7 @@ const menuOptions = reactive([
         path: "/ksri-team/faculty",
       },
       {
-        name: "Editorial committee",
+        name: "Editorial Committee",
         path: "/ksri-team/editorialCommittee",
       },
       {
@@ -328,17 +428,24 @@ const menuOptions = reactive([
     showChildren: false,
     children: [
       //  Endowments, Bank Information,  By Post
+
+      {
+        name: "Contribute Now",
+        // path: "/payment/donation/",
+        path: "/contribute",
+        // description: "Contribute Now",
+      },
       {
         name: "Endowments",
         path: "/contribute/endowments",
         description:
           "Create an endowment to perpetuate the memory of your dear ones to hold a lecture annually in their names...",
       },
-      {
-        name: "Bank Information",
-        path: "/contribute/bank-information",
-        description: "List of Local/Foriegn contribution the bank particulars",
-      },
+      // {
+      //   name: "Bank Information",
+      //   path: "/contribute/bank-information",
+      //   description: "List of Local/Foriegn contribution the bank particulars",
+      // },
       // {
       //   name: "By Post",
       //   path: "/contribute/by-post",

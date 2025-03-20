@@ -158,7 +158,7 @@
           <v-icon
             size="small"
             @click="deleteItem(item)"
-            :disabled="isDeleteDisabledForUser"
+            :disabled="isDeleteDisabledForUser || !isDeleteEnabledForItem"
             :class="isDeleteDisabledForUser ? 'curor-not-allowed' : ''"
           >
             mdi-delete
@@ -238,14 +238,12 @@
                       density="compact"
                     />
 
-                    <!-- editor -->
-
-                    <QuillEditor
-                      v-else-if="field.type === 'editor'"
-                      theme="snow"
-                      v-model:content="editedItem[field.key]"
-                      contentType="html"
-                      style="height: 300px"
+                    <!-- Replace the QuillEditor with SunEditor -->
+                    <SunEditorComponent
+                      v-if="field.type === 'editor'"
+                      v-model="editedItem[field.key]"
+                      :toolbar="'essential'"
+                      :contentType="'html'"
                     />
 
                     <v-autocomplete
@@ -262,7 +260,13 @@
 
                     <ImageUpload
                       v-else-if="field.type === 'image'"
-                      :images="editedItem[field.key]"
+                      :images="
+                        editedItem[field.key]
+                          ? Array.isArray(editedItem[field.key])
+                            ? editedItem[field.key]
+                            : []
+                          : []
+                      "
                       @images-updated="
                         (images) => (editedItem[field.key] = images)
                       "
@@ -280,11 +284,21 @@
                       :title="field.label"
                     />
 
+                    <ColorPicker
+                      v-else-if="field.type === 'color-picker'"
+                      :files="editedItem[field.key]"
+                      @selectedColor="
+                        (documents) => (editedItem[field.key] = documents)
+                      "
+                    />
+
                     <!-- display type =component -->
                     <component
                       v-else-if="field.type === 'component'"
                       :is="field.component"
                       :editedItem="editedItem"
+                      v-bind="field.props || {}"
+                      @update:editedItem="(val) => (editedItem = val)"
                     />
                   </template>
 
@@ -400,6 +414,8 @@ import { inject } from "vue";
 import { ulid } from "ulidx";
 import ImageUpload from "./ImageUpload.vue";
 import DocumentUpload from "./DocumentUpload.vue";
+import SunEditorComponent from "./SunEditorComponent.vue";
+import ColorPicker from "./ColorPicker.vue";
 
 import { useAppStore } from "@/stores/app";
 import { storeToRefs } from "pinia";
@@ -437,6 +453,20 @@ const props = defineProps({
   fetchItemsWithPagination: {
     default: false,
   },
+  fixedValues: {
+    type: Object,
+    required: false,
+  },
+  updateItemPendingForDeployment: {
+    default: true,
+    type: Boolean,
+    required: false,
+  },
+  isDeleteEnabledForItem: {
+    default: true,
+    type: Boolean,
+    required: false,
+  },
 });
 
 const emit = defineEmits([
@@ -444,6 +474,7 @@ const emit = defineEmits([
   "item-updated",
   "item-deleted",
   "data-model-updated",
+  "all-items",
 ]);
 
 const swal = inject("$swal");
@@ -459,6 +490,17 @@ let loading = ref(false);
 
 let exportMenu = ref(false);
 let selectedColumnsToExport = ref([]);
+
+// Quill editor options
+const options = {
+  debug: "info",
+  modules: {
+    toolbar: ["bold", "italic", "underline"],
+  },
+  placeholder: "Compose an epic...",
+  readOnly: true,
+  theme: "snow",
+};
 
 // add required fields into selectedColumnsToExport array so that they are pre-selected
 selectedColumnsToExport.value = props.entityFields
@@ -578,6 +620,7 @@ const fetchItems = async () => {
       const response = await axiosInstance.get(props.apiEndpoint);
       items.value = response.data;
     }
+    emit("all-items", items.value);
     loading.value = false;
   } catch (error) {
     console.error(`Error fetching ${props.entityName}:`, error);
@@ -683,6 +726,11 @@ const save = async () => {
     const { valid } = await form.value.validate();
     console.log("valid", valid);
     if (!valid) {
+      $toast.open({
+        type: "error",
+        position: "top-right",
+        message: "Please fill all the required fields",
+      });
       return;
     }
     const payload = { ...editedItem.value };
@@ -704,6 +752,15 @@ const save = async () => {
       };
     }
 
+    // append fixedValues to payload if not exists
+    if (props.fixedValues) {
+      for (const [key, value] of Object.entries(props.fixedValues)) {
+        if (!payload[key]) {
+          payload[key] = value;
+        }
+      }
+    }
+
     console.log("payload", payload);
 
     const response = await axiosInstance.post(props.apiEndpoint, payload);
@@ -718,7 +775,9 @@ const save = async () => {
       await fetchItems();
 
       // update pending for deployment
-      await updatePendingForDeployment();
+      if (props.updateItemPendingForDeployment) {
+        await updatePendingForDeployment();
+      }
 
       // Emit events for parent component to listen
       if (editedIndex.value === -1) {
@@ -729,6 +788,12 @@ const save = async () => {
 
       close();
     } else {
+      // get error message
+      console.log("response", response.data);
+      const errorMessage = response.data
+        ? response.data.error
+        : "There was some error. Please try again";
+      console.error("errorMessage", errorMessage);
       $toast.open({
         type: "error",
         position: "top-right",
@@ -737,10 +802,13 @@ const save = async () => {
     }
   } catch (error) {
     console.error(`Error saving ${props.entityName}:`, error);
+    const errorMessage = error.response.data
+      ? error.response.data.error
+      : "There was some error. Please try again";
     $toast.open({
       type: "error",
       position: "top-right",
-      message: "There was some error. Please try again",
+      message: errorMessage,
     });
   }
 };
@@ -794,7 +862,14 @@ const exportAsCSV = () => {
   const csvContent = filteredItems
     .map((item) => {
       return selectedColumnsToExport.value
-        .map((key) => escapeCSVValue(item[key]))
+        .map((key) => {
+          // Check if there's a header with a value function for this key
+          const header = props.headers.find((h) => h.key === key);
+          if (header && typeof header.value === "function") {
+            return escapeCSVValue(header.value(item));
+          }
+          return escapeCSVValue(item[key]);
+        })
         .join(",");
     })
     .join("\n");
@@ -802,7 +877,9 @@ const exportAsCSV = () => {
   const csvHeader = selectedColumnsToExport.value
     .map((key) =>
       escapeCSVValue(
-        props.entityFields.find((header) => header.key === key).label
+        props.entityFields.find((header) => header.key === key)?.label ||
+          props.headers.find((header) => header.key === key)?.title ||
+          key
       )
     )
     .join(",");

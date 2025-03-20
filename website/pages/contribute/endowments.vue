@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-2" style="background-color: white">
+  <div class="mx-2" style="">
     <section-title title="Endowments" id="endowments" />
 
     <div
@@ -18,6 +18,18 @@
       higher purpose of satisfaction to the person creating the endowments.
     </div>
 
+    <div class="d-flex justify-center align-center">
+      <v-card
+        class="ma-4 pa-4 font-weight-bold text-h6"
+        type="info"
+        color="secondary"
+        data-aos="zoom-in"
+        :width="$device.isMobile ? '' : '60vw'"
+      >
+        Those wishing to donate towards Corpus Fund / Endowments kindly contact
+        the Institute directly.
+      </v-card>
+    </div>
     <div
       class="text-h5 font-weight-bold text-center"
       data-aos="fade-up"
@@ -117,7 +129,19 @@ const endownmentsData = await queryContent(
   "endownments"
 ).findOne();
 
-const endownments = endownmentsData.body;
+let endownments = endownmentsData.body;
+
+// sort endownments based on orderId and then by id
+endownments.sort((a, b) => {
+  if (a.orderId < b.orderId) {
+    return -1;
+  }
+  if (a.orderId > b.orderId) {
+    return 1;
+  }
+
+  return 0;
+});
 
 const scrollTo = () => {
   const endowments = document.getElementById("endowments");

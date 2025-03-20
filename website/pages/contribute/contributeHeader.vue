@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card elevation="0" rounded="0" color="greenBg">
+    <v-card elevation="0" rounded="0" color="pageBackground">
       <div class="pa-4">
         <section-title title="CONTRIBUTE" />
         <div class="sectionSubtitle2" data-aos="fade-up">
@@ -11,27 +11,29 @@
       </div>
     </v-card>
 
-    <v-card rounded="0" class="ma-4">
-      <!-- <div class="text-h6 text-center ma-4" data-aos="fade-up">
-        Contribution received by Sponsor, Membership, Projects & Corpus
-      </div> -->
+    <v-card rounded="0" class="ma-0">
       <v-img
-        :height="$device.isMobile ? '' : '50vh'"
+        :height="$device.isMobile ? 'auto' : '50vh'"
         src="/img/library/library-racks-5.jpg"
         cover
         class="d-flex justify-center align-center"
       >
-        <v-card color="primary" class="ma-4 pa-4 text-h6 text-center">
+        <v-card
+          color="primary"
+          :max-width="$device.isMobile ? '' : '50vw'"
+          class="ma-4 mx-auto text-justify pa-4"
+          :class="$device.isMobile ? 'text-body-1' : 'text-h6'"
+        >
           Corpus: The Institute is facing acute financial constraints
           Nevertheless its past record and present contribution to the cause of
-          Sanskrit and Indian culture is unmatched. To continue to march ahead
+          Sanskrit and Indian culture are unmatched. To continue to march ahead
           and to train youngsters in this noble task, it requires sound
           financial backing. We may require about INR 400,000,000 (Rs.40 crores
           approx.) - $ 6,000,000.
         </v-card>
       </v-img>
       <v-card
-        class="text-h6 pa-4 text-center"
+        class="text-h6 text-justify pa-4"
         color="secondary"
         elevation="0"
         rounded="0"

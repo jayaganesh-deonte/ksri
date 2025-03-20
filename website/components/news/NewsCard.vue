@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="pa-2 text-body-1 ma-2"
+    class="pa-2 text-body-1 ma-1"
     color="white"
     data-aos="fade-up-right"
     :data-aos-delay="200"
@@ -27,7 +27,9 @@
         </v-avatar>
       </v-col>
       <v-col cols="12" sm="9" md="9" class="text-start">
-        <div class="text-body-1">{{ truncatedTitle(item.title) }}</div>
+        <div class="text-body-1 font-weight-bold">
+          {{ truncatedTitle(item.heading) }}
+        </div>
         <div
           class="my-2"
           :class="isHovering ? 'text-secondary' : 'text-primary'"

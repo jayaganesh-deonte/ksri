@@ -1,6 +1,7 @@
 export interface HomeDialog {
   id: string;
   title: string;
+  backgroundColor: string;
   description: string;
   buttonText: string;
   buttonLink: string;
@@ -14,6 +15,7 @@ export interface HomeDialogDDB {
   entityType: string;
   id: string;
   title: string;
+  backgroundColor: string;
   description: string;
   buttonText: string;
   buttonLink: string;
@@ -42,6 +44,7 @@ export function fromDynamoDB(homeDialogDDB: HomeDialogDDB): HomeDialog {
   return {
     id: homeDialogDDB.id,
     title: homeDialogDDB.title,
+    backgroundColor: homeDialogDDB.backgroundColor,
     description: homeDialogDDB.description,
     buttonText: homeDialogDDB.buttonText,
     buttonLink: homeDialogDDB.buttonLink,
@@ -58,6 +61,7 @@ export function toDynamoDB(homeDialog: HomeDialog): HomeDialogDDB {
     entityType: "ENTITYTYPE#HOMEDIALOG",
     id: homeDialog.id,
     title: homeDialog.title,
+    backgroundColor: homeDialog.backgroundColor,
     description: homeDialog.description,
     buttonText: homeDialog.buttonText,
     buttonLink: homeDialog.buttonLink,

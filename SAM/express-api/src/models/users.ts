@@ -19,6 +19,7 @@ export interface User {
   email: string;
   phoneNumber: string;
   group: UserGroup;
+  userRoles: string[];
   displayImage: string[];
   metadata?: { [key: string]: string };
 }
@@ -30,6 +31,7 @@ export interface UserDDB {
   email: string;
   phoneNumber: string;
   group: UserGroup;
+  userRoles: string[];
   displayImage: string;
   metadata?: { [key: string]: string };
 }
@@ -44,6 +46,7 @@ export function toDynamoDB(item: User): UserDDB {
     email: item.email,
     phoneNumber: item.phoneNumber,
     group: item.group,
+    userRoles: item.userRoles,
     displayImage: item.displayImage[0],
     metadata: item.metadata,
   };
@@ -58,6 +61,7 @@ export function fromDynamoDB(item: UserDDB): User {
     email: item.email,
     phoneNumber: item.phoneNumber,
     group: item.group,
+    userRoles: item.userRoles,
     displayImage: [item.displayImage],
     metadata: item.metadata,
   };

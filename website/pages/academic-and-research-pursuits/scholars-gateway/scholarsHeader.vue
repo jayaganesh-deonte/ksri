@@ -44,15 +44,26 @@
     >
       <div v-for="subPage in subPages" :key="subPage">
         <nuxt-link :to="subPage.route">
-          <v-btn
-            color="primary"
-            :variant="activeButton == subPage.title ? 'flat' : 'outlined'"
-            class="ma-2"
-            rounded="pill"
-            style="text-transform: none"
-          >
-            {{ subPage.title }}</v-btn
-          >
+          <v-hover>
+            <template v-slot:default="{ isHovering, props }">
+              <v-btn
+                v-bind="props"
+                :color="
+                  activeButton === subPage.title
+                    ? 'primary'
+                    : isHovering
+                    ? 'primary'
+                    : 'secondary'
+                "
+                :variant="activeButton == subPage.title ? 'flat' : 'flat'"
+                class="ma-2"
+                rounded="pill"
+                style="text-transform: none"
+              >
+                {{ subPage.title }}
+              </v-btn>
+            </template>
+          </v-hover>
         </nuxt-link>
       </div>
     </div>

@@ -16,6 +16,7 @@ export interface Event {
   date: string;
   images: string[];
   id: string;
+  avatarImage: string[];
   metadata?: { [key: string]: any };
   itemPublishStatus: string;
 }
@@ -86,6 +87,7 @@ export function fromDynamoDB(item: EventDDB): Event {
     venue: item.venue,
     date: item.date,
     images: item.images,
+    avatarImage: item.avatarImage ? item.avatarImage : [],
     id: item.id,
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,
@@ -104,6 +106,7 @@ export function toDynamoDB(item: Event): EventDDB {
     venue: item.venue,
     date: item.date,
     images: item.images,
+    avatarImage: item.avatarImage,
     id: item.id,
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,

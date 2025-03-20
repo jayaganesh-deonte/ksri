@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-8">
+  <div class="ma-8">
     <div>
       <section-title title="ACADEMIC PROGRAMS" />
       <div class="sectionBody">
@@ -16,7 +16,7 @@
     <!-- simple table with supervisors details cols Name	Number of scholars pursuing Ph.D. under them	Vacancy -->
     <div class="ma-8 d-flex flex-column align-center">
       <div class="sectionTitle2" data-aos="fade-up">Supervisor / Guide</div>
-      <v-table :style="$device.isMobile ? '' : 'width:60%'">
+      <v-table :style="$device.isMobile ? '' : 'width:55vw'">
         <thead>
           <tr>
             <th class="text-left text-body-1 text-secondary">Name</th>
@@ -54,9 +54,19 @@
         </tbody>
       </v-table>
     </div>
-    <div class="ma-8 mt-16 sectionBody text-center">
-      Currently the Scholars pursuing Research under these programs are given
-      below
+    <div class="d-flex justify-center align-center">
+      <v-card
+        class="ma-8 mt-16 text-h5 font-weight-bold text-center"
+        elevation="0"
+        rounded="0"
+        color="primary"
+        :style="$device.isMobile ? '' : 'width:55vw'"
+      >
+        <div class="ma-2">
+          Currently the Scholars pursuing Research under these programs are
+          given below
+        </div>
+      </v-card>
     </div>
     <ModernScholars :past="false" :displayFilterBasedOnCourseBtn="false" />
   </div>

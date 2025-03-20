@@ -38,7 +38,7 @@ export const useAppStore = defineStore("app", {
     setUser(user) {
       this.user = user;
     },
-    setUserRole(groups) {
+    async setUserRole(groups,) {
       if (groups.includes("super_admin")) {
         this.isSuperAdmin = true;
       } else if (groups.includes("admin")) {
@@ -46,6 +46,27 @@ export const useAppStore = defineStore("app", {
       } else {
         this.isReadOnlyUser = true;
       }
+
+      // set user functionality 
+      // get all user from /users
+
+      const apiEndpoint = "/users";
+      const response = await axiosInstance.get(apiEndpoint);
+      // from response, get current user using email
+      const currentUser = response.data.find((user) => user.email == this.user.email);
+
+      // get userRoles from current user
+      const userRoles = currentUser.userRoles;
+
+      // if userRoles is not empty.
+      if (userRoles.length > 0) {
+        // get user functionality from userRoles
+        const userFunctionality = userRoles.join(",");
+
+        // set user functionality
+        this.user.functionality = userFunctionality;
+      }
+
     },
     async getDeploymentStatus() {
       const apiEndpoint = "/deploy/status";

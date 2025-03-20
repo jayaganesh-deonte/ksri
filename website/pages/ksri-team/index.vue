@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: white" class="d-flex flex-column align-center">
+  <div style="" class="d-flex flex-column align-center">
     <section-title title="KSRI Governing Body Members" />
 
     <div class="d-flex justify-center pa-2 ma-2">

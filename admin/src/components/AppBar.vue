@@ -70,6 +70,11 @@ const allOptions = [
     icon: "mdi-newspaper",
     children: [
       {
+        title: "Home Slide Show",
+        path: "/slide-show",
+        icon: "mdi-image",
+      },
+      {
         title: "Home Dialog",
         path: "/home-dialog",
         icon: "mdi-post-outline",
@@ -273,11 +278,37 @@ let menuOptions = computed(() => {
     },
   ];
 
+  let financeOptions = [
+    // donation
+    {
+      title: "Donation",
+      icon: "mdi-cash",
+      children: [
+        {
+          title: "Donation",
+          path: "/donation",
+        },
+        // {
+        //   title: "Donation Category",
+        //   path: "/donation-category",
+        // },
+      ],
+    },
+  ];
+
   let tempMenu = [...allOptions];
 
   // if user is super-admin add below options
   if (store.isSuperAdmin) {
     tempMenu = [...tempMenu, ...superAdminMenuOptions];
+  }
+
+  // if user.functionality contains finance add below options
+  if (
+    store.user.functionality &&
+    store.user.functionality.includes("finance")
+  ) {
+    tempMenu = [...tempMenu, ...financeOptions];
   }
 
   return tempMenu;

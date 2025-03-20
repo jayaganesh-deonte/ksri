@@ -17,10 +17,29 @@
           <!-- First Row with Two Columns -->
           <v-row>
             <!-- Date Column -->
-            <v-col cols="12" sm="2" class="py-2">
+            <v-col cols="12" sm="3" class="d-flex flex-column">
+              <!-- {{ event.avatarImage }} -->
+
+              <v-img
+                :src="getAssetUrl(event.avatarImage[0])"
+                v-if="event.avatarImage && event.avatarImage.length > 0"
+                :alt="event.title"
+                class="my-auto"
+                aspect-ratio="1"
+              />
+
+              <v-img
+                v-else
+                src="/img/ksri_logo_bw.jpg"
+                :alt="event.title"
+                aspect-ratio="1"
+                class="my-auto"
+              />
+
               <v-card
-                :color="isHovering ? 'secondary' : 'accentGreen'"
-                class="text-white"
+                :color="isHovering ? 'secondary' : 'secondary lighten-2'"
+                class="text-white mt-2 font-weight-bold"
+                height="50"
                 elevation="0"
                 rounded="0"
               >
@@ -28,15 +47,17 @@
                   <!-- <div class="text-h6">{{ formatDate(event.date)[0] }}</div>
                   <div class="text-h6">{{ formatDate(event.date)[1] }}</div>
                   <div class="text-h6">{{ formatDate(event.date)[2] }}</div> -->
-                  <div class="text-h6">{{ formatDate(event.date) }}</div>
+                  <div class="text-body-1 font-weight-bold">
+                    {{ formatDate(event.date) }}
+                  </div>
                 </v-card-text>
               </v-card>
             </v-col>
 
             <!-- Title and Details Column -->
-            <v-col cols="12" sm="10" class="py-2">
+            <v-col cols="12" sm="9" class="py-2">
               <div
-                class="text-h5 text-start pa-0"
+                class="text-h5 text-start pa-0 font-weight-bold"
                 :class="isHovering ? 'text-secondary' : 'text-primary'"
               >
                 {{ event.title }}
@@ -54,7 +75,7 @@
               ></div>
 
               <div class="text-start pa-0 mt-5">
-                <div v-html="event.description"></div>
+                <div v-html="event.subtitle"></div>
               </div>
               <v-chip-group class="mt-2">
                 <v-chip

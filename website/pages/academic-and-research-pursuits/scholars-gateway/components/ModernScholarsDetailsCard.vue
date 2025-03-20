@@ -14,15 +14,26 @@
     <!-- display mphil  scholars -->
     <div v-for="mphilStudent in scholars" :key="mphilStudent">
       <v-row class="ma-2" data-aos="fade-right">
-        <v-col cols="12" md="5">
+        <v-col>
           <div class="text-body-1 text-start">
             {{ mphilStudent.name }}
           </div>
         </v-col>
-        <v-col cols="12" md="7">
+        <v-col>
           <div class="text-body-1 text-start d-flex align-center">
             <v-icon>mdi-bookmark</v-icon>
             {{ mphilStudent.areaOfStudy }}
+          </div>
+        </v-col>
+        <v-col>
+          <div
+            class="text-body-1 text-start d-flex align-center"
+            v-if="mphilStudent.completedYear"
+          >
+            {{ mphilStudent.completedYear }}
+          </div>
+          <div class="text-body-1 text-start d-flex align-center" v-else>
+            {{ mphilStudent.startedYear }}
           </div>
         </v-col>
       </v-row>

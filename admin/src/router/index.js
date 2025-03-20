@@ -59,6 +59,10 @@ import facultyDesignations from "@/views/faculty/facultyDesignations.vue";
 
 import advisoryBoard from "@/views/faculty/advisoryBoard.vue";
 
+import donation from "@/views/donation/donation.vue"
+
+import slideShow from "@/views/updates/slideShow.vue";
+
 const routes = [
   {
     path: "/",
@@ -223,6 +227,13 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
+    path: "/slide-show",
+    name: "slideShow",
+    component: slideShow,
+    meta: { requiresAuth: true },
+
+  },
+  {
     path: "/events",
     name: "events",
     component: events,
@@ -264,6 +275,12 @@ const routes = [
     component: advisoryBoard,
     meta: { requiresAuth: true },
   },
+  {
+    path: "/donation",
+    name: "donation",
+    component: donation,
+    meta: { requiresAuth: true },
+  },
 ];
 
 const router = createRouter({
@@ -294,7 +311,7 @@ router.beforeEach(async (to, from, next) => {
         email: userAttributes.email,
         groups,
       });
-      appStore.setUserRole(groups);
+      await appStore.setUserRole(groups);
 
       const faro = window.faro;
       faro.api.setUser({

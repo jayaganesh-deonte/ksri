@@ -32,7 +32,10 @@
           :width="`${$device.isMobile ? '90vw' : '80vw'}`"
         >
           <!-- heading -->
-          <div class="text-h4 text-secondary defaultFont" data-aos="fade-right">
+          <div
+            class="text-h4 text-primary font-weight-bold defaultFont"
+            data-aos="fade-right"
+          >
             {{ news.heading }}
           </div>
           <v-img
@@ -43,6 +46,13 @@
             fit
             class="ma-2"
           ></v-img>
+
+          <div
+            class="text-h6 text-justify font-weight-bold text-secondary defaultFont"
+            data-aos="fade-right"
+          >
+            {{ news.title }}
+          </div>
 
           <!-- text -->
           <div class="text-h6 my-4 defaultFont text-left" data-aos="fade-left">

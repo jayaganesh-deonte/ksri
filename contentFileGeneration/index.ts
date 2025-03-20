@@ -93,7 +93,7 @@ const pageDetails = [
     filter: (data: any[]) =>
       data
         .filter((item) => item.itemPublishStatus === "PUBLISHED")
-        .sort((b, a) => a.id - b.id)
+        .sort((a, b) => a.orderId - b.orderId)
         .map((item) => item.name),
   },
   // /gallery
@@ -445,6 +445,16 @@ const pageDetails = [
     endpoint: "/chair",
     outputFile: "../website/content//chair.json",
     //  order based on orderId
+    filter: (data: any[]) =>
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.orderId - b.orderId),
+  },
+  // slideshow
+  {
+    endpoint: "/slideshow",
+    outputFile: "../website/content/slideshow.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
     filter: (data: any[]) =>
       data
         .filter((item) => item.itemPublishStatus === "PUBLISHED")

@@ -119,7 +119,6 @@ cursive;
     color: #BF641F;
     font-weight: 700;
     // center text
-    text-align: center;
 }
 
 .sectionBody {
@@ -127,6 +126,7 @@ cursive;
     font-size: 1.2rem;
     /*text vertical spacing*/
     line-height: 2;
+    text-align: justify;
 
 }
 

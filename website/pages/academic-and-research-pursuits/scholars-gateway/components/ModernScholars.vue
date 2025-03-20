@@ -56,6 +56,34 @@
         :activeCourse="activeCourse"
       />
     </div>
+
+    <!-- display All Scholars -->
+    <div v-if="activeButton === 'All'">
+      <!-- <presentPastScholars
+        :courses="courses"
+        :supervisors="supervisors"
+        :mPhilStudentsBySupervisor="mphilStudentsBySupervisor"
+        :phdStudentsBySupervisor="phdStudentsBySupervisor"
+        :activeCourse="activeCourse"
+      /> -->
+      <presentPastScholars
+        :courses="courses"
+        :supervisors="supervisors"
+        :mPhilStudentsBySupervisor="
+          (supervisor) => [
+            ...mphilStudentsBySupervisor(supervisor),
+            ...pastMPhilStudentsBySupervisor(supervisor),
+          ]
+        "
+        :phdStudentsBySupervisor="
+          (supervisor) => [
+            ...phdStudentsBySupervisor(supervisor),
+            ...pastPhdStudentsBySupervisor(supervisor),
+          ]
+        "
+        :activeCourse="activeCourse"
+      />
+    </div>
   </div>
 </template>
 
@@ -83,7 +111,7 @@ let filterBasedOnCourseBtn = ["All", "Ph.D.", "M.Phil"];
 
 let activeCourse = ref("All");
 
-let buttons = ["Present", "Past"];
+let buttons = ["Present", "Past", "All"];
 
 let activeButton = ref("Present");
 
@@ -125,13 +153,24 @@ const mphilStudentsBySupervisor = (supervisor) => {
 };
 
 const phdStudents = computed(() => {
-  return presentStudents.filter((student) => student.course === "Ph.D.");
+  return presentStudents
+    .filter((student) => student.course === "Ph.D.")
+    .sort((a, b) => {
+      if (!a.startedYear) return 1;
+      if (!b.startedYear) return -1;
+      return Number(b.startedYear) - Number(a.startedYear);
+    });
 });
 
 const phdStudentsBySupervisor = (supervisor) => {
-  return phdStudents.value.filter(
-    (student) => student.supervisor === supervisor
-  );
+  return phdStudents.value
+    .filter((student) => student.supervisor === supervisor)
+    .sort((a, b) => {
+      // Handle empty startedYear values by placing them at the end
+      if (!a.startedYear) return 1;
+      if (!b.startedYear) return -1;
+      return Number(b.startedYear) - Number(a.startedYear);
+    });
 };
 
 // past Phd students
@@ -143,7 +182,14 @@ const pastphdstudentsData = await queryContent(
 const pastPhdStudents = pastphdstudentsData.body;
 
 const pastPhdStudentsBySupervisor = (supervisor) => {
-  return pastPhdStudents.filter((student) => student.supervisor === supervisor);
+  return pastPhdStudents
+    .filter((student) => student.supervisor === supervisor)
+    .sort((a, b) => {
+      // Handle empty completedYear values by placing them at the end
+      if (!a.completedYear) return 1;
+      if (!b.completedYear) return -1;
+      return Number(b.completedYear) - Number(a.completedYear);
+    });
 };
 
 //  past M.Phil students
@@ -158,8 +204,13 @@ const pastMPhilStudents = pastMPhilStudentsData.body;
 const pastMPhilStudentsBySupervisor = (supervisor) => {
   console.log("pastMPhilStudentsBySupervisor", supervisor);
   console.log("pastMPhilStudents", pastMPhilStudents);
-  return pastMPhilStudents.filter(
-    (student) => student.supervisor === supervisor
-  );
+  return pastMPhilStudents
+    .filter((student) => student.supervisor === supervisor)
+    .sort((a, b) => {
+      // Handle empty completedYear values by placing them at the end
+      if (!a.completedYear) return 1;
+      if (!b.completedYear) return -1;
+      return Number(b.completedYear) - Number(a.completedYear);
+    });
 };
 </script>

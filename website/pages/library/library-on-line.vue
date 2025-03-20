@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ma-8">
     <div class="text-center my-12">
       <div
         class="text-h4 text-secondary font-weight-bold"
@@ -18,32 +18,27 @@
       <div class="sectionSubtitle my-4" data-aos="fade-up">
         Focus on Digitization of Mss. and Rare Books
       </div>
-      <div
-        class="imageWithTextAlignedToRight"
-        style="height: 50vh"
-        v-if="!$device.isMobile"
-      >
-        <v-img
-          class="imgOnRight"
-          src="/img/library/library-racks-2.jpg"
-          cover
-          height="50vh"
-          width="50vw"
-        >
-        </v-img>
-        <v-card
-          class="sectionBody textOverlayRight pa-4"
-          rounded="0"
-          elevation="4"
-          data-aos="fade-left"
-        >
-          Realising the importance of the collection, the Institute is trying to
-          digitize the old books (70- 100 years old) and the Manuscripts. Under
-          the Millennium Project envisaged by the former President Dr.A.P.J.
-          Abdul Kalam, the Tirumala Tirupati Devasthanam has digitalized nearly
-          3000 books published before 1950 on various subjects.
-        </v-card>
-      </div>
+      <v-row>
+        <v-col class="ma-0 pa-0">
+          <v-img class="" src="/img/library/library-racks-2.jpg" cover> </v-img>
+        </v-col>
+        <v-col class="ma-0 pa-0">
+          <v-card
+            class="sectionBody font-weight-bold d-flex text-justify align-center pa-2 ma-0"
+            rounded="0"
+            elevation="0"
+            height="100%"
+            data-aos="fade-left"
+          >
+            Realising the importance of the collection, the Institute is trying
+            to digitize the old books (70- 100 years old) and the Manuscripts.
+            Under the Millennium Project envisaged by the former President
+            Dr.A.P.J. Abdul Kalam, the Tirumala Tirupati Devasthanam has
+            digitalized nearly 3000 books published before 1950 on various
+            subjects.
+          </v-card>
+        </v-col>
+      </v-row>
 
       <!-- for mobile -->
       <v-card
@@ -85,30 +80,32 @@
 
     <v-card
       class="onlineLibBg d-flex flex-column justify-end my-8"
-      :height="$device.isMobile ? '' : '50vh'"
+      :min-height="$device.isMobile ? '' : '50vh'"
       data-aos="fade-up"
       data-aos-delay="200"
       rounded="0"
     >
       <v-card
-        color="primary pa-4  sectionBody mx-auto"
-        :class="$device.isMobile ? 'my-4 text-center' : ''"
-        :width="$device.isMobile ? '80%' : '60%'"
+        color="primary pa-4 ma-6 sectionBody mx-auto"
+        :class="$device.isMobile ? ' text-center' : ''"
+        :max-width="$device.isMobile ? '80%' : '40%'"
         data-aos="fade-up"
         data-aos-delay="200"
         rounded="0"
       >
-        Under Phase 1 all the palm-leaf manuscripts in the library have been
-        digitised. The major expenditure was met with from the donation given by
-        M/s RANE group, Chennai. Presently old and rare books(more than 100-200
-        years old) are being digitised. Thanks to the donations from some
-        philanthropists and corporate groups like Dr. Reddy’s Foundation, M/s
-        Brakes India Private Ltd., we are in the process of digitising more than
-        1000 books.
+        <div class="ma-2 font-weight-bold">
+          Under Phase 1 all the palm-leaf manuscripts in the library have been
+          digitised. The major expenditure was met with from the donation given
+          by M/s RANE group, Chennai. Presently old and rare books(more than
+          100-200 years old) are being digitised. Thanks to the donations from
+          some philanthropists and corporate groups like Dr. Reddy’s Foundation,
+          M/s Brakes India Private Ltd., we are in the process of digitising
+          more than 1000 books.
 
-        <br />
-        Once the digitisation is done, the Institute would upload the digitised
-        books/manuscripts.
+          <br />
+          Once the digitisation is done, the Institute would upload the
+          digitised books/manuscripts.
+        </div>
       </v-card>
     </v-card>
   </div>

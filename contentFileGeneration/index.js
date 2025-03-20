@@ -133,7 +133,7 @@ var pageDetails = [
         filter: function (data) {
             return data
                 .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
-                .sort(function (b, a) { return a.id - b.id; })
+                .sort(function (a, b) { return a.orderId - b.orderId; })
                 .map(function (item) { return item.name; });
         },
     },
@@ -512,6 +512,17 @@ var pageDetails = [
         endpoint: "/chair",
         outputFile: "../website/content//chair.json",
         //  order based on orderId
+        filter: function (data) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.orderId - b.orderId; });
+        },
+    },
+    // slideshow
+    {
+        endpoint: "/slideshow",
+        outputFile: "../website/content/slideshow.json",
+        // filter by itemPublishStatus =>"PUBLISHED"
         filter: function (data) {
             return data
                 .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
