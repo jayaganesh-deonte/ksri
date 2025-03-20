@@ -88,7 +88,7 @@
         <v-btn
           color="primary ma-2"
           rounded="pill"
-          :to="'/payment/donation/'"
+          :to="'/contribute'"
           :block="$device.isMobile"
         >
           Contribute</v-btn
