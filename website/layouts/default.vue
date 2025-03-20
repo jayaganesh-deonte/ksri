@@ -3,7 +3,9 @@
     <app-bar></app-bar>
     <v-main class="my-0" style="background-color: #c9dfcb">
       <FloatingIcon />
-      <slot />
+      <v-card elevation="0" rounded="0" color="transparent">
+        <slot />
+      </v-card>
       <div class="socialMediaFooter">
         <Dainandini class="mt-12" />
         <ContactUs class="mt-12" />

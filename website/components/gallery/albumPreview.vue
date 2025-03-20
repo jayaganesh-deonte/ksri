@@ -1,9 +1,9 @@
 <template>
-  <v-card class="ma-2" width="40vw" color="whiteBg">
+  <v-card class="ma-2" :width="$device.isMobile ? '' : '40vw'" color="whiteBg">
     <!-- Album Title -->
-    <v-card-title class="text-h6 font-weight-bold text-primary">{{
-      albumName
-    }}</v-card-title>
+    <div class="text-h6 font-weight-bold text-primary ma-2">
+      {{ albumName }}
+    </div>
 
     <!-- Image Grid -->
     <v-card-text>
