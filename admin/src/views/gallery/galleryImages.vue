@@ -22,6 +22,11 @@ export default {
           title: "Description",
         },
         {
+          key: "imageUrl",
+          title: "Image",
+          type: "image",
+        },
+        {
           key: "collection",
           title: "Collection",
         },

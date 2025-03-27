@@ -6,10 +6,17 @@
       rounded="0"
       elevation="0"
       class="d-flex flex-column"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        height: 210px;
+      "
     >
       <v-card
         color="primary"
-        height="50%"
         class="d-flex flex-column justify-end ma-2"
         rounded="0"
         elevation="0"
@@ -157,6 +164,8 @@
         </div>
       </div>
     </v-card>
+    <!-- Spacer to prevent content from being hidden behind fixed app bar -->
+    <div class="fixed-app-bar-spacer" style="height: 210px"></div>
   </div>
   <span v-else>
     <!-- nav drawer -->

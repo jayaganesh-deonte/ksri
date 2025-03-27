@@ -1,16 +1,37 @@
 <template>
-  <div class="floating-icons-panel">
-    <v-card elevation="2" class="icon-panel" rounded="0">
-      <v-list dense style="background-color: rgb(191, 100, 31, 0.5)">
-        <search />
-        <template v-for="(link, index) in socialMediaLinks" :key="link.name">
-          <v-list-item :href="link.url" target="_blank" class="icon-item">
-            <v-list-item-icon>
-              <v-icon color="primary">{{ link.icon }}</v-icon>
-            </v-list-item-icon>
-          </v-list-item>
+  <div class="floating-icons-container">
+    <v-card
+      elevation="2"
+      class="icon-panel"
+      :class="{ 'panel-collapsed': isCollapsed }"
+    >
+      <v-list
+        dense
+        style="background-color: rgb(191, 100, 31, 0.5)"
+        class="pa-0 ma-0"
+      >
+        <v-list-item class="toggle-list-item pa-0 ma-0" @click="togglePanel">
+          <v-list-item-icon class="pa-0 ma-0">
+            <v-icon color="primary" class="pa-0 ma-0">
+              {{ isCollapsed ? "mdi-chevron-left" : "mdi-chevron-right" }}
+            </v-icon>
+          </v-list-item-icon>
+        </v-list-item>
 
-          <v-divider v-if="index < socialMediaLinks.length - 1"></v-divider>
+        <template v-if="!isCollapsed">
+          <v-divider></v-divider>
+
+          <search />
+
+          <template v-for="(link, index) in socialMediaLinks" :key="link.name">
+            <v-list-item :href="link.url" target="_blank" class="icon-item">
+              <v-list-item-icon>
+                <v-icon color="primary">{{ link.icon }}</v-icon>
+              </v-list-item-icon>
+            </v-list-item>
+
+            <v-divider v-if="index < socialMediaLinks.length - 1"></v-divider>
+          </template>
         </template>
       </v-list>
     </v-card>
@@ -22,6 +43,7 @@ export default {
   name: "FloatingIcons",
   data() {
     return {
+      isCollapsed: false,
       socialMediaLinks: [
         {
           name: "Facebook",
@@ -41,11 +63,16 @@ export default {
       ],
     };
   },
+  methods: {
+    togglePanel() {
+      this.isCollapsed = !this.isCollapsed;
+    },
+  },
 };
 </script>
 
 <style scoped>
-.floating-icons-panel {
+.floating-icons-container {
   position: fixed;
   right: 0px;
   top: 50%;
@@ -55,10 +82,22 @@ export default {
 
 .icon-panel {
   background-color: white;
+  transition: height 0.3s ease, max-height 0.3s ease;
+  overflow: hidden;
+}
+
+.toggle-list-item {
+  cursor: pointer;
+  text-align: center;
 }
 
 .icon-item {
   cursor: pointer;
   padding: 8px;
+}
+
+.panel-collapsed {
+  height: auto;
+  max-height: 50px;
 }
 </style>

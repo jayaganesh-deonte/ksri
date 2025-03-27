@@ -136,7 +136,9 @@ const projectFields = [
   {
     key: "coProjectInvestigators",
     label: "Co-Project Investigators",
-    type: "text",
+    type: "auto-complete",
+    items: supervisors,
+    multiple: true,
   },
   {
     key: "publicationStatus",

@@ -9,7 +9,12 @@
       <div v-for="(marqueeText, index) in store.marqueeTexts" :key="index">
         <!-- display text and add link to it -->
         <NuxtLink :to="marqueeText.link" style="text-decoration: unset">
-          <div class="text-primary mx-8 font-weight-bold text-h6">
+          <div
+            :class="[
+              index % 2 === 0 ? 'text-primary' : 'text-secondary',
+              'mx-8 font-weight-bold text-h6',
+            ]"
+          >
             {{ marqueeText.name }}
           </div>
         </NuxtLink>

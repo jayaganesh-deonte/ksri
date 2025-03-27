@@ -16,7 +16,11 @@
               <v-btn
                 v-bind="props"
                 :color="
-                  activeCategory === category
+                  category === 'Upcoming'
+                    ? isHovering
+                      ? 'primary'
+                      : 'gold'
+                    : activeCategory === category
                     ? 'primary'
                     : isHovering
                     ? 'primary'

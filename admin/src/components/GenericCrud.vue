@@ -98,7 +98,7 @@
         expand-on-click
         style="overflow-x: scroll"
         :loading="loading"
-        :sort-by="sortBy"
+        :sort-by="sortByComputed"
       >
         <template
           v-slot:headers="{ columns, isSorted, getSortIcon, toggleSort }"
@@ -144,25 +144,47 @@
           </td>
         </template>
 
-        <template #item.actions="{ item }">
-          <v-icon
-            class="me-2"
-            size="small"
-            @click="editItem(item)"
-            :disabled="isEditDisabledForUser"
-            :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
-          >
-            mdi-pencil
-          </v-icon>
+        <!-- for row with key imageUrl display image -->
+        <template #item.imageUrl="{ item }">
+          <v-img
+            v-if="item.imageUrl"
+            :src="getAssetUrl(item.imageUrl[0])"
+            class="ma-2"
+          />
+        </template>
 
-          <v-icon
-            size="small"
-            @click="deleteItem(item)"
-            :disabled="isDeleteDisabledForUser || !isDeleteEnabledForItem"
-            :class="isDeleteDisabledForUser ? 'curor-not-allowed' : ''"
-          >
-            mdi-delete
-          </v-icon>
+        <template #item.actions="{ item }">
+          <div class="d-flex align-center justify-center">
+            <v-tooltip text="Status: Draft">
+              <template v-slot:activator="{ props }">
+                <v-icon
+                  v-if="item.itemPublishStatus === 'DRAFT'"
+                  color="warning"
+                  v-bind="props"
+                >
+                  mdi-alert-circle
+                </v-icon>
+              </template>
+            </v-tooltip>
+
+            <v-icon
+              size="small"
+              @click="editItem(item)"
+              :disabled="isEditDisabledForUser"
+              :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
+            >
+              mdi-pencil
+            </v-icon>
+
+            <v-icon
+              size="small"
+              @click="deleteItem(item)"
+              :disabled="isDeleteDisabledForUser || !isDeleteEnabledForItem"
+              :class="isDeleteDisabledForUser ? 'curor-not-allowed' : ''"
+            >
+              mdi-delete
+            </v-icon>
+          </div>
         </template>
       </v-data-table>
     </div>
@@ -490,6 +512,15 @@ let loading = ref(false);
 
 let exportMenu = ref(false);
 let selectedColumnsToExport = ref([]);
+
+const getAssetUrl = (image) => {
+  return import.meta.env.VITE_IMAGE_CLOUDFRONT + image;
+};
+
+// function for sortyBy if it is not provided then sort by id
+const sortByComputed = computed(() => {
+  return props.sortBy ? props.sortBy : [{ key: "id", order: "desc" }];
+});
 
 // Quill editor options
 const options = {
