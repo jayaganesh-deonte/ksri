@@ -431,7 +431,8 @@ const menuOptions = reactive([
 
       {
         name: "Contribute Now",
-        path: "/payment/donation/",
+        // path: "/payment/donation/",
+        path: "/contribute",
         // description: "Contribute Now",
       },
       {
