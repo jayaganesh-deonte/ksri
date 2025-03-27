@@ -1,152 +1,5 @@
 [
   {
-    "title": "Manasolla Stuti of Appayya Dikshitawith Eng. translation",
-    "subtitle": "",
-    "price": "₹ 60",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25Y4G9265MP23FR6GTM",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.047Z",
-      "updated_at": "2025-01-03T06:30:18.047Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Srimad Valmiki Ramayana Sangraha",
-    "subtitle": "",
-    "price": "₹ 300",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25Y6P75KMYDQ92GH195",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Ramayana Triveni K.Chandrasekharan",
-    "subtitle": "",
-    "price": "₹ 60",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25Y7QBGYN5YPYWTPQJX",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Tamraparni Mahatmya with Tamil translation by A.R. Ganapathi Sastri (bringing out the glory of the perennial river of Tamil Nadu in 6200 verses, divided into 64 chapters, comprising of 1700 pages in 2 parts).",
-    "subtitle": "",
-    "price": "₹ 2000",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25Y9CGDM1YDQW02JX2Z",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "An Approach to Indian Art",
-    "subtitle": "",
-    "price": "₹ 50",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YABMB7HSGFG7216W1",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Aryacharitram",
-    "subtitle": "",
-    "price": "₹ 300",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YD725HMTP613K52HT",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Ramayana Diary",
-    "subtitle": "",
-    "price": "₹ 150",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YEWJJ5032FRB4SEWS",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "Jayanteya Gita, text with Eng. translation",
     "subtitle": "(Nimi -Navayogi - Samvada)",
     "price": "₹ 80",
@@ -160,223 +13,13 @@
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-17T10:21:07.405Z",
+      "updated_at": "2025-03-24T07:27:40.268Z",
       "created_by": "admin"
     },
     "author": "",
     "yearOfPublication": "2008-01-01",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Gitamrtamahodadhi by (late) Brahmasri Viswanatha Sastri.",
-    "subtitle": "",
-    "price": "₹ 500",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YMF174DAV6EF3MYHB",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Lectures on the Bhagavadgita (3 Vols. in 1set) by Swami Paramarthananda",
-    "subtitle": "",
-    "price": "₹ 600",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YNN5BNBJSZY9K86ST",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Pulavar Pottrum Punithar V.Krishnaswami Iyer By Mm.Dr.U.Ve. Swaminatha Iyer (Tamil)",
-    "subtitle": "",
-    "price": "₹ 40",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YNZWEK8QZP2Z60CRZ",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Tagore and Indian Literature by K.Chandrasekharan",
-    "subtitle": "",
-    "price": "₹ 50",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YQ1VTA28Z4SA36V3T",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Sankara and Shanmata",
-    "subtitle": "",
-    "price": "₹ 500",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YQWJ1AVEE4Z8T9XHN",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Stories of Ancient India (Eng. Tr. of Selection form \"\"Aryacharitam\"\" Compiled by Sri V.Krishnaswami Iyer) by Dr.Sita Sundar Ram & Dr.V.Premalatha",
-    "subtitle": "",
-    "price": "₹ 200",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YT46JKTFM3QT2VTGH",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Tagore A Master Spirit by K.Chandrasekharan",
-    "subtitle": "",
-    "price": "₹ 100",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YVHNBRCC3ZFGAT8H0",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Golden Harvest by K.Chandrasekharan",
-    "subtitle": "",
-    "price": "₹ 200",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YWC53JTNRQZE2KMKW",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Ramayana Peruraigal (Tamil)",
-    "subtitle": "",
-    "price": "₹ 150",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25YWRD72ENDK86PQYXK",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-03T06:30:18.046Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Culture and Creativity by K.Chandrasekharan",
-    "subtitle": "",
-    "price": "₹ 200",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25Z2X9SV8AQV2B2Q5TS",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.047Z",
-      "updated_at": "2025-01-03T06:30:18.047Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -401,159 +44,12 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Physical Health and Mental Health by Swami Paramarthananda",
-    "subtitle": "",
-    "price": "₹ 120",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25Z91NN3F38BFK8D8CN",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.047Z",
-      "updated_at": "2025-01-03T06:30:18.047Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Catussutri – A Study",
-    "subtitle": "",
-    "price": "₹ 75",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25Z9F3Y23XFK7NCQPGJ",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.047Z",
-      "updated_at": "2025-01-03T06:30:18.047Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Key to Antoine's Sanskrit Manual",
-    "subtitle": "",
-    "price": "₹ 100",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25ZASCHV0JBQDQ8A8Z2",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.047Z",
-      "updated_at": "2025-01-03T06:30:18.047Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Manche Sloka and Atmarama of Samartha Ramadasa",
-    "subtitle": "",
-    "price": "₹ 80",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25ZDZGR4128BG42YYRW",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.047Z",
-      "updated_at": "2025-01-03T06:30:18.047Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Cosmology, God and the Indian Scriptures",
-    "subtitle": "",
-    "price": "₹ 40",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25ZEMBC5K2RQ18RJSR2",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.047Z",
-      "updated_at": "2025-01-03T06:30:18.047Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Sri Karpakavalli Satakam",
-    "subtitle": "",
-    "price": "₹ 25",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25ZJBXQSH21PEQ95FZ3",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.047Z",
-      "updated_at": "2025-01-03T06:30:18.047Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "The Mahabharata by Mastri Venkatesa Iyengar",
     "subtitle": "",
     "price": "₹ 100",
     "imageUrls": null,
     "details": "",
     "id": "01JGNDQ25ZMSPACNRPDVAAASNM",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-03T06:30:18.047Z",
-      "updated_at": "2025-01-03T06:30:18.047Z",
-      "created_by": "admin"
-    },
-    "author": "",
-    "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Lectures on the Ramayana by Rt.Hon'ble V.S.Srinivasa Sastri",
-    "subtitle": "",
-    "price": "₹ 200",
-    "imageUrls": null,
-    "details": "",
-    "id": "01JGNDQ25ZS5C0MHEPR68E6SM9",
     "publication": "The Samskrita Academy, Madras",
     "keywords": "",
     "available": "Yes",
@@ -710,7 +206,7 @@
   {
     "title": "Manasolla Stuti of Appayya Dikshita with Eng. Translation",
     "subtitle": " ",
-    "price": "2012",
+    "price": "Rs. 60",
     "imageUrls": [
       "images/21052025-1. Manasolla stuti.jpg"
     ],
@@ -721,9 +217,9 @@
     "available": "Yes",
     "copies": "10",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:46:15.878Z",
-      "updated_at": "2025-01-21T15:46:15.878Z",
+      "updated_at": "2025-03-24T07:25:52.532Z",
       "created_by": "demo"
     },
     "author": "Dr. T.V. Vasudeva",
@@ -733,7 +229,7 @@
   {
     "title": "Srimad Valmiki Ramayana Sangraha",
     "subtitle": " ",
-    "price": "2007",
+    "price": "Rs. 300",
     "imageUrls": [
       "images/21052025-2 srimad valmini ramaya sangraha.jpg"
     ],
@@ -744,9 +240,9 @@
     "available": "No",
     "copies": "0",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:47:13.213Z",
-      "updated_at": "2025-01-21T15:47:40.948Z",
+      "updated_at": "2025-03-24T05:44:45.325Z",
       "created_by": "demo"
     },
     "author": "Ms. K. Vijayalakshmi Sundari",
@@ -756,7 +252,7 @@
   {
     "title": "Ramayana Triveni K.Chandrasekharan",
     "subtitle": " ",
-    "price": " ",
+    "price": " Rs.60",
     "imageUrls": [
       "images/21052025-3. Ramayana Triveni.jpg"
     ],
@@ -767,9 +263,9 @@
     "available": "Yes",
     "copies": "10",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:48:37.828Z",
-      "updated_at": "2025-01-21T15:48:37.828Z",
+      "updated_at": "2025-03-24T07:21:33.196Z",
       "created_by": "demo"
     },
     "author": "K. Chandrasekharan",
@@ -778,8 +274,8 @@
   },
   {
     "title": "Tamraparni Mahatmya with Tamil translation by A.R. Ganapathi Sastri",
-    "subtitle": " ",
-    "price": " ",
+    "subtitle": "Bringing out the glory of the perennial river of Tamil Nadu in 6200 verses, divided into 64 chapters, comprising of 1700 pages in 2 parts).",
+    "price": " Rs. 2000",
     "imageUrls": [
       "images/21052025-4. a.jpg"
     ],
@@ -790,9 +286,9 @@
     "available": "Yes",
     "copies": "10",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:49:50.020Z",
-      "updated_at": "2025-01-21T15:49:50.020Z",
+      "updated_at": "2025-03-24T07:15:35.804Z",
       "created_by": "demo"
     },
     "author": "Sri A.R. Ganapathi Sastri, Dr. P.P. Sridhara Upadhyaya",
@@ -825,30 +321,30 @@
   {
     "title": "Aryacharitram",
     "subtitle": " ",
-    "price": " ",
+    "price": " Rs.400",
     "imageUrls": [
       "images/21052025-6.jpg"
     ],
     "details": "<p>      </p>",
     "id": "01JJ4RZ3T4QQJQCBZ1WCH8CKE4",
     "publication": "The Samskrita Academy, Madras",
-    "keywords": " ",
+    "keywords": " V. Krishnaswami Iyer, Tales, Epics",
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:51:14.500Z",
-      "updated_at": "2025-01-21T15:51:14.500Z",
+      "updated_at": "2025-03-25T05:39:35.609Z",
       "created_by": "demo"
     },
-    "author": " ",
-    "yearOfPublication": "2007-01-01",
+    "author": " V. Krishnaswami Iyer",
+    "yearOfPublication": "2008-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
     "title": "Ramayana Diary",
     "subtitle": " ",
-    "price": " ",
+    "price": " Rs. 150",
     "imageUrls": [
       "images/21052025-7a.jpeg"
     ],
@@ -859,36 +355,13 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:51:52.564Z",
-      "updated_at": "2025-01-21T15:51:52.564Z",
+      "updated_at": "2025-03-24T07:21:52.180Z",
       "created_by": "demo"
     },
     "author": " ",
     "yearOfPublication": " ",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "Jayanteya Gita, text with Eng. translation",
-    "subtitle": "",
-    "price": "",
-    "imageUrls": [
-      "images/21052025-8. JAYANTEYA GITA.jpeg"
-    ],
-    "details": "",
-    "id": "01JJ4S1FRREBCDH42V29VZC24D",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": " ",
-    "available": "Yes",
-    "copies": "10",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2025-01-21T15:52:32.280Z",
-      "updated_at": "2025-01-21T15:52:32.280Z",
-      "created_by": "demo"
-    },
-    "author": " ",
-    "yearOfPublication": "2008-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -905,9 +378,9 @@
     "available": "Yes",
     "copies": "10",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:53:19.800Z",
-      "updated_at": "2025-01-21T15:53:19.800Z",
+      "updated_at": "2025-03-24T07:12:20.676Z",
       "created_by": "demo"
     },
     "author": "Brahmasri R. Visvanatha Sastri",
@@ -917,7 +390,7 @@
   {
     "title": "Lectures on the Bhagavadgita (3 Vols. in 1set) by Swami Paramarthananda",
     "subtitle": "",
-    "price": "",
+    "price": "Rs.600",
     "imageUrls": [
       "images/21052025-10. a.jpg"
     ],
@@ -926,11 +399,11 @@
     "publication": "The Samskrita Academy, Madras",
     "keywords": " ",
     "available": "Yes",
-    "copies": "",
+    "copies": "20",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:54:24.703Z",
-      "updated_at": "2025-01-21T15:54:24.703Z",
+      "updated_at": "2025-03-24T05:46:06.901Z",
       "created_by": "demo"
     },
     "author": "Swami Paramarthananda",
@@ -940,7 +413,7 @@
   {
     "title": "Pulavar Pottrum Punithar V.Krishnaswami Iyer By Mm.Dr.U.Ve. Swaminatha Iyer (Tamil)",
     "subtitle": "",
-    "price": "",
+    "price": "Rs. 40",
     "imageUrls": [
       "images/21052025-11.jpg"
     ],
@@ -951,9 +424,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:55:12.190Z",
-      "updated_at": "2025-01-21T15:55:12.190Z",
+      "updated_at": "2025-03-24T07:22:46.308Z",
       "created_by": "demo"
     },
     "author": "Dr. Prema Nandakumar",
@@ -963,7 +436,7 @@
   {
     "title": "Tagore and Indian Literature by K.Chandrasekharan",
     "subtitle": "",
-    "price": "",
+    "price": "Rs. 50",
     "imageUrls": [
       "images/21052025-12.jpg"
     ],
@@ -974,9 +447,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:55:42.121Z",
-      "updated_at": "2025-01-21T15:55:42.121Z",
+      "updated_at": "2025-03-24T07:16:05.180Z",
       "created_by": "demo"
     },
     "author": "K. Chandrasekharan",
@@ -986,7 +459,7 @@
   {
     "title": "Sankara and Shanmata",
     "subtitle": "",
-    "price": "",
+    "price": "Rs. 500",
     "imageUrls": [
       "images/21052025-13.jpg"
     ],
@@ -997,9 +470,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:56:10.750Z",
-      "updated_at": "2025-01-21T15:56:10.750Z",
+      "updated_at": "2025-03-24T07:18:16.284Z",
       "created_by": "demo"
     },
     "author": "",
@@ -1009,7 +482,7 @@
   {
     "title": "Stories of Ancient India (Eng. Tr. of Selection form \"\"Aryacharitam\"\" Compiled by Sri V.Krishnaswami Iyer) by Dr.Sita Sundar Ram & Dr.V.Premalatha",
     "subtitle": "",
-    "price": "",
+    "price": "Rs. 200",
     "imageUrls": [
       "images/21052025-14.jpg"
     ],
@@ -1020,13 +493,13 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:56:49.621Z",
-      "updated_at": "2025-01-21T15:56:49.621Z",
+      "updated_at": "2025-03-24T07:17:24.940Z",
       "created_by": "demo"
     },
     "author": "Sita Sundar Ram, V. Premalatha",
-    "yearOfPublication": "",
+    "yearOfPublication": "2013-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -1055,7 +528,7 @@
   {
     "title": "Golden Harvest",
     "subtitle": "",
-    "price": "",
+    "price": "Rs. 200",
     "imageUrls": [
       "images/21052025-16.jpg"
     ],
@@ -1066,9 +539,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:57:59.087Z",
-      "updated_at": "2025-01-21T15:57:59.087Z",
+      "updated_at": "2025-03-24T07:13:34.284Z",
       "created_by": "demo"
     },
     "author": "K.Chandrasekharan",
@@ -1078,30 +551,30 @@
   {
     "title": "Ramayana Peruraigal (Tamil)",
     "subtitle": "",
-    "price": "",
+    "price": "Rs. 150",
     "imageUrls": [
       "images/21052025-17.jpg"
     ],
     "details": "",
     "id": "01JJ4SCGCKSP75NNS4QFCC7QS0",
     "publication": "The Samskrita Academy, Madras",
-    "keywords": " ",
+    "keywords": " Ramayana",
     "available": "Yes",
-    "copies": "",
+    "copies": "20",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:58:33.363Z",
-      "updated_at": "2025-01-25T07:39:28.592Z",
+      "updated_at": "2025-03-24T05:25:05.760Z",
       "created_by": "demo"
     },
-    "author": "",
+    "author": "Tamil translation - Savitri Ammal",
     "yearOfPublication": "2024-12-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
     "title": "Culture and Creativity",
     "subtitle": "",
-    "price": "",
+    "price": "Rs. 200",
     "imageUrls": [
       "images/21052025-18.jpg"
     ],
@@ -1112,9 +585,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T15:59:24.171Z",
-      "updated_at": "2025-01-21T15:59:24.171Z",
+      "updated_at": "2025-03-24T07:10:51.468Z",
       "created_by": "demo"
     },
     "author": "K.Chandrasekharan",
@@ -1122,7 +595,7 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": " Rahasyatrayasara of Sri Vedanta Desika with English translation",
+    "title": "Rahasyatrayasara of Sri Vedanta Desika with English translation",
     "subtitle": "",
     "price": "",
     "imageUrls": [
@@ -1135,9 +608,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T16:00:24.981Z",
-      "updated_at": "2025-01-21T16:00:24.981Z",
+      "updated_at": "2025-03-25T05:28:07.489Z",
       "created_by": "demo"
     },
     "author": "Sri N. Raghunathan, I.A.S. (Former Chief Secretary of Maharashtra)",
@@ -1147,7 +620,7 @@
   {
     "title": "Physical Health and Mental Health",
     "subtitle": "",
-    "price": "",
+    "price": "Rs.120",
     "imageUrls": [
       "images/21052025-20.jpg"
     ],
@@ -1158,9 +631,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T16:01:02.565Z",
-      "updated_at": "2025-01-21T16:01:02.565Z",
+      "updated_at": "2025-03-24T07:23:16.260Z",
       "created_by": "demo"
     },
     "author": "Swami Paramarthananda",
@@ -1170,7 +643,7 @@
   {
     "title": "Catussutri - A Study",
     "subtitle": "",
-    "price": "",
+    "price": "Rs.75",
     "imageUrls": [
       "images/21052025-21.jpg"
     ],
@@ -1181,9 +654,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T16:01:42.274Z",
-      "updated_at": "2025-01-21T16:01:42.274Z",
+      "updated_at": "2025-03-24T07:09:17.796Z",
       "created_by": "demo"
     },
     "author": "V.R. Ganesan",
@@ -1192,8 +665,8 @@
   },
   {
     "title": "Key to Antoine's Sanskrit Manual",
-    "subtitle": "",
-    "price": "",
+    "subtitle": "Part I & II",
+    "price": "Rs.100",
     "imageUrls": [
       "images/21052025-22.jpg"
     ],
@@ -1204,9 +677,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T16:02:31.774Z",
-      "updated_at": "2025-01-21T16:02:31.774Z",
+      "updated_at": "2025-03-24T07:28:34.764Z",
       "created_by": "demo"
     },
     "author": "",
@@ -1216,7 +689,7 @@
   {
     "title": "Manche Sloka and Atmarama of Samartha Ramadasa",
     "subtitle": "",
-    "price": "",
+    "price": "Rs.80",
     "imageUrls": [
       "images/21052025-23.jpg"
     ],
@@ -1227,9 +700,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T16:03:13.167Z",
-      "updated_at": "2025-01-21T16:03:13.167Z",
+      "updated_at": "2025-03-24T07:23:55.716Z",
       "created_by": "demo"
     },
     "author": "P. Suryanarayana",
@@ -1239,7 +712,7 @@
   {
     "title": "Cosmology, God and the Indian Scriptures",
     "subtitle": "",
-    "price": "",
+    "price": "Rs.40",
     "imageUrls": [
       "images/21052025-24.jpg"
     ],
@@ -1250,9 +723,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T16:04:06.618Z",
-      "updated_at": "2025-01-21T16:04:06.618Z",
+      "updated_at": "2025-03-24T07:10:26.451Z",
       "created_by": "demo"
     },
     "author": "R.K. Seshadri, Retired Deputy Governor, Reserve Bank of India",
@@ -1283,7 +756,7 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": " The Mahabharata by Mastri Venkatesa Iyengar",
+    "title": "The Mahabharata by Mastri Venkatesa Iyengar",
     "subtitle": "",
     "price": "",
     "imageUrls": [
@@ -1296,9 +769,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T16:05:22.754Z",
-      "updated_at": "2025-01-21T16:05:22.754Z",
+      "updated_at": "2025-03-25T05:28:21.769Z",
       "created_by": "demo"
     },
     "author": "Masti Venkatesa Iyengar",
@@ -1308,7 +781,7 @@
   {
     "title": "Lectures on the Ramayana",
     "subtitle": "",
-    "price": "",
+    "price": "Rs.200",
     "imageUrls": [
       "images/21052025-27.jpg"
     ],
@@ -1319,9 +792,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-21T16:06:05.737Z",
-      "updated_at": "2025-01-21T16:06:05.737Z",
+      "updated_at": "2025-03-24T05:45:22.477Z",
       "created_by": "demo"
     },
     "author": "Rt.Hon'ble V.S.Srinivasa Sastri",
@@ -1342,13 +815,59 @@
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-24T09:47:01.349Z",
-      "updated_at": "2025-03-19T07:47:00.210Z",
+      "updated_at": "2025-03-20T10:18:07.663Z",
       "created_by": "demo"
     },
     "author": "Dr. V. Preethi",
     "yearOfPublication": "2024-01-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Jāyanteya Gītā",
+    "subtitle": "Nimi-Navayogi-Samvāda",
+    "price": "Rs.150",
+    "imageUrls": [
+      "images/01JPW6J95J0VVTQ2NK6A8XWSJH"
+    ],
+    "details": "<p>Reprint of the book<br><br>First Print - June 2008<br>Second reprint - March 2025&nbsp;<br></p>",
+    "id": "01JPW6JG1Z89WZ7ZQBE6V3C55R",
+    "publication": "The Samskrita Academy, Madras",
+    "keywords": " ",
+    "available": "Yes",
+    "copies": "400",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T11:14:20.352Z",
+      "updated_at": "2025-03-21T11:14:20.352Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "author": "",
+    "yearOfPublication": "2025-03-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "A History of The Saṁskr̥ta Literature",
+    "subtitle": "Fourth edition - 2025",
+    "price": "Rs.400",
+    "imageUrls": [
+      "images/01JPY7YVAFHG7BX361WRTVEF8X"
+    ],
+    "details": "",
+    "id": "01JPY7YY1GYM1WW6HFWW7GBWCX",
+    "publication": "The Samskrita Academy, Madras",
+    "keywords": " ",
+    "available": "Yes",
+    "copies": "250",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-22T06:17:05.328Z",
+      "updated_at": "2025-03-25T05:26:03.689Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "author": "Dr. V. Varadachari",
+    "yearOfPublication": "2025-02-14",
     "itemPublishStatus": "PUBLISHED"
   }
 ]

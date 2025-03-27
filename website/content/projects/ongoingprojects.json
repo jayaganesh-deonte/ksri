@@ -13,6 +13,31 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
+    "id": "01JPW501XZNDQMK677JS5KDN8B",
+    "title": "CITRAPAṬA",
+    "subTitle": " ",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T10:46:47.487Z",
+      "updated_at": "2025-03-21T10:46:47.487Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "The Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "Philosophy",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Sudarshan Krishna"
+    ],
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "id": "01JGM4T8Y0A9QTAPC877S07VGX",
     "title": "Cataloguing of Palm-Leaf Manuscripts",
     "subTitle": " ",
@@ -38,6 +63,31 @@
       "created_by": "admin"
     },
     "sponsor": "- B.VenkataramaniEndowment",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JPW5QYB5HB212BESC925J1WW",
+    "title": "ARTHAŚĀSTRA OF KAUṬILYA  ",
+    "subTitle": "With  JAYAMAṆGALĀ commentary & CĀṆAKYAṬĪKĀ",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T10:59:50.245Z",
+      "updated_at": "2025-03-21T10:59:50.245Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "The Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Dr. V. Kameswari"
+    ],
+    "coProjectInvestigators": "Dr. T.V. Vasudeva",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -77,6 +127,31 @@
       "created_by": "admin"
     },
     "sponsor": "- Dr E R Rama Bai Chair",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JPW56N8QCEGBC8XKS5S836AF",
+    "title": "PŪRVAMĪMĀMSĀVIṢAYASAṄGRAHADĪPIKĀ",
+    "subTitle": " ",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T10:50:23.895Z",
+      "updated_at": "2025-03-21T10:50:23.895Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "Philosophy",
+    "publicationStatus": "",
+    "projectInvestigator": [
+      "Sudarshan Krishna"
+    ],
+    "coProjectInvestigators": "",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -137,6 +212,31 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
+    "id": "01JPW5WEN7XDZ6PRJJR8NF8P1E",
+    "title": "DIETITICS AS GLEANED FROM SANSKRIT TEXTS",
+    "subTitle": " ",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T11:02:18.024Z",
+      "updated_at": "2025-03-21T11:02:18.024Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "The Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "Science",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Dr. S. Anuradha"
+    ],
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "id": "01JGM4T8Y07X6Z4N7NSDSDMMNA",
     "title": "Dictionary of Geographical terms from Sanskrit Sources",
     "subTitle": " ",
@@ -153,6 +253,56 @@
     "projectSubSeries": "Social Studies",
     "projectInvestigator": "Prof. R. Parthasarathy",
     "coProjectInvestigators": "Dr. R. Muthulakshmi",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JPW55G0ZYXXSPEMBP4MV25WK",
+    "title": "UPAKRAMAPARĀKRAMA",
+    "subTitle": "OF APPAYA DĪKṢITA ",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2024",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T10:49:45.759Z",
+      "updated_at": "2025-03-21T10:49:45.759Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "Philosophy",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Sudarshan Krishna"
+    ],
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JPW5AP1FJGMQ9GQKX4PEXQFB",
+    "title": "Jīrṇoddhāradaśaka ",
+    "subTitle": "Critical Study and Edition with the commentary of Nigamajñānadeśika",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T10:52:35.759Z",
+      "updated_at": "2025-03-21T10:53:48.447Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "Philosophy",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Dr. K. Nagarajan"
+    ],
+    "coProjectInvestigators": "",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -173,6 +323,31 @@
     "projectSeries": "Indian Knowledge System",
     "projectSubSeries": "Science",
     "projectInvestigator": [],
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JPW5YG4Q6GY7EKRK6DAD0B7T",
+    "title": "AMRTASIDDHIYOGA OF VIRUPAKSA Details of the Institution",
+    "subTitle": "CRITICAL EDITION AND STUDY ",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T11:03:25.080Z",
+      "updated_at": "2025-03-21T11:03:25.080Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "The Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Dr. S. Anuradha"
+    ],
+    "coProjectInvestigators": "",
     "itemPublishStatus": "PUBLISHED"
   },
   {
