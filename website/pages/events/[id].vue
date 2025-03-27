@@ -2,7 +2,7 @@
   <div class="mx-4">
     <!-- back to all events -->
     <div class="text-center ma-4">
-      <v-btn color="primary" rounded="pill" variant="outlined" to="/events/">
+      <v-btn color="primary" rounded="pill" variant="flat" to="/events/">
         Back to All Events
       </v-btn>
     </div>
@@ -65,7 +65,37 @@
           <div>{{ event.date }}</div>
         </v-col>
       </v-row>
-      <div data-aos="fade-up">
+      <v-row v-if="displayImageInColumns">
+        <v-col cols="12" md="8">
+          <div data-aos="fade-up">
+            <div v-html="event.description"></div>
+          </div>
+        </v-col>
+        <v-col cols="12" md="4">
+          <!-- display images vertically -->
+          <v-card color="rgb(191, 100, 31,0.5)" elevation="0" rounded="0">
+            <v-row class="ma-1 pa-1">
+              <v-col
+                v-for="(image, index) in verticalImages"
+                :key="index"
+                cols="12"
+                md="12"
+                class="ma-0 pa-1"
+              >
+                <v-img
+                  :src="getImageUrl(image)"
+                  fit
+                  :height="`${$device.isMobile ? '' : '30vh'}`"
+                ></v-img>
+                <!-- <div class="text-subtitle-1 font-weight-bold text-secondary">
+                  {{ event.title }}
+                </div> -->
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-col>
+      </v-row>
+      <div data-aos="fade-up" v-else>
         <div v-html="event.description"></div>
       </div>
 
@@ -86,7 +116,7 @@
       <v-card color="rgb(191, 100, 31,0.5)" elevation="0" rounded="0">
         <v-row class="ma-1 pa-1">
           <v-col
-            v-for="(image, index) in event.images"
+            v-for="(image, index) in horizontalImages"
             :key="index"
             cols="12"
             md="3"
@@ -170,6 +200,30 @@ const getImageUrl = (url) => {
   const runtimeConfig = useRuntimeConfig();
   return runtimeConfig.public.ASSET_DOMAIN + url;
 };
+
+// return true in event.category contians seminars
+const displayImageInColumns = computed(() => {
+  const includedEvents = ["Seminars", "Workshop"];
+  const categoryMatch = eventInfo.category
+    .map((cat) => cat.toLowerCase())
+    .some((cat) => includedEvents.map((e) => e.toLowerCase()).includes(cat));
+
+  // Check description length - if less than 200 characters, display single column
+  const descriptionLength = eventInfo.description.replace(
+    /<[^>]*>/g,
+    ""
+  ).length;
+  console.log("descriptionLength", descriptionLength);
+  const isShortDescription = descriptionLength < 2000;
+
+  return categoryMatch && !isShortDescription;
+});
+
+// first 10 images to be in vertical and rest in horizontal
+const verticalImages = eventInfo.images.slice(0, 10);
+const horizontalImages = displayImageInColumns
+  ? eventInfo.images.slice(10)
+  : eventInfo.images;
 </script>
 
 <style scoped>
