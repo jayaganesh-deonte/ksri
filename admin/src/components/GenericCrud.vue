@@ -280,6 +280,18 @@
                       :multiple="field.multiple"
                     />
 
+                    <v-autocomplete
+                      v-else-if="field.type === 'auto-complete-function'"
+                      v-model="editedItem[field.key]"
+                      :label="field.label"
+                      :rules="field.rules"
+                      variant="outlined"
+                      :items="field.itemFunction(editedItem)"
+                      :disabled="isEditDisabled(field)"
+                      density="compact"
+                      :multiple="field.multiple"
+                    />
+
                     <ImageUpload
                       v-else-if="field.type === 'image'"
                       :images="

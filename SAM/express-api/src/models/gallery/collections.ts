@@ -7,6 +7,7 @@ export interface Collection {
   name: string;
   id: string;
   orderId: string;
+  subCollections?: string[];
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
 }
@@ -17,6 +18,7 @@ export interface CollectionDDB {
   entityType: string;
   name: string;
   orderId: string;
+  subCollections?: string[];
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
 }
@@ -58,6 +60,7 @@ export function toDynamoDB(item: Collection): CollectionDDB {
     orderId: item.orderId,
     entityType: "ENTITYTYPE#GALLERY#COLLECTION",
     name: item.name,
+    subCollections: item.subCollections,
     ...(item.metadata && { metadata: item.metadata }),
     itemPublishStatus: item.itemPublishStatus,
   };
@@ -70,5 +73,6 @@ export function fromDynamoDB(item: CollectionDDB): Collection {
     orderId: item.orderId,
     ...(item.metadata && { metadata: item.metadata }),
     itemPublishStatus: item.itemPublishStatus,
+    subCollections: item.subCollections,
   };
 }

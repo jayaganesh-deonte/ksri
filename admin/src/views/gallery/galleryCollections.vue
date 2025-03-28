@@ -27,6 +27,18 @@ const galleryCollectionFields = [
     // editDisabled: true,
   },
   {
+    key: "subCollections",
+    label: "Sub Collections",
+    isArray: true,
+    fields: [
+      {
+        key: "name",
+        label: "Name",
+        type: "text",
+      },
+    ],
+  },
+  {
     key: "itemPublishStatus",
     label: "Publish Status",
     type: "auto-complete",

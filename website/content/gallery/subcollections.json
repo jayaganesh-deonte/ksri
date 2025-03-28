@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Emminent Scholars of KSRI",
+    "subCollections": []
+  },
+  {
+    "name": "Memories of KSRI",
+    "subCollections": []
+  },
+  {
+    "name": "KSRI Gallery Collection ",
+    "subCollections": []
+  },
+  {
+    "name": "State of the Art Architecture - KSRI",
+    "subCollections": []
+  },
+  {
+    "name": "NATIONAL SEMINAR ON ARTS AND ARCHITECTURE",
+    "subCollections": []
+  },
+  {
+    "name": "NATIONAL SEMINAR ON BHAKTI LITERATURE",
+    "subCollections": []
+  },
+  {
+    "name": "NATIONAL WORKSHOP ON SANSKRIT LITERATURE",
+    "subCollections": []
+  },
+  {
+    "name": "WORKSHOP ON ANCIENT INDIAN MATHEMATICS",
+    "subCollections": []
+  },
+  {
+    "name": "75th Year Anniversary Celebrations",
+    "subCollections": [
+      "Inauguration",
+      "Valedictory function"
+    ]
+  }
+]

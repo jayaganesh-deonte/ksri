@@ -34,8 +34,6 @@
               fit
               :width="$device.isMobile ? 100 : 100"
               :class="`${$device.isMobile ? '' : 'ml-auto mr-4'}`"
-              @mouseover="changeLogo"
-              @mouseleave="changeLogo"
             >
             </v-img>
           </div>
@@ -190,8 +188,6 @@
               src="/img/ksri-logo-primary.png"
               fit
               :width="$device.isMobile ? 60 : 60"
-              @mouseover="changeLogo"
-              @mouseleave="changeLogo"
             >
             </v-img>
           </v-col>

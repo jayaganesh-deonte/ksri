@@ -15,6 +15,7 @@ export default {
   data() {
     return {
       galleryCollections: [],
+      subCollections: {},
       apiEndpoint: "/gallery",
       galleryHeaders: [
         {
@@ -29,6 +30,10 @@ export default {
         {
           key: "collection",
           title: "Collection",
+        },
+        {
+          key: "subCollection",
+          title: "Sub Collection",
         },
         { key: "actions", title: "Actions" },
       ],
@@ -63,7 +68,31 @@ export default {
           items: this.galleryCollections,
           rules: [(v) => !!v || "Collection is required"],
         },
+        {
+          key: "subCollection",
+          label: "Sub Collection",
+          type: "auto-complete-function",
+          itemFunction: (item) => {
+            console.log("itemFunction", item);
+            // check if collection is selected
+            if (item.collection) {
+              // check if subCollections exist
+              if (this.subCollections[item.collection]) {
+                return this.subCollections[item.collection];
+              } else {
+                return [];
+              }
+            } else {
+              return [];
+            }
+          },
+        },
       ];
+    },
+  },
+  methods: {
+    subCollectionName(collectionName) {
+      return this.subCollections[collectionName];
     },
   },
   async mounted() {
@@ -74,6 +103,24 @@ export default {
     this.galleryCollections = response.data.map(
       (collection) => collection.name
     );
+
+    // update subCollections
+    response.data.forEach((collection) => {
+      console.log(collection);
+      // check if subCollections exist
+      if (collection.subCollections) {
+        // check if subCollections is an array
+        console.log("sub", collection.subCollections);
+
+        this.subCollections[collection.name] = collection.subCollections.map(
+          (subCollection) => subCollection.name
+        );
+      } else {
+        this.subCollections[collection.name] = [];
+      }
+    });
+
+    console.log(this.subCollections);
   },
 };
 </script>
