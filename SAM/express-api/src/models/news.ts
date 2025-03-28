@@ -23,6 +23,7 @@ export interface News {
   heading_image_url: string[];
   images: string[];
   id: string;
+  date?: string;
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
 }
@@ -39,6 +40,7 @@ export interface NewsDDB {
   heading_image_url: string;
   images: string[];
   id: string;
+  date?: string;
   metadata?: { [key: string]: string };
   itemPublishStatus: string;
 }
@@ -53,6 +55,7 @@ export const fromDynamoDB = (item: NewsDDB): News => {
     heading_image_url: [item.heading_image_url],
     images: item.images,
     id: item.id,
+    date: item.date,
     metadata: item.metadata,
     itemPublishStatus: item.itemPublishStatus,
   };
@@ -72,6 +75,7 @@ export const toDynamoDB = (item: News): NewsDDB => {
     images: item.images,
     id: item.id,
     metadata: item.metadata,
+    date: item.date,
     itemPublishStatus: item.itemPublishStatus,
   };
 };

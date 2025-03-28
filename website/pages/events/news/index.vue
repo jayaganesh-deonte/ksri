@@ -40,4 +40,9 @@ import { newsStore } from "~/stores/newsStore";
 const storeNews = await newsStore();
 
 const data = await queryContent("news").findOne();
+
+// sort data by date
+storeNews.news.sort((a, b) => {
+  return new Date(b.date) - new Date(a.date);
+});
 </script>
