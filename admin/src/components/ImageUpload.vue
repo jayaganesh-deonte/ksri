@@ -77,7 +77,9 @@ const props = defineProps({
 let newImages = ref([]);
 
 // merge existing images with new images
-newImages.value = [...props.images];
+newImages.value = [...props.images].filter(
+  (image) => image && typeof image === "string"
+);
 
 // send event to parent component
 const emit = defineEmits(["images-updated"]);
@@ -118,7 +120,7 @@ const uploadImages = async (e) => {
     );
 
     let uploadRes = await uploadToS3(compressedFile, s3Key);
-    console.log(uploadRes);
+    console.log("uploadRes", uploadRes);
 
     if (uploadRes.$metadata.httpStatusCode != 200) {
       console.log("Error uploading image");
@@ -134,8 +136,8 @@ const uploadImages = async (e) => {
       console.log("newImages.value", newImages.value);
 
       // if any null value exists in newImages.value, remove it
-      newImages.value = newImages.value.filter((i) => i !== null);
-      console.log("newImages.value", newImages.value);
+      // newImages.value = newImages.value.filter((i) => i !== null);
+      // console.log("newImages.value", newImages.value);
       // emit event to parent component
       emit("images-updated", newImages.value);
     }
