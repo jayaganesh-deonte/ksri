@@ -83,6 +83,9 @@ export default defineNuxtConfig({
       ],
     },
   },
+  generate: {
+    fallback: true, // Uses '404.html' instead of the default '200.html'
+  },
   site: {
     url: siteSeoInfo.ogUrl,
     name: siteSeoInfo.title,
