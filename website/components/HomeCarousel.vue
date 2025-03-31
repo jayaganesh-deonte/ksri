@@ -1,12 +1,6 @@
 <template>
   <div>
-    <v-carousel
-      hide-delimiters
-      :style="`${$device.isMobile ? 'height: 100vh' : 'height: 90vh;'}`"
-      cycle
-      continuous
-      interval="8000"
-    >
+    <v-carousel hide-delimiters cycle continuous interval="8000">
       <template v-for="(item, index) in slideshowData" :key="index">
         <home-carousel-item
           :src="getAssetUrl(item.image[0])"

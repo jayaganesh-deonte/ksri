@@ -55,11 +55,26 @@
                 <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
                   No. 84, Thiru Vi Ka Road, Mylapore, Chennai - 600 004.
                 </div>
+                <div :class="$device.isMobile ? 'text-body-1' : 'text-body-1'">
+                  ksrinst@gmail.com | 044-24985320 / 044-29505320
+                </div>
               </v-card-text>
             </v-card-item>
           </div>
         </v-card>
       </v-card>
+      <!-- style="position: absolute; right: 0; margin-top: 130px" -->
+      <div class="d-flex justify-end align-center mt-n12 mx-8">
+        <v-card
+          elevation="0"
+          rounded="0"
+          class="ma-0 pa-0"
+          color="transparent"
+          width="20vw"
+        >
+          <search />
+        </v-card>
+      </div>
       <div class="d-flex mx-auto mt-0">
         <!-- add menu Options -->
         <div v-for="option in menuOptions" :key="option.name">
@@ -210,13 +225,24 @@
             </div>
           </v-col>
         </v-row>
-        <v-row class="mt-0">
+        <v-row class="mt-0 d-flex align-center">
           <v-app-bar-nav-icon
             class="mx-2"
             @click="mobileNavDrawer = !mobileNavDrawer"
           >
             <v-icon>mdi-menu</v-icon>
           </v-app-bar-nav-icon>
+          <div class="">
+            <v-card
+              elevation="0"
+              rounded="0"
+              class="mx-auto pa-0"
+              color="transparent"
+              width="70vw"
+            >
+              <search />
+            </v-card>
+          </div>
         </v-row>
       </v-card>
     </v-app-bar>

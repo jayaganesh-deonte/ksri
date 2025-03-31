@@ -1,5 +1,5 @@
 <template>
-  <v-carousel-item :src="src" cover class="fade-in">
+  <v-carousel-item :src="src" cover class="fade-in" aspect-ratio="1.7">
     <div style="height: 100%; width: 100%">
       <v-card
         color="transparent"
