@@ -8,6 +8,7 @@
       variant="outlined"
       density="compact"
       class=""
+      hide-details
     ></v-text-field>
 
     <v-dialog v-model="startDialog" max-width="400px">
@@ -18,6 +19,7 @@
           <v-date-picker
             v-model="startDate"
             @update:model-value="updateStartDate"
+            :max="new Date().toISOString().split('T')[0]"
           ></v-date-picker>
         </v-card-text>
         <v-card-actions>
@@ -38,6 +40,7 @@
       variant="outlined"
       density="compact"
       class="mx-4"
+      hide-details
     ></v-text-field>
 
     <v-dialog v-model="endDialog" max-width="400px">
@@ -48,6 +51,8 @@
           <v-date-picker
             v-model="endDate"
             @update:model-value="updateEndDate"
+            :min="startDate"
+            :max="new Date().toISOString().split('T')[0]"
           ></v-date-picker>
         </v-card-text>
         <v-card-actions>
@@ -84,13 +89,20 @@ export default {
     updateStartDate() {
       // This is called when a date is selected in the picker
       console.log("Start Date selected:", this.startDate);
+      // reset end date if start date is changed
+      if (new Date(this.startDate) > new Date(this.endDate)) {
+        this.endDate = this.startDate;
+        this.formattedEndDate = this.formatDateForDisplay(
+          new Date(this.endDate)
+        );
+      }
     },
     updateEndDate() {
       // This is called when a date is selected in the picker
       console.log("End Date selected:", this.endDate);
     },
     confirmStartDate() {
-      // Convert the ISO date string to a Date object for formatting
+      // Format the date for display
       this.formattedStartDate = this.formatDateForDisplay(
         new Date(this.startDate)
       );
@@ -98,7 +110,7 @@ export default {
       this.emitDateRange();
     },
     confirmEndDate() {
-      // Convert the ISO date string to a Date object for formatting
+      // Format the date for display
       this.formattedEndDate = this.formatDateForDisplay(new Date(this.endDate));
       this.endDialog = false;
       this.emitDateRange();
@@ -113,11 +125,14 @@ export default {
     },
     formatDateForDisplay(date) {
       const options = { year: "numeric", month: "short", day: "numeric" };
-      return new Date(date).toLocaleDateString(undefined, options);
+      return date.toLocaleDateString(undefined, options);
     },
     formatDateForPicker(date) {
-      // Format date as YYYY-MM-DD for v-date-picker
-      return date.toISOString().split("T")[0];
+      // Format date as YYYY-MM-DD using local date values to prevent timezone issues
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0"); // Month is 0-based
+      const day = String(date.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
     },
   },
 };
