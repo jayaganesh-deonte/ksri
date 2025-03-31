@@ -209,6 +209,7 @@ export default {
           name: "Journal of Oriental Research",
           description:
             "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well-known. The journal is listed under the UGC CARE list of Journals - Arts & Humanities No. 367 with ISSN: 0022 - 3301.",
+          path: "/ksri-publications/journals",
         },
         {
           name: "The Samskrita Academy, Madras",
