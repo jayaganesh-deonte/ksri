@@ -34,8 +34,7 @@ async function getPayments(req: Request, res: Response) {
     startDate = startOfMonth.toLocaleDateString("en-CA"); // Format as YYYY-MM-DD
     endDate = endOfMonth.toLocaleDateString("en-CA"); // Format as YYYY-MM-DD  }
   }
-  console.log("getPayments startDate", startDate);
-  console.log("getPayments endDate", endDate);
+
   const params = {
     TableName: process.env.DDB_TABLE_NAME,
     IndexName: "PaymentDateIndex",
@@ -48,8 +47,6 @@ async function getPayments(req: Request, res: Response) {
     },
     ScanIndexForward: false,
   };
-
-  console.log("getPayments params", params);
 
   try {
     const result = await documentClient.query(params);

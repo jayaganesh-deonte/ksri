@@ -506,11 +506,6 @@ const props = defineProps({
     required: false,
     default: () => ({}),
   },
-  refreshData: {
-    type: Boolean,
-    required: false,
-    default: false,
-  },
 });
 
 const emit = defineEmits([
