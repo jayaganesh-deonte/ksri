@@ -1,9 +1,21 @@
 <template>
   <div>
     <!-- Search Icon -->
-    <v-list-item @click="openSearchDialog" class="icon-item">
-      <v-icon color="primary">mdi-magnify</v-icon>
-    </v-list-item>
+    <div @click="openSearchDialog" class="">
+      <v-text-field
+        class="ma-1"
+        label="Search on KSRI"
+        placeholder="Search on KSRI"
+        append-inner-icon="mdi-magnify"
+        single-line
+        hide-details
+        bg-color="pageBackground"
+        density="dense"
+        rounded="pill"
+        variant="flat"
+        readonly
+      ></v-text-field>
+    </div>
     <!-- <v-icon @click="openSearchDialog">mdi-magnify</v-icon> -->
 
     <!-- Search Dialog -->
