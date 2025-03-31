@@ -501,6 +501,11 @@ const props = defineProps({
     type: Boolean,
     required: false,
   },
+  queryParams: {
+    type: Object,
+    required: false,
+    default: () => ({}),
+  },
 });
 
 const emit = defineEmits([
@@ -659,8 +664,12 @@ const fetchItems = async () => {
       items.value = allItems;
     } else {
       //  get id token
-
-      const response = await axiosInstance.get(props.apiEndpoint);
+      console.log("queryParams", props.queryParams);
+      const response = await axiosInstance.get(props.apiEndpoint, {
+        params: {
+          ...props.queryParams,
+        },
+      });
       items.value = response.data;
     }
     emit("all-items", items.value);
@@ -674,6 +683,10 @@ const fetchItems = async () => {
     });
   }
 };
+
+defineExpose({
+  fetchItems,
+});
 
 const createItem = () => {
   editedIndex.value = -1;

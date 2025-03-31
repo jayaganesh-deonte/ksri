@@ -1,6 +1,12 @@
 <template>
   <div>
-    <div class="d-flex ma-4 justify-end">
+    <div class="d-flex justify-space-between align-center mb-4">
+      <!-- {{ dateRange.start }} - {{ dateRange.end }} => 2024-03-31 - 2025-03-31 -->
+      <div class="d-flex align-center">
+        <DateRangePicker @update:dates="handleDates" />
+        <!-- search btn -->
+        <v-btn class="ml-2" color="primary" @click="searchData">Search</v-btn>
+      </div>
       <downloadForm10BDVue
         :donationData="donationData"
         :isDisabled="isDisabled"
@@ -18,6 +24,8 @@
       :isDeleteEnabledForItem="false"
       :sortBy="[{ key: 'orderId', order: 'desc' }]"
       @all-items="hanldeAllItems"
+      :queryParams="queryParams"
+      ref="CRUD"
     />
   </div>
 </template>
@@ -26,8 +34,11 @@
 const apiEndpoint = "/payments/manual";
 import DonationReceiptPdf from "@/components/DonationReceiptPdf.vue";
 import downloadForm10BDVue from "@/components/downloadForm10BD.vue";
+import DateRangePicker from "@/components/DateRangePicker.vue";
 
-import { reactive, ref } from "vue";
+import { reactive, ref, computed } from "vue";
+
+const CRUD = ref(null); // Properly define the ref
 
 const fixedValues = {
   paymentType: "Donation",
@@ -246,6 +257,28 @@ const donationHeaders = [
 
 let donationData = reactive([]);
 let isDisabled = ref(true);
+
+let dateRange = reactive({});
+
+// computed query params
+const queryParams = computed(() => {
+  return {
+    startDate: dateRange.start ? dateRange.start : null,
+    endDate: dateRange.end ? dateRange.end : null,
+  };
+});
+
+const searchData = () => {
+  // Use the ref directly without this.$refs
+  if (CRUD.value) {
+    CRUD.value.fetchItems();
+  }
+};
+
+const handleDates = (dates) => {
+  console.log("handleDates dates 1", dates);
+  Object.assign(dateRange, dates);
+};
 
 const hanldeAllItems = (items) => {
   // console.log("all items", items);
