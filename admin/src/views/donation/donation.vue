@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="d-flex ma-4 justify-end">
+    <div class="d-flex justify-space-between align-center mb-4">
+      {{ dateRange.startDate }} - {{ dateRange.endDate }}
+      <div><DateRangePicker @update:dates="handleDates" /></div>
       <downloadForm10BDVue
         :donationData="donationData"
         :isDisabled="isDisabled"
@@ -26,6 +28,7 @@
 const apiEndpoint = "/payments/manual";
 import DonationReceiptPdf from "@/components/DonationReceiptPdf.vue";
 import downloadForm10BDVue from "@/components/downloadForm10BD.vue";
+import DateRangePicker from "@/components/DateRangePicker.vue";
 
 import { reactive, ref } from "vue";
 
@@ -246,6 +249,13 @@ const donationHeaders = [
 
 let donationData = reactive([]);
 let isDisabled = ref(true);
+
+let dateRange = reactive({});
+
+const handleDates = (dates) => {
+  console.log("handleDates dates", dates);
+  Object.assign(dateRange, dates);
+};
 
 const hanldeAllItems = (items) => {
   // console.log("all items", items);

@@ -33,36 +33,38 @@ async function getPayments(req: Request, res: Response) {
     const endOfMonth = new Date(now);
     startDate = startOfMonth.toLocaleDateString("en-CA"); // Format as YYYY-MM-DD
     endDate = endOfMonth.toLocaleDateString("en-CA"); // Format as YYYY-MM-DD  }
-    const params = {
-      TableName: process.env.DDB_TABLE_NAME,
-      IndexName: "PaymentDateIndex",
-      KeyConditionExpression:
-        "PK = :PK AND paymentDate BETWEEN :startDate AND :endDate",
-      ExpressionAttributeValues: {
-        ":PK": "ENTITYTYPE#PAYMENT",
-        ":startDate": startDate,
-        ":endDate": endDate,
-      },
-      ScanIndexForward: false,
-    };
+  }
+  console.log("getPayments startDate", startDate);
+  console.log("getPayments endDate", endDate);
+  const params = {
+    TableName: process.env.DDB_TABLE_NAME,
+    IndexName: "PaymentDateIndex",
+    KeyConditionExpression:
+      "PK = :PK AND paymentDate BETWEEN :startDate AND :endDate",
+    ExpressionAttributeValues: {
+      ":PK": "ENTITYTYPE#PAYMENT",
+      ":startDate": startDate,
+      ":endDate": endDate,
+    },
+    ScanIndexForward: false,
+  };
 
-    console.log("getPayments params", params);
+  console.log("getPayments params", params);
 
-    try {
-      const result = await documentClient.query(params);
-      const payments: Payment[] =
-        result.Items?.map((item: Record<string, any>) => {
-          const paymentDDB = item as PaymentDDB;
-          // if (!validatePaymentDDB(paymentDDB)) {
-          //   throw new Error("Invalid payment data");
-          // }
-          return fromDynamoDB(paymentDDB);
-        }) || [];
-      res.json(payments);
-    } catch (error) {
-      console.error("Error fetching payments:", error);
-      res.status(500).json({ error: "Error fetching payments" });
-    }
+  try {
+    const result = await documentClient.query(params);
+    const payments: Payment[] =
+      result.Items?.map((item: Record<string, any>) => {
+        const paymentDDB = item as PaymentDDB;
+        // if (!validatePaymentDDB(paymentDDB)) {
+        //   throw new Error("Invalid payment data");
+        // }
+        return fromDynamoDB(paymentDDB);
+      }) || [];
+    res.json(payments);
+  } catch (error) {
+    console.error("Error fetching payments:", error);
+    res.status(500).json({ error: "Error fetching payments" });
   }
 }
 
