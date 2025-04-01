@@ -35,7 +35,7 @@
         <div class="d-flex justify-center ma-4">
           <v-btn
             rounded="pill"
-            variant="outlined"
+            variant="flat"
             color="primary"
             to="/ksri-publications/books/"
             v-if="!isAdditionalPublication"
@@ -44,7 +44,7 @@
           </v-btn>
           <v-btn
             rounded="pill"
-            variant="outlined"
+            variant="flat"
             color="primary"
             to="/ksri-publications/"
             v-else
@@ -81,17 +81,21 @@
           >
             <div>
               <div
-                class="text-h5 text-secondary"
+                class="text-h5 text-secondary font-weight-bold"
                 data-aos="fade-left"
                 data-aos-delay="100"
               >
                 {{ bookInfo.title }}
               </div>
-              <div class="text-h6" data-aos="fade-left" data-aos-delay="200">
+              <div
+                class="text-h6 font-weight-bold"
+                data-aos="fade-left"
+                data-aos-delay="200"
+              >
                 {{ bookInfo.subtitle }}
               </div>
               <div
-                class="text-h6 text-secondary"
+                class="text-h6 text-secondary font-weight-bold"
                 data-aos="fade-left"
                 data-aos-delay="300"
               >
@@ -99,7 +103,7 @@
               </div>
               <!-- author -->
               <div
-                class="text-h6"
+                class="text-h6 font-weight-bold"
                 data-aos="fade-left"
                 data-aos-delay="300"
                 v-if="bookInfo.author"
@@ -111,7 +115,7 @@
               </div>
               <!-- year of publication -->
               <div
-                class="text-h6 text-primary my-4"
+                class="text-h6 text-primary my-4 font-weight-bold"
                 data-aos="fade-left"
                 data-aos-delay="300"
               >
@@ -131,7 +135,11 @@
                 </v-chip>
               </div>
             </div>
-            <div class="text-body-1" data-aos="fade-left" data-aos-delay="400">
+            <div
+              class="text-body-1 font-weight-bold"
+              data-aos="fade-left"
+              data-aos-delay="400"
+            >
               <!-- {{ bookInfo.details }} -->
               <div v-html="bookInfo.details"></div>
             </div>

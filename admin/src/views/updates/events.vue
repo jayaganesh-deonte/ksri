@@ -52,7 +52,7 @@ const eventsFields = [
     label: "Category",
     type: "auto-complete",
     multiple: true,
-    items: ["Events", "Workshops", "Competitions", "Lectures", "Seminars"],
+    items: ["Events", "Workshops", "Viva", "Lectures", "Seminars"],
     rules: [(v) => !!v || "At least one category is required"],
   },
   {

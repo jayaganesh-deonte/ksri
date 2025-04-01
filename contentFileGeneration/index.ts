@@ -96,6 +96,25 @@ const pageDetails = [
         .sort((a, b) => a.orderId - b.orderId)
         .map((item) => item.name),
   },
+  // /gallery/collections create subcollection dict
+  {
+    endpoint: "/gallery/collections",
+    outputFile: "../website/content//gallery/subcollections.json",
+    // filter by itemPublishStatus =>"PUBLISHED" and select only name
+    filter: (data: any[]) =>
+      data
+        .filter((item) => item.itemPublishStatus === "PUBLISHED")
+        .sort((a, b) => a.orderId - b.orderId)
+        .map((item) => ({
+          name: item.name,
+          subCollections: item.subCollections
+            ? item.subCollections.map(
+                (subCollection: any) => subCollection.name
+              )
+            : [],
+        })),
+  },
+
   // /gallery
   {
     endpoint: "/gallery",

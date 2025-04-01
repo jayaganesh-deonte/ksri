@@ -22,7 +22,7 @@
           <div class="d-flex justify-center ma-4">
             <v-btn
               rounded="pill"
-              variant="outlined"
+              variant="flat"
               color="primary"
               to="/ksri-publications/journals/"
             >
@@ -35,7 +35,7 @@
         <div class="d-flex justify-center ma-4">
           <v-btn
             rounded="pill"
-            variant="outlined"
+            variant="flat"
             color="primary"
             to="/ksri-publications/journals/"
           >
@@ -71,17 +71,21 @@
           >
             <div>
               <div
-                class="text-h5 text-secondary"
+                class="text-h5 text-secondary font-weight-bold"
                 data-aos="fade-left"
                 data-aos-delay="100"
               >
                 {{ journalInfo.title }}
               </div>
-              <div class="text-h6" data-aos="fade-left" data-aos-delay="200">
+              <div
+                class="text-h6 font-weight-bold"
+                data-aos="fade-left"
+                data-aos-delay="200"
+              >
                 {{ journalInfo.subtitle }}
               </div>
               <div
-                class="text-h6 text-primary my-4"
+                class="text-h6 text-primary my-4 font-weight-bold"
                 data-aos="fade-left"
                 data-aos-delay="300"
               >
@@ -92,13 +96,13 @@
               </div>
               <!-- year of publication -->
               <div
-                class="text-h6 text-primary my-4"
+                class="text-h6 text-primary my-4 font-weight-bold"
                 data-aos="fade-left"
                 data-aos-delay="300"
               >
                 Year of Publication:
 
-                <span class="text-secondary">
+                <span class="text-secondary font-weight-bold">
                   {{ journalInfo.yearOfPublication }}
                 </span>
               </div>
@@ -113,7 +117,11 @@
                 </v-chip>
               </div>
             </div>
-            <div class="text-body-1" data-aos="fade-left" data-aos-delay="400">
+            <div
+              class="text-body-1 font-weight-bold"
+              data-aos="fade-left"
+              data-aos-delay="400"
+            >
               <!-- {{ journalInfo.details }} -->
               <div v-html="journalInfo.details"></div>
             </div>

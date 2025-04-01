@@ -34,6 +34,57 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
+    "id": "01JGR632M0E1CY4V1PBE35957X",
+    "name": "Hema Ramanathan",
+    "course": "M.Phil.",
+    "areaOfStudy": "Comparative study of the poetics of Anandavardhana and Susanne Langer",
+    "supervisor": "Dr. S.S. Janaki",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "1985",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:12:17.754Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632KZ5P85VEVVYNBMQ012",
+    "name": "Lokanayaki Ammal",
+    "course": "M.Phil.",
+    "areaOfStudy": "Siva elements in Ramayana",
+    "supervisor": "Dr. S.S. Janaki",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "1985",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.399Z",
+      "updated_at": "2025-03-22T07:14:05.258Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0RQX8HY8NPT0YPTMS",
+    "name": "G.D.Jayalakshmi",
+    "course": "M.Phil.",
+    "areaOfStudy": "Rukminiharana of Vatsaraja",
+    "supervisor": "Dr. S.S. Janaki",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "1986",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:11:01.234Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "id": "01JKQNH2KG9CGXTRGS7PPG5F76",
     "name": "S.S.Rangan",
     "course": "M.Phil.",
@@ -41,11 +92,504 @@
     "supervisor": "Dr. S.S. Janaki",
     "status": "Completed",
     "startedYear": " ",
-    "completedYear": "",
+    "completedYear": "1988",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-02-10T10:12:24.817Z",
-      "updated_at": "2025-02-10T10:12:24.817Z",
+      "updated_at": "2025-03-22T07:09:07.210Z",
+      "created_by": "dhara0622@gmail.com"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M05P1E0Y81BC68J0YX",
+    "name": "G.Meenakshi",
+    "course": "M.Phil.",
+    "areaOfStudy": "A critical study of Vakrokti Pancasika of Ratnakara",
+    "supervisor": "Dr. S.S. Janaki",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "1989",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:13:13.306Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0NMNR1ENR6FQJXGBA",
+    "name": "N.Sridhar",
+    "course": "M.Phil.",
+    "areaOfStudy": "Lilavati Vithi- A Critical study",
+    "supervisor": "Dr. S.S. Janaki",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "1990",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:11:16.354Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0N12JBTW10HCBYMRJ",
+    "name": "V.Vasudevan",
+    "course": "M.Phil.",
+    "areaOfStudy": "Bhramara Kahali-Eng.trans. & study",
+    "supervisor": "Dr. S.S. Janaki",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "1990",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:11:35.810Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0D9GE067FS51X51Y6",
+    "name": "P.K.Bhaskaran",
+    "course": "M.Phil.",
+    "areaOfStudy": "Upakramaparakrama of Appaya Diksita - A critical Study",
+    "supervisor": "Dr. S.S. Janaki",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "1990",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:12:31.714Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0EAV94RN7E18FTFMQ",
+    "name": "R.Padmini",
+    "course": "M.Phil.",
+    "areaOfStudy": "Critical study of Candrakala Natika of Viswanatha",
+    "supervisor": "Dr. S.S. Janaki",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "1992",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:12:10.650Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M08JSQ55FZSA4EY0P0",
+    "name": "N.Ambika",
+    "course": "M.Phil.",
+    "areaOfStudy": "Movement (Gatis) in Natya according to Bharata's Natyasastra.",
+    "supervisor": "Dr. S.S. Janaki",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "1992",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:13:04.978Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0S104ZF29BSQP446N",
+    "name": "R.Subasri",
+    "course": "M.Phil.",
+    "areaOfStudy": "Irony in Sanskrit Literature",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "1998",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:10:54.539Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0G7MWKD2TG2H9T5RN",
+    "name": "B.Ramadevi",
+    "course": "M.Phil.",
+    "areaOfStudy": "Ganjifa card play in Sanskrit Literature",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2001",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:15:43.923Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0RGJC6FZKYZ85F4DJ",
+    "name": "Ms. N. Meena",
+    "course": "M.Phil.",
+    "areaOfStudy": "Code Language in War And Politics",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2002",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:11:08.882Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0BZNWT60TW22A041V",
+    "name": "Ms. A. Yamuna Devi",
+    "course": "M.Phil.",
+    "areaOfStudy": "Critical Edition and Study of Paniniya Sutrodaharana Kavya",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2002",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:12:49.706Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0KCG9XQTGWZKA8TAA",
+    "name": "Ms. V. Premalatha",
+    "course": "M.Phil.",
+    "areaOfStudy": "Amanaska Yoga - A Critical Study",
+    "supervisor": "Dr. V. Kameswari",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2006",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:11:55.538Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0AYG1FRNRXYD7EM13",
+    "name": "Mr K.P. Srikanth",
+    "course": "M.Phil.",
+    "areaOfStudy": "Dosapariharas in Brhatparasara Horasastra",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2007",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:12:58.098Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M02Q7YR2Q4S30WSTPP",
+    "name": "Mr. K. Nagarajan",
+    "course": "M.Phil.",
+    "areaOfStudy": "Yogapāda of Mataṇga Pārameśvarāgamā",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2007",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:16:25.474Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0DX9087GZT61NNACT",
+    "name": "Ms. M. Archana",
+    "course": "M.Phil.",
+    "areaOfStudy": "Unmattaraghava of Virupaksa - A Study",
+    "supervisor": "Dr. T.V.Vasudeva",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2008",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.401Z",
+      "updated_at": "2025-03-22T07:12:24.315Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M1TG429HYQAY1C6QA2",
+    "name": "Mr.G.Venkataraman",
+    "course": "M.Phil.",
+    "areaOfStudy": "Sevya Sevakopadesa of Ksemendra - A study",
+    "supervisor": "Dr. T.V.Vasudeva",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2009",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.401Z",
+      "updated_at": "2025-03-22T07:09:13.490Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M1STJ8VQ3D9PC51QWK",
+    "name": "Ms.S.Hemavathy",
+    "course": "M.Phil.",
+    "areaOfStudy": "Caturvarga Sangraha of Ksemendra - A Study",
+    "supervisor": "Dr. T.V.Vasudeva",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2009",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.401Z",
+      "updated_at": "2025-03-22T07:09:22.474Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0SQ7K8MBC024JD71H",
+    "name": "Ms.Vibha Raghav",
+    "course": "M.Phil.",
+    "areaOfStudy": "Goraksha Samhita - A Critical Study",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2009",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:10:47.738Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M1QRRQ8KKYPAN7DKGD",
+    "name": "Ms.Brinda Gandhi",
+    "course": "M.Phil.",
+    "areaOfStudy": "Nilakantha Diksita's Vairagyasatakam - A study",
+    "supervisor": "Dr. T.V.Vasudeva",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2011",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.401Z",
+      "updated_at": "2025-03-22T07:09:54.114Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M02SGKAR0NPK7R4CX4",
+    "name": "Ms.S.Padmapriya",
+    "course": "M.Phil.",
+    "areaOfStudy": "Karani in Ganitasastra - An analysis",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2011",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:13:50.346Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M12EVER1AW9092P5YF",
+    "name": "Ms.Vidyuta K",
+    "course": "M.Phil.",
+    "areaOfStudy": "Devaprasada in Vishvakarma Vastushastra",
+    "supervisor": "Dr. T.V.Vasudeva",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2013",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.401Z",
+      "updated_at": "2025-03-22T07:10:32.618Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M0NCHDNNCFXMTBNPD6",
+    "name": "Mr.S.Margabandhu",
+    "course": "M.Phil.",
+    "areaOfStudy": "Yogapādā of Mrgendra Agama",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2013",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:15:18.922Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M04ZQMBDE7JQJ6241R",
+    "name": "Ms. S. Anuradha",
+    "course": "M.Phil.",
+    "areaOfStudy": "Varahopanisad",
+    "supervisor": "Dr. K.S.Balasubramanian",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2015",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:13:32.690Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M1ST1Y69CYA5B4404M",
+    "name": "Ms. Gowri T",
+    "course": "M.Phil.",
+    "areaOfStudy": "Lingavrtti vicara of Vararuci- A Study",
+    "supervisor": "Dr. T.V.Vasudeva",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2016",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.401Z",
+      "updated_at": "2025-03-22T07:09:48.466Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M1CX5YETVK6ZCV0SB6",
+    "name": "Ms. G Rajalakshmi",
+    "course": "M.Phil.",
+    "areaOfStudy": "Cola Campu",
+    "supervisor": "Dr. V. Yamuna Devi",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2017",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.401Z",
+      "updated_at": "2025-03-22T07:16:56.330Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M1C6H99YN67QWCKNK8",
+    "name": "Ms. Ramya Bhatt",
+    "course": "M.Phil.",
+    "areaOfStudy": "Significance of Vadavagni",
+    "supervisor": "Dr. V. Yamuna Devi",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2017",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.401Z",
+      "updated_at": "2025-03-22T07:10:11.042Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M13SSZ80Z49CNHE777",
+    "name": "Ms. J Latha",
+    "course": "M.Phil.",
+    "areaOfStudy": "Krishnabhupaliyam",
+    "supervisor": "Dr. V. Yamuna Devi",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2017",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.401Z",
+      "updated_at": "2025-03-22T07:17:06.290Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M1AG57WJ9N7DGZ0THD",
+    "name": "Ms. J Mythili",
+    "course": "M.Phil.",
+    "areaOfStudy": "Yogakundalini Upanisad",
+    "supervisor": "Dr. V. Yamuna Devi",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2018",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.401Z",
+      "updated_at": "2025-03-22T07:10:18.194Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGR632M1Q38G6D3ACA4HHTJY",
+    "name": "Ms. Iswarya C",
+    "course": "M.Phil.",
+    "areaOfStudy": "Yogacudamani Upanisad- A Critical study",
+    "supervisor": "Dr. V. Yamuna Devi",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2019",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-04T08:14:46.401Z",
+      "updated_at": "2025-03-22T07:16:46.010Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JKQNN78WXBP3XMPHMMDKKTDJ",
+    "name": "Ms. Gayathri",
+    "course": "M.Phil.",
+    "areaOfStudy": "Critical Study of the work Sammarjanishataka",
+    "supervisor": "Dr. V. Yamuna Devi",
+    "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "2022",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-02-10T10:14:40.668Z",
+      "updated_at": "2025-03-22T07:19:20.690Z",
       "created_by": "dhara0622@gmail.com"
     },
     "itemPublishStatus": "PUBLISHED"
@@ -68,135 +612,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JKQNN78WXBP3XMPHMMDKKTDJ",
-    "name": "Ms. Gayathri",
-    "course": "M.Phil.",
-    "areaOfStudy": "Critical Study of the work Sammarjanishataka",
-    "supervisor": "Dr. V. Yamuna Devi",
-    "status": "Completed",
-    "startedYear": " ",
-    "completedYear": "2023",
-    "metadata": {
-      "updated_by": "dhara0622@gmail.com",
-      "created_at": "2025-02-10T10:14:40.668Z",
-      "updated_at": "2025-02-21T07:17:42.910Z",
-      "created_by": "dhara0622@gmail.com"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M1TG429HYQAY1C6QA2",
-    "name": "Mr.G.Venkataraman",
-    "course": "M.Phil.",
-    "areaOfStudy": "Sevya Sevakopadesa of Ksemendra - A study",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.401Z",
-      "updated_at": "2025-02-27T18:13:59.651Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M1STJ8VQ3D9PC51QWK",
-    "name": "Ms.S.Hemavathy",
-    "course": "M.Phil.",
-    "areaOfStudy": "Caturvarga Sangraha of Ksemendra - A Study",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.401Z",
-      "updated_at": "2025-02-27T18:14:07.302Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M1ST1Y69CYA5B4404M",
-    "name": "Ms. Gowri T",
-    "course": "M.Phil.",
-    "areaOfStudy": "Lingavrtti vicara of Vararuci- A Study",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.401Z",
-      "updated_at": "2025-02-27T18:14:13.850Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M1QRRQ8KKYPAN7DKGD",
-    "name": "Ms.Brinda Gandhi",
-    "course": "M.Phil.",
-    "areaOfStudy": "Nilakantha Diksita's Vairagyasatakam - A study",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.401Z",
-      "updated_at": "2025-02-27T18:14:22.419Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M1Q38G6D3ACA4HHTJY",
-    "name": "Ms. Iswarya",
-    "course": "M.Phil.",
-    "areaOfStudy": "Yogacudamani Upanisad- A Critical study",
-    "supervisor": "Dr. V. Yamuna Devi",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.401Z",
-      "updated_at": "2025-02-27T18:15:14.733Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M1CX5YETVK6ZCV0SB6",
-    "name": "Ms. Rajalakshmi",
-    "course": "M.Phil.",
-    "areaOfStudy": "Cola Campu",
-    "supervisor": "Dr. V. Yamuna Devi",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.401Z",
-      "updated_at": "2025-02-27T18:14:50.860Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M1C6H99YN67QWCKNK8",
-    "name": "Ms. Ramya Bhatt",
-    "course": "M.Phil.",
-    "areaOfStudy": "Significance of Vadavagni",
-    "supervisor": "Dr. V. Yamuna Devi",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.401Z",
-      "updated_at": "2025-02-27T18:15:04.946Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "id": "01JGR632M1BD2Y8VPNHJJV88W9",
     "name": "Ms. Mrinalini",
     "course": "M.Phil.",
@@ -213,264 +628,18 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JGR632M1AG57WJ9N7DGZ0THD",
-    "name": "Ms. J Mythili",
-    "course": "M.Phil.",
-    "areaOfStudy": "Yogakundalini Upanisad",
-    "supervisor": "Dr. V. Yamuna Devi",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.401Z",
-      "updated_at": "2025-02-27T18:15:24.189Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M13SSZ80Z49CNHE777",
-    "name": "Ms. Latha",
-    "course": "M.Phil.",
-    "areaOfStudy": "Krishnabhupaliyam",
-    "supervisor": "Dr. V. Yamuna Devi",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.401Z",
-      "updated_at": "2025-02-27T18:15:32.733Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M12EVER1AW9092P5YF",
-    "name": "Ms.Vidyuta K",
-    "course": "M.Phil.",
-    "areaOfStudy": "Devaprasada in Vishvakarma Vastushastra",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.401Z",
-      "updated_at": "2025-02-27T18:15:41.231Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0SQ7K8MBC024JD71H",
-    "name": "Ms.Vibha Raghav",
-    "course": "M.Phil.",
-    "areaOfStudy": "Goraksha Samhita - A Critical Study",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-02-27T18:15:50.862Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0S104ZF29BSQP446N",
-    "name": "R.Subasri",
-    "course": "M.Phil.",
-    "areaOfStudy": "Irony in Sanskrit Literature",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-02-27T18:16:02.129Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0RQX8HY8NPT0YPTMS",
-    "name": "G.D.Jayalakshmi",
-    "course": "M.Phil.",
-    "areaOfStudy": "Rukminiharana of Vatsaraja",
-    "supervisor": "Dr. S.S. Janaki",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-02-27T18:16:11.019Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0RGJC6FZKYZ85F4DJ",
-    "name": "Ms. N. Meena",
-    "course": "M.Phil.",
-    "areaOfStudy": "Code Language in War And Politics",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-02-27T18:16:24.398Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0NMNR1ENR6FQJXGBA",
-    "name": "N.Sridhar",
-    "course": "M.Phil.",
-    "areaOfStudy": "Lilavati Vithi- A Critical study",
-    "supervisor": "Dr. S.S. Janaki",
-    "status": "Completed",
-    "startedYear": " ",
-    "metadata": {
-      "updated_by": "contactus@deonte.in",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-02-27T18:16:37.743Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0NCHDNNCFXMTBNPD6",
-    "name": "Mr.S.Margabandhu",
-    "course": "M.Phil.",
-    "areaOfStudy": "Yogic elements in Mrgendra Agama",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0N12JBTW10HCBYMRJ",
-    "name": "V.Vasudevan",
-    "course": "M.Phil.",
-    "areaOfStudy": "Bhramara Kahali-Eng.trans. & study",
-    "supervisor": "Dr. S.S. Janaki",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "id": "01JGR632M0KPB839SAVPP2MZ0Q",
     "name": "Premavathi",
     "course": "M.Phil.",
     "areaOfStudy": "A critical study of Nakshatramala of Sivarama Tripathin with Eng. Trans.",
     "supervisor": "Dr. S.S. Janaki",
     "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "1989-91",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0KCG9XQTGWZKA8TAA",
-    "name": "Ms. V. Premalatha",
-    "course": "M.Phil.",
-    "areaOfStudy": "Amanaska Yoga - A Critical Study",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0G7MWKD2TG2H9T5RN",
-    "name": "B.Ramadevi",
-    "course": "M.Phil.",
-    "areaOfStudy": "Ganjifa Khelana of Giridhara - A study",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0EAV94RN7E18FTFMQ",
-    "name": "R.Padmini",
-    "course": "M.Phil.",
-    "areaOfStudy": "Critical study of Candrakala Natika of Viswanatha",
-    "supervisor": "Dr. S.S. Janaki",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0E1CY4V1PBE35957X",
-    "name": "Hema Ramanathan",
-    "course": "M.Phil.",
-    "areaOfStudy": "Comparative study of the poetics of Anandavardhana and Susanne Langer",
-    "supervisor": "Dr. S.S. Janaki",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0DX9087GZT61NNACT",
-    "name": "Ms. M. Archana",
-    "course": "M.Phil.",
-    "areaOfStudy": "Unmattaraghava of Virupaksa - A Study",
-    "supervisor": "Dr. T.V.Vasudeva",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.401Z",
-      "updated_at": "2025-01-04T08:14:46.401Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0D9GE067FS51X51Y6",
-    "name": "P.K.Bhaskaran",
-    "course": "M.Phil.",
-    "areaOfStudy": "Upakramaparakrama of Appaya Diksita - A critical Study",
-    "supervisor": "Dr. S.S. Janaki",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:11:48.202Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
@@ -482,55 +651,12 @@
     "areaOfStudy": "Tripuradaha Dima",
     "supervisor": "Dr. S.S. Janaki",
     "status": "Completed",
+    "startedYear": " ",
+    "completedYear": "1989-90",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0BZNWT60TW22A041V",
-    "name": "Ms. A. Yamuna Devi",
-    "course": "M.Phil.",
-    "areaOfStudy": "Critical Edition and Study of Paniniya Sutrodaharana Kavya",
-    "supervisor": "Dr. V. Kameswari",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M0AYG1FRNRXYD7EM13",
-    "name": "Mr K.P. Srikanth",
-    "course": "M.Phil.",
-    "areaOfStudy": "Dosapariharas in Brhatparasara Horasastra",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M08JSQ55FZSA4EY0P0",
-    "name": "N.Ambika",
-    "course": "M.Phil.",
-    "areaOfStudy": "Movement (Gatis) in Natya according to Bharata's Natyasastra.",
-    "supervisor": "Dr. S.S. Janaki",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:12:40.938Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
@@ -542,40 +668,11 @@
     "areaOfStudy": "Critical Analysis of Drstanta-kalikasataka",
     "supervisor": "Dr. T.V.Vasudeva",
     "status": "Completed",
+    "startedYear": " ",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M05P1E0Y81BC68J0YX",
-    "name": "G.Meenakshi",
-    "course": "M.Phil.",
-    "areaOfStudy": "A critical study of Vakrokti Pancasika of Ratnakara",
-    "supervisor": "Dr. S.S. Janaki",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M04ZQMBDE7JQJ6241R",
-    "name": "Ms. S. Anuradha",
-    "course": "M.Phil.",
-    "areaOfStudy": "Varahopanisad",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
+      "updated_at": "2025-03-22T07:13:21.722Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
@@ -587,55 +684,11 @@
     "areaOfStudy": "Yogapada of Matanga Parameswaragama",
     "supervisor": "Dr. K.S.Balasubramanian",
     "status": "Completed",
+    "startedYear": " ",
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M02SGKAR0NPK7R4CX4",
-    "name": "Ms.S.Padmapriya",
-    "course": "M.Phil.",
-    "areaOfStudy": "Karani in Ganitasastra - An analysis",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632M02Q7YR2Q4S30WSTPP",
-    "name": "Mr. K. Nagarajan",
-    "course": "M.Phil.",
-    "areaOfStudy": "Yogabija",
-    "supervisor": "Dr. K.S.Balasubramanian",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.400Z",
-      "updated_at": "2025-01-04T08:14:46.400Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGR632KZ5P85VEVVYNBMQ012",
-    "name": "Lokanayaki Ammal",
-    "course": "M.Phil.",
-    "areaOfStudy": "Siva elements in Ramayana",
-    "supervisor": "Dr. S.S. Janaki",
-    "status": "Completed",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-04T08:14:46.399Z",
-      "updated_at": "2025-01-04T08:14:46.399Z",
+      "updated_at": "2025-03-22T07:13:39.394Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"
@@ -648,10 +701,11 @@
     "supervisor": "Dr. V. Yamuna Devi",
     "status": "Completed",
     "startedYear": " ",
+    "completedYear": "2021",
     "metadata": {
-      "updated_by": "contactus@deonte.in",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-04T08:14:46.398Z",
-      "updated_at": "2025-02-27T18:14:39.130Z",
+      "updated_at": "2025-03-22T07:19:33.586Z",
       "created_by": "admin"
     },
     "itemPublishStatus": "PUBLISHED"

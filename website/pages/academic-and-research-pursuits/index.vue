@@ -431,3 +431,11 @@ const getEventsByCategory = computed(() => {
   return filteredProjects;
 });
 </script>
+
+<style>
+label {
+  color: black !important;
+  font-size: 0.8em !important;
+  font-weight: 600 !important;
+}
+</style>

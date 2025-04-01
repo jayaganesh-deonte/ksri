@@ -6,10 +6,17 @@
       rounded="0"
       elevation="0"
       class="d-flex flex-column"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        height: 210px;
+      "
     >
       <v-card
         color="primary"
-        height="50%"
         class="d-flex flex-column justify-end ma-2"
         rounded="0"
         elevation="0"
@@ -27,8 +34,6 @@
               fit
               :width="$device.isMobile ? 100 : 100"
               :class="`${$device.isMobile ? '' : 'ml-auto mr-4'}`"
-              @mouseover="changeLogo"
-              @mouseleave="changeLogo"
             >
             </v-img>
           </div>
@@ -50,11 +55,26 @@
                 <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
                   No. 84, Thiru Vi Ka Road, Mylapore, Chennai - 600 004.
                 </div>
+                <div :class="$device.isMobile ? 'text-body-1' : 'text-body-1'">
+                  ksrinst@gmail.com | 044-24985320 / 044-29505320
+                </div>
               </v-card-text>
             </v-card-item>
           </div>
         </v-card>
       </v-card>
+      <!-- style="position: absolute; right: 0; margin-top: 130px" -->
+      <div class="d-flex justify-end align-center mt-n12 mx-8">
+        <v-card
+          elevation="0"
+          rounded="0"
+          class="ma-0 pa-0"
+          color="transparent"
+          width="20vw"
+        >
+          <search />
+        </v-card>
+      </div>
       <div class="d-flex mx-auto mt-0">
         <!-- add menu Options -->
         <div v-for="option in menuOptions" :key="option.name">
@@ -157,6 +177,8 @@
         </div>
       </div>
     </v-card>
+    <!-- Spacer to prevent content from being hidden behind fixed app bar -->
+    <div class="fixed-app-bar-spacer" style="height: 210px"></div>
   </div>
   <span v-else>
     <!-- nav drawer -->
@@ -181,8 +203,6 @@
               src="/img/ksri-logo-primary.png"
               fit
               :width="$device.isMobile ? 60 : 60"
-              @mouseover="changeLogo"
-              @mouseleave="changeLogo"
             >
             </v-img>
           </v-col>
@@ -205,13 +225,24 @@
             </div>
           </v-col>
         </v-row>
-        <v-row class="mt-0">
+        <v-row class="mt-0 d-flex align-center">
           <v-app-bar-nav-icon
             class="mx-2"
             @click="mobileNavDrawer = !mobileNavDrawer"
           >
             <v-icon>mdi-menu</v-icon>
           </v-app-bar-nav-icon>
+          <div class="">
+            <v-card
+              elevation="0"
+              rounded="0"
+              class="mx-auto pa-0"
+              color="transparent"
+              width="70vw"
+            >
+              <search />
+            </v-card>
+          </div>
         </v-row>
       </v-card>
     </v-app-bar>

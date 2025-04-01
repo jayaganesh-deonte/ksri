@@ -34,11 +34,11 @@
           <v-card>
             <v-card-title>Select Columns to Export</v-card-title>
             <v-card-text>
-              <div v-for="header in headers" :key="header.key">
+              <div v-for="header in entityFields" :key="header.key">
                 <v-checkbox
                   v-if="header.key !== 'actions'"
                   v-model="selectedColumnsToExport"
-                  :label="header.title"
+                  :label="header.label"
                   :value="header.key"
                   hide-details
                   multiple
@@ -96,9 +96,9 @@
         v-model:expanded="expanded"
         :show-expand="expandable"
         expand-on-click
-        style="overflow-x: scroll"
+        style="overflow-x: scroll; height: 70vh"
         :loading="loading"
-        :sort-by="sortBy"
+        :sort-by="sortByComputed"
       >
         <template
           v-slot:headers="{ columns, isSorted, getSortIcon, toggleSort }"
@@ -144,25 +144,47 @@
           </td>
         </template>
 
-        <template #item.actions="{ item }">
-          <v-icon
-            class="me-2"
-            size="small"
-            @click="editItem(item)"
-            :disabled="isEditDisabledForUser"
-            :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
-          >
-            mdi-pencil
-          </v-icon>
+        <!-- for row with key imageUrl display image -->
+        <template #item.imageUrl="{ item }">
+          <v-img
+            v-if="item.imageUrl"
+            :src="getAssetUrl(item.imageUrl[0])"
+            class="ma-2"
+          />
+        </template>
 
-          <v-icon
-            size="small"
-            @click="deleteItem(item)"
-            :disabled="isDeleteDisabledForUser || !isDeleteEnabledForItem"
-            :class="isDeleteDisabledForUser ? 'curor-not-allowed' : ''"
-          >
-            mdi-delete
-          </v-icon>
+        <template #item.actions="{ item }">
+          <div class="d-flex align-center justify-center">
+            <v-tooltip text="Status: Draft">
+              <template v-slot:activator="{ props }">
+                <v-icon
+                  v-if="item.itemPublishStatus === 'DRAFT'"
+                  color="warning"
+                  v-bind="props"
+                >
+                  mdi-alert-circle
+                </v-icon>
+              </template>
+            </v-tooltip>
+
+            <v-icon
+              size="small"
+              @click="editItem(item)"
+              :disabled="isEditDisabledForUser"
+              :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
+            >
+              mdi-pencil
+            </v-icon>
+
+            <v-icon
+              size="small"
+              @click="deleteItem(item)"
+              :disabled="isDeleteDisabledForUser || !isDeleteEnabledForItem"
+              :class="isDeleteDisabledForUser ? 'curor-not-allowed' : ''"
+            >
+              mdi-delete
+            </v-icon>
+          </div>
         </template>
       </v-data-table>
     </div>
@@ -253,6 +275,18 @@
                       :rules="field.rules"
                       variant="outlined"
                       :items="field.items"
+                      :disabled="isEditDisabled(field)"
+                      density="compact"
+                      :multiple="field.multiple"
+                    />
+
+                    <v-autocomplete
+                      v-else-if="field.type === 'auto-complete-function'"
+                      v-model="editedItem[field.key]"
+                      :label="field.label"
+                      :rules="field.rules"
+                      variant="outlined"
+                      :items="field.itemFunction(editedItem)"
                       :disabled="isEditDisabled(field)"
                       density="compact"
                       :multiple="field.multiple"
@@ -467,6 +501,11 @@ const props = defineProps({
     type: Boolean,
     required: false,
   },
+  queryParams: {
+    type: Object,
+    required: false,
+    default: () => ({}),
+  },
 });
 
 const emit = defineEmits([
@@ -490,6 +529,15 @@ let loading = ref(false);
 
 let exportMenu = ref(false);
 let selectedColumnsToExport = ref([]);
+
+const getAssetUrl = (image) => {
+  return import.meta.env.VITE_IMAGE_CLOUDFRONT + image;
+};
+
+// function for sortyBy if it is not provided then sort by id
+const sortByComputed = computed(() => {
+  return props.sortBy ? props.sortBy : [{ key: "id", order: "desc" }];
+});
 
 // Quill editor options
 const options = {
@@ -616,8 +664,12 @@ const fetchItems = async () => {
       items.value = allItems;
     } else {
       //  get id token
-
-      const response = await axiosInstance.get(props.apiEndpoint);
+      console.log("queryParams", props.queryParams);
+      const response = await axiosInstance.get(props.apiEndpoint, {
+        params: {
+          ...props.queryParams,
+        },
+      });
       items.value = response.data;
     }
     emit("all-items", items.value);
@@ -631,6 +683,10 @@ const fetchItems = async () => {
     });
   }
 };
+
+defineExpose({
+  fetchItems,
+});
 
 const createItem = () => {
   editedIndex.value = -1;
@@ -814,7 +870,7 @@ const save = async () => {
 };
 
 const selectAllColumnsToExport = () => {
-  selectedColumnsToExport.value = props.headers
+  selectedColumnsToExport.value = props.entityFields
     .map((header) => header.key)
     .filter((key) => key !== "actions");
 };
@@ -843,7 +899,7 @@ const exportAsCSV = () => {
 
   // console.log("selectedColumnsToExport", selectedColumnsToExport.value);
 
-  // console.log("columnFilter", columnFilter);
+  console.log("columnFilter", columnFilter);
 
   // Filter items based on columnFilter before generating CSV
   const filteredItems = items.value.filter((item) => {
@@ -863,10 +919,16 @@ const exportAsCSV = () => {
     .map((item) => {
       return selectedColumnsToExport.value
         .map((key) => {
+          console.log("key", key);
           // Check if there's a header with a value function for this key
-          const header = props.headers.find((h) => h.key === key);
+          const header = props.entityFields.find((h) => h.key === key);
+          console.log("header", header);
           if (header && typeof header.value === "function") {
             return escapeCSVValue(header.value(item));
+          }
+          // if header.type is of image then add domain to url
+          if (header && header.type === "image") {
+            return escapeCSVValue(item[key] ? getAssetUrl(item[key][0]) : "");
           }
           return escapeCSVValue(item[key]);
         })

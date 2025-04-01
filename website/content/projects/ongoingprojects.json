@@ -1,96 +1,27 @@
 [
   {
-    "id": "01JGM4T8Y0R3G7B7F1RA5P1BHJ",
-    "title": "Encyclopaedia of Yoga",
-    "subTitle": "-",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:35:31.648Z",
-      "updated_at": "2025-01-02T18:35:31.648Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM4T8Y0A9QTAPC877S07VGX",
-    "title": "Cataloguing of Palm-Leaf Manuscripts",
+    "id": "01JQG8BDSHH0SHS6YQB6024N71",
+    "title": "Scientific facts in Valmiki Ramayana",
     "subTitle": " ",
-    "description": "The KSRI has a well-maintained collection of hundreds of ancient palm-leaf and papers manuscript. However, for want of resources we have not been able to prepare a Descriptive Catalogue and also digitize the manuscripts. Once this is done and hosted on the web-site, scholars from across the globe can have easy access to them. The manuscripts are in different scripts like Grantha, Devanagari, Tigalari, Malayalam and Tamil. Some of them are of historical value too. We need at least one scholar well versed in deciphering the scripts and prepare a Descriptive Catalogue.",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "dhara0622@gmail.com",
-      "created_at": "2025-01-02T18:35:31.648Z",
-      "updated_at": "2025-03-12T07:38:15.559Z",
-      "created_by": "admin"
-    },
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM4T8Y01E96WBAKDA82H533",
-    "title": "Encyclopaedia of Numerals Vol II ( Vol. I has been published )",
-    "subTitle": " ",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "dhara0622@gmail.com",
-      "created_at": "2025-01-02T18:35:31.648Z",
-      "updated_at": "2025-03-12T07:39:31.919Z",
-      "created_by": "admin"
-    },
-    "sponsor": "- B.VenkataramaniEndowment",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JKWY5MH6MRM12H1B4873ZFWA",
-    "title": "Viveka Mārtāṇḍa,  Yogabīja  and Yogasūtra",
-    "subTitle": " ",
-    "description": "CRITICAL EDITION OF VIVEKAMĀRTĀṆḌA, YOGABĪJA AND YOGASŪTRA       \nABOUT THE WORKS:\n1.\tVIVEKAMĀRTĀṆḌA:\nVivekamārtāṇḍā is an excellent text on Yoga consisting of more than 600 verses divided into 6 prabodhas. The Author of the text is Viśrūpadeva. \nIt has been published with 3 available manuscripts by  K.Sambasiva Sastri under Trivandrum Sanskrit Series 119. But there are lacunae in this edition which need to be filled in with other manuscripts available at GOML Chennai, Adyar, Bhikaner, Baroda and Lonavla. \nThe text deals with many aspects of Yoga including Haṭha Yoga, Nātha Yoga, Kuṇḍalinī Yoga, Rāja Yoga, Chāyāpuruṣa lakṣaṇam, Svara Śāstra, philosophy etc. \nThe text contains many verses which are similar to Gorakṣa Samhitā. \nA critical edition with study of this text will be a great contribution in the field of Yoga.  \n2.\tYOGABĪJA: \nYogabīja is an ancient popular Yoga text attributed to Gorakṣanātha available  in Adyar Library and Research Centre, Chennai, Allahabad, Baroda, Govt. Oriental Manuscripts Library, Chennai, Jodhpur, Lonavala, Mysore, Udaipur, Kanpur and Mangalore which speaks about the popularity of this text.  The text is quoted, to name a few, by Brahmānaṇḍa in his commentary on Haṭhayogapradīpikā by Sundaradeva in his Haṭhasaṅketacandrikā and by Śivānanda Sarasvatī in his Yogacintāmaṇī.  There is one published text available, edited and translated by Dr. Brahma Mitra Awasthi, which is replete with errors.\nYogabīja  is an ancient text and had been a source of inspiration for many later Yogic texts.  It is really an astonishing fact that with as little as two hundred and one verses, YB has been able to counter jñāna and expound in brief the principles of Yogic concepts in a fluent literary style embellished with similes and metaphors and at the same time ensuring that the intricate philosophical content is articulated in a lucid manner.\n3.\tYOGASŪTRA  \nThis Yogasūtra is a different text from the traditional Yogasūtra of Patañjali. The whole text was dictated by a blind Pandit, Dhanraj and was written by Sri Bhagvan Das in 1910 at Benares. This is divided into four chapters containing 125,107, 130 and 139 sūtras respectively. But the colophon says, \n\t\t\tपातञ्जलीये योगसूत्रे चतुर्थोऽध्यायः ।\nThis manuscript also contains a brief autobiography of the author. This is available only in Adyar Library, Chennai.       \n",
-    "startYear": "2023",
+    "description": "A comparitive study of facts found in Valmiki Ramayana with the present day scientific and geographical theories.",
+    "startYear": "2024",
     "completedYear": "",
     "status": "On-Going",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
-      "created_at": "2025-02-12T11:19:39.302Z",
-      "updated_at": "2025-02-12T11:19:39.302Z",
-      "created_by": "dhara0622@gmail.com"
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-29T06:10:14.449Z",
+      "updated_at": "2025-03-29T06:34:25.658Z",
+      "created_by": "ksriphd@gmail.com"
     },
-    "sponsor": "Central Sanskrit University",
-    "keywords": "",
-    "projectSeries": "Indian Knowledge System",
+    "sponsor": "Sri. B. Madhavan Chair",
+    "keywords": " Madhavan Chair, Valmiki Ramayana",
+    "projectSeries": "Honarary Chair Projects",
     "projectSubSeries": "Science",
-    "publicationStatus": "",
+    "publicationStatus": "Unpublished",
     "projectInvestigator": [
-      "Dr. K.S.Balasubramanian"
+      "Dr. R. Muthulakshmi"
     ],
-    "coProjectInvestigators": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM4T8Y0P1ZYD7J45JSGXNY9",
-    "title": "English Translation of Kiratarjuniya",
-    "subTitle": " ",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "dhara0622@gmail.com",
-      "created_at": "2025-01-02T18:35:31.648Z",
-      "updated_at": "2025-03-17T05:46:11.968Z",
-      "created_by": "admin"
-    },
-    "sponsor": "- Dr E R Rama Bai Chair",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM4T8Y0B4NV6N01HJNF7CQB",
-    "title": "Critical Edition of Haṭhasaṅketa Chandrika of Sundara Deva",
-    "subTitle": " ",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "dhara0622@gmail.com",
-      "created_at": "2025-01-02T18:35:31.648Z",
-      "updated_at": "2025-03-17T05:44:10.216Z",
-      "created_by": "admin"
-    },
-    "sponsor": "- D.P Santanam - Indic Academy Endowment",
+    "coProjectInvestigators": [],
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -122,17 +53,144 @@
     "completedYear": "",
     "status": "On-Going",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-18T10:23:15.179Z",
-      "updated_at": "2025-01-20T11:11:19.314Z",
+      "updated_at": "2025-03-29T07:00:54.706Z",
       "created_by": "demo"
     },
     "sponsor": "Dr. S. S. Janaki Endowment",
     "keywords": "",
-    "projectSeries": "",
+    "projectSeries": "Honarary Chair Projects",
+    "projectSubSeries": "Literature",
+    "publicationStatus": "Unpublished",
+    "projectInvestigator": [
+      "Mrs. V. Lalita"
+    ],
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JPW501XZNDQMK677JS5KDN8B",
+    "title": "CITRAPAṬA",
+    "subTitle": " ",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T10:46:47.487Z",
+      "updated_at": "2025-03-21T10:46:47.487Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "The Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "Philosophy",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Sudarshan Krishna"
+    ],
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JPW5QYB5HB212BESC925J1WW",
+    "title": "ARTHAŚĀSTRA OF KAUṬILYA  ",
+    "subTitle": "With  JAYAMAṆGALĀ commentary & CĀṆAKYAṬĪKĀ",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "contactus@deonte.in",
+      "created_at": "2025-03-21T10:59:50.245Z",
+      "updated_at": "2025-03-27T18:19:48.981Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "The Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
     "projectSubSeries": "",
-    "publicationStatus": null,
-    "projectInvestigator": "",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Dr. V. Kameswari"
+    ],
+    "coProjectInvestigators": "Dr. T.V.Vasudeva",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JKWY5MH6MRM12H1B4873ZFWA",
+    "title": "Viveka Mārtāṇḍa,  Yogabīja  and Yogasūtra",
+    "subTitle": " ",
+    "description": "CRITICAL EDITION OF VIVEKAMĀRTĀṆḌA, YOGABĪJA AND YOGASŪTRA       \nABOUT THE WORKS:\n1.\tVIVEKAMĀRTĀṆḌA:\nVivekamārtāṇḍā is an excellent text on Yoga consisting of more than 600 verses divided into 6 prabodhas. The Author of the text is Viśrūpadeva. \nIt has been published with 3 available manuscripts by  K.Sambasiva Sastri under Trivandrum Sanskrit Series 119. But there are lacunae in this edition which need to be filled in with other manuscripts available at GOML Chennai, Adyar, Bhikaner, Baroda and Lonavla. \nThe text deals with many aspects of Yoga including Haṭha Yoga, Nātha Yoga, Kuṇḍalinī Yoga, Rāja Yoga, Chāyāpuruṣa lakṣaṇam, Svara Śāstra, philosophy etc. \nThe text contains many verses which are similar to Gorakṣa Samhitā. \nA critical edition with study of this text will be a great contribution in the field of Yoga.  \n2.\tYOGABĪJA: \nYogabīja is an ancient popular Yoga text attributed to Gorakṣanātha available  in Adyar Library and Research Centre, Chennai, Allahabad, Baroda, Govt. Oriental Manuscripts Library, Chennai, Jodhpur, Lonavala, Mysore, Udaipur, Kanpur and Mangalore which speaks about the popularity of this text.  The text is quoted, to name a few, by Brahmānaṇḍa in his commentary on Haṭhayogapradīpikā by Sundaradeva in his Haṭhasaṅketacandrikā and by Śivānanda Sarasvatī in his Yogacintāmaṇī.  There is one published text available, edited and translated by Dr. Brahma Mitra Awasthi, which is replete with errors.\nYogabīja  is an ancient text and had been a source of inspiration for many later Yogic texts.  It is really an astonishing fact that with as little as two hundred and one verses, YB has been able to counter jñāna and expound in brief the principles of Yogic concepts in a fluent literary style embellished with similes and metaphors and at the same time ensuring that the intricate philosophical content is articulated in a lucid manner.\n3.\tYOGASŪTRA  \nThis Yogasūtra is a different text from the traditional Yogasūtra of Patañjali. The whole text was dictated by a blind Pandit, Dhanraj and was written by Sri Bhagvan Das in 1910 at Benares. This is divided into four chapters containing 125,107, 130 and 139 sūtras respectively. But the colophon says, \n\t\t\tपातञ्जलीये योगसूत्रे चतुर्थोऽध्यायः ।\nThis manuscript also contains a brief autobiography of the author. This is available only in Adyar Library, Chennai.       \n",
+    "startYear": "2023",
+    "completedYear": "",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "dhara0622@gmail.com",
+      "created_at": "2025-02-12T11:19:39.302Z",
+      "updated_at": "2025-02-12T11:19:39.302Z",
+      "created_by": "dhara0622@gmail.com"
+    },
+    "sponsor": "Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "Science",
+    "publicationStatus": "",
+    "projectInvestigator": [
+      "Dr. K.S.Balasubramanian"
+    ],
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JPW56N8QCEGBC8XKS5S836AF",
+    "title": "PŪRVAMĪMĀMSĀVIṢAYASAṄGRAHADĪPIKĀ",
+    "subTitle": " ",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T10:50:23.895Z",
+      "updated_at": "2025-03-21T10:50:23.895Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "Philosophy",
+    "publicationStatus": "",
+    "projectInvestigator": [
+      "Sudarshan Krishna"
+    ],
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JPW5WEN7XDZ6PRJJR8NF8P1E",
+    "title": "DIETITICS AS GLEANED FROM SANSKRIT TEXTS",
+    "subTitle": " ",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T11:02:18.024Z",
+      "updated_at": "2025-03-21T11:02:18.024Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "The Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "Science",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Dr. S. Anuradha"
+    ],
     "coProjectInvestigators": "",
     "itemPublishStatus": "PUBLISHED"
   },
@@ -156,6 +214,31 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
+    "id": "01JPW55G0ZYXXSPEMBP4MV25WK",
+    "title": "UPAKRAMAPARĀKRAMA",
+    "subTitle": "OF APPAYA DĪKṢITA ",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2024",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T10:49:45.759Z",
+      "updated_at": "2025-03-21T10:49:45.759Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "Philosophy",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Sudarshan Krishna"
+    ],
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "id": "01JJ4X53W5Z223Z5ZPCDTC9G1B",
     "title": "Gemmology",
     "subTitle": " ",
@@ -173,6 +256,31 @@
     "projectSeries": "Indian Knowledge System",
     "projectSubSeries": "Science",
     "projectInvestigator": [],
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JPW5YG4Q6GY7EKRK6DAD0B7T",
+    "title": "AMRTASIDDHIYOGA OF VIRUPAKSA Details of the Institution",
+    "subTitle": "CRITICAL EDITION AND STUDY ",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T11:03:25.080Z",
+      "updated_at": "2025-03-21T11:03:25.080Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "The Central Sanskrit University",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Dr. S. Anuradha"
+    ],
+    "coProjectInvestigators": "",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -201,24 +309,205 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "id": "01JJVF08P8DHFTXC49WMXHTW1B",
-    "title": "Rare manuscript on Yoga",
+    "id": "01JQR2SJKZ5367X8AG7SAB0MBS",
+    "title": "Viṣnu Tilaka Samhita",
+    "subTitle": "A Vaisnavagamic text",
+    "description": "",
+    "startYear": "2022",
+    "completedYear": " ",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-04-01T07:07:02.143Z",
+      "updated_at": "2025-04-01T07:07:52.718Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "Sri. V. Vijayagopal",
+    "keywords": "",
+    "projectSeries": "Other Projects",
+    "projectSubSeries": "Philosophy",
+    "publicationStatus": "Unpublished",
+    "projectInvestigator": [
+      "Dr. V Annapurna"
+    ],
+    "coProjectInvestigators": [],
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JQR302WZTZZSE336G352W9ND",
+    "title": "Sanatana Dharma project on Religious Endowments",
     "subTitle": " ",
     "description": "",
+    "startYear": "2021",
+    "completedYear": "",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-04-01T07:10:35.423Z",
+      "updated_at": "2025-04-01T07:36:03.307Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "Sanatana Dharma Chair ",
+    "keywords": "",
+    "projectSeries": "Honarary Chair Projects",
+    "projectSubSeries": "",
+    "publicationStatus": "Unpublished",
+    "projectInvestigator": [
+      "Dr. R. Thiagarajan"
+    ],
+    "coProjectInvestigators": [],
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y0R3G7B7F1RA5P1BHJ",
+    "title": "Encyclopaedia of Yoga",
+    "subTitle": " ",
+    "description": "Yogic study of several ancient and medieval Yogic texts dealing with Hatha Yoga, <antra Yoga, Laya Yoga, and Raja Yoga apart from Vedic and other texts on different schools of Indian Philosophy.",
+    "startYear": "2015",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-03-29T07:07:30.882Z",
+      "created_by": "admin"
+    },
+    "sponsor": "Mr. Arvind P. Datar",
+    "projectSubSeries": "Science",
+    "publicationStatus": "Unpublished",
+    "projectInvestigator": [
+      "Dr. K.S.Balasubramanian"
+    ],
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y0A9QTAPC877S07VGX",
+    "title": "Cataloguing of Palm-Leaf Manuscripts",
+    "subTitle": " ",
+    "description": "The KSRI has a well-maintained collection of hundreds of ancient palm-leaf and papers manuscript. However, for want of resources we have not been able to prepare a Descriptive Catalogue and also digitize the manuscripts. Once this is done and hosted on the web-site, scholars from across the globe can have easy access to them. The manuscripts are in different scripts like Grantha, Devanagari, Tigalari, Malayalam and Tamil. Some of them are of historical value too. We need at least one scholar well versed in deciphering the scripts and prepare a Descriptive Catalogue.",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "dhara0622@gmail.com",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-03-12T07:38:15.559Z",
+      "created_by": "admin"
+    },
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y01E96WBAKDA82H533",
+    "title": "Encyclopaedia of Numerals Vol II ( Vol. I has been published )",
+    "subTitle": " ",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "dhara0622@gmail.com",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-03-12T07:39:31.919Z",
+      "created_by": "admin"
+    },
+    "sponsor": "- B.VenkataramaniEndowment",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y0E7FNFBE3YMD33H83",
+    "title": "English Translation of Kasyapa Silpasastra",
+    "subTitle": "An ancient text on Indian temple architectue",
+    "startYear": "2021",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-04-01T07:15:51.495Z",
+      "created_by": "admin"
+    },
+    "sponsor": "They City Union Bank",
+    "projectSeries": "Other Projects",
+    "projectSubSeries": "Art and Architecture",
+    "publicationStatus": "Unpublished",
+    "projectInvestigator": [
+      "Dr. Vidyuta K."
+    ],
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y0P1ZYD7J45JSGXNY9",
+    "title": "English Translation of Kiratarjuniya of Bharavi",
+    "subTitle": " ",
+    "startYear": "2020",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-03-29T06:38:55.089Z",
+      "created_by": "admin"
+    },
+    "sponsor": "- Dr E R Rama Bai Chair",
+    "keywords": "Kiratarjuniya, Bharavi",
+    "projectSeries": "Honarary Chair Projects",
+    "projectSubSeries": "Literature",
+    "publicationStatus": "Unpublished",
+    "projectInvestigator": [
+      "Dr. Vasumathi Rajaram"
+    ],
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JGM4T8Y0B4NV6N01HJNF7CQB",
+    "title": "Critical Edition of Haṭhasaṅketa Chandrika of Sundara Deva",
+    "subTitle": " ",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "dhara0622@gmail.com",
+      "created_at": "2025-01-02T18:35:31.648Z",
+      "updated_at": "2025-03-17T05:44:10.216Z",
+      "created_by": "admin"
+    },
+    "sponsor": "- D.P Santanam - Indic Academy Endowment",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JPW5AP1FJGMQ9GQKX4PEXQFB",
+    "title": "Jīrṇoddhāradaśaka ",
+    "subTitle": "Critical Study and Edition with the commentary of Nigamajñānadeśika",
+    "description": "",
+    "startYear": "2023",
+    "completedYear": "2025",
+    "status": "On-Going",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-03-21T10:52:35.759Z",
+      "updated_at": "2025-03-21T10:53:48.447Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "sponsor": "",
+    "keywords": "",
+    "projectSeries": "Indian Knowledge System",
+    "projectSubSeries": "Philosophy",
+    "publicationStatus": "Upcoming",
+    "projectInvestigator": [
+      "Dr. K. Nagarajan"
+    ],
+    "coProjectInvestigators": "",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "id": "01JJVF08P8DHFTXC49WMXHTW1B",
+    "title": "A descriptive Catalogue of Manuscripts on Yoga in Tamilnadu",
+    "subTitle": " ",
+    "description": "A survey of the descriptive catalogues of many institutions, universities and other academic bodies reveals that hundreds of texts on Yoga still remain unpublished. A descriptive catalogue of such manuscripts of Yoga kept in various libraries in India and abroad will certainly be of great help to the scholars and practitioners of Yoga throughout the world to know how various Yogic practices have evolved over a period of thousands of years. These manuscripts are the store-house of wisdom left behind by the great men of our country for the benefit of the human kind. The details of all these manuscripts can be stored in computers and made available to all through web sites. This is Yogaksema: Aprapta.sya praptihy yogah, praptasya parirakshanam kshemah. ",
     "startYear": "2022",
     "completedYear": "",
     "status": "On-Going",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-30T11:19:38.440Z",
-      "updated_at": "2025-03-18T09:37:46.540Z",
+      "updated_at": "2025-04-01T07:01:10.695Z",
       "created_by": "demo"
     },
     "sponsor": "Central Sanskrit University",
     "keywords": "",
     "projectSeries": "Ashtaadashi ",
     "projectSubSeries": "Science",
-    "publicationStatus": "",
+    "publicationStatus": "Unpublished",
     "projectInvestigator": [
       "Dr. K.S.Balasubramanian"
     ],
@@ -227,40 +516,27 @@
   },
   {
     "id": "01JJVEWSCRW9H9KWMTKPFBKWDD",
-    "title": "Bija Prabodha of  Ramakrishna -  Bijaganita of Bhaskaracharya  ",
-    "subTitle": "Editing & Publishing of Manuscripts Project",
-    "description": "",
+    "title": "Bija Prabodha of  Ramakrishna",
+    "subTitle": "A commentary on Bijaganita of Bhaskaracharya  ",
+    "description": "Editing & Publishing of Manuscripts Project  ",
     "startYear": "2022",
     "completedYear": "",
     "status": "On-Going",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-30T11:17:44.472Z",
-      "updated_at": "2025-01-30T11:17:44.472Z",
+      "updated_at": "2025-03-29T05:44:14.448Z",
       "created_by": "demo"
     },
     "sponsor": "Central Sanskrit University",
-    "keywords": "",
+    "keywords": "Mathematics, vedicmathematics, Maths, Ancient Indian Mathematics,",
     "projectSeries": "Ashtaadashi ",
     "projectSubSeries": "Science",
-    "publicationStatus": "",
+    "publicationStatus": "Unpublished",
     "projectInvestigator": [
       "Dr. Sita Sundar Ram"
     ],
     "coProjectInvestigators": "",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM4T8Y0E7FNFBE3YMD33H83",
-    "title": "English Translation of Kasyapa Silpasastra",
-    "subTitle": "",
-    "status": "On-Going",
-    "metadata": {
-      "updated_by": "admin",
-      "created_at": "2025-01-02T18:35:31.648Z",
-      "updated_at": "2025-01-02T18:35:31.648Z",
-      "created_by": "admin"
-    },
     "itemPublishStatus": "PUBLISHED"
   },
   {

@@ -33,6 +33,12 @@ const newsFields = [
     // editDisabled: true,
   },
   {
+    key: "date",
+    label: "News Date",
+    type: "date",
+    rules: [(v) => !!v || "Date is required"],
+  },
+  {
     key: "text",
     label: "News Content",
     type: "editor",
@@ -66,6 +72,10 @@ const newsHeaders = [
   {
     key: "title",
     title: "Title",
+  },
+  {
+    key: "date",
+    title: "News Date",
   },
   // {
   //   key: "text",

@@ -3,6 +3,7 @@
     <div class="text-secondary text-end">
       * Add max of 1 image to editor under 50KB of size
     </div>
+    <div class="text-secondary text-end">Words: {{ wordCount }}</div>
     <div ref="suneditorElement"></div>
   </div>
 </template>
@@ -38,6 +39,7 @@ export default defineComponent({
   emits: ["update:modelValue"],
   setup(props, { emit }) {
     const suneditorElement = ref(null);
+    const wordCount = ref(0);
     let editor = null;
 
     const toolbarOptions = {
@@ -52,6 +54,11 @@ export default defineComponent({
         ["link", "image", "video"],
         ["fullScreen", "showBlocks", "codeView"],
       ],
+    };
+
+    const countWords = (text) => {
+      const strippedText = text.replace(/<[^>]*>/g, " ").trim();
+      return strippedText.split(/\s+/).filter((word) => word.length > 0).length;
     };
 
     onMounted(() => {
@@ -70,6 +77,7 @@ export default defineComponent({
       (newValue) => {
         if (editor && newValue !== editor.getContents()) {
           editor.setContents(newValue);
+          wordCount.value = countWords(newValue);
         }
       }
     );
@@ -88,16 +96,19 @@ export default defineComponent({
       // Set initial content
       if (props.modelValue) {
         editor.setContents(props.modelValue);
+        wordCount.value = countWords(props.modelValue);
       }
 
       // Add event handlers
       editor.onChange = (content) => {
         emit("update:modelValue", content);
+        wordCount.value = countWords(content);
       };
     };
 
     return {
       suneditorElement,
+      wordCount,
     };
   },
 });

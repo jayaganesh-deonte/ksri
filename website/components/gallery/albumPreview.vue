@@ -1,15 +1,15 @@
 <template>
-  <v-card class="ma-2" width="40vw" color="whiteBg">
+  <v-card class="ma-2" :width="$device.isMobile ? '' : '40vw'" color="whiteBg">
     <!-- Album Title -->
-    <v-card-title class="text-h6 font-weight-bold text-primary">{{
-      albumName
-    }}</v-card-title>
+    <div class="text-h6 font-weight-bold text-primary ma-2">
+      {{ albumName }}
+    </div>
 
     <!-- Image Grid -->
     <v-card-text>
       <v-container class="pa-0">
         <v-row no-gutters>
-          <v-col cols="6" v-for="image in images" :key="image.id">
+          <v-col cols="6" v-for="image in images.slice(0, 4)" :key="image.id">
             <v-img
               :src="getImageUrl(image.imageUrl[0])"
               :alt="image.description"
@@ -25,7 +25,7 @@
     <!-- Optional Actions -->
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn variant="text" color="primary" @click="$emit('view-album')">
+      <v-btn variant="text" color="primary" @click="handleViewAlbum">
         View Album
       </v-btn>
     </v-card-actions>
@@ -43,18 +43,40 @@ export default {
     images: {
       type: Array,
       required: true,
-      validator: (value) => {
-        // Ensure exactly 4 images are provided
-        return value.length === 4;
-      },
     },
   },
-  emits: ["view-album"],
+  computed: {
+    subCollections() {
+      // Get unique subCollection names, filtering out empty strings
+      return [
+        ...new Set(
+          this.images
+            .map((image) => image.subCollection)
+            .filter(
+              (subCollection) => subCollection && subCollection.trim() !== ""
+            )
+        ),
+      ];
+    },
+  },
   methods: {
     getImageUrl(url) {
       const runtimeConfig = useRuntimeConfig();
       return runtimeConfig.public.ASSET_DOMAIN + url;
     },
+    handleViewAlbum() {
+      if (this.subCollections.length > 1) {
+        // If multiple sub-collections, emit event with sub-collections
+        this.$emit("view-album", {
+          albumName: this.albumName,
+          subCollections: this.subCollections,
+        });
+      } else {
+        // If no or single sub-collection, emit standard view-album event
+        this.$emit("view-album", this.albumName);
+      }
+    },
   },
+  emits: ["view-album"],
 };
 </script>

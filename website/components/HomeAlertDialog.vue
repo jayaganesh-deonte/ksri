@@ -2,7 +2,7 @@
   <!-- create dialog component with transition -->
   <v-dialog
     v-model="dialogModel"
-    :width="$device.isMobile ? '' : '50vw'"
+    :width="$device.isMobile ? '' : '40vw'"
     v-if="store.isHomeDialogContentPresent"
     persistent
     content-class="unfold-dialog scroll-dialog"

@@ -7,7 +7,7 @@ import {
   fromDynamoDB,
   toDynamoDB,
   validateGalleryImage,
-  validateGalleryImageDDB,
+  // validateGalleryImageDDB,
 } from "../../models/gallery/gallery";
 import { QueryCommandOutput } from "@aws-sdk/lib-dynamodb";
 
@@ -90,6 +90,7 @@ galleryRoute.post("/gallery", async (req: Request, res: Response) => {
         imageUrl: [element],
         description: galleryImage.description,
         collection: galleryImage.collection,
+        subCollection: galleryImage.subCollection,
         metadata: galleryImage.metadata,
         itemPublishStatus: galleryImage.itemPublishStatus,
       };

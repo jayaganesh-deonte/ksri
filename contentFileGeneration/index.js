@@ -137,6 +137,23 @@ var pageDetails = [
                 .map(function (item) { return item.name; });
         },
     },
+    // /gallery/collections create subcollection dict
+    {
+        endpoint: "/gallery/collections",
+        outputFile: "../website/content//gallery/subcollections.json",
+        // filter by itemPublishStatus =>"PUBLISHED" and select only name
+        filter: function (data) {
+            return data
+                .filter(function (item) { return item.itemPublishStatus === "PUBLISHED"; })
+                .sort(function (a, b) { return a.orderId - b.orderId; })
+                .map(function (item) { return ({
+                name: item.name,
+                subCollections: item.subCollections
+                    ? item.subCollections.map(function (subCollection) { return subCollection.name; })
+                    : [],
+            }); });
+        },
+    },
     // /gallery
     {
         endpoint: "/gallery",
