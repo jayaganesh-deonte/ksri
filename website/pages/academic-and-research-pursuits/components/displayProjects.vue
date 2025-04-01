@@ -32,7 +32,23 @@
               color="primary"
               class="text-center font-weight-bold text-white pa-2 mt-2 text-body-1"
               data-aos="fade-left"
-              v-if="project.publicationStatus"
+              v-if="
+                project.publicationStatus &&
+                project.publicationStatus == 'Published'
+              "
+            >
+              {{ project.publicationStatus }}
+            </v-card>
+            <!-- Upcoming -->
+            <v-card
+              color="#800000"
+              class="text-center font-weight-bold pa-2 mt-2 text-body-1"
+              data-aos="fade-left"
+              v-if="
+                project.publicationStatus &&
+                project.publicationStatus == 'Upcoming'
+              "
+              style="color: #ffdf00"
             >
               {{ project.publicationStatus }}
             </v-card>
@@ -106,9 +122,11 @@
         <v-row>
           <!-- description -->
           <v-col cols="12">
-            <div class="text-body-1" data-aos="fade-right">
-              {{ project.description }}
-            </div>
+            <div
+              class="text-body-1"
+              data-aos="fade-right"
+              v-html="project.description"
+            ></div>
           </v-col>
         </v-row>
       </v-card>

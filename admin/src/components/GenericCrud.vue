@@ -34,11 +34,11 @@
           <v-card>
             <v-card-title>Select Columns to Export</v-card-title>
             <v-card-text>
-              <div v-for="header in headers" :key="header.key">
+              <div v-for="header in entityFields" :key="header.key">
                 <v-checkbox
                   v-if="header.key !== 'actions'"
                   v-model="selectedColumnsToExport"
-                  :label="header.title"
+                  :label="header.label"
                   :value="header.key"
                   hide-details
                   multiple
@@ -96,7 +96,7 @@
         v-model:expanded="expanded"
         :show-expand="expandable"
         expand-on-click
-        style="overflow-x: scroll"
+        style="overflow-x: scroll; height: 70vh"
         :loading="loading"
         :sort-by="sortByComputed"
       >
@@ -870,7 +870,7 @@ const save = async () => {
 };
 
 const selectAllColumnsToExport = () => {
-  selectedColumnsToExport.value = props.headers
+  selectedColumnsToExport.value = props.entityFields
     .map((header) => header.key)
     .filter((key) => key !== "actions");
 };
@@ -899,7 +899,7 @@ const exportAsCSV = () => {
 
   // console.log("selectedColumnsToExport", selectedColumnsToExport.value);
 
-  // console.log("columnFilter", columnFilter);
+  console.log("columnFilter", columnFilter);
 
   // Filter items based on columnFilter before generating CSV
   const filteredItems = items.value.filter((item) => {
@@ -919,10 +919,16 @@ const exportAsCSV = () => {
     .map((item) => {
       return selectedColumnsToExport.value
         .map((key) => {
+          console.log("key", key);
           // Check if there's a header with a value function for this key
-          const header = props.headers.find((h) => h.key === key);
+          const header = props.entityFields.find((h) => h.key === key);
+          console.log("header", header);
           if (header && typeof header.value === "function") {
             return escapeCSVValue(header.value(item));
+          }
+          // if header.type is of image then add domain to url
+          if (header && header.type === "image") {
+            return escapeCSVValue(item[key] ? getAssetUrl(item[key][0]) : "");
           }
           return escapeCSVValue(item[key]);
         })

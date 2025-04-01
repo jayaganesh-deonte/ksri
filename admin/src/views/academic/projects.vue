@@ -110,7 +110,7 @@ const projectFields = [
   {
     key: "description",
     label: "Description",
-    type: "textarea",
+    type: "editor",
     // rules: [(v) => !!v || "Description is required"],
   },
   {

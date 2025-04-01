@@ -25,10 +25,7 @@ const marqueeTextFields = [
     key: "link",
     label: "Link",
     type: "text",
-    rules: [
-      (v) => !!v || "Link is required",
-      (v) => /^\//.test(v) || "Link must be a relative path starting with /",
-    ],
+    rules: [(v) => !!v || "Link is required"],
   },
   {
     key: "itemPublishStatus",

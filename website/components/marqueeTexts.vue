@@ -8,16 +8,16 @@
     <NuxtMarquee pause-on-hover pause-on-click autoFill>
       <div v-for="(marqueeText, index) in store.marqueeTexts" :key="index">
         <!-- display text and add link to it -->
-        <NuxtLink :to="marqueeText.link" style="text-decoration: unset">
-          <div
-            :class="[
-              index % 2 === 0 ? 'text-primary' : 'text-secondary',
-              'mx-8 font-weight-bold text-h6',
-            ]"
-          >
-            {{ marqueeText.name }}
-          </div>
-        </NuxtLink>
+        <div
+          :class="[
+            index % 2 === 0 ? 'text-primary' : 'text-secondary',
+            'mx-8 font-weight-bold text-h6',
+          ]"
+          @click="openLink(marqueeText.link)"
+          style="cursor: pointer"
+        >
+          {{ marqueeText.name }}
+        </div>
       </div>
     </NuxtMarquee>
   </v-card>
@@ -27,4 +27,10 @@
 import { appStore } from "~/stores/AppStore";
 
 const store = appStore();
+
+const openLink = (link) => {
+  if (link) {
+    window.open(link, "_blank");
+  }
+};
 </script>
