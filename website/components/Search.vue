@@ -274,7 +274,7 @@ export default {
           name: "Contribute Now",
           description:
             "Support the Kuppuswami Sastri Research Institute's mission and initiatives",
-          path: "/contribute",
+          path: "/payment/donation/",
         },
         {
           name: "Endowments",
