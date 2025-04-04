@@ -23,6 +23,29 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
+    "title": "Darśanopaniṣat",
+    "subtitle": " ",
+    "price": "₹ 70",
+    "imageUrls": [
+      "images/image020.jpg"
+    ],
+    "details": "",
+    "id": "01JGNDQ25WQWYKXGZ247S48MEZ",
+    "publication": "KSRI",
+    "keywords": " Yoga, Upanishad, Ashtanga yoga",
+    "available": "Yes",
+    "copies": 100,
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-03T06:30:18.044Z",
+      "updated_at": "2025-03-25T05:57:23.625Z",
+      "created_by": "admin"
+    },
+    "author": "Text with Eng. Tr. by Dr. K.S. Balasubramanian and Dr. T.V.Vasudeva.",
+    "yearOfPublication": "2016-01-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "title": "LECTURES ON PATAÑJALI'S MAHĀBHĀṢYA (Vol. I to XIV)",
     "subtitle": " ",
     "price": "₹ 8400",
@@ -168,7 +191,7 @@
     "metadata": {
       "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-03-24T06:45:17.001Z",
+      "updated_at": "2025-04-04T06:09:37.258Z",
       "created_by": "admin"
     },
     "author": "",
@@ -191,7 +214,7 @@
     "metadata": {
       "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-03-24T06:42:05.867Z",
+      "updated_at": "2025-04-04T06:10:34.449Z",
       "created_by": "admin"
     },
     "author": "",
@@ -241,6 +264,29 @@
       "created_by": "admin"
     },
     "author": "",
+    "yearOfPublication": "2009-01-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "AMṚTANĀDOPANIṢAT",
+    "subtitle": "with Roman Transliteration and Eng. Tr. by Dr. K.S. Balasubramanian and Dr. T. V. Vasudeva, Pub. by the Kuppuswami  Sastri  Research  Institute, 84, Thiru Vi. Ka Road, Mylapore, Chennai - 600 004, 2009. Pp. viii + 21.",
+    "price": "₹ 25",
+    "imageUrls": [
+      "upload/amtandopaniat.jpg"
+    ],
+    "details": "<p>“The third book in the series of KSRI Yoga Granthamālā carries English translation and Roman transliteration along with explanatory notes in some places. This text prescribes ṣaḍaṅga yoga and is unique in describing new techniques in Prānāyāma, Dhāraṇa and Samādhi”\\nDr. V. Kameswari, Director, KSRI</p>",
+    "id": "01JGNDQ25WR94X69A7T1224YFS",
+    "publication": "KSRI",
+    "keywords": " Yoga, Upanishad, Pranayama",
+    "available": "Yes",
+    "copies": 10,
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-03T06:30:18.044Z",
+      "updated_at": "2025-03-25T05:32:46.401Z",
+      "created_by": "admin"
+    },
+    "author": "Dr. K.S. Balasubramanian and Dr. T. V. Vasudeva",
     "yearOfPublication": "2009-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
@@ -306,7 +352,7 @@
     "metadata": {
       "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-03-24T06:46:12.907Z",
+      "updated_at": "2025-04-03T07:10:51.559Z",
       "created_by": "admin"
     },
     "author": "",
@@ -513,7 +559,7 @@
     "metadata": {
       "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-03-24T06:35:06.699Z",
+      "updated_at": "2025-04-03T07:10:22.178Z",
       "created_by": "admin"
     },
     "author": "",
@@ -534,9 +580,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-01-25T07:34:43.356Z",
+      "updated_at": "2025-04-03T07:10:02.885Z",
       "created_by": "admin"
     },
     "author": "  ",
@@ -697,7 +743,7 @@
     "metadata": {
       "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-03-25T06:19:46.610Z",
+      "updated_at": "2025-04-03T07:09:38.452Z",
       "created_by": "admin"
     },
     "author": "Text with English translation and critical study by Dr.S.S.Janaki ",
@@ -766,7 +812,7 @@
     "metadata": {
       "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-03-25T06:02:54.026Z",
+      "updated_at": "2025-04-03T07:08:39.924Z",
       "created_by": "admin"
     },
     "author": "Edition with Critical introduction by Dr. S S Janaki",
@@ -789,7 +835,7 @@
     "metadata": {
       "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-03-24T09:20:11.324Z",
+      "updated_at": "2025-04-03T07:09:00.420Z",
       "created_by": "admin"
     },
     "author": "Ed. by Dr. S.S. Janaki",
@@ -843,6 +889,121 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
+    "title": "JĪRṆODDHĀRADAŚAKA",
+    "subtitle": "with the commentary of Nigamañanadesika",
+    "price": "",
+    "imageUrls": [
+      "images/01JQTM5PME8NM48SMNA3EB6DPR"
+    ],
+    "details": "",
+    "id": "01JQTM5YHZS13Q0MCHVQCP0S6C",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-04-02T06:49:22.239Z",
+      "updated_at": "2025-04-02T06:49:22.239Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "author": "Dr. Nagarajan",
+    "yearOfPublication": "2025-04-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Upakramaparākrama",
+    "subtitle": "- Appayya Dīkṣita ",
+    "price": "",
+    "imageUrls": [
+      "images/01JQTPAMFRG99XFB163KXS3HKR"
+    ],
+    "details": "<p><strong>UPCOMING</strong><br></p>",
+    "id": "01JQTPBF6X88XFP55JD2EYMBBV",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "Yes",
+    "copies": "",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-04-02T07:27:20.285Z",
+      "updated_at": "2025-04-02T07:35:53.859Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "author": "Mr. Sudarshan Krishna",
+    "yearOfPublication": "2025-03-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "VIBHRAMAVIVEKA",
+    "subtitle": "- Sri Maṇdana Miśra",
+    "price": " ",
+    "imageUrls": [
+      "images/01JQTPFR4HQW5MVFFD1GJBMACV"
+    ],
+    "details": "<p><strong>UPCOMING</strong></p>",
+    "id": "01JQTPFWV9V935Q9AF3XTY6TPZ",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "Yes",
+    "copies": "",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-04-02T07:29:45.321Z",
+      "updated_at": "2025-04-02T07:35:28.192Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "author": "Mr. Sudarshan Krishna",
+    "yearOfPublication": "2025-03-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Pūrva Mīmamsa Viṣaya Saṇgraha Dīpikā",
+    "subtitle": "- Appayya Dīkṣita",
+    "price": " ",
+    "imageUrls": [
+      "images/01JQTPM9Q1Q30YG8PEVH0RZMM2"
+    ],
+    "details": "<p><strong>UPCOMING</strong><br></p>",
+    "id": "01JQTPMCTRB5Y1S66GAT029HYA",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "Yes",
+    "copies": "",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-04-02T07:32:12.760Z",
+      "updated_at": "2025-04-02T07:35:18.984Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "author": "Sri Sudarshan Krishna",
+    "yearOfPublication": "2025-03-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "CITRAPAṬA",
+    "subtitle": "- Appayya Dikṣita",
+    "price": " ",
+    "imageUrls": [
+      "images/01JQTPRZVB2QGSZS3RX5ZMZMPE"
+    ],
+    "details": "<p><strong>UPCOMING</strong></p>",
+    "id": "01JQTPS23R4Q0XBTA4NF2MNGE6",
+    "publication": "KSRI",
+    "keywords": " ",
+    "available": "Yes",
+    "copies": "",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-04-02T07:34:45.624Z",
+      "updated_at": "2025-04-02T07:35:09.728Z",
+      "created_by": "ksriphd@gmail.com"
+    },
+    "author": "Mr. Sudarshan Krishna",
+    "yearOfPublication": "2025-03-01",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
     "title": "A History of Sanskrit Literature",
     "subtitle": "Revised edition of \"Samskrta Sahitya Itihasah\"- 2025",
     "price": "Rs. 300",
@@ -863,6 +1024,29 @@
     },
     "author": "Prof. R.S. VENKATRAMA SASTRI",
     "yearOfPublication": "2025-01-14",
+    "itemPublishStatus": "PUBLISHED"
+  },
+  {
+    "title": "Śeṣasamhita ",
+    "subtitle": "(a Pāñcarātra Āgama text)",
+    "price": "500",
+    "imageUrls": [
+      "images/seshasamhita.jpeg"
+    ],
+    "details": "<p>This is one of the 108 āgamas of the Pāñcarātra system. The entire text is seen as a conversation between Śeṣa and sage Nārada and it explains about the daily activities to be carried out in Viṣṇu temples. The aspects of mantra, yantra, japa, homa, arcana etc., have been dealt with in this text</p>",
+    "id": "01JGXP8CW16AF331F04QRCN5NS",
+    "publication": "KSRI",
+    "keywords": "Śeṣasamhita ",
+    "available": "Yes",
+    "copies": "500",
+    "metadata": {
+      "updated_by": "ksriphd@gmail.com",
+      "created_at": "2025-01-06T11:33:30.113Z",
+      "updated_at": "2025-04-03T07:27:25.854Z",
+      "created_by": "demo"
+    },
+    "author": "Dr. P.C. Muralidharan",
+    "yearOfPublication": "2024-11-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -1189,29 +1373,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Darśanopaniṣat",
-    "subtitle": " ",
-    "price": "₹ 70",
-    "imageUrls": [
-      "images/image020.jpg"
-    ],
-    "details": "",
-    "id": "01JGNDQ25WQWYKXGZ247S48MEZ",
-    "publication": "KSRI",
-    "keywords": " Yoga, Upanishad, Ashtanga yoga",
-    "available": "Yes",
-    "copies": 100,
-    "metadata": {
-      "updated_by": "ksriphd@gmail.com",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-03-25T05:57:23.625Z",
-      "created_by": "admin"
-    },
-    "author": "Text with Eng. Tr. by Dr. K.S. Balasubramanian and Dr. T.V.Vasudeva.",
-    "yearOfPublication": "2016-01-01",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "ŚIVA TEMPLE AND TEMPLE RITUALS:",
     "subtitle": "Ed. by S.S.Janaki (Re-print) | The Kuppuswami Sastri Research Institute, Madras-600 004 | 2015. | Pages xxxiv + 333.",
     "price": "₹ 400",
@@ -1305,7 +1466,7 @@
   },
   {
     "title": "VĀLMĪKI RĀMĀYAṆA - Condensed in the Poet's own words:",
-    "subtitle": "by Prof. P.P.S.Sastri | Pub. by the Kuppuswami  Sastri  Research  Institute (Reprint), Chennai - 4 | 2012 | pp. xxiiv + 420 |",
+    "subtitle": "Pub. by the Kuppuswami  Sastri  Research  Institute (Reprint), Chennai - 4 | 2012 | pp. xxiiv + 420 |",
     "price": "₹ 200",
     "imageUrls": [
       "upload/valmiki-ramayana.jpg"
@@ -1319,34 +1480,11 @@
     "metadata": {
       "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-03-24T06:35:34.395Z",
+      "updated_at": "2025-04-04T06:12:16.585Z",
       "created_by": "admin"
     },
-    "author": "",
+    "author": "Prof. P.P.S.Sastri ",
     "yearOfPublication": "2012-01-01",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "title": "AMṚTANĀDOPANIṢAT",
-    "subtitle": "with Roman Transliteration and Eng. Tr. by Dr. K.S. Balasubramanian and Dr. T. V. Vasudeva, Pub. by the Kuppuswami  Sastri  Research  Institute, 84, Thiru Vi. Ka Road, Mylapore, Chennai - 600 004, 2009. Pp. viii + 21.",
-    "price": "₹ 25",
-    "imageUrls": [
-      "upload/amtandopaniat.jpg"
-    ],
-    "details": "<p>“The third book in the series of KSRI Yoga Granthamālā carries English translation and Roman transliteration along with explanatory notes in some places. This text prescribes ṣaḍaṅga yoga and is unique in describing new techniques in Prānāyāma, Dhāraṇa and Samādhi”\\nDr. V. Kameswari, Director, KSRI</p>",
-    "id": "01JGNDQ25WR94X69A7T1224YFS",
-    "publication": "KSRI",
-    "keywords": " Yoga, Upanishad, Pranayama",
-    "available": "Yes",
-    "copies": 10,
-    "metadata": {
-      "updated_by": "ksriphd@gmail.com",
-      "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-03-25T05:32:46.401Z",
-      "created_by": "admin"
-    },
-    "author": "Dr. K.S. Balasubramanian and Dr. T. V. Vasudeva",
-    "yearOfPublication": "2009-01-01",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -1434,7 +1572,7 @@
     "metadata": {
       "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-03-25T06:24:23.997Z",
+      "updated_at": "2025-04-03T07:11:13.840Z",
       "created_by": "admin"
     },
     "author": "With English translation by Dr. K.K. Raja",
@@ -1616,9 +1754,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-01-25T07:35:36.710Z",
+      "updated_at": "2025-04-03T07:09:29.238Z",
       "created_by": "admin"
     },
     "author": "Dr. V. Raghavan & Dr. S. S. Janaki",
@@ -1662,9 +1800,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-01-25T07:36:10.357Z",
+      "updated_at": "2025-04-03T07:08:15.884Z",
       "created_by": "admin"
     },
     "author": "Edition with English translation by Dr. Robert C Lester",
@@ -1756,7 +1894,7 @@
     "metadata": {
       "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-03-25T06:13:24.810Z",
+      "updated_at": "2025-04-03T07:07:49.452Z",
       "created_by": "admin"
     },
     "author": "Critically edited by K.V. Sarma",
@@ -1846,7 +1984,7 @@
     "metadata": {
       "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-03-24T06:50:11.555Z",
+      "updated_at": "2025-04-03T07:06:38.703Z",
       "created_by": "admin"
     },
     "author": "",
@@ -1888,7 +2026,7 @@
     "metadata": {
       "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-03-24T06:37:19.515Z",
+      "updated_at": "2025-04-03T07:07:03.338Z",
       "created_by": "admin"
     },
     "author": "",

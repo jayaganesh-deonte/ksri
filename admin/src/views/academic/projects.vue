@@ -169,12 +169,14 @@ const projectFields = [
     label: "Project Series",
     type: "auto-complete",
     items: projectSeries,
+    multiple: true,
   },
   {
     key: "projectSubSeries",
     label: "Project Sub Series",
     type: "auto-complete",
     items: allSubSeries,
+    multiple: true,
   },
 ];
 
