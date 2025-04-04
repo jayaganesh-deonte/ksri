@@ -148,7 +148,7 @@ export default {
           path: "/academic-and-research-pursuits/scholars-gateway",
         },
         {
-          name: "Modern Scholars",
+          name: "Modern Scholars/Ph.D.",
           description:
             "The Kuppuswami Sastri Research Institute provides ample opportunities for scholars who are interested in higher studies (Ph.D. M.Phil).",
           path: "/academic-and-research-pursuits/scholars-gateway/modern-scholars",
@@ -279,8 +279,60 @@ export default {
         {
           name: "Endowments",
           description:
-            "Create an endowment to perpetuate the memory of your dear ones to hold a lecture annually in their names.",
+            "Create an endowment to perpetuate the memory of your dear ones to hold a lecture annually in their name's.",
           path: "/contribute/endowments",
+        },
+        {
+          name: "Project Assistantship",
+          description:
+            "KSRI welcomes any organization interested in sponsoring any of the project ideas listed in the Projects & Studies section. It invites all interested persons and organizations to join with its scholars and pursue the passion.",
+          path: "/academic-and-research-pursuits/scholars-gateway",
+        },
+        {
+          name: "Sponsor",
+          description:
+            "KSRI welcomes any organization interested in sponsoring any of the project ideas listed in the Projects & Studies section. It invites all interested persons and organizations to join with its scholars and pursue the passion.",
+          path: "/academic-and-research-pursuits/scholars-gateway",
+        },
+        {
+          name: "Invitation/Upcoming",
+          description: "Find about The Upcoming Events  of KSRI",
+          path: "/events",
+        },
+        {
+          name: "Donations",
+          description:
+            "We earnestly solicit contributions from lovers of Sanskrit and Indian culture to help us by contributing their mite in preserving our ancient treasure.",
+          path: "/contribute",
+        },
+        {
+          name: "Supervisors/Guides",
+          description:
+            "KSRI is affiliated to the University of Madras and offers Ph.D. programmes in Sanskrit. The Supervisors/ Guides and  the Scholars pursuing Research under currently them are given.",
+          path: "/academic-and-research-pursuits/academic-programs",
+        },
+        {
+          name: "Thesis",
+          description:
+            "KSRI is affiliated to the University of Madras and offers Ph.D. programmes in Sanskrit. Research scholars and their Thesis details are given.",
+          path: "/academic-and-research-pursuits/scholars-gateway/modern-scholars",
+        },
+        {
+          name: "Endowment lectures",
+          description:
+            "KSRI regularly conducts events and forums at its premises. All endowment events are also conducted in its premises. All are welcome to these programs.",
+          path: "/events",
+        },
+        {
+          name: "workshop",
+          description:
+            "KSRI regularly conducts many workshops on various topics. All are welcome to these programs.",
+          path: "/events",
+        },
+        {
+          name: "Latest publications",
+          description: "Find about the Latest publications of KSRI",
+          path: "/events",
         },
       ],
     };
