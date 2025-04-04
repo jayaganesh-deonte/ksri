@@ -65,29 +65,6 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Śeṣasamhita ",
-    "subtitle": "(a Pāñcarātra Āgama text)",
-    "price": "500",
-    "imageUrls": [
-      "images/seshasamhita.jpeg"
-    ],
-    "details": "<p>This is one of the 108 āgamas of the Pāñcarātra system. The entire text is seen as a conversation between Śeṣa and sage Nārada and it explains about the daily activities to be carried out in Viṣṇu temples. The aspects of mantra, yantra, japa, homa, arcana etc., have been dealt with in this text</p>",
-    "id": "01JGXP8CW16AF331F04QRCN5NS",
-    "publication": "The Samskrita Academy, Madras",
-    "keywords": "Śeṣasamhita ",
-    "available": "Yes",
-    "copies": "500",
-    "metadata": {
-      "updated_by": "demo",
-      "created_at": "2025-01-06T11:33:30.113Z",
-      "updated_at": "2025-01-25T07:41:00.876Z",
-      "created_by": "demo"
-    },
-    "author": "Dr. P.C. Muralidharan",
-    "yearOfPublication": "2024-11-01",
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
     "title": "SANDHI",
     "subtitle": "-",
     "price": "Rs. 70",
@@ -861,9 +838,9 @@
     "available": "Yes",
     "copies": "250",
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "contactus@deonte.in",
       "created_at": "2025-03-22T06:17:05.328Z",
-      "updated_at": "2025-03-25T05:26:03.689Z",
+      "updated_at": "2025-04-01T10:30:05.310Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. V. Varadachari",

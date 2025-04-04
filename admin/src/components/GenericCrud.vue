@@ -153,6 +153,24 @@
           />
         </template>
 
+        <!-- if projectSeries check if item is array, then join and dispaly or else display string -->
+        <template #item.projectSeries="{ item }">
+          <span v-if="item.projectSeries && Array.isArray(item.projectSeries)">
+            {{ item.projectSeries.join(", ") }}
+          </span>
+          <span v-else>{{ item.projectSeries }}</span>
+        </template>
+
+        <!-- if projectSubSeries check if item is array, then join and dispaly or else display string -->
+        <template #item.projectSubSeries="{ item }">
+          <span
+            v-if="item.projectSubSeries && Array.isArray(item.projectSubSeries)"
+          >
+            {{ item.projectSubSeries.join(", ") }}
+          </span>
+          <span v-else>{{ item.projectSubSeries }}</span>
+        </template>
+
         <template #item.actions="{ item }">
           <div class="d-flex align-center justify-center">
             <v-tooltip text="Status: Draft">

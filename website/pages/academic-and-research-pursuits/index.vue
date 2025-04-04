@@ -383,12 +383,16 @@ const getEventsByCategory = computed(() => {
   let filteredProjects = projects.filter((project) => {
     const seriesMatch =
       activeSeries.value === "All" ||
-      project.projectSeries === activeSeries.value;
+      (Array.isArray(project.projectSeries)
+        ? project.projectSeries.includes(activeSeries.value)
+        : project.projectSeries === activeSeries.value);
     const statusMatch =
       activeStatus.value === "All" || project.status === activeStatus.value;
     const subSeriesMatch =
       activeSubSeries.value === "All" ||
-      project.projectSubSeries === activeSubSeries.value;
+      (Array.isArray(project.projectSubSeries)
+        ? project.projectSubSeries.includes(activeSubSeries.value)
+        : project.projectSubSeries === activeSubSeries.value);
 
     return seriesMatch && statusMatch && subSeriesMatch;
   });

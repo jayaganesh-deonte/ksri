@@ -110,7 +110,9 @@
                         variant="tonal"
                         style="word-break: break-word; white-space: normal"
                       >
-                        {{ project.coProjectInvestigators }}
+                        {{
+                          projectInvestigator(project.coProjectInvestigators)
+                        }}
                       </v-card>
                     </td>
                   </tr>
