@@ -14,6 +14,19 @@
       rounded="0"
     >
       <!-- First Row  -->
+      <div class="d-flex align-center justify-end">
+        <!-- chip with print status -->
+
+        <v-card
+          v-if="book.printStatus && book.printStatus == 'Upcoming'"
+          color="#5d53e8"
+          outlined
+          rounded="pill"
+          class="text-center font-weight-bold pa-2 text-body-1"
+        >
+          {{ book.printStatus }}
+        </v-card>
+      </div>
       <v-row>
         <!-- Title and Details Column -->
         <v-col cols="12" sm="12" class="py-2">

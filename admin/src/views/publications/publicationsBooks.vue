@@ -55,6 +55,14 @@ const bookFields = [
     rules: [(v) => !!v || "Publish Status is required"],
     items: ["PUBLISHED", "DRAFT"],
   },
+  // printStatus
+  {
+    key: "printStatus",
+    label: "Print Status",
+    type: "auto-complete",
+    rules: [(v) => !!v || "Print Status is required"],
+    items: ["Printed", "Upcoming"],
+  },
   // author
   {
     key: "author",
@@ -127,6 +135,7 @@ const bookHeaders = [
   { title: "Available", key: "available" },
   { title: "Publication", key: "publication" },
   { title: "Date of Publication", key: "yearOfPublication" },
+  { title: "Print Status", key: "printStatus" },
   { title: "Available Number of Copies", key: "copies" },
   { title: "Actions", key: "actions", sortable: false },
 ];
