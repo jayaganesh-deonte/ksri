@@ -64,6 +64,7 @@ jobs:
           APP_ID: ${{vars.APP_ID}}
           DISTRIBUTION_ID: ${{vars.DISTRIBUTION_ID}}
           WEBSITE_S3_NAME: ${{vars.WEBSITE_S3_NAME}}
+          DDB_TABLE_NAME: ${{vars.DDB_TABLE_NAME}}
         run: |
           npm install
           node index.js
