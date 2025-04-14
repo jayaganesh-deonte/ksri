@@ -5,9 +5,9 @@ import { DynamoDBDocument } from "@aws-sdk/lib-dynamodb";
 
 export const documentClient = DynamoDBDocument.from(new DynamoDBClient());
 
-const TABLE_NAME = "ksri-prod_admin_master_table";
+const TABLE_NAME = "ksri_admin_master_table";
 
-const TARGET_TABLE_NAME = "dummy_table";
+const TARGET_TABLE_NAME = "ksri_admin_master_table";
 
 const exportTable = async () => {
   // scan dynamodb table and export to json file
@@ -57,8 +57,8 @@ const importTableFromJSON = async (tableName: string, jsonFileName: string) => {
 };
 
 const main = async () => {
-  await exportTable();
-  // await importTableFromJSON(TARGET_TABLE_NAME, "tables.json");
+  // await exportTable();
+  await importTableFromJSON(TARGET_TABLE_NAME, "tables.json");
 };
 
 main();
