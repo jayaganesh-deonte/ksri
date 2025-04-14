@@ -27,6 +27,7 @@ export interface Book {
   copies: string;
   metadata?: { [key: string]: any };
   author: string;
+  printStatus?: string;
   yearOfPublication: string;
   itemPublishStatus: string;
 }
@@ -48,6 +49,7 @@ export interface BookDDB {
   metadata?: { [key: string]: any };
   author: string;
   yearOfPublication: string;
+  printStatus?: string;
   itemPublishStatus: string;
 }
 
@@ -88,6 +90,7 @@ export function toDynamoDB(item: Book): BookDDB {
     metadata: item.metadata,
     author: item.author,
     yearOfPublication: item.yearOfPublication,
+    printStatus: item.printStatus,
     itemPublishStatus: item.itemPublishStatus,
   };
 }
@@ -107,6 +110,7 @@ export function fromDynamoDB(item: BookDDB): Book {
     metadata: item.metadata,
     author: item.author,
     yearOfPublication: item.yearOfPublication,
+    printStatus: item.printStatus,
     itemPublishStatus: item.itemPublishStatus,
   };
 }

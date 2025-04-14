@@ -41,14 +41,15 @@
             </v-card>
             <!-- Upcoming -->
             <v-card
-              color="#aa3333"
+              color="#5d53e8"
               class="text-center font-weight-bold pa-2 mt-2 text-body-1"
               data-aos="fade-left"
               v-if="
                 project.publicationStatus &&
                 project.publicationStatus == 'Upcoming'
               "
-              style="color: yellow"
+              style="color: white"
+              rounded="pill"
             >
               {{ project.publicationStatus }}
             </v-card>

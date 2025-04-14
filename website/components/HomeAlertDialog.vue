@@ -8,9 +8,10 @@
     content-class="unfold-dialog scroll-dialog"
     transition="unfold-transition"
     scrollable
+    class="ma-0 pa-0"
   >
     <v-card
-      class="unfold-content scroll-content"
+      class="unfold-content scroll-content ma-0 pa-0"
       :style="`background-color: ${
         store.homeDialogContent.backgroundColor || 'white'
       }`"
@@ -32,7 +33,7 @@
           <v-btn icon="mdi-close" variant="text" @click="closeDialog"></v-btn>
         </div>
       </v-card>
-      <v-card-text style="overflow-y: auto; max-height: 60vh">
+      <v-card-text style="overflow-y: auto; max-height: 70vh" class="ma-0 pa-0">
         <div
           class="sun-editor-editable"
           :style="`background-color: ${

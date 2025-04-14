@@ -1,7 +1,6 @@
 {
   "name": "express-api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
@@ -46,5 +45,6 @@
     "@types/node": "^22.10.1",
     "@types/pdfmake": "^0.2.11",
     "typescript": "^5.7.2"
-  }
+  },
+  "description": ""
 }
