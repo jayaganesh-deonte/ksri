@@ -50,6 +50,7 @@ import homeDialog from "@/views/updates/homeDialog.vue";
 
 import bannerText from "@/views/updates/bannerText.vue";
 import users from "@/views/users.vue";
+import totp from "@/views/totp.vue";
 
 import bankInfo from "@/views/institution/bankInfo.vue";
 import postalAddress from "@/views/institution/postalAddress.vue";
@@ -246,6 +247,12 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
+    path: "/totp",
+    name: "totp",
+    component: totp,
+    meta: { requiresAuth: true },
+  },
+  {
     path: "/bank-info",
     name: "bankInfo",
     component: bankInfo,
@@ -319,6 +326,12 @@ router.beforeEach(async (to, from, next) => {
         id: username,
         name: username,
       });
+
+      // get user groups
+      console.log("User groups", groups);
+
+      const userFunctionality = appStore.user.functionality
+      console.log("User functionality", userFunctionality);
     } catch (error) {
       console.error(error);
       signInWithRedirect();

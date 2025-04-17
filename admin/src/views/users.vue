@@ -1,15 +1,38 @@
 <template>
   <generic-crud
+    v-if="isAuthorized"
     entityName="Users"
     :apiEndpoint="apiEndpoint"
     :entityFields="userFields"
     :headers="userHeaders"
     :addIdToPayload="true"
   />
+  <div v-else>
+    <AccessDenied />
+  </div>
 </template>
 
 <script setup>
 const apiEndpoint = "/users";
+
+import { useAppStore } from "@/stores/app";
+
+const checkIfCurrentPageIsAuthorized = () => {
+  const appStore = useAppStore();
+  const userGroup = appStore.user.groups;
+
+  // if userGroup contains "super_admin" then allow access to the page
+  if (userGroup.includes("super_admin")) {
+    console.log("User is super_admin, access granted.");
+    return true;
+  } else {
+    console.log("User is not super_admin, access denied.");
+    // Redirect to unauthorized page or show a message
+    return false;
+  }
+};
+
+const isAuthorized = checkIfCurrentPageIsAuthorized();
 
 // {
 //     "name":"jayaganesh",

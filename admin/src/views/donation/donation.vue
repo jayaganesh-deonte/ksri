@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="isAuthorized">
     <div class="d-flex justify-space-between align-center mb-4">
       <!-- {{ dateRange.start }} - {{ dateRange.end }} => 2024-03-31 - 2025-03-31 -->
       <div class="d-flex align-center">
@@ -28,6 +28,9 @@
       ref="CRUD"
     />
   </div>
+  <div v-else>
+    <AccessDenied />
+  </div>
 </template>
 
 <script setup>
@@ -39,6 +42,24 @@ import DateRangePicker from "@/components/DateRangePicker.vue";
 import { reactive, ref, computed } from "vue";
 
 const CRUD = ref(null); // Properly define the ref
+
+import { useAppStore } from "@/stores/app";
+
+const checkIfCurrentPageIsAuthorized = () => {
+  const appStore = useAppStore();
+  // const userGroup = appStore.user.groups;
+
+  const functionality = appStore.user.functionality;
+  if (functionality.includes("finance")) {
+    return true;
+  } else {
+    console.error("User doesnt have enough permission, access denied.");
+    // Redirect to unauthorized page or show a message
+    return false;
+  }
+};
+
+const isAuthorized = checkIfCurrentPageIsAuthorized();
 
 const fixedValues = {
   paymentType: "Donation",
