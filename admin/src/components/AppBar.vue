@@ -276,6 +276,11 @@ let menuOptions = computed(() => {
       path: "/users",
       icon: "mdi-account",
     },
+    {
+      title: "OTP Users",
+      path: "/totp",
+      icon: "mdi-lock",
+    },
   ];
 
   let financeOptions = [

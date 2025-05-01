@@ -68,7 +68,7 @@ Resources:
             - "*"
           AllowHeaders:
             - "*"
-      ReservedConcurrentExecutions: 15
+      # ReservedConcurrentExecutions: 15
       Environment:
         Variables:
           DDB_TABLE_NAME: !Ref masterTable
@@ -129,7 +129,7 @@ Resources:
       Runtime: nodejs20.x
       Architectures:
         - x86_64
-      ReservedConcurrentExecutions: 2
+      # ReservedConcurrentExecutions: 2
       Environment:
         Variables:
           DDB_TABLE_NAME: !Ref masterTable
@@ -231,7 +231,7 @@ Resources:
       Runtime: nodejs20.x
       Architectures:
         - x86_64
-      ReservedConcurrentExecutions: 2
+      # ReservedConcurrentExecutions: 2
       Environment:
         Variables:
           DDB_TABLE_NAME: !Ref masterTable
@@ -291,7 +291,7 @@ Resources:
             - "*"
           AllowHeaders:
             - "*"
-      ReservedConcurrentExecutions: 2
+      # ReservedConcurrentExecutions: 2
       Environment:
         Variables:
           DDB_TABLE_NAME: !Ref masterTable
@@ -783,7 +783,7 @@ Resources:
     Type: AWS::S3::Bucket
     DeletionPolicy: Retain
     Properties:
-      BucketName: !Sub ${Prefix}-website-zip
+      BucketName: !Sub ${Prefix}-website-zip-s3
       # make bucket public
       PublicAccessBlockConfiguration:
         BlockPublicAcls: false
@@ -793,6 +793,8 @@ Resources:
 
   S3BucketPolicyForWebsiteZip:
     Type: AWS::S3::BucketPolicy
+    DependsOn:
+      - S3BucketForWebsiteZip
     Properties:
       Bucket: !Ref S3BucketForWebsiteZip
       PolicyDocument:
