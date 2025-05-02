@@ -336,6 +336,16 @@
                       :title="field.label"
                     />
 
+                    <EbookUpload
+                      v-else-if="field.type === 'ebook'"
+                      :files="editedItem[field.key]"
+                      @files-updated="
+                        (documents) => (editedItem[field.key] = documents)
+                      "
+                      :key="editedItem[field.key].length * 1"
+                      :title="field.label"
+                    />
+
                     <ColorPicker
                       v-else-if="field.type === 'color-picker'"
                       :files="editedItem[field.key]"
@@ -466,6 +476,7 @@ import { inject } from "vue";
 import { ulid } from "ulidx";
 import ImageUpload from "./ImageUpload.vue";
 import DocumentUpload from "./DocumentUpload.vue";
+import EbookUpload from "./EbookUpload.vue";
 import SunEditorComponent from "./SunEditorComponent.vue";
 import ColorPicker from "./ColorPicker.vue";
 

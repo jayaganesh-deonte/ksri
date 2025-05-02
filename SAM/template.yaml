@@ -538,6 +538,106 @@ Resources:
         SigningBehavior: no-override
         SigningProtocol: sigv4
 
+  # S3 For ebook
+  S3BucketForEbook:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: !Sub ${Prefix}-ebook-store
+      CorsConfiguration:
+        CorsRules:
+          - AllowedHeaders:
+              - "*"
+            AllowedMethods:
+              - PUT
+              - POST
+              - DELETE
+              - GET
+            AllowedOrigins:
+              - "*"
+            ExposedHeaders: []
+
+  # S3 Bucket Policy for ebook
+  S3BucketPolicyForEbook:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref S3BucketForEbook
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Action:
+              - s3:GetObject
+            Effect: Allow
+            Resource: !Join
+              - ""
+              - - "arn:aws:s3:::"
+                - !Ref S3BucketForEbook
+                - /*
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Condition:
+              StringEquals:
+                AWS:SourceArn: !Sub arn:aws:cloudfront::${AWS::AccountId}:distribution/${ebookDistribution}
+
+  S3BucketForLogsEbook:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: !Sub ${Prefix}-ebook-distribution-access-logs
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerPreferred
+      AccessControl: AwsExecRead
+      LifecycleConfiguration:
+        Rules:
+          - Id: DeleteOldObjects
+            Status: Enabled
+            ExpirationInDays: 365
+            Prefix: "" # Apply to all objects in the bucket
+
+  ebookDistribution:
+    Type: AWS::CloudFront::Distribution
+    DependsOn:
+      - S3BucketForEbook
+      - S3BucketForLogsEbook
+    Properties:
+      DistributionConfig:
+        Origins:
+          - DomainName: !GetAtt S3BucketForEbook.DomainName
+            Id: myS3Origin
+            OriginAccessControlId: !Ref cloudfrontoriginaccessControlEbook
+            S3OriginConfig: {}
+        Enabled: "true"
+        Comment: !Sub ebook distribution for ${S3BucketForEbook}
+        HttpVersion: http2and3
+        DefaultCacheBehavior:
+          ForwardedValues:
+            QueryString: "false"
+            Cookies:
+              Forward: none
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          TargetOriginId: myS3Origin
+          ViewerProtocolPolicy: redirect-to-https
+        PriceClass: PriceClass_200
+        Logging:
+          IncludeCookies: "false"
+          Bucket: !GetAtt S3BucketForLogsEbook.DomainName
+          Prefix: cloudfront-access-logs/
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: "true"
+
+  cloudfrontoriginaccessControlEbook:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Name: !GetAtt S3BucketForEbook.DomainName
+        OriginAccessControlOriginType: s3
+        SigningBehavior: no-override
+        SigningProtocol: sigv4
+
   CognitoUserPool:
     Type: AWS::Cognito::UserPool
     Properties:
@@ -731,6 +831,8 @@ Resources:
                 Resource:
                   - !GetAtt S3Bucket.Arn
                   - !Sub ${S3Bucket.Arn}/*
+                  - !GetAtt S3BucketForEbook.Arn
+                  - !Sub ${S3BucketForEbook.Arn}/*
 
   AmplifyApp:
     Type: AWS::Amplify::App

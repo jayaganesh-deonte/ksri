@@ -50,7 +50,7 @@ import homeDialog from "@/views/updates/homeDialog.vue";
 
 import bannerText from "@/views/updates/bannerText.vue";
 import users from "@/views/users.vue";
-import totp from "@/views/totp.vue";
+// import totp from "@/views/totp.vue";
 
 import bankInfo from "@/views/institution/bankInfo.vue";
 import postalAddress from "@/views/institution/postalAddress.vue";
@@ -246,12 +246,12 @@ const routes = [
     component: users,
     meta: { requiresAuth: true },
   },
-  {
-    path: "/totp",
-    name: "totp",
-    component: totp,
-    meta: { requiresAuth: true },
-  },
+  // {
+  //   path: "/totp",
+  //   name: "totp",
+  //   component: totp,
+  //   meta: { requiresAuth: true },
+  // },
   {
     path: "/bank-info",
     name: "bankInfo",

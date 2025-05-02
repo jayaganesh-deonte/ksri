@@ -30,12 +30,15 @@ const getS3Client = async () => {
 };
 
 // Function to upload file to S3
-const uploadToS3 = async (file, key) => {
+const uploadToS3 = async (file, key, objectType) => {
   try {
     const s3Client = await getS3Client();
 
+    //  if objectType is provided and is ebook then set Bucket name to VITE_EBOOK_BUCKET_NAME else VITE_S3_BUCKET_NAME
+    const bucketName = objectType === "ebook" ? import.meta.env.VITE_EBOOK_BUCKET_NAME : import.meta.env.VITE_S3_BUCKET_NAME;
+
     const params = {
-      Bucket: import.meta.env.VITE_S3_BUCKET_NAME,
+      Bucket: bucketName,
       Key: key,
       Body: file,
       ContentType: file.type,

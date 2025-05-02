@@ -12,10 +12,10 @@
         <v-icon>mdi-plus</v-icon>
         Upload
       </v-btn>
-      <!-- hidden input to select files -->
+      <!-- hidden input to select files with unique ID -->
       <input
         ref="fileInput"
-        id="fileInput"
+        :id="uniqueFileInputId"
         type="file"
         multiple
         :accept="acceptedFileTypes"
@@ -58,12 +58,12 @@
             <!-- Download button -->
             <v-btn
               icon
-              @click="downloadFile(file)"
+              @click="previewFile(file)"
               color="primary"
               class="mr-2"
               size="x-small"
             >
-              <v-icon>mdi-download</v-icon>
+              <v-icon>mdi-eye</v-icon>
             </v-btn>
 
             <!-- Delete button -->
@@ -75,14 +75,38 @@
       </v-card>
     </div>
   </v-card>
+  <v-dialog v-model="previewDialog" @update:modelValue="onDialogToggle">
+    <!-- close dialog -->
+
+    <v-card>
+      <v-card-title class="text-h6 d-flex align-center justify-space-between">
+        <div>Book Preview</div>
+
+        <v-btn icon variant="text ">
+          <v-icon @click="previewDialog = false">mdi-close</v-icon>
+        </v-btn>
+      </v-card-title>
+
+      <Epubviewer :src="bookUrl" />
+    </v-card>
+  </v-dialog>
 </template>
 
 <script setup>
-import { ref, computed, inject } from "vue";
+import { ref, computed, inject, onMounted } from "vue";
+import ePub from "epubjs";
 
 import { ulid } from "ulidx";
 import { uploadToS3, deleteFromS3 } from "@/services/s3";
 import $toast from "@/utilities/toast_notification";
+
+const previewDialog = ref(false);
+let book = null;
+let bookUrl = ref(null);
+let rendition = null;
+
+// Generate a unique ID for the file input
+const uniqueFileInputId = ref(`file-input-${ulid()}`);
 
 // Props definition
 const props = defineProps({
@@ -93,31 +117,7 @@ const props = defineProps({
   // Optional configuration for file types and limits
   allowedFileTypes: {
     type: Array,
-    default: () => [
-      "image/*",
-      "audio/*",
-      ".pdf",
-      ".doc",
-      ".docx",
-      ".txt",
-      ".mp3",
-      ".wav",
-      ".m4a",
-      ".aac",
-      ".ogg",
-      ".flac",
-      ".wma",
-      ".alac",
-      ".aiff",
-      ".ape",
-      ".opus",
-      ".amr",
-      ".au",
-      ".mid",
-      ".midi",
-      ".pcm",
-      ".dsd",
-    ],
+    default: () => [".pdf", ".epub"],
   },
   maxFileSize: {
     type: Number,
@@ -125,7 +125,7 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: "Files",
+    default: "Ebooks",
   },
 });
 
@@ -144,18 +144,13 @@ const getDocumentUrl = (docuemnt) => {
 const getFileType = (fileName) => {
   const extension = fileName.split(".").pop().toLowerCase();
   const typeMap = {
-    jpg: "image",
-    jpeg: "image",
-    png: "image",
-    gif: "image",
+    // jpg: "image",
+    // jpeg: "image",
+    // png: "image",
+    // gif: "image",
     pdf: "pdf",
-    doc: "document",
-    docx: "document",
-    txt: "document",
+    epub: "epub",
     default: "document",
-    mp3: "audio",
-    wav: "audio",
-    m4a: "audio",
   };
   return typeMap[extension] || typeMap.default;
 };
@@ -183,14 +178,8 @@ const triggerFileInput = () => {
 const getFileTypeIcon = (fileName) => {
   const extension = fileName.split(".").pop().toLowerCase();
   const iconMap = {
-    jpg: { icon: "mdi-file-image", color: "blue" },
-    jpeg: { icon: "mdi-file-image", color: "blue" },
-    png: { icon: "mdi-file-image", color: "blue" },
-    gif: { icon: "mdi-file-image", color: "blue" },
     pdf: { icon: "mdi-file-pdf", color: "red" },
-    doc: { icon: "mdi-file-word", color: "blue" },
-    docx: { icon: "mdi-file-word", color: "blue" },
-    txt: { icon: "mdi-file-document", color: "grey" },
+    epub: { icon: "mdi-book-open-variant", color: "green" },
     default: { icon: "mdi-file", color: "grey" },
   };
   return iconMap[extension] || iconMap.default;
@@ -198,9 +187,9 @@ const getFileTypeIcon = (fileName) => {
 
 // Upload files
 const uploadFiles = async (e) => {
-  // select element using id fileInput
-  const inputElement = document.getElementById("fileInput");
-  //   click  input to select files
+  // select element using dynamic id
+  const inputElement = document.getElementById(uniqueFileInputId.value);
+  //   click input to select files
   inputElement.click();
   const files = inputElement.files;
   //   const files = e.target.files;
@@ -238,10 +227,10 @@ const uploadFiles = async (e) => {
     try {
       // Generate S3 key with timestamp to prevent overwriting
       //   const timestamp = Date.now();
-      const s3Key = `files/${ulid()}`;
+      const s3Key = `files/${ulid()}.${file.name.split(".").pop()}`;
 
       // Upload to S3
-      const uploadRes = await uploadToS3(file, s3Key, "document");
+      const uploadRes = await uploadToS3(file, s3Key, "ebook");
 
       if (uploadRes.$metadata.httpStatusCode === 200) {
         const cloudfront_domain = import.meta.env.VITE_IMAGE_CLOUDFRONT;
@@ -316,9 +305,38 @@ const downloadFile = async (file) => {
   }
 };
 
+const previewFile = (file) => {
+  const url = import.meta.env.VITE_EBOOK_CLOUDFRONT + file.url;
+  const extension = file.name.split(".").pop().toLowerCase();
+
+  console.log("previewFile", extension);
+
+  if (extension === "epub") {
+    previewDialog.value = true;
+    bookUrl.value = url;
+  } else if (extension === "pdf") {
+    window.open(url, "_blank");
+  } else {
+    $toast.open({
+      type: "error",
+      position: "top-right",
+      message: `Preview not supported for ${file.name}`,
+    });
+  }
+};
+
+const onDialogToggle = (val) => {
+  if (!val && rendition) {
+    rendition.destroy();
+    rendition = null;
+  }
+};
+
 // Delete file
 const deleteFile = async (file) => {
   try {
+    console.log("delete file", file);
+
     // Extract S3 key from URL
     const s3Key = file.url.split("/").slice(3).join("/");
 
@@ -357,5 +375,12 @@ const deleteFile = async (file) => {
 }
 .v-card:hover {
   background-color: #f5f5f5;
+}
+
+#epub-viewer {
+  height: 500px;
+  width: 100%;
+  border: 1px solid #ccc;
+  overflow: auto;
 }
 </style>

@@ -119,7 +119,7 @@ const uploadImages = async (e) => {
       imageCompressionOption
     );
 
-    let uploadRes = await uploadToS3(compressedFile, s3Key);
+    let uploadRes = await uploadToS3(compressedFile, s3Key, "document");
     console.log("uploadRes", uploadRes);
 
     if (uploadRes.$metadata.httpStatusCode != 200) {

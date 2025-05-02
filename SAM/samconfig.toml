@@ -43,7 +43,7 @@ s3_prefix = "ksri-admin"
 region = "ap-south-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM CAPABILITY_NAMED_IAM"
-parameter_overrides = "Prefix=\"ksri\" UserPoolDomain=\"ksri\" useCustomDomainForUi=\"true\" UiCustomDomain=\"https://admin.ksri.in/\""
+parameter_overrides = "Prefix=\"ksri-prod\" UserPoolDomain=\"ksri-prod\" useCustomDomainForUi=\"false\" UiCustomDomain=\"false\""
 image_repositories = []
 
 
