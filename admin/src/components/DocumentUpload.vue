@@ -323,7 +323,7 @@ const deleteFile = async (file) => {
     const s3Key = file.url.split("/").slice(3).join("/");
 
     // Delete from S3
-    const deleteRes = await deleteFromS3(s3Key);
+    const deleteRes = await deleteFromS3(s3Key, "image");
 
     // Remove from files array
     newFiles.value = newFiles.value.filter((f) => f.url !== file.url);

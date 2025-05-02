@@ -55,7 +55,7 @@
           </div>
 
           <div>
-            <!-- Download button -->
+            <!-- Preview button -->
             <v-btn
               icon
               @click="previewFile(file)"
@@ -75,19 +75,45 @@
       </v-card>
     </div>
   </v-card>
-  <v-dialog v-model="previewDialog" @update:modelValue="onDialogToggle">
-    <!-- close dialog -->
 
+  <!-- EPUB Preview Dialog -->
+  <v-dialog
+    v-model="epubPreviewDialog"
+    @update:modelValue="onEpubDialogToggle"
+    max-width="900px"
+  >
     <v-card>
       <v-card-title class="text-h6 d-flex align-center justify-space-between">
-        <div>Book Preview</div>
-
-        <v-btn icon variant="text ">
-          <v-icon @click="previewDialog = false">mdi-close</v-icon>
+        <div>{{ currentFileName || "Book Preview" }}</div>
+        <v-btn icon variant="text">
+          <v-icon @click="epubPreviewDialog = false">mdi-close</v-icon>
         </v-btn>
       </v-card-title>
-
       <Epubviewer :src="bookUrl" />
+    </v-card>
+  </v-dialog>
+
+  <!-- PDF Preview Dialog -->
+  <v-dialog
+    v-model="pdfPreviewDialog"
+    @update:modelValue="onPdfDialogToggle"
+    max-width="900px"
+  >
+    <v-card>
+      <v-card-title class="text-h6 d-flex align-center justify-space-between">
+        <div>{{ currentFileName || "PDF Preview" }}</div>
+        <v-btn icon variant="text">
+          <v-icon @click="pdfPreviewDialog = false">mdi-close</v-icon>
+        </v-btn>
+      </v-card-title>
+      <div class="pdf-container">
+        <iframe
+          :src="pdfViewerUrl"
+          frameborder="0"
+          width="100%"
+          height="600px"
+        ></iframe>
+      </div>
     </v-card>
   </v-dialog>
 </template>
@@ -100,9 +126,13 @@ import { ulid } from "ulidx";
 import { uploadToS3, deleteFromS3 } from "@/services/s3";
 import $toast from "@/utilities/toast_notification";
 
-const previewDialog = ref(false);
+// Dialog states
+const epubPreviewDialog = ref(false);
+const pdfPreviewDialog = ref(false);
+const currentFileName = ref("");
 let book = null;
 let bookUrl = ref(null);
+let pdfViewerUrl = ref(null);
 let rendition = null;
 
 // Generate a unique ID for the file input
@@ -126,6 +156,10 @@ const props = defineProps({
   title: {
     type: String,
     default: "Ebooks",
+  },
+  isPreviewFile: {
+    type: Boolean,
+    default: false,
   },
 });
 
@@ -230,7 +264,8 @@ const uploadFiles = async (e) => {
       const s3Key = `files/${ulid()}.${file.name.split(".").pop()}`;
 
       // Upload to S3
-      const uploadRes = await uploadToS3(file, s3Key, "ebook");
+      const s3UploadFolder = props.isPreviewFile ? "preview" : "ebook";
+      const uploadRes = await uploadToS3(file, s3Key, s3UploadFolder);
 
       if (uploadRes.$metadata.httpStatusCode === 200) {
         const cloudfront_domain = import.meta.env.VITE_IMAGE_CLOUDFRONT;
@@ -306,16 +341,26 @@ const downloadFile = async (file) => {
 };
 
 const previewFile = (file) => {
-  const url = import.meta.env.VITE_EBOOK_CLOUDFRONT + file.url;
+  const baseUrl = props.isPreviewFile
+    ? import.meta.env.VITE_IMAGE_CLOUDFRONT
+    : import.meta.env.VITE_EBOOK_CLOUDFRONT;
+  const url = baseUrl + file.url;
   const extension = file.name.split(".").pop().toLowerCase();
+
+  // Set current file name for dialog title
+  currentFileName.value = file.name;
 
   console.log("previewFile", extension);
 
   if (extension === "epub") {
-    previewDialog.value = true;
+    epubPreviewDialog.value = true;
     bookUrl.value = url;
   } else if (extension === "pdf") {
-    window.open(url, "_blank");
+    // Create PDF viewer URL with options to disable download/print
+    // Using PDF.js viewer with parameters to hide toolbar and download button
+    pdfViewerUrl.value = `${url}#toolbar=0`;
+    // "https://docs.google.com/viewerng/viewer?url=${url}&embedded=true"
+    pdfPreviewDialog.value = true;
   } else {
     $toast.open({
       type: "error",
@@ -325,10 +370,17 @@ const previewFile = (file) => {
   }
 };
 
-const onDialogToggle = (val) => {
+const onEpubDialogToggle = (val) => {
   if (!val && rendition) {
     rendition.destroy();
     rendition = null;
+  }
+};
+
+const onPdfDialogToggle = (val) => {
+  if (!val) {
+    // Clean up if needed when closing PDF dialog
+    pdfViewerUrl.value = null;
   }
 };
 
@@ -341,7 +393,8 @@ const deleteFile = async (file) => {
     const s3Key = file.url.split("/").slice(3).join("/");
 
     // Delete from S3
-    const deleteRes = await deleteFromS3(s3Key);
+    const s3UploadFolder = props.isPreviewFile ? "preview" : "ebook";
+    const deleteRes = await deleteFromS3(s3Key, "s3UploadFolder");
 
     // Remove from files array
     newFiles.value = newFiles.value.filter((f) => f.url !== file.url);
@@ -382,5 +435,18 @@ const deleteFile = async (file) => {
   width: 100%;
   border: 1px solid #ccc;
   overflow: auto;
+}
+
+.pdf-container {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* Hide PDF.js toolbar elements (if they leak through) */
+:deep(.toolbarButton#download),
+:deep(.toolbarButton#print) {
+  display: none !important;
 }
 </style>

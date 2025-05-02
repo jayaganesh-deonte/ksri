@@ -150,7 +150,7 @@ const uploadImages = async (e) => {
 const deleteImage = async (image) => {
   // delete from s3
   const s3Key = image.split("/").pop();
-  const deleteRes = await deleteFromS3(s3Key);
+  const deleteRes = await deleteFromS3(s3Key, "image");
   console.log(deleteRes);
 
   // remove from array

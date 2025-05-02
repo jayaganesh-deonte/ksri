@@ -142,12 +142,14 @@ const bookFields = [
     key: "ebookUrl",
     label: "Ebook",
     type: "ebook",
+    isPreviewFile: false,
     // rules: [],
   },
   {
     key: "previewEbookUrl",
     label: "Preview Ebook",
     type: "ebook",
+    isPreviewFile: true,
     // rules: [],
   },
 ];
