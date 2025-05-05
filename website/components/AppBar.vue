@@ -175,6 +175,11 @@
             </div>
           </v-card>
         </div>
+
+        <!-- Add login button -->
+        <div class="d-flex justify-center align-center">
+          <UserLogin />
+        </div>
       </div>
     </v-card>
     <!-- Spacer to prevent content from being hidden behind fixed app bar -->

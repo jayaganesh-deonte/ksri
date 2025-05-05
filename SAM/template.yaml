@@ -1301,6 +1301,414 @@ Resources:
           ]
         }
 
+  WebsiteUserPool1:
+    Type: "AWS::Cognito::UserPool"
+    Properties:
+      UserPoolName: !Sub ${Prefix}_website_user_pool_1
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+          RequireUppercase: true
+          RequireLowercase: true
+          RequireNumbers: true
+          RequireSymbols: true
+          TemporaryPasswordValidityDays: 7
+      LambdaConfig: {}
+      # Schema:
+      #   - Name: "profile"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "address"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "birthdate"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "10"
+      #       MaxLength: "10"
+      #   - Name: "gender"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "preferred_username"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "updated_at"
+      #     AttributeDataType: "Number"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     NumberAttributeConstraints:
+      #       MinValue: "0"
+      #   - Name: "website"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "picture"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "identities"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints: {}
+      #   - Name: "sub"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: false
+      #     Required: true
+      #     StringAttributeConstraints:
+      #       MinLength: "1"
+      #       MaxLength: "2048"
+      #   - Name: "phone_number"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "phone_number_verified"
+      #     AttributeDataType: "Boolean"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #   - Name: "zoneinfo"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "locale"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "email"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: true
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "email_verified"
+      #     AttributeDataType: "Boolean"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #   - Name: "given_name"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "family_name"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "middle_name"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "name"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      #   - Name: "nickname"
+      #     AttributeDataType: "String"
+      #     DeveloperOnlyAttribute: false
+      #     Mutable: true
+      #     Required: false
+      #     StringAttributeConstraints:
+      #       MinLength: "0"
+      #       MaxLength: "2048"
+      AutoVerifiedAttributes:
+        - "email"
+      AliasAttributes:
+        - "email"
+      MfaConfiguration: "OFF"
+      EmailConfiguration:
+        EmailSendingAccount: "COGNITO_DEFAULT"
+      AdminCreateUserConfig:
+        AllowAdminCreateUserOnly: false
+      UserPoolTags: {}
+      AccountRecoverySetting:
+        RecoveryMechanisms:
+          - Priority: 1
+            Name: "verified_email"
+          - Priority: 2
+            Name: "verified_phone_number"
+      UsernameConfiguration:
+        CaseSensitive: false
+      VerificationMessageTemplate:
+        DefaultEmailOption: "CONFIRM_WITH_CODE"
+
+  CognitoUserPoolDomainForWebsite:
+    Type: AWS::Cognito::UserPoolDomain
+    Properties:
+      Domain: !Sub ${Prefix}-website
+      UserPoolId: !Ref WebsiteUserPool1
+
+  # UserPoolClient
+  WebsiteUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: !Sub ${Prefix}_website_app_client
+      UserPoolId: !Ref WebsiteUserPool1
+      CallbackURLs:
+        - !If
+          - useCustomDomainForUiCondition
+          - !Ref UiCustomDomain
+          - !Sub https://${UiDistribution.DomainName}/
+      LogoutURLs:
+        - !If
+          - useCustomDomainForUiCondition
+          - !Ref UiCustomDomain
+          - !Sub https://${UiDistribution.DomainName}/
+      AllowedOAuthFlowsUserPoolClient: true
+      AllowedOAuthScopes:
+        - email
+        - phone
+        - openid
+        - profile
+        - aws.cognito.signin.user.admin
+      AllowedOAuthFlows:
+        - code
+      SupportedIdentityProviders:
+        - COGNITO
+  # local web userpool client
+  WebsiteUserPoolClientLocal:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: !Sub ${Prefix}_website_app_client_local
+      UserPoolId: !Ref WebsiteUserPool1
+      RefreshTokenValidity: 5
+      ExplicitAuthFlows:
+        - "ALLOW_REFRESH_TOKEN_AUTH"
+        - "ALLOW_USER_AUTH"
+        - "ALLOW_USER_SRP_AUTH"
+      PreventUserExistenceErrors: "ENABLED"
+      SupportedIdentityProviders:
+        - "COGNITO"
+      CallbackURLs:
+        - "http://localhost:8080/"
+      LogoutURLs:
+        - "http://localhost:8080/"
+      AllowedOAuthFlows:
+        - "code"
+      AllowedOAuthScopes:
+        - "email"
+        - "openid"
+        - "phone"
+      AllowedOAuthFlowsUserPoolClient: true
+      IdTokenValidity: 60
+      AccessTokenValidity: 60
+      TokenValidityUnits:
+        AccessToken: "minutes"
+        IdToken: "minutes"
+        RefreshToken: "days"
+
+  # Identity Pool
+  WebsiteIdentityPool1:
+    Type: AWS::Cognito::IdentityPool
+    Properties:
+      IdentityPoolName: !Sub ${Prefix}_website_identity_pool_1
+      AllowUnauthenticatedIdentities: true
+      CognitoIdentityProviders:
+        - ClientId: !Ref WebsiteUserPoolClient
+          ProviderName: !GetAtt WebsiteUserPool1.ProviderName
+
+  # IAM Roles for Authenticated Users
+  WebsiteCognitoAuthRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub ${Prefix}_website_CognitoAuthRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: cognito-identity.amazonaws.com
+            Action:
+              - sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                cognito-identity.amazonaws.com:aud: !Ref WebsiteIdentityPool1
+      Policies:
+        - PolicyName: WebsiteCognitoAuthPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - mobileanalytics:PutEvents
+                  - cognito-sync:*
+                  - cognito-identity:*
+                Resource: "*"
+
+  # Identity Pool Role Attachment
+  WebsiteIdentityPoolRoleAttachment:
+    Type: AWS::Cognito::IdentityPoolRoleAttachment
+    Properties:
+      IdentityPoolId: !Ref WebsiteIdentityPool1
+      Roles:
+        authenticated: !GetAtt WebsiteCognitoAuthRole.Arn
+
+  #ebook api
+  ebookAPI:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: !Sub ${Prefix}-ebook-api
+      StageName: !Sub ${Prefix}-ebook-api
+      EndpointConfiguration: REGIONAL
+      Cors:
+        AllowMethods: "'OPTIONS,GET,POST,PUT,DELETE'"
+        AllowHeaders: "'*'"
+        AllowOrigin: "'*'"
+        MaxAge: 3000
+      # Auth:
+      #   DefaultAuthorizer: MyCognitoAuthorizer
+      #   Authorizers:
+      #     MyCognitoAuthorizer:
+      #       UserPoolArn: !GetAtt WebsiteUserPool1.Arn
+
+      # Domain:
+      #   DomainName: !Ref UiCustomDomain
+      #   CertificateArn: !Ref UiCertificateArn
+
+  # ebook api lambda
+  ebookExpressAPILambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${Prefix}_ebook_admin_api
+      CodeUri: ebook-api/
+      Handler: index.handler
+      Timeout: 30
+      MemorySize: 256
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      # FunctionUrlConfig:
+      #   AuthType: NONE
+      #   Cors:
+      #     AllowOrigins:
+      #       - "*"
+      #     AllowMethods:
+      #       - "*"
+      #     AllowHeaders:
+      #       - "*"
+      ReservedConcurrentExecutions: 15
+      Environment:
+        Variables:
+          DDB_TABLE_NAME: !Ref masterTable
+          POWERTOOLS_SERVICE_NAME: express-api
+          POWERTOOLS_METRICS_NAMESPACE: ksriadmin
+          LOG_LEVEL: INFO
+          # USER_POOL_ID: !Ref CognitoUserPool
+          # CLIENT_ID: !Ref ProdCognitoUserPoolClient
+          # BASE_URL: "https://ksri.in/"
+          # EMAIL_PARAM_NAME: "/loops/ksri/key"
+          # EVENT_BUS_NAME: !GetAtt customEventBus.Name
+          # CC_AVENUE_CREDS: "/ksri/ccavenue"
+          # CLOUDFLARE_SECRET_KEY: "/cloudflare/trunstile"
+          S3_BUCKET_NAME: !Ref S3BucketForEbook
+
+          # ALLOWED_URL: !If
+          #   - useCustomDomainForUiCondition
+          #   - !Ref UiCustomDomain
+          #   - !Sub https://${UiDistribution.DomainName}
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref masterTable
+        - SSMParameterReadPolicy:
+            ParameterName: "*"
+        # event bridge publish permission
+        - Statement:
+            - Effect: Allow
+              Action:
+                - events:*
+
+              Resource: !GetAtt customEventBus.Arn
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - cognito-idp:*
+              Resource: "*"
+        - S3CrudPolicy:
+            BucketName: !Ref S3BucketForEbook
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+            RestApiId: !Ref ebookAPI
+
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        EntryPoints:
+          - index.ts
+
 Outputs:
   UserPoolId:
     Value: !Ref CognitoUserPool

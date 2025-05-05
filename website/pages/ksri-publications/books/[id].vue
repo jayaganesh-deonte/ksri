@@ -125,6 +125,52 @@
                 </span>
               </div>
 
+              <!-- Ebook details -->
+
+              <div
+                class="text-h6 text-primary my-4 font-weight-bold"
+                data-aos="fade-left"
+                data-aos-delay="300"
+                v-if="bookInfo.isEbookAvailable == 'Yes'"
+              >
+                <div>
+                  E-book Price:
+                  <span class="text-secondary">
+                    ₹{{ bookInfo.ebookPrice }}
+                  </span>
+                </div>
+
+                <!-- button to preview ebook -->
+                <div class="mt-2">
+                  <!-- <v-btn
+                    rounded="pill"
+                    variant="flat"
+                    color="primary"
+                    :href="bookInfo.previewEbookUrl"
+                    target="_blank"
+                  >
+                    Preview E-book
+                  </v-btn> -->
+
+                  <EpubPreview
+                    buttonText="Preview Book"
+                    epubUrl="https://d3dx8df9hmf5nm.cloudfront.net/files/01JTCRZD5YA20AEGQHHRP7NNDK.epub"
+                  />
+
+                  <!-- buy ebook -->
+                  <v-btn
+                    rounded="pill"
+                    variant="flat"
+                    color="secondary"
+                    :href="bookInfo.ebookUrl"
+                    target="_blank"
+                    class="ml-2"
+                  >
+                    Buy E-book
+                  </v-btn>
+                </div>
+              </div>
+
               <div
                 class="text-start pa-0 mt-5 text-danger"
                 v-if="bookInfo.available != 'Yes'"
@@ -151,6 +197,10 @@
 </template>
 
 <script setup>
+// definePageMeta({
+//   middleware: ["authenticated"],
+// });
+
 const additionalPublicationsData = await queryContent(
   "publications",
   "additionalpublications"
@@ -243,6 +293,10 @@ const getBookInfo = async () => {
     bookInfo.publication = book.publication;
     bookInfo.author = book.author;
     bookInfo.yearOfPublication = book.yearOfPublication;
+    bookInfo.isEbookAvailable = book.isEbookAvailable;
+    bookInfo.ebookPrice = book.ebookPrice;
+    bookInfo.previewEbookUrl = book.previewEbookUrl;
+    bookInfo.ebookUrl = book.ebookUrl;
   }
   bookInfoFetched.value = true;
 

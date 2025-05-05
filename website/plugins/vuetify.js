@@ -4,6 +4,8 @@ import * as directives from "vuetify/directives";
 import "../ksri.scss";
 import "../ksri-animate.scss";
 
+import { Amplify } from "aws-amplify";
+
 const myCustomTheme = {
   dark: false,
   colors: {
@@ -45,6 +47,30 @@ const myCustomTheme = {
     "theme-on-code": "#000000",
   },
 };
+
+
+console.log("process.env", process.env)
+
+const awsconfig = {
+  aws_project_region: "ap-south-1",
+  aws_cognito_identity_pool_id: "ap-south-1:b9faccee-bd0b-4caf-947d-438b2b9911e1",
+  aws_cognito_region: "ap-south-1",
+  aws_user_pools_id: "ap-south-1_bawfwiwuI",
+  aws_user_pools_web_client_id: "3qd13p27l34aofkq4r3u6okmrt",
+  oauth: {
+    domain: "ap-south-1bawfwiwui.auth.ap-south-1.amazoncognito.com",
+    scope: [
+      "phone",
+      "email",
+      "openid",
+    ],
+    redirectSignIn: "https://d2sxyoqqzk8gdj.cloudfront.net/",
+    redirectSignOut: "https://d2sxyoqqzk8gdj.cloudfront.net/",
+    responseType: "code",
+  },
+};
+
+Amplify.configure(awsconfig);
 
 export default defineNuxtPlugin((nuxtApp) => {
   const vuetify = createVuetify({

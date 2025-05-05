@@ -93,6 +93,32 @@
               </v-chip>
             </div>
           </div>
+          <!-- icon to show if ebook is available -->
+          <div
+            class="text-start mt-5 d-flex justify-start"
+            data-aos-delay="300"
+            v-if="book.isEbookAvailable"
+          >
+            <v-btn
+              rounded="pill"
+              elevation="2"
+              class="d-flex align-center pa-2"
+              color="pageBackground"
+              :to="
+                '/ksri-publications/' +
+                (isBook ? 'books' : 'journals') +
+                '/' +
+                book.id
+              "
+            >
+              <v-icon color="primary" size="24" class="mr-2">
+                mdi-book-open-page-variant
+              </v-icon>
+              <span class="text-primary font-weight-bold">
+                Ebook is available
+              </span>
+            </v-btn>
+          </div>
         </v-col>
       </v-row>
 

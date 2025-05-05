@@ -18,6 +18,7 @@
     },
     "author": "Dr R. Thiagarajan\u000b",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -39,6 +40,7 @@
     },
     "author": "Dr K. S. Balasubramanian, Mr. K. Nagarajan",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -60,6 +62,7 @@
     },
     "author": "Dr. V. Preethi \u000b",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -81,6 +84,7 @@
     },
     "author": " Dr. P.C. Muralidharan ",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -102,6 +106,7 @@
     },
     "author": "Dr. Vasumathi Rajaram",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -123,6 +128,7 @@
     },
     "author": "Dr. Vasumathi Rajaram",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -144,6 +150,7 @@
     },
     "author": "Dr. S. Annapurna",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -165,6 +172,7 @@
     },
     "author": "Dr. Sita Sundar Ram",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -179,14 +187,23 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "contactus@deonte.in",
       "created_at": "2025-04-08T07:08:14.022Z",
-      "updated_at": "2025-04-08T07:08:14.022Z",
+      "updated_at": "2025-05-04T04:30:56.165Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Prof. R. Parthasarathy, Dr. S. Muthulakshmi",
     "yearOfPublication": "2025-12-01",
-    "itemPublishStatus": "PUBLISHED"
+    "printStatus": "Upcoming",
+    "itemPublishStatus": "PUBLISHED",
+    "isEbookAvailable": "Yes",
+    "ebookPrice": "20",
+    "ebookUrl": [
+      "files/01JT7RY1K5YS94QS5P8NGJ28R0.epub"
+    ],
+    "previewEbookUrl": [
+      "files/01JTCRZD5YA20AEGQHHRP7NNDK.epub"
+    ]
   },
   {
     "title": "ARTHAŚĀSTRA OF KAUṬILYA  WITH   JAYAMAṆGALĀ AND CĀṆAKYAṬĪKĀ",
@@ -207,6 +224,7 @@
     },
     "author": " Dr. V. Kameswari, Dr. T.V. Vasudeva",
     "yearOfPublication": "2025-05-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -230,6 +248,7 @@
     },
     "author": "Dr. S. Anuradha",
     "yearOfPublication": "2025-05-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -253,6 +272,7 @@
     },
     "author": "Dr. S. Anuradha",
     "yearOfPublication": "2025-05-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -269,7 +289,7 @@
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "contactus@deonte.in",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-04-02T06:49:22.239Z",
       "updated_at": "2025-04-08T06:22:52.486Z",
       "created_by": "ksriphd@gmail.com"
@@ -300,6 +320,7 @@
     },
     "author": "Mr. Sudarshan Krishna",
     "yearOfPublication": "2025-03-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -323,6 +344,7 @@
     },
     "author": "Mr. Sudarshan Krishna",
     "yearOfPublication": "2025-03-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -346,6 +368,7 @@
     },
     "author": "Sri Sudarshan Krishna",
     "yearOfPublication": "2025-03-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -369,6 +392,7 @@
     },
     "author": "Mr. Sudarshan Krishna",
     "yearOfPublication": "2025-03-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -2225,6 +2249,7 @@
     },
     "author": "G. Harihara Sastri",
     "yearOfPublication": "1900-01-01",
+    "printStatus": "Printed",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -2334,6 +2359,7 @@
     },
     "author": "Dr. V. Yamuna Devi, Smt. Lavanya. V. Eswar",
     "yearOfPublication": "",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   }
 ]

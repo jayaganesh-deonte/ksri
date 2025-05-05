@@ -19,6 +19,7 @@ export default defineNuxtConfig({
       "process.env.DEBUG": false,
     },
   },
+  ssr: false,
   runtimeConfig: {
     WORKING_KEY: process.env.WORKING_KEY,
     ACCESS_CODE: process.env.ACCESS_CODE,
@@ -30,7 +31,7 @@ export default defineNuxtConfig({
       // API_URL: "http://localhost:3001/public",
       CONTACT_US_URL:
         "https://4fhxozuh262x5cgohmdstdvmfm0rvmef.lambda-url.ap-south-1.on.aws/",
-      ASSET_DOMAIN: "https://d1tkn0t59vli2s.cloudfront.net/",
+      ASSET_DOMAIN: "https://d3dx8df9hmf5nm.cloudfront.net/",
       WORKING_KEY: process.env.WORKING_KEY,
       ACCESS_CODE: process.env.ACCESS_CODE,
       MERCHANT_ID: process.env.MERCHANT_ID,

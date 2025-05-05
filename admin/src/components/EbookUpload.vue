@@ -394,7 +394,7 @@ const deleteFile = async (file) => {
 
     // Delete from S3
     const s3UploadFolder = props.isPreviewFile ? "preview" : "ebook";
-    const deleteRes = await deleteFromS3(s3Key, "s3UploadFolder");
+    const deleteRes = await deleteFromS3(file.name, s3UploadFolder);
 
     // Remove from files array
     newFiles.value = newFiles.value.filter((f) => f.url !== file.url);
