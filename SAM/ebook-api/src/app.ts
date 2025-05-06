@@ -34,5 +34,12 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   }
 });
 
+// if local start server and not in lambda
+if (process.env.AWS_LAMBDA_FUNCTION_NAME === undefined) {
+  app.listen(PORT, () => {
+    logger.info(`Server is running on port ${PORT}`);
+  });
+}
+
 // export app
 export default app;

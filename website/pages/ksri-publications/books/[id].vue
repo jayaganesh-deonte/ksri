@@ -162,9 +162,8 @@
                     rounded="pill"
                     variant="flat"
                     color="secondary"
-                    :href="bookInfo.ebookUrl"
-                    target="_blank"
-                    class="ml-2"
+                    @click="buyEbook(bookInfo)"
+                    class="mt-1"
                   >
                     Buy E-book
                   </v-btn>
@@ -197,6 +196,10 @@
 </template>
 
 <script setup>
+import { userStore } from "~/stores/UserStore";
+import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
+
 // definePageMeta({
 //   middleware: ["authenticated"],
 // });
@@ -311,6 +314,67 @@ const getBookInfo = async () => {
     twitterTitle: book.title,
     twitterDescription: book.subtitle,
   });
+};
+
+const buyEbook = async (bookInfo) => {
+  try {
+    console.log("buyEbook", bookInfo);
+
+    const store = userStore();
+
+    // generate order id
+
+    console.log("store.user", store.user);
+
+    const orderParams = {
+      billing_name: store.user.username,
+      billing_email: store.user.email,
+      billing_tel: "",
+      billing_address: "",
+      billing_city: "",
+      billing_state: "",
+      billing_zip: "",
+      billing_country: "",
+      amount: bookInfo.ebookPrice,
+      currency: "INR",
+      language: "en",
+
+      merchant_param1: bookInfo.id,
+      merchant_param2: bookInfo.title,
+      merchant_param3: "",
+      merchant_param4: "",
+
+      order_id: uuidv4(),
+    };
+
+    const runtimeConfig = useRuntimeConfig();
+
+    const API_URL = runtimeConfig.public.PURCHASE_API_URL;
+
+    const response = await axios.post(
+      `${API_URL}/purchase/api/payments/initiatePayment`,
+      orderParams,
+      {
+        headers: {
+          Authorization: "",
+        },
+      }
+    );
+    console.log("response", response);
+    console.log("Payment initiated:", response.data);
+    // get encryptedUrl from the response
+    const paymentUrl = response.data.paymentUrl;
+
+    console.log("paymentUrl", paymentUrl);
+    // Redirect to the payment gateway
+    window.location.href = paymentUrl;
+    // open in new tab
+
+    // window.open(paymentUrl, "_blank");
+  } catch (error) {
+    console.error("Error initiating payment:", error);
+    // Handle error (e.g., show an error message to the user)
+  }
 };
 
 const getImageUrl = (url) => {

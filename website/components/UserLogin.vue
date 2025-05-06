@@ -15,6 +15,7 @@
         Login
       </v-btn>
     </nuxt-link>
+
     <!-- display user icon and then signout button on menu -->
 
     <v-menu v-if="getIsAuthenticated">

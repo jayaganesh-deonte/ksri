@@ -2,7 +2,7 @@ import { Router } from "express";
 
 export const helloRoute = Router();
 
-helloRoute.get("/", (req, res) => {
+helloRoute.get("/hello", (req, res) => {
   res.json({ message: "Hello from Express + TypeScript + Lambda!" });
 });
 

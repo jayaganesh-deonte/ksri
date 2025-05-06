@@ -12,14 +12,17 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
   devServer: {
-    port: 8080,
+    port: 8081,
   },
   vite: {
     define: {
       "process.env.DEBUG": false,
     },
   },
-  ssr: false,
+  // ssr: false,
+  // nitro: {
+  //   preset: "static", // Specify the static preset for full static generation
+  // },
   runtimeConfig: {
     WORKING_KEY: process.env.WORKING_KEY,
     ACCESS_CODE: process.env.ACCESS_CODE,
@@ -28,6 +31,7 @@ export default defineNuxtConfig({
     REDIRECT_URL: process.env.REDIRECT_URL,
     public: {
       API_URL: "https://ksri.in/public",
+      PURCHASE_API_URL: "http://localhost:8080",
       // API_URL: "http://localhost:3001/public",
       CONTACT_US_URL:
         "https://4fhxozuh262x5cgohmdstdvmfm0rvmef.lambda-url.ap-south-1.on.aws/",

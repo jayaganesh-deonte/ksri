@@ -1,8 +1,9 @@
 import {
     getCurrentUser,
     // signInWithRedirect,
-    // fetchUserAttributes,
+    fetchUserAttributes,
     // fetchAuthSession,
+
 } from "aws-amplify/auth";
 
 // import UserStore
@@ -15,14 +16,43 @@ export default defineNuxtRouteMiddleware(async () => {
 
     const store = userStore();
 
-    try {
-        const user = await getCurrentUser()
+    console.log("store")
 
-        store.setUser(user)
 
-    } catch (error) {
-        console.error("Error getting current user:", error)
+    if (import.meta.client) {
+        try {
+            console.log("before getCurrentUser")
 
+            // Create a promise that rejects after timeout
+            const timeoutPromise = new Promise((_, reject) => {
+                setTimeout(() => reject(new Error("getCurrentUser timed out")), 1000)
+            })
+
+            // Race between the actual call and the timeout
+            const user = await Promise.race([
+                getCurrentUser(),
+                timeoutPromise
+            ])
+            console.log("user", user)
+            console.log("after getCurrentUser")
+
+            // fetch user attributes
+            const userAttributes = await fetchUserAttributes()
+            console.log("userAttributes", userAttributes)
+
+            const userDetails = {
+                username: user.username,
+                email: userAttributes.email
+            }
+            store.setUser(userDetails)
+            console.log("after setUser")
+
+        } catch (error) {
+            console.error("Error getting current user:", error)
+
+        }
     }
+
+    console.log("after global")
 
 })

@@ -51,21 +51,42 @@ const myCustomTheme = {
 
 console.log("process.env", process.env)
 
+// const awsconfig = {
+//   aws_project_region: "ap-south-1",
+//   aws_cognito_identity_pool_id: "ap-south-1:b9faccee-bd0b-4caf-947d-438b2b9911e1",
+//   aws_cognito_region: "ap-south-1",
+//   aws_user_pools_id: "ap-south-1_bawfwiwuI",
+//   aws_user_pools_web_client_id: "3qd13p27l34aofkq4r3u6okmrt",
+//   oauth: {
+//     domain: "ap-south-1bawfwiwui.auth.ap-south-1.amazoncognito.com",
+//     scope: [
+//       "phone",
+//       "email",
+//       "openid",
+//     ],
+//     redirectSignIn: "https://d2sxyoqqzk8gdj.cloudfront.net/",
+//     redirectSignOut: "https://d2sxyoqqzk8gdj.cloudfront.net/",
+//     responseType: "code",
+//   },
+// };
+
 const awsconfig = {
   aws_project_region: "ap-south-1",
-  aws_cognito_identity_pool_id: "ap-south-1:b9faccee-bd0b-4caf-947d-438b2b9911e1",
+  aws_cognito_identity_pool_id: "ap-south-1:92703c63-4dd9-48dd-8c23-e60bfc93cfd9",
   aws_cognito_region: "ap-south-1",
   aws_user_pools_id: "ap-south-1_bawfwiwuI",
-  aws_user_pools_web_client_id: "3qd13p27l34aofkq4r3u6okmrt",
+  aws_user_pools_web_client_id: "6pmv89r4nl4n8mmhccurgncb4l",
   oauth: {
     domain: "ap-south-1bawfwiwui.auth.ap-south-1.amazoncognito.com",
     scope: [
       "phone",
       "email",
       "openid",
+      "profile",
+      "aws.cognito.signin.user.admin",
     ],
-    redirectSignIn: "https://d2sxyoqqzk8gdj.cloudfront.net/",
-    redirectSignOut: "https://d2sxyoqqzk8gdj.cloudfront.net/",
+    redirectSignIn: "http://localhost:8080/",
+    redirectSignOut: "http://localhost:8080/",
     responseType: "code",
   },
 };

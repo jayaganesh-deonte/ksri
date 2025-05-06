@@ -13,6 +13,12 @@ export default defineNuxtRouteMiddleware(async () => {
 
     console.log("Authenticated Middleware")
 
+    if (!import.meta.client) {
+        console.log("Skipping auth check during SSG/build")
+        return
+    }
+
+
     const store = userStore();
 
 
