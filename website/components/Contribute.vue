@@ -45,7 +45,7 @@
           data-aos-delay="300"
           v-if="displayContributeButton"
         >
-          <v-btn rounded="pill" color="secondary" :to="'/contribute'"
+          <v-btn rounded="pill" color="secondary" :to="'/payment/donation/'"
             >Contribute</v-btn
           >
         </div>
