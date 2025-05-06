@@ -24,12 +24,9 @@
           class="ma-4 mx-auto text-justify pa-4"
           :class="$device.isMobile ? 'text-body-1' : 'text-h6'"
         >
-          Corpus: The Institute is facing acute financial constraints
-          Nevertheless its past record and present contribution to the cause of
-          Sanskrit and Indian culture are unmatched. To continue to march ahead
-          and to train youngsters in this noble task, it requires sound
-          financial backing. We may require about INR 400,000,000 (Rs.40 crores
-          approx.) - $ 6,000,000.
+          Corpus: To continue to march ahead and to train youngsters in this
+          noble task, it requires sound financial backing. We may require about
+          INR 400,000,000 (Rs.40 crores approx.) - $ 6,000,000.
         </v-card>
       </v-img>
       <v-card

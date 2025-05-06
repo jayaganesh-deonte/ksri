@@ -58,7 +58,7 @@ const generateReceiptPDF = async (data: Payment) => {
                         alignment: "left",
                       },
                       {
-                        text: "Phone: 2498 5320",
+                        text: "Phone: 044-24985320",
                         width: "auto",
                         fontSize: 11,
                         alignment: "right",
@@ -168,13 +168,13 @@ const generateReceiptPDF = async (data: Payment) => {
                           {
                             columns: [
                               {
-                                text: "Date:  ",
+                                text: "Date: ",
                                 width: 200,
                                 fontSize: 11,
                                 alignment: "right",
                               },
                               {
-                                text: receiptData.paymentDate,
+                                text: " " + receiptData.paymentDate,
                                 width: "*",
                                 fontSize: 11,
                                 alignment: "left",
@@ -194,7 +194,7 @@ const generateReceiptPDF = async (data: Payment) => {
                       { text: "Received with thanks from ", fontSize: 11 },
                       {
                         text:
-                          " Mr./Ms." +
+                          " Mr./Ms. " +
                           capitalizeFirstLetter(receiptData.name) +
                           " ",
                         fontSize: 11,
