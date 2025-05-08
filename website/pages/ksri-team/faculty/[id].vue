@@ -562,6 +562,119 @@ console.log("facultyItem", JSON.stringify(facultyItem));
 if (facultyItem) {
   facultyFound.value = true;
   Object.assign(selectedFaculty, facultyItem);
+
+  // Create an absolute URL for the image and current page
+  const baseUrl = "https://ksri.in";
+  const imageUrl =
+    selectedFaculty.displayImage && selectedFaculty.displayImage.length > 0
+      ? `${getAssetUrl(selectedFaculty.displayImage[0])}`
+      : null;
+  const pageUrl = `${baseUrl}/ksri-team/faculty/${id}`;
+
+  // Define the structured data object for ProfilePage schema
+  const profilePageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    url: pageUrl,
+    dateModified: new Date().toISOString(),
+    mainEntity: {
+      "@type": "Person",
+      name: selectedFaculty.name,
+      description: selectedFaculty.subtitle || selectedFaculty.description,
+      email: selectedFaculty.mail,
+      image: imageUrl,
+      jobTitle: selectedFaculty.designation,
+      worksFor: {
+        "@type": "EducationalOrganization",
+        name: "Kuppuswami Sastri Research Institute",
+        alternateName: "KSRI",
+        url: "https://www.ksri.in",
+      },
+    },
+  };
+
+  // Add publications (books)
+  if (
+    selectedFaculty.booksPublished &&
+    selectedFaculty.booksPublished.length > 0
+  ) {
+    profilePageSchema.mainEntity.works = [];
+
+    selectedFaculty.booksPublished.forEach((book) => {
+      profilePageSchema.mainEntity.works.push({
+        "@type": "Book",
+        name: book.title,
+        datePublished: book.yearOfPublication,
+        isbn: book.isbn,
+        publisher: {
+          "@type": "Organization",
+          name: book.publisher,
+        },
+      });
+    });
+  }
+
+  // Add articles
+  if (
+    selectedFaculty.articlesPublished &&
+    selectedFaculty.articlesPublished.length > 0
+  ) {
+    // Initialize works array if not already done with books
+    if (!profilePageSchema.mainEntity.works) {
+      profilePageSchema.mainEntity.works = [];
+    }
+
+    selectedFaculty.articlesPublished.forEach((article) => {
+      profilePageSchema.mainEntity.works.push({
+        "@type": "ScholarlyArticle",
+        name: article.title,
+        datePublished: article.monthAndYear,
+        author: {
+          "@type": "Person",
+          name: selectedFaculty.name,
+          url: pageUrl,
+        },
+        isPartOf: {
+          "@type": "Periodical",
+          name: article.nameOfTheJournal,
+          identifier: {
+            "@type": "PropertyValue",
+            name: "ISSN",
+            value: article.isbnIssnNo,
+          },
+        },
+      });
+    });
+  }
+
+  // Add schema to the page
+  useHead({
+    script: [
+      {
+        hid: "schema-org-profile",
+        type: "application/ld+json",
+        innerHTML: JSON.stringify(profilePageSchema),
+      },
+    ],
+  });
+
+  // Enhanced SEO meta tags
+  useSeoMeta({
+    title: `${selectedFaculty.name} - Faculty Profile | KSRI`,
+    description:
+      selectedFaculty.subtitle ||
+      `${selectedFaculty.name}, ${selectedFaculty.designation} - Faculty at Kuppuswami Sastri Research Institute specializing in Sanskrit studies`,
+    ogTitle: `${selectedFaculty.name} - Faculty Profile | KSRI`,
+    ogDescription:
+      selectedFaculty.subtitle ||
+      `${selectedFaculty.name}, ${selectedFaculty.designation} - Faculty at Kuppuswami Sastri Research Institute`,
+    ogImage: imageUrl,
+    twitterTitle: `${selectedFaculty.name} - Faculty Profile | KSRI`,
+    twitterDescription:
+      selectedFaculty.subtitle ||
+      `${selectedFaculty.name}, ${selectedFaculty.designation} - Faculty at Kuppuswami Research Institute`,
+    twitterImage: imageUrl,
+  });
 }
 
 // get summary count for phdCandidates, mphilCandidates, booksPublished, articlesPublished, projects, seminars, lectures, awards

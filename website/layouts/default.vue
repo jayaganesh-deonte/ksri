@@ -21,6 +21,64 @@
 import { appStore } from "~/stores/AppStore";
 const store = appStore();
 
+// Define the structured data object
+const schemaOrgData = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "ResearchOrganization", "EducationalOrganization"],
+  name: "Kuppuswami Sastri Research Institute",
+  alternateName: "KSRI",
+  url: "https://www.ksri.in",
+  logo: "https://www.ksri.in/img/ksri-logo-primary.png",
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+91-44-24985320",
+      contactType: "customer service",
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+91-44-29505320",
+      contactType: "customer service",
+    },
+  ],
+  email: "ksrinst@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "84, Thiru vi ka Road, Mylapore",
+    addressLocality: "Chennai",
+    postalCode: "600004",
+    addressRegion: "Tamil Nadu",
+    addressCountry: "India",
+  },
+  sameAs: [
+    "https://www.facebook.com/share/n4uT1gC5sb3GvXgF/?mibextid=wwXIfr",
+    "https://www.youtube.com/@kuppuswamisastriresearchin6317",
+  ],
+  knowsAbout: ["Sanskrit", "Sanskrit Research", "Indology"],
+  offers: {
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "EducationalOccupationalProgram",
+      name: "PhD Program",
+      programType: "Doctoral Degree",
+      educationalProgramMode: "full-time",
+    },
+  },
+  description:
+    "Kuppuswami Sastri Research Institute (KSRI) is a research organization dedicated to Sanskrit studies and research.",
+};
+
+// Use the useHead composable to add metadata
+useHead({
+  script: [
+    {
+      hid: "schema-org-organization",
+      type: "application/ld+json",
+      innerHTML: JSON.stringify(schemaOrgData),
+    },
+  ],
+});
+
 import { getWebInstrumentations, initializeFaro } from "@grafana/faro-web-sdk";
 import { TracingInstrumentation } from "@grafana/faro-web-tracing";
 
