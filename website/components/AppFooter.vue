@@ -82,7 +82,7 @@ const footerLinks = reactive({
         },
         {
           name: "Contribute",
-          path: "/contribute",
+          path: "/payment/donation/",
         },
         {
           name: "Gallery",

@@ -885,7 +885,7 @@ Resources:
     Type: AWS::S3::Bucket
     DeletionPolicy: Retain
     Properties:
-      BucketName: !Sub ${Prefix}-website-zip
+      BucketName: !Sub ${Prefix}-website-zip-s3
       # make bucket public
       PublicAccessBlockConfiguration:
         BlockPublicAcls: false

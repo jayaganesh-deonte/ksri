@@ -279,41 +279,156 @@ const getBookById = (id) => {
   }
   return null;
 };
-// get books
+// Assuming getBookById, route, bookNotFound, bookInfo, bookInfoFetched, isAdditionalPublication are defined elsewhere as in your original code.
+// import { useHead, useSeoMeta } from '#imports'; // Or however Nuxt 3 handles auto-imports for these
+
 const getBookInfo = async () => {
-  const book = getBookById(route.params.id);
+  const bookId = route.params.id; // It's good practice to get it once
+  const book = getBookById(bookId);
 
   if (book == null) {
     bookNotFound.value = true;
   } else {
     bookInfo.title = book.title;
     bookInfo.subtitle = book.subtitle;
-    bookInfo.price = book.price;
+    bookInfo.price = book.price; // Ensure this is a number
     bookInfo.imageUrls = book.imageUrls;
     bookInfo.details = book.details;
-    bookInfo.id = book.id;
+    bookInfo.id = book.id; // This seems to be your internal ID
     bookInfo.available = book.available;
-    bookInfo.publication = book.publication;
-    bookInfo.author = book.author;
-    bookInfo.yearOfPublication = book.yearOfPublication;
     bookInfo.isEbookAvailable = book.isEbookAvailable;
     bookInfo.ebookPrice = book.ebookPrice;
     bookInfo.previewEbookUrl = book.previewEbookUrl;
     bookInfo.ebookUrl = book.ebookUrl;
+
+    bookInfo.publication = book.publication; // Publisher name
+    bookInfo.author = book.author; // Author name
+    bookInfo.yearOfPublication = book.yearOfPublication; // Ensure YYYY or YYYY-MM-DD
+
+    // --- Enhancements for Structured Data ---
+    // Attempt to construct a canonical URL for the book page. Adjust this to your actual URL structure.
+    // Option 1: If your book object has a direct URL property
+    const canonicalUrl =
+      book.url || `http:/ksri.in/ksri-publications/books/${book.id}`; // Fallback, replace with your actual domain and path
+
+    // A more descriptive text for the book.
+    // Prioritize a dedicated description field if available, then details, then subtitle.
+    const bookDescription =
+      book.longDescription || book.details || book.subtitle;
+
+    const bookSchemaData = {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "@id": canonicalUrl, // Unique ID for the book, often its URL
+      url: canonicalUrl, // Canonical URL of the book page
+      name: book.title,
+      description: bookDescription, // Use a more comprehensive description
+      author: {
+        "@type": "Person", // Or "Organization" if the author is an org
+        name: book.author,
+        // Optionally, add a URL for the author if you have author pages
+        // "url": `https://yourwebsite.com/authors/${book.author.toLowerCase().replace(/\s+/g, '-')}`
+      },
+      publisher: {
+        "@type": "Organization",
+        name: book.publication,
+        // Optionally, add a URL for the publisher if you have publisher pages
+        // "url": `https://yourwebsite.com/publishers/${book.publication.toLowerCase().replace(/\s+/g, '-')}`
+      },
+      datePublished: book.yearOfPublication, // Ensure YYYY or YYYY-MM-DD format
+      image:
+        book.imageUrls && book.imageUrls.length > 0
+          ? book.imageUrls[0] // Ensure this is an absolute URL
+          : null,
+      isbn: book.isbn || null, // **Highly Recommended: Add ISBN if available**
+      offers: {
+        "@type": "Offer",
+        url: canonicalUrl, // URL for this specific offer, usually the book page itself
+        price: String(book.price), // Price should be a string or number. Google often prefers string. Ensure it's just the number.
+        priceCurrency: "INR",
+        availability: book.available
+          ? "https://schema.org/InStock"
+          : "https://schema.org/OutOfStock",
+        // If you have a specific seller, you can add:
+        // "seller": {
+        //   "@type": "Organization",
+        //   "name": "Your Bookstore Name"
+        // }
+      },
+      // Optionally, if your book has editions:
+      // "bookEdition": "Hardcover", // or "Paperback", "Ebook", etc.
+      // "numberOfPages": book.numberOfPages || null,
+      // "inLanguage": book.language || "en", // e.g., "en" for English
+    };
+
+    // Remove null/undefined values from schema to keep it clean
+    Object.keys(bookSchemaData).forEach((key) => {
+      if (bookSchemaData[key] === null || bookSchemaData[key] === undefined) {
+        delete bookSchemaData[key];
+      }
+      if (
+        typeof bookSchemaData[key] === "object" &&
+        bookSchemaData[key] !== null
+      ) {
+        Object.keys(bookSchemaData[key]).forEach((subKey) => {
+          if (
+            bookSchemaData[key][subKey] === null ||
+            bookSchemaData[key][subKey] === undefined
+          ) {
+            delete bookSchemaData[key][subKey];
+          }
+        });
+        if (
+          Object.keys(bookSchemaData[key]).length === 1 &&
+          bookSchemaData[key]["@type"]
+        ) {
+          // Remove empty typed objects
+          if (key === "author" || key === "publisher" || key === "offers") {
+            // only if name/price is missing for these critical ones
+            if (!bookSchemaData[key].name && !bookSchemaData[key].price) {
+              delete bookSchemaData[key];
+            }
+          }
+        }
+      }
+    });
+
+    useHead({
+      title: book.title, // Set the page title here as well if not done by useSeoMeta effectively
+      script: [
+        {
+          hid: "schema-org-book", // Unique ID for this script tag
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(bookSchemaData),
+        },
+      ],
+      // You might also want to add canonical link directly in useHead if not handled elsewhere
+      link: [
+        {
+          rel: "canonical",
+          href: canonicalUrl,
+        },
+      ],
+    });
+
+    useSeoMeta({
+      title: book.title,
+      description: bookDescription, // Use the same enhanced description
+      ogTitle: book.title,
+      ogDescription: bookDescription,
+      ogImage:
+        book.imageUrls && book.imageUrls.length > 0 ? book.imageUrls[0] : null, // Ensure absolute URL
+      ogUrl: canonicalUrl,
+      twitterTitle: book.title,
+      twitterDescription: bookDescription,
+      twitterImage:
+        book.imageUrls && book.imageUrls.length > 0 ? book.imageUrls[0] : null, // Ensure absolute URL
+      twitterCard: "summary_large_image",
+    });
   }
+
   bookInfoFetched.value = true;
-
-  // set isAdditionalPublication value
-  isAdditionalPublication.value = bookInfo.publication != "KSRI";
-
-  useSeoMeta({
-    title: book.title,
-    description: book.subtitle,
-    ogTitle: book.title,
-    ogDescription: book.subtitle,
-    twitterTitle: book.title,
-    twitterDescription: book.subtitle,
-  });
+  isAdditionalPublication.value = bookInfo.publication !== "KSRI"; // Assuming bookInfo.publication is set
 };
 
 const buyEbook = async (bookInfo) => {

@@ -467,8 +467,9 @@ const menuOptions = reactive([
 
       {
         name: "Contribute Now",
-        path: "/contribute",
-        // description: "Contribute Now",
+        path: "/payment/donation/",
+        description:
+          "The Institute is facing acute financial constraints Nevertheless its past record and present contribution to the cause of Sanskrit and Indian culture are unmatched.",
       },
       {
         name: "Endowments",
