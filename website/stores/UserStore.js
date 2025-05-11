@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import axios from "axios";
+import $toast from "~/utils/toast_notification";
 
 export const userStore = defineStore("userStore", {
     state: () => ({
@@ -167,6 +168,51 @@ export const userStore = defineStore("userStore", {
             } finally {
                 this.profileLoading = false;
             }
+        },
+        async checkIfBookIsBought(bookId) {
+            const runtimeConfig = useRuntimeConfig();
+
+            if (!this.isAuthenticated) {
+                $toast.error(
+                    "Please login to check your purchase status"
+
+                )
+
+                return {
+                    "bought": false
+                };
+            }
+
+            // get email
+            const email = this.userEmail;
+
+            const apiUrl = `${runtimeConfig.public.PURCHASE_API_URL}/ebook/${email}/${bookId}`;
+            try {
+                const response = await axios.get(apiUrl, {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: this.getToken(),
+                    },
+                });
+
+                if (response.status === 200) {
+                    return response.data;
+                } else {
+                    console.error("Error fetching book purchase status:", response.status);
+                    return {
+                        "bought": false
+                    };
+                }
+            } catch (error) {
+                console.error("Error fetching book purchase status:", error);
+                return {
+                    "bought": false
+                };
+            }
+
+
+
+
         }
     },
 });

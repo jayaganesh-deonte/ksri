@@ -29,7 +29,11 @@ export default defineNuxtRouteMiddleware(async () => {
 
     } catch (error) {
         console.error("Error getting current user:", error)
+        // navigate to login
+        console.log("User not authenticated, redirecting to login")
+        // navigateTo("/login");
         signInWithRedirect()
+
     }
     console.log("after get user")
 })

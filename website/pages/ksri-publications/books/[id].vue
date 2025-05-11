@@ -158,15 +158,8 @@
                   />
 
                   <!-- buy ebook -->
-                  <v-btn
-                    rounded="pill"
-                    variant="flat"
-                    color="secondary"
-                    @click="buyEbook(bookInfo)"
-                    class="mt-1"
-                  >
-                    Buy E-book
-                  </v-btn>
+                  
+                  <bookReader :book-info="bookInfo" />
                 </div>
               </div>
 

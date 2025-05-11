@@ -85,8 +85,8 @@ const awsconfig = {
       "profile",
       "aws.cognito.signin.user.admin",
     ],
-    redirectSignIn: "https://preview.ksri.in:8080/",
-    redirectSignOut: "https://preview.ksri.in:8080/",
+    redirectSignIn: "http://localhost:8080/",
+    redirectSignOut: "http://localhost:8080/",
     responseType: "code",
   },
 };
