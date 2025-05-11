@@ -33,7 +33,15 @@
       </template>
       <v-list>
         <v-list-item>
-          <nuxt-link to="/" style="text-decoration: unset">
+          <nuxt-link to="/user" style="text-decoration: unset">
+            <v-card>
+              <v-icon start>mdi-account </v-icon>
+              Profile
+            </v-card>
+          </nuxt-link>
+        </v-list-item>
+        <v-list-item>
+          <nuxt-link to="/user/bookshelf" style="text-decoration: unset">
             <v-card>
               <v-icon start>mdi-bookshelf </v-icon>
               Book Shelf

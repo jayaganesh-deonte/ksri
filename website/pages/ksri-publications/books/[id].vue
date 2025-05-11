@@ -152,9 +152,9 @@
                     Preview E-book
                   </v-btn> -->
 
-                  <EpubPreview
+                  <Epubreader
                     buttonText="Preview Book"
-                    epubUrl="https://d3dx8df9hmf5nm.cloudfront.net/files/01JTCRZD5YA20AEGQHHRP7NNDK.epub"
+                    :src="getAssetUrl(bookInfo.previewEbookUrl)"
                   />
 
                   <!-- buy ebook -->
@@ -199,6 +199,7 @@
 import { userStore } from "~/stores/UserStore";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
+import $toast from "~/utils/toast_notification";
 
 // definePageMeta({
 //   middleware: ["authenticated"],
@@ -439,17 +440,34 @@ const buyEbook = async (bookInfo) => {
 
     // generate order id
 
-    console.log("store.user", store.user);
+    // checkIfAddressIsAvailable
+    const isAddressAvailable = await store.checkIfAddressIsAvailable();
+
+    if (!isAddressAvailable) {
+      // show toast asking to update address
+
+      $toast.error("Address details are not updated", {
+        timeout: 5000,
+        position: "top-right",
+      });
+
+      // navigate to /user profile page
+      setTimeout(() => {
+        window.location.href = "/user";
+      }, 2000);
+
+      return;
+    }
 
     const orderParams = {
-      billing_name: store.user.username,
-      billing_email: store.user.email,
-      billing_tel: "",
-      billing_address: "",
-      billing_city: "",
-      billing_state: "",
-      billing_zip: "",
-      billing_country: "",
+      billing_name: store.userName,
+      billing_email: store.userEmail,
+      billing_tel: store.contactDetails.phoneNumber,
+      billing_address: store.contactDetails.address,
+      billing_city: store.contactDetails.city,
+      billing_state: store.contactDetails.state,
+      billing_zip: store.contactDetails.zipCode,
+      billing_country: store.contactDetails.country,
       amount: bookInfo.ebookPrice,
       currency: "INR",
       language: "en",

@@ -8,7 +8,7 @@ import { Logger } from "@aws-lambda-powertools/logger";
 const logger = new Logger();
 
 const app = express();
-const PORT = 3001;
+const PORT = 3002;
 
 // Middleware
 app.use(express.json());
@@ -17,6 +17,13 @@ const corsOption = {
   origin: ["*"],
 };
 
+const AWS_LAMBDA_FUNCTION_NAME = process.env.AWS_LAMBDA_FUNCTION_NAME;
+
+if (!AWS_LAMBDA_FUNCTION_NAME) {
+  app.use(cors());
+} else {
+  app.use(cors(corsOption));
+}
 app.use("/", routes);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {

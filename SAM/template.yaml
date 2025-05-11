@@ -397,6 +397,10 @@ Resources:
           AttributeType: S
         - AttributeName: paymentDate
           AttributeType: S
+        - AttributeName: bookId
+          AttributeType: S
+        - AttributeName: email
+          AttributeType: S
       KeySchema:
         - AttributeName: PK
           KeyType: HASH
@@ -436,6 +440,14 @@ Resources:
             - AttributeName: PK
               KeyType: HASH
             - AttributeName: paymentDate
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+        - IndexName: email-BookIdIndex
+          KeySchema:
+            - AttributeName: email
+              KeyType: HASH
+            - AttributeName: bookId
               KeyType: RANGE
           Projection:
             ProjectionType: ALL

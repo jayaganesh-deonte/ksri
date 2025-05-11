@@ -106,29 +106,29 @@ handlePaymentRouter.post(
         // } catch (error) {
         //   console.error("Error processing CCAvenue request:", error);
         // }
-        // // publish event to event bridge
-        // const eventBridgeResponse = await publishToEventBridge(
-        //   process.env.EVENT_BUS_NAME || "default",
-        //   "ksriApi",
-        //   "payment.completed",
-        //   {
-        //     payment: payment,
-        //   }
-        // );
-        // logger.info("EventBridge response:", { eventBridgeResponse });
+        // publish event to event bridge
+        const eventBridgeResponse = await publishToEventBridge(
+          process.env.EVENT_BUS_NAME || "default",
+          "ksriApi",
+          "payment.purchase.completed",
+          {
+            payment: payment,
+          }
+        );
+        logger.info("EventBridge response:", { eventBridgeResponse });
       }
 
       // Determine redirect URL based on payment status
       const redirectUrl =
         orderStatus === "Success"
-          ? `/payment/donation/success/?order_id=${data.order_id}&status=${orderStatus}&email=${payment.email}`
-          : `/payment/donation/failed/?order_id=${data.order_id}&status=${orderStatus}`;
+          ? `/purchase/success/?order_id=${data.order_id}&status=${orderStatus}&email=${payment.email}`
+          : `/purchase/failed/?order_id=${data.order_id}&status=${orderStatus}`;
 
       // Redirect to appropriate URL
       res.redirect(redirectUrl);
     } catch (error) {
       console.error("Error processing CCAvenue request:", error);
-      res.redirect("/payment/donation/failed");
+      res.redirect("/purchase/failed");
     }
   }
 );

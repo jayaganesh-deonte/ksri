@@ -1,10 +1,12 @@
 import express from "express";
 import { helloRoute } from "./HelloRoute";
 import { purchasePaymentRouter } from "./payment_init/payment";
-import {handlePaymentRouter} from "./payment_init/handleResponse";
+import { handlePaymentRouter } from "./payment_init/handleResponse";
+import { userRouter } from "./userProfile";
 
 export const routes = express.Router();
 
 routes.use(helloRoute);
 routes.use(purchasePaymentRouter);
-routes.use(handlePaymentRouter)
+routes.use(handlePaymentRouter);
+routes.use(userRouter);

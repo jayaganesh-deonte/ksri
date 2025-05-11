@@ -15,6 +15,7 @@
           @click="createItem"
           :disabled="isEditDisabledForUser"
           :class="isEditDisabledForUser ? 'curor-not-allowed' : ''"
+          v-if="!hideAddButton"
         >
           <v-icon start> mdi-plus </v-icon>
           Add {{ entityName }}
@@ -535,6 +536,10 @@ const props = defineProps({
     type: Object,
     required: false,
     default: () => ({}),
+  },
+  hideAddButton: {
+    type: Boolean,
+    default: false,
   },
 });
 

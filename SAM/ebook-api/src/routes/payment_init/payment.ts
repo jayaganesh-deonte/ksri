@@ -23,49 +23,49 @@ import { validateCloudflareTurnstileToken } from "../../services/cloudflareTurns
 
 const purchasePaymentRouter = express.Router();
 
-// async function getPayments(req: Request, res: Response) {
-//   let { startDate, endDate } = req.query;
+async function getPayments(req: Request, res: Response) {
+  let { startDate, endDate } = req.query;
 
-//   //   if startDate and endDate are not provided, the default it to current month
-//   if (!startDate || !endDate) {
-//     const now = new Date();
-//     const startOfMonth = new Date(now.getFullYear(), now.getMonth() - 6, 1);
-//     const endOfMonth = new Date(now);
-//     startDate = startOfMonth.toLocaleDateString("en-CA"); // Format as YYYY-MM-DD
-//     endDate = endOfMonth.toLocaleDateString("en-CA"); // Format as YYYY-MM-DD  }
-//   }
+  //   if startDate and endDate are not provided, the default it to current month
+  if (!startDate || !endDate) {
+    const now = new Date();
+    const startOfMonth = new Date(now.getFullYear(), now.getMonth() - 6, 1);
+    const endOfMonth = new Date(now);
+    startDate = startOfMonth.toLocaleDateString("en-CA"); // Format as YYYY-MM-DD
+    endDate = endOfMonth.toLocaleDateString("en-CA"); // Format as YYYY-MM-DD  }
+  }
 
-//   const params = {
-//     TableName: process.env.DDB_TABLE_NAME,
-//     IndexName: "PaymentDateIndex",
-//     KeyConditionExpression:
-//       "PK = :PK AND paymentDate BETWEEN :startDate AND :endDate",
-//     ExpressionAttributeValues: {
-//       ":PK": "ENTITYTYPE#PAYMENT",
-//       ":startDate": startDate,
-//       ":endDate": endDate,
-//     },
-//     ScanIndexForward: false,
-//   };
+  const params = {
+    TableName: process.env.DDB_TABLE_NAME,
+    IndexName: "PaymentDateIndex",
+    KeyConditionExpression:
+      "PK = :PK AND paymentDate BETWEEN :startDate AND :endDate",
+    ExpressionAttributeValues: {
+      ":PK": "ENTITYTYPE#PAYMENT#PURCHASE#EBOOK",
+      ":startDate": startDate,
+      ":endDate": endDate,
+    },
+    ScanIndexForward: false,
+  };
 
-//   try {
-//     const result = await documentClient.query(params);
-//     const payments: Payment[] =
-//       result.Items?.map((item: Record<string, any>) => {
-//         const paymentDDB = item as PaymentDDB;
-//         // if (!validatePaymentDDB(paymentDDB)) {
-//         //   throw new Error("Invalid payment data");
-//         // }
-//         return fromDynamoDB(paymentDDB);
-//       }) || [];
-//     res.json(payments);
-//   } catch (error) {
-//     console.error("Error fetching payments:", error);
-//     res.status(500).json({ error: "Error fetching payments" });
-//   }
-// }
+  try {
+    const result = await documentClient.query(params);
+    const payments: Payment[] =
+      result.Items?.map((item: Record<string, any>) => {
+        const paymentDDB = item as PaymentDDB;
+        // if (!validatePaymentDDB(paymentDDB)) {
+        //   throw new Error("Invalid payment data");
+        // }
+        return fromDynamoDB(paymentDDB);
+      }) || [];
+    res.json(payments);
+  } catch (error) {
+    console.error("Error fetching payments:", error);
+    res.status(500).json({ error: "Error fetching payments" });
+  }
+}
 
-// // get payment for month using GSI PaymentDateIndex: PK = "ENTITYTYPE#PAYMENT" & paymentDate between range
+// // get payment for month using GSI PaymentDateIndex: PK = "ENTITYTYPE#PAYMENT#PURCHASE#EBOOK" & paymentDate between range
 // purchasePaymentRouter.get("/payments", async (req: Request, res: Response) => {
 //   await getPayments(req, res);
 // });
@@ -77,14 +77,21 @@ const purchasePaymentRouter = express.Router();
 //   }
 // );
 
+purchasePaymentRouter.get(
+  "/payments/ebook",
+  async (req: Request, res: Response) => {
+    await getPayments(req, res);
+  }
+);
+
 // GET new OrderID
 const getNewOrderId = async () => {
   // increment currentOrderId by one and get the new value
   const params = {
     TableName: process.env.DDB_TABLE_NAME,
     Key: {
-      PK: "ENTITYTYPE#PAYMENT#DONATION#CURRENT_ORDER_ID",
-      SK: "ENTITYTYPE#PAYMENT#DONATION#CURRENT_ORDER_ID",
+      PK: "ENTITYTYPE#PAYMENT#PURCHASE#EBOOK#CURRENT_ORDER_ID",
+      SK: "ENTITYTYPE#PAYMENT#PURCHASE#EBOOK#CURRENT_ORDER_ID",
     },
     UpdateExpression: "SET orderId = if_not_exists(orderId, :zero) + :incr",
     ExpressionAttributeValues: {
@@ -168,7 +175,7 @@ const getNewOrderId = async () => {
 //       const params = {
 //         TableName: process.env.DDB_TABLE_NAME,
 //         Key: {
-//           PK: "ENTITYTYPE#PAYMENT",
+//           PK: "ENTITYTYPE#PAYMENT#PURCHASE#EBOOK",
 //           SK: payment.paymentRefId,
 //         },
 //       };
@@ -195,7 +202,7 @@ const getNewOrderId = async () => {
 //       const emailDataVariables = {
 //         name: payment.name,
 //         address: payment.address + ", " + payment.city + ", " + payment.state,
-//         panNumber: payment.panNumber,
+//         bookName: payment.bookName,
 //         amountInWords: paymentDDB.amountInWords,
 //         paymentMethod: payment.paymentMethod,
 //         date: payment.paymentDate,
@@ -274,8 +281,8 @@ purchasePaymentRouter.post(
         phoneNumber: orderParams.billing_tel,
         paymentRefId: orderParams.order_id,
         paymentMethod: "ccavenue",
-        panNumber: orderParams.merchant_param1,
-        bookId: orderParams.merchant_param2,
+        bookName: orderParams.merchant_param2,
+        bookId: orderParams.merchant_param1,
         passportNumber: orderParams.merchant_param3,
         passportExpiryDate: orderParams.merchant_param4,
         address: orderParams.billing_address,
@@ -334,7 +341,7 @@ async function updatePaymentStatus(
   const params = {
     TableName: process.env.DDB_TABLE_NAME,
     Key: {
-      PK: "ENTITYTYPE#PAYMENT",
+      PK: "ENTITYTYPE#PAYMENT#PURCHASE#EBOOK",
       SK: paymentRefId,
     },
     UpdateExpression:

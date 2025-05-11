@@ -45,7 +45,10 @@ export default defineNuxtRouteMiddleware(async () => {
                 email: userAttributes.email
             }
             store.setUser(userDetails)
-            console.log("after setUser")
+            console.log("userDetails", userDetails)
+            console.log("email", store.user.email)
+            store.userName = user.username
+            store.userEmail = userAttributes.email
 
         } catch (error) {
             console.error("Error getting current user:", error)

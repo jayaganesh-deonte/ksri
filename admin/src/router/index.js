@@ -62,6 +62,8 @@ import advisoryBoard from "@/views/faculty/advisoryBoard.vue";
 
 import donation from "@/views/donation/donation.vue"
 
+import bookSales from "@/views/ebook/bookSales.vue";
+
 import slideShow from "@/views/updates/slideShow.vue";
 
 const routes = [
@@ -286,6 +288,12 @@ const routes = [
     path: "/donation",
     name: "donation",
     component: donation,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/book-sales",
+    name: "bookSales",
+    component: bookSales,
     meta: { requiresAuth: true },
   },
 ];

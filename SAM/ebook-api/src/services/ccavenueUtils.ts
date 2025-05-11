@@ -20,7 +20,7 @@ interface OrderParams {
   language: string;
 
   merchant_param1: string; // pan number
-  merchant_param2?: string; //  aadhar number
+  merchant_param2: string; //  aadhar number
   merchant_param3?: string; //passport number
   merchant_param4?: string; //passport expiry date
 

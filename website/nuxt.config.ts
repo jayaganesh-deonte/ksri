@@ -19,6 +19,7 @@ export default defineNuxtConfig({
       "process.env.DEBUG": false,
     },
   },
+
   // ssr: false,
   // nitro: {
   //   preset: "static", // Specify the static preset for full static generation
@@ -31,7 +32,7 @@ export default defineNuxtConfig({
     REDIRECT_URL: process.env.REDIRECT_URL,
     public: {
       API_URL: "https://ksri.in/public",
-      PURCHASE_API_URL: "http://localhost:8080",
+      PURCHASE_API_URL: "http://localhost:3002",
       // API_URL: "http://localhost:3001/public",
       CONTACT_US_URL:
         "https://4fhxozuh262x5cgohmdstdvmfm0rvmef.lambda-url.ap-south-1.on.aws/",
