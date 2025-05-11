@@ -1,4 +1,10 @@
 import { defineStore } from "pinia";
+import {
+    getCurrentUser,
+    signInWithRedirect,
+    fetchUserAttributes,
+    fetchAuthSession,
+} from "aws-amplify/auth";
 import axios from "axios";
 import $toast from "~/utils/toast_notification";
 
@@ -39,8 +45,9 @@ export const userStore = defineStore("userStore", {
         setIsLoading(isLoading) {
             this.isLoading = isLoading;
         },
-        getToken() {
-            return "token";
+        async getToken() {
+            const { idToken } = (await fetchAuthSession()).tokens || {};
+            return idToken;
         },
         async checkIfAddressIsAvailable() {
 
@@ -80,12 +87,14 @@ export const userStore = defineStore("userStore", {
                 this.profileLoading = true;
                 const runtimeConfig = useRuntimeConfig();
 
+
+                const idToken = await this.getToken()
                 const response = await axios.get(
                     `${runtimeConfig.public.PURCHASE_API_URL}/userProfile/${this.userEmail}`,
                     {
                         headers: {
                             "Content-Type": "application/json",
-                            Authorization: this.getToken(),
+                            Authorization: idToken,
                         },
                     }
                 );
@@ -130,13 +139,16 @@ export const userStore = defineStore("userStore", {
                     name: this.userName,
                 };
 
+
+                const idToken = await this.getToken()
+
                 const response = await axios.post(
                     `${runtimeConfig.public.PURCHASE_API_URL}/userProfile`,
                     userProfileData,
                     {
                         headers: {
                             "Content-Type": "application/json",
-                            Authorization: this.getToken(),
+                            Authorization: idToken,
                         },
                     }
                 );
@@ -188,10 +200,13 @@ export const userStore = defineStore("userStore", {
 
             const apiUrl = `${runtimeConfig.public.PURCHASE_API_URL}/ebook/${email}/${bookId}`;
             try {
+
+                const idToken = await this.getToken()
+
                 const response = await axios.get(apiUrl, {
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: this.getToken(),
+                        Authorization: idToken,
                     },
                 });
 

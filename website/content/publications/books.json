@@ -165,15 +165,23 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "contactus@deonte.in",
       "created_at": "2025-04-08T07:07:19.933Z",
-      "updated_at": "2025-04-08T07:07:19.933Z",
+      "updated_at": "2025-05-11T13:56:18.034Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. Sita Sundar Ram",
     "yearOfPublication": "2025-12-01",
     "printStatus": "Upcoming",
-    "itemPublishStatus": "PUBLISHED"
+    "itemPublishStatus": "PUBLISHED",
+    "isEbookAvailable": "Yes",
+    "ebookPrice": "20",
+    "ebookUrl": [
+      "files/01JTZT3F9269EGGQ44PBW2DJ03.pdf"
+    ],
+    "previewEbookUrl": [
+      "files/01JTZT3KNFZ88WX2NSDP2ZCGWT.pdf"
+    ]
   },
   {
     "title": "AN ENCYCLOPAEDIC DICTIONARY OF SANSKRIT GEOGRAPHICAL TERMS",

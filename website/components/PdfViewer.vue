@@ -1,103 +1,117 @@
 <template>
-  <v-card class="pdf-reader-card">
-    <v-card-title class="pdf-title">
-      <v-icon start color="primary" class="mr-2">mdi-file-pdf-box</v-icon>
-      PDF Viewer
-    </v-card-title>
+  <!-- Main component with "Read Book" button -->
+  <div>
+    <v-btn color="secondary" @click="openPdfDialog" class="my-4" rounded="pill">
+      Read Book
+    </v-btn>
 
-    <v-divider></v-divider>
+    <!-- PDF Viewer Dialog -->
+    <v-dialog
+      v-model="dialogVisible"
+      fullscreen
+      transition="dialog-bottom-transition"
+      :retain-focus="false"
+    >
+      <v-card class="pdf-reader-card">
+        <v-toolbar color="primary" density="compact">
+          <v-btn icon @click="dialogVisible = false">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+          <v-toolbar-title class="text-white"></v-toolbar-title>
+          <v-spacer></v-spacer>
+        </v-toolbar>
 
-    <v-card-text class="pdf-container">
-      <div class="loading-container" v-if="!isLoaded">
-        <v-progress-circular
-          indeterminate
-          color="primary"
-        ></v-progress-circular>
-        <span class="ml-3">Loading PDF...</span>
-      </div>
+        <v-card-text class="pdf-container">
+          <div class="loading-container" v-if="!isLoaded">
+            <v-progress-circular
+              indeterminate
+              color="primary"
+            ></v-progress-circular>
+            <span class="ml-3">Loading PDF...</span>
+          </div>
 
-      <VuePDF
-        :key="page"
-        :pdf="pdf"
-        :page="page"
-        :text-layer="false"
-        :scale="zoom"
-        @loaded="isLoaded = true"
-        class="pdf-content"
-      />
-    </v-card-text>
+          <VuePDF
+            :key="page"
+            :pdf="pdf"
+            :page="page"
+            :text-layer="false"
+            :scale="zoom"
+            @loaded="isLoaded = true"
+            class="pdf-content"
+          />
+        </v-card-text>
 
-    <v-divider></v-divider>
+        <v-divider></v-divider>
 
-    <v-card-actions class="pdf-controls">
-      <v-btn
-        prepend-icon="mdi-arrow-left"
-        variant="tonal"
-        color="primary"
-        :disabled="page <= 1"
-        @click="page--"
-        class="mr-2"
-      >
-        Previous
-      </v-btn>
-
-      <v-text-field
-        v-model="pageInput"
-        hide-details
-        type="number"
-        density="compact"
-        class="page-input mx-2"
-        style="max-width: 70px"
-        @change="goToPage"
-        @keyup.enter="goToPage"
-      ></v-text-field>
-
-      <span class="page-info mx-2">of {{ pages }}</span>
-
-      <v-btn
-        append-icon="mdi-arrow-right"
-        variant="tonal"
-        color="primary"
-        :disabled="page >= pages"
-        @click="page++"
-        class="ml-2"
-      >
-        Next
-      </v-btn>
-
-      <v-spacer></v-spacer>
-
-      <v-tooltip location="top" text="Zoom Out">
-        <template v-slot:activator="{ props }">
+        <v-card-actions class="pdf-controls">
           <v-btn
-            v-bind="props"
-            icon="mdi-magnify-minus"
-            variant="text"
-            :disabled="zoom <= 0.5"
-            @click="zoomOut"
-          ></v-btn>
-        </template>
-      </v-tooltip>
+            prepend-icon="mdi-arrow-left"
+            variant="tonal"
+            color="primary"
+            :disabled="page <= 1"
+            @click="page--"
+            class="mr-2"
+          >
+            Previous
+          </v-btn>
 
-      <span class="zoom-level mx-2">{{ Math.round(zoom * 100) }}%</span>
+          <v-text-field
+            v-model="pageInput"
+            hide-details
+            type="number"
+            density="compact"
+            class="page-input mx-2"
+            style="max-width: 70px"
+            @change="goToPage"
+            @keyup.enter="goToPage"
+          ></v-text-field>
 
-      <v-tooltip location="top" text="Zoom In">
-        <template v-slot:activator="{ props }">
+          <span class="page-info mx-2">of {{ pages }}</span>
+
           <v-btn
-            v-bind="props"
-            icon="mdi-magnify-plus"
-            variant="text"
-            :disabled="zoom >= 2"
-            @click="zoomIn"
-          ></v-btn>
-        </template>
-      </v-tooltip>
+            append-icon="mdi-arrow-right"
+            variant="tonal"
+            color="primary"
+            :disabled="page >= pages"
+            @click="page++"
+            class="ml-2"
+          >
+            Next
+          </v-btn>
 
-      <v-divider vertical class="mx-2"></v-divider>
+          <v-spacer></v-spacer>
 
-      <!-- Removed text layer and download buttons -->
-    </v-card-actions>
-  </v-card>
+          <v-tooltip location="top" text="Zoom Out">
+            <template v-slot:activator="{ props }">
+              <v-btn
+                v-bind="props"
+                icon="mdi-magnify-minus"
+                variant="text"
+                :disabled="zoom <= 0.5"
+                @click="zoomOut"
+              ></v-btn>
+            </template>
+          </v-tooltip>
+
+          <span class="zoom-level mx-2">{{ Math.round(zoom * 100) }}%</span>
+
+          <v-tooltip location="top" text="Zoom In">
+            <template v-slot:activator="{ props }">
+              <v-btn
+                v-bind="props"
+                icon="mdi-magnify-plus"
+                variant="text"
+                :disabled="zoom >= 2"
+                @click="zoomIn"
+              ></v-btn>
+            </template>
+          </v-tooltip>
+
+          <v-divider vertical class="mx-2"></v-divider>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </div>
 </template>
 
 <script setup>
@@ -120,6 +134,7 @@ const props = defineProps({
 const page = ref(1);
 const zoom = ref(props.initialZoom);
 const isLoaded = ref(false);
+const dialogVisible = ref(false);
 
 // Computed
 const pageInput = computed({
@@ -127,10 +142,17 @@ const pageInput = computed({
   set: (val) => val, // Only set in goToPage method
 });
 
-// PDF loading
+// PDF loading - only load when dialog is opened
 const { pdf, pages } = usePDF(props.pdfUrl);
 
 // Methods
+const openPdfDialog = () => {
+  dialogVisible.value = true;
+  // Reset state when opening
+  page.value = 1;
+  isLoaded.value = false;
+};
+
 const goToPage = () => {
   const newPage = parseInt(pageInput.value);
   if (!isNaN(newPage) && newPage > 0 && newPage <= pages.value) {
@@ -155,24 +177,16 @@ const zoomOut = () => {
 
 <style scoped>
 .pdf-reader-card {
-  max-width: 100%;
-  margin: 0 auto;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.pdf-title {
-  font-weight: 500;
-  font-size: 1.1rem;
-  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .pdf-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 500px;
+  flex: 1;
   background-color: #f5f5f5;
   position: relative;
   padding: 16px 0;
@@ -211,12 +225,5 @@ const zoomOut = () => {
   font-size: 0.9rem;
   min-width: 48px;
   text-align: center;
-}
-
-/* PDF content styling */
-.pdf-content {
-  max-width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
 }
 </style>

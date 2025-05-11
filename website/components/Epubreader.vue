@@ -1,10 +1,11 @@
 <template>
   <div>
     <v-btn
-      color="primary"
+      color="secondary"
       @click="openReader"
       :loading="loading"
       rounded="pill"
+      class="my-4"
     >
       {{ props.buttonText }}
     </v-btn>

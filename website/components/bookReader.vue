@@ -15,9 +15,20 @@
     </div>
     <div v-if="store.isAuthenticated">
       <div v-if="isBookPurchased">
-        <v-btn rounded="pill" variant="flat" color="secondary" class="mt-1">
+        <!-- <v-btn rounded="pill" variant="flat" color="secondary" class="mt-1">
           Read Book
-        </v-btn>
+        </v-btn> -->
+        <Epubreader
+          :src="ebookUrl"
+          buttonText="Read Book"
+          v-if="bookFormatType == 'epub' && ebookUrl != ''"
+        />
+
+        <PdfViewer
+          :pdfUrl="ebookUrl"
+          v-if="bookFormatType == 'pdf' && ebookUrl != ''"
+          buttonText="Read Book"
+        />
       </div>
       <div v-if="!isBookPurchased">
         <v-btn
@@ -58,6 +69,10 @@ const store = userStore();
 
 let isPaymentUrlLoading = ref(false);
 
+let ebookUrl = ref("");
+
+let bookFormatType = ref("");
+
 // props bookInfo
 const props = defineProps({
   bookInfo: {
@@ -73,6 +88,11 @@ onMounted(async () => {
   const isPurchased = await store.checkIfBookIsBought(props.bookInfo.id);
 
   isBookPurchased.value = isPurchased.bought;
+
+  if (isBookPurchased.value) {
+    const url = await getEbookUrl();
+    ebookUrl.value = url;
+  }
 });
 
 const buyEbook = async () => {
@@ -154,6 +174,39 @@ const buyEbook = async () => {
     // Handle error (e.g., show an error message to the user)
   } finally {
     isPaymentUrlLoading.value = false;
+  }
+};
+
+const getEbookUrl = async () => {
+  // make get call to /ebookUrl/${bookId}
+  const runtimeConfig = useRuntimeConfig();
+  const API_URL = runtimeConfig.public.PURCHASE_API_URL;
+
+  const idToken = await store.getToken();
+
+  const response = await axios.get(`${API_URL}/ebookUrl/${props.bookInfo.id}`, {
+    headers: {
+      Authorization: idToken,
+    },
+  });
+
+  // handle response {url:url}
+  // check status code
+  if (response.status === 200) {
+    // if url contains .pdf then set bookFormatType to pdf , if .epub set to epub
+    if (response.data.url.includes(".pdf")) {
+      bookFormatType.value = "pdf";
+    } else if (response.data.url.includes(".epub")) {
+      bookFormatType.value = "epub";
+    }
+    return response.data.url;
+  } else {
+    // show error message
+    console.log("error", response);
+    $toast.error("Error fetching ebook url", {
+      timeout: 5000,
+      position: "top-right",
+    });
   }
 };
 </script>

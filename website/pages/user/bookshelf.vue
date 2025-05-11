@@ -2,7 +2,7 @@
   <v-container v-if="getIsAuthenticated">
     <v-row>
       <v-col>
-        <h1 class="text-h4 mb-6">My Book Shelf</h1>
+        <h1 class="text-h4 mb-6">Book Shelf</h1>
       </v-col>
       <v-col>
         <v-text-field
@@ -78,17 +78,17 @@
 
           <div class="text-h6 ma-2">{{ book.bookName }}</div>
 
-          <v-card-text>
-            <p class="text-caption text-grey mb-2">
+          <div>
+            <p class="text-caption text-grey ma-2">
               Purchased on {{ formatDate(book.paymentDate) }}
             </p>
-            <p class="text-caption text-grey mb-2">
+            <p class="text-caption text-grey ma-2">
               Author: {{ book.bookDetails.author }}
             </p>
-          </v-card-text>
+          </div>
 
-          <v-card-actions class="mt-auto">
-            <v-btn
+          <div class="ma-2 mt-auto">
+            <!-- <v-btn
               variant="tonal"
               color="primary"
               block
@@ -96,8 +96,10 @@
             >
               Read Book
               <v-icon icon="mdi-book-open-page-variant" class="ml-2"></v-icon>
-            </v-btn>
-          </v-card-actions>
+            </v-btn> -->
+
+            <bookReader :book-info="book" />
+          </div>
         </v-card>
       </v-col>
     </v-row>
@@ -113,6 +115,7 @@ import { ref, onMounted, computed } from "vue";
 import { storeToRefs } from "pinia";
 import { userStore } from "~/stores/UserStore";
 import { format } from "date-fns";
+import axios from "axios";
 
 const store = userStore();
 const { getIsAuthenticated } = storeToRefs(store);
@@ -166,17 +169,28 @@ const fetchBooks = async () => {
       throw new Error("User email not found");
     }
 
-    const response = await fetch(
-      `http://localhost:3002/ebook/${encodeURIComponent(userEmail)}`
+    const runtimeConfig = useRuntimeConfig();
+
+    const idToken = await store.getToken();
+
+    const response = await axios.get(
+      `${runtimeConfig.public.PURCHASE_API_URL}/ebook/${encodeURIComponent(
+        userEmail
+      )}`,
+      {
+        headers: {
+          Authorization: idToken,
+        },
+      }
     );
 
-    if (!response.ok) {
+    if (!response.status === 200) {
       throw new Error(
         `Failed to fetch books: ${response.status} ${response.statusText}`
       );
     }
 
-    const data = await response.json();
+    const data = response.data;
     books.value = data;
 
     // fetch the book object from allBooks Array using bookId and id from allbooks and then merge the books object with the data
@@ -184,6 +198,11 @@ const fetchBooks = async () => {
       const bookDetails = allBooks.find((b) => b.id === book.bookId);
       return {
         ...book,
+        // ...bookDetails,
+        id: bookDetails.id,
+        title: bookDetails.title,
+        ebookPrice: bookDetails.ebookPrice,
+
         bookDetails: {
           ...bookDetails,
         },

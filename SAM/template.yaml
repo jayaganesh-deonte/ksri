@@ -632,6 +632,8 @@ Resources:
             - HEAD
             - OPTIONS
           TargetOriginId: myS3Origin
+          Compress: false
+          CachePolicyId: "658327ea-f89d-4fab-a63d-7e88639e58f6"
           ViewerProtocolPolicy: redirect-to-https
         PriceClass: PriceClass_200
         Logging:
@@ -1676,7 +1678,10 @@ Resources:
           CC_AVENUE_CREDS: "/ksri/ccavenue/purchase"
           CLOUDFLARE_SECRET_KEY: "/cloudflare/trunstile"
           S3_BUCKET_NAME: !Ref S3BucketForEbook
-
+          EBOOK_CLOUDFRONT: !Sub https://${EbookDistribution.DomainName}
+          REGION: !Sub ${AWS::Region}
+          USER_POOL_ID: !Ref WebsiteUserPool1
+          CLIENT_ID: !Ref WebsiteUserPoolClient
           # ALLOWED_URL: !If
           #   - useCustomDomainForUiCondition
           #   - !Ref UiCustomDomain
