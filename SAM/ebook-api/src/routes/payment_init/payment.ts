@@ -255,9 +255,9 @@ purchasePaymentRouter.post(
 
       orderParams.merchant_id = ccAvenueCreds.merchatId;
       orderParams.redirect_url =
-        ccAvenueCreds.redirectUrl + "/purchase/api/handleResponse";
+        ccAvenueCreds.redirectUrl + "/e-v1/purchase/api/handleResponse";
       orderParams.cancel_url =
-        ccAvenueCreds.redirectUrl + "/purchase/api/handleResponse";
+        ccAvenueCreds.redirectUrl + "/e-v1/purchase/api/handleResponse";
 
       const ccavenueUtils = new ConfigureCCAvenue();
       await ccavenueUtils.init();

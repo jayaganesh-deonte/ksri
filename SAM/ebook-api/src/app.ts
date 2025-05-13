@@ -24,7 +24,47 @@ if (!AWS_LAMBDA_FUNCTION_NAME) {
 } else {
   app.use(cors(corsOption));
 }
-app.use("/", routes);
+
+const middlewareFunction = async function (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  // Add correlation ID for request tracking
+  const correlationId = req.headers["x-correlation-id"] || crypto.randomUUID();
+  logger.appendKeys({
+    correlationId: correlationId,
+  });
+
+  // Capture request metadata
+  const requestMetadata = {
+    path: req.originalUrl,
+    method: req.method,
+    ip: req.ip,
+    userAgent: req.headers["user-agent"],
+    timestamp: new Date().toISOString(),
+  };
+
+  logger.info("Incoming request", {
+    ...requestMetadata,
+    component: "middleware",
+  });
+
+  // Add response logging
+  res.on("finish", () => {
+    logger.info("Request completed", {
+      component: "middleware",
+      statusCode: res.statusCode,
+      responseTime: Date.now() - new Date(requestMetadata.timestamp).getTime(),
+      ...requestMetadata,
+    });
+  });
+
+  next();
+};
+app.use(middlewareFunction);
+
+app.use("/e-v1/", routes);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error("error in app: ", err); // Log the error for debugging
@@ -41,12 +81,8 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   }
 });
 
-// if local start server and not in lambda
-if (process.env.AWS_LAMBDA_FUNCTION_NAME === undefined) {
-  app.listen(PORT, () => {
-    logger.info(`Server is running on port ${PORT}`);
-  });
-}
-
+app.listen(PORT, () => {
+  logger.info(`Server is running on port ${PORT}`);
+});
 // export app
 export default app;

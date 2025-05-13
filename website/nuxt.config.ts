@@ -31,11 +31,11 @@ export default defineNuxtConfig({
     CC_AVENUE_DOMAIN: process.env.CC_AVENUE_DOMAIN,
     REDIRECT_URL: process.env.REDIRECT_URL,
     public: {
-      API_URL: "https://ksri.in/public",
-      PURCHASE_API_URL: "http://localhost:3002",
+      API_URL: "https://preview.ksri.in/public",
+      PURCHASE_API_URL: "https://preview.ksri.in/e-v1",
       // API_URL: "http://localhost:3001/public",
       CONTACT_US_URL:
-        "https://4fhxozuh262x5cgohmdstdvmfm0rvmef.lambda-url.ap-south-1.on.aws/",
+        "https://k6k5z57jue2xojyecp4dvmab640dxzeb.lambda-url.ap-south-1.on.aws/",
       ASSET_DOMAIN: "https://d3dx8df9hmf5nm.cloudfront.net/",
       WORKING_KEY: process.env.WORKING_KEY,
       ACCESS_CODE: process.env.ACCESS_CODE,

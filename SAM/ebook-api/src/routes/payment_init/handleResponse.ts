@@ -3,7 +3,7 @@ import express, { Request, Response } from "express";
 export const handlePaymentRouter = express.Router();
 
 import { updatePaymentStatus } from "./payment";
-import { EmailService } from "../../services/sendEmail";
+// import { EmailService } from "../../services/sendEmail";
 
 import { ConfigureCCAvenue } from "../../services/ccavenueUtils";
 import { Logger } from "@aws-lambda-powertools/logger";
@@ -68,7 +68,7 @@ handlePaymentRouter.post(
       // console.log("updateRes", payment);
       logger.info("updateRes", { updateRes: payment });
 
-      const emailService = await EmailService.init();
+      // const emailService = await EmailService.init();
 
       const BASE_URL = process.env.BASE_URL || "http://ksri.in/";
 

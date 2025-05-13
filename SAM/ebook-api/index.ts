@@ -1,6 +1,6 @@
-import serverlessExpress from "@codegenie/serverless-express";
+import serverless from "serverless-http";
 import app from "./src/app";
 
-module.exports.handler = serverlessExpress({
-  app,
+module.exports.handler = serverless(app, {
+  binary: true,
 });

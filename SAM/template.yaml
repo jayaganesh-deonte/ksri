@@ -68,6 +68,7 @@ Resources:
             - "*"
           AllowHeaders:
             - "*"
+
       ReservedConcurrentExecutions: 15
       Environment:
         Variables:
@@ -1654,15 +1655,15 @@ Resources:
       Runtime: nodejs20.x
       Architectures:
         - x86_64
-      # FunctionUrlConfig:
-      #   AuthType: NONE
-      #   Cors:
-      #     AllowOrigins:
-      #       - "*"
-      #     AllowMethods:
-      #       - "*"
-      #     AllowHeaders:
-      #       - "*"
+      FunctionUrlConfig:
+        AuthType: NONE
+        Cors:
+          AllowOrigins:
+            - "*"
+          AllowMethods:
+            - "*"
+          AllowHeaders:
+            - "*"
       ReservedConcurrentExecutions: 15
       Environment:
         Variables:
@@ -1678,7 +1679,7 @@ Resources:
           CC_AVENUE_CREDS: "/ksri/ccavenue/purchase"
           CLOUDFLARE_SECRET_KEY: "/cloudflare/trunstile"
           S3_BUCKET_NAME: !Ref S3BucketForEbook
-          EBOOK_CLOUDFRONT: !Sub https://${EbookDistribution.DomainName}
+          EBOOK_CLOUDFRONT: !Sub https://${ebookDistribution.DomainName}
           REGION: !Sub ${AWS::Region}
           USER_POOL_ID: !Ref WebsiteUserPool1
           CLIENT_ID: !Ref WebsiteUserPoolClient
@@ -1700,8 +1701,7 @@ Resources:
             - Effect: Allow
               Action:
                 - events:*
-
-              Resource: !GetAtt customEventBus.Arn
+              Resource: "*"
         - Version: "2012-10-17"
           Statement:
             - Effect: Allow

@@ -23,7 +23,10 @@ ebookRouter.get(
         ExpressionAttributeValues: {
           ":email": email,
           ":bookId": bookId,
+          ":paymentStatus": "COMPLETED",
         },
+        // filter with paymentStatus as COMPLETED
+        FilterExpression: "paymentStatus = :paymentStatus",
       };
 
       const data = await documentClient.query(params);
