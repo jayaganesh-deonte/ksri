@@ -122,7 +122,7 @@ handlePaymentRouter.post(
       const redirectUrl =
         orderStatus === "Success"
           ? `/user/bookshelf`
-          : `/purchase/failed/?order_id=${data.order_id}&status=${orderStatus}`;
+          : `/payment/failed/?order_id=${data.order_id}&status=${orderStatus}`;
 
       // Redirect to appropriate URL
       res.redirect(redirectUrl);
