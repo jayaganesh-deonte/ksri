@@ -17,9 +17,21 @@ Parameters:
   UiCustomDomain:
     Description: domain for ui distribution
     Type: String
+  WebsiteCustomDomain:
+    Description: domain for website distribution
+    Type: String
+  useCustomDomainForWebsite:
+    Type: String
+    AllowedValues:
+      - "true"
+      - "false"
+    Default: "true"
 Conditions:
   useCustomDomainForUiCondition: !Equals
     - !Ref useCustomDomainForUi
+    - "true"
+  useCustomDomainForWebsiteCondition: !Equals
+    - !Ref useCustomDomainForWebsite
     - "true"
 Resources:
   customEventBus:
@@ -1316,10 +1328,10 @@ Resources:
           ]
         }
 
-  WebsiteUserPool1:
+  WebsiteUserPool:
     Type: "AWS::Cognito::UserPool"
     Properties:
-      UserPoolName: !Sub ${Prefix}_website_user_pool_1
+      UserPoolName: !Sub ${Prefix}_website_user_pool
       Policies:
         PasswordPolicy:
           MinimumLength: 8
@@ -1329,121 +1341,121 @@ Resources:
           RequireSymbols: true
           TemporaryPasswordValidityDays: 7
       LambdaConfig: {}
-      # Schema:
-      #   - Name: "profile"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #     StringAttributeConstraints:
-      #       MinLength: "0"
-      #       MaxLength: "2048"
-      #   - Name: "address"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #     StringAttributeConstraints:
-      #       MinLength: "0"
-      #       MaxLength: "2048"
-      #   - Name: "birthdate"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #     StringAttributeConstraints:
-      #       MinLength: "10"
-      #       MaxLength: "10"
-      #   - Name: "gender"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #     StringAttributeConstraints:
-      #       MinLength: "0"
-      #       MaxLength: "2048"
-      #   - Name: "preferred_username"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #     StringAttributeConstraints:
-      #       MinLength: "0"
-      #       MaxLength: "2048"
-      #   - Name: "updated_at"
-      #     AttributeDataType: "Number"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #     NumberAttributeConstraints:
-      #       MinValue: "0"
-      #   - Name: "website"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #     StringAttributeConstraints:
-      #       MinLength: "0"
-      #       MaxLength: "2048"
-      #   - Name: "picture"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #     StringAttributeConstraints:
-      #       MinLength: "0"
-      #       MaxLength: "2048"
-      #   - Name: "identities"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #     StringAttributeConstraints: {}
-      #   - Name: "sub"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: false
-      #     Required: true
-      #     StringAttributeConstraints:
-      #       MinLength: "1"
-      #       MaxLength: "2048"
-      #   - Name: "phone_number"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #     StringAttributeConstraints:
-      #       MinLength: "0"
-      #       MaxLength: "2048"
-      #   - Name: "phone_number_verified"
-      #     AttributeDataType: "Boolean"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #   - Name: "zoneinfo"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #     StringAttributeConstraints:
-      #       MinLength: "0"
-      #       MaxLength: "2048"
-      #   - Name: "locale"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: false
-      #     StringAttributeConstraints:
-      #       MinLength: "0"
-      #       MaxLength: "2048"
-      #   - Name: "email"
-      #     AttributeDataType: "String"
-      #     DeveloperOnlyAttribute: false
-      #     Mutable: true
-      #     Required: true
-      #     StringAttributeConstraints:
-      #       MinLength: "0"
-      #       MaxLength: "2048"
+      Schema:
+        #   - Name: "profile"
+        #     AttributeDataType: "String"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #     StringAttributeConstraints:
+        #       MinLength: "0"
+        #       MaxLength: "2048"
+        #   - Name: "address"
+        #     AttributeDataType: "String"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #     StringAttributeConstraints:
+        #       MinLength: "0"
+        #       MaxLength: "2048"
+        #   - Name: "birthdate"
+        #     AttributeDataType: "String"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #     StringAttributeConstraints:
+        #       MinLength: "10"
+        #       MaxLength: "10"
+        #   - Name: "gender"
+        #     AttributeDataType: "String"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #     StringAttributeConstraints:
+        #       MinLength: "0"
+        #       MaxLength: "2048"
+        #   - Name: "preferred_username"
+        #     AttributeDataType: "String"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #     StringAttributeConstraints:
+        #       MinLength: "0"
+        #       MaxLength: "2048"
+        #   - Name: "updated_at"
+        #     AttributeDataType: "Number"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #     NumberAttributeConstraints:
+        #       MinValue: "0"
+        #   - Name: "website"
+        #     AttributeDataType: "String"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #     StringAttributeConstraints:
+        #       MinLength: "0"
+        #       MaxLength: "2048"
+        #   - Name: "picture"
+        #     AttributeDataType: "String"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #     StringAttributeConstraints:
+        #       MinLength: "0"
+        #       MaxLength: "2048"
+        #   - Name: "identities"
+        #     AttributeDataType: "String"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #     StringAttributeConstraints: {}
+        #   - Name: "sub"
+        #     AttributeDataType: "String"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: false
+        #     Required: true
+        #     StringAttributeConstraints:
+        #       MinLength: "1"
+        #       MaxLength: "2048"
+        #   - Name: "phone_number"
+        #     AttributeDataType: "String"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #     StringAttributeConstraints:
+        #       MinLength: "0"
+        #       MaxLength: "2048"
+        #   - Name: "phone_number_verified"
+        #     AttributeDataType: "Boolean"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #   - Name: "zoneinfo"
+        #     AttributeDataType: "String"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #     StringAttributeConstraints:
+        #       MinLength: "0"
+        #       MaxLength: "2048"
+        #   - Name: "locale"
+        #     AttributeDataType: "String"
+        #     DeveloperOnlyAttribute: false
+        #     Mutable: true
+        #     Required: false
+        #     StringAttributeConstraints:
+        #       MinLength: "0"
+        #       MaxLength: "2048"
+        - Name: "email"
+          AttributeDataType: "String"
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Required: true
+          StringAttributeConstraints:
+            MinLength: "0"
+            MaxLength: "2048"
       #   - Name: "email_verified"
       #     AttributeDataType: "Boolean"
       #     DeveloperOnlyAttribute: false
@@ -1514,23 +1526,24 @@ Resources:
     Type: AWS::Cognito::UserPoolDomain
     Properties:
       Domain: !Sub ${Prefix}-website
-      UserPoolId: !Ref WebsiteUserPool1
+      UserPoolId: !Ref WebsiteUserPool
+      ManagedLoginVersion: 2
 
   # UserPoolClient
   WebsiteUserPoolClient:
     Type: AWS::Cognito::UserPoolClient
     Properties:
       ClientName: !Sub ${Prefix}_website_app_client
-      UserPoolId: !Ref WebsiteUserPool1
+      UserPoolId: !Ref WebsiteUserPool
       CallbackURLs:
         - !If
-          - useCustomDomainForUiCondition
-          - !Ref UiCustomDomain
+          - useCustomDomainForWebsiteCondition
+          - !Ref WebsiteCustomDomain
           - !Sub https://${UiDistribution.DomainName}/
       LogoutURLs:
         - !If
-          - useCustomDomainForUiCondition
-          - !Ref UiCustomDomain
+          - useCustomDomainForWebsiteCondition
+          - !Ref WebsiteCustomDomain
           - !Sub https://${UiDistribution.DomainName}/
       AllowedOAuthFlowsUserPoolClient: true
       AllowedOAuthScopes:
@@ -1548,7 +1561,7 @@ Resources:
     Type: AWS::Cognito::UserPoolClient
     Properties:
       ClientName: !Sub ${Prefix}_website_app_client_local
-      UserPoolId: !Ref WebsiteUserPool1
+      UserPoolId: !Ref WebsiteUserPool
       RefreshTokenValidity: 5
       ExplicitAuthFlows:
         - "ALLOW_REFRESH_TOKEN_AUTH"
@@ -1564,9 +1577,11 @@ Resources:
       AllowedOAuthFlows:
         - "code"
       AllowedOAuthScopes:
-        - "email"
-        - "openid"
-        - "phone"
+        - email
+        - phone
+        - openid
+        - profile
+        - aws.cognito.signin.user.admin
       AllowedOAuthFlowsUserPoolClient: true
       IdTokenValidity: 60
       AccessTokenValidity: 60
@@ -1576,14 +1591,14 @@ Resources:
         RefreshToken: "days"
 
   # Identity Pool
-  WebsiteIdentityPool1:
+  WebsiteIdentityPool:
     Type: AWS::Cognito::IdentityPool
     Properties:
-      IdentityPoolName: !Sub ${Prefix}_website_identity_pool_1
+      IdentityPoolName: !Sub ${Prefix}_website_identity_pool
       AllowUnauthenticatedIdentities: true
       CognitoIdentityProviders:
         - ClientId: !Ref WebsiteUserPoolClient
-          ProviderName: !GetAtt WebsiteUserPool1.ProviderName
+          ProviderName: !GetAtt WebsiteUserPool.ProviderName
 
   # IAM Roles for Authenticated Users
   WebsiteCognitoAuthRole:
@@ -1600,7 +1615,7 @@ Resources:
               - sts:AssumeRoleWithWebIdentity
             Condition:
               StringEquals:
-                cognito-identity.amazonaws.com:aud: !Ref WebsiteIdentityPool1
+                cognito-identity.amazonaws.com:aud: !Ref WebsiteIdentityPool
       Policies:
         - PolicyName: WebsiteCognitoAuthPolicy
           PolicyDocument:
@@ -1612,36 +1627,53 @@ Resources:
                   - cognito-sync:*
                   - cognito-identity:*
                 Resource: "*"
+              - Effect: Allow
+                Action:
+                  - lambda:InvokeFunctionUrl
+                Resource: "*"
 
   # Identity Pool Role Attachment
   WebsiteIdentityPoolRoleAttachment:
     Type: AWS::Cognito::IdentityPoolRoleAttachment
     Properties:
-      IdentityPoolId: !Ref WebsiteIdentityPool1
+      IdentityPoolId: !Ref WebsiteIdentityPool
       Roles:
         authenticated: !GetAtt WebsiteCognitoAuthRole.Arn
 
-  #ebook api
-  ebookAPI:
-    Type: AWS::Serverless::Api
+  ManagedLoginBranding:
+    Type: AWS::Cognito::ManagedLoginBranding
     Properties:
-      Name: !Sub ${Prefix}-ebook-api
-      StageName: !Sub ${Prefix}-ebook-api
-      EndpointConfiguration: REGIONAL
-      Cors:
-        AllowMethods: "'OPTIONS,GET,POST,PUT,DELETE'"
-        AllowHeaders: "'*'"
-        AllowOrigin: "'*'"
-        MaxAge: 3000
-      # Auth:
-      #   DefaultAuthorizer: MyCognitoAuthorizer
-      #   Authorizers:
-      #     MyCognitoAuthorizer:
-      #       UserPoolArn: !GetAtt WebsiteUserPool1.Arn
+      UserPoolId: !Ref WebsiteUserPool
+      ClientId: !Ref WebsiteUserPoolClient
+      UseCognitoProvidedValues: true
 
-      # Domain:
-      #   DomainName: !Ref UiCustomDomain
-      #   CertificateArn: !Ref UiCertificateArn
+  ManagedLoginBrandingLocal:
+    Type: AWS::Cognito::ManagedLoginBranding
+    Properties:
+      UserPoolId: !Ref WebsiteUserPool
+      ClientId: !Ref WebsiteUserPoolClientLocal
+      UseCognitoProvidedValues: true
+  # #ebook api
+  # ebookAPI:
+  #   Type: AWS::Serverless::Api
+  #   Properties:
+  #     Name: !Sub ${Prefix}-ebook-api
+  #     StageName: !Sub ${Prefix}-ebook-api
+  #     EndpointConfiguration: REGIONAL
+  #     Cors:
+  #       AllowMethods: "'OPTIONS,GET,POST,PUT,DELETE'"
+  #       AllowHeaders: "'*'"
+  #       AllowOrigin: "'*'"
+  #       MaxAge: 3000
+  # Auth:
+  #   DefaultAuthorizer: MyCognitoAuthorizer
+  #   Authorizers:
+  #     MyCognitoAuthorizer:
+  #       UserPoolArn: !GetAtt WebsiteUserPool.Arn
+
+  # Domain:
+  #   DomainName: !Ref UiCustomDomain
+  #   CertificateArn: !Ref UiCertificateArn
 
   # ebook api lambda
   ebookExpressAPILambda:
@@ -1681,7 +1713,7 @@ Resources:
           S3_BUCKET_NAME: !Ref S3BucketForEbook
           EBOOK_CLOUDFRONT: !Sub https://${ebookDistribution.DomainName}
           REGION: !Sub ${AWS::Region}
-          USER_POOL_ID: !Ref WebsiteUserPool1
+          USER_POOL_ID: !Ref WebsiteUserPool
           CLIENT_ID: !Ref WebsiteUserPoolClient
           # ALLOWED_URL: !If
           #   - useCustomDomainForUiCondition
@@ -1710,13 +1742,13 @@ Resources:
               Resource: "*"
         - S3CrudPolicy:
             BucketName: !Ref S3BucketForEbook
-      Events:
-        Api:
-          Type: Api
-          Properties:
-            Path: /{proxy+}
-            Method: ANY
-            RestApiId: !Ref ebookAPI
+      # Events:
+      #   Api:
+      #     Type: Api
+      #     Properties:
+      #       Path: /{proxy+}
+      #       Method: ANY
+      #       RestApiId: !Ref ebookAPI
 
     Metadata:
       BuildMethod: esbuild
@@ -1764,7 +1796,7 @@ Resources:
           S3_BUCKET_NAME: !Ref S3BucketForEbook
           EBOOK_CLOUDFRONT: !Sub https://${ebookDistribution.DomainName}
           REGION: !Sub ${AWS::Region}
-          USER_POOL_ID: !Ref WebsiteUserPool1
+          USER_POOL_ID: !Ref WebsiteUserPool
           CLIENT_ID: !Ref WebsiteUserPoolClient
           # ALLOWED_URL: !If
           #   - useCustomDomainForUiCondition
