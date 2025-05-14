@@ -7,6 +7,9 @@ import {
 } from "aws-amplify/auth";
 import axios from "axios";
 import $toast from "~/utils/toast_notification";
+import { SignatureV4 } from '@aws-sdk/signature-v4';
+import { Sha256 } from '@aws-crypto/sha256-js';
+import { HttpRequest } from '@aws-sdk/protocol-http';
 
 export const userStore = defineStore("userStore", {
     state: () => ({
@@ -49,6 +52,73 @@ export const userStore = defineStore("userStore", {
             const { idToken } = (await fetchAuthSession()).tokens || {};
             return idToken;
         },
+        async invokeLambdaAPI(method, path, data = null) {
+            // Get Cognito credentials from current session
+            const session = await fetchAuthSession();
+
+            // Extract credentials from the session
+            const credentials = {
+                accessKeyId: session.credentials.accessKeyId,
+                secretAccessKey: session.credentials.secretAccessKey,
+                sessionToken: session.credentials.sessionToken
+            };
+
+            const runtimeConfig = useRuntimeConfig();
+
+            // Lambda function URL and CloudFront configuration
+            const region = runtimeConfig.public.REGION;
+            const lambdaUrlDomain = runtimeConfig.public.LAMBDA_URL_DOMAIN;
+            const cloudfrontDomain = runtimeConfig.public.CLOUDFRONT_DOMAIN; // Add this to your runtimeConfig
+
+            // Create URL for signing - use Lambda URL domain
+            const signingUrl = new URL(`https://${lambdaUrlDomain}/e-v1${path}`);
+
+            // Prepare request for signing - using Lambda URL hostname
+            const request = new HttpRequest({
+                hostname: signingUrl.hostname,
+                path: signingUrl.pathname + signingUrl.search,
+                method,
+                headers: {
+                    'Content-Type': data ? 'application/json' : undefined,
+                    host: signingUrl.hostname, // This is important - must be Lambda URL host for signing
+
+                },
+                body: data ? JSON.stringify(data) : undefined,
+            });
+
+            // Create SigV4 signer
+            const signer = new SignatureV4({
+                credentials,
+                region,
+                service: 'lambda',
+                sha256: Sha256,
+            });
+
+            // Sign the request
+            const signedRequest = await signer.sign(request);
+
+            // Convert signed request to axios format and send to CloudFront
+            const axiosConfig = {
+                method,
+                url: `https://${cloudfrontDomain}/e-v1${path}`, // Send to CloudFront domain
+                headers: {
+                    ...signedRequest.headers,
+                    // Optionally add x-forwarded-host header if needed for your setup
+                    'x-forwarded-host': cloudfrontDomain,
+                    // add cognito idToken
+                    "x-Amz-id-Token": session.tokens?.idToken
+                },
+                data: data || undefined,
+            };
+
+            try {
+                const response = await axios(axiosConfig);
+                return response;
+            } catch (error) {
+                console.error('Error calling Lambda function URL via CloudFront:', error);
+                throw error;
+            }
+        },
         async checkIfAddressIsAvailable() {
 
 
@@ -85,18 +155,10 @@ export const userStore = defineStore("userStore", {
 
             try {
                 this.profileLoading = true;
-                const runtimeConfig = useRuntimeConfig();
 
-
-                const idToken = await this.getToken()
-                const response = await axios.get(
-                    `${runtimeConfig.public.PURCHASE_API_URL}/userProfile/${this.userEmail}`,
-                    {
-                        headers: {
-                            "Content-Type": "application/json",
-                            Authorization: idToken,
-                        },
-                    }
+                const response = await this.invokeLambdaAPI(
+                    'GET',
+                    `/userProfile/${this.userEmail}`
                 );
 
                 if (response.status === 200) {
@@ -115,6 +177,8 @@ export const userStore = defineStore("userStore", {
                     return true;
                 }
                 return false;
+                // invokeLambdaAPI
+
             } catch (error) {
                 console.error("Error fetching user profile:", error);
                 return false;
@@ -139,18 +203,10 @@ export const userStore = defineStore("userStore", {
                     name: this.userName,
                 };
 
-
-                const idToken = await this.getToken()
-
-                const response = await axios.post(
-                    `${runtimeConfig.public.PURCHASE_API_URL}/userProfile`,
-                    userProfileData,
-                    {
-                        headers: {
-                            "Content-Type": "application/json",
-                            Authorization: idToken,
-                        },
-                    }
+                const response = await this.invokeLambdaAPI(
+                    'POST',
+                    `/userProfile`,
+                    userProfileData
                 );
 
                 if (response.status === 200) {
@@ -198,17 +254,14 @@ export const userStore = defineStore("userStore", {
             // get email
             const email = this.userEmail;
 
-            const apiUrl = `${runtimeConfig.public.PURCHASE_API_URL}/ebook/${email}/${bookId}`;
+
             try {
 
-                const idToken = await this.getToken()
+                const response = await this.invokeLambdaAPI(
+                    'GET',
+                    `/ebook/${email}/${bookId}`,
+                );
 
-                const response = await axios.get(apiUrl, {
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: idToken,
-                    },
-                });
 
                 if (response.status === 200) {
                     return response.data;

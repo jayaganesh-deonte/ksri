@@ -55,7 +55,6 @@ onMounted(() => {
 const getEbookUrl = () => {
   // make get call to /ebookUrl/${bookId}
   const runtimeConfig = useRuntimeConfig();
-  const API_URL = runtimeConfig.public.PURCHASE_API_URL;
 
   const ASSET_DOMAIN = runtimeConfig.public.ASSET_DOMAIN;
 

@@ -82,7 +82,8 @@ ebookRouter.get("/ebookUrl/:bookId", async (req: Request, res: Response) => {
   const bookId = req.params.bookId;
 
   // get auth
-  const token = req.headers["authorization"];
+  console.log("headers", req.headers);
+  const token = req.headers["x-amz-id-token"] as string;
 
   if (!token) {
     res.status(401).json({ error: "Unauthorized" });

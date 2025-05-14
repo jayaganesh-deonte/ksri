@@ -169,19 +169,9 @@ const fetchBooks = async () => {
       throw new Error("User email not found");
     }
 
-    const runtimeConfig = useRuntimeConfig();
-
-    const idToken = await store.getToken();
-
-    const response = await axios.get(
-      `${runtimeConfig.public.PURCHASE_API_URL}/ebook/${encodeURIComponent(
-        userEmail
-      )}`,
-      {
-        headers: {
-          Authorization: idToken,
-        },
-      }
+    const response = await store.invokeLambdaAPI(
+      "GET",
+      `/ebook/${encodeURIComponent(userEmail)}`
     );
 
     if (!response.status === 200) {

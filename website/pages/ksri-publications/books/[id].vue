@@ -470,19 +470,12 @@ const buyEbook = async (bookInfo) => {
       order_id: uuidv4(),
     };
 
-    const runtimeConfig = useRuntimeConfig();
-
-    const API_URL = runtimeConfig.public.PURCHASE_API_URL;
-
-    const response = await axios.post(
-      `${API_URL}/purchase/api/payments/initiatePayment`,
-      orderParams,
-      {
-        headers: {
-          Authorization: "",
-        },
-      }
+    const response = await store.invokeLambdaAPI(
+      "POST",
+      `/purchase/api/payments/initiatePayment`,
+      orderParams
     );
+
     console.log("response", response);
     console.log("Payment initiated:", response.data);
     // get encryptedUrl from the response

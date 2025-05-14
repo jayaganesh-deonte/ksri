@@ -10,6 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@aws-crypto/sha256-js": "^5.2.0",
+    "@aws-sdk/protocol-http": "^3.370.0",
+    "@aws-sdk/signature-v4": "^3.370.0",
     "@fingerprintjs/fingerprintjs": "^4.5.1",
     "@grafana/faro-web-sdk": "^1.12.2",
     "@grafana/faro-web-tracing": "^1.12.2",

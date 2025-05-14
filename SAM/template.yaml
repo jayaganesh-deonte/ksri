@@ -1656,7 +1656,7 @@ Resources:
       Architectures:
         - x86_64
       FunctionUrlConfig:
-        AuthType: NONE
+        AuthType: AWS_IAM
         Cors:
           AllowOrigins:
             - "*"

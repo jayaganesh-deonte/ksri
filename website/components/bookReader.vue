@@ -147,17 +147,12 @@ const buyEbook = async () => {
 
     const runtimeConfig = useRuntimeConfig();
 
-    const API_URL = runtimeConfig.public.PURCHASE_API_URL;
-
-    const response = await axios.post(
-      `${API_URL}/purchase/api/payments/initiatePayment`,
-      orderParams,
-      {
-        headers: {
-          Authorization: "",
-        },
-      }
+    const response = await store.invokeLambdaAPI(
+      "POST",
+      `/purchase/api/payments/initiatePayment`,
+      orderParams
     );
+
     console.log("response", response);
     console.log("Payment initiated:", response.data);
     // get encryptedUrl from the response
@@ -179,16 +174,10 @@ const buyEbook = async () => {
 
 const getEbookUrl = async () => {
   // make get call to /ebookUrl/${bookId}
-  const runtimeConfig = useRuntimeConfig();
-  const API_URL = runtimeConfig.public.PURCHASE_API_URL;
-
-  const idToken = await store.getToken();
-
-  const response = await axios.get(`${API_URL}/ebookUrl/${props.bookInfo.id}`, {
-    headers: {
-      Authorization: idToken,
-    },
-  });
+  const response = await store.invokeLambdaAPI(
+    "GET",
+    `/ebookUrl/${props.bookInfo.id}`
+  );
 
   // handle response {url:url}
   // check status code
