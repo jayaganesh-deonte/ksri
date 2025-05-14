@@ -43,7 +43,7 @@ s3_prefix = "ksri-admin"
 region = "ap-south-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM CAPABILITY_NAMED_IAM"
-parameter_overrides = "Prefix=\"ksri-prod\" UserPoolDomain=\"ksri-prod\" useCustomDomainForUi=\"false\" UiCustomDomain=\"false\""
+parameter_overrides = "Prefix=\"ksri-prod\" WebsiteCustomDomain=\"https://preview.ksri.in/\" useCustomDomainForWebsite=\"true\"  UserPoolDomain=\"ksri-prod\" useCustomDomainForUi=\"false\" UiCustomDomain=\"false\""
 image_repositories = []
 
 
@@ -54,5 +54,5 @@ s3_prefix = "ksri-admin"
 region = "ap-south-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM CAPABILITY_NAMED_IAM"
-parameter_overrides = "Prefix=\"ksri\" UserPoolDomain=\"ksri\" useCustomDomainForUi=\"true\" UiCustomDomain=\"https://admin.ksri.in/\""
+parameter_overrides = "Prefix=\"ksri\"  WebsiteCustomDomain=\"https://ksri.in\" UserPoolDomain=\"ksri\" useCustomDomainForUi=\"true\" UiCustomDomain=\"https://admin.ksri.in/\""
 image_repositories = []
