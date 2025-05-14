@@ -248,6 +248,9 @@
               <search />
             </v-card>
           </div>
+          <div class="mx-auto">
+            <UserLogin />
+          </div>
         </v-row>
       </v-card>
     </v-app-bar>
