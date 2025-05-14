@@ -1599,6 +1599,8 @@ Resources:
       CognitoIdentityProviders:
         - ClientId: !Ref WebsiteUserPoolClient
           ProviderName: !GetAtt WebsiteUserPool.ProviderName
+        - ClientId: !!Ref WebsiteUserPoolClientLocal
+          ProviderName: !GetAtt WebsiteUserPool.ProviderName
 
   # IAM Roles for Authenticated Users
   WebsiteCognitoAuthRole:

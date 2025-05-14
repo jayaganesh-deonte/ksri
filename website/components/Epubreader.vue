@@ -31,13 +31,14 @@
       </v-toolbar>
 
       <v-card class="pa-0" elevation="4">
-        <v-card-text>
+        <v-card-text @contextmenu.prevent>
           <v-row>
             <!-- Viewer -->
             <v-col>
               <div
-                class="epub-reader-wrapper"
+                class="epub-reader-wrapper no-select"
                 style="height: 100vh; position: relative"
+                @contextmenu.prevent
               >
                 <v-no-ssr>
                   <vue-reader
@@ -46,6 +47,7 @@
                     :getRendition="getRendition"
                     @update:location="locationChange"
                     :epubInitOptions="{ openAs: 'epub' }"
+                    ref="epubReader"
                   />
                 </v-no-ssr>
                 <!-- <div class="size">
@@ -66,7 +68,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref, watch, onMounted, onUnmounted } from "vue";
 import { VueReader } from "vue-reader/lib/vue-reader.es.js";
 
 const props = defineProps({
@@ -91,6 +93,7 @@ let page = ref("");
 let size = ref(100);
 let showReader = ref(false);
 let loading = ref(false);
+const epubReader = ref(null);
 
 const openReader = () => {
   showReader.value = true;
@@ -103,6 +106,52 @@ const getRendition = (rend) => {
   // Apply font size immediately after getting rendition
   if (rendition) {
     rendition.themes.fontSize(`${size.value}%`);
+
+    // Add CSS to prevent text selection in the EPUB content
+    rendition.themes.register("default", {
+      body: {
+        "-webkit-user-select": "none",
+        "-moz-user-select": "none",
+        "-ms-user-select": "none",
+        "user-select": "none",
+      },
+      img: {
+        "pointer-events": "none",
+      },
+    });
+
+    // Apply the registered theme
+    rendition.themes.select("default");
+
+    // Disable copying text
+    rendition.on("selected", (cfiRange, contents) => {
+      contents.window.getSelection().removeAllRanges();
+    });
+
+    // Prevent context menu in iframe content
+    rendition.hooks.content.register((contents) => {
+      contents.window.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        return false;
+      });
+
+      // Prevent drag events in the content
+      contents.window.addEventListener("dragstart", (e) => {
+        e.preventDefault();
+        return false;
+      });
+
+      // Prevent keyboard shortcuts in the content
+      contents.window.addEventListener("keydown", (e) => {
+        if (
+          (e.ctrlKey || e.metaKey) &&
+          (e.key === "s" || e.key === "p" || e.key === "c")
+        ) {
+          e.preventDefault();
+          return false;
+        }
+      });
+    });
   }
 
   rendition.book.loaded.navigation.then((nav) => {
@@ -156,6 +205,56 @@ const nextPage = () => {
 const prevPage = () => {
   if (rendition) rendition.prev();
 };
+
+// Prevent keyboard shortcuts for saving (Ctrl+S, Command+S, Ctrl+P, etc.)
+const preventSave = (e) => {
+  if (
+    (e.ctrlKey || e.metaKey) &&
+    (e.key === "s" || e.key === "p" || e.key === "c")
+  ) {
+    e.preventDefault();
+    return false;
+  }
+};
+
+// Prevent right-click menu globally when dialog is open
+const preventContextMenu = (e) => {
+  if (showReader.value) {
+    e.preventDefault();
+    return false;
+  }
+};
+
+// Disable drag and drop
+const preventDragStart = (e) => {
+  if (showReader.value) {
+    e.preventDefault();
+    return false;
+  }
+};
+
+// Set up and tear down event listeners based on dialog visibility
+watch(showReader, (isVisible) => {
+  if (isVisible) {
+    document.addEventListener("keydown", preventSave);
+    document.addEventListener("dragstart", preventDragStart);
+  } else {
+    document.removeEventListener("keydown", preventSave);
+    document.removeEventListener("dragstart", preventDragStart);
+  }
+});
+
+onMounted(() => {
+  // Add the event listener for the entire document when the component is mounted
+  document.addEventListener("contextmenu", preventContextMenu);
+});
+
+onUnmounted(() => {
+  // Clean up event listeners when the component is unmounted
+  document.removeEventListener("contextmenu", preventContextMenu);
+  document.removeEventListener("keydown", preventSave);
+  document.removeEventListener("dragstart", preventDragStart);
+});
 </script>
 
 <style scoped>
@@ -180,5 +279,29 @@ const prevPage = () => {
   z-index: 1;
   text-align: center;
   color: #000;
+}
+
+/* CSS to prevent text selection and image saving */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Additional styles to prevent selection in the EPUB content */
+:deep(.epub-container) {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+:deep(.epub-container iframe) {
+  pointer-events: auto; /* Allow scrolling but prevent other interactions */
+}
+
+:deep(.epub-container img) {
+  pointer-events: none !important; /* Prevent image drag/save */
 }
 </style>

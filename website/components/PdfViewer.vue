@@ -26,7 +26,7 @@
           <v-spacer></v-spacer>
         </v-toolbar>
 
-        <v-card-text class="pdf-container">
+        <v-card-text class="pdf-container" @contextmenu.prevent>
           <div class="loading-container" v-if="!isLoaded">
             <v-progress-circular
               indeterminate
@@ -42,7 +42,8 @@
             :text-layer="false"
             :scale="zoom"
             @loaded="isLoaded = true"
-            class="pdf-content mx-auto"
+            class="pdf-content mx-auto no-select"
+            ref="pdfContent"
           />
         </v-card-text>
 
@@ -127,7 +128,7 @@
 </template>
 
 <script setup>
-import { ref, watch, computed } from "vue";
+import { ref, watch, computed, onMounted, onUnmounted } from "vue";
 import { VuePDF, usePDF } from "@tato30/vue-pdf";
 
 // Props
@@ -155,6 +156,7 @@ const page = ref(1);
 const zoom = ref(props.initialZoom);
 const isLoaded = ref(false);
 const dialogVisible = ref(false);
+const pdfContent = ref(null);
 
 // Computed
 const pageInput = computed({
@@ -193,6 +195,53 @@ const zoomOut = () => {
     zoom.value = Math.max(0.5, zoom.value - 0.1);
   }
 };
+
+// Prevent keyboard shortcuts for saving (Ctrl+S, Command+S)
+const preventSave = (e) => {
+  if ((e.ctrlKey || e.metaKey) && (e.key === "s" || e.key === "p")) {
+    e.preventDefault();
+    return false;
+  }
+};
+
+// Prevent right-click menu globally when dialog is open
+const preventContextMenu = (e) => {
+  if (dialogVisible.value) {
+    e.preventDefault();
+    return false;
+  }
+};
+
+// Disable drag and drop
+const preventDragStart = (e) => {
+  if (dialogVisible.value) {
+    e.preventDefault();
+    return false;
+  }
+};
+
+// Set up and tear down event listeners
+watch(dialogVisible, (isVisible) => {
+  if (isVisible) {
+    document.addEventListener("keydown", preventSave);
+    document.addEventListener("dragstart", preventDragStart);
+  } else {
+    document.removeEventListener("keydown", preventSave);
+    document.removeEventListener("dragstart", preventDragStart);
+  }
+});
+
+onMounted(() => {
+  // Add the event listener for the entire document when the component is mounted
+  document.addEventListener("contextmenu", preventContextMenu);
+});
+
+onUnmounted(() => {
+  // Clean up event listeners when the component is unmounted
+  document.removeEventListener("contextmenu", preventContextMenu);
+  document.removeEventListener("keydown", preventSave);
+  document.removeEventListener("dragstart", preventDragStart);
+});
 </script>
 
 <style scoped>
@@ -211,6 +260,11 @@ const zoomOut = () => {
   position: relative;
   padding: 16px 0;
   overflow: auto;
+  /* Added to prevent context menu */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .loading-container {
@@ -245,5 +299,19 @@ const zoomOut = () => {
   font-size: 0.9rem;
   min-width: 48px;
   text-align: center;
+}
+
+/* CSS to prevent text selection and image saving */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none; /* This disables mouse interactions except for scroll */
+}
+
+/* Re-enable pointer events for scrolling */
+.pdf-container {
+  pointer-events: auto;
 }
 </style>
