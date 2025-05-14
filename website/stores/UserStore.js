@@ -97,10 +97,17 @@ export const userStore = defineStore("userStore", {
             // Sign the request
             const signedRequest = await signer.sign(request);
 
+            // set url protocol to http if cloudfrontdomain is localhost
+            let urlProtocol = "https"
+
+            if (cloudfrontDomain.includes("localhost")) {
+                urlProtocol = "http"
+            }
+
             // Convert signed request to axios format and send to CloudFront
             const axiosConfig = {
                 method,
-                url: `https://${cloudfrontDomain}/e-v1${path}`, // Send to CloudFront domain
+                url: `${urlProtocol}://${cloudfrontDomain}/e-v1${path}`, // Send to CloudFront domain
                 headers: {
                     ...signedRequest.headers,
                     // Optionally add x-forwarded-host header if needed for your setup

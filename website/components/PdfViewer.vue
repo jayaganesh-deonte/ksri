@@ -42,78 +42,85 @@
             :text-layer="false"
             :scale="zoom"
             @loaded="isLoaded = true"
-            class="pdf-content"
+            class="pdf-content mx-auto"
           />
         </v-card-text>
 
         <v-divider></v-divider>
 
-        <v-card-actions class="pdf-controls">
-          <v-btn
-            prepend-icon="mdi-arrow-left"
-            variant="tonal"
-            color="primary"
-            :disabled="page <= 1"
-            @click="page--"
-            class="mr-2"
-          >
-            Previous
-          </v-btn>
+        <v-card>
+          <v-row>
+            <!-- Left side: Navigation controls -->
+            <v-col cols="12" md="6">
+              <div class="d-flex justify-center align-center">
+                <v-btn
+                  prepend-icon="mdi-arrow-left"
+                  variant="tonal"
+                  color="primary"
+                  :disabled="page <= 1"
+                  @click="page--"
+                >
+                </v-btn>
 
-          <v-text-field
-            v-model="pageInput"
-            hide-details
-            type="number"
-            density="compact"
-            class="page-input mx-2"
-            style="max-width: 70px"
-            @change="goToPage"
-            @keyup.enter="goToPage"
-          ></v-text-field>
+                <v-text-field
+                  v-model="pageInput"
+                  hide-details
+                  variant="outlined"
+                  type="number"
+                  density="compact"
+                  class="page-input mx-2"
+                  style="max-width: 70px"
+                  @change="goToPage"
+                  @keyup.enter="goToPage"
+                ></v-text-field>
 
-          <span class="page-info mx-2">of {{ pages }}</span>
+                <span class="page-info mx-2">of {{ pages }}</span>
 
-          <v-btn
-            append-icon="mdi-arrow-right"
-            variant="tonal"
-            color="primary"
-            :disabled="page >= pages"
-            @click="page++"
-            class="ml-2"
-          >
-            Next
-          </v-btn>
+                <v-btn
+                  append-icon="mdi-arrow-right"
+                  variant="tonal"
+                  color="primary"
+                  :disabled="page >= pages"
+                  @click="page++"
+                >
+                </v-btn>
+              </div>
+            </v-col>
 
-          <v-spacer></v-spacer>
+            <!-- Right side: Zoom controls -->
+            <v-col cols="12" md="6">
+              <div class="d-flex justify-center align-center">
+                <v-tooltip location="top" text="Zoom Out">
+                  <template v-slot:activator="{ props }">
+                    <v-btn
+                      v-bind="props"
+                      icon="mdi-magnify-minus"
+                      variant="text"
+                      :disabled="zoom <= 0.5"
+                      @click="zoomOut"
+                    ></v-btn>
+                  </template>
+                </v-tooltip>
 
-          <v-tooltip location="top" text="Zoom Out">
-            <template v-slot:activator="{ props }">
-              <v-btn
-                v-bind="props"
-                icon="mdi-magnify-minus"
-                variant="text"
-                :disabled="zoom <= 0.5"
-                @click="zoomOut"
-              ></v-btn>
-            </template>
-          </v-tooltip>
+                <span class="zoom-level mx-2"
+                  >{{ Math.round(zoom * 100) }}%</span
+                >
 
-          <span class="zoom-level mx-2">{{ Math.round(zoom * 100) }}%</span>
-
-          <v-tooltip location="top" text="Zoom In">
-            <template v-slot:activator="{ props }">
-              <v-btn
-                v-bind="props"
-                icon="mdi-magnify-plus"
-                variant="text"
-                :disabled="zoom >= 2"
-                @click="zoomIn"
-              ></v-btn>
-            </template>
-          </v-tooltip>
-
-          <v-divider vertical class="mx-2"></v-divider>
-        </v-card-actions>
+                <v-tooltip location="top" text="Zoom In">
+                  <template v-slot:activator="{ props }">
+                    <v-btn
+                      v-bind="props"
+                      icon="mdi-magnify-plus"
+                      variant="text"
+                      :disabled="zoom >= 2"
+                      @click="zoomIn"
+                    ></v-btn>
+                  </template>
+                </v-tooltip>
+              </div>
+            </v-col>
+          </v-row>
+        </v-card>
       </v-card>
     </v-dialog>
   </div>
