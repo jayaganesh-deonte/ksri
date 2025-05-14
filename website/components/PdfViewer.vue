@@ -1,8 +1,13 @@
 <template>
   <!-- Main component with "Read Book" button -->
   <div>
-    <v-btn color="secondary" @click="openPdfDialog" class="my-4" rounded="pill">
-      Read Book
+    <v-btn
+      :color="buttonColor"
+      @click="openPdfDialog"
+      class="my-4"
+      rounded="pill"
+    >
+      {{ props.buttonText }}
     </v-btn>
 
     <!-- PDF Viewer Dialog -->
@@ -127,6 +132,14 @@ const props = defineProps({
   initialZoom: {
     type: Number,
     default: 1,
+  },
+  buttonText: {
+    type: String,
+    default: "Read Book",
+  },
+  buttonColor: {
+    type: String,
+    default: "secondary",
   },
 });
 

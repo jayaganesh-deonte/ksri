@@ -152,13 +152,10 @@
                     Preview E-book
                   </v-btn> -->
 
-                  <Epubreader
-                    buttonText="Preview Book"
-                    :src="getAssetUrl(bookInfo.previewEbookUrl)"
-                  />
+                  <PreviewBookReader :bookInfo="bookInfo" />
 
                   <!-- buy ebook -->
-                  
+
                   <bookReader :book-info="bookInfo" />
                 </div>
               </div>

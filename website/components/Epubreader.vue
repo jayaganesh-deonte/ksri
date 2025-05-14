@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-btn
-      color="secondary"
+      :color="buttonColor"
       @click="openReader"
       :loading="loading"
       rounded="pill"
@@ -77,6 +77,10 @@ const props = defineProps({
   buttonText: {
     type: String,
     default: "Preview Book",
+  },
+  buttonColor: {
+    type: String,
+    default: "secondary",
   },
 });
 

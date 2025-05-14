@@ -32,7 +32,8 @@ export default defineNuxtConfig({
     REDIRECT_URL: process.env.REDIRECT_URL,
     public: {
       API_URL: "https://preview.ksri.in/public",
-      PURCHASE_API_URL: "https://preview.ksri.in/e-v1",
+      // PURCHASE_API_URL: "https://preview.ksri.in/e-v1",
+      PURCHASE_API_URL: "http://localhost:3002/e-v1",
       // API_URL: "http://localhost:3001/public",
       CONTACT_US_URL:
         "https://k6k5z57jue2xojyecp4dvmab640dxzeb.lambda-url.ap-south-1.on.aws/",
