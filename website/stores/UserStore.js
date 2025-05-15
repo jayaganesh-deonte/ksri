@@ -248,10 +248,10 @@ export const userStore = defineStore("userStore", {
             const runtimeConfig = useRuntimeConfig();
 
             if (!this.isAuthenticated) {
-                $toast.error(
-                    "Please login to check your purchase status"
+                // $toast.error(
+                //     "Please login to check your purchase status"
 
-                )
+                // )
 
                 return {
                     "bought": false
