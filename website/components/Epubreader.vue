@@ -217,6 +217,10 @@
 import { ref, watch, computed, onMounted, onUnmounted } from "vue";
 import { VueReader } from "vue-reader/lib/vue-reader.es.js";
 
+import { userStore } from "~/stores/UserStore";
+
+const store = userStore();
+
 const props = defineProps({
   src: {
     type: String,
@@ -274,11 +278,21 @@ const getBookmarksKey = computed(() => {
 });
 
 // Load bookmarks from local storage
-const loadBookmarks = () => {
-  const savedBookmarks = localStorage.getItem(getBookmarksKey.value);
+const loadBookmarks = async () => {
+  // const savedBookmarks = localStorage.getItem(getBookmarksKey.value);
+  // if (savedBookmarks) {
+  //   try {
+  //     bookmarks.value = JSON.parse(savedBookmarks);
+  //   } catch (e) {
+  //     console.error("Error loading bookmarks:", e);
+  //     bookmarks.value = [];
+  //   }
+  // }
+
+  const savedBookmarks = await store.getBookMarks(props.bookId);
   if (savedBookmarks) {
     try {
-      bookmarks.value = JSON.parse(savedBookmarks);
+      bookmarks.value = savedBookmarks;
     } catch (e) {
       console.error("Error loading bookmarks:", e);
       bookmarks.value = [];
@@ -287,8 +301,13 @@ const loadBookmarks = () => {
 };
 
 // Save bookmarks to local storage
-const saveBookmarks = () => {
-  localStorage.setItem(getBookmarksKey.value, JSON.stringify(bookmarks.value));
+const saveBookmarks = async () => {
+  // localStorage.setItem(getBookmarksKey.value, JSON.stringify(bookmarks.value));
+  try {
+    const res = await store.saveBookMarks(props.bookId, bookmarks.value);
+  } catch (e) {
+    console.error("Error saving bookmarks:", e);
+  }
 };
 
 const openReader = () => {
@@ -353,11 +372,11 @@ const findTocItemByHref = (tocItems, href) => {
 };
 
 // Bookmark methods
-const toggleBookmark = () => {
+const toggleBookmark = async () => {
   if (!location.value) return;
 
   if (isCurrentLocationBookmarked.value) {
-    removeBookmark(location.value);
+    await removeBookmark(location.value);
   } else {
     addBookmarkWithNote();
   }
@@ -375,7 +394,7 @@ const addBookmarkWithNote = () => {
   editingBookmark.value = null;
 };
 
-const confirmAddBookmark = () => {
+const confirmAddBookmark = async () => {
   // Validate note length (100 words max)
   const wordCount = bookmarkNote.value
     .trim()
@@ -388,7 +407,7 @@ const confirmAddBookmark = () => {
   }
 
   // Add the bookmark with note
-  addBookmark(location.value, bookmarkNote.value, currentExcerpt.value);
+  await addBookmark(location.value, bookmarkNote.value, currentExcerpt.value);
 
   // Reset and close dialog
   bookmarkNote.value = "";
@@ -396,7 +415,7 @@ const confirmAddBookmark = () => {
   bookmarkNoteDialog.value = false;
 };
 
-const addBookmark = (cfi, note = "", excerpt = "") => {
+const addBookmark = async (cfi, note = "", excerpt = "") => {
   const chapterTitle = getCurrentChapterTitle();
 
   bookmarks.value.push({
@@ -407,17 +426,17 @@ const addBookmark = (cfi, note = "", excerpt = "") => {
     date: new Date().toISOString(),
   });
 
-  saveBookmarks();
+  await saveBookmarks();
 };
 
-const removeBookmark = (cfi) => {
+const removeBookmark = async (cfi) => {
   bookmarks.value = bookmarks.value.filter((bookmark) => bookmark.cfi !== cfi);
-  saveBookmarks();
+  await saveBookmarks();
 };
 
-const clearAllBookmarks = () => {
+const clearAllBookmarks = async () => {
   bookmarks.value = [];
-  saveBookmarks();
+  await saveBookmarks();
 };
 
 const editBookmarkNote = (bookmark) => {

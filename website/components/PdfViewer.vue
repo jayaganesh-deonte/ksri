@@ -333,11 +333,11 @@ const getBookmarksKey = computed(() => {
 });
 
 // Load bookmarks from local storage
-const loadBookmarks = () => {
-  const savedBookmarks = localStorage.getItem(getBookmarksKey.value);
+const loadBookmarks = async () => {
+  const savedBookmarks = await store.getBookMarks(props.bookId);
   if (savedBookmarks) {
     try {
-      bookmarks.value = JSON.parse(savedBookmarks);
+      bookmarks.value = savedBookmarks;
     } catch (e) {
       console.error("Error loading bookmarks:", e);
       bookmarks.value = [];
@@ -346,14 +346,18 @@ const loadBookmarks = () => {
 };
 
 // Save bookmarks to local storage
-const saveBookmarks = () => {
-  localStorage.setItem(getBookmarksKey.value, JSON.stringify(bookmarks.value));
+const saveBookmarks = async () => {
+  try {
+    const res = await store.saveBookMarks(props.bookId, bookmarks.value);
+  } catch (e) {
+    console.error("Error saving bookmarks:", e);
+  }
 };
 
 // Bookmark methods
-const toggleBookmark = (pageNum) => {
+const toggleBookmark = async (pageNum) => {
   if (isCurrentPageBookmarked.value) {
-    removeBookmark(pageNum);
+    await removeBookmark(pageNum);
   } else {
     addBookmarkWithNote(pageNum);
   }
@@ -375,28 +379,28 @@ const addBookmarkWithNote = (pageNum) => {
   }
 };
 
-const addBookmark = (pageNum, note = "") => {
+const addBookmark = async (pageNum, note = "") => {
   bookmarks.value.push({
     page: pageNum,
     note: note,
     date: new Date().toISOString(),
   });
-  saveBookmarks();
+  await saveBookmarks();
 };
 
-const removeBookmark = (pageNum) => {
+const removeBookmark = async (pageNum) => {
   bookmarks.value = bookmarks.value.filter(
     (bookmark) => bookmark.page !== pageNum
   );
-  saveBookmarks();
+  await saveBookmarks();
 };
 
-const clearAllBookmarks = () => {
+const clearAllBookmarks = async () => {
   bookmarks.value = [];
-  saveBookmarks();
+  await saveBookmarks();
 };
 
-const confirmAddBookmark = () => {
+const confirmAddBookmark = async () => {
   // Validate note length (100 words max)
   const wordCount = bookmarkNote.value
     .trim()
@@ -408,7 +412,7 @@ const confirmAddBookmark = () => {
   }
 
   // Add the bookmark with note
-  addBookmark(bookmarkPageToAdd.value, bookmarkNote.value);
+  await addBookmark(bookmarkPageToAdd.value, bookmarkNote.value);
 
   // Reset and close dialog
   bookmarkNote.value = "";
@@ -458,13 +462,13 @@ const confirmEditBookmark = () => {
 };
 
 // Methods
-const openPdfDialog = () => {
+const openPdfDialog = async () => {
   dialogVisible.value = true;
   // Reset state when opening
   page.value = 1;
   isLoaded.value = false;
   // Load bookmarks when dialog opens
-  loadBookmarks();
+  await loadBookmarks();
 };
 
 const goToPage = () => {

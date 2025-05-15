@@ -288,6 +288,59 @@ export const userStore = defineStore("userStore", {
 
 
 
+        },
+        async saveBookMarks(bookId, bookmarks) {
+            const path = `/bookMark/${bookId}`
+
+            try {
+                const response = await this.invokeLambdaAPI(
+                    "POST",
+                    path,
+                    bookmarks,
+                )
+
+                console.log("bookmark response", response)
+
+
+            }
+            catch (e) {
+                console.error("Error fetching book purchase status:", error);
+
+            }
+
+        },
+
+        async getBookMarks(bookId) {
+            try {
+                const response = await this.invokeLambdaAPI(
+                    "GET",
+                    `/bookMark/${bookId}`,
+                )
+
+                if (response.status == 200) {
+                    console.log("response: ", response.data)
+
+                    return response.data.bookMarks;
+                } else if (response.status == 404) {
+                    console.log("no bookmarks")
+                }
+                else {
+                    // error toast
+                    $toast.error(
+                        "There was some error in fetching bookmarks. try again later",
+                        {
+                            timeout: 5000,
+                            position: "top-right",
+                        }
+                    )
+                }
+
+
+            }
+            catch (e) {
+                console.error("Error fetching book purchase status:", error);
+
+            }
         }
     },
 });
