@@ -657,6 +657,32 @@ Resources:
             ExpirationInDays: 365
             Prefix: "" # Apply to all objects in the bucket
 
+  CloudFrontPublicKey:
+    Type: AWS::CloudFront::PublicKey
+    Properties:
+      PublicKeyConfig:
+        CallerReference: !Ref "AWS::StackName"
+        Name: !Sub EbookSigningKey-${Prefix}
+        EncodedKey: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzACEw1KnFCBQEQe5owUr
+          xHbiLx+09kmMCcladdz3mT1PGpe5+J/tIxiVP2QtZp0VloUJhR5HGV9I5wT/cx5c
+          yDzA+pjGGVYaab5vloowS6F+TC5KoV1vLEYDU+2NKBic6+/OM7FQFrpMQfN7pvn1
+          zYjrzliaxEE05FCe4FhxYMeDawHk2HhBEO9n1VWd/etuAPXu4huUxSZE0tQB9qRb
+          aYgdcI4qepRwBcHvjEkYGc5vMgc/6PMCJc18a3nKZ0XoNFcJtIwmPQRP4PLC1VZL
+          cXzF1YWnJK5WkwbDmRkE4FybJZ57af+cQZvxznJF4+pIX+JjIrltYGMkk61LGYc8
+          EQIDAQAB
+          -----END PUBLIC KEY-----
+
+  CloudFrontKeyGroup:
+    Type: AWS::CloudFront::KeyGroup
+    Properties:
+      KeyGroupConfig:
+        Items:
+          - !Ref CloudFrontPublicKey
+        Name: !Sub EbookKeyGroup-${Prefix}
+
+  # CloudFront Distribution with Signed URL configuration
   ebookDistribution:
     Type: AWS::CloudFront::Distribution
     DependsOn:
@@ -673,6 +699,8 @@ Resources:
         Comment: !Sub ebook distribution for ${S3BucketForEbook}
         HttpVersion: http2and3
         DefaultCacheBehavior:
+          TrustedKeyGroups:
+            - !Ref CloudFrontKeyGroup
           ForwardedValues:
             QueryString: "false"
             Cookies:
@@ -1759,6 +1787,8 @@ Resources:
           REGION: !Sub ${AWS::Region}
           USER_POOL_ID: !Ref WebsiteUserPool
           CLIENT_ID: !Ref WebsiteUserPoolClient
+          CLOUDFRONT_PRIVATE_KEY_PARAM_NAME: /cloudfront/ebook/privateKey
+          CLOUDFRONT_KEY_PAIR_ID_PARAM_NAME: !Ref CloudFrontPublicKey
           # ALLOWED_URL: !If
           #   - useCustomDomainForUiCondition
           #   - !Ref UiCustomDomain

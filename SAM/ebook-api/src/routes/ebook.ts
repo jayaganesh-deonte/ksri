@@ -4,6 +4,10 @@ import { documentClient } from "../db_services/dynamodbClient";
 import { Payment, PaymentDDB, fromDynamoDB } from "../models/payments/payment";
 
 import { getUserDetails } from "../cognito/decrypt";
+import { getSignedUrl } from "@aws-sdk/cloudfront-signer";
+import { SSMClient, GetParameterCommand } from "@aws-sdk/client-ssm";
+
+const ssmClient = new SSMClient();
 
 const ebookRouter = express.Router();
 
@@ -123,9 +127,39 @@ ebookRouter.get("/ebookUrl/:bookId", async (req: Request, res: Response) => {
       if (bookData.Item) {
         const book = bookData.Item;
         const cloudfrontDomain = process.env.EBOOK_CLOUDFRONT;
+        const resourcePath = book.ebookUrl[0];
 
-        const url = cloudfrontDomain + "/" + book.ebookUrl[0];
-        res.status(200).json({ url: url });
+        // Get the private key from SSM Parameter Store
+
+        const privateKeyParam = await ssmClient.send(
+          new GetParameterCommand({
+            Name:
+              process.env.CLOUDFRONT_PRIVATE_KEY_PARAM_NAME ||
+              "/cloudfront/ebook/privateKey",
+            WithDecryption: true,
+          })
+        );
+
+        const keyPairIdParam = process.env.CLOUDFRONT_KEY_PAIR_ID_PARAM_NAME;
+        const privateKey = privateKeyParam.Parameter?.Value;
+        const keyPairId = keyPairIdParam;
+
+        if (!privateKey || !keyPairId) {
+          throw new Error("Failed to retrieve CloudFront signing keys");
+        }
+
+        // Generate a signed URL that expires in 5 minutes
+        const expiresInSeconds = 300; // 5 minutes
+        const dateLessThan = new Date(Date.now() + expiresInSeconds * 1000);
+
+        const url = getSignedUrl({
+          url: `${cloudfrontDomain}/${resourcePath}`,
+          keyPairId: keyPairId,
+          privateKey: privateKey,
+          dateLessThan: dateLessThan.toISOString(),
+        });
+
+        res.status(200).json({ url });
       } else {
         res.status(200).json({ url: "" });
       }
