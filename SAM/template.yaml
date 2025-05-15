@@ -26,6 +26,12 @@ Parameters:
       - "true"
       - "false"
     Default: "true"
+  isProd:
+    Type: String
+    AllowedValues: [true, false]
+    Default: false
+    Description: Set to true for production environment with provisioned throughput
+
 Conditions:
   useCustomDomainForUiCondition: !Equals
     - !Ref useCustomDomainForUi
@@ -33,6 +39,7 @@ Conditions:
   useCustomDomainForWebsiteCondition: !Equals
     - !Ref useCustomDomainForWebsite
     - "true"
+  IsProdEnvironment: !Equals [!Ref isProd, "true"]
 Resources:
   customEventBus:
     Type: AWS::Events::EventBus
@@ -422,7 +429,12 @@ Resources:
       TimeToLiveSpecification:
         AttributeName: ttl
         Enabled: true
-      BillingMode: PAY_PER_REQUEST
+      BillingMode: !If [IsProdEnvironment, "PROVISIONED", "PAY_PER_REQUEST"]
+      ProvisionedThroughput: !If
+        - IsProdEnvironment
+        - ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+        - !Ref "AWS::NoValue"
       GlobalSecondaryIndexes:
         - IndexName: PkPublishedStatusIndex
           KeySchema:
@@ -432,6 +444,11 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
+          ProvisionedThroughput: !If
+            - IsProdEnvironment
+            - ReadCapacityUnits: 1
+              WriteCapacityUnits: 1
+            - !Ref "AWS::NoValue"
         - IndexName: PkProjectStatus
           KeySchema:
             - AttributeName: PK
@@ -440,6 +457,11 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
+          ProvisionedThroughput: !If
+            - IsProdEnvironment
+            - ReadCapacityUnits: 3
+              WriteCapacityUnits: 3
+            - !Ref "AWS::NoValue"
         - IndexName: CollectionSK
           KeySchema:
             - AttributeName: collection
@@ -448,6 +470,11 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
+          ProvisionedThroughput: !If
+            - IsProdEnvironment
+            - ReadCapacityUnits: 1
+              WriteCapacityUnits: 1
+            - !Ref "AWS::NoValue"
         - IndexName: PaymentDateIndex
           KeySchema:
             - AttributeName: PK
@@ -456,6 +483,11 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
+          ProvisionedThroughput: !If
+            - IsProdEnvironment
+            - ReadCapacityUnits: 3
+              WriteCapacityUnits: 3
+            - !Ref "AWS::NoValue"
         - IndexName: email-BookIdIndex
           KeySchema:
             - AttributeName: email
@@ -464,6 +496,11 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
+          ProvisionedThroughput: !If
+            - IsProdEnvironment
+            - ReadCapacityUnits: 3
+              WriteCapacityUnits: 3
+            - !Ref "AWS::NoValue"
 
   S3Bucket:
     Type: AWS::S3::Bucket
