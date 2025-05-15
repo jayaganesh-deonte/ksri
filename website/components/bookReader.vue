@@ -22,12 +22,14 @@
           :src="ebookUrl"
           buttonText="Read Book"
           v-if="bookFormatType == 'epub' && ebookUrl != ''"
+          :bookId="bookInfo.id"
         />
 
         <PdfViewer
           :pdfUrl="ebookUrl"
           v-if="bookFormatType == 'pdf' && ebookUrl != ''"
           buttonText="Read Book"
+          :bookId="bookInfo.id"
         />
       </div>
       <div v-if="!isBookPurchased">

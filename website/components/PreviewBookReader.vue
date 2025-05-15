@@ -6,6 +6,8 @@
         v-if="bookFormatType == 'epub' && ebookUrl != ''"
         buttonText="Preview Book"
         buttonColor="primary"
+        :bookId="bookInfo.id"
+        :displayBookMark="false"
       />
 
       <PdfViewer
@@ -13,6 +15,8 @@
         v-if="bookFormatType == 'pdf' && ebookUrl != ''"
         buttonText="Preview Book"
         buttonColor="primary"
+        :bookId="bookInfo.id"
+        :displayBookMark="false"
       />
     </div>
     <div v-else>
