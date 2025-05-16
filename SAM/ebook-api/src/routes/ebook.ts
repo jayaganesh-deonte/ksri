@@ -161,7 +161,7 @@ ebookRouter.get("/ebookUrl/:bookId", async (req: Request, res: Response) => {
 
         const plainUrl = `${cloudfrontDomain}/${resourcePath}`;
 
-        res.status(200).json({ url: plainUrl });
+        res.status(200).json({ url: url });
       } else {
         res.status(200).json({ url: "" });
       }

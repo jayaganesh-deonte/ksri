@@ -416,15 +416,7 @@ const loadEbook = async () => {
     console.log("Starting to load ebook from:", props.src);
 
     // Fetch the ebook file
-    const response = await fetch(props.src, {
-      // Prevent caching to avoid showing in browser network tab history
-      // cache: "no-store",
-      // headers: {
-      //   "Cache-Control": "no-cache, no-store, must-revalidate",
-      //   Pragma: "no-cache",
-      //   Expires: "0",
-      // },
-    });
+    const response = await fetch(props.src);
 
     if (!response.ok) {
       throw new Error(`Failed to fetch ebook: ${response.statusText}`);
