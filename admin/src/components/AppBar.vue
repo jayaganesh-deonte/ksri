@@ -294,6 +294,17 @@ let menuOptions = computed(() => {
         // },
       ],
     },
+    // ebook
+    {
+      title: "Ebook",
+      icon: "mdi-book-open-page-variant",
+      children: [
+        {
+          title: "Sales",
+          path: "/book-sales",
+        },
+      ],
+    },
   ];
 
   let tempMenu = [...allOptions];

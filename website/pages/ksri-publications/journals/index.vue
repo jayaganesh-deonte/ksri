@@ -230,6 +230,7 @@ const filteJournalsBasedOnPublication = (publicationName) => {
       journal.title.toLowerCase().includes(normalizedQuery) ||
       journal.subtitle?.toString().toLowerCase()?.includes(normalizedQuery) ||
       journal.details?.toString().toLowerCase()?.includes(normalizedQuery) ||
+      journal.keywords?.toString().toLowerCase()?.includes(normalizedQuery) ||
       journal.yearOfPublication
         ?.toString()
         .toLowerCase()

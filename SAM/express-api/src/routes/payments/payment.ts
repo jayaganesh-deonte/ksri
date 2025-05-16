@@ -10,6 +10,13 @@ import {
   validatePayment,
 } from "../../models/payments/payment";
 
+import {
+  Payment as EBookPayment,
+  PaymentDDB as EBookPaymentDDB,
+  toDynamoDB as toEBookDynamoDB,
+  fromDynamoDB as fromEBookDynamoDB,
+} from "../../models/payments/ebookPayment";
+
 import { EmailService } from "../../services/sendEmail";
 import { publishToEventBridge } from "../../services/eventBridge";
 
@@ -23,7 +30,11 @@ import { validateCloudflareTurnstileToken } from "../../services/cloudflareTurns
 
 const paymentRouter = express.Router();
 
-async function getPayments(req: Request, res: Response) {
+async function getPayments(
+  req: Request,
+  res: Response,
+  entityType: string = "ENTITYTYPE#PAYMENT"
+) {
   let { startDate, endDate } = req.query;
 
   //   if startDate and endDate are not provided, the default it to current month
@@ -41,7 +52,7 @@ async function getPayments(req: Request, res: Response) {
     KeyConditionExpression:
       "PK = :PK AND paymentDate BETWEEN :startDate AND :endDate",
     ExpressionAttributeValues: {
-      ":PK": "ENTITYTYPE#PAYMENT",
+      ":PK": entityType,
       ":startDate": startDate,
       ":endDate": endDate,
     },
@@ -50,12 +61,16 @@ async function getPayments(req: Request, res: Response) {
 
   try {
     const result = await documentClient.query(params);
-    const payments: Payment[] =
+    const payments: any[] =
       result.Items?.map((item: Record<string, any>) => {
         const paymentDDB = item as PaymentDDB;
         // if (!validatePaymentDDB(paymentDDB)) {
         //   throw new Error("Invalid payment data");
         // }
+
+        if (entityType === "ENTITYTYPE#PAYMENT#PURCHASE#EBOOK") {
+          return fromEBookDynamoDB(paymentDDB as any);
+        }
         return fromDynamoDB(paymentDDB);
       }) || [];
     res.json(payments);
@@ -67,11 +82,15 @@ async function getPayments(req: Request, res: Response) {
 
 // get payment for month using GSI PaymentDateIndex: PK = "ENTITYTYPE#PAYMENT" & paymentDate between range
 paymentRouter.get("/payments", async (req: Request, res: Response) => {
-  await getPayments(req, res);
+  await getPayments(req, res, "ENTITYTYPE#PAYMENT");
 });
 
 paymentRouter.get("/payments/manual", async (req: Request, res: Response) => {
-  await getPayments(req, res);
+  await getPayments(req, res, "ENTITYTYPE#PAYMENT");
+});
+
+paymentRouter.get("/payments/ebook", async (req: Request, res: Response) => {
+  await getPayments(req, res, "ENTITYTYPE#PAYMENT#PURCHASE#EBOOK");
 });
 
 // GET new OrderID

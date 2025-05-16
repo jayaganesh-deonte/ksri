@@ -18,6 +18,7 @@
     },
     "author": "Dr R. Thiagarajan\u000b",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -39,6 +40,7 @@
     },
     "author": "Dr K. S. Balasubramanian, Mr. K. Nagarajan",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -60,6 +62,7 @@
     },
     "author": "Dr. V. Preethi \u000b",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -81,6 +84,7 @@
     },
     "author": " Dr. P.C. Muralidharan ",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -102,6 +106,7 @@
     },
     "author": "Dr. Vasumathi Rajaram",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -123,6 +128,7 @@
     },
     "author": "Dr. Vasumathi Rajaram",
     "yearOfPublication": "2025-12-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -137,14 +143,33 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "contactus@deonte.in",
       "created_at": "2025-04-08T07:06:33.893Z",
-      "updated_at": "2025-04-08T07:06:33.893Z",
+      "updated_at": "2025-05-16T06:51:59.417Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. S. Annapurna",
     "yearOfPublication": "2025-12-01",
-    "itemPublishStatus": "PUBLISHED"
+    "printStatus": "Upcoming",
+    "itemPublishStatus": "PUBLISHED",
+    "isEbookAvailable": "Yes",
+    "ebookPrice": "20",
+    "ebookUrl": [
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JVBXTA5YT3W57PRSHFWGW66Q.pdf",
+        "encrypted": true,
+        "url": "s3://ksri-prod-ebook-store/files/01JVBXTA5YT3W57PRSHFWGW66Q.pdf"
+      }
+    ],
+    "previewEbookUrl": [
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JVBQF0P3XBCAD7V19BEQYVJP.pdf",
+        "encrypted": false,
+        "url": "files/01JVBQF0P3XBCAD7V19BEQYVJP.pdf"
+      }
+    ]
   },
   {
     "title": "GAṆITASĀRA SAṄGRAHA OF MAHĀVĪRA",
@@ -158,14 +183,33 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "contactus@deonte.in",
       "created_at": "2025-04-08T07:07:19.933Z",
-      "updated_at": "2025-04-08T07:07:19.933Z",
+      "updated_at": "2025-05-16T06:51:49.137Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. Sita Sundar Ram",
     "yearOfPublication": "2025-12-01",
-    "itemPublishStatus": "PUBLISHED"
+    "printStatus": "Upcoming",
+    "itemPublishStatus": "PUBLISHED",
+    "isEbookAvailable": "Yes",
+    "ebookPrice": "20",
+    "ebookUrl": [
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JVBXT0DRR3756TVKCXRCBRM5.pdf",
+        "encrypted": true,
+        "url": "s3://ksri-prod-ebook-store/files/01JVBXT0DRR3756TVKCXRCBRM5.pdf"
+      }
+    ],
+    "previewEbookUrl": [
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JVBQEP7DATZBNCQESJ4Q9843.pdf",
+        "encrypted": false,
+        "url": "files/01JVBQEP7DATZBNCQESJ4Q9843.pdf"
+      }
+    ]
   },
   {
     "title": "AN ENCYCLOPAEDIC DICTIONARY OF SANSKRIT GEOGRAPHICAL TERMS",
@@ -179,14 +223,33 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "contactus@deonte.in",
       "created_at": "2025-04-08T07:08:14.022Z",
-      "updated_at": "2025-04-08T07:08:14.022Z",
+      "updated_at": "2025-05-16T06:51:36.784Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Prof. R. Parthasarathy, Dr. S. Muthulakshmi",
     "yearOfPublication": "2025-12-01",
-    "itemPublishStatus": "PUBLISHED"
+    "printStatus": "Upcoming",
+    "itemPublishStatus": "PUBLISHED",
+    "isEbookAvailable": "Yes",
+    "ebookPrice": "20",
+    "ebookUrl": [
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JVBXSKV304RNGFJVKC40WX2M.epub",
+        "encrypted": true,
+        "url": "s3://ksri-prod-ebook-store/files/01JVBXSKV304RNGFJVKC40WX2M.epub"
+      }
+    ],
+    "previewEbookUrl": [
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JVBQEC83FV3N87X675CNQ6WQ.epub",
+        "encrypted": false,
+        "url": "files/01JVBQEC83FV3N87X675CNQ6WQ.epub"
+      }
+    ]
   },
   {
     "title": "ARTHAŚĀSTRA OF KAUṬILYA  WITH   JAYAMAṆGALĀ AND CĀṆAKYAṬĪKĀ",
@@ -207,6 +270,7 @@
     },
     "author": " Dr. V. Kameswari, Dr. T.V. Vasudeva",
     "yearOfPublication": "2025-05-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -230,6 +294,7 @@
     },
     "author": "Dr. S. Anuradha",
     "yearOfPublication": "2025-05-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -253,6 +318,7 @@
     },
     "author": "Dr. S. Anuradha",
     "yearOfPublication": "2025-05-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -269,7 +335,7 @@
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "contactus@deonte.in",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-04-02T06:49:22.239Z",
       "updated_at": "2025-04-08T06:22:52.486Z",
       "created_by": "ksriphd@gmail.com"
@@ -300,6 +366,7 @@
     },
     "author": "Mr. Sudarshan Krishna",
     "yearOfPublication": "2025-03-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -323,6 +390,7 @@
     },
     "author": "Mr. Sudarshan Krishna",
     "yearOfPublication": "2025-03-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -346,6 +414,7 @@
     },
     "author": "Sri Sudarshan Krishna",
     "yearOfPublication": "2025-03-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -369,6 +438,7 @@
     },
     "author": "Mr. Sudarshan Krishna",
     "yearOfPublication": "2025-03-01",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -2225,6 +2295,7 @@
     },
     "author": "G. Harihara Sastri",
     "yearOfPublication": "1900-01-01",
+    "printStatus": "Printed",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -2334,6 +2405,7 @@
     },
     "author": "Dr. V. Yamuna Devi, Smt. Lavanya. V. Eswar",
     "yearOfPublication": "",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   }
 ]
