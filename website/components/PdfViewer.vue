@@ -166,16 +166,17 @@
               indeterminate
               color="primary"
             ></v-progress-circular>
-            <span class="ml-3">Loading PDF...</span>
+            <span class="ml-3">Loading...</span>
           </div>
 
           <VuePDF
-            :key="page"
-            :pdf="pdf"
+            v-if="pdfLoaded"
+            :key="refreshKey"
+            :pdf="decryptedPdf"
             :page="page"
             :text-layer="false"
             :scale="zoom"
-            @loaded="isLoaded = true"
+            @loaded="onPdfLoaded"
             class="pdf-content mx-auto no-select"
             ref="pdfContent"
           />
@@ -262,7 +263,7 @@
 </template>
 
 <script setup>
-import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+import { ref, watch, computed, onMounted, onUnmounted, shallowRef } from "vue";
 import { VuePDF, usePDF } from "@tato30/vue-pdf";
 
 import { userStore } from "~/stores/UserStore";
@@ -294,6 +295,10 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  isEncrypted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 // State
@@ -308,6 +313,12 @@ const bookmarkNote = ref("");
 const bookmarkNoteError = ref("");
 const bookmarkPageToAdd = ref(null);
 const editingBookmark = ref(null);
+const pdfSrc = shallowRef(null);
+const pdfLoaded = ref(false);
+const refreshKey = ref(0);
+
+// Create PDF document with usePDF
+const { pdf: decryptedPdf, pages } = usePDF(pdfSrc);
 
 // Computed
 const pageInput = computed({
@@ -320,8 +331,194 @@ const isCurrentPageBookmarked = computed(() => {
   return bookmarks.value.some((bookmark) => bookmark.page === page.value);
 });
 
-// PDF loading - only load when dialog is opened
-const { pdf, pages } = usePDF(props.pdfUrl);
+// Watch for changes in the PDF loading
+watch(pages, (newPages) => {
+  if (newPages > 0) {
+    console.log(`PDF loaded successfully with ${newPages} pages`);
+    isLoaded.value = true;
+  }
+});
+
+// Watch for PDF source changes
+watch(pdfSrc, (newPdfSrc) => {
+  if (newPdfSrc) {
+    // Reset loading state when PDF source changes
+    isLoaded.value = false;
+    pdfLoaded.value = true;
+    refreshKey.value++; // Force re-render of the VuePDF component
+  }
+});
+
+// Function to handle when PDF is fully loaded
+const onPdfLoaded = () => {
+  console.log("VuePDF component loaded event fired");
+  isLoaded.value = true;
+};
+
+// Encryption key (hardcoded for now - should be securely retrieved in production)
+const ENCRYPTION_PASSPHRASE = "your-secret-encryption-key-2023";
+
+// Function to derive a properly sized encryption key using PBKDF2
+const getCryptoKey = async () => {
+  // Convert the passphrase to an ArrayBuffer
+  const encoder = new TextEncoder();
+  const passphraseData = encoder.encode(ENCRYPTION_PASSPHRASE);
+
+  // First, create a key from the passphrase
+  const baseKey = await window.crypto.subtle.importKey(
+    "raw",
+    passphraseData,
+    { name: "PBKDF2" },
+    false,
+    ["deriveBits", "deriveKey"]
+  );
+
+  // Use PBKDF2 to derive a 256-bit key suitable for AES-GCM
+  // Using a fixed salt for simplicity (in production, this should be unique per user)
+  const salt = new TextEncoder().encode("fixed-salt-value-12345");
+
+  // Derive the actual encryption key
+  return await window.crypto.subtle.deriveKey(
+    {
+      name: "PBKDF2",
+      salt: salt,
+      iterations: 100000,
+      hash: "SHA-256",
+    },
+    baseKey,
+    { name: "AES-GCM", length: 256 },
+    false,
+    ["encrypt", "decrypt"]
+  );
+};
+
+const debugArrayBuffer = (buffer, bytesToShow = 20) => {
+  const array = new Uint8Array(buffer);
+  let hexString = "";
+  let asciiString = "";
+
+  // Display a portion of the file's beginning for debugging, if needed
+  for (let i = 0; i < Math.min(bytesToShow, array.length); i++) {
+    const byte = array[i];
+    // Add hex representation
+    hexString += byte.toString(16).padStart(2, "0") + " ";
+    // Add ASCII representation if printable, otherwise '.'
+    asciiString += byte >= 32 && byte <= 126 ? String.fromCharCode(byte) : ".";
+  }
+
+  console.log(
+    "Hex (first " +
+      Math.min(bytesToShow, array.length) +
+      " bytes): " +
+      hexString
+  );
+  console.log(
+    "ASCII (first " +
+      Math.min(bytesToShow, array.length) +
+      " bytes): " +
+      asciiString
+  );
+
+  // Check for PDF signature (%PDF)
+  // Hex: 25 50 44 46
+  // ASCII: % P D F
+  if (
+    array.length >= 4 &&
+    array[0] === 0x25 && // %
+    array[1] === 0x50 && // P
+    array[2] === 0x44 && // D
+    array[3] === 0x46 // F
+  ) {
+    console.log("✅ Valid PDF signature detected.");
+    return true; // Indicates a valid PDF signature
+  } else {
+    console.log("❌ Invalid PDF signature - this may not be a valid PDF file.");
+    return false; // Indicates an invalid PDF signature
+  }
+};
+
+// Function to decrypt data
+const decryptData = async (encryptedData) => {
+  try {
+    // Extract the IV (first 12 bytes)
+    const iv = encryptedData.slice(0, 12);
+
+    // Extract the encrypted data (everything after the IV)
+    const encrypted = encryptedData.slice(12);
+
+    // Get the key
+    const key = await getCryptoKey();
+
+    // Decrypt the data
+    const decryptedData = await window.crypto.subtle.decrypt(
+      {
+        name: "AES-GCM",
+        iv: new Uint8Array(iv),
+      },
+      key,
+      encrypted
+    );
+
+    // Debug the first few bytes
+    debugArrayBuffer(decryptedData);
+
+    return decryptedData;
+  } catch (error) {
+    console.error("Decryption error:", error);
+    throw new Error("Failed to decrypt file");
+  }
+};
+
+// Function to load and decrypt the PDF
+const loadPdf = async () => {
+  try {
+    isLoaded.value = false;
+    pdfLoaded.value = false;
+
+    // Reset PDF source to trigger cleanup
+    pdfSrc.value = null;
+
+    // Fetch the PDF file
+    console.log("Fetching PDF using:", props.pdfUrl);
+    const response = await fetch(props.pdfUrl);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch PDF: ${response.statusText}`);
+    }
+
+    let pdfData;
+    if (props.isEncrypted) {
+      // If encrypted, get the data as ArrayBuffer for decryption
+      const encryptedData = await response.arrayBuffer();
+      console.log("Encrypted data received, length:", encryptedData.byteLength);
+
+      // Decrypt the data
+      const decryptedData = await decryptData(encryptedData);
+      console.log("Decryption completed, size:", decryptedData.byteLength);
+
+      // Convert decrypted data to Uint8Array for PDF.js
+      pdfData = new Uint8Array(decryptedData);
+    } else {
+      // If not encrypted, just get the blob
+      // If not encrypted, get the blob and convert to ArrayBuffer/Uint8Array
+      const blob = await response.blob();
+      const arrayBuffer = await blob.arrayBuffer();
+      pdfData = new Uint8Array(arrayBuffer);
+    }
+    console.log("pdfData", pdfData);
+    isLoaded.value = true;
+    pdfLoaded.value = true;
+
+    // Set the pdfSrc ref which will be used by usePDF
+    setTimeout(() => {
+      pdfSrc.value = pdfData;
+    }, 100);
+  } catch (error) {
+    console.error("Error loading PDF:", error);
+    isLoaded.value = true; // Stop loading indicator
+    // Show error message to user
+    alert("Failed to load PDF. Please try again later.");
+  }
+};
 
 // Local storage key for bookmarks
 const getBookmarksKey = computed(() => {
@@ -467,8 +664,18 @@ const openPdfDialog = async () => {
   // Reset state when opening
   page.value = 1;
   isLoaded.value = false;
+  pdfLoaded.value = false;
+  refreshKey.value++; // Force re-render of the VuePDF component
+
+  // Load and decrypt the PDF
+  await loadPdf();
+
   // Load bookmarks when dialog opens
-  await loadBookmarks();
+  try {
+    await loadBookmarks();
+  } catch (e) {
+    console.error("error loading bookmark", e);
+  }
 };
 
 const goToPage = () => {

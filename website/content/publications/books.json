@@ -145,7 +145,7 @@
     "metadata": {
       "updated_by": "contactus@deonte.in",
       "created_at": "2025-04-08T07:06:33.893Z",
-      "updated_at": "2025-05-14T08:16:04.184Z",
+      "updated_at": "2025-05-16T05:00:57.636Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. S. Annapurna",
@@ -155,10 +155,20 @@
     "isEbookAvailable": "Yes",
     "ebookPrice": "20",
     "ebookUrl": [
-      "files/01JV6XTH863DJ4DEV8JZC39A77.pdf"
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JVBQ4NQDT1PX4NZE127B27YG.pdf",
+        "encrypted": true,
+        "url": "https://d1vjoxao4x78nv.cloudfront.net/files/01JVBQ4NQDT1PX4NZE127B27YG.pdf"
+      }
     ],
     "previewEbookUrl": [
-      "files/01JV6XTQ911FF5CKN1NB6YZWN9.epub"
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JVBQF0P3XBCAD7V19BEQYVJP.pdf",
+        "encrypted": false,
+        "url": "files/01JVBQF0P3XBCAD7V19BEQYVJP.pdf"
+      }
     ]
   },
   {
@@ -175,7 +185,7 @@
     "metadata": {
       "updated_by": "contactus@deonte.in",
       "created_at": "2025-04-08T07:07:19.933Z",
-      "updated_at": "2025-05-11T13:56:18.034Z",
+      "updated_at": "2025-05-16T05:00:46.617Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. Sita Sundar Ram",
@@ -185,10 +195,20 @@
     "isEbookAvailable": "Yes",
     "ebookPrice": "20",
     "ebookUrl": [
-      "files/01JTZT3F9269EGGQ44PBW2DJ03.pdf"
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JVBQ4AA5K3H3VK6QEQGW22P6.pdf",
+        "encrypted": true,
+        "url": "https://d1vjoxao4x78nv.cloudfront.net/files/01JVBQ4AA5K3H3VK6QEQGW22P6.pdf"
+      }
     ],
     "previewEbookUrl": [
-      "files/01JTZT3KNFZ88WX2NSDP2ZCGWT.pdf"
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JVBQEP7DATZBNCQESJ4Q9843.pdf",
+        "encrypted": false,
+        "url": "files/01JVBQEP7DATZBNCQESJ4Q9843.pdf"
+      }
     ]
   },
   {
@@ -205,7 +225,7 @@
     "metadata": {
       "updated_by": "contactus@deonte.in",
       "created_at": "2025-04-08T07:08:14.022Z",
-      "updated_at": "2025-05-10T04:54:32.317Z",
+      "updated_at": "2025-05-16T05:00:37.111Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Prof. R. Parthasarathy, Dr. S. Muthulakshmi",
@@ -215,10 +235,20 @@
     "isEbookAvailable": "Yes",
     "ebookPrice": "20",
     "ebookUrl": [
-      "files/01JTW8PS0TQYCW9BGY7NQ17C1B.epub"
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JVBQ3YB3X729S9VVSFQ5SF3K.epub",
+        "encrypted": true,
+        "url": "https://d1vjoxao4x78nv.cloudfront.net/files/01JVBQ3YB3X729S9VVSFQ5SF3K.epub"
+      }
     ],
     "previewEbookUrl": [
-      "files/01JTW8PYCBG7H5PRHM5XTMGRC7.epub"
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JVBQEC83FV3N87X675CNQ6WQ.epub",
+        "encrypted": false,
+        "url": "files/01JVBQEC83FV3N87X675CNQ6WQ.epub"
+      }
     ]
   },
   {

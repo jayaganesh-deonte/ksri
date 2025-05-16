@@ -36,6 +36,7 @@
     "nuxt-aos": "^1.2.5",
     "nuxt-gtag": "^3.0.2",
     "nuxt-marquee": "^1.0.4",
+    "pdfjs-dist": "^5.2.133",
     "sass": "^1.81.0",
     "sass-loader": "^10.1.1",
     "uuid": "^11.1.0",

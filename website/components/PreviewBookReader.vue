@@ -62,7 +62,9 @@ const getEbookUrl = () => {
 
   const ASSET_DOMAIN = runtimeConfig.public.ASSET_DOMAIN;
 
-  const fileUrl = ASSET_DOMAIN + props.bookInfo.previewEbookUrl;
+  console.log("props.bookInfo", props.bookInfo);
+
+  const fileUrl = ASSET_DOMAIN + props.bookInfo.previewEbookUrl[0].s3Key;
 
   if (fileUrl.includes(".pdf")) {
     bookFormatType.value = "pdf";

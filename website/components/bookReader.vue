@@ -23,6 +23,7 @@
           buttonText="Read Book"
           v-if="bookFormatType == 'epub' && ebookUrl != ''"
           :bookId="bookInfo.id"
+          :isEncrypted="true"
         />
 
         <PdfViewer
@@ -30,6 +31,7 @@
           v-if="bookFormatType == 'pdf' && ebookUrl != ''"
           buttonText="Read Book"
           :bookId="bookInfo.id"
+          :isEncrypted="true"
         />
       </div>
       <div v-if="!isBookPurchased">

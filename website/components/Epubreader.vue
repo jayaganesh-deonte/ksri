@@ -179,8 +179,25 @@
       <v-card class="pa-0" elevation="4">
         <v-card-text @contextmenu.prevent>
           <v-row>
+            <!-- Error Alert -->
+            <v-col v-if="loadError" cols="12">
+              <v-alert type="error" closable>
+                {{ loadError }}
+              </v-alert>
+            </v-col>
+
+            <!-- Loading Indicator -->
+            <v-col v-if="loading" cols="12" class="text-center py-12">
+              <v-progress-circular
+                indeterminate
+                color="primary"
+                size="64"
+              ></v-progress-circular>
+              <div class="mt-4">Loading ebook...</div>
+            </v-col>
+
             <!-- Viewer -->
-            <v-col>
+            <v-col v-else>
               <div
                 class="epub-reader-wrapper no-select"
                 style="height: 100vh; position: relative"
@@ -188,19 +205,14 @@
               >
                 <v-no-ssr>
                   <vue-reader
-                    :url="src"
+                    v-if="epubData"
+                    :url="epubData"
                     :location.sync="location"
                     :getRendition="getRendition"
                     @update:location="locationChange"
-                    :epubInitOptions="{ openAs: 'epub' }"
                     ref="epubReader"
                   />
                 </v-no-ssr>
-                <!-- <div class="size">
-              <button @click="changeSize(Math.max(80, size - 10))">-</button>
-              <span>Current size: {{ size }}%</span>
-              <button @click="changeSize(Math.min(130, size + 10))">+</button>
-            </div> -->
               </div>
               <div class="d-flex justify-space-between mt-2">
                 <div>{{ pageInfo }}</div>
@@ -246,6 +258,10 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  isEncrypted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 let location = ref(null);
@@ -256,7 +272,10 @@ let pageInfo = ref("");
 let size = ref(100);
 let showReader = ref(false);
 let loading = ref(false);
+let loadError = ref(null);
 const epubReader = ref(null);
+const epubData = ref(null); // Will hold the ArrayBuffer directly
+const epubOptions = ref({});
 
 // Bookmark related state
 const bookmarks = ref([]);
@@ -266,29 +285,208 @@ const bookmarkNoteError = ref("");
 const editingBookmark = ref(null);
 const currentExcerpt = ref("");
 
+// Encryption constants
+const ENCRYPTION_PASSPHRASE = "your-secret-encryption-key-2023";
+
+// Function to derive a properly sized encryption key using PBKDF2
+const getCryptoKey = async () => {
+  // Convert the passphrase to an ArrayBuffer
+  const encoder = new TextEncoder();
+  const passphraseData = encoder.encode(ENCRYPTION_PASSPHRASE);
+
+  // First, create a key from the passphrase
+  const baseKey = await window.crypto.subtle.importKey(
+    "raw",
+    passphraseData,
+    { name: "PBKDF2" },
+    false,
+    ["deriveBits", "deriveKey"]
+  );
+
+  // Use PBKDF2 to derive a 256-bit key suitable for AES-GCM
+  // Using a fixed salt for simplicity (in production, this should be unique per user)
+  const salt = new TextEncoder().encode("fixed-salt-value-12345");
+
+  // Derive the actual encryption key
+  return await window.crypto.subtle.deriveKey(
+    {
+      name: "PBKDF2",
+      salt: salt,
+      iterations: 100000,
+      hash: "SHA-256",
+    },
+    baseKey,
+    { name: "AES-GCM", length: 256 },
+    false,
+    ["encrypt", "decrypt"]
+  );
+};
+
+const debugArrayBuffer = (buffer, bytesToShow = 20) => {
+  const array = new Uint8Array(buffer);
+  let hexString = "";
+  let asciiString = "";
+
+  for (let i = 0; i < Math.min(bytesToShow, array.length); i++) {
+    const byte = array[i];
+    // Add hex representation
+    hexString += byte.toString(16).padStart(2, "0") + " ";
+    // Add ASCII representation if printable, otherwise '.'
+    asciiString += byte >= 32 && byte <= 126 ? String.fromCharCode(byte) : ".";
+  }
+
+  console.log("Hex: " + hexString);
+  console.log("ASCII: " + asciiString);
+
+  // Check for ZIP/EPUB signature
+  if (
+    array.length >= 4 &&
+    array[0] === 0x50 && // P
+    array[1] === 0x4b && // K
+    array[2] === 0x03 &&
+    array[3] === 0x04
+  ) {
+    console.log("✅ Valid ZIP/EPUB signature detected");
+  } else {
+    console.log(
+      "❌ Invalid ZIP/EPUB signature - this is not a valid EPUB file"
+    );
+  }
+};
+
+// Function to decrypt data
+const decryptData = async (encryptedData) => {
+  try {
+    // Ensure encryptedData is an ArrayBuffer
+    const dataBuffer =
+      encryptedData instanceof ArrayBuffer
+        ? encryptedData
+        : await encryptedData.arrayBuffer();
+
+    // Extract the IV (first 12 bytes)
+    const iv = new Uint8Array(dataBuffer.slice(0, 12));
+
+    // Extract the encrypted data (everything after the IV)
+    const encrypted = new Uint8Array(dataBuffer.slice(12));
+
+    // Get the key
+    const key = await getCryptoKey();
+
+    // Decrypt the data
+    const decryptedData = await window.crypto.subtle.decrypt(
+      {
+        name: "AES-GCM",
+        iv: iv,
+      },
+      key,
+      encrypted
+    );
+
+    // Return the decrypted ArrayBuffer directly
+    return decryptedData;
+  } catch (error) {
+    console.error("Decryption error:", error);
+    throw new Error("Failed to decrypt file");
+  }
+};
+
+// Add event handlers for book lifecycle events
+const onBookReady = (bookObj) => {
+  console.log("Book is ready:", bookObj);
+  book.value = bookObj;
+};
+
+const onBookOpen = () => {
+  console.log("Book opened successfully");
+  // We'll keep loading true until the rendition is created
+};
+
+const onBookError = (error) => {
+  console.error("Error opening book:", error);
+  loadError.value = `Error opening book: ${error.message || "Unknown error"}`;
+  loading.value = false;
+};
+
+// Load and prepare ebook
+const loadEbook = async () => {
+  try {
+    loading.value = true;
+    loadError.value = null;
+
+    console.log("Starting to load ebook from:", props.src);
+
+    // Fetch the ebook file
+    const response = await fetch(props.src, {
+      // Prevent caching to avoid showing in browser network tab history
+      // cache: "no-store",
+      // headers: {
+      //   "Cache-Control": "no-cache, no-store, must-revalidate",
+      //   Pragma: "no-cache",
+      //   Expires: "0",
+      // },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ebook: ${response.statusText}`);
+    }
+
+    // Get the file as ArrayBuffer
+    const fileBuffer = await response.arrayBuffer();
+
+    // Add debug output
+    console.log("File size:", fileBuffer.byteLength, "bytes");
+
+    let finalData;
+
+    // Decrypt if needed
+    if (props.isEncrypted) {
+      console.log("File is encrypted, starting decryption");
+      try {
+        finalData = await decryptData(fileBuffer);
+
+        // Debug the decrypted data
+        console.log("Decrypted data first bytes:");
+        debugArrayBuffer(finalData);
+      } catch (decryptError) {
+        console.error("Decryption error details:", decryptError);
+        throw new Error(`Failed to decrypt ebook: ${decryptError.message}`);
+      }
+    } else {
+      console.log("File is not encrypted");
+      finalData = fileBuffer;
+      // Debug the file data
+      console.log("Original file first bytes:");
+      debugArrayBuffer(finalData);
+    }
+
+    // Set the ArrayBuffer directly as the data source
+    // Instead of creating a blob URL
+    epubData.value = finalData;
+
+    console.log("EPUB data loaded into memory");
+    loading.value = false;
+
+    // Try to load bookmarks after successful ebook loading
+    try {
+      await loadBookmarks();
+    } catch (e) {
+      console.error("Error loading bookmarks:", e);
+    }
+  } catch (error) {
+    console.error("Error loading ebook:", error);
+    loadError.value = error.message || "Failed to load ebook";
+    loading.value = false;
+  }
+};
+
 // Check if current location is bookmarked
 const isCurrentLocationBookmarked = computed(() => {
   if (!location.value) return false;
   return bookmarks.value.some((bookmark) => bookmark.cfi === location.value);
 });
 
-// Local storage key for bookmarks
-const getBookmarksKey = computed(() => {
-  return `epub-bookmarks-${props.userEmail}-${props.bookId}`;
-});
-
 // Load bookmarks from local storage
 const loadBookmarks = async () => {
-  // const savedBookmarks = localStorage.getItem(getBookmarksKey.value);
-  // if (savedBookmarks) {
-  //   try {
-  //     bookmarks.value = JSON.parse(savedBookmarks);
-  //   } catch (e) {
-  //     console.error("Error loading bookmarks:", e);
-  //     bookmarks.value = [];
-  //   }
-  // }
-
   const savedBookmarks = await store.getBookMarks(props.bookId);
   if (savedBookmarks) {
     try {
@@ -302,17 +500,16 @@ const loadBookmarks = async () => {
 
 // Save bookmarks to local storage
 const saveBookmarks = async () => {
-  // localStorage.setItem(getBookmarksKey.value, JSON.stringify(bookmarks.value));
   try {
-    const res = await store.saveBookMarks(props.bookId, bookmarks.value);
+    await store.saveBookMarks(props.bookId, bookmarks.value);
   } catch (e) {
     console.error("Error saving bookmarks:", e);
   }
 };
 
-const openReader = () => {
+const openReader = async () => {
   showReader.value = true;
-  loadBookmarks();
+  await loadEbook();
 };
 
 // Extract text from the current page for bookmark context
@@ -488,10 +685,13 @@ const goToBookmarkedLocation = (cfi) => {
   }
 };
 
-// Change function name from onRenditionCreated to getRendition to match reference code
+// Get rendition from vue-reader
 const getRendition = (rend) => {
+  console.log("Rendition created successfully");
   rendition.value = rend;
-  book.value = rend.book;
+
+  // Set loading to false once we have a rendition
+  loading.value = false;
 
   // Apply font size immediately after getting rendition
   if (rendition.value) {
@@ -544,9 +744,17 @@ const getRendition = (rend) => {
     });
   }
 
-  rend.book.loaded.navigation.then((nav) => {
-    toc.value = nav.toc;
-  });
+  // Get the book object and load navigation
+  if (rend.book) {
+    book.value = rend.book;
+    rend.book.loaded.navigation
+      .then((nav) => {
+        toc.value = nav.toc;
+      })
+      .catch((err) => {
+        console.error("Failed to load navigation:", err);
+      });
+  }
 };
 
 const changeSize = (val) => {
@@ -560,13 +768,13 @@ const changeSize = (val) => {
 const getLabel = (toc, href) => {
   let label = "n/a";
   toc.some((item) => {
-    if (item.subitems.length > 0) {
+    if (item.subitems && item.subitems.length > 0) {
       const subChapter = getLabel(item.subitems, href);
       if (subChapter !== "n/a") {
         label = subChapter;
         return true;
       }
-    } else if (item.href.includes(href)) {
+    } else if (item.href && href && item.href.includes(href)) {
       label = item.label;
       return true;
     }
@@ -577,10 +785,16 @@ const getLabel = (toc, href) => {
 const locationChange = (epubcifi) => {
   location.value = epubcifi;
 
-  if (epubcifi && rendition.value) {
-    const { displayed, href } = rendition.value.location.start;
-    const label = getLabel(toc.value, href);
-    pageInfo.value = `${displayed.page}/${displayed.total} ${label}`;
+  if (epubcifi && rendition.value && rendition.value.location) {
+    try {
+      const { displayed, href } = rendition.value.location.start;
+      if (displayed && href) {
+        const label = getLabel(toc.value, href);
+        pageInfo.value = `${displayed.page}/${displayed.total} ${label}`;
+      }
+    } catch (e) {
+      console.error("Error updating location:", e);
+    }
   }
 };
 
@@ -596,6 +810,12 @@ const nextPage = () => {
 
 const prevPage = () => {
   if (rendition.value) rendition.value.prev();
+};
+
+// Clean up resources when dialog is closed or component unmounted
+const cleanupResources = () => {
+  // Clear the ArrayBuffer data reference
+  epubData.value = null;
 };
 
 // Prevent keyboard shortcuts for saving (Ctrl+S, Command+S, Ctrl+P, etc.)
@@ -633,6 +853,7 @@ watch(showReader, (isVisible) => {
   } else {
     document.removeEventListener("keydown", preventSave);
     document.removeEventListener("dragstart", preventDragStart);
+    cleanupResources();
   }
 });
 
@@ -646,6 +867,7 @@ onUnmounted(() => {
   document.removeEventListener("contextmenu", preventContextMenu);
   document.removeEventListener("keydown", preventSave);
   document.removeEventListener("dragstart", preventDragStart);
+  cleanupResources();
 });
 </script>
 

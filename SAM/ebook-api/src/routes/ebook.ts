@@ -127,7 +127,7 @@ ebookRouter.get("/ebookUrl/:bookId", async (req: Request, res: Response) => {
       if (bookData.Item) {
         const book = bookData.Item;
         const cloudfrontDomain = process.env.EBOOK_CLOUDFRONT;
-        const resourcePath = book.ebookUrl[0];
+        const resourcePath = book.ebookUrl[0].s3Key;
 
         // Get the private key from SSM Parameter Store
 
@@ -159,7 +159,9 @@ ebookRouter.get("/ebookUrl/:bookId", async (req: Request, res: Response) => {
           dateLessThan: dateLessThan.toISOString(),
         });
 
-        res.status(200).json({ url });
+        const plainUrl = `${cloudfrontDomain}/${resourcePath}`;
+
+        res.status(200).json({ url: plainUrl });
       } else {
         res.status(200).json({ url: "" });
       }

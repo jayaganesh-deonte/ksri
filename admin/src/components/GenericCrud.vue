@@ -346,6 +346,7 @@
                       :key="editedItem[field.key].length * 1"
                       :title="field.label"
                       :isPreviewFile="field.isPreviewFile"
+                      :encrypt-files="!field.isPreviewFile"
                     />
 
                     <ColorPicker
