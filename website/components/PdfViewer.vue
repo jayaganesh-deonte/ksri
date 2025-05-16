@@ -356,7 +356,8 @@ const onPdfLoaded = () => {
 };
 
 // Encryption key (hardcoded for now - should be securely retrieved in production)
-const ENCRYPTION_PASSPHRASE = "your-secret-encryption-key-2023";
+const ENCRYPTION_PASSPHRASE =
+  "Richness-Gosling-Provided-Charred-Unused-Drapery-Chummy-Crayfish-Dwarf-Handcraft-Implosion-Circle-Refried-Unifier-Whomever-Eclipse-Shorty-State-Rising-Refueling5";
 
 // Function to derive a properly sized encryption key using PBKDF2
 const getCryptoKey = async () => {
@@ -375,7 +376,9 @@ const getCryptoKey = async () => {
 
   // Use PBKDF2 to derive a 256-bit key suitable for AES-GCM
   // Using a fixed salt for simplicity (in production, this should be unique per user)
-  const salt = new TextEncoder().encode("fixed-salt-value-12345");
+  const salt = new TextEncoder().encode(
+    "Shrewdly-Patchy-Reword-Diffused-Fanning-External9-Existing-Demystify-Overuse-Disloyal-Bolt-Bodacious-Cupcake-Ascend-Puppet-Suffrage-Doable-Purge-Laundry-Correct"
+  );
 
   // Derive the actual encryption key
   return await window.crypto.subtle.deriveKey(

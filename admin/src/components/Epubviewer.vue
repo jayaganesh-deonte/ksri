@@ -6,9 +6,11 @@
         <v-col>
           <div class="epub-reader-wrapper">
             <vue-reader
+              v-if="src"
               :url="src"
               :location.sync="location"
               :getRendition="onRenditionCreated"
+              :epubInitOptions="{ openAs: 'epub' }"
             />
           </div>
         </v-col>

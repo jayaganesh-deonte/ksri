@@ -155,6 +155,10 @@ import {
   fetchAuthSession,
 } from "aws-amplify/auth";
 
+// Import required AWS SDK clients and commands
+import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+
 // Dialog states
 const epubPreviewDialog = ref(false);
 const pdfPreviewDialog = ref(false);
@@ -207,7 +211,8 @@ const fileInput = ref(null);
 const newFiles = ref([]);
 
 // Encryption key (hardcoded for now - should be securely retrieved in production)
-const ENCRYPTION_PASSPHRASE = "your-secret-encryption-key-2023";
+const ENCRYPTION_PASSPHRASE =
+  "Richness-Gosling-Provided-Charred-Unused-Drapery-Chummy-Crayfish-Dwarf-Handcraft-Implosion-Circle-Refried-Unifier-Whomever-Eclipse-Shorty-State-Rising-Refueling5";
 
 // Function to derive a properly sized encryption key using PBKDF2
 const getCryptoKey = async () => {
@@ -226,7 +231,9 @@ const getCryptoKey = async () => {
 
   // Use PBKDF2 to derive a 256-bit key suitable for AES-GCM
   // Using a fixed salt for simplicity (in production, this should be unique per user)
-  const salt = new TextEncoder().encode("fixed-salt-value-12345");
+  const salt = new TextEncoder().encode(
+    "Shrewdly-Patchy-Reword-Diffused-Fanning-External9-Existing-Demystify-Overuse-Disloyal-Bolt-Bodacious-Cupcake-Ascend-Puppet-Suffrage-Doable-Purge-Laundry-Correct"
+  );
 
   // Derive the actual encryption key
   return await window.crypto.subtle.deriveKey(
@@ -457,7 +464,7 @@ const uploadFiles = async (e) => {
           // Store S3 path for encrypted files (will generate signed URLs on demand)
           // Use CloudFront for non-encrypted files
           const cloudfront_domain = import.meta.env.VITE_EBOOK_CLOUDFRONT;
-          fileUrl = `${cloudfront_domain}${s3Key}`;
+          fileUrl = `s3://${import.meta.env.VITE_EBOOK_BUCKET_NAME}/${s3Key}`;
         } else {
           // Use CloudFront for non-encrypted files
           const cloudfront_domain = import.meta.env.VITE_IMAGE_CLOUDFRONT;
@@ -524,10 +531,38 @@ const uploadFiles = async (e) => {
 };
 
 // Function to get S3 signed URL for encrypted files
-const getS3SignedUrl = async (s3Key, s3Folder) => {
+const getS3SignedUrl = async (s3Key) => {
   try {
     const authRes = await fetchAuthSession();
-    return "";
+    // get access key and setup s3 client and generate signed url
+    // Get credentials from auth session
+    const { credentials } = authRes;
+
+    // Create S3 client with credentials
+    const s3Client = new S3Client({
+      region: import.meta.env.VITE_APP_AWS_REGION,
+      credentials: credentials,
+    });
+
+    // generate url for
+    console.log(
+      "generate url for",
+      s3Key,
+      import.meta.env.VITE_EBOOK_BUCKET_NAME
+    );
+    // Create command to get object
+    const command = new GetObjectCommand({
+      Bucket: import.meta.env.VITE_EBOOK_BUCKET_NAME,
+      Key: s3Key,
+    });
+
+    // Generate signed URL that expires in 1 hour
+    const signedUrl = await getSignedUrl(s3Client, command, {
+      expiresIn: 3600,
+    });
+
+    return signedUrl;
+    // return "";
   } catch (error) {
     console.error("Error getting signed URL:", error);
     throw new Error("Failed to get secure access to file");
@@ -548,25 +583,27 @@ const previewFile = async (file) => {
 
     if (isEncrypted) {
       // For encrypted files, get S3 signed URL
-      if (file.url.startsWith("s3://")) {
-        // Parse S3 path
-        const s3Path = file.url.replace("s3://", "").split("/");
-        const s3Folder = s3Path[0];
-        const s3Key = s3Path.slice(1).join("/");
+      // if (file.url.startsWith("s3://")) {
+      //   // Parse S3 path
+      //   const s3Path = file.url.replace("s3://", "").split("/");
+      //   const s3Folder = s3Path[0];
+      //   const s3Key = s3Path.slice(1).join("/");
 
-        // Get signed URL for S3 object
-        url = await getS3SignedUrl(
-          file.s3Key || s3Key,
-          file.s3Folder || s3Folder
-        );
-      } else {
-        // If we already have a URL (maybe from CloudFront anyway)
-        const baseUrl = props.isPreviewFile
-          ? import.meta.env.VITE_IMAGE_CLOUDFRONT
-          : import.meta.env.VITE_EBOOK_CLOUDFRONT;
-        url = file.url;
-      }
+      //   // get signed for
+      //   console.log("get signed url for", file.url);
+      //   // Get signed URL for S3 object
+      //   url = await getS3SignedUrl(file.url);
+      // } else {
+      //   // If we already have a URL (maybe from CloudFront anyway)
+      //   const baseUrl = props.isPreviewFile
+      //     ? import.meta.env.VITE_IMAGE_CLOUDFRONT
+      //     : import.meta.env.VITE_EBOOK_CLOUDFRONT;
+      //   url = file.url;
+      // }
 
+      url = await getS3SignedUrl(file.s3Key);
+
+      console.log(`signed url ${url}`);
       // Fetch the encrypted file
       const response = await fetch(url);
       if (!response.ok) {
@@ -584,6 +621,8 @@ const previewFile = async (file) => {
         type: extension === "pdf" ? "application/pdf" : "application/epub+zip",
       });
       const decryptedUrl = URL.createObjectURL(decryptedBlob);
+
+      console.log("decryptedUrl", decryptedUrl);
 
       if (extension === "epub" || file.name.includes(".epub")) {
         epubPreviewDialog.value = true;
