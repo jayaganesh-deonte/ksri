@@ -305,7 +305,7 @@ const getBookInfo = async () => {
     // A more descriptive text for the book.
     // Prioritize a dedicated description field if available, then details, then subtitle.
     const bookDescription =
-      book.longDescription || book.details || book.subtitle;
+      book.details + " " + book.subtitle + " " + book.keywords;
 
     const bookSchemaData = {
       "@context": "https://schema.org",
