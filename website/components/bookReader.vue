@@ -68,14 +68,14 @@ import { userStore } from "~/stores/UserStore";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import $toast from "~/utils/toast_notification";
+import { onBeforeUnmount, watch } from "vue";
 
 const store = userStore();
 
 let isPaymentUrlLoading = ref(false);
-
 let ebookUrl = ref("");
-
 let bookFormatType = ref("");
+let refreshInterval = ref(null);
 
 // props bookInfo
 const props = defineProps({
@@ -87,16 +87,101 @@ const props = defineProps({
 
 let isBookPurchased = ref(false);
 
-onMounted(async () => {
-  // check if user has already  purchased the book
-  const isPurchased = await store.checkIfBookIsBought(props.bookInfo.id);
+// Function to get the eBook URL
+const getEbookUrl = async () => {
+  try {
+    const response = await store.invokeLambdaAPI(
+      "GET",
+      `/ebookUrl/${props.bookInfo.id}`
+    );
 
+    // check status code
+    if (response.status === 200) {
+      // if url contains .pdf then set bookFormatType to pdf , if .epub set to epub
+      if (response.data.url.includes(".pdf")) {
+        bookFormatType.value = "pdf";
+      } else if (response.data.url.includes(".epub")) {
+        bookFormatType.value = "epub";
+      }
+      return response.data.url;
+    } else {
+      // show error message silently
+      console.log("Error fetching ebook URL:", response);
+    }
+  } catch (error) {
+    console.error("Error fetching ebook URL:", error);
+  }
+  return "";
+};
+
+// Setup URL refresh mechanism
+const setupUrlRefresh = () => {
+  // Clear any existing interval first
+  clearInterval(refreshInterval.value);
+
+  // Refresh URL every 4.5 minutes (270000ms)
+  // Using 4.5 minutes instead of 5 to ensure we refresh before expiration
+  refreshInterval.value = setInterval(async () => {
+    if (isBookPurchased.value) {
+      console.log("Refreshing eBook URL");
+      const url = await getEbookUrl();
+      if (url) {
+        ebookUrl.value = url;
+      }
+    }
+  }, 270000);
+};
+
+// Watch for visibility changes
+const handleVisibilityChange = () => {
+  if (document.visibilityState === "visible") {
+    // Page is visible, setup refresh and get URL immediately
+    if (isBookPurchased.value) {
+      setupUrlRefresh();
+      // Also refresh URL immediately when returning to the page
+      getEbookUrl().then((url) => {
+        if (url) ebookUrl.value = url;
+      });
+    }
+  } else {
+    // Page is hidden, clear interval to save resources
+    clearInterval(refreshInterval.value);
+  }
+};
+
+onMounted(async () => {
+  // Check if user has already purchased the book
+  const isPurchased = await store.checkIfBookIsBought(props.bookInfo.id);
   isBookPurchased.value = isPurchased.bought;
 
   if (isBookPurchased.value) {
     const url = await getEbookUrl();
     ebookUrl.value = url;
+
+    // Set up URL refresh mechanism
+    setupUrlRefresh();
+
+    // Add visibility change listener
+    document.addEventListener("visibilitychange", handleVisibilityChange);
   }
+});
+
+// Watch for changes in isBookPurchased
+watch(isBookPurchased, (newValue) => {
+  if (newValue) {
+    getEbookUrl().then((url) => {
+      if (url) ebookUrl.value = url;
+    });
+    setupUrlRefresh();
+  } else {
+    clearInterval(refreshInterval.value);
+  }
+});
+
+// Clean up when component is unmounted
+onBeforeUnmount(() => {
+  clearInterval(refreshInterval.value);
+  document.removeEventListener("visibilitychange", handleVisibilityChange);
 });
 
 const buyEbook = async () => {
@@ -107,14 +192,11 @@ const buyEbook = async () => {
 
     isPaymentUrlLoading.value = true;
 
-    // generate order id
-
     // checkIfAddressIsAvailable
     const isAddressAvailable = await store.checkIfAddressIsAvailable();
 
     if (!isAddressAvailable) {
       // show toast asking to update address
-
       $toast.error("Address details are not updated", {
         timeout: 5000,
         position: "top-right",
@@ -149,8 +231,6 @@ const buyEbook = async () => {
       order_id: uuidv4(),
     };
 
-    const runtimeConfig = useRuntimeConfig();
-
     const response = await store.invokeLambdaAPI(
       "POST",
       `/purchase/api/payments/initiatePayment`,
@@ -165,41 +245,11 @@ const buyEbook = async () => {
     console.log("paymentUrl", paymentUrl);
     // Redirect to the payment gateway
     window.location.href = paymentUrl;
-    // open in new tab
-
-    // window.open(paymentUrl, "_blank");
   } catch (error) {
     console.error("Error initiating payment:", error);
     // Handle error (e.g., show an error message to the user)
   } finally {
     isPaymentUrlLoading.value = false;
-  }
-};
-
-const getEbookUrl = async () => {
-  // make get call to /ebookUrl/${bookId}
-  const response = await store.invokeLambdaAPI(
-    "GET",
-    `/ebookUrl/${props.bookInfo.id}`
-  );
-
-  // handle response {url:url}
-  // check status code
-  if (response.status === 200) {
-    // if url contains .pdf then set bookFormatType to pdf , if .epub set to epub
-    if (response.data.url.includes(".pdf")) {
-      bookFormatType.value = "pdf";
-    } else if (response.data.url.includes(".epub")) {
-      bookFormatType.value = "epub";
-    }
-    return response.data.url;
-  } else {
-    // show error message
-    console.log("error", response);
-    $toast.error("Error fetching ebook url", {
-      timeout: 5000,
-      position: "top-right",
-    });
   }
 };
 </script>
