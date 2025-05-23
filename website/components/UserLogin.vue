@@ -35,6 +35,14 @@
           </v-btn>
         </template>
         <v-list>
+          <v-list-item class="text-center">
+            <v-list-item-title class="text-body-1 font-weight-bold">
+              {{ store.user.username }}
+            </v-list-item-title>
+          </v-list-item>
+
+          <v-divider></v-divider>
+
           <v-list-item>
             <nuxt-link to="/user" style="text-decoration: unset">
               <v-card>
@@ -105,7 +113,7 @@
         <v-list>
           <v-list-item class="text-center">
             <v-list-item-title class="text-body-1 font-weight-bold">
-              {{ getFirstLetter(store.user.username) }}
+              {{ store.user.username }}
             </v-list-item-title>
           </v-list-item>
 
