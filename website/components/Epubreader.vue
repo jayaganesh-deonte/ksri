@@ -25,30 +25,37 @@
             v-if="displayBookMark"
           >
             <template v-slot:activator="{ props: tooltipProps }">
-              <v-btn
-                icon
-                v-bind="tooltipProps"
-                @click="toggleBookmark"
-                class="mr-2"
-                :disabled="loading"
-              >
-                <v-icon>
-                  {{
-                    isCurrentLocationBookmarked
-                      ? "mdi-bookmark"
-                      : "mdi-bookmark-outline"
-                  }}
-                </v-icon>
-              </v-btn>
+              <div class="d-flex flex-column justify-center align-center mx-4">
+                <v-btn
+                  icon
+                  v-bind="tooltipProps"
+                  @click="toggleBookmark"
+                  class="mr-2"
+                  :disabled="loading"
+                >
+                  <v-icon>
+                    {{
+                      isCurrentLocationBookmarked
+                        ? "mdi-bookmark"
+                        : "mdi-bookmark-outline"
+                    }}
+                  </v-icon>
+                </v-btn>
+                <span class="text-subtitle-2 mt-n2"> Bookmark</span>
+              </div>
             </template>
           </v-tooltip>
 
           <!-- Bookmarks list button -->
-          <v-menu v-if="displayBookMark">
+          <v-menu v-if="displayBookMark" class="mx-8">
             <template v-slot:activator="{ props: menuProps }">
-              <v-btn icon v-bind="menuProps" class="mr-2" :disabled="loading">
-                <v-icon>mdi-bookmark-multiple</v-icon>
-              </v-btn>
+              <div class="d-flex flex-column justify-center align-center">
+                <v-btn icon v-bind="menuProps" class="mr-2" :disabled="loading">
+                  <v-icon>mdi-bookmark-multiple</v-icon>
+                </v-btn>
+
+                <span class="text-subtitle-2 mt-n2"> View All Bookmarks</span>
+              </div>
             </template>
             <v-card min-width="300" class="bookmarks-menu">
               <v-card-title class="d-flex justify-space-between">

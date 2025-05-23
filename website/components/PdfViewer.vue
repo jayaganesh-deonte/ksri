@@ -18,7 +18,7 @@
       :retain-focus="false"
     >
       <v-card class="pdf-reader-card">
-        <v-toolbar color="primary" density="compact">
+        <v-toolbar color="primary">
           <v-spacer></v-spacer>
 
           <!-- Bookmark current page button -->
@@ -28,24 +28,31 @@
             v-if="displayBookMark"
           >
             <template v-slot:activator="{ props: tooltipProps }">
-              <v-btn icon v-bind="tooltipProps" @click="toggleBookmark(page)">
-                <v-icon>
-                  {{
-                    isCurrentPageBookmarked
-                      ? "mdi-bookmark"
-                      : "mdi-bookmark-outline"
-                  }}
-                </v-icon>
-              </v-btn>
+              <div class="d-flex flex-column justify-center align-center mx-4">
+                <v-btn icon v-bind="tooltipProps" @click="toggleBookmark(page)">
+                  <v-icon>
+                    {{
+                      isCurrentPageBookmarked
+                        ? "mdi-bookmark"
+                        : "mdi-bookmark-outline"
+                    }}
+                  </v-icon>
+                </v-btn>
+                <span class="text-subtitle-2 mt-n2"> Bookmark</span>
+              </div>
             </template>
           </v-tooltip>
 
           <!-- Bookmarks list button -->
           <v-menu v-if="displayBookMark">
             <template v-slot:activator="{ props: menuProps }">
-              <v-btn icon v-bind="menuProps" class="ml-2">
-                <v-icon>mdi-bookmark-multiple</v-icon>
-              </v-btn>
+              <div class="d-flex flex-column justify-center align-center">
+                <v-btn icon v-bind="menuProps" class="ml-2">
+                  <v-icon>mdi-bookmark-multiple</v-icon>
+                </v-btn>
+
+                <span class="text-subtitle-2 mt-n2"> View All Bookmarks</span>
+              </div>
             </template>
             <v-card min-width="300" class="bookmarks-menu">
               <v-card-title class="d-flex justify-space-between">
