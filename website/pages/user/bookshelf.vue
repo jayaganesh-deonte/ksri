@@ -69,44 +69,14 @@
         md="4"
         lg="3"
       >
-        <v-card height="100%" class="d-flex flex-column">
-          <v-img
-            :src="book.bookDetails.imageUrls || '/img/ksri-logo.png'"
-            height="200"
-            fit
-          ></v-img>
-
-          <div class="text-h6 ma-2">{{ book.bookName }}</div>
-
-          <div>
-            <p class="text-caption text-grey ma-2">
-              Purchased on {{ formatDate(book.paymentDate) }}
-            </p>
-            <p class="text-caption text-grey ma-2">
-              Author: {{ book.bookDetails.author }}
-            </p>
-          </div>
-
-          <div class="ma-2 mt-auto">
-            <!-- <v-btn
-              variant="tonal"
-              color="primary"
-              block
-              @click="readBook(book)"
-            >
-              Read Book
-              <v-icon icon="mdi-book-open-page-variant" class="ml-2"></v-icon>
-            </v-btn> -->
-
-            <bookReader :book-info="book" />
-          </div>
-        </v-card>
+        <bookShelfCard :book="book" />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script setup>
+import bookShelfCard from "../../components/bookShelfCard.vue";
 definePageMeta({
   middleware: ["authenticated"],
 });

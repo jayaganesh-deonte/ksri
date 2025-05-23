@@ -178,6 +178,12 @@
               <!-- {{ bookInfo.details }} -->
               <div v-html="bookInfo.details"></div>
             </div>
+
+            <!-- keywords -->
+            <div>
+              <div class="text-h6 text-primary font-weight-bold">Keywords:</div>
+              <div class="text-body-1">{{ bookInfo.keywords }}</div>
+            </div>
           </v-col>
         </v-row>
       </div>
@@ -291,6 +297,7 @@ const getBookInfo = async () => {
     bookInfo.ebookPrice = book.ebookPrice;
     bookInfo.previewEbookUrl = book.previewEbookUrl;
     bookInfo.ebookUrl = book.ebookUrl;
+    bookInfo.keywords = book.keywords;
 
     bookInfo.publication = book.publication; // Publisher name
     bookInfo.author = book.author; // Author name
