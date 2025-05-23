@@ -12,6 +12,7 @@
           variant="flat"
           color="secondary"
           class="text-white font-weight-bold"
+          size="small"
         >
           <v-icon start>mdi-login</v-icon>
           Login
@@ -27,9 +28,10 @@
             color="secondary"
             class="text-white font-weight-bold"
             v-bind="props"
+            icon
           >
-            <v-icon start>mdi-account</v-icon>
-            {{ store.user.username }}
+            <!-- <v-icon start>mdi-account</v-icon> -->
+            {{ getFirstLetter(store.user.username) }}
           </v-btn>
         </template>
         <v-list>
@@ -103,7 +105,7 @@
         <v-list>
           <v-list-item class="text-center">
             <v-list-item-title class="text-body-1 font-weight-bold">
-              {{ store.user.username }}
+              {{ getFirstLetter(store.user.username) }}
             </v-list-item-title>
           </v-list-item>
 
@@ -160,6 +162,13 @@ const signOutMethod = async () => {
   } catch (error) {
     console.error("Error signing out: ", error);
   }
+};
+
+const getFirstLetter = (username) => {
+  if (username && username.length > 0) {
+    return username.charAt(0).toUpperCase();
+  }
+  return "";
 };
 </script>
 

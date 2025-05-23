@@ -145,7 +145,7 @@
     "metadata": {
       "updated_by": "contactus@deonte.in",
       "created_at": "2025-04-08T07:06:33.893Z",
-      "updated_at": "2025-05-16T06:51:59.417Z",
+      "updated_at": "2025-05-16T10:00:30.672Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. S. Annapurna",
@@ -157,9 +157,9 @@
     "ebookUrl": [
       {
         "s3Folder": "ebook",
-        "s3Key": "files/01JVBXTA5YT3W57PRSHFWGW66Q.pdf",
+        "s3Key": "files/01JVC8KEKD8TEKBBQ95VEZWV23.epub",
         "encrypted": true,
-        "url": "s3://ksri-prod-ebook-store/files/01JVBXTA5YT3W57PRSHFWGW66Q.pdf"
+        "url": "s3://ksri-prod-ebook-store/files/01JVC8KEKD8TEKBBQ95VEZWV23.epub"
       }
     ],
     "previewEbookUrl": [
@@ -632,21 +632,40 @@
     "imageUrls": [
       "images/Surgical Instruments.JPG"
     ],
-    "details": "",
+    "details": "<p>From Vedic time, references to  different surgeries have been recorded in our texts, especially in the Ayurvedic texts by Susruta, Charaka and Vagbhata. This book gives a glimpse of various surgical instruments used hundreds of years ago ( with illustrations) by our ancients.<br></p>",
     "id": "01JGXMDY4ZKEX6NHJ918X75VHK",
     "publication": "KSRI",
     "keywords": "Surgical Instruments, Surgry, Ancient Indian surgery, Charaka, Sushruta",
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "contactus@deonte.in",
       "created_at": "2025-01-06T11:01:34.496Z",
-      "updated_at": "2025-01-06T11:01:34.496Z",
+      "updated_at": "2025-05-16T10:16:31.236Z",
       "created_by": "demo"
     },
     "author": "Dr. S. Gopalan",
     "yearOfPublication": "2023-01-01",
-    "itemPublishStatus": "PUBLISHED"
+    "printStatus": "Printed",
+    "itemPublishStatus": "PUBLISHED",
+    "isEbookAvailable": "Yes",
+    "ebookPrice": "50",
+    "ebookUrl": [
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JVC9EZ2CEYNFN0VAQYWVAAER.epub",
+        "encrypted": true,
+        "url": "s3://ksri-prod-ebook-store/files/01JVC9EZ2CEYNFN0VAQYWVAAER.epub"
+      }
+    ],
+    "previewEbookUrl": [
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JVC9FCTVM1EKGYMJ99MSV9ZS.epub",
+        "encrypted": false,
+        "url": "files/01JVC9FCTVM1EKGYMJ99MSV9ZS.epub"
+      }
+    ]
   },
   {
     "title": "VAḌAVĀGNI ",

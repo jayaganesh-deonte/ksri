@@ -70,10 +70,14 @@
           rounded="0"
           class="ma-0 pa-0"
           color="transparent"
-          width="20vw"
+          width="15vw"
         >
           <search />
         </v-card>
+        <!-- Add login button -->
+        <div class="d-flex justify-center align-center">
+          <UserLogin />
+        </div>
       </div>
       <div class="d-flex mx-auto mt-0">
         <!-- add menu Options -->
@@ -174,11 +178,6 @@
               </v-menu>
             </div>
           </v-card>
-        </div>
-
-        <!-- Add login button -->
-        <div class="d-flex justify-center align-center">
-          <UserLogin />
         </div>
       </div>
     </v-card>
