@@ -6,14 +6,7 @@
       rounded="0"
       elevation="0"
       class="d-flex flex-column"
-      style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        height: 210px;
-      "
+      style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000"
     >
       <v-card
         color="primary"
@@ -79,7 +72,7 @@
           <UserLogin />
         </div>
       </div>
-      <div class="d-flex mx-auto mt-0">
+      <div class="d-flex mx-auto mt-0 flex-wrap">
         <!-- add menu Options -->
         <div v-for="option in menuOptions" :key="option.name">
           <v-card
@@ -90,7 +83,7 @@
             elevation="0"
             height="65"
             color="transparent"
-            class="d-flex justify-center align-center mx-2 pa-2 appBarMenuItem"
+            class="d-flex justify-center align-center mx-1 pa-1 appBarMenuItem"
             @mouseover="
               option.isActive = true;
               option.showChildren = true;
@@ -98,7 +91,7 @@
             @mouseleave="option.isActive = false"
             @click="navigateWithOutChild(option)"
           >
-            <div class="ma-2 text-subtitle-1 appBarMenuItem">
+            <div class="ma-1 text-subtitle-1 appBarMenuItem">
               <nuxt-link
                 :to="option.path"
                 style="text-decoration: unset"
@@ -182,7 +175,10 @@
       </div>
     </v-card>
     <!-- Spacer to prevent content from being hidden behind fixed app bar -->
-    <div class="fixed-app-bar-spacer" style="height: 210px"></div>
+    <div
+      class="fixed-app-bar-spacer"
+      :style="{ height: appBarHeight + 'px' }"
+    ></div>
   </div>
   <span v-else>
     <!-- nav drawer -->
@@ -299,6 +295,26 @@
 </template>
 
 <script setup>
+let appBarHeight = ref(210);
+
+const calculateAppBarHeight = () => {
+  const appBarElement = document.getElementById("app-bar");
+  if (appBarElement) {
+    appBarHeight.value = appBarElement.offsetHeight;
+  }
+};
+
+onMounted(() => {
+  nextTick(() => {
+    calculateAppBarHeight();
+  });
+  window.addEventListener("resize", calculateAppBarHeight);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", calculateAppBarHeight);
+});
+
 const menuOptions = reactive([
   {
     name: "Home",
@@ -418,6 +434,12 @@ const menuOptions = reactive([
   {
     name: "Publications",
     path: "/ksri-publications",
+    description:
+      "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.",
+  },
+  {
+    name: "eBooks",
+    path: "/ebooks",
     description:
       "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.",
   },
