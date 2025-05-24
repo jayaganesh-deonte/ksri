@@ -29,6 +29,8 @@
             class="text-white font-weight-bold"
             v-bind="props"
             icon
+            density="comfortable"
+            size="small"
           >
             <!-- <v-icon start>mdi-account</v-icon> -->
             {{ getFirstLetter(store.user.username) }}
@@ -166,7 +168,7 @@ const signOutMethod = async () => {
   try {
     await signOut();
     store.signOut();
-    // navigateTo("/");
+    navigateTo("/");
   } catch (error) {
     console.error("Error signing out: ", error);
   }
