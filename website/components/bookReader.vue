@@ -7,7 +7,7 @@
           rounded="pill"
           variant="flat"
           color="secondary"
-          @click="$router.push('/login')"
+          @click="loginToBuy"
         >
           Login to buy book
         </v-btn>
@@ -86,6 +86,14 @@ const props = defineProps({
 });
 
 let isBookPurchased = ref(false);
+
+const loginToBuy = async () => {
+  // save current route to local storage
+  localStorage.setItem("redirect", window.location.pathname);
+
+  // navigate to /login
+  navigateTo("/login");
+};
 
 // Function to get the eBook URL
 const getEbookUrl = async () => {
