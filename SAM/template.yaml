@@ -1591,6 +1591,12 @@ Resources:
         CaseSensitive: false
       VerificationMessageTemplate:
         DefaultEmailOption: "CONFIRM_WITH_CODE"
+      EmailVerificationMessage: |
+        Hello Sir/Ma'am,
+        Your verification code to sign up to KSRI Website is {####}.
+        Thanks!
+      EmailVerificationSubject: KSRI Signup Verification Code
+      SmsVerificationMessage: Hello Sir/Ma'am, Your verification code to sign up to KSRI Website is {####}. Thanks!
 
   CognitoUserPoolDomainForWebsite:
     Type: AWS::Cognito::UserPoolDomain
