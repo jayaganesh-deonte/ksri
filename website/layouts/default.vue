@@ -128,25 +128,25 @@ const getUniqueUserHash = async () => {
 };
 
 onMounted(async () => {
-  initializeFaro({
-    url: "https://faro-collector-prod-ap-south-1.grafana.net/collect/6d657c7339fbce11beb53cbcc239e65d",
-    app: {
-      name: "KSRI web",
-      version: "1.0.0",
-      environment: "production",
-    },
-    sessionTracking: {
-      samplingRate: 1,
-      persistent: true,
-    },
-    instrumentations: [
-      // Mandatory, omits default instrumentations otherwise.
-      ...getWebInstrumentations(),
+  // initializeFaro({
+  //   url: "https://faro-collector-prod-ap-south-1.grafana.net/collect/6d657c7339fbce11beb53cbcc239e65d",
+  //   app: {
+  //     name: "KSRI web",
+  //     version: "1.0.0",
+  //     environment: "production",
+  //   },
+  //   sessionTracking: {
+  //     samplingRate: 1,
+  //     persistent: true,
+  //   },
+  //   instrumentations: [
+  //     // Mandatory, omits default instrumentations otherwise.
+  //     ...getWebInstrumentations(),
 
-      // Tracing package to get end-to-end visibility for HTTP requests.
-      new TracingInstrumentation(),
-    ],
-  });
+  //     // Tracing package to get end-to-end visibility for HTTP requests.
+  //     new TracingInstrumentation(),
+  //   ],
+  // });
 
   // get data from actions
   await store.getAllDataFromApi();

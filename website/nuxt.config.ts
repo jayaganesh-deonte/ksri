@@ -12,13 +12,18 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
   devServer: {
-    port: 8080,
+    port: 8081,
   },
   vite: {
     define: {
       "process.env.DEBUG": false,
     },
   },
+
+  // ssr: false,
+  // nitro: {
+  //   preset: "static", // Specify the static preset for full static generation
+  // },
   runtimeConfig: {
     WORKING_KEY: process.env.WORKING_KEY,
     ACCESS_CODE: process.env.ACCESS_CODE,
@@ -26,11 +31,18 @@ export default defineNuxtConfig({
     CC_AVENUE_DOMAIN: process.env.CC_AVENUE_DOMAIN,
     REDIRECT_URL: process.env.REDIRECT_URL,
     public: {
-      API_URL: "https://ksri.in/public",
+      REGION: "ap-south-1",
+      API_URL: "https://preview.ksri.in/public",
+      PURCHASE_API_URL: "https://preview.ksri.in/e-v1",
+      // PURCHASE_API_URL: "http://localhost:3002/e-v1",
+      LAMBDA_URL_DOMAIN:
+        "v3ed4tsg4nwps7kpcr2pmsnedu0yujpz.lambda-url.ap-south-1.on.aws",
+      CLOUDFRONT_DOMAIN: "preview.ksri.in",
+      // CLOUDFRONT_DOMAIN: "localhost:3002",
       // API_URL: "http://localhost:3001/public",
       CONTACT_US_URL:
-        "https://4fhxozuh262x5cgohmdstdvmfm0rvmef.lambda-url.ap-south-1.on.aws/",
-      ASSET_DOMAIN: "https://d1tkn0t59vli2s.cloudfront.net/",
+        "https://k6k5z57jue2xojyecp4dvmab640dxzeb.lambda-url.ap-south-1.on.aws/",
+      ASSET_DOMAIN: "https://d3dx8df9hmf5nm.cloudfront.net/",
       WORKING_KEY: process.env.WORKING_KEY,
       ACCESS_CODE: process.env.ACCESS_CODE,
       MERCHANT_ID: process.env.MERCHANT_ID,

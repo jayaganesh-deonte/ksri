@@ -209,6 +209,9 @@ const filterBooksBasedOnPublication = (publicationName) => {
         .includes(removeDiacritics(query)) ||
       removeDiacritics(book.subtitle)
         ?.toLowerCase()
+        .includes(removeDiacritics(query)) ||
+      removeDiacritics(book.keywords)
+        ?.toLowerCase()
         .includes(removeDiacritics(query))
   );
 };

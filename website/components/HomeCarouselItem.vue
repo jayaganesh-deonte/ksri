@@ -8,6 +8,7 @@
         rounded="0"
         elevation="0"
         width="100vw"
+        v-if="isTextPresent(titleText) || isTextPresent(descriptionText)"
       >
         <v-card
           color="rgb(203, 179, 117,0.8)"
@@ -129,6 +130,9 @@ export default {
       } else {
         this.ksriLogo = this.logoPrimary;
       }
+    },
+    isTextPresent(text) {
+      return text && text.trim() !== "";
     },
   },
 };

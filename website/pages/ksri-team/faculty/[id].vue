@@ -304,7 +304,7 @@
                 selectedFaculty.articlesPublished.length > 0
               "
             >
-              <section-title title="Articles Published" />
+              <section-title title="Articles/Research papers published" />
               <!-- simple table  -->
               <div
                 class="ma-8 d-flex flex-column align-center"
