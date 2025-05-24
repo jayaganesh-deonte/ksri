@@ -1624,10 +1624,15 @@ Resources:
       VerificationMessageTemplate:
         DefaultEmailOption: "CONFIRM_WITH_CODE"
       EmailVerificationMessage: |
-        Hello Sir/Ma'am,
-        Your verification code to sign up to KSRI Website is {####}.
-        Thanks!
-      EmailVerificationSubject: KSRI Signup Verification Code
+        Sir / Madam
+
+        We received your request for a confirmation code to create KSRI e-book account login.
+
+        Your verification code is: {####}
+
+        Thanks
+        The KSRI Team
+      EmailVerificationSubject: KSRI E-book Login Verification Code
       SmsVerificationMessage: Hello Sir/Ma'am, Your verification code to sign up to KSRI Website is {####}. Thanks!
 
   CognitoUserPoolDomainForWebsite:

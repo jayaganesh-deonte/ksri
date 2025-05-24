@@ -182,18 +182,22 @@ for (const element of additionalPublications) {
 
   // sort additionalPublications by yearOfPublication
 
-  additionalPublicationBooks[additionalPublication].sort((a, b) => {
-    // Handle empty or missing yearOfPublication
-    if (!a.yearOfPublication) return 1;
-    if (!b.yearOfPublication) return -1;
+  additionalPublicationBooks[additionalPublication]
+    .sort((a, b) => {
+      // Handle empty or missing yearOfPublication
+      if (!a.yearOfPublication) return 1;
+      if (!b.yearOfPublication) return -1;
 
-    // Compare dates using Date object comparison
-    const dateA = new Date(a.yearOfPublication);
-    const dateB = new Date(b.yearOfPublication);
+      // Compare dates using Date object comparison
+      const dateA = new Date(a.yearOfPublication);
+      const dateB = new Date(b.yearOfPublication);
 
-    // Compare timestamps to sort from newest to oldest
-    return dateB.getTime() - dateA.getTime();
-  });
+      // Compare timestamps to sort from newest to oldest
+      return dateB.getTime() - dateA.getTime();
+    })
+
+    // filter book where "isEbookAvailable": "Yes"
+    .fililter((book) => book.isEbookAvailable === "Yes");
 }
 
 const ksriBooks = booksData.body;
@@ -259,20 +263,17 @@ const resetSelectedBook = () => {
   selectedBook.price = "";
   selectedBook.imageUrls = [];
   selectedBook.details = "";
-
-  Object.assign(selectedBook, {});
 };
 
 // resetSelectedBook();
 
 const onViewDetails = (book) => {
-  // selectedBook.name = book.name;
-  // selectedBook.subtitle = book.subtitle;
-  // selectedBook.price = book.price;
-  // selectedBook.imageUrls = book.imageUrls;
-  // selectedBook.details = book.details;
+  selectedBook.name = book.name;
+  selectedBook.subtitle = book.subtitle;
+  selectedBook.price = book.price;
+  selectedBook.imageUrls = book.imageUrls;
+  selectedBook.details = book.details;
 
-  Object.assign(selectedBook, book);
   showSelectedBookDetails.value = true;
 };
 

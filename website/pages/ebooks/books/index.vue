@@ -10,9 +10,40 @@
     </div>
     <div class="ma-6" v-if="!isLoading">
       <div>
-        <section-title :title="selectedAdditionalPublication" />
+        <section-title title="BOOKS/MONOGRAPHS" />
+        <div class="sectionSubtitle2">
+          Books and Monographs are being published periodically as an endeavour
+          to promote Sanskrit and Indological Studies. They cover a wide range
+          of subjects which include Vedic Studies, Yoga, Literature, Language,
+          Grammar, Philosophy, Religion, Mathematics, Astronomy, Astrology,
+          Medical Science, Ayurveda, Arthasastra, Purva Mimamsa, Advaita, Nyaya,
+          Vaishnavism, Saivism, Arts, Science, etc. Around 100 Books and
+          Monographs including critical editions of hitherto unpublished
+          manuscripts on different aspects of Sanskrit and Indology have also
+          been published so far.
+        </div>
       </div>
 
+      <!-- selectedPublicationToDisplay -->
+      <!-- <div class="text-center ma-4">
+        <v-btn
+          rounded="pill"
+          class="ma-4"
+          v-for="publication in publicationNames"
+          :key="publication"
+          :color="
+            publication === selectedPublicationToDisplay
+              ? 'primary'
+              : 'secondary'
+          "
+          @click="selectedPublicationToDisplay = publication"
+          :variant="
+            publication === selectedPublicationToDisplay ? 'flat' : 'outlined'
+          "
+        >
+          {{ publication }}
+        </v-btn>
+      </div> -->
       <!-- add search based on book name (title), author name(author) -->
 
       <div v-if="!showSelectedBookDetails">
@@ -29,28 +60,27 @@
               variant="outlined"
               hide-details
               bg-color="white"
+              color="white"
               rounded="pill"
             ></v-text-field>
           </v-col>
           <v-col cols="12" md="4" data-aos="fade-up"> </v-col>
         </v-row>
+        <div class="d-flex justify-center align-center">
+          <div></div>
+        </div>
+
         <!-- book catalogue -->
         <div class="ma-4">
           <v-row>
             <v-col
-              v-for="book in filterBooksBasedOnPublication(
-                selectedAdditionalPublication
-              )"
+              v-for="book in filterBooksBasedOnPublication('KSRI')"
               :key="book.title"
               cols="12"
               md="4"
               data-aos="fade-up"
             >
-              <book-card
-                :book="book"
-                @viewDetails="onViewDetails"
-                :isAdditionalPublicationData="true"
-              />
+              <book-card :book="book" @viewDetails="onViewDetails" />
             </v-col>
           </v-row>
         </div>
@@ -114,12 +144,6 @@
 </template>
 
 <script setup>
-// get id from url
-const route = useRoute();
-const id = route.params.id;
-
-const selectedAdditionalPublication = ref(id);
-
 const description =
   "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.";
 
@@ -139,93 +163,36 @@ const searchQuery = ref("");
 const selectedBook = reactive({});
 const showSelectedBookDetails = ref(false);
 
-let additionalPublicationBooks = {};
-
 const booksData = await queryContent("publications", "books").findOne();
 
-// get all additionalpublications
-const additionalPublicationsData = await queryContent(
-  "publications",
-  "additionalpublications"
-).findOne();
-const additionalPublications = additionalPublicationsData.body;
+let ksriBooks = booksData.body;
 
-// for additionalPublications query content
-for (const element of additionalPublications) {
-  const additionalPublication = element;
+// filter ksriBooks where "isEbookAvailable": "Yes"
+ksriBooks = ksriBooks.filter((book) => book.isEbookAvailable === "Yes");
 
-  const publicationNameForFile =
-    additionalPublication.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() +
-    "journals";
-
-  // query content
-  const additionalPublicationJournalsData = await queryContent(
-    "publications",
-    publicationNameForFile
-  ).findOne();
-
-  // books
-  const publicationNameForBooks = additionalPublication
-    .replace(/[^a-zA-Z0-9]/g, "")
-    .toLowerCase();
-
-  // query content
-  const additionalPublicationBooksData = await queryContent(
-    "publications",
-    publicationNameForBooks
-  ).findOne();
-
-  additionalPublicationBooks[additionalPublication] = [
-    ...additionalPublicationJournalsData.body,
-    ...additionalPublicationBooksData.body,
-  ];
-
-  // sort additionalPublications by yearOfPublication
-
-  additionalPublicationBooks[additionalPublication].sort((a, b) => {
-    // Handle empty or missing yearOfPublication
-    if (!a.yearOfPublication) return 1;
-    if (!b.yearOfPublication) return -1;
-
-    // Compare dates using Date object comparison
-    const dateA = new Date(a.yearOfPublication);
-    const dateB = new Date(b.yearOfPublication);
-
-    // Compare timestamps to sort from newest to oldest
-    return dateB.getTime() - dateA.getTime();
-  });
-}
-
-const ksriBooks = booksData.body;
-
-additionalPublicationBooks["KSRI"] = ksriBooks;
-
-const books = computed((publicationName) => {
-  return additionalPublicationBooks[publicationName];
-});
 const filterBooksBasedOnPublication = (publicationName) => {
-  let books = additionalPublicationBooks[publicationName];
+  // sort allBooks based on availability first, then year of publication
+  let books = ksriBooks;
 
-  // Sort books by availability first (Yes comes before No)
-  // books.sort((a, b) => {
-  //   // First sort by availability (Yes comes before No)
-  //   if (a.available !== b.available) {
-  //     return a.available === "Yes" ? -1 : 1;
-  //   }
+  books.sort((a, b) => {
+    // First sort by availability (Yes comes before No)
+    if (a.available !== b.available) {
+      return a.available === "Yes" ? -1 : 1;
+    }
 
-  //   // // Then sort by year of publication (most recent first)
-  //   // const yearA = a.yearOfPublication?.toString().trim();
-  //   // const yearB = b.yearOfPublication?.toString().trim();
-  //   // if (yearA && yearB) {
-  //   //   return yearA < yearB ? 1 : -1;
-  //   // } else if (yearA) {
-  //   //   return -1;
-  //   // } else if (yearB) {
-  //   //   return 1;
-  //   // } else {
-  //   //   return 0;
-  //   // }
-  // });
+    // Then sort by year of publication (most recent first)
+    const yearA = a.yearOfPublication.trim();
+    const yearB = b.yearOfPublication.trim();
+    if (yearA && yearB) {
+      return yearA < yearB ? 1 : -1;
+    } else if (yearA) {
+      return -1;
+    } else if (yearB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
 
   const query = searchQuery.value.toLowerCase();
 
@@ -251,6 +218,7 @@ const filterBooksBasedOnPublication = (publicationName) => {
         .includes(removeDiacritics(query))
   );
 };
+
 const resetSelectedBook = () => {
   showSelectedBookDetails.value = false;
 
@@ -259,26 +227,23 @@ const resetSelectedBook = () => {
   selectedBook.price = "";
   selectedBook.imageUrls = [];
   selectedBook.details = "";
-
-  Object.assign(selectedBook, {});
 };
 
 // resetSelectedBook();
 
 const onViewDetails = (book) => {
-  // selectedBook.name = book.name;
-  // selectedBook.subtitle = book.subtitle;
-  // selectedBook.price = book.price;
-  // selectedBook.imageUrls = book.imageUrls;
-  // selectedBook.details = book.details;
+  selectedBook.name = book.name;
+  selectedBook.subtitle = book.subtitle;
+  selectedBook.price = book.price;
+  selectedBook.imageUrls = book.imageUrls;
+  selectedBook.details = book.details;
 
-  Object.assign(selectedBook, book);
   showSelectedBookDetails.value = true;
 };
 
 const navigateToBookCatalogue = () => {
   resetSelectedBook();
-  navigateTo("/ksri-publications/");
+  navigateTo("/ksri-publications/books");
 };
 
 // scroll to top on selectedbook details

@@ -13,14 +13,33 @@
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "contactus@deonte.in",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-03-24T07:27:40.268Z",
+      "updated_at": "2025-05-24T13:17:24.305Z",
       "created_by": "admin"
     },
     "author": "",
     "yearOfPublication": "2008-01-01",
-    "itemPublishStatus": "PUBLISHED"
+    "printStatus": "Printed",
+    "itemPublishStatus": "PUBLISHED",
+    "isEbookAvailable": "Yes",
+    "ebookPrice": "20",
+    "ebookUrl": [
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JW171CY48ZEPCHR7RQF1JVMZ.pdf",
+        "encrypted": true,
+        "url": "s3://ksri-prod-ebook-store/files/01JW171CY48ZEPCHR7RQF1JVMZ.pdf"
+      }
+    ],
+    "previewEbookUrl": [
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JW171HFWPVN1AZ94B1EHXX9J.pdf",
+        "encrypted": false,
+        "url": "files/01JW171HFWPVN1AZ94B1EHXX9J.pdf"
+      }
+    ]
   },
   {
     "title": "Rahasyatrayasara of Sri Vedanta Desika with English translation by Sri N. Raghunathan, I.A.S. (Former Chief Secretary of Maharashtra)",
@@ -822,7 +841,25 @@
     },
     "author": "",
     "yearOfPublication": "2025-03-01",
-    "itemPublishStatus": "PUBLISHED"
+    "itemPublishStatus": "PUBLISHED",
+    "isEbookAvailable": "Yes",
+    "ebookPrice": "20",
+    "ebookUrl": [
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JW171CY48ZEPCHR7RQF1JVMZ.pdf",
+        "encrypted": true,
+        "url": "s3://ksri-prod-ebook-store/files/01JW171CY48ZEPCHR7RQF1JVMZ.pdf"
+      }
+    ],
+    "previewEbookUrl": [
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JW171HFWPVN1AZ94B1EHXX9J.pdf",
+        "encrypted": false,
+        "url": "files/01JW171HFWPVN1AZ94B1EHXX9J.pdf"
+      }
+    ]
   },
   {
     "title": "A History of The Saṁskr̥ta Literature",
