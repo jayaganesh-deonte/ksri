@@ -1420,14 +1420,46 @@ Resources:
         #     StringAttributeConstraints:
         #       MinLength: "0"
         #       MaxLength: "2048"
-        #   - Name: "address"
-        #     AttributeDataType: "String"
-        #     DeveloperOnlyAttribute: false
-        #     Mutable: true
-        #     Required: false
-        #     StringAttributeConstraints:
-        #       MinLength: "0"
-        #       MaxLength: "2048"
+        - Name: "address"
+          AttributeDataType: "String"
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Required: false
+          StringAttributeConstraints:
+            MinLength: "0"
+            MaxLength: "2048"
+        - Name: "city"
+          AttributeDataType: "String"
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Required: false
+          StringAttributeConstraints:
+            MinLength: "0"
+            MaxLength: "2048"
+        - Name: "state"
+          AttributeDataType: "String"
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Required: false
+          StringAttributeConstraints:
+            MinLength: "0"
+            MaxLength: "2048"
+        - Name: "PostalCode"
+          AttributeDataType: "String"
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Required: false
+          StringAttributeConstraints:
+            MinLength: "0"
+            MaxLength: "2048"
+        - Name: "Country"
+          AttributeDataType: "Number"
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Required: false
+          StringAttributeConstraints:
+            MinLength: "0"
+            MaxLength: "2048"
         #   - Name: "birthdate"
         #     AttributeDataType: "String"
         #     DeveloperOnlyAttribute: false
@@ -1489,14 +1521,14 @@ Resources:
         #     StringAttributeConstraints:
         #       MinLength: "1"
         #       MaxLength: "2048"
-        #   - Name: "phone_number"
-        #     AttributeDataType: "String"
-        #     DeveloperOnlyAttribute: false
-        #     Mutable: true
-        #     Required: false
-        #     StringAttributeConstraints:
-        #       MinLength: "0"
-        #       MaxLength: "2048"
+        # - Name: "phone_number"
+        #   AttributeDataType: "String"
+        #   DeveloperOnlyAttribute: false
+        #   Mutable: true
+        #   Required: false
+        #   StringAttributeConstraints:
+        #     MinLength: "0"
+        #     MaxLength: "2048"
         #   - Name: "phone_number_verified"
         #     AttributeDataType: "Boolean"
         #     DeveloperOnlyAttribute: false

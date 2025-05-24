@@ -206,15 +206,17 @@
                 </v-btn>
 
                 <v-text-field
-                  v-model="pageInput"
+                  v-model="pageInputValue"
                   hide-details
                   variant="outlined"
                   type="number"
                   density="compact"
                   class="page-input mx-2"
                   style="max-width: 70px"
-                  @change="goToPage"
+                  @blur="goToPage"
                   @keyup.enter="goToPage"
+                  :min="1"
+                  :max="pages"
                 ></v-text-field>
 
                 <span class="page-info mx-2">of {{ pages }}</span>
@@ -323,14 +325,14 @@ const editingBookmark = ref(null);
 const pdfSrc = shallowRef(null);
 const pdfLoaded = ref(false);
 const refreshKey = ref(0);
+const pageInputValue = ref(1);
 
 // Create PDF document with usePDF
 const { pdf: decryptedPdf, pages } = usePDF(pdfSrc);
 
-// Computed
-const pageInput = computed({
-  get: () => page.value,
-  set: (val) => val, // Only set in goToPage method
+// Watch page changes to update input field
+watch(page, (newPage) => {
+  pageInputValue.value = newPage;
 });
 
 // Check if current page is bookmarked
@@ -673,6 +675,7 @@ const openPdfDialog = async () => {
   dialogVisible.value = true;
   // Reset state when opening
   page.value = 1;
+  pageInputValue.value = 1;
   isLoaded.value = false;
   pdfLoaded.value = false;
   refreshKey.value++; // Force re-render of the VuePDF component
@@ -688,12 +691,14 @@ const openPdfDialog = async () => {
   }
 };
 
+// Fixed goToPage method
 const goToPage = () => {
-  const newPage = parseInt(pageInput.value);
-  if (!isNaN(newPage) && newPage > 0 && newPage <= pages.value) {
+  const newPage = parseInt(pageInputValue.value);
+  if (!isNaN(newPage) && newPage >= 1 && newPage <= pages.value) {
     page.value = newPage;
   } else {
-    pageInput.value = page.value;
+    // Reset to current page if invalid input
+    pageInputValue.value = page.value;
   }
 };
 
@@ -765,14 +770,15 @@ onUnmounted(() => {
 }
 
 .pdf-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex: 1;
   background-color: #f5f5f5;
   position: relative;
-  padding: 16px 0;
+  padding: 16px;
   overflow: auto;
+  /* Fixed: Changed from center alignment to flex-start for proper scrolling */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   /* Added to prevent context menu */
   user-select: none;
   -webkit-user-select: none;
@@ -794,6 +800,8 @@ onUnmounted(() => {
   max-width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease;
+  /* Ensure PDF content can be scrolled to top when zoomed */
+  margin-top: 0;
 }
 
 .pdf-controls {
