@@ -18,6 +18,81 @@
       <v-toolbar dark color="primary">
         <div class="d-flex align-center w-100">
           <v-spacer />
+
+          <!-- Zoom Controls Menu -->
+          <v-menu
+            class="mx-4"
+            :close-on-content-click="false"
+            persistent
+            v-model="zoomMenuOpen"
+          >
+            <template v-slot:activator="{ props }">
+              <div class="d-flex flex-column justify-center align-center">
+                <v-btn icon v-bind="props" :disabled="loading" variant="text">
+                  <v-icon>mdi-magnify-plus</v-icon>
+                </v-btn>
+                <span class="mt-n2">zoom </span>
+              </div>
+            </template>
+            <v-card min-width="200" class="zoom-menu">
+              <v-card-text class="pa-3">
+                <div class="d-flex align-center justify-space-between">
+                  <v-btn
+                    size="small"
+                    variant="outlined"
+                    @click.stop="resetZoom"
+                    :disabled="loading || size === 100"
+                    density="compact"
+                  >
+                    Reset
+                  </v-btn>
+
+                  <v-btn
+                    icon
+                    size="small"
+                    @click="zoomMenuOpen = false"
+                    variant="text"
+                  >
+                    <v-icon size="small">mdi-close</v-icon>
+                  </v-btn>
+                </div>
+                <div class="d-flex align-center justify-center">
+                  <v-btn
+                    icon
+                    variant="text"
+                    @click.stop="zoomOut"
+                    :disabled="loading || size <= 50"
+                    class="mr-2"
+                  >
+                    <v-icon size="small">mdi-magnify-minus</v-icon>
+                  </v-btn>
+
+                  <div
+                    class="zoom-display mx-3 text-center"
+                    style="min-width: 60px"
+                  >
+                    <span class="text-body-2">{{ size }}%</span>
+                  </div>
+
+                  <v-btn
+                    icon
+                    variant="text"
+                    @click.stop="zoomIn"
+                    :disabled="loading || size >= 200"
+                    class="ml-2"
+                  >
+                    <v-icon size="small">mdi-magnify-plus</v-icon>
+                  </v-btn>
+                </div>
+
+                <!-- Reset to 100% button
+                <div class="d-flex justify-center mt-3">
+                  
+                </div> 
+                -->
+              </v-card-text>
+            </v-card>
+          </v-menu>
           <!-- Bookmark current location button -->
           <v-tooltip
             location="bottom"
@@ -184,7 +259,7 @@
       </v-dialog>
 
       <v-card class="pa-0" elevation="4">
-        <v-card-text @contextmenu.prevent>
+        <v-card-text @contextmenu.prevent class="pa-0 ma-0">
           <v-row>
             <!-- Error Alert -->
             <v-col v-if="loadError" cols="12">
@@ -204,7 +279,7 @@
             </v-col>
 
             <!-- Viewer -->
-            <v-col v-else>
+            <v-col v-else class="ma-0 pa-0">
               <div
                 class="epub-reader-wrapper no-select"
                 style="height: 100vh; position: relative"
@@ -212,6 +287,7 @@
               >
                 <v-no-ssr>
                   <vue-reader
+                    class="ma-0"
                     v-if="epubData"
                     :url="epubData"
                     :location.sync="location"
@@ -283,6 +359,7 @@ let loadError = ref(null);
 const epubReader = ref(null);
 const epubData = ref(null); // Will hold the ArrayBuffer directly
 const epubOptions = ref({});
+const zoomMenuOpen = ref(false);
 
 // Bookmark related state
 const bookmarks = ref([]);
@@ -759,13 +836,118 @@ const getRendition = (rend) => {
   }
 };
 
+// Add this method to your script setup section
+const resetZoom = () => {
+  size.value = 100;
+  changeSize(100);
+};
+
+const zoomIn = () => {
+  if (size.value < 200) {
+    size.value += 10;
+    changeSize(size.value);
+  }
+};
+
+const zoomOut = () => {
+  if (size.value > 50) {
+    size.value -= 10;
+    changeSize(size.value);
+  }
+};
+
+// 2. Update the changeSize method to be more robust
 const changeSize = (val) => {
   size.value = val;
   // Make sure rendition exists and is not null before accessing themes
   if (rendition.value && rendition.value.themes) {
-    rendition.value.themes.fontSize(`${val}%`);
+    try {
+      rendition.value.themes.fontSize(`${val}%`);
+    } catch (error) {
+      console.error("Error changing font size:", error);
+    }
   }
 };
+
+const handleKeyboardShortcuts = (e) => {
+  if (showReader.value && (e.ctrlKey || e.metaKey)) {
+    switch (e.key) {
+      case "=":
+      case "+":
+        e.preventDefault();
+        zoomIn();
+        break;
+      case "-":
+        e.preventDefault();
+        zoomOut();
+        break;
+      case "0":
+        e.preventDefault();
+        size.value = 100;
+        changeSize(100);
+        break;
+      case "s":
+      case "p":
+      case "c":
+        e.preventDefault();
+        return false;
+    }
+  }
+};
+
+watch(showReader, (isVisible) => {
+  if (isVisible) {
+    document.addEventListener("keydown", handleKeyboardShortcuts);
+    document.addEventListener("dragstart", preventDragStart);
+  } else {
+    document.removeEventListener("keydown", handleKeyboardShortcuts);
+    document.removeEventListener("dragstart", preventDragStart);
+    cleanupResources();
+  }
+});
+
+onUnmounted(() => {
+  // Clean up event listeners when the component is unmounted
+  document.removeEventListener("contextmenu", preventContextMenu);
+  document.removeEventListener("keydown", handleKeyboardShortcuts);
+  document.removeEventListener("dragstart", preventDragStart);
+  cleanupResources();
+});
+
+// 6. Optional: Add mouse wheel zoom functionality
+const handleWheelZoom = (e) => {
+  if (showReader.value && (e.ctrlKey || e.metaKey)) {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+      zoomIn();
+    } else {
+      zoomOut();
+    }
+  }
+};
+
+// Add wheel event listener in the watch function
+watch(showReader, (isVisible) => {
+  if (isVisible) {
+    document.addEventListener("keydown", handleKeyboardShortcuts);
+    document.addEventListener("dragstart", preventDragStart);
+    document.addEventListener("wheel", handleWheelZoom, { passive: false });
+  } else {
+    document.removeEventListener("keydown", handleKeyboardShortcuts);
+    document.removeEventListener("dragstart", preventDragStart);
+    document.removeEventListener("wheel", handleWheelZoom);
+    cleanupResources();
+  }
+});
+
+// Update onUnmounted as well
+onUnmounted(() => {
+  document.removeEventListener("contextmenu", preventContextMenu);
+  document.removeEventListener("keydown", handleKeyboardShortcuts);
+  document.removeEventListener("dragstart", preventDragStart);
+  document.removeEventListener("wheel", handleWheelZoom);
+  cleanupResources();
+});
 
 const getLabel = (toc, href) => {
   let label = "n/a";
@@ -925,5 +1107,19 @@ onUnmounted(() => {
 .bookmarks-menu {
   max-height: 400px;
   overflow-y: auto;
+}
+
+/* Add this to the existing <style scoped> section */
+
+.zoom-menu {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.zoom-display {
+  font-weight: 500;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background-color: #f5f5f5;
 }
 </style>
