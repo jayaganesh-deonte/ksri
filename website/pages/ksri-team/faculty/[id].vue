@@ -168,7 +168,10 @@
                   </thead>
                   <tbody>
                     <tr
-                      v-for="item in selectedFaculty.phdCandidates"
+                      v-for="item in sortbyDateMonthYearField(
+                        selectedFaculty.phdCandidates,
+                        'yearOfJoining'
+                      )"
                       :key="item.id"
                     >
                       <td>{{ item.name }}</td>
@@ -209,7 +212,10 @@
                   </thead>
                   <tbody>
                     <tr
-                      v-for="item in selectedFaculty.mphilCandidates"
+                      v-for="item in sortbyDateMonthYearField(
+                        selectedFaculty.mphilCandidates,
+                        'yearOfJoining'
+                      )"
                       :key="item.id"
                     >
                       <td>{{ item.name }}</td>
@@ -280,17 +286,22 @@
                       <th class="text-left">Publisher</th>
                       <th class="text-left">Year of Publication</th>
                       <th class="text-left">ISBN</th>
+                      <th class="text-left">Remarks</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr
-                      v-for="item in selectedFaculty.booksPublished"
+                      v-for="item in sortbyDateMonthYearField(
+                        selectedFaculty.booksPublished,
+                        'yearOfPublication'
+                      )"
                       :key="item.id"
                     >
                       <td>{{ item.title }}</td>
                       <td>{{ item.publisher }}</td>
                       <td>{{ item.yearOfPublication }}</td>
                       <td>{{ item.isbn }}</td>
+                      <td>{{ item.remarks }}</td>
                     </tr>
                   </tbody>
                 </v-table>
@@ -320,17 +331,22 @@
                       <th class="text-left">Name of the Journal</th>
                       <th class="text-left">Month and Year</th>
                       <th class="text-left">ISBN/ISSN No.</th>
+                      <th class="text-left">Remarks</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr
-                      v-for="item in selectedFaculty.articlesPublished"
+                      v-for="item in sortbyDateMonthYearField(
+                        selectedFaculty.articlesPublished,
+                        'monthAndYear'
+                      )"
                       :key="item.id"
                     >
                       <td>{{ item.title }}</td>
                       <td>{{ item.nameOfTheJournal }}</td>
                       <td>{{ item.monthAndYear }}</td>
                       <td>{{ item.isbnIssnNo }}</td>
+                      <td>{{ item.remarks }}</td>
                     </tr>
                   </tbody>
                 </v-table>
@@ -359,14 +375,22 @@
                       <th class="text-left">Sponsor</th>
                       <th class="text-left">Month and Year</th>
                       <th class="text-left">Description</th>
+                      <th class="text-left">Remarks</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in selectedFaculty.projects" :key="item.id">
+                    <tr
+                      v-for="item in sortbyDateMonthYearField(
+                        selectedFaculty.projects,
+                        'monthAndYear'
+                      )"
+                      :key="item.id"
+                    >
                       <td>{{ item.projectTitle }}</td>
                       <td>{{ item.sponsor }}</td>
                       <td>{{ item.monthAndYear }}</td>
                       <td>{{ item.description }}</td>
+                      <td>{{ item.remarks }}</td>
                     </tr>
                   </tbody>
                 </v-table>
@@ -395,14 +419,22 @@
                       <th class="text-left">Theme</th>
                       <th class="text-left">Date</th>
                       <th class="text-left">Organisers</th>
+                      <th class="text-left">Remarks</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in selectedFaculty.seminars" :key="item.id">
+                    <tr
+                      v-for="item in sortbyDateMonthYearField(
+                        selectedFaculty.seminars,
+                        'monthAndYear'
+                      )"
+                      :key="item.id"
+                    >
                       <td>{{ item.titleOfThePaper }}</td>
                       <td>{{ item.theme }}</td>
-                      <td>{{ item.date }}</td>
+                      <td>{{ item.monthAndYear }}</td>
                       <td>{{ item.organisers }}</td>
+                      <td>{{ item.remarks }}</td>
                     </tr>
                   </tbody>
                 </v-table>
@@ -430,13 +462,21 @@
                       <th class="text-left">Title of the Talk</th>
                       <th class="text-left">Month and Year</th>
                       <th class="text-left">Organisers</th>
+                      <th class="text-left">Remarks</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in selectedFaculty.lectures" :key="item.id">
+                    <tr
+                      v-for="item in sortbyDateMonthYearField(
+                        selectedFaculty.lectures,
+                        'monthAndYear'
+                      )"
+                      :key="item.id"
+                    >
                       <td>{{ item.titleOfTheTalk }}</td>
                       <td>{{ item.monthAndYear }}</td>
                       <td>{{ item.organisers }}</td>
+                      <td>{{ item.remarks }}</td>
                     </tr>
                   </tbody>
                 </v-table>
@@ -466,7 +506,13 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in selectedFaculty.awards" :key="item.id">
+                    <tr
+                      v-for="item in sortbyDateMonthYearField(
+                        selectedFaculty.awards,
+                        'year'
+                      )"
+                      :key="item.id"
+                    >
                       <td>{{ item.title }}</td>
                       <td>{{ item.organisation }}</td>
                       <td>{{ item.year }}</td>
@@ -505,7 +551,10 @@
                 </thead>
                 <tbody>
                   <tr
-                    v-for="item in selectedFaculty.extensionActivities"
+                    v-for="item in sortbyDateMonthYearField(
+                      selectedFaculty.extensionActivities,
+                      'monthAndYear'
+                    )"
                     :key="item.id"
                   >
                     <td>{{ item.title }}</td>
@@ -732,6 +781,87 @@ const getSummaryCount = () => {
 getSummaryCount();
 
 isLoading.value = false;
+
+const sortbyDateMonthYearField = (
+  data,
+  yearKey = "yearOfPublication",
+  order = "desc"
+) => {
+  /**
+   * Extracts the starting year from various year formats
+   * @param {string} yearStr - Year string in various formats
+   * @returns {number} - Starting year as number, or Infinity for empty/invalid years
+   */
+  function extractStartYear(yearStr, sortOrder) {
+    if (!yearStr || yearStr.trim() === "") {
+      // For empty years, return values that will put them at the bottom
+      return sortOrder === "desc" ? -Infinity : Infinity;
+    }
+
+    // Remove extra whitespace
+    const cleanYear = yearStr.trim();
+
+    // Handle different formats:
+    // Simple year: "2017"
+    // Year ranges: "2017-2018", "2017-18", "2017 to 2018"
+    // Month + Year: "Sept. 2024", "Jul 2024", "September 2024"
+    // Month + Year range: "Nov. 2023-2025"
+    // Multiple ranges: "2023-2025; 2015-2016", "May 2013; Nov. 2020-Jan. 2021"
+    // Ordinal dates: "24th Jan 2024", "28th December, 2023", "23rd and 30th July 2024"
+    // Other formats: "Published in 2023", "Year: 2022", "circa 2021", "c. 2020"
+
+    // First, try to find any 4-digit year in the string
+    const allYears = cleanYear.match(/\b(\d{4})\b/g);
+
+    if (allYears && allYears.length > 0) {
+      // Convert to numbers and find the earliest year
+      const years = allYears.map((year) => parseInt(year, 10));
+      // Filter out years that seem unreasonable (before 1000 or after 2100)
+      const validYears = years.filter((year) => year >= 1000 && year <= 2100);
+
+      if (validYears.length > 0) {
+        return Math.min(...validYears);
+      }
+    }
+
+    // Try to handle 2-digit years with 4-digit prefix (like "2017-18")
+    const yearWith2Digit = cleanYear.match(/(\d{4})-(\d{2})\b/);
+    if (yearWith2Digit) {
+      return parseInt(yearWith2Digit[1], 10);
+    }
+
+    // Try to extract year from common phrases
+    // Match patterns like "in 2023", "year 2022", "circa 2021", "c. 2020"
+    const phraseMatch = cleanYear.match(/(?:in|year|circa|c\.)\s*(\d{4})/i);
+    if (phraseMatch) {
+      const year = parseInt(phraseMatch[1], 10);
+      if (year >= 1000 && year <= 2100) {
+        return year;
+      }
+    }
+
+    // If no valid year found, put at the bottom but above empty ones
+    // Use a very high number that's less than Infinity
+    return sortOrder === "desc" ? -999999 : 999999;
+  }
+
+  // Create a copy of the array to avoid mutating the original
+  const sortedData = [...data];
+
+  // Sort based on the extracted start year
+  sortedData.sort((a, b) => {
+    const yearA = extractStartYear(a[yearKey], order);
+    const yearB = extractStartYear(b[yearKey], order);
+
+    if (order === "desc") {
+      return yearB - yearA;
+    } else {
+      return yearA - yearB;
+    }
+  });
+
+  return sortedData;
+};
 </script>
 
 <style>
