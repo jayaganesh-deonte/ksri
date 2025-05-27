@@ -129,7 +129,7 @@
                   <v-icon>mdi-bookmark-multiple</v-icon>
                 </v-btn>
 
-                <span class="text-subtitle-2 mt-n2"> View All Bookmarks</span>
+                <span class="text-subtitle-2 mt-n2"> View Bookmarks</span>
               </div>
             </template>
             <v-card min-width="300" class="bookmarks-menu">
