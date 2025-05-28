@@ -114,7 +114,7 @@
         ></v-img>
       </div> -->
       <v-card color="rgb(191, 100, 31,0.5)" elevation="0" rounded="0">
-        <v-row class="ma-1 pa-1">
+        <v-row class="ma-1 pa-1" v-if="displayImageInColumns">
           <v-col
             v-for="(image, index) in horizontalImages"
             :key="index"
@@ -127,8 +127,24 @@
               fit
               :height="`${$device.isMobile ? '' : '30vh'}`"
             ></v-img>
-          </v-col> </v-row
-      ></v-card>
+          </v-col>
+        </v-row>
+        <v-row class="ma-1 pa-1" v-if="!displayImageInColumns">
+          <v-col
+            v-for="(image, index) in eventInfo.images"
+            :key="index"
+            cols="12"
+            md="3"
+            class="ma-0 pa-1"
+          >
+            <v-img
+              :src="getImageUrl(image)"
+              fit
+              :height="`${$device.isMobile ? '' : '30vh'}`"
+            ></v-img>
+          </v-col>
+        </v-row>
+      </v-card>
 
       <!-- display next and previous btns -->
       <div class="ma-8 text-center">
