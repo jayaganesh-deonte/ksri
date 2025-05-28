@@ -1,0 +1,132 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: SAM template for KSRI Admin
+
+Parameters:
+  Prefix:
+    Description: Prefix to be added to resources
+    Type: String
+
+Resources:
+  # Lambda IAM Role for Lambda@Edge
+  LambdaEdgeRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+                - edgelambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: LambdaEdgeLoggingPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource:
+                  - !Sub "arn:aws:logs:*:${AWS::AccountId}:log-group:/aws/lambda/*"
+                  - !Sub "arn:aws:logs:*:${AWS::AccountId}:log-group:/aws/lambda/*:log-stream:*"
+
+  # Policy for CloudFront to access Lambda@Edge
+  CloudFrontLambdaEdgePolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      Description: Policy to allow CloudFront to access Lambda@Edge functions
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+              - lambda:GetFunction
+            Resource:
+              - !Sub "arn:aws:lambda:us-east-1:${AWS::AccountId}:function:${Prefix}-request-inspection-edge:*"
+
+  # Lambda Function for request inspection
+  RequestInspectionLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub ${Prefix}-request-inspection-edge
+      Handler: index.handler
+      Runtime: nodejs18.x
+      Role: !GetAtt LambdaEdgeRole.Arn
+      Code:
+        ZipFile: |
+          'use strict';
+
+          exports.handler = (event, context, callback) => {
+            console.log('Event:', event);
+            const request = event.Records[0].cf.request;
+            const headers = request.headers;
+            const queryString = request.querystring;
+           
+            // Get domain from Host header
+            const host = headers.host && headers.host[0] ? headers.host[0].value : 'unknown';
+            console.log('Request Domain:', host);
+           
+            // Check for idToken in query parameters
+            if (queryString) {
+              try {
+                // Split and parse manually since URLSearchParams might not be available in Lambda@Edge
+                const params = queryString.split('&').reduce((acc, param) => {
+                  const [key, value] = param.split('=');
+                  if (key && value) {
+                    acc[decodeURIComponent(key)] = decodeURIComponent(value);
+                  }
+                  return acc;
+                }, {});
+               
+                const idToken = params.idToken;
+                if (idToken) {
+                  // Log only partial token for security (first 10 chars)
+                  const partialToken = idToken.substring(0, 10) + '...';
+                  console.log('Found idToken (partial):', partialToken);
+                }
+              } catch (err) {
+                console.log('Error parsing query parameters:', err.message);
+              }
+            }
+           
+            // Don't modify the request, just pass it through
+            callback(null, request);
+          };
+      Description: "Lambda@Edge function to inspect incoming requests for domain and idToken"
+      # Lambda@Edge functions must have a timeout of 5 seconds or less for viewer-request events
+      Timeout: 5
+      # Lambda@Edge must be deployed to us-east-1
+      Tags:
+        - Key: Name
+          Value: !Sub ${Prefix}-request-inspection-edge
+
+  # Lambda Version for Edge deployment
+  RequestInspectionLambdaVersion:
+    Type: AWS::Lambda::Version
+    Properties:
+      FunctionName: !Ref RequestInspectionLambda
+      Description: "1.0.0"
+
+  # Create explicit Lambda Permission for CloudFront
+  RequestInspectionLambdaPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:GetFunction
+      FunctionName: !Ref RequestInspectionLambda
+      Principal: edgelambda.amazonaws.com
+      SourceArn: !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/*"
+
+  # Create additional permission for Lambda invocation
+  RequestInspectionLambdaInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !GetAtt RequestInspectionLambdaVersion.FunctionArn
+      Principal: edgelambda.amazonaws.com

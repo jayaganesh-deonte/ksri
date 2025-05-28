@@ -245,6 +245,9 @@ const filterBooksBasedOnPublication = (publicationName) => {
         .includes(removeDiacritics(query)) ||
       removeDiacritics(book.subtitle)
         ?.toLowerCase()
+        .includes(removeDiacritics(query)) ||
+      removeDiacritics(book.keywords)
+        ?.toLowerCase()
         .includes(removeDiacritics(query))
   );
 };
@@ -256,17 +259,20 @@ const resetSelectedBook = () => {
   selectedBook.price = "";
   selectedBook.imageUrls = [];
   selectedBook.details = "";
+
+  Object.assign(selectedBook, {});
 };
 
 // resetSelectedBook();
 
 const onViewDetails = (book) => {
-  selectedBook.name = book.name;
-  selectedBook.subtitle = book.subtitle;
-  selectedBook.price = book.price;
-  selectedBook.imageUrls = book.imageUrls;
-  selectedBook.details = book.details;
+  // selectedBook.name = book.name;
+  // selectedBook.subtitle = book.subtitle;
+  // selectedBook.price = book.price;
+  // selectedBook.imageUrls = book.imageUrls;
+  // selectedBook.details = book.details;
 
+  Object.assign(selectedBook, book);
   showSelectedBookDetails.value = true;
 };
 

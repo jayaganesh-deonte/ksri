@@ -17,4 +17,7 @@ npm init -y
 npm i pdfmake
 cd ../../..
 
+sam deploy --config-env dev
+
 sam deploy --config-env prod
+sam deploy --config-env dev

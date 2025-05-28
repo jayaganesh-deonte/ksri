@@ -134,6 +134,7 @@ dist/
 
 # DynamoDB Local files
 .dynamodb/
+cloudfrontkeys/
 
 # TernJS port file
 .tern-port

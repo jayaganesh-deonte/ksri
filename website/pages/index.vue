@@ -13,3 +13,14 @@
     <home-alert-dialog />
   </div>
 </template>
+
+<script setup>
+// check if in local storage redirect key is present
+if (process.client) {
+  const redirect = localStorage.getItem("redirect");
+  if (redirect) {
+    localStorage.removeItem("redirect");
+    window.location.href = redirect;
+  }
+}
+</script>
