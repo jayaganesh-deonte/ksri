@@ -8,68 +8,76 @@
       class="d-flex flex-column"
       style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000"
     >
-      <v-card
-        color="primary"
-        class="d-flex flex-column justify-end ma-2"
-        rounded="0"
-        elevation="0"
+      <div
+        id="appBarHeader"
+        :class="{ 'header-hidden': !showHeader }"
+        class="header-transition"
       >
         <v-card
-          rounded="0"
-          elevation="0"
-          class="d-flex justify-center align-center"
-          :class="`${$device.isMobile ? 'flex-column ' : 'flex-row '}`"
           color="primary"
-        >
-          <div>
-            <v-img
-              src="/img/ksri-logo-primary.png"
-              fit
-              :width="$device.isMobile ? 100 : 100"
-              :class="`${$device.isMobile ? '' : 'ml-auto mr-4'}`"
-            >
-            </v-img>
-          </div>
-          <div>
-            <v-card-item class="ma-0 pa-0">
-              <v-card-text
-                class="font-weight-bold defaultFont text-gold text-center"
-              >
-                <div
-                  class="font-weight-bold pa-0"
-                  :class="`${$device.isMobile ? 'text-h6' : 'text-h4'}`"
-                >
-                  THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE
-                </div>
-                <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
-                  (Regd. S.No. 32/1944-45, Dt. 24-2-1945)
-                </div>
-
-                <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
-                  No. 84, Thiru Vi Ka Road, Mylapore, Chennai - 600 004.
-                </div>
-                <div :class="$device.isMobile ? 'text-body-1' : 'text-body-1'">
-                  ksrinst@gmail.com | 044-24985320 / 044-29505320
-                </div>
-              </v-card-text>
-            </v-card-item>
-          </div>
-        </v-card>
-      </v-card>
-      <!-- style="position: absolute; right: 0; margin-top: 130px" -->
-      <div class="d-flex justify-end align-center mt-n12 mx-8">
-        <v-card
-          elevation="0"
+          class="d-flex flex-column justify-end ma-2"
           rounded="0"
-          class="ma-0 pa-0"
-          color="transparent"
-          width="15vw"
+          elevation="0"
         >
-          <search />
+          <v-card
+            rounded="0"
+            elevation="0"
+            class="d-flex justify-center align-center"
+            :class="`${$device.isMobile ? 'flex-column ' : 'flex-row '}`"
+            color="primary"
+          >
+            <div>
+              <v-img
+                src="/img/ksri-logo-primary.png"
+                fit
+                :width="$device.isMobile ? 100 : 100"
+                :class="`${$device.isMobile ? '' : 'ml-auto mr-4'}`"
+              >
+              </v-img>
+            </div>
+            <div>
+              <v-card-item class="ma-0 pa-0">
+                <v-card-text
+                  class="font-weight-bold defaultFont text-gold text-center"
+                >
+                  <div
+                    class="font-weight-bold pa-0"
+                    :class="`${$device.isMobile ? 'text-h6' : 'text-h4'}`"
+                  >
+                    THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE
+                  </div>
+                  <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
+                    (Regd. S.No. 32/1944-45, Dt. 24-2-1945)
+                  </div>
+
+                  <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
+                    No. 84, Thiru Vi Ka Road, Mylapore, Chennai - 600 004.
+                  </div>
+                  <div
+                    :class="$device.isMobile ? 'text-body-1' : 'text-body-1'"
+                  >
+                    ksrinst@gmail.com | 044-24985320 / 044-29505320
+                  </div>
+                </v-card-text>
+              </v-card-item>
+            </div>
+          </v-card>
         </v-card>
-        <!-- Add login button -->
-        <div class="d-flex justify-center align-center">
-          <UserLogin />
+        <!-- style="position: absolute; right: 0; margin-top: 130px" -->
+        <div class="d-flex justify-end align-center mt-n12 mx-8">
+          <v-card
+            elevation="0"
+            rounded="0"
+            class="ma-0 pa-0"
+            color="transparent"
+            width="15vw"
+          >
+            <search />
+          </v-card>
+          <!-- Add login button -->
+          <div class="d-flex justify-center align-center">
+            <UserLogin />
+          </div>
         </div>
       </div>
       <div class="d-flex mx-auto mt-0 flex-wrap">
@@ -297,6 +305,41 @@
 let appBarHeight = ref(210);
 let hoveredMenu = ref(null);
 
+let showHeader = ref(true);
+let lastScrollY = ref(0);
+let scrollTimer = ref(null);
+
+const handleScroll = () => {
+  const currentScrollY = window.scrollY;
+
+  // Hide header when scrolling down, show when scrolling up
+  if (currentScrollY > lastScrollY.value && currentScrollY > 100) {
+    showHeader.value = false;
+  } else if (currentScrollY < lastScrollY.value) {
+    showHeader.value = true;
+  }
+
+  lastScrollY.value = currentScrollY;
+
+  // Clear existing timer
+  if (scrollTimer.value) {
+    clearTimeout(scrollTimer.value);
+  }
+
+  // Show header after scroll stops for 2 seconds
+  scrollTimer.value = setTimeout(() => {
+    showHeader.value = true;
+  }, 2000);
+};
+
+// Add mouse move handler for top area
+const handleMouseMove = (event) => {
+  // Show header when mouse is in top 100px of viewport
+  if (event.clientY < 100) {
+    showHeader.value = true;
+  }
+};
+
 const calculateAppBarHeight = () => {
   const appBarElement = document.getElementById("app-bar");
   if (appBarElement) {
@@ -309,10 +352,17 @@ onMounted(() => {
     calculateAppBarHeight();
   });
   window.addEventListener("resize", calculateAppBarHeight);
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("mousemove", handleMouseMove, { passive: true });
 });
 
 onUnmounted(() => {
   window.removeEventListener("resize", calculateAppBarHeight);
+  window.removeEventListener("scroll", handleScroll);
+  window.removeEventListener("mousemove", handleMouseMove);
+  if (scrollTimer.value) {
+    clearTimeout(scrollTimer.value);
+  }
 });
 
 const handleMenuHover = (option, isHovering) => {
@@ -633,5 +683,22 @@ const openChildMenu = (option) => {
 .menu-content {
   border-radius: 8px;
   overflow: hidden;
+}
+
+.header-transition {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.header-hidden {
+  height: 0 !important;
+  min-height: 0 !important;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Add this to make the main app-bar adjust its height */
+.v-card {
+  transition: height 0.3s ease-in-out;
 }
 </style>
