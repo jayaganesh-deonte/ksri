@@ -192,6 +192,17 @@ const userProfile = reactive({
 onMounted(async () => {
   loadCountriesData();
   await initializeUserProfile();
+
+  const isAddressIsAvailable = await store.checkIfAddressIsAvailable();
+
+  // check if in local storage redirect key is present
+  if (isAddressIsAvailable) {
+    const redirect = localStorage.getItem("redirect");
+    if (redirect) {
+      localStorage.removeItem("redirect");
+      window.location.href = redirect;
+    }
+  }
 });
 
 // Initialize user profile - fetches from API if needed and sets up the form
@@ -337,6 +348,16 @@ async function saveProfile() {
         timeout: 5000,
         position: "top-right",
       });
+      // wait for 1 second
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // check if in local storage redirect key is present
+      if (process.client) {
+        const redirect = localStorage.getItem("redirect");
+        if (redirect) {
+          localStorage.removeItem("redirect");
+          window.location.href = redirect;
+        }
+      }
     } else {
       $toast.error(result.message, {
         timeout: 5000,

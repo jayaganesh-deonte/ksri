@@ -77,18 +77,16 @@
         <div v-for="option in menuOptions" :key="option.name">
           <v-card
             :class="{
-              activeMenu: option.path === activeMenu.path || option.isActive,
+              activeMenu: option.path === activeMenu.path,
+              'menu-item-hover': hoveredMenu === option.name,
             }"
             rounded="0"
             elevation="0"
             height="65"
             color="transparent"
             class="d-flex justify-center align-center mx-1 pa-1 appBarMenuItem"
-            @mouseover="
-              option.isActive = true;
-              option.showChildren = true;
-            "
-            @mouseleave="option.isActive = false"
+            @mouseenter="handleMenuHover(option, true)"
+            @mouseleave="handleMenuHover(option, false)"
             @click="navigateWithOutChild(option)"
           >
             <div class="ma-1 text-subtitle-1 appBarMenuItem">
@@ -100,17 +98,19 @@
                 {{ option.name }}
               </nuxt-link>
 
-              <!-- open-on-hover -->
               <v-menu
                 v-else
-                open-on-click
-                open-on-hover
                 v-model="option.showChildren"
+                open-on-hover
+                :close-delay="200"
+                :open-delay="100"
+                offset-y
+                content-class="menu-content"
               >
                 <template v-slot:activator="{ props }">
                   <div
                     v-bind="props"
-                    class="d-flex align-center justify-center"
+                    class="d-flex align-center justify-center menu-activator"
                   >
                     {{ option.name }}
                     <v-icon size="x-small" class="mx-1">
@@ -118,7 +118,7 @@
                     >
                   </div>
                 </template>
-                <v-card width="95vw">
+                <v-card width="95vw" class="menu-dropdown">
                   <v-row class="ma-0 pa-0">
                     <v-col
                       v-for="child in option.children"
@@ -137,10 +137,10 @@
                         <v-card
                           height="100%"
                           elevation="0"
-                          class="ma-1 pa-2 defaultFont d-flex flex-column justify-space-between"
-                          :class="{ activeMenuChild: child.isActive === true }"
-                          @mouseover="child.isActive = true"
+                          class="ma-1 pa-2 defaultFont d-flex flex-column justify-space-between menu-child-item"
+                          @mouseenter="child.isActive = true"
                           @mouseleave="child.isActive = false"
+                          :class="{ activeMenuChild: child.isActive === true }"
                           color="greenBg"
                         >
                           <div>
@@ -162,7 +162,6 @@
                               {{ child.description }}
                             </div>
                           </div>
-                          <!-- <v-divider class="my-2" /> -->
                         </v-card>
                       </nuxt-link>
                     </v-col>
@@ -296,6 +295,7 @@
 
 <script setup>
 let appBarHeight = ref(210);
+let hoveredMenu = ref(null);
 
 const calculateAppBarHeight = () => {
   const appBarElement = document.getElementById("app-bar");
@@ -314,6 +314,14 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("resize", calculateAppBarHeight);
 });
+
+const handleMenuHover = (option, isHovering) => {
+  if (isHovering) {
+    hoveredMenu.value = option.name;
+  } else {
+    hoveredMenu.value = null;
+  }
+};
 
 const menuOptions = reactive([
   {
@@ -590,5 +598,40 @@ const openChildMenu = (option) => {
 .activeMenuChild {
   background-color: #bf641f !important;
   color: white !important;
+}
+
+.menu-item-hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-activator {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.menu-activator:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-dropdown {
+  margin-top: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-child-item {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.menu-child-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-content {
+  border-radius: 8px;
+  overflow: hidden;
 }
 </style>

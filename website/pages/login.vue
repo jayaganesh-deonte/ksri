@@ -3,8 +3,21 @@
     <authenticator
       :form-fields="formFields"
       :signup-attributes="signUpAttributes"
+      :services="services"
       v-if="!getIsAuthenticated"
     >
+      <template v-slot:sign-up-footer>
+        <div class="password-rules">
+          <p>Password must:</p>
+          <ul>
+            <li>Be at least 8 characters long</li>
+            <li>Contain at least one uppercase letter</li>
+            <li>Contain at least one lowercase letter</li>
+            <li>Contain at least one number</li>
+            <li>Contain at least one special character</li>
+          </ul>
+        </div>
+      </template>
     </authenticator>
   </div>
 </template>
@@ -13,11 +26,55 @@
 import { Authenticator, useAuthenticator } from "@aws-amplify/ui-vue";
 import { getCurrentUser, fetchUserAttributes } from "aws-amplify/auth";
 import "@aws-amplify/ui-vue/styles.css";
+import { storeToRefs } from "pinia";
+import { watch, nextTick, onMounted } from "vue";
 
 const auth = useAuthenticator();
 
 // Important: Define the signup attributes for Cognito
 const signUpAttributes = ["email", "phone_number", "address", "custom:city"];
+
+// Services for validation
+const services = {
+  validateCustomSignUp: (formData) => {
+    // Password validation logic
+    if (formData.password.length < 8) {
+      return {
+        password: "Password must be at least 8 characters",
+      };
+    }
+
+    // Check for required complexity
+    const hasUpperCase = /[A-Z]/.test(formData.password);
+    const hasLowerCase = /[a-z]/.test(formData.password);
+    const hasNumbers = /\d/.test(formData.password);
+    const hasSpecialChar = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(
+      formData.password
+    );
+
+    const validationErrors = {};
+
+    if (!hasUpperCase) {
+      validationErrors.password =
+        "Password must contain at least one uppercase letter";
+    } else if (!hasLowerCase) {
+      validationErrors.password =
+        "Password must contain at least one lowercase letter";
+    } else if (!hasNumbers) {
+      validationErrors.password = "Password must contain at least one number";
+    } else if (!hasSpecialChar) {
+      validationErrors.password =
+        "Password must contain at least one special character";
+    }
+
+    // Check if passwords match
+    if (formData.password !== formData.confirm_password) {
+      validationErrors.confirm_password = "Passwords do not match";
+    }
+
+    return validationErrors;
+  },
+};
 
 const formFields = {
   signUp: {
@@ -29,31 +86,55 @@ const formFields = {
       autocomplete: "username",
     },
     email: {
-      order: 1,
+      order: 2,
       label: "Email Address",
       placeholder: "Enter your email address",
       isRequired: true,
       autocomplete: "email",
     },
     password: {
-      order: 5,
+      order: 3,
       label: "Password",
       placeholder: "Create a password",
       isRequired: true,
       autocomplete: "new-password",
+      minLength: 8,
     },
     confirm_password: {
-      order: 6,
+      order: 4,
       label: "Confirm Password",
       placeholder: "Confirm your password",
       isRequired: true,
       autocomplete: "new-password",
     },
+    // phone_number: {
+    //   order: 5,
+    //   label: "Phone Number",
+    //   placeholder: "Enter your phone number",
+    //   isRequired: true,
+    // },
+    // address: {
+    //   order: 6,
+    //   label: "Address",
+    //   placeholder: "Enter your address",
+    //   isRequired: true,
+    // },
+    // "custom:city": {
+    //   order: 7,
+    //   label: "City",
+    //   placeholder: "Enter your city",
+    //   isRequired: true,
+    // },
   },
   signIn: {
     username: {
       label: "Email Address",
       placeholder: "Enter your email",
+      isRequired: true,
+    },
+    password: {
+      label: "Password",
+      placeholder: "Enter your password",
       isRequired: true,
     },
   },
@@ -129,5 +210,28 @@ onMounted(async () => {
 
 :deep(.amplify-tabs-item[data-value="Sign up"]) {
   /* Ensure sign up tab is visible */
+}
+
+:deep(.password-rules) {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #545b64;
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+:deep(.password-rules ul) {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+:deep(.password-rules li) {
+  margin-bottom: 3px;
+}
+
+:deep(.amplify-alert--error) {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 </style>
