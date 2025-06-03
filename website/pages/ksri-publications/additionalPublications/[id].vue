@@ -35,6 +35,7 @@
           <v-col cols="12" md="4" data-aos="fade-up"> </v-col>
         </v-row>
         <!-- book catalogue -->
+
         <div class="ma-4">
           <v-row>
             <v-col
@@ -53,6 +54,12 @@
               />
             </v-col>
           </v-row>
+          <div v-if="noSearchResults">
+            <div class="text-center ma-4">
+              <v-icon size="64" color="primary">mdi-book-remove</v-icon>
+              <div class="text-h6">No results found</div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- book details -->
@@ -135,6 +142,7 @@ useSeoMeta({
 let isLoading = ref(true);
 
 const searchQuery = ref("");
+let noSearchResults = ref(false);
 
 const selectedBook = reactive({});
 const showSelectedBookDetails = ref(false);
@@ -203,6 +211,7 @@ additionalPublicationBooks["KSRI"] = ksriBooks;
 const books = computed((publicationName) => {
   return additionalPublicationBooks[publicationName];
 });
+
 const filterBooksBasedOnPublication = (publicationName) => {
   let books = additionalPublicationBooks[publicationName];
 
@@ -235,7 +244,7 @@ const filterBooksBasedOnPublication = (publicationName) => {
     return str?.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   };
 
-  return books.filter(
+  const res = books.filter(
     (book) =>
       removeDiacritics(book.title)
         ?.toLowerCase()
@@ -250,6 +259,14 @@ const filterBooksBasedOnPublication = (publicationName) => {
         ?.toLowerCase()
         .includes(removeDiacritics(query))
   );
+
+  if (res.length === 0) {
+    noSearchResults.value = true;
+  } else {
+    noSearchResults.value = false;
+  }
+
+  return res;
 };
 const resetSelectedBook = () => {
   showSelectedBookDetails.value = false;
