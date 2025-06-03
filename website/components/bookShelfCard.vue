@@ -7,10 +7,12 @@
     @mouseleave="isHovering = false"
   >
     <v-img
-      :src="book.bookDetails.imageUrls || '/img/ksri-logo.png'"
+      v-if="book.bookDetails.imageUrls && book.bookDetails.imageUrls.length > 0"
+      :src="getAssetUrl(book.bookDetails.imageUrls[0])"
       height="200"
       fit
     ></v-img>
+    <v-img v-else src="/img/ksri-logo.png" height="200" fit></v-img>
 
     <div
       class="text-start ma-2 text-uppercase font-weight-bold"

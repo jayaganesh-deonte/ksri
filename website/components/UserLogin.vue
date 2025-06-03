@@ -33,13 +33,13 @@
             size="small"
           >
             <!-- <v-icon start>mdi-account</v-icon> -->
-            {{ getFirstLetter(store.user.username) }}
+            {{ getFirstLetter(displayName()) }}
           </v-btn>
         </template>
         <v-list>
           <v-list-item class="text-center">
             <v-list-item-title class="text-body-1 font-weight-bold">
-              {{ store.user.username }}
+              {{ displayName() }}
             </v-list-item-title>
           </v-list-item>
 
@@ -166,8 +166,8 @@ const { getIsAuthenticated } = storeToRefs(store);
 
 const signOutMethod = async () => {
   try {
-    await signOut();
     store.signOut();
+    await signOut();
     navigateTo("/");
   } catch (error) {
     console.error("Error signing out: ", error);
@@ -179,6 +179,18 @@ const getFirstLetter = (username) => {
     return username.charAt(0).toUpperCase();
   }
   return "";
+};
+
+const displayName = () => {
+  const name = store.contactDetails.name;
+  const email = store.user.email;
+
+  // if name is available then return it or else email
+  if (name) {
+    return name;
+  } else {
+    return email;
+  }
 };
 </script>
 

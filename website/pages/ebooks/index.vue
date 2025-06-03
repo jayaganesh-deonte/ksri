@@ -12,7 +12,10 @@
       <div>
         <section-title title="EBooks" />
         <div class="sectionSubtitle2">
-          Below are the books available in eBook format
+          As a premier Institution in the field of research, KSRI has involved
+          itself actively in the pursuit of excellence in its field of
+          specialisation. In order to remain competitive and abreast of the
+          requirement of Scholars, the books available in eBook format
         </div>
       </div>
 

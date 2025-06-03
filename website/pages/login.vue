@@ -1,11 +1,14 @@
 <template>
   <div class="d-flex justify-center align-center ma-auto my-4">
     <authenticator
-      :form-fields="formFields"
-      :signup-attributes="signUpAttributes"
       :services="services"
       v-if="!getIsAuthenticated"
+      :initial-state="'signIn'"
+      :login-mechanisms="['email']"
     >
+      <template v-slot:sign-up-fields>
+        <authenticator-sign-up-form-fields />
+      </template>
       <template v-slot:sign-up-footer>
         <div class="password-rules">
           <p>Password must:</p>
@@ -23,16 +26,22 @@
 </template>
 
 <script setup>
-import { Authenticator, useAuthenticator } from "@aws-amplify/ui-vue";
+import {
+  Authenticator,
+  useAuthenticator,
+  AuthenticatorSignUpFormFields,
+} from "@aws-amplify/ui-vue";
 import { getCurrentUser, fetchUserAttributes } from "aws-amplify/auth";
 import "@aws-amplify/ui-vue/styles.css";
 import { storeToRefs } from "pinia";
 import { watch, nextTick, onMounted } from "vue";
+import $toast from "~/utils/toast_notification";
 
 const auth = useAuthenticator();
 
-// Important: Define the signup attributes for Cognito
-const signUpAttributes = ["email", "phone_number", "address", "custom:city"];
+// Fixed: Only include attributes that are properly configured in Cognito
+// Since your Cognito is configured to use email as username, we don't need separate username field
+const signUpAttributes = ["email"];
 
 // Services for validation
 const services = {
@@ -76,24 +85,19 @@ const services = {
   },
 };
 
+// Fixed: Align form fields with Cognito configuration
 const formFields = {
   signUp: {
-    username: {
-      order: 1,
-      label: "Username",
-      placeholder: "Enter your username",
-      isRequired: true,
-      autocomplete: "username",
-    },
+    // Remove separate username field since Cognito uses email as username
     email: {
-      order: 2,
+      order: 1,
       label: "Email Address",
       placeholder: "Enter your email address",
       isRequired: true,
       autocomplete: "email",
     },
     password: {
-      order: 3,
+      order: 2,
       label: "Password",
       placeholder: "Create a password",
       isRequired: true,
@@ -101,41 +105,25 @@ const formFields = {
       minLength: 8,
     },
     confirm_password: {
-      order: 4,
+      order: 3,
       label: "Confirm Password",
       placeholder: "Confirm your password",
       isRequired: true,
       autocomplete: "new-password",
     },
-    // phone_number: {
-    //   order: 5,
-    //   label: "Phone Number",
-    //   placeholder: "Enter your phone number",
-    //   isRequired: true,
-    // },
-    // address: {
-    //   order: 6,
-    //   label: "Address",
-    //   placeholder: "Enter your address",
-    //   isRequired: true,
-    // },
-    // "custom:city": {
-    //   order: 7,
-    //   label: "City",
-    //   placeholder: "Enter your city",
-    //   isRequired: true,
-    // },
   },
   signIn: {
-    username: {
+    email: {
       label: "Email Address",
       placeholder: "Enter your email",
       isRequired: true,
+      autocomplete: "email",
     },
     password: {
       label: "Password",
       placeholder: "Enter your password",
       isRequired: true,
+      autocomplete: "current-password",
     },
   },
 };
@@ -149,18 +137,21 @@ const { getIsAuthenticated } = storeToRefs(store);
 const handleAuthenticatedNavigation = async () => {
   try {
     const isAddressAvailable = await store.checkIfAddressIsAvailable();
-    if (!isAddressAvailable) {
-      navigateTo("/user");
-    } else {
-      // get redirect from localstorage
-      const redirect = localStorage.getItem("redirect");
-      if (redirect) {
-        localStorage.removeItem("redirect");
-        navigateTo(redirect);
-      } else {
-        navigateTo("/");
-      }
-    }
+    console.log("isAddressAvailable login", isAddressAvailable);
+    navigateTo("/user");
+    // if (!isAddressAvailable) {
+    //   localStorage.setItem("redirectedFrom", "/login");
+    //   navigateTo("/user");
+    // } else {
+    //   // get redirect from localstorage
+    //   const redirect = localStorage.getItem("redirect");
+    //   if (redirect) {
+    //     localStorage.removeItem("redirect");
+    //     navigateTo(redirect);
+    //   } else {
+    //     navigateTo("/");
+    //   }
+    // }
   } catch (error) {
     console.error("Navigation error:", error);
     // Fallback navigation
@@ -174,6 +165,11 @@ watch(
   async (newStatus) => {
     console.log("auth.authStatus", newStatus);
     if (newStatus === "authenticated") {
+      // toast
+      $toast.success("Logged In successfully", {
+        timeout: 2000,
+        position: "top-right",
+      });
       // Small delay to ensure auth is fully established
       await nextTick();
       await handleAuthenticatedNavigation();
@@ -181,17 +177,17 @@ watch(
   }
 );
 
-// Alternative: Watch your store's authentication state
-watch(
-  () => getIsAuthenticated.value,
-  async (isAuth) => {
-    console.log("Store isAuthenticated changed:", isAuth);
-    if (isAuth) {
-      await nextTick();
-      await handleAuthenticatedNavigation();
-    }
-  }
-);
+// // Alternative: Watch your store's authentication state
+// watch(
+//   () => getIsAuthenticated.value,
+//   async (isAuth) => {
+//     console.log("Store isAuthenticated changed:", isAuth);
+//     if (isAuth) {
+//       await nextTick();
+//       await handleAuthenticatedNavigation();
+//     }
+//   }
+// );
 
 onMounted(async () => {
   // Check if already authenticated on mount

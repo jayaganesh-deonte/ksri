@@ -52,10 +52,10 @@ const myCustomTheme = {
 
 const awsconfig = {
   aws_project_region: "ap-south-1",
-  aws_cognito_identity_pool_id: "ap-south-1:ea3b4d70-b180-4509-91e5-589f8c2fe87f",
+  aws_cognito_identity_pool_id: "ap-south-1:6e0bcba1-da71-4b4b-ade8-7b3714cd5d43",
   aws_cognito_region: "ap-south-1",
-  aws_user_pools_id: "ap-south-1_Yg8vW6FXZ",
-  aws_user_pools_web_client_id: "308ebstaqbp8kp7oobsb8rrvp1",
+  aws_user_pools_id: "ap-south-1_9X5anLVhL",
+  aws_user_pools_web_client_id: "7hqj8g8m525v9p0itf9hnaf08t",
   oauth: {
     domain: "ksri-prod-website.auth.ap-south-1.amazoncognito.com",
     scope: [
@@ -73,10 +73,10 @@ const awsconfig = {
 
 // const awsconfig = {
 //   aws_project_region: "ap-south-1",
-//   aws_cognito_identity_pool_id: "ap-south-1:ea3b4d70-b180-4509-91e5-589f8c2fe87f",
+//   aws_cognito_identity_pool_id: "ap-south-1:6e0bcba1-da71-4b4b-ade8-7b3714cd5d43",
 //   aws_cognito_region: "ap-south-1",
-//   aws_user_pools_id: "ap-south-1_Yg8vW6FXZ",
-//   aws_user_pools_web_client_id: "3bv7cvs0r93rqkidcisieanq74",
+//   aws_user_pools_id: "ap-south-1_9X5anLVhL",
+//   aws_user_pools_web_client_id: "2iluhbeefse6k71haooc4ejm95",
 //   oauth: {
 //     domain: "ksri-prod-website.auth.ap-south-1.amazoncognito.com",
 //     scope: [

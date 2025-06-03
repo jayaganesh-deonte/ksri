@@ -163,6 +163,8 @@ export const userStore = defineStore("userStore", {
             try {
                 this.profileLoading = true;
 
+                this.contactDetails = {}
+
                 const response = await this.invokeLambdaAPI(
                     'GET',
                     `/userProfile/${this.userEmail}`
@@ -179,7 +181,9 @@ export const userStore = defineStore("userStore", {
                         state: data.state || null,
                         zip: data.zip || null,
                         country: data.country || null,
+                        name: data.name || null,
                     };
+
 
                     return true;
                 }
@@ -188,6 +192,7 @@ export const userStore = defineStore("userStore", {
 
             } catch (error) {
                 console.error("Error fetching user profile:", error);
+                this.contactDetails = {}
                 return false;
             } finally {
                 this.profileLoading = false;
@@ -207,7 +212,6 @@ export const userStore = defineStore("userStore", {
                 const userProfileData = {
                     ...profileData,
                     email: this.userEmail,
-                    name: this.userName,
                 };
 
                 const response = await this.invokeLambdaAPI(

@@ -121,7 +121,7 @@ handlePaymentRouter.post(
       // Determine redirect URL based on payment status
       const redirectUrl =
         orderStatus === "Success"
-          ? `/user/bookshelf`
+          ? `/payment/success`
           : `/payment/failed/?order_id=${data.order_id}&status=${orderStatus}`;
 
       // Redirect to appropriate URL

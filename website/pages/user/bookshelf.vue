@@ -52,9 +52,7 @@
           <v-icon icon="mdi-book-off" size="64" class="mb-4"></v-icon>
           <h2 class="text-h5 mb-2">No Books Found</h2>
           <p>You haven't purchased any books yet.</p>
-          <v-btn color="primary" class="mt-4" to="/ksri-publications"
-            >Browse Store</v-btn
-          >
+          <v-btn color="primary" class="mt-4" to="/ebooks"> View Ebooks</v-btn>
         </v-card>
       </v-col>
     </v-row>
@@ -122,7 +120,47 @@ const formatDate = (dateString) => {
 
 const booksData = await queryContent("publications", "books").findOne();
 
-const allBooks = booksData.body;
+let allBooks = booksData.body;
+
+// get all additionalpublications
+const additionalPublicationsData = await queryContent(
+  "publications",
+  "additionalpublications"
+).findOne();
+const additionalPublications = additionalPublicationsData.body;
+
+for (const element of additionalPublications) {
+  const additionalPublication = element;
+
+  const publicationNameForFile =
+    additionalPublication.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() +
+    "journals";
+
+  // query content
+  const additionalPublicationJournalsData = await queryContent(
+    "publications",
+    publicationNameForFile
+  ).findOne();
+
+  // books
+  const publicationNameForBooks = additionalPublication
+    .replace(/[^a-zA-Z0-9]/g, "")
+    .toLowerCase();
+
+  // query content
+  const additionalPublicationBooksData = await queryContent(
+    "publications",
+    publicationNameForBooks
+  ).findOne();
+
+  // additionalPublicationBooks[additionalPublication] = [
+  //   ...additionalPublicationJournalsData.body,
+  //   ...additionalPublicationBooksData.body,
+  // ];
+
+  // append additional publication books data to ksribooks
+  allBooks = [...allBooks, ...additionalPublicationBooksData.body];
+}
 
 console.log("Books data:", allBooks);
 
@@ -134,6 +172,8 @@ const fetchBooks = async () => {
 
     // Get user email from store or local storage
     const userEmail = store.userEmail || localStorage.getItem("userEmail");
+
+    console.log("userEmail", userEmail);
 
     if (!userEmail) {
       throw new Error("User email not found");
@@ -156,6 +196,7 @@ const fetchBooks = async () => {
     // fetch the book object from allBooks Array using bookId and id from allbooks and then merge the books object with the data
     books.value = books.value.map((book) => {
       const bookDetails = allBooks.find((b) => b.id === book.bookId);
+      console.log("bookDetails", bookDetails);
       return {
         ...book,
         // ...bookDetails,

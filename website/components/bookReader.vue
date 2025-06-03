@@ -219,13 +219,13 @@ const buyEbook = async () => {
     }
 
     const orderParams = {
-      billing_name: store.userName,
+      billing_name: store.contactDetails.name,
       billing_email: store.userEmail,
       billing_tel: store.contactDetails.phoneNumber,
       billing_address: store.contactDetails.address,
       billing_city: store.contactDetails.city,
       billing_state: store.contactDetails.state,
-      billing_zip: store.contactDetails.zipCode,
+      billing_zip: store.contactDetails.zip,
       billing_country: store.contactDetails.country,
       amount: props.bookInfo.ebookPrice,
       currency: "INR",

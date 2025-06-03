@@ -50,6 +50,8 @@ export default defineNuxtRouteMiddleware(async () => {
             store.userName = user.username
             store.userEmail = userAttributes.email
 
+            await store.checkIfAddressIsAvailable()
+
         } catch (error) {
             console.error("Error getting current user:", error)
 

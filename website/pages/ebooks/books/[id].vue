@@ -457,7 +457,7 @@ const buyEbook = async (bookInfo) => {
     }
 
     const orderParams = {
-      billing_name: store.userName,
+      billing_name: store.contactDetails.name,
       billing_email: store.userEmail,
       billing_tel: store.contactDetails.phoneNumber,
       billing_address: store.contactDetails.address,
