@@ -21,6 +21,26 @@
         <v-toolbar color="primary">
           <v-spacer></v-spacer>
 
+          <!-- View Mode Toggle -->
+          <v-tooltip location="bottom" text="Toggle view mode" v-if="false">
+            <template v-slot:activator="{ props: tooltipProps }">
+              <div class="d-flex flex-column justify-center align-center mx-4">
+                <v-btn icon v-bind="tooltipProps" @click="toggleViewMode">
+                  <v-icon>
+                    {{
+                      twoPageMode
+                        ? "mdi-book-open-page-variant"
+                        : "mdi-book-open"
+                    }}
+                  </v-icon>
+                </v-btn>
+                <span class="text-subtitle-2 mt-n2">
+                  {{ twoPageMode ? "Single" : "Two Page" }}
+                </span>
+              </div>
+            </template>
+          </v-tooltip>
+
           <!-- Bookmark current page button -->
           <v-tooltip
             location="bottom"
@@ -29,7 +49,11 @@
           >
             <template v-slot:activator="{ props: tooltipProps }">
               <div class="d-flex flex-column justify-center align-center mx-4">
-                <v-btn icon v-bind="tooltipProps" @click="toggleBookmark(page)">
+                <v-btn
+                  icon
+                  v-bind="tooltipProps"
+                  @click="toggleBookmark(currentPage)"
+                >
                   <v-icon>
                     {{
                       isCurrentPageBookmarked
@@ -166,7 +190,7 @@
             </v-card-actions>
           </v-card>
         </v-dialog>
-
+        <!-- Template Section - PDF Content Area -->
         <v-card-text class="pdf-container" @contextmenu.prevent>
           <div class="loading-container" v-if="!isLoaded">
             <v-progress-circular
@@ -176,17 +200,115 @@
             <span class="ml-3">Loading...</span>
           </div>
 
-          <VuePDF
-            v-if="pdfLoaded"
-            :key="refreshKey"
-            :pdf="decryptedPdf"
-            :page="page"
-            :text-layer="false"
-            :scale="zoom"
-            @loaded="onPdfLoaded"
-            class="pdf-content mx-auto no-select"
-            ref="pdfContent"
-          />
+          <!-- PDF Content -->
+          <div class="pdf-content-wrapper" v-if="pdfLoaded">
+            <!-- Navigation Arrow - Left -->
+            <div
+              class="navigation-arrow navigation-arrow--left"
+              v-if="isLoaded && pdfLoaded"
+            >
+              <v-btn
+                icon
+                size="x-large"
+                color="primary"
+                variant="text"
+                :disabled="!canGoPrevious || isAnimating"
+                @click="goToPreviousPage"
+              >
+                <v-icon size="x-large">mdi-chevron-left</v-icon>
+              </v-btn>
+            </div>
+
+            <!-- Single Page Mode -->
+            <div v-if="!twoPageMode" class="single-page-container">
+              <div
+                class="page-animation-container"
+                :class="{ animating: isAnimating }"
+              >
+                <VuePDF
+                  :key="`single-${refreshKey}-${page}`"
+                  :pdf="decryptedPdf"
+                  :page="page"
+                  :text-layer="false"
+                  :scale="zoom"
+                  @loaded="onPdfLoaded"
+                  class="pdf-content mx-auto no-select page-element"
+                  :class="pageTransitionClass"
+                  ref="pdfContent"
+                />
+              </div>
+            </div>
+
+            <!-- Two Page Mode -->
+            <div v-else class="two-page-container">
+              <!-- Left Page -->
+              <div class="page-wrapper">
+                <div
+                  class="page-animation-container"
+                  :class="{ animating: isAnimating }"
+                >
+                  <VuePDF
+                    v-if="leftPageNumber <= pages"
+                    :key="`left-${refreshKey}-${leftPageNumber}`"
+                    :pdf="decryptedPdf"
+                    :page="leftPageNumber"
+                    :text-layer="false"
+                    :scale="zoom"
+                    @loaded="onPdfLoaded"
+                    class="pdf-content no-select page-element"
+                    :class="pageTransitionClass"
+                  />
+                  <div
+                    v-else
+                    class="empty-page page-element"
+                    :class="pageTransitionClass"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Right Page -->
+              <div class="page-wrapper">
+                <div
+                  class="page-animation-container"
+                  :class="{ animating: isAnimating }"
+                >
+                  <VuePDF
+                    v-if="rightPageNumber <= pages"
+                    :key="`right-${refreshKey}-${rightPageNumber}`"
+                    :pdf="decryptedPdf"
+                    :page="rightPageNumber"
+                    :text-layer="false"
+                    :scale="zoom"
+                    @loaded="onPdfLoaded"
+                    class="pdf-content no-select page-element"
+                    :class="pageTransitionClass"
+                  />
+                  <div
+                    v-else
+                    class="empty-page page-element"
+                    :class="pageTransitionClass"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation Arrow - Right -->
+            <div
+              class="navigation-arrow navigation-arrow--right"
+              v-if="isLoaded && pdfLoaded"
+            >
+              <v-btn
+                icon
+                size="x-large"
+                color="primary"
+                variant="text"
+                :disabled="!canGoNext || isAnimating"
+                @click="goToNextPage"
+              >
+                <v-icon size="x-large">mdi-chevron-right</v-icon>
+              </v-btn>
+            </div>
+          </div>
         </v-card-text>
 
         <v-divider></v-divider>
@@ -200,8 +322,8 @@
                   prepend-icon="mdi-arrow-left"
                   variant="tonal"
                   color="primary"
-                  :disabled="page <= 1"
-                  @click="page--"
+                  :disabled="!canGoPrevious"
+                  @click="goToPreviousPage"
                 >
                 </v-btn>
 
@@ -219,14 +341,21 @@
                   :max="pages"
                 ></v-text-field>
 
-                <span class="page-info mx-2">of {{ pages }}</span>
+                <span class="page-info mx-2">
+                  {{
+                    twoPageMode
+                      ? `${leftPageNumber}-${Math.min(rightPageNumber, pages)}`
+                      : currentPage
+                  }}
+                  of {{ pages }}
+                </span>
 
                 <v-btn
                   append-icon="mdi-arrow-right"
                   variant="tonal"
                   color="primary"
-                  :disabled="page >= pages"
-                  @click="page++"
+                  :disabled="!canGoNext"
+                  @click="goToNextPage"
                 >
                 </v-btn>
               </div>
@@ -312,7 +441,7 @@ const props = defineProps({
 
 // State
 const page = ref(1);
-const zoom = ref(props.initialZoom);
+const zoom = ref(1);
 const isLoaded = ref(false);
 const dialogVisible = ref(false);
 const pdfContent = ref(null);
@@ -326,9 +455,44 @@ const pdfSrc = shallowRef(null);
 const pdfLoaded = ref(false);
 const refreshKey = ref(0);
 const pageInputValue = ref(1);
+const twoPageMode = ref(false);
+
+// Add animation state
+const isAnimating = ref(false);
+const pageTransitionClass = ref("");
+const animationDirection = ref("next"); // 'next' or 'prev'
+
+const containerHeight = ref(0);
+const pdfPageHeight = ref(0);
+const autoFitZoom = ref(1);
+const isAutoFitCalculated = ref(false);
 
 // Create PDF document with usePDF
 const { pdf: decryptedPdf, pages } = usePDF(pdfSrc);
+
+// Computed properties for two-page mode
+const currentPage = computed(() => page.value);
+
+const leftPageNumber = computed(() => {
+  if (!twoPageMode.value) return page.value;
+  // In two-page mode, show even pages on left, odd on right
+  return page.value % 2 === 0 ? page.value : page.value + 1;
+});
+
+const rightPageNumber = computed(() => {
+  if (!twoPageMode.value) return page.value;
+  return leftPageNumber.value + 1;
+});
+
+const canGoPrevious = computed(() => {
+  return twoPageMode.value ? page.value > 1 : page.value > 1;
+});
+
+const canGoNext = computed(() => {
+  return twoPageMode.value
+    ? rightPageNumber.value < pages.value
+    : page.value < pages.value;
+});
 
 // Watch page changes to update input field
 watch(page, (newPage) => {
@@ -337,7 +501,9 @@ watch(page, (newPage) => {
 
 // Check if current page is bookmarked
 const isCurrentPageBookmarked = computed(() => {
-  return bookmarks.value.some((bookmark) => bookmark.page === page.value);
+  return bookmarks.value.some(
+    (bookmark) => bookmark.page === currentPage.value
+  );
 });
 
 // Watch for changes in the PDF loading
@@ -358,10 +524,73 @@ watch(pdfSrc, (newPdfSrc) => {
   }
 });
 
+const calculateFitToHeightZoom = () => {
+  if (!containerHeight.value || !pdfPageHeight.value) return;
+
+  // Calculate available height (container minus some padding/margins)
+  const availableHeight = containerHeight.value - 100; // Reserve space for controls
+
+  // Calculate zoom level to fit page height
+  const calculatedZoom = availableHeight / pdfPageHeight.value;
+
+  // Clamp between 0.5 and 2
+  autoFitZoom.value = Math.max(0.5, Math.min(2, calculatedZoom));
+
+  // Only set initial zoom if this is the first calculation
+  if (!isAutoFitCalculated.value) {
+    zoom.value = autoFitZoom.value;
+  }
+};
+
+// 4. Add method to get container height (only recalculates autoFitZoom, doesn't change current zoom)
+const updateContainerHeight = () => {
+  const container = document.querySelector(".pdf-container");
+  if (container) {
+    containerHeight.value = container.clientHeight;
+    calculateFitToHeightZoom();
+  }
+};
+
 // Function to handle when PDF is fully loaded
 const onPdfLoaded = () => {
   console.log("VuePDF component loaded event fired");
   isLoaded.value = true;
+
+  // Only calculate auto-fit zoom once when PDF first loads
+  if (!isAutoFitCalculated.value) {
+    // Get the first page dimensions after a short delay
+    setTimeout(() => {
+      const pdfElement = document.querySelector(".pdf-content canvas");
+      if (pdfElement) {
+        pdfPageHeight.value = pdfElement.naturalHeight || pdfElement.height;
+        calculateFitToHeightZoom();
+        isAutoFitCalculated.value = true;
+      }
+    }, 100);
+  }
+};
+
+// Toggle view mode
+const toggleViewMode = () => {
+  twoPageMode.value = !twoPageMode.value;
+  refreshKey.value++; // Force re-render
+};
+
+// Navigation methods
+const goToPreviousPage = () => {
+  if (twoPageMode.value) {
+    page.value = Math.max(1, page.value - 2);
+  } else {
+    page.value = Math.max(1, page.value - 1);
+  }
+};
+
+const goToNextPage = () => {
+  if (twoPageMode.value) {
+    page.value = Math.min(pages.value, page.value + 2);
+  } else {
+    page.value = Math.min(pages.value, page.value + 1);
+  }
 };
 
 // Encryption key (hardcoded for now - should be securely retrieved in production)
@@ -678,10 +907,16 @@ const openPdfDialog = async () => {
   pageInputValue.value = 1;
   isLoaded.value = false;
   pdfLoaded.value = false;
-  refreshKey.value++; // Force re-render of the VuePDF component
+  isAutoFitCalculated.value = false; // Reset auto-fit flag
+  refreshKey.value++;
 
   // Load and decrypt the PDF
   await loadPdf();
+
+  // Update container height after dialog is fully rendered
+  setTimeout(() => {
+    updateContainerHeight();
+  }, 200);
 
   // Load bookmarks when dialog opens
   try {
@@ -752,6 +987,22 @@ watch(dialogVisible, (isVisible) => {
 onMounted(() => {
   // Add the event listener for the entire document when the component is mounted
   document.addEventListener("contextmenu", preventContextMenu);
+
+  // Add resize observer to handle window resize
+  const resizeObserver = new ResizeObserver(() => {
+    if (dialogVisible.value) {
+      updateContainerHeight();
+    }
+  });
+
+  // Observe the dialog container
+  const dialogElement = document.querySelector(".v-dialog");
+  if (dialogElement) {
+    resizeObserver.observe(dialogElement);
+  }
+
+  // Store observer for cleanup
+  window.pdfResizeObserver = resizeObserver;
 });
 
 onUnmounted(() => {
@@ -759,9 +1010,15 @@ onUnmounted(() => {
   document.removeEventListener("contextmenu", preventContextMenu);
   document.removeEventListener("keydown", preventSave);
   document.removeEventListener("dragstart", preventDragStart);
+
+  // Clean up resize observer
+  if (window.pdfResizeObserver) {
+    window.pdfResizeObserver.disconnect();
+  }
 });
 </script>
 
+<!-- Style Section - Animation CSS -->
 <style scoped>
 .pdf-reader-card {
   display: flex;
@@ -775,15 +1032,192 @@ onUnmounted(() => {
   position: relative;
   padding: 16px;
   overflow: auto;
-  /* Fixed: Changed from center alignment to flex-start for proper scrolling */
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  /* Added to prevent context menu */
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+}
+
+.pdf-content-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100%;
+}
+
+.single-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.two-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.page-wrapper {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.page-animation-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.page-element {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center center;
+}
+
+/* Page turn animations */
+.page-exit-next {
+  transform: rotateY(-90deg) scale(0.8);
+  opacity: 0;
+}
+
+.page-exit-prev {
+  transform: rotateY(90deg) scale(0.8);
+  opacity: 0;
+}
+
+.page-enter-next {
+  transform: rotateY(90deg) scale(0.8);
+  opacity: 0;
+  animation: pageEnterNext 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.page-enter-prev {
+  transform: rotateY(-90deg) scale(0.8);
+  opacity: 0;
+  animation: pageEnterPrev 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes pageEnterNext {
+  0% {
+    transform: rotateY(90deg) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pageEnterPrev {
+  0% {
+    transform: rotateY(-90deg) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Alternative slide animation (uncomment to use instead of flip) */
+/*
+.page-exit-next {
+  transform: translateX(-100%) scale(0.95);
+  opacity: 0;
+}
+
+.page-exit-prev {
+  transform: translateX(100%) scale(0.95);
+  opacity: 0;
+}
+
+.page-enter-next {
+  transform: translateX(100%) scale(0.95);
+  opacity: 0;
+  animation: slideEnterNext 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+.page-enter-prev {
+  transform: translateX(-100%) scale(0.95);
+  opacity: 0;
+  animation: slideEnterPrev 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+@keyframes slideEnterNext {
+  0% {
+    transform: translateX(100%) scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideEnterPrev {
+  0% {
+    transform: translateX(-100%) scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+*/
+
+/* Enhanced button states during animation */
+.nav-btn:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+.animating .page-element {
+  pointer-events: none;
+}
+
+.empty-page {
+  width: 300px;
+  height: 400px;
+  background-color: #e0e0e0;
+  border: 1px dashed #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.navigation-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.navigation-arrow--left {
+  left: 0px;
+}
+
+.navigation-arrow--right {
+  right: 0px;
+}
+
+.nav-btn {
+  background-color: #09341c !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background-color: #bf641f !important;
+  transform: scale(1.05);
 }
 
 .loading-container {
@@ -799,8 +1233,6 @@ onUnmounted(() => {
 .pdf-content {
   max-width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
-  /* Ensure PDF content can be scrolled to top when zoomed */
   margin-top: 0;
 }
 
@@ -822,31 +1254,79 @@ onUnmounted(() => {
   text-align: center;
 }
 
-/* CSS to prevent text selection and image saving */
 .no-select {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  pointer-events: none; /* This disables mouse interactions except for scroll */
+  pointer-events: none;
 }
 
-/* Re-enable pointer events for scrolling */
 .pdf-container {
   pointer-events: auto;
 }
 
-/* Bookmarks menu styling */
 .bookmarks-menu {
   max-height: 400px;
   overflow-y: auto;
 }
 
-/* Word counter styles */
 .word-counter {
   font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.6);
   text-align: right;
   margin-top: 4px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .two-page-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navigation-arrow--left {
+    left: 10px;
+  }
+
+  .navigation-arrow--right {
+    right: 10px;
+  }
+
+  /* Reduce animation intensity on mobile */
+  .page-exit-next,
+  .page-exit-prev {
+    transform: scale(0.9);
+  }
+
+  .page-enter-next,
+  .page-enter-prev {
+    transform: scale(0.9);
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .page-element {
+    transition: opacity 0.2s ease;
+  }
+
+  .page-exit-next,
+  .page-exit-prev,
+  .page-enter-next,
+  .page-enter-prev {
+    transform: none;
+    animation: none;
+  }
+
+  .page-exit-next,
+  .page-exit-prev {
+    opacity: 0;
+  }
+
+  .page-enter-next,
+  .page-enter-prev {
+    opacity: 1;
+  }
 }
 </style>
