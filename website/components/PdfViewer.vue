@@ -1030,11 +1030,8 @@ onUnmounted(() => {
   flex: 1;
   background-color: #f5f5f5;
   position: relative;
-  padding: 16px;
+  padding: 60px 16px 16px 16px; /* Increased top padding for arrows */
   overflow: auto;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1043,17 +1040,20 @@ onUnmounted(() => {
 
 .pdf-content-wrapper {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  min-height: 100%;
+  display: block; /* Changed from flex */
+  width: fit-content;
+  min-width: 100%;
+  margin: 0 auto; /* Center the content */
+}
+.pdf-content-wrapper.centered {
+  margin: 0 auto;
 }
 
 .single-page-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  display: block;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .two-page-container {
@@ -1062,6 +1062,8 @@ onUnmounted(() => {
   align-items: flex-start;
   gap: 20px;
   flex-wrap: nowrap;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .page-wrapper {
@@ -1195,18 +1197,19 @@ onUnmounted(() => {
 }
 
 .navigation-arrow {
-  position: absolute;
+  position: fixed; /* Changed from absolute to fixed */
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 1000; /* Higher z-index */
+  pointer-events: auto;
 }
 
 .navigation-arrow--left {
-  left: 0px;
+  left: 10px;
 }
 
 .navigation-arrow--right {
-  right: 0px;
+  right: 10px;
 }
 
 .nav-btn {
@@ -1231,9 +1234,24 @@ onUnmounted(() => {
 }
 
 .pdf-content {
-  max-width: 100%;
+  max-width: none; /* Remove max-width constraint */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   margin-top: 0;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .navigation-arrow--left {
+    left: 10px;
+  }
+
+  .navigation-arrow--right {
+    right: 10px;
+  }
+
+  .pdf-container {
+    padding: 50px 8px 16px 8px;
+  }
 }
 
 .pdf-controls {
