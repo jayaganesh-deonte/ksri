@@ -239,6 +239,8 @@ const buyEbook = async () => {
       order_id: uuidv4(),
     };
 
+    console.log("orderParams", orderParams);
+
     const response = await store.invokeLambdaAPI(
       "POST",
       `/purchase/api/payments/initiatePayment`,
