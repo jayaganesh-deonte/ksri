@@ -313,7 +313,7 @@
 
         <v-divider></v-divider>
 
-        <v-card>
+        <v-card color="primary" class="text--white">
           <v-row>
             <!-- Left side: Navigation controls -->
             <v-col cols="12" md="6">
@@ -321,7 +321,7 @@
                 <v-btn
                   prepend-icon="mdi-arrow-left"
                   variant="tonal"
-                  color="primary"
+                  color="white"
                   :disabled="!canGoPrevious"
                   @click="goToPreviousPage"
                 >
@@ -353,7 +353,7 @@
                 <v-btn
                   append-icon="mdi-arrow-right"
                   variant="tonal"
-                  color="primary"
+                  color="white"
                   :disabled="!canGoNext"
                   @click="goToNextPage"
                 >
@@ -364,33 +364,81 @@
             <!-- Right side: Zoom controls -->
             <v-col cols="12" md="6">
               <div class="d-flex justify-center align-center">
-                <v-tooltip location="top" text="Zoom Out">
-                  <template v-slot:activator="{ props }">
-                    <v-btn
-                      v-bind="props"
-                      icon="mdi-magnify-minus"
-                      variant="text"
-                      :disabled="zoom <= 0.5"
-                      @click="zoomOut"
-                    ></v-btn>
-                  </template>
-                </v-tooltip>
-
-                <span class="zoom-level mx-2"
-                  >{{ Math.round(zoom * 100) }}%</span
+                <!-- Zoom Controls Menu -->
+                <v-menu
+                  class="mx-4"
+                  :close-on-content-click="false"
+                  persistent
+                  v-model="zoomMenuOpen"
                 >
-
-                <v-tooltip location="top" text="Zoom In">
                   <template v-slot:activator="{ props }">
-                    <v-btn
-                      v-bind="props"
-                      icon="mdi-magnify-plus"
-                      variant="text"
-                      :disabled="zoom >= 2"
-                      @click="zoomIn"
-                    ></v-btn>
+                    <div class="d-flex flex-column justify-center align-center">
+                      <v-btn
+                        icon
+                        v-bind="props"
+                        :disabled="!isLoaded"
+                        variant="text"
+                      >
+                        <v-icon>mdi-magnify-plus</v-icon>
+                      </v-btn>
+                      <span class="mt-n2">zoom</span>
+                    </div>
                   </template>
-                </v-tooltip>
+                  <v-card min-width="200" class="zoom-menu">
+                    <v-card-text class="pa-3">
+                      <div class="d-flex align-center justify-space-between">
+                        <v-btn
+                          size="small"
+                          variant="outlined"
+                          @click.stop="resetZoom"
+                          :disabled="!isLoaded || zoom === 1"
+                          density="compact"
+                        >
+                          Reset
+                        </v-btn>
+
+                        <v-btn
+                          icon
+                          size="small"
+                          @click="zoomMenuOpen = false"
+                          variant="text"
+                        >
+                          <v-icon size="small">mdi-close</v-icon>
+                        </v-btn>
+                      </div>
+                      <div class="d-flex align-center justify-center">
+                        <v-btn
+                          icon
+                          variant="text"
+                          @click.stop="zoomOut"
+                          :disabled="!isLoaded || zoom <= 0.5"
+                          class="mr-2"
+                        >
+                          <v-icon size="small">mdi-magnify-minus</v-icon>
+                        </v-btn>
+
+                        <div
+                          class="zoom-display mx-3 text-center"
+                          style="min-width: 60px"
+                        >
+                          <span class="text-body-2"
+                            >{{ Math.round(zoom * 100) }}%</span
+                          >
+                        </div>
+
+                        <v-btn
+                          icon
+                          variant="text"
+                          @click.stop="zoomIn"
+                          :disabled="!isLoaded || zoom >= 2"
+                          class="ml-2"
+                        >
+                          <v-icon size="small">mdi-magnify-plus</v-icon>
+                        </v-btn>
+                      </div>
+                    </v-card-text>
+                  </v-card>
+                </v-menu>
               </div>
             </v-col>
           </v-row>
@@ -456,6 +504,11 @@ const pdfLoaded = ref(false);
 const refreshKey = ref(0);
 const pageInputValue = ref(1);
 const twoPageMode = ref(false);
+
+const zoomMenuOpen = ref(false);
+const resetZoom = () => {
+  zoom.value = 1;
+};
 
 // Add animation state
 const isAnimating = ref(false);
@@ -1263,7 +1316,7 @@ onUnmounted(() => {
 
 .page-info {
   font-size: 0.9rem;
-  color: rgba(0, 0, 0, 0.6);
+  color: #fff;
 }
 
 .zoom-level {
@@ -1346,5 +1399,16 @@ onUnmounted(() => {
   .page-enter-prev {
     opacity: 1;
   }
+}
+
+.zoom-menu {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.zoom-display {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  padding: 4px 8px;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 </style>

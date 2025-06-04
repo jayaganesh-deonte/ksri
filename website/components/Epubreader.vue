@@ -15,84 +15,10 @@
       fullscreen
       transition="dialog-bottom-transition"
     >
-      <v-toolbar dark color="primary">
+      <v-toolbar dark color="primary" style="height: 7vh !important">
         <div class="d-flex align-center w-100">
           <v-spacer />
 
-          <!-- Zoom Controls Menu -->
-          <v-menu
-            class="mx-4"
-            :close-on-content-click="false"
-            persistent
-            v-model="zoomMenuOpen"
-          >
-            <template v-slot:activator="{ props }">
-              <div class="d-flex flex-column justify-center align-center">
-                <v-btn icon v-bind="props" :disabled="loading" variant="text">
-                  <v-icon>mdi-magnify-plus</v-icon>
-                </v-btn>
-                <span class="mt-n2">zoom </span>
-              </div>
-            </template>
-            <v-card min-width="200" class="zoom-menu">
-              <v-card-text class="pa-3">
-                <div class="d-flex align-center justify-space-between">
-                  <v-btn
-                    size="small"
-                    variant="outlined"
-                    @click.stop="resetZoom"
-                    :disabled="loading || size === 100"
-                    density="compact"
-                  >
-                    Reset
-                  </v-btn>
-
-                  <v-btn
-                    icon
-                    size="small"
-                    @click="zoomMenuOpen = false"
-                    variant="text"
-                  >
-                    <v-icon size="small">mdi-close</v-icon>
-                  </v-btn>
-                </div>
-                <div class="d-flex align-center justify-center">
-                  <v-btn
-                    icon
-                    variant="text"
-                    @click.stop="zoomOut"
-                    :disabled="loading || size <= 50"
-                    class="mr-2"
-                  >
-                    <v-icon size="small">mdi-magnify-minus</v-icon>
-                  </v-btn>
-
-                  <div
-                    class="zoom-display mx-3 text-center"
-                    style="min-width: 60px"
-                  >
-                    <span class="text-body-2">{{ size }}%</span>
-                  </div>
-
-                  <v-btn
-                    icon
-                    variant="text"
-                    @click.stop="zoomIn"
-                    :disabled="loading || size >= 200"
-                    class="ml-2"
-                  >
-                    <v-icon size="small">mdi-magnify-plus</v-icon>
-                  </v-btn>
-                </div>
-
-                <!-- Reset to 100% button
-                <div class="d-flex justify-center mt-3">
-                  
-                </div> 
-                -->
-              </v-card-text>
-            </v-card>
-          </v-menu>
           <!-- Bookmark current location button -->
           <v-tooltip
             location="bottom"
@@ -258,7 +184,7 @@
         </v-card>
       </v-dialog>
 
-      <v-card class="pa-0" elevation="4">
+      <v-card class="pa-0" elevation="4" color="primary">
         <v-card-text @contextmenu.prevent class="pa-0 ma-0">
           <v-row>
             <!-- Error Alert -->
@@ -282,7 +208,7 @@
             <v-col v-else class="ma-0 pa-0">
               <div
                 class="epub-reader-wrapper no-select"
-                style="height: 100vh; position: relative"
+                style="height: 86vh; position: relative"
                 @contextmenu.prevent
               >
                 <v-no-ssr>
@@ -297,11 +223,116 @@
                   />
                 </v-no-ssr>
               </div>
-              <div class="d-flex justify-space-between mt-2">
+              <!-- <div class="d-flex justify-space-between mt-2">
                 <div>{{ pageInfo }}</div>
-              </div>
+              </div> -->
             </v-col>
           </v-row>
+          <v-toolbar
+            dark
+            color="primary"
+            style="height: 7vh !important"
+            class="pa-2"
+          >
+            <div class="d-flex align-center w-100">
+              <v-spacer />
+
+              <!-- Progress Control -->
+              <div class="d-flex flex-column justify-center align-center mx-4">
+                <div class="d-flex align-center">
+                  <span class="text-caption mr-2">{{ current }}%</span>
+                  <input
+                    type="range"
+                    :value="current"
+                    :min="0"
+                    :max="100"
+                    :step="1"
+                    @change="changeProgress"
+                    class="progress-slider"
+                    style="width: 150px; margin-right: 8px"
+                    :disabled="loading"
+                  />
+                </div>
+                <span class="text-caption mt-n2">Progress</span>
+              </div>
+              <v-spacer />
+
+              <!-- Zoom Controls Menu -->
+              <v-menu
+                class="mx-4"
+                :close-on-content-click="false"
+                persistent
+                v-model="zoomMenuOpen"
+              >
+                <template v-slot:activator="{ props }">
+                  <div class="d-flex flex-column justify-center align-center">
+                    <v-btn
+                      icon
+                      v-bind="props"
+                      :disabled="loading"
+                      variant="text"
+                    >
+                      <v-icon>mdi-magnify-plus</v-icon>
+                    </v-btn>
+                    <span class="mt-n2">zoom </span>
+                  </div>
+                </template>
+                <v-card min-width="200" class="zoom-menu">
+                  <v-card-text class="pa-3">
+                    <div class="d-flex align-center justify-space-between">
+                      <v-btn
+                        size="small"
+                        variant="outlined"
+                        @click.stop="resetZoom"
+                        :disabled="loading || size === 100"
+                        density="compact"
+                      >
+                        Reset
+                      </v-btn>
+
+                      <v-btn
+                        icon
+                        size="small"
+                        @click="zoomMenuOpen = false"
+                        variant="text"
+                      >
+                        <v-icon size="small">mdi-close</v-icon>
+                      </v-btn>
+                    </div>
+                    <div class="d-flex align-center justify-center">
+                      <v-btn
+                        icon
+                        variant="text"
+                        @click.stop="zoomOut"
+                        :disabled="loading || size <= 50"
+                        class="mr-2"
+                      >
+                        <v-icon size="small">mdi-magnify-minus</v-icon>
+                      </v-btn>
+
+                      <div
+                        class="zoom-display mx-3 text-center"
+                        style="min-width: 60px"
+                      >
+                        <span class="text-body-2">{{ size }}%</span>
+                      </div>
+
+                      <v-btn
+                        icon
+                        variant="text"
+                        @click.stop="zoomIn"
+                        :disabled="loading || size >= 200"
+                        class="ml-2"
+                      >
+                        <v-icon size="small">mdi-magnify-plus</v-icon>
+                      </v-btn>
+                    </div>
+                  </v-card-text>
+                </v-card>
+              </v-menu>
+              <v-spacer />
+            </div>
+          </v-toolbar>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -368,6 +399,9 @@ const bookmarkNote = ref("");
 const bookmarkNoteError = ref("");
 const editingBookmark = ref(null);
 const currentExcerpt = ref("");
+
+const current = ref(0);
+const percentage = ref(0);
 
 // Encryption constants
 const ENCRYPTION_PASSPHRASE =
@@ -804,13 +838,11 @@ const getRendition = (rend) => {
         return false;
       });
 
-      // Prevent drag events in the content
       contents.window.addEventListener("dragstart", (e) => {
         e.preventDefault();
         return false;
       });
 
-      // Prevent keyboard shortcuts in the content
       contents.window.addEventListener("keydown", (e) => {
         if (
           (e.ctrlKey || e.metaKey) &&
@@ -823,9 +855,11 @@ const getRendition = (rend) => {
     });
   }
 
-  // Get the book object and load navigation
+  // Get the book object and load navigation + progress tracking
   if (rend.book) {
     book.value = rend.book;
+
+    // Load navigation
     rend.book.loaded.navigation
       .then((nav) => {
         toc.value = nav.toc;
@@ -833,9 +867,53 @@ const getRendition = (rend) => {
       .catch((err) => {
         console.error("Failed to load navigation:", err);
       });
+
+    // NEW: Setup progress tracking
+    book.value.ready
+      .then(() => {
+        return book.value.locations.generate(1600);
+      })
+      .then((locations) => {
+        // Get initial progress
+        const displayed = rendition.value.display();
+        displayed.then(() => {
+          const currentLocation = rendition.value.currentLocation();
+          if (currentLocation && currentLocation.start) {
+            const currentPage = book.value.locations.percentageFromCfi(
+              currentLocation.start.cfi
+            );
+            current.value = Math.floor(currentPage * 100);
+          }
+        });
+
+        // Track progress changes
+        rendition.value.on("relocated", (location) => {
+          if (location && location.start) {
+            const percent = book.value.locations.percentageFromCfi(
+              location.start.cfi
+            );
+            const percentage = Math.floor(percent * 100);
+            current.value = percentage;
+          }
+        });
+      })
+      .catch((err) => {
+        console.error("Failed to generate locations:", err);
+      });
   }
 };
 
+// 3. Add this new function for progress slider change:
+const changeProgress = (e) => {
+  const value = e.target.value;
+  current.value = value;
+  if (book.value && book.value.locations) {
+    const cfi = book.value.locations.cfiFromPercentage(value / 100);
+    if (rendition.value) {
+      rendition.value.display(cfi);
+    }
+  }
+};
 // Add this method to your script setup section
 const resetZoom = () => {
   size.value = 100;
@@ -856,7 +934,6 @@ const zoomOut = () => {
   }
 };
 
-// 2. Update the changeSize method to be more robust
 const changeSize = (val) => {
   size.value = val;
   // Make sure rendition exists and is not null before accessing themes
