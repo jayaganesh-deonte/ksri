@@ -115,7 +115,7 @@
         <v-list>
           <v-list-item class="text-center">
             <v-list-item-title class="text-body-1 font-weight-bold">
-              {{ store.user.username }}
+              {{ displayName() }}
             </v-list-item-title>
           </v-list-item>
 

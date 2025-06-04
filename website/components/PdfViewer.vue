@@ -1028,7 +1028,7 @@ onUnmounted(() => {
 
 .pdf-container {
   flex: 1;
-  background-color: #f5f5f5;
+  background-color: #c9dfcb;
   position: relative;
   padding: 60px 16px 16px 16px; /* Increased top padding for arrows */
   overflow: auto;

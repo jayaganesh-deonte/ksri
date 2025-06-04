@@ -210,6 +210,11 @@ const fetchBooks = async () => {
       };
     });
 
+    // sort by paymentDate in descending order
+    books.value.sort((a, b) => {
+      return new Date(b.paymentDate) - new Date(a.paymentDate);
+    });
+
     console.log("Fetched books:", books.value);
   } catch (err) {
     console.error("Error fetching books:", err);

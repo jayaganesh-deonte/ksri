@@ -1752,7 +1752,7 @@ Resources:
           # CLIENT_ID: !Ref ProdCognitoUserPoolClient
           # BASE_URL: "https://ksri.in/"
           # EMAIL_PARAM_NAME: "/loops/ksri/key"
-          # EVENT_BUS_NAME: !GetAtt customEventBus.Name
+          EVENT_BUS_NAME: !GetAtt customEventBus.Name
           CC_AVENUE_CREDS: "/ksri/ccavenue/purchase"
           CLOUDFLARE_SECRET_KEY: "/cloudflare/trunstile"
           S3_BUCKET_NAME: !Ref S3BucketForEbook
@@ -1787,6 +1787,76 @@ Resources:
               Resource: "*"
         - S3CrudPolicy:
             BucketName: !Ref S3BucketForEbook
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        EntryPoints:
+          - index.ts
+
+  # purchase email notification lambda
+  purchaseEMailNotificationHandler:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${Prefix}_purchase_email_notification
+      CodeUri: purchase_email_notification/
+      Handler: index.handler
+      Timeout: 30
+      MemorySize: 256
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      FunctionUrlConfig:
+        AuthType: NONE
+        Cors:
+          AllowOrigins:
+            - "*"
+          AllowMethods:
+            - "*"
+          AllowHeaders:
+            - "*"
+      ReservedConcurrentExecutions: 15
+      Environment:
+        Variables:
+          DDB_TABLE_NAME: !Ref masterTable
+          POWERTOOLS_SERVICE_NAME: express-api
+          POWERTOOLS_METRICS_NAMESPACE: ksriadmin
+          LOG_LEVEL: INFO
+          # USER_POOL_ID: !Ref CognitoUserPool
+          # CLIENT_ID: !Ref ProdCognitoUserPoolClient
+          # BASE_URL: "https://ksri.in/"
+          EMAIL_PARAM_NAME: "/loops/ksri/key"
+          # EVENT_BUS_NAME: !GetAtt customEventBus.Name
+          CC_AVENUE_CREDS: "/ksri/ccavenue/purchase"
+          CLOUDFLARE_SECRET_KEY: "/cloudflare/trunstile"
+          S3_BUCKET_NAME: !Ref S3BucketForEbook
+          EBOOK_CLOUDFRONT: !Sub https://${ebookDistribution.DomainName}
+          REGION: !Sub ${AWS::Region}
+          USER_POOL_ID: !Ref WebsiteUserPool
+          CLIENT_ID: !Ref WebsiteUserPoolClient
+          KSRI_EMAIL: "contactus@deonte.in"
+          # ALLOWED_URL: !If
+          #   - useCustomDomainForUiCondition
+          #   - !Ref UiCustomDomain
+          #   - !Sub https://${UiDistribution.DomainName}
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref masterTable
+        - SSMParameterReadPolicy:
+            ParameterName: "*"
+      Events:
+        PaymentCompletedEvent:
+          Type: EventBridgeRule
+          Properties:
+            EventBusName: !GetAtt customEventBus.Name
+            Pattern:
+              detail-type:
+                - payment.purchase.completed
     Metadata:
       BuildMethod: esbuild
       BuildProperties:
