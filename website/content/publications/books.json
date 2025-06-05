@@ -209,7 +209,25 @@
     "author": "Prof. R. Parthasarathy, Dr. S. Muthulakshmi",
     "yearOfPublication": "2025-12-01",
     "printStatus": "Upcoming",
-    "itemPublishStatus": "PUBLISHED"
+    "itemPublishStatus": "PUBLISHED",
+    "ebookPrice": "20",
+    "ebookUrl": [
+      {
+        "encrypted": true,
+        "s3Folder": "ebook",
+        "s3Key": "files/01JVBXSKV304RNGFJVKC40WX2M.epub",
+        "url": "s3://ksri-prod-ebook-store/files/01JVBXSKV304RNGFJVKC40WX2M.epub"
+      }
+    ],
+    "previewEbookUrl": [
+      {
+        "encrypted": false,
+        "s3Folder": "preview",
+        "s3Key": "files/01JVBQEC83FV3N87X675CNQ6WQ.epub",
+        "url": "files/01JVBQEC83FV3N87X675CNQ6WQ.epub"
+      }
+    ],
+    "isEbookAvailable": "Yes"
   },
   {
     "title": "ARTHAŚĀSTRA OF KAUṬILYA  WITH   JAYAMAṆGALĀ AND CĀṆAKYAṬĪKĀ",

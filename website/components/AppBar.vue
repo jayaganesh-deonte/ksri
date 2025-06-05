@@ -92,7 +92,7 @@
             elevation="0"
             height="65"
             color="transparent"
-            class="d-flex justify-center align-center mx-1 pa-1 appBarMenuItem"
+            class="d-flex justify-center align-center mx-1 pa-0 appBarMenuItem"
             @mouseenter="handleMenuHover(option, true)"
             @mouseleave="handleMenuHover(option, false)"
             @click="navigateWithOutChild(option)"
@@ -156,7 +156,6 @@
                               <v-icon size="small" color="primary">
                                 mdi-book-open-blank-variant
                               </v-icon>
-                              <!-- if active set color -->
                               <div
                                 class="px-2 text-h6 defaultFont font-weight-bold"
                                 :class="`${
@@ -312,33 +311,23 @@ let scrollTimer = ref(null);
 const handleScroll = () => {
   const currentScrollY = window.scrollY;
 
-  // Hide header when scrolling down, show when scrolling up
-  if (currentScrollY > lastScrollY.value && currentScrollY > 100) {
-    showHeader.value = false;
-  } else if (currentScrollY < lastScrollY.value) {
+  // Show header only when at the very top (within 10px threshold)
+  if (currentScrollY <= 10) {
     showHeader.value = true;
+  } else {
+    showHeader.value = false;
   }
 
   lastScrollY.value = currentScrollY;
-
-  // Clear existing timer
-  if (scrollTimer.value) {
-    clearTimeout(scrollTimer.value);
-  }
-
-  // Show header after scroll stops for 2 seconds
-  scrollTimer.value = setTimeout(() => {
-    showHeader.value = true;
-  }, 2000);
 };
 
 // Add mouse move handler for top area
-const handleMouseMove = (event) => {
-  // Show header when mouse is in top 100px of viewport
-  if (event.clientY < 100) {
-    showHeader.value = true;
-  }
-};
+// const handleMouseMove = (event) => {
+//   // Show header when mouse is in top 100px of viewport
+//   if (event.clientY < 100) {
+//     showHeader.value = true;
+//   }
+// };
 
 const calculateAppBarHeight = () => {
   const appBarElement = document.getElementById("app-bar");
@@ -353,13 +342,13 @@ onMounted(() => {
   });
   window.addEventListener("resize", calculateAppBarHeight);
   window.addEventListener("scroll", handleScroll, { passive: true });
-  window.addEventListener("mousemove", handleMouseMove, { passive: true });
+  // window.addEventListener("mousemove", handleMouseMove, { passive: true });
 });
 
 onUnmounted(() => {
   window.removeEventListener("resize", calculateAppBarHeight);
   window.removeEventListener("scroll", handleScroll);
-  window.removeEventListener("mousemove", handleMouseMove);
+  // window.removeEventListener("mousemove", handleMouseMove);
   if (scrollTimer.value) {
     clearTimeout(scrollTimer.value);
   }

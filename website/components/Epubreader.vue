@@ -802,15 +802,13 @@ const goToBookmarkedLocation = (cfi) => {
 const getRendition = (rend) => {
   console.log("Rendition created successfully");
   rendition.value = rend;
-
-  // Set loading to false once we have a rendition
   loading.value = false;
 
-  // Apply font size immediately after getting rendition
+  // Apply font size and themes
   if (rendition.value) {
     rendition.value.themes.fontSize(`${size.value}%`);
 
-    // Add CSS to prevent text selection in the EPUB content
+    // Add CSS to prevent text selection
     rendition.value.themes.register("default", {
       body: {
         "-webkit-user-select": "none",
@@ -823,15 +821,13 @@ const getRendition = (rend) => {
       },
     });
 
-    // Apply the registered theme
     rendition.value.themes.select("default");
 
-    // Disable copying text
+    // Disable text selection and context menu
     rendition.value.on("selected", (cfiRange, contents) => {
       contents.window.getSelection().removeAllRanges();
     });
 
-    // Prevent context menu in iframe content
     rendition.value.hooks.content.register((contents) => {
       contents.window.addEventListener("contextmenu", (e) => {
         e.preventDefault();
@@ -855,7 +851,7 @@ const getRendition = (rend) => {
     });
   }
 
-  // Get the book object and load navigation + progress tracking
+  // Enhanced progress tracking for both reflowable and fixed layout
   if (rend.book) {
     book.value = rend.book;
 
@@ -868,51 +864,150 @@ const getRendition = (rend) => {
         console.error("Failed to load navigation:", err);
       });
 
-    // NEW: Setup progress tracking
+    // Enhanced progress tracking
     book.value.ready
       .then(() => {
-        return book.value.locations.generate(1600);
-      })
-      .then((locations) => {
-        // Get initial progress
-        const displayed = rendition.value.display();
-        displayed.then(() => {
-          const currentLocation = rendition.value.currentLocation();
-          if (currentLocation && currentLocation.start) {
-            const currentPage = book.value.locations.percentageFromCfi(
-              currentLocation.start.cfi
-            );
-            current.value = Math.floor(currentPage * 100);
-          }
-        });
+        // Check if it's a fixed layout EPUB
+        return book.value.loaded.metadata.then((metadata) => {
+          const isFixedLayout = metadata.layout === "pre-paginated";
+          console.log(
+            "EPUB Layout:",
+            isFixedLayout ? "Fixed Layout" : "Reflowable"
+          );
 
-        // Track progress changes
-        rendition.value.on("relocated", (location) => {
-          if (location && location.start) {
-            const percent = book.value.locations.percentageFromCfi(
-              location.start.cfi
-            );
-            const percentage = Math.floor(percent * 100);
-            current.value = percentage;
+          if (isFixedLayout) {
+            // For fixed layout EPUBs, use spine-based progress
+            setupFixedLayoutProgress();
+          } else {
+            // For reflowable EPUBs, use location-based progress
+            return book.value.locations.generate(1600).then(() => {
+              setupReflowableProgress();
+            });
           }
         });
       })
       .catch((err) => {
-        console.error("Failed to generate locations:", err);
+        console.error("Failed to setup progress tracking:", err);
+        // Fallback to spine-based progress
+        setupFixedLayoutProgress();
       });
   }
 };
 
+// Progress tracking for fixed layout EPUBs
+const setupFixedLayoutProgress = () => {
+  console.log("Setting up fixed layout progress tracking");
+
+  // Get initial progress based on spine position
+  const updateProgress = () => {
+    if (rendition.value && rendition.value.location) {
+      const currentLocation = rendition.value.location.start;
+      if (currentLocation && book.value && book.value.spine) {
+        // Find current spine item index
+        const spineItem = book.value.spine.get(currentLocation.href);
+        if (spineItem) {
+          const currentIndex = book.value.spine.spineItems.findIndex(
+            (item) => item.href === spineItem.href
+          );
+          const totalItems = book.value.spine.spineItems.length;
+
+          if (currentIndex !== -1 && totalItems > 0) {
+            // Calculate progress as percentage through the spine
+            const progress = Math.round(
+              ((currentIndex + 1) / totalItems) * 100
+            );
+            current.value = Math.min(Math.max(progress, 0), 100);
+            console.log(
+              `Fixed layout progress: ${current.value}% (${
+                currentIndex + 1
+              }/${totalItems})`
+            );
+          }
+        }
+      }
+    }
+  };
+
+  // Update progress on location changes
+  rendition.value.on("relocated", (location) => {
+    updateProgress();
+  });
+
+  // Initial progress update
+  setTimeout(updateProgress, 100);
+};
+
+// Progress tracking for reflowable EPUBs
+const setupReflowableProgress = () => {
+  console.log("Setting up reflowable progress tracking");
+
+  const updateProgress = () => {
+    if (rendition.value && rendition.value.currentLocation()) {
+      const currentLocation = rendition.value.currentLocation();
+      if (currentLocation && currentLocation.start && book.value.locations) {
+        const percent = book.value.locations.percentageFromCfi(
+          currentLocation.start.cfi
+        );
+        current.value = Math.round(percent * 100);
+        console.log(`Reflowable progress: ${current.value}%`);
+      }
+    }
+  };
+
+  // Update progress on location changes
+  rendition.value.on("relocated", (location) => {
+    updateProgress();
+  });
+
+  // Initial progress update
+  setTimeout(updateProgress, 100);
+};
+
 // 3. Add this new function for progress slider change:
 const changeProgress = (e) => {
-  const value = e.target.value;
+  const value = parseInt(e.target.value);
   current.value = value;
-  if (book.value && book.value.locations) {
-    const cfi = book.value.locations.cfiFromPercentage(value / 100);
-    if (rendition.value) {
-      rendition.value.display(cfi);
-    }
-  }
+
+  if (!book.value || !rendition.value) return;
+
+  // Check if we have location data (reflowable) or need to use spine (fixed layout)
+  book.value.loaded.metadata
+    .then((metadata) => {
+      const isFixedLayout = metadata.layout === "pre-paginated";
+
+      if (isFixedLayout || !book.value.locations) {
+        // For fixed layout, navigate by spine position
+        const totalItems = book.value.spine.spineItems.length;
+        const targetIndex = Math.round((value / 100) * (totalItems - 1));
+        const targetItem = book.value.spine.spineItems[targetIndex];
+
+        if (targetItem && targetItem.href) {
+          console.log(
+            `Navigating to spine item ${targetIndex + 1}/${totalItems}: ${
+              targetItem.href
+            }`
+          );
+          rendition.value.display(targetItem.href);
+        }
+      } else {
+        // For reflowable, use CFI-based navigation
+        const cfi = book.value.locations.cfiFromPercentage(value / 100);
+        if (cfi) {
+          rendition.value.display(cfi);
+        }
+      }
+    })
+    .catch((err) => {
+      console.error("Error in progress change:", err);
+      // Fallback to spine-based navigation
+      const totalItems = book.value.spine.spineItems.length;
+      const targetIndex = Math.round((value / 100) * (totalItems - 1));
+      const targetItem = book.value.spine.spineItems[targetIndex];
+
+      if (targetItem && targetItem.href) {
+        rendition.value.display(targetItem.href);
+      }
+    });
 };
 // Add this method to your script setup section
 const resetZoom = () => {
