@@ -24,7 +24,7 @@
               rounded="pill"
               variant="outlined"
               color="primary"
-              to="/ksri-publications/books/"
+              to="/ebooks/"
             >
               Back to Catalogue
             </v-btn>
@@ -37,7 +37,7 @@
             rounded="pill"
             variant="flat"
             color="primary"
-            to="/ksri-publications/books/"
+            to="/ebooks/"
             v-if="!isAdditionalPublication"
           >
             Back to Catalogue
@@ -46,10 +46,10 @@
             rounded="pill"
             variant="flat"
             color="primary"
-            to="/ksri-publications/"
+            to="/ebooks/"
             v-else
           >
-            Back to Publications
+            Back to Catalogue
           </v-btn>
         </div>
         <v-row>
@@ -306,8 +306,7 @@ const getBookInfo = async () => {
     // --- Enhancements for Structured Data ---
     // Attempt to construct a canonical URL for the book page. Adjust this to your actual URL structure.
     // Option 1: If your book object has a direct URL property
-    const canonicalUrl =
-      book.url || `http:/ksri.in/ksri-publications/books/${book.id}`; // Fallback, replace with your actual domain and path
+    const canonicalUrl = book.url || `http:/ksri.in/ebooks/${book.id}`; // Fallback, replace with your actual domain and path
 
     // A more descriptive text for the book.
     // Prioritize a dedicated description field if available, then details, then subtitle.

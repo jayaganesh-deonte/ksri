@@ -1,6 +1,6 @@
 <template>
   <v-app id="app">
-    <app-bar></app-bar>
+    <app-bar style="background-color: #c9dfcb"></app-bar>
     <v-main class="my-0" style="background-color: #c9dfcb">
       <FloatingIcon />
       <v-card elevation="0" rounded="0" color="transparent">

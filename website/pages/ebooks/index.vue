@@ -75,7 +75,11 @@
               md="4"
               data-aos="fade-up"
             >
-              <book-card :book="book" @viewDetails="onViewDetails" />
+              <book-card
+                :book="book"
+                :fromEbook="true"
+                @viewDetails="onViewDetails"
+              />
             </v-col>
           </v-row>
         </div>

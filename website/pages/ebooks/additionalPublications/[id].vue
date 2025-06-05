@@ -279,7 +279,7 @@ const onViewDetails = (book) => {
 
 const navigateToBookCatalogue = () => {
   resetSelectedBook();
-  navigateTo("/ksri-publications/");
+  navigateTo("/ebooks/");
 };
 
 // scroll to top on selectedbook details

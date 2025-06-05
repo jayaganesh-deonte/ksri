@@ -126,6 +126,7 @@
       <div class="my-4 d-flex align-center">
         <div class="mx-1">
           <v-btn
+            v-if="!fromEbook"
             :color="isHovering ? 'secondary' : 'primary'"
             text
             :to="
@@ -134,6 +135,16 @@
               '/' +
               book.id
             "
+            rounded="pill"
+            data-aos-delay="200"
+          >
+            View Details
+          </v-btn>
+          <v-btn
+            v-if="fromEbook"
+            :color="isHovering ? 'secondary' : 'primary'"
+            text
+            :to="'/ebooks/' + (isBook ? 'books' : 'journals') + '/' + book.id"
             rounded="pill"
             data-aos-delay="200"
           >
@@ -168,6 +179,11 @@ export default {
       type: Boolean,
       required: true,
       default: true,
+    },
+    fromEbook: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   data() {
