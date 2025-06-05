@@ -313,10 +313,10 @@
 
         <v-divider></v-divider>
 
-        <v-card color="primary" class="text--white">
+        <v-card color="primary" class="text--white" rounded="0">
           <v-row>
             <!-- Left side: Navigation controls -->
-            <v-col cols="12" md="6">
+            <v-col cols="8" justify="center" align="center">
               <div class="d-flex justify-center align-center">
                 <v-btn
                   prepend-icon="mdi-arrow-left"
@@ -342,11 +342,11 @@
                 ></v-text-field>
 
                 <span class="page-info mx-2">
-                  {{
+                  <!-- {{
                     twoPageMode
                       ? `${leftPageNumber}-${Math.min(rightPageNumber, pages)}`
                       : currentPage
-                  }}
+                  }} -->
                   of {{ pages }}
                 </span>
 
@@ -362,7 +362,7 @@
             </v-col>
 
             <!-- Right side: Zoom controls -->
-            <v-col cols="12" md="6">
+            <v-col cols="4">
               <div class="d-flex justify-center align-center">
                 <!-- Zoom Controls Menu -->
                 <v-menu
