@@ -220,6 +220,7 @@
                     :getRendition="getRendition"
                     @update:location="locationChange"
                     ref="epubReader"
+                    :epubOptions="epubOptions"
                   />
                 </v-no-ssr>
               </div>
@@ -389,7 +390,12 @@ let loading = ref(false);
 let loadError = ref(null);
 const epubReader = ref(null);
 const epubData = ref(null); // Will hold the ArrayBuffer directly
-const epubOptions = ref({});
+const epubOptions = ref({
+  width: "100%",
+  height: "100%",
+  // enabled scrolling for fixed layout
+  enableScroll: true,
+});
 const zoomMenuOpen = ref(false);
 
 let isFixedLayout = ref(false);
@@ -905,7 +911,138 @@ const getRendition = (rend) => {
       applyZoomWithCSS(size.value);
     });
   }
+
+  enableScrollOnIframe();
 };
+
+const enableScrollOnIframe = () => {
+  console.log("Enabling scrolling on iframes for fixed layout");
+  if (isFixedLayout.value) {
+    // Use setTimeout to ensure DOM is updated
+    setTimeout(() => {
+      // Get all iframes in the reader
+      const iframes = document.querySelectorAll(".epub-reader-wrapper iframe");
+
+      if (iframes.length === 0) {
+        console.warn("No iframes found to enable scrolling");
+        return;
+      }
+
+      iframes.forEach((iframe, index) => {
+        // Enable scrolling attribute
+        iframe.scrolling = "yes";
+        iframe.style.overflow = "auto";
+
+        try {
+          // Try to access iframe content and enable scrolling there too
+          if (iframe.contentDocument && iframe.contentWindow) {
+            const iframeDoc = iframe.contentDocument;
+            const iframeHtml = iframeDoc.documentElement;
+            const iframeBody = iframeDoc.body;
+
+            if (iframeHtml) {
+              iframeHtml.style.overflow = "auto";
+              iframeHtml.style.height = "100%";
+            }
+
+            if (iframeBody) {
+              iframeBody.style.overflow = "auto";
+              iframeBody.style.height = "auto";
+              iframeBody.style.minHeight = "100%";
+            }
+
+            // If zoomed, ensure content is larger than viewport
+            if (size.value > 100) {
+              const scaleValue = size.value / 100;
+              if (iframeBody) {
+                iframeBody.style.minWidth = `${scaleValue * 100}%`;
+                iframeBody.style.minHeight = `${scaleValue * 100}%`;
+              }
+            }
+          }
+        } catch (e) {
+          console.error("Error accessing iframe content:", e);
+        }
+
+        console.log(`Scrolling enabled on iframe ${index + 1}`);
+      });
+    }, 300); // Increased timeout for better reliability
+  }
+};
+
+const resetIframeStyles = () => {
+  console.log("Resetting iframe styles and modifications");
+
+  // Remove any custom zoom styles
+  cleanupZoomStyles();
+
+  // Remove any spacer elements created for scrolling
+  const spacer = document.getElementById("epub-zoom-spacer");
+  if (spacer) {
+    spacer.remove();
+  }
+
+  // Reset size to default
+  size.value = 100;
+
+  // Reset any iframe modifications
+  const iframes = document.querySelectorAll(".epub-reader-wrapper iframe");
+  iframes.forEach((iframe) => {
+    try {
+      if (iframe.contentDocument && iframe.contentWindow) {
+        const iframeDoc = iframe.contentDocument;
+        const iframeHtml = iframeDoc.documentElement;
+        const iframeBody = iframeDoc.body;
+
+        // Reset styles
+        if (iframeHtml) {
+          iframeHtml.style.overflow = "";
+          iframeHtml.style.height = "";
+        }
+
+        if (iframeBody) {
+          iframeBody.style.overflow = "";
+          iframeBody.style.width = "";
+          iframeBody.style.height = "";
+          iframeBody.style.minHeight = "";
+          iframeBody.style.minWidth = "";
+        }
+      }
+    } catch (e) {
+      console.error("Error resetting iframe content:", e);
+    }
+  });
+
+  // Reset wrapper element styles
+  const wrapperElement = document.querySelector(".epub-reader-wrapper");
+  if (wrapperElement) {
+    wrapperElement.style.overflow = "";
+    wrapperElement.style.overflowX = "";
+    wrapperElement.style.overflowY = "";
+    wrapperElement.style.minWidth = "";
+    wrapperElement.style.minHeight = "";
+    wrapperElement.style.position = "";
+  }
+};
+
+// Update your watch function for showReader
+watch(showReader, (isVisible) => {
+  if (isVisible) {
+    document.addEventListener("keydown", handleKeyboardShortcuts);
+    document.addEventListener("dragstart", preventDragStart);
+    document.addEventListener("wheel", handleWheelZoom, { passive: false });
+  } else {
+    document.removeEventListener("keydown", handleKeyboardShortcuts);
+    document.removeEventListener("dragstart", preventDragStart);
+    document.removeEventListener("wheel", handleWheelZoom);
+
+    // Reset iframe styles when closing
+    resetIframeStyles();
+
+    // Existing cleanup
+    cleanupResources();
+  }
+});
 
 // Progress tracking for fixed layout EPUBs
 const setupFixedLayoutProgress = () => {
@@ -943,6 +1080,9 @@ const setupFixedLayoutProgress = () => {
 
   // Update progress on location changes
   rendition.value.on("relocated", (location) => {
+    console.log("Location changed:", location);
+    // update iframe scrolling
+    enableScrollOnIframe();
     updateProgress();
   });
 
@@ -1064,23 +1204,18 @@ const applyZoomWithCSS = (zoomValue) => {
 
     // CSS that targets only the EPUB iframe content with proper scrollbar handling
     zoomStyle.textContent = `
-      .epub-reader-wrapper {
-        overflow: auto !important;
-      }
-      
+     
       .epub-reader-wrapper iframe {
         transform: scale(${scaleValue}) !important;
         transform-origin: top left !important;
         width: ${100 / scaleValue}% !important;
         height: ${100 / scaleValue}% !important;
       }
-      
+
       /* Ensure the iframe document has proper scrolling */
       .epub-reader-wrapper iframe html,
       .epub-reader-wrapper iframe body {
         overflow: auto !important;
-        width: 100% !important;
-        height: 100% !important;
       }
     `;
 
@@ -1136,6 +1271,7 @@ const applyZoomWithCSS = (zoomValue) => {
         }
       });
     }
+    enableScrollOnIframe();
 
     console.log(`Applied CSS-based zoom with scrollbars: ${zoomValue}%`);
   } else {
@@ -1146,186 +1282,53 @@ const applyZoomWithCSS = (zoomValue) => {
   }
 };
 
+const setupIframeObserver = () => {
+  if (typeof MutationObserver !== "undefined") {
+    const observer = new MutationObserver((mutations) => {
+      let shouldEnableScroll = false;
+
+      mutations.forEach((mutation) => {
+        if (mutation.addedNodes.length > 0) {
+          // Check if any iframe was added
+          mutation.addedNodes.forEach((node) => {
+            if (
+              node.tagName === "IFRAME" ||
+              (node.querySelectorAll &&
+                node.querySelectorAll("iframe").length > 0)
+            ) {
+              shouldEnableScroll = true;
+            }
+          });
+        }
+      });
+
+      if (shouldEnableScroll) {
+        enableScrollOnIframe();
+      }
+    });
+
+    // Start observing the reader wrapper
+    setTimeout(() => {
+      const wrapper = document.querySelector(".epub-reader-wrapper");
+      if (wrapper) {
+        observer.observe(wrapper, {
+          childList: true,
+          subtree: true,
+        });
+        console.log("Iframe observer started");
+      }
+    }, 500);
+
+    // Store observer reference for cleanup
+    return observer;
+  }
+  return null;
+};
+
 const cleanupZoomStyles = () => {
   const zoomStyle = document.getElementById("epub-zoom-style");
   if (zoomStyle) {
     zoomStyle.remove();
-  }
-};
-
-const applyZoomWithHooks = (zoomValue) => {
-  if (!rendition.value) return;
-
-  const scaleValue = zoomValue / 100;
-
-  if (isFixedLayout.value) {
-    // For fixed layout, use content hooks to apply scaling
-    rendition.value.hooks.content.register((contents) => {
-      const document = contents.document;
-      const body = document.body;
-      const html = document.documentElement;
-
-      if (body && html) {
-        // Reset previous transforms
-        body.style.transform = "";
-        html.style.overflow = "";
-        body.style.overflow = "";
-
-        // Apply scaling
-        body.style.transform = `scale(${scaleValue})`;
-        body.style.transformOrigin = "top left";
-
-        // Ensure scrolling works
-        html.style.overflow = "auto";
-        body.style.overflow = "visible";
-
-        // Calculate scaled dimensions
-        const originalWidth = body.scrollWidth;
-        const originalHeight = body.scrollHeight;
-
-        // Set minimum dimensions to ensure content isn't cut off
-        body.style.minWidth = `${originalWidth}px`;
-        body.style.minHeight = `${originalHeight}px`;
-
-        // Adjust the viewport meta tag if it exists
-        const viewport = document.querySelector('meta[name="viewport"]');
-        if (viewport) {
-          viewport.setAttribute(
-            "content",
-            `width=device-width, initial-scale=${scaleValue}, user-scalable=yes`
-          );
-        }
-      }
-    });
-
-    // Apply to existing content
-    if (rendition.value.getContents) {
-      rendition.value.getContents().forEach((contents) => {
-        const document = contents.document;
-        const body = document.body;
-        const html = document.documentElement;
-
-        if (body && html) {
-          body.style.transform = `scale(${scaleValue})`;
-          body.style.transformOrigin = "top left";
-          html.style.overflow = "auto";
-          body.style.overflow = "visible";
-          body.style.minWidth = `${body.scrollWidth}px`;
-          body.style.minHeight = `${body.scrollHeight}px`;
-        }
-      });
-    }
-  } else {
-    // Reflowable content
-    if (rendition.value.themes) {
-      rendition.value.themes.fontSize(`${zoomValue}%`);
-    }
-  }
-};
-
-const applyZoomAlternative = (zoomValue) => {
-  if (!rendition.value || !isFixedLayout.value) {
-    // For reflowable, use the standard fontSize approach
-    if (rendition.value && rendition.value.themes) {
-      rendition.value.themes.fontSize(`${zoomValue}%`);
-    }
-    return;
-  }
-
-  const scaleValue = zoomValue / 100;
-
-  // CSS to inject into the EPUB content
-  const zoomCSS = `
-    body {
-      transform: scale(${scaleValue}) !important;
-      transform-origin: top left !important;
-      width: ${100 / scaleValue}% !important;
-      height: ${100 / scaleValue}% !important;
-    }
-    
-    html {
-      width: ${100 / scaleValue}% !important;
-      height: ${100 / scaleValue}% !important;
-      overflow: hidden !important;
-    }
-  `;
-
-  // Register the zoom theme
-  rendition.value.themes.register("zoom", {
-    body: {
-      transform: `scale(${scaleValue}) !important`,
-      "transform-origin": "top left !important",
-      width: `${100 / scaleValue}% !important`,
-      height: `${100 / scaleValue}% !important`,
-    },
-    html: {
-      width: `${100 / scaleValue}% !important`,
-      height: `${100 / scaleValue}% !important`,
-      overflow: "hidden !important",
-    },
-  });
-
-  // Apply the zoom theme
-  rendition.value.themes.select("zoom");
-
-  console.log(
-    `Applied fixed layout zoom: ${zoomValue}% (scale: ${scaleValue})`
-  );
-};
-
-const applyZoom = (zoomValue) => {
-  if (!rendition.value) return;
-
-  try {
-    if (isFixedLayout.value) {
-      // For fixed layout EPUBs, use CSS transform to scale the entire content
-      const scaleValue = zoomValue / 100;
-
-      // Apply transform to the iframe content
-      rendition.value.hooks.content.register((contents) => {
-        const bodyElement = contents.document.body;
-        if (bodyElement) {
-          bodyElement.style.transform = `scale(${scaleValue})`;
-          bodyElement.style.transformOrigin = "top left";
-
-          // Adjust the container size to prevent scrollbars
-          const container = contents.document.documentElement;
-          if (container) {
-            container.style.width = `${100 / scaleValue}%`;
-            container.style.height = `${100 / scaleValue}%`;
-          }
-        }
-      });
-
-      // If content is already loaded, apply the transform immediately
-      if (rendition.value.getContents) {
-        rendition.value.getContents().forEach((content) => {
-          const bodyElement = content.document.body;
-          if (bodyElement) {
-            bodyElement.style.transform = `scale(${scaleValue})`;
-            bodyElement.style.transformOrigin = "top left";
-
-            const container = content.document.documentElement;
-            if (container) {
-              container.style.width = `${100 / scaleValue}%`;
-              container.style.height = `${100 / scaleValue}%`;
-            }
-          }
-        });
-      }
-
-      console.log(
-        `Applied fixed layout zoom: ${zoomValue}% (scale: ${scaleValue})`
-      );
-    } else {
-      // For reflowable EPUBs, use fontSize
-      if (rendition.value.themes) {
-        rendition.value.themes.fontSize(`${zoomValue}%`);
-        console.log(`Applied reflowable zoom: ${zoomValue}%`);
-      }
-    }
-  } catch (error) {
-    console.error("Error applying zoom:", error);
   }
 };
 
@@ -1428,6 +1431,9 @@ const getLabel = (toc, href) => {
 };
 
 const locationChange = (epubcifi) => {
+  // enable ifram scroll
+  enableScrollOnIframe();
+
   location.value = epubcifi;
 
   if (epubcifi && rendition.value && rendition.value.location) {
@@ -1441,6 +1447,8 @@ const locationChange = (epubcifi) => {
       console.error("Error updating location:", e);
     }
   }
+  // Re-enable iframe scrolling after location change
+  enableScrollOnIframe();
 };
 
 const goToSection = (href) => {
@@ -1461,6 +1469,15 @@ const prevPage = () => {
 const cleanupResources = () => {
   // Clear the ArrayBuffer data reference
   epubData.value = null;
+
+  // Reset rendition and book references
+  rendition.value = null;
+  book.value = null;
+
+  // Reset any other state that should be cleared
+  loadError.value = null;
+  toc.value = [];
+  pageInfo.value = "";
 };
 
 // Prevent keyboard shortcuts for saving (Ctrl+S, Command+S, Ctrl+P, etc.)
@@ -1505,6 +1522,18 @@ watch(showReader, (isVisible) => {
 onMounted(() => {
   // Add the event listener for the entire document when the component is mounted
   document.addEventListener("contextmenu", preventContextMenu);
+
+  // Setup observer for iframe changes
+  const observer = setupIframeObserver();
+
+  // Clean up observer in onUnmounted
+  onUnmounted(() => {
+    // Existing unmounted code...
+
+    if (observer) {
+      observer.disconnect();
+    }
+  });
 });
 
 onUnmounted(() => {
@@ -1516,12 +1545,16 @@ onUnmounted(() => {
 });
 </script>
 
-<style scoped>
+<style>
 .epub-reader-wrapper {
   border: 1px solid #ccc;
-  height: 500px;
-  overflow: auto !important; /* Changed from hidden to auto */
+
   position: relative;
+  background-color: green !important;
+}
+
+.epub-container {
+  background-color: #fff !important;
 }
 
 .toc-panel {
