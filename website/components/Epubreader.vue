@@ -186,34 +186,33 @@
 
       <v-card class="pa-0" elevation="4" color="primary">
         <v-card-text @contextmenu.prevent class="pa-0 ma-0">
-          <v-row>
+          <div>
             <!-- Error Alert -->
-            <v-col v-if="loadError" cols="12">
+            <div v-if="loadError" cols="12">
               <v-alert type="error" closable>
                 {{ loadError }}
               </v-alert>
-            </v-col>
+            </div>
 
             <!-- Loading Indicator -->
-            <v-col v-if="loading" cols="12" class="text-center py-12">
+            <div v-if="loading" cols="12" class="text-center py-12">
               <v-progress-circular
                 indeterminate
                 color="primary"
                 size="64"
               ></v-progress-circular>
               <div class="mt-4">Loading ebook...</div>
-            </v-col>
+            </div>
 
             <!-- Viewer -->
-            <v-col v-else class="ma-0 pa-0">
+            <div v-else class="ma-0 pa-0">
               <div
                 class="epub-reader-wrapper no-select"
-                style="height: 86vh; position: relative; overflow: auto"
+                style="height: 86vh; position: relative"
                 @contextmenu.prevent
               >
                 <v-no-ssr>
                   <vue-reader
-                    class="ma-0"
                     v-if="epubData"
                     :url="epubData"
                     :location.sync="location"
@@ -227,8 +226,8 @@
               <!-- <div class="d-flex justify-space-between mt-2">
                 <div>{{ pageInfo }}</div>
               </div> -->
-            </v-col>
-          </v-row>
+            </div>
+          </div>
           <v-toolbar
             dark
             color="primary"
@@ -917,57 +916,6 @@ const getRendition = (rend) => {
 
 const enableScrollOnIframe = () => {
   console.log("Enabling scrolling on iframes for fixed layout");
-  if (isFixedLayout.value) {
-    // Use setTimeout to ensure DOM is updated
-    setTimeout(() => {
-      // Get all iframes in the reader
-      const iframes = document.querySelectorAll(".epub-reader-wrapper iframe");
-
-      if (iframes.length === 0) {
-        console.warn("No iframes found to enable scrolling");
-        return;
-      }
-
-      iframes.forEach((iframe, index) => {
-        // Enable scrolling attribute
-        iframe.scrolling = "yes";
-        iframe.style.overflow = "auto";
-
-        try {
-          // Try to access iframe content and enable scrolling there too
-          if (iframe.contentDocument && iframe.contentWindow) {
-            const iframeDoc = iframe.contentDocument;
-            const iframeHtml = iframeDoc.documentElement;
-            const iframeBody = iframeDoc.body;
-
-            if (iframeHtml) {
-              iframeHtml.style.overflow = "auto";
-              iframeHtml.style.height = "100%";
-            }
-
-            if (iframeBody) {
-              iframeBody.style.overflow = "auto";
-              iframeBody.style.height = "auto";
-              iframeBody.style.minHeight = "100%";
-            }
-
-            // If zoomed, ensure content is larger than viewport
-            if (size.value > 100) {
-              const scaleValue = size.value / 100;
-              if (iframeBody) {
-                iframeBody.style.minWidth = `${scaleValue * 100}%`;
-                iframeBody.style.minHeight = `${scaleValue * 100}%`;
-              }
-            }
-          }
-        } catch (e) {
-          console.error("Error accessing iframe content:", e);
-        }
-
-        console.log(`Scrolling enabled on iframe ${index + 1}`);
-      });
-    }, 300); // Increased timeout for better reliability
-  }
 };
 
 const resetIframeStyles = () => {
@@ -1204,73 +1152,36 @@ const applyZoomWithCSS = (zoomValue) => {
 
     // CSS that targets only the EPUB iframe content with proper scrollbar handling
     zoomStyle.textContent = `
-     
-      .epub-reader-wrapper iframe {
+      .reader {
         transform: scale(${scaleValue}) !important;
         transform-origin: top left !important;
-        width: ${100 / scaleValue}% !important;
-        height: ${100 / scaleValue}% !important;
+        height: 100% !important;
+        width: 100% !important;
       }
 
-      /* Ensure the iframe document has proper scrolling */
-      .epub-reader-wrapper iframe html,
-      .epub-reader-wrapper iframe body {
-        overflow: auto !important;
-      }
     `;
 
-    // Also apply scrolling properties directly to the wrapper
-    const wrapperElement = document.querySelector(".epub-reader-wrapper");
-    if (wrapperElement) {
-      wrapperElement.style.overflow = "auto";
-      wrapperElement.style.overflowX = "auto";
-      wrapperElement.style.overflowY = "auto";
-    }
+    // // Apply to existing content if available
+    // if (rendition.value.getContents) {
+    //   rendition.value.getContents().forEach((contents) => {
+    //     const document = contents.document;
+    //     const body = document.body;
+    //     const html = document.documentElement;
 
-    // Apply content hooks to ensure iframe content has proper scrolling
-    if (rendition.value.hooks && rendition.value.hooks.content) {
-      rendition.value.hooks.content.register((contents) => {
-        const document = contents.document;
-        const body = document.body;
-        const html = document.documentElement;
+    //     if (body && html) {
+    //       html.style.overflow = "auto";
+    //       html.style.overflowX = "auto";
+    //       html.style.overflowY = "auto";
+    //       html.style.width = "100%";
+    //       html.style.height = "100%";
 
-        if (body && html) {
-          // Ensure proper scrolling for the iframe content
-          html.style.overflow = "auto";
-          html.style.overflowX = "auto";
-          html.style.overflowY = "auto";
-          html.style.width = "100%";
-          html.style.height = "100%";
-
-          body.style.overflow = "visible";
-          body.style.width = "100%";
-          body.style.height = "auto";
-          body.style.minHeight = "100%";
-        }
-      });
-    }
-
-    // Apply to existing content if available
-    if (rendition.value.getContents) {
-      rendition.value.getContents().forEach((contents) => {
-        const document = contents.document;
-        const body = document.body;
-        const html = document.documentElement;
-
-        if (body && html) {
-          html.style.overflow = "auto";
-          html.style.overflowX = "auto";
-          html.style.overflowY = "auto";
-          html.style.width = "100%";
-          html.style.height = "100%";
-
-          body.style.overflow = "visible";
-          body.style.width = "100%";
-          body.style.height = "auto";
-          body.style.minHeight = "100%";
-        }
-      });
-    }
+    //       body.style.overflow = "visible";
+    //       body.style.width = "100%";
+    //       body.style.height = "auto";
+    //       body.style.minHeight = "100%";
+    //     }
+    //   });
+    // }
     enableScrollOnIframe();
 
     console.log(`Applied CSS-based zoom with scrollbars: ${zoomValue}%`);
@@ -1309,7 +1220,7 @@ const setupIframeObserver = () => {
 
     // Start observing the reader wrapper
     setTimeout(() => {
-      const wrapper = document.querySelector(".epub-reader-wrapper");
+      const wrapper = document.querySelector(".reader");
       if (wrapper) {
         observer.observe(wrapper, {
           childList: true,
@@ -1546,6 +1457,9 @@ onUnmounted(() => {
 </script>
 
 <style>
+.readerArea {
+  overflow: scroll !important;
+}
 .epub-reader-wrapper {
   border: 1px solid #ccc;
 
@@ -1555,6 +1469,25 @@ onUnmounted(() => {
 
 .epub-container {
   background-color: #fff !important;
+}
+
+.tocButton {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+button.tocButton.tocButtonExpanded {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+.arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 .toc-panel {
