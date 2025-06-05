@@ -1835,7 +1835,7 @@ Resources:
           REGION: !Sub ${AWS::Region}
           USER_POOL_ID: !Ref WebsiteUserPool
           CLIENT_ID: !Ref WebsiteUserPoolClient
-          KSRI_EMAIL: "contactus@deonte.in"
+          KSRI_EMAIL: "ksrinst@gmail.com"
           # ALLOWED_URL: !If
           #   - useCustomDomainForUiCondition
           #   - !Ref UiCustomDomain
