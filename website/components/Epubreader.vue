@@ -15,7 +15,7 @@
       fullscreen
       transition="dialog-bottom-transition"
     >
-      <v-toolbar dark color="primary" style="height: 7vh !important">
+      <v-toolbar dark color="primary" style="">
         <div class="d-flex align-center w-100">
           <v-spacer />
 
@@ -205,10 +205,10 @@
             </div>
 
             <!-- Viewer -->
-            <div v-else class="ma-0 pa-0">
+            <v-card v-else class="ma-0 pa-0" height="80vh">
               <div
                 class="epub-reader-wrapper no-select"
-                style="height: 86vh; position: relative"
+                style="height: 100% !important"
                 @contextmenu.prevent
               >
                 <v-no-ssr>
@@ -226,14 +226,9 @@
               <!-- <div class="d-flex justify-space-between mt-2">
                 <div>{{ pageInfo }}</div>
               </div> -->
-            </div>
+            </v-card>
           </div>
-          <v-toolbar
-            dark
-            color="primary"
-            style="height: 7vh !important"
-            class="pa-2"
-          >
+          <v-toolbar dark color="primary" class="">
             <div class="d-flex align-center w-100">
               <v-spacer />
 
@@ -1157,6 +1152,7 @@ const applyZoomWithCSS = (zoomValue) => {
         transform-origin: top left !important;
         height: 100% !important;
         width: 100% !important;
+        margin-right: auto !important;
       }
 
     `;
@@ -1463,7 +1459,6 @@ onUnmounted(() => {
 .epub-reader-wrapper {
   border: 1px solid #ccc;
 
-  position: relative;
   background-color: green !important;
 }
 
