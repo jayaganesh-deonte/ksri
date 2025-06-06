@@ -15,10 +15,11 @@
       fullscreen
       transition="dialog-bottom-transition"
     >
-      <v-toolbar dark color="primary" style="">
+      <v-toolbar dark color="primary" style="" v-if="displayToolBar">
         <div class="d-flex align-center w-100">
           <v-spacer />
 
+          <v-spacer />
           <!-- Bookmark current location button -->
           <v-tooltip
             location="bottom"
@@ -34,7 +35,7 @@
                   class="mr-2"
                   :disabled="loading"
                 >
-                  <v-icon>
+                  <v-icon size="small">
                     {{
                       isCurrentLocationBookmarked
                         ? "mdi-bookmark"
@@ -136,6 +137,50 @@
         </div>
       </v-toolbar>
 
+      <!-- Hide toolbar button - positioned just below the toolbar and centered -->
+      <div
+        style="
+          position: absolute;
+          top: 64px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1000;
+        "
+        v-if="displayToolBar"
+      >
+        <div
+          class="d-flex flex-column align-center"
+          @click="displayToolBar = false"
+        >
+          <v-btn size="small" color="primary" rounded="0">
+            <v-icon>mdi-chevron-up</v-icon>
+          </v-btn>
+          <!-- <span class="text-caption">Hide Toolbar</span> -->
+        </div>
+      </div>
+
+      <!-- btn to display toolbar -->
+      <div
+        style="
+          position: absolute;
+          top: 0px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1000;
+        "
+        v-if="!displayToolBar"
+      >
+        <v-btn
+          class="toolbar-toggle-btn"
+          color="primary"
+          @click="displayToolBar = true"
+          icon="mdi-chevron-down"
+          rounded="0"
+          size="small"
+        >
+        </v-btn>
+      </div>
+
       <!-- Bookmark Note Dialog -->
       <v-dialog v-model="bookmarkNoteDialog" max-width="500px">
         <v-card>
@@ -205,7 +250,11 @@
             </div>
 
             <!-- Viewer -->
-            <v-card v-else class="ma-0 pa-0" height="80vh">
+            <v-card
+              v-else
+              class="ma-0 pa-0"
+              :height="displayToolBar ? '80vh' : '100vh'"
+            >
               <div
                 class="epub-reader-wrapper no-select"
                 style="height: 100% !important"
@@ -228,7 +277,7 @@
               </div> -->
             </v-card>
           </div>
-          <v-toolbar dark color="primary" class="">
+          <v-toolbar dark color="primary" class="" v-if="displayToolBar">
             <div class="d-flex align-center w-100">
               <v-spacer />
 
@@ -415,6 +464,8 @@ const epubOptions = ref({
   enableScroll: true,
 });
 const zoomMenuOpen = ref(false);
+
+let displayToolBar = ref(true);
 
 let isFixedLayout = ref(false);
 

@@ -18,7 +18,7 @@
       :retain-focus="false"
     >
       <v-card class="pdf-reader-card">
-        <v-toolbar color="primary">
+        <v-toolbar color="primary" v-if="displayToolBar">
           <v-spacer></v-spacer>
 
           <!-- View Mode Toggle -->
@@ -143,6 +143,52 @@
           </v-btn>
         </v-toolbar>
 
+        <!-- Hide toolbar button - positioned just below the toolbar and centered -->
+        <div
+          style="
+            position: absolute;
+            top: 64px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+          "
+          v-if="displayToolBar"
+        >
+          <div
+            class="d-flex flex-column align-center"
+            @click="displayToolBar = false"
+          >
+            <v-btn
+              rounded="0"
+              icon="mdi-chevron-up"
+              size="small"
+              color="primary"
+            >
+            </v-btn>
+          </div>
+        </div>
+
+        <!-- Show toolbar button - positioned at the top center when toolbar is hidden -->
+        <div
+          style="
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+          "
+          v-if="!displayToolBar"
+        >
+          <v-btn
+            class="toolbar-toggle-btn"
+            color="primary"
+            @click="displayToolBar = true"
+            icon="mdi-chevron-down"
+            rounded="0"
+          >
+          </v-btn>
+        </div>
+
         <!-- Bookmark Note Dialog -->
         <v-dialog v-model="bookmarkNoteDialog" max-width="500px">
           <v-card>
@@ -190,8 +236,15 @@
             </v-card-actions>
           </v-card>
         </v-dialog>
+
         <!-- Template Section - PDF Content Area -->
-        <v-card-text class="pdf-container" @contextmenu.prevent>
+        <v-card-text
+          class="pdf-container"
+          @contextmenu.prevent
+          :style="{
+            paddingTop: displayToolBar ? '16px' : '56px',
+          }"
+        >
           <div class="loading-container" v-if="!isLoaded">
             <v-progress-circular
               indeterminate
@@ -313,7 +366,12 @@
 
         <v-divider></v-divider>
 
-        <v-card color="primary" class="text--white" rounded="0">
+        <v-card
+          color="primary"
+          class="text--white"
+          rounded="0"
+          v-if="displayToolBar"
+        >
           <div class="d-flex">
             <!-- Left side: Navigation controls -->
             <v-spacer />
@@ -551,6 +609,8 @@ const pdfLoaded = ref(false);
 const refreshKey = ref(0);
 const pageInputValue = ref(1);
 const twoPageMode = ref(false);
+
+let displayToolBar = ref(true);
 
 const zoomMenuOpen = ref(false);
 const resetZoom = () => {
