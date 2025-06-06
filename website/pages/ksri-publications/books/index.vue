@@ -71,6 +71,13 @@
         </div>
 
         <!-- book catalogue -->
+        <!-- if filterBooksBasedOnPublication lenght is 0 then display no results found -->
+        <div v-if="filterBooksBasedOnPublication('KSRI').length === 0">
+          <div class="text-center ma-4">
+            <v-icon size="64" color="primary">mdi-book-remove</v-icon>
+            <div class="text-h6">No results found</div>
+          </div>
+        </div>
         <div class="ma-4">
           <v-row>
             <v-col
@@ -208,6 +215,9 @@ const filterBooksBasedOnPublication = (publicationName) => {
         ?.toLowerCase()
         .includes(removeDiacritics(query)) ||
       removeDiacritics(book.subtitle)
+        ?.toLowerCase()
+        .includes(removeDiacritics(query)) ||
+      removeDiacritics(book.keywords)
         ?.toLowerCase()
         .includes(removeDiacritics(query))
   );

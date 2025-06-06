@@ -88,7 +88,11 @@ marqueeTextsRouter.get(
         KeyConditionExpression: "PK = :PK",
         ExpressionAttributeValues: {
           ":PK": "ENTITYTYPE#MARQUEETEXT",
+          ":status": "PUBLISHED",
         },
+
+        // filter only status published
+        FilterExpression: "itemPublishStatus = :status",
         //   id is lexagraphically sorted so sort it from old to new
         ScanIndexForward: true,
       });
