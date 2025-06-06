@@ -7,6 +7,7 @@ export interface EmailDataVariables {
   customerName: string;
   bookName: string;
   bookLink: string;
+  receiptLink: string;
 }
 
 interface EmailRequest {

@@ -12,10 +12,19 @@ export const handler = async (event: any) => {
 
   const payment = event.detail.payment;
 
+  const BASE_URL = process.env.BASE_URL || "http://ksri.in/";
+
   const emailDataVariables: EmailDataVariables = {
     customerName: payment.name,
     bookName: payment.bookName,
-    bookLink: "https://ksri.in/ksri-publications/books/" + payment.bookId,
+    bookLink: BASE_URL + "ebooks/books/" + payment.bookId,
+    receiptLink:
+      BASE_URL +
+      "public/receipt/ebook?emailId=" +
+      payment.email +
+      "&paymentRefId=" +
+      payment.paymentRefId,
+    // paymentRefId: payment.orderId,
   };
 
   const emailResponse = await emailService.sendEmail(

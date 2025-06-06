@@ -1153,6 +1153,7 @@ const applyZoomWithCSS = (zoomValue) => {
         height: 100% !important;
         width: 100% !important;
         margin-right: auto !important;
+        inset: 0 !important;
       }
 
     `;
@@ -1464,18 +1465,6 @@ onUnmounted(() => {
 
 .epub-container {
   background-color: #fff !important;
-}
-
-.tocButton {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-}
-
-button.tocButton.tocButtonExpanded {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
 }
 
 .arrow {

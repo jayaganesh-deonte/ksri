@@ -32,7 +32,7 @@
 
 <script setup>
 const apiEndpoint = "/payments/ebook";
-import DonationReceiptPdf from "@/components/DonationReceiptPdf.vue";
+import DownloadEbookReceiptPdf from "@/components/DownloadEbookReceiptPdf.vue";
 
 import DateRangePicker from "@/components/DateRangePicker.vue";
 
@@ -68,7 +68,7 @@ const donationFields = [
     key: "donationReceiptPdf",
     label: "Donation Receipt",
     type: "component",
-    component: DonationReceiptPdf,
+    component: DownloadEbookReceiptPdf,
   },
   // {
   //   key: "paymentType",
