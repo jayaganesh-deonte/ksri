@@ -80,7 +80,7 @@
           </div>
         </div>
       </div>
-      <div class="d-flex mx-auto mt-0 flex-wrap">
+      <div class="d-flex mx-auto mt-0 flex-wrap justify-center">
         <!-- add menu Options -->
         <div v-for="option in menuOptions" :key="option.name">
           <v-card
@@ -92,7 +92,7 @@
             elevation="0"
             height="65"
             color="transparent"
-            class="d-flex justify-center align-center mx-1 pa-0 appBarMenuItem"
+            class="d-flex justify-center align-center pa-0 appBarMenuItem compact-menu-item"
             @mouseenter="handleMenuHover(option, true)"
             @mouseleave="handleMenuHover(option, false)"
             @click="navigateWithOutChild(option)"
@@ -110,15 +110,18 @@
                 v-else
                 v-model="option.showChildren"
                 open-on-hover
+                open-on-click
                 :close-delay="200"
                 :open-delay="100"
                 offset-y
                 content-class="menu-content"
+                @click="toggleMenu(option)"
               >
                 <template v-slot:activator="{ props }">
                   <div
                     v-bind="props"
                     class="d-flex align-center justify-center menu-activator"
+                    @click.stop="toggleMenu(option)"
                   >
                     {{ option.name }}
                     <v-icon size="x-small" class="mx-1">
@@ -359,6 +362,20 @@ const handleMenuHover = (option, isHovering) => {
     hoveredMenu.value = option.name;
   } else {
     hoveredMenu.value = null;
+  }
+};
+
+// New method to handle click toggle for menus
+const toggleMenu = (option) => {
+  if (option.children) {
+    option.showChildren = !option.showChildren;
+
+    // Close other menus when one is clicked
+    menuOptions.forEach((opt) => {
+      if (opt !== option && opt.children) {
+        opt.showChildren = false;
+      }
+    });
   }
 };
 
@@ -633,6 +650,48 @@ const openChildMenu = (option) => {
 </script>
 
 <style scoped>
+/* Compact menu items with reduced spacing */
+.compact-menu-item {
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  min-width: auto !important;
+}
+
+/* Responsive menu spacing for smaller screens */
+@media (max-width: 1400px) {
+  .compact-menu-item {
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  .compact-menu-item .text-subtitle-1 {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .compact-menu-item {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  .compact-menu-item .text-subtitle-1 {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Ensure menu container uses available space efficiently */
+.d-flex.mx-auto.mt-0.flex-wrap.justify-center {
+  max-width: 100%;
+  gap: 0;
+}
+
 /* active menu option */
 .activeMenuChild {
   background-color: #bf641f !important;
