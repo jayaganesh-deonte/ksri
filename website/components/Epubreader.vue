@@ -251,9 +251,33 @@
                 <span class="text-caption mt-n2">Progress</span>
               </div>
               <v-spacer />
+              <div class="d-flex align-center justify-center">
+                <v-btn
+                  icon
+                  variant="text"
+                  @click.stop="zoomOut"
+                  :disabled="loading || size <= 50"
+                  class="mr-2"
+                >
+                  <v-icon size="small">mdi-magnify-minus</v-icon>
+                </v-btn>
 
+                <div class="mx-3 text-center" style="min-width: 60px">
+                  <span class="text-body-2">{{ size }}%</span>
+                </div>
+
+                <v-btn
+                  icon
+                  variant="text"
+                  @click.stop="zoomIn"
+                  :disabled="loading || size >= 200"
+                  class="ml-2"
+                >
+                  <v-icon size="small">mdi-magnify-plus</v-icon>
+                </v-btn>
+              </div>
               <!-- Zoom Controls Menu -->
-              <v-menu
+              <!-- <v-menu
                 class="mx-4"
                 :close-on-content-click="false"
                 persistent
@@ -324,7 +348,7 @@
                     </div>
                   </v-card-text>
                 </v-card>
-              </v-menu>
+              </v-menu> -->
               <v-spacer />
             </div>
           </v-toolbar>
@@ -1149,7 +1173,7 @@ const applyZoomWithCSS = (zoomValue) => {
     zoomStyle.textContent = `
       .reader {
         transform: scale(${scaleValue}) !important;
-        transform-origin: top left !important;
+        transform-origin: top center !important;        
         height: 100% !important;
         width: 100% !important;
         margin-right: auto !important;
@@ -1465,13 +1489,6 @@ onUnmounted(() => {
 
 .epub-container {
   background-color: #fff !important;
-}
-
-.arrow {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
 }
 
 .toc-panel {

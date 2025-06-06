@@ -314,16 +314,24 @@
         <v-divider></v-divider>
 
         <v-card color="primary" class="text--white" rounded="0">
-          <v-row>
+          <div class="d-flex">
             <!-- Left side: Navigation controls -->
-            <v-col cols="8" justify="center" align="center">
-              <div class="d-flex justify-center align-center">
+            <v-spacer />
+            <div
+              class="d-flex justify-center align-center pa-2"
+              style="flex: 1 1 auto; min-width: 0"
+            >
+              <div
+                class="d-flex justify-center align-center"
+                style="flex-wrap: nowrap; gap: 8px"
+              >
                 <v-btn
                   prepend-icon="mdi-arrow-left"
                   variant="tonal"
                   color="white"
                   :disabled="!canGoPrevious"
                   @click="goToPreviousPage"
+                  size="small"
                 >
                 </v-btn>
 
@@ -333,20 +341,23 @@
                   variant="outlined"
                   type="number"
                   density="compact"
-                  class="page-input mx-2"
-                  style="max-width: 70px"
+                  class="page-input"
+                  style="width: 60px; min-width: 60px; flex-shrink: 0"
                   @blur="goToPage"
                   @keyup.enter="goToPage"
                   :min="1"
                   :max="pages"
                 ></v-text-field>
 
-                <span class="page-info mx-2">
+                <span
+                  class="page-info text-body-2"
+                  style="white-space: nowrap; flex-shrink: 0"
+                >
                   <!-- {{
-                    twoPageMode
-                      ? `${leftPageNumber}-${Math.min(rightPageNumber, pages)}`
-                      : currentPage
-                  }} -->
+            twoPageMode
+              ? `${leftPageNumber}-${Math.min(rightPageNumber, pages)}`
+              : currentPage
+          }} -->
                   of {{ pages }}
                 </span>
 
@@ -356,92 +367,128 @@
                   color="white"
                   :disabled="!canGoNext"
                   @click="goToNextPage"
+                  size="small"
                 >
                 </v-btn>
               </div>
-            </v-col>
+            </div>
+            <v-spacer />
 
             <!-- Right side: Zoom controls -->
-            <v-col cols="4">
-              <div class="d-flex justify-center align-center">
+            <div
+              class="d-flex justify-center align-center pa-2"
+              style="flex: 0 0 auto"
+            >
+              <div class="d-flex align-center justify-center" style="gap: 4px">
                 <!-- Zoom Controls Menu -->
-                <v-menu
-                  class="mx-4"
-                  :close-on-content-click="false"
-                  persistent
-                  v-model="zoomMenuOpen"
+                <div class="d-flex align-center justify-center">
+                  <v-btn
+                    icon
+                    variant="text"
+                    @click.stop="zoomOut"
+                    :disabled="!isLoaded || zoom <= 0.5"
+                    size="small"
+                  >
+                    <v-icon size="small">mdi-magnify-minus</v-icon>
+                  </v-btn>
+
+                  <div
+                    class="text-center"
+                    style="min-width: 50px; font-size: 0.875rem"
+                  >
+                    <span class="text-body-2"
+                      >{{ Math.round(zoom * 100) }}%</span
+                    >
+                  </div>
+
+                  <v-btn
+                    icon
+                    variant="text"
+                    @click.stop="zoomIn"
+                    :disabled="!isLoaded || zoom >= 2"
+                    size="small"
+                  >
+                    <v-icon size="small">mdi-magnify-plus</v-icon>
+                  </v-btn>
+                </div>
+                <!-- <v-menu
+          class="mx-4"
+          :close-on-content-click="false"
+          persistent
+          v-model="zoomMenuOpen"
+        >
+          <template v-slot:activator="{ props }">
+            <div class="d-flex flex-column justify-center align-center">
+              <v-btn
+                icon
+                v-bind="props"
+                :disabled="!isLoaded"
+                variant="text"
+              >
+                <v-icon>mdi-magnify-plus</v-icon>
+              </v-btn>
+              <span class="mt-n2">zoom</span>
+            </div>
+          </template>
+          <v-card min-width="200" class="zoom-menu">
+            <v-card-text class="pa-3">
+              <div class="d-flex align-center justify-space-between">
+                <v-btn
+                  size="small"
+                  variant="outlined"
+                  @click.stop="resetZoom"
+                  :disabled="!isLoaded || zoom === 1"
+                  density="compact"
                 >
-                  <template v-slot:activator="{ props }">
-                    <div class="d-flex flex-column justify-center align-center">
-                      <v-btn
-                        icon
-                        v-bind="props"
-                        :disabled="!isLoaded"
-                        variant="text"
-                      >
-                        <v-icon>mdi-magnify-plus</v-icon>
-                      </v-btn>
-                      <span class="mt-n2">zoom</span>
-                    </div>
-                  </template>
-                  <v-card min-width="200" class="zoom-menu">
-                    <v-card-text class="pa-3">
-                      <div class="d-flex align-center justify-space-between">
-                        <v-btn
-                          size="small"
-                          variant="outlined"
-                          @click.stop="resetZoom"
-                          :disabled="!isLoaded || zoom === 1"
-                          density="compact"
-                        >
-                          Reset
-                        </v-btn>
+                  Reset
+                </v-btn>
 
-                        <v-btn
-                          icon
-                          size="small"
-                          @click="zoomMenuOpen = false"
-                          variant="text"
-                        >
-                          <v-icon size="small">mdi-close</v-icon>
-                        </v-btn>
-                      </div>
-                      <div class="d-flex align-center justify-center">
-                        <v-btn
-                          icon
-                          variant="text"
-                          @click.stop="zoomOut"
-                          :disabled="!isLoaded || zoom <= 0.5"
-                          class="mr-2"
-                        >
-                          <v-icon size="small">mdi-magnify-minus</v-icon>
-                        </v-btn>
-
-                        <div
-                          class="zoom-display mx-3 text-center"
-                          style="min-width: 60px"
-                        >
-                          <span class="text-body-2"
-                            >{{ Math.round(zoom * 100) }}%</span
-                          >
-                        </div>
-
-                        <v-btn
-                          icon
-                          variant="text"
-                          @click.stop="zoomIn"
-                          :disabled="!isLoaded || zoom >= 2"
-                          class="ml-2"
-                        >
-                          <v-icon size="small">mdi-magnify-plus</v-icon>
-                        </v-btn>
-                      </div>
-                    </v-card-text>
-                  </v-card>
-                </v-menu>
+                <v-btn
+                  icon
+                  size="small"
+                  @click="zoomMenuOpen = false"
+                  variant="text"
+                >
+                  <v-icon size="small">mdi-close</v-icon>
+                </v-btn>
               </div>
-            </v-col>
-          </v-row>
+              <div class="d-flex align-center justify-center">
+                <v-btn
+                  icon
+                  variant="text"
+                  @click.stop="zoomOut"
+                  :disabled="!isLoaded || zoom <= 0.5"
+                  class="mr-2"
+                >
+                  <v-icon size="small">mdi-magnify-minus</v-icon>
+                </v-btn>
+
+                <div
+                  class="zoom-display mx-3 text-center"
+                  style="min-width: 60px"
+                >
+                  <span class="text-body-2"
+                    >{{ Math.round(zoom * 100) }}%</span
+                  >
+                </div>
+
+                <v-btn
+                  icon
+                  variant="text"
+                  @click.stop="zoomIn"
+                  :disabled="!isLoaded || zoom >= 2"
+                  class="ml-2"
+                >
+                  <v-icon size="small">mdi-magnify-plus</v-icon>
+                </v-btn>
+              </div>
+            </v-card-text>
+          </v-card>
+        </v-menu> -->
+              </div>
+            </div>
+            <v-spacer />
+          </div>
         </v-card>
       </v-card>
     </v-dialog>

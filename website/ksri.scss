@@ -309,6 +309,10 @@ cursive;
 .arrow {
     color: #BF641F !important;
     font-size: 6rem !important;
+    position: fixed !important;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
 
