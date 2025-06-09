@@ -610,7 +610,12 @@ const calculateFitToHeightZoom = () => {
   // Clamp between 0.5 and 2
   autoFitZoom.value = Math.max(0.5, Math.min(2, calculatedZoom));
 
-  // Only set initial zoom if this is the first calculation
+  // if less than 0.7 set it to 0.7
+  if (autoFitZoom.value < 0.7) {
+    autoFitZoom.value = 0.7;
+  }
+
+  // Only set initial zoom if this is the first calculation and set min height as 100
   if (!isAutoFitCalculated.value) {
     zoom.value = autoFitZoom.value;
   }
