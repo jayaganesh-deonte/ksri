@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@aws-amplify/ui-vue": "^4.3.3",
     "@aws-crypto/sha256-js": "^5.2.0",
     "@aws-sdk/protocol-http": "^3.370.0",
     "@aws-sdk/signature-v4": "^3.370.0",
