@@ -15,11 +15,17 @@
       fullscreen
       transition="dialog-bottom-transition"
     >
-      <v-toolbar dark color="primary" style="" v-if="displayToolBar">
+      <!-- Dynamic Toolbar -->
+      <v-toolbar
+        dark
+        color="primary"
+        :height="toolbarHeight"
+        v-if="displayToolBar"
+        class="reader-toolbar"
+      >
         <div class="d-flex align-center w-100">
           <v-spacer />
 
-          <v-spacer />
           <!-- Bookmark current location button -->
           <v-tooltip
             location="bottom"
@@ -27,15 +33,15 @@
             v-if="displayBookMark"
           >
             <template v-slot:activator="{ props: tooltipProps }">
-              <div class="d-flex flex-column justify-center align-center mx-4">
+              <div class="d-flex flex-column justify-center align-center mx-2">
                 <v-btn
                   icon
                   v-bind="tooltipProps"
                   @click="toggleBookmark"
-                  class="mr-2"
+                  :size="buttonSize"
                   :disabled="loading"
                 >
-                  <v-icon size="small">
+                  <v-icon :size="iconSize">
                     {{
                       isCurrentLocationBookmarked
                         ? "mdi-bookmark"
@@ -43,23 +49,30 @@
                     }}
                   </v-icon>
                 </v-btn>
-                <span class="text-subtitle-2 mt-n2"> Bookmark</span>
+                <span class="text-caption mt-n1"> Bookmark </span>
               </div>
             </template>
           </v-tooltip>
 
           <!-- Bookmarks list button -->
-          <v-menu v-if="displayBookMark" class="mx-8">
+          <v-menu
+            v-if="displayBookMark"
+            :class="isMobilePortrait ? 'mx-2' : 'mx-4'"
+          >
             <template v-slot:activator="{ props: menuProps }">
               <div class="d-flex flex-column justify-center align-center">
-                <v-btn icon v-bind="menuProps" class="mr-2" :disabled="loading">
-                  <v-icon>mdi-bookmark-multiple</v-icon>
+                <v-btn
+                  icon
+                  v-bind="menuProps"
+                  :size="buttonSize"
+                  :disabled="loading"
+                >
+                  <v-icon :size="iconSize">mdi-bookmark-multiple</v-icon>
                 </v-btn>
-
-                <span class="text-subtitle-2 mt-n2"> View Bookmarks</span>
+                <span class="text-caption mt-n1"> Bookmarks </span>
               </div>
             </template>
-            <v-card min-width="300" class="bookmarks-menu">
+            <v-card :min-width="bookmarkMenuWidth" class="bookmarks-menu">
               <v-card-title class="d-flex justify-space-between">
                 <span>Bookmarks</span>
                 <v-btn
@@ -129,48 +142,47 @@
           <v-btn
             icon
             @click="showReader = false"
-            class="mr-2"
+            :size="buttonSize"
             :loading="loading"
           >
-            <v-icon>mdi-close</v-icon>
+            <v-icon :size="iconSize">mdi-close</v-icon>
           </v-btn>
         </div>
       </v-toolbar>
 
-      <!-- Hide toolbar button - positioned just below the toolbar and centered -->
+      <!-- Hide toolbar button -->
       <div
-        style="position: absolute; top: 64px; right: 2px; z-index: 1000"
+        :style="`position: absolute; top: ${toolbarHeight}px; right: 4px; z-index: 1000;`"
         v-if="displayToolBar"
       >
-        <div
-          class="d-flex flex-column align-center"
+        <v-btn
+          :size="buttonSize"
+          color="primary"
+          rounded="0"
           @click="displayToolBar = false"
         >
-          <v-btn size="small" color="primary" rounded="0">
-            <v-icon>mdi-chevron-up</v-icon>
-          </v-btn>
-          <!-- <span class="text-caption">Hide Toolbar</span> -->
-        </div>
+          <v-icon :size="iconSize">mdi-chevron-up</v-icon>
+        </v-btn>
       </div>
 
-      <!-- btn to display toolbar -->
+      <!-- Show toolbar button -->
       <div
-        style="position: absolute; top: 0px; right: 2px; z-index: 1000"
+        style="position: absolute; top: 4px; right: 4px; z-index: 1000"
         v-if="!displayToolBar"
       >
         <v-btn
           class="toolbar-toggle-btn"
           color="primary"
           @click="displayToolBar = true"
-          icon="mdi-chevron-down"
+          :icon="`mdi-chevron-down`"
           rounded="0"
-          size="small"
+          :size="buttonSize"
         >
         </v-btn>
       </div>
 
       <!-- Bookmark Note Dialog -->
-      <v-dialog v-model="bookmarkNoteDialog" max-width="500px">
+      <v-dialog v-model="bookmarkNoteDialog" :max-width="dialogWidth">
         <v-card>
           <v-card-title>
             {{ editingBookmark ? "Edit Bookmark Note" : "Add Bookmark Note" }}
@@ -217,7 +229,8 @@
         </v-card>
       </v-dialog>
 
-      <v-card class="pa-0" elevation="4" color="primary">
+      <!-- Main Reader Card -->
+      <v-card class="pa-0 reader-main-card" elevation="4" color="primary">
         <v-card-text @contextmenu.prevent class="pa-0 ma-0">
           <div>
             <!-- Error Alert -->
@@ -228,24 +241,20 @@
             </div>
 
             <!-- Loading Indicator -->
-            <div v-if="loading" cols="12" class="text-center py-12">
+            <div v-if="loading" cols="12" class="text-center loading-container">
               <v-progress-circular
                 indeterminate
                 color="primary"
-                size="64"
+                :size="loadingSize"
               ></v-progress-circular>
               <div class="mt-4">Loading ebook...</div>
             </div>
 
-            <!-- Viewer -->
-            <v-card
-              v-else
-              class="ma-0 pa-0"
-              :height="displayToolBar ? '80vh' : '100vh'"
-            >
+            <!-- EPUB Viewer -->
+            <v-card v-else class="ma-0 pa-0" :height="readerHeight">
               <div
                 class="epub-reader-wrapper no-select"
-                style="height: 100% !important"
+                :style="`height: ${readerHeight} !important`"
                 @contextmenu.prevent
               >
                 <v-no-ssr>
@@ -260,62 +269,70 @@
                   />
                 </v-no-ssr>
               </div>
-              <!-- <div class="d-flex justify-space-between mt-2">
-                <div>{{ pageInfo }}</div>
-              </div> -->
             </v-card>
           </div>
-          <v-toolbar dark color="primary" class="" v-if="displayToolBar">
-            <div class="d-flex align-center">
-              <v-spacer v-if="$device.isDesktop" />
 
+          <!-- Bottom Controls -->
+          <v-card
+            dark
+            color="primary"
+            class="text--white bottom-controls"
+            v-if="displayToolBar"
+            elevation="0"
+          >
+            <div :class="controlsLayoutClass">
               <!-- Progress Control -->
-              <div class="d-flex flex-column justify-center align-center mx-4">
-                <div class="d-flex align-center">
-                  <span class="text-caption mr-2">{{ current }}%</span>
-                  <input
-                    type="range"
-                    :value="current"
-                    :min="0"
-                    :max="100"
-                    :step="1"
-                    @change="changeProgress"
-                    class="progress-slider"
-                    :disabled="loading"
-                  />
+              <div class="progress-control">
+                <div class="d-flex flex-column justify-center align-center">
+                  <div class="d-flex align-center">
+                    <span class="text-caption mr-2">{{ current }}%</span>
+                    <input
+                      type="range"
+                      :value="current"
+                      :min="0"
+                      :max="100"
+                      :step="1"
+                      @change="changeProgress"
+                      class="progress-slider"
+                      :disabled="loading"
+                    />
+                  </div>
+                  <span v-if="!isMobilePortrait" class="text-caption mt-n2">
+                    Progress
+                  </span>
                 </div>
-                <span class="text-caption mt-n2">Progress</span>
-              </div>
-              <v-spacer v-if="$device.isDesktop" />
-              <div class="d-flex align-center justify-center">
-                <v-btn
-                  icon
-                  variant="text"
-                  @click.stop="zoomOut"
-                  :disabled="loading || size <= 50"
-                  size="small"
-                >
-                  <v-icon size="small">mdi-magnify-minus</v-icon>
-                </v-btn>
-
-                <div class="text-center" style="min-width: 60px">
-                  <span class="text-body-2">{{ size }}%</span>
-                </div>
-
-                <v-btn
-                  icon
-                  variant="text"
-                  @click.stop="zoomIn"
-                  :disabled="loading || size >= 200"
-                  size="small"
-                >
-                  <v-icon size="small">mdi-magnify-plus</v-icon>
-                </v-btn>
               </div>
 
-              <v-spacer v-if="$device.isDesktop" />
+              <!-- Zoom controls -->
+              <div class="zoom-control">
+                <div class="d-flex align-center justify-center">
+                  <v-btn
+                    icon
+                    variant="text"
+                    @click.stop="zoomOut"
+                    :disabled="loading || size <= 50"
+                    :size="buttonSize"
+                  >
+                    <v-icon :size="iconSize">mdi-magnify-minus</v-icon>
+                  </v-btn>
+
+                  <div class="text-center zoom-display">
+                    <span :class="zoomTextClass">{{ size }}%</span>
+                  </div>
+
+                  <v-btn
+                    icon
+                    variant="text"
+                    @click.stop="zoomIn"
+                    :disabled="loading || size >= 200"
+                    :size="buttonSize"
+                  >
+                    <v-icon :size="iconSize">mdi-magnify-plus</v-icon>
+                  </v-btn>
+                </div>
+              </div>
             </div>
-          </v-toolbar>
+          </v-card>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -325,6 +342,7 @@
 <script setup>
 import { ref, watch, computed, onMounted, onUnmounted } from "vue";
 import { VueReader } from "vue-reader/lib/vue-reader.es.js";
+import { useDisplay } from "vuetify";
 
 import { userStore } from "~/stores/UserStore";
 
@@ -394,6 +412,146 @@ const currentExcerpt = ref("");
 
 const current = ref(0);
 const percentage = ref(0);
+
+let innerHeight = ref(window.innerHeight);
+
+// every second set the inner height proper value
+setInterval(() => {
+  // console.log("Updating innerHeight:", window.innerHeight);
+  innerHeight.value = window.innerHeight;
+  forceUpdateTrigger.value++; // Trigger a reactive update
+  // console.log("innerHeight", innerHeight.value);
+  forceUpdate();
+}, 1000);
+
+const forceUpdateTrigger = ref(0);
+const forceUpdate = () => {
+  forceUpdateTrigger.value++;
+};
+
+// Device and orientation detection
+const isMobile = computed(() => {
+  forceUpdateTrigger.value; // Make reactive to force updates
+  return window.innerWidth < 768;
+});
+
+const isTablet = computed(() => {
+  forceUpdateTrigger.value;
+  return window.innerWidth >= 768 && window.innerWidth < 1024;
+});
+
+const isDesktop = computed(() => {
+  forceUpdateTrigger.value;
+  return window.innerWidth >= 1024;
+});
+
+const isPortrait = computed(() => {
+  forceUpdateTrigger.value;
+  return window.innerHeight > window.innerWidth;
+});
+
+const isMobilePortrait = computed(() => {
+  return isMobile.value && isPortrait.value;
+});
+
+const isMobileLandscape = computed(() => {
+  return isMobile.value && !isPortrait.value;
+});
+
+// Dynamic sizing based on device and orientation
+const toolbarHeight = computed(() => {
+  if (isMobilePortrait.value) return 56;
+  if (isMobileLandscape.value) return 48;
+  return 64;
+});
+
+const buttonSize = computed(() => {
+  if (isMobilePortrait.value) return "small";
+  if (isMobileLandscape.value) return "small";
+  return "default";
+});
+
+const iconSize = computed(() => {
+  if (isMobilePortrait.value) return "small";
+  if (isMobileLandscape.value) return "small";
+  return "default";
+});
+
+const loadingSize = computed(() => {
+  if (isMobile.value) return 48;
+  return 64;
+});
+
+// Layout classes
+const controlsLayoutClass = computed(() => {
+  if (isMobilePortrait.value) {
+    return "d-flex flex-column pa-2";
+  }
+  return "d-flex justify-space-around align-center pa-2";
+});
+
+const zoomTextClass = computed(() => {
+  if (isMobilePortrait.value) return "text-caption";
+  return "text-body-2";
+});
+
+// Dynamic widths
+const bookmarkMenuWidth = computed(() => {
+  if (isMobile.value) return Math.min(window.innerWidth - 32, 320);
+  return 400;
+});
+
+const dialogWidth = computed(() => {
+  if (isMobile.value) return "90vw";
+  return "500px";
+});
+
+// Dynamic heights
+const readerHeight = computed(() => {
+  forceUpdateTrigger.value; // Make reactive to force updates
+  const viewportHeight = window.innerHeight;
+  const toolbarSpace = displayToolBar.value ? toolbarHeight.value : 0;
+  const bottomControlsSpace = displayToolBar.value
+    ? isMobilePortrait.value
+      ? 80
+      : 60
+    : 0;
+  return `${viewportHeight - toolbarSpace - bottomControlsSpace}px`;
+});
+
+// Add this computed to detect when mobile browser bars show/hide
+const isBrowserBarVisible = computed(() => {
+  forceUpdateTrigger.value; // Make reactive
+  const currentHeight = window.innerHeight;
+  const baseHeight = screen.height;
+  // Detect if browser bar is hidden (viewport expanded)
+  return currentHeight < baseHeight * 0.9;
+});
+
+// Event handlers
+const handleOrientationChange = () => {
+  setTimeout(() => {
+    forceUpdate();
+  }, 200);
+};
+
+const handleResize = () => {
+  console.log("Window resized:", window.innerWidth, window.innerHeight);
+  const newHeight = window.innerHeight;
+  if (Math.abs(newHeight - innerHeight.value) > 50) {
+    // Threshold to detect significant height changes
+    innerHeight.value = newHeight;
+    forceUpdate();
+  }
+};
+
+const handleViewportChange = () => {
+  const newHeight = window.innerHeight;
+  if (newHeight !== innerHeight.value) {
+    innerHeight.value = newHeight;
+    forceUpdate();
+  }
+};
 
 // Encryption constants
 const ENCRYPTION_PASSPHRASE =
@@ -1424,6 +1582,12 @@ onMounted(() => {
   // Setup observer for iframe changes
   const observer = setupIframeObserver();
 
+  window.addEventListener("orientationchange", handleOrientationChange);
+  window.addEventListener("resize", handleResize);
+  // Add viewport change detection
+  window.addEventListener("scroll", handleViewportChange, { passive: true });
+  window.visualViewport?.addEventListener("resize", handleViewportChange);
+
   // Clean up observer in onUnmounted
   onUnmounted(() => {
     // Existing unmounted code...
@@ -1440,6 +1604,11 @@ onUnmounted(() => {
   document.removeEventListener("keydown", preventSave);
   document.removeEventListener("dragstart", preventDragStart);
   cleanupResources();
+
+  window.removeEventListener("orientationchange", handleOrientationChange);
+  window.removeEventListener("resize", handleResize);
+  window.removeEventListener("scroll", handleViewportChange);
+  window.visualViewport?.removeEventListener("resize", handleViewportChange);
 });
 </script>
 
@@ -1447,14 +1616,119 @@ onUnmounted(() => {
 .readerArea {
   overflow: scroll !important;
 }
+
 .epub-reader-wrapper {
   border: 1px solid #ccc;
-
   background-color: green !important;
 }
 
 .epub-container {
   background-color: #fff !important;
+}
+
+.reader-main-card {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.reader-toolbar {
+  flex-shrink: 0;
+}
+
+.bottom-controls {
+  flex-shrink: 0;
+}
+
+.loading-container {
+  padding: 3rem 0;
+}
+
+/* Responsive progress control */
+.progress-control {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0 1rem;
+}
+
+.progress-slider {
+  flex: 1;
+  margin: 0 0.5rem;
+  min-width: 100px;
+}
+
+.zoom-control {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+}
+
+.zoom-display {
+  min-width: 50px;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+
+/* Mobile portrait specific styles */
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .progress-control {
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+
+  .zoom-control {
+    padding: 0;
+  }
+
+  .progress-slider {
+    min-width: 80px;
+  }
+
+  .zoom-display {
+    min-width: 40px;
+    font-size: 0.875rem;
+  }
+}
+
+/* Mobile landscape specific styles */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  .reader-toolbar {
+    padding: 0 0.5rem;
+  }
+
+  .bottom-controls {
+    padding: 0.25rem 0;
+  }
+
+  .progress-slider {
+    min-width: 60px;
+  }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .progress-slider {
+    min-width: 150px;
+  }
+
+  .zoom-display {
+    min-width: 60px;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1024px) {
+  .progress-slider {
+    min-width: 200px;
+  }
+
+  .zoom-display {
+    min-width: 70px;
+  }
+
+  .progress-control,
+  .zoom-control {
+    padding: 0 2rem;
+  }
 }
 
 .toc-panel {
@@ -1503,17 +1777,41 @@ onUnmounted(() => {
   overflow-y: auto;
 }
 
-/* Add this to the existing <style scoped> section */
+/* Responsive bookmarks menu */
+@media screen and (max-width: 767px) {
+  .bookmarks-menu {
+    max-height: 50vh;
+  }
+}
 
 .zoom-menu {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.zoom-display {
-  font-weight: 500;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding: 4px 8px;
-  background-color: #f5f5f5;
+/* Toolbar toggle button responsive positioning */
+.toolbar-toggle-btn {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure proper touch targets on mobile */
+@media screen and (max-width: 767px) {
+  .v-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Smooth transitions for orientation changes */
+.reader-main-card,
+.epub-reader-wrapper {
+  transition: height 0.3s ease-in-out;
+}
+
+/* Fix for iOS Safari viewport height issues */
+@supports (-webkit-touch-callout: none) {
+  .reader-main-card {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
 }
 </style>

@@ -11,6 +11,11 @@ const fonts = {
     normal: path.join(__dirname, "fonts/Roboto-Regular.ttf"),
     bold: path.join(__dirname, "fonts/Roboto-Bold.ttf"),
   },
+  // Use system fonts as fallback
+  Tinos: {
+    normal: path.join(__dirname, "fonts/Tinos-Regular.ttf"),
+    bold: path.join(__dirname, "fonts/Tinos-Bold.ttf"),
+  },
 };
 
 const printer = new pdfmake(fonts);
@@ -36,6 +41,8 @@ const generateEbookReceiptPDF = async (data: Payment) => {
   // Assuming the logo is in the assets folder relative to this file
   const logoPath = path.join(__dirname, "fonts/ksri_logo_bw.jpg");
   const logoBase64 = fs.readFileSync(logoPath).toString("base64");
+
+  console.log("Generating ebook receipt PDF with data:", receiptData);
 
   const docDefinition: TDocumentDefinitions = {
     pageSize: "A4",
@@ -186,7 +193,11 @@ const generateEbookReceiptPDF = async (data: Payment) => {
                   {
                     text: [
                       { text: "Book Name: ", fontSize: 11, bold: true },
-                      { text: receiptData.bookName, fontSize: 11 },
+                      {
+                        text: receiptData.bookName,
+                        fontSize: 11,
+                        font: "Tinos",
+                      },
                     ],
                     margin: [0, 0, 0, 10],
                   },
