@@ -13,33 +13,14 @@
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "contactus@deonte.in",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-05-24T13:17:24.305Z",
+      "updated_at": "2025-03-24T07:27:40.268Z",
       "created_by": "admin"
     },
     "author": "",
     "yearOfPublication": "2008-01-01",
-    "printStatus": "Printed",
-    "itemPublishStatus": "PUBLISHED",
-    "isEbookAvailable": "Yes",
-    "ebookPrice": "20",
-    "ebookUrl": [
-      {
-        "s3Folder": "ebook",
-        "s3Key": "files/01JW171CY48ZEPCHR7RQF1JVMZ.pdf",
-        "encrypted": true,
-        "url": "s3://ksri-prod-ebook-store/files/01JW171CY48ZEPCHR7RQF1JVMZ.pdf"
-      }
-    ],
-    "previewEbookUrl": [
-      {
-        "s3Folder": "preview",
-        "s3Key": "files/01JW171HFWPVN1AZ94B1EHXX9J.pdf",
-        "encrypted": false,
-        "url": "files/01JW171HFWPVN1AZ94B1EHXX9J.pdf"
-      }
-    ]
+    "itemPublishStatus": "PUBLISHED"
   },
   {
     "title": "Rahasyatrayasara of Sri Vedanta Desika with English translation by Sri N. Raghunathan, I.A.S. (Former Chief Secretary of Maharashtra)",
@@ -49,18 +30,18 @@
     "details": "",
     "id": "01JGNDQ25Z4DQAKFVTVKK4266S",
     "publication": "The Samskrita Academy, Madras",
-    "keywords": "",
+    "keywords": " ",
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "admin",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-03T06:30:18.047Z",
-      "updated_at": "2025-01-03T06:30:18.047Z",
+      "updated_at": "2025-04-26T06:55:59.638Z",
       "created_by": "admin"
     },
     "author": "",
     "yearOfPublication": "",
-    "itemPublishStatus": "PUBLISHED"
+    "itemPublishStatus": "DRAFT"
   },
   {
     "title": "The Mahabharata by Mastri Venkatesa Iyengar",
@@ -97,9 +78,9 @@
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-07T06:37:01.481Z",
-      "updated_at": "2025-01-25T07:40:12.425Z",
+      "updated_at": "2025-04-26T06:51:48.874Z",
       "created_by": "demo"
     },
     "author": "Dr. V. Yamuna Devi",
@@ -164,16 +145,17 @@
     "id": "01JJ3MWJKW2SYKDHAXEYCSZH4N",
     "publication": "The Samskrita Academy, Madras",
     "keywords": "srutigita",
-    "available": "No",
+    "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-21T05:20:42.620Z",
-      "updated_at": "2025-01-21T05:20:42.620Z",
+      "updated_at": "2025-05-08T05:41:03.512Z",
       "created_by": "demo"
     },
     "author": "Dr. T.V. Vasudeva, Dr. V. Yamuna Devi",
     "yearOfPublication": "2016-01-01",
+    "printStatus": "Printed",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -593,20 +575,20 @@
   {
     "title": "Rahasyatrayasara of Sri Vedanta Desika with English translation",
     "subtitle": "",
-    "price": "",
+    "price": "Rs. 1000",
     "imageUrls": [
       "images/21052025-19.jpg"
     ],
     "details": "",
     "id": "01JJ4SFXCN69PY4918T2BQ717E",
     "publication": "The Samskrita Academy, Madras",
-    "keywords": " ",
+    "keywords": "  ",
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-21T16:00:24.981Z",
-      "updated_at": "2025-03-25T05:28:07.489Z",
+      "updated_at": "2025-04-26T06:56:51.783Z",
       "created_by": "demo"
     },
     "author": "Sri N. Raghunathan, I.A.S. (Former Chief Secretary of Maharashtra)",
@@ -811,9 +793,9 @@
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-24T09:47:01.349Z",
-      "updated_at": "2025-03-20T10:18:07.663Z",
+      "updated_at": "2025-04-26T06:49:22.380Z",
       "created_by": "demo"
     },
     "author": "Dr. V. Preethi",
@@ -841,25 +823,7 @@
     },
     "author": "",
     "yearOfPublication": "2025-03-01",
-    "itemPublishStatus": "PUBLISHED",
-    "isEbookAvailable": "Yes",
-    "ebookPrice": "20",
-    "ebookUrl": [
-      {
-        "s3Folder": "ebook",
-        "s3Key": "files/01JW171CY48ZEPCHR7RQF1JVMZ.pdf",
-        "encrypted": true,
-        "url": "s3://ksri-prod-ebook-store/files/01JW171CY48ZEPCHR7RQF1JVMZ.pdf"
-      }
-    ],
-    "previewEbookUrl": [
-      {
-        "s3Folder": "preview",
-        "s3Key": "files/01JW171HFWPVN1AZ94B1EHXX9J.pdf",
-        "encrypted": false,
-        "url": "files/01JW171HFWPVN1AZ94B1EHXX9J.pdf"
-      }
-    ]
+    "itemPublishStatus": "PUBLISHED"
   },
   {
     "title": "A History of The Saṁskr̥ta Literature",

@@ -7,7 +7,7 @@
       "images/Vid Passport_Photo.jpeg"
     ],
     "subtitle": "Silpasastra, Literature, Yoga and Ancient Indian Mathematics",
-    "description": "3 years of teaching and 10 years of research experience\t",
+    "description": "4 years of teaching and 10 years of research experience\t",
     "educationalQualification": " ",
     "mobile": " ",
     "mail": "div.hor.88@gmail.com",
@@ -18,7 +18,7 @@
     "metadata": {
       "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-02-05T09:42:40.192Z",
-      "updated_at": "2025-02-07T09:53:38.960Z",
+      "updated_at": "2025-06-04T05:05:14.210Z",
       "created_by": "dhara0622@gmail.com"
     },
     "orderId": "2",
@@ -31,12 +31,17 @@
       {
         "duration": "2014-2020",
         "organisation": "The Kuppuswami Sastri Research Institute, Chennai",
-        "designation": "Research Assistant"
+        "designation": "Research Associate"
       }
     ],
     "phdCandidates": [],
     "mphilCandidates": [],
-    "academicPositions": [],
+    "academicPositions": [
+      {
+        "description": "For the publications of KSRI",
+        "position": "Editorial Committee member"
+      }
+    ],
     "booksPublished": [
       {
         "publisher": "Karnataka Historical Research Society, Dharwad",
@@ -177,14 +182,6 @@
         "remarks": "Published"
       },
       {
-        "monthAndYear": "2015",
-        "title": "Approximations of Pi",
-        "nameOfTheJournal": "UGC Seminar on Science in Ancient India, D.G. Vaishnav College, Chennai",
-        "sNo": "14",
-        "isbnIssnNo": "",
-        "remarks": "Published"
-      },
-      {
         "monthAndYear": "2016",
         "title": "Amnesty viś-a-viś Sanskrit Literature and Inscriptions",
         "nameOfTheJournal": "Sūtra, Smṛti and Sāstra (Select Papers), 16th WSC, Vol. 2, Bangkok, Thailand",
@@ -214,6 +211,14 @@
         "nameOfTheJournal": "4th International Conference on Life Sciences and Associated Technology in Ancient India, National Institute of Vedic Sciences, Mulbagal",
         "sNo": "18",
         "isbnIssnNo": "",
+        "remarks": "Published"
+      },
+      {
+        "monthAndYear": "2025",
+        "title": "Temple Construction and Maintenance as Pūrta Dharma",
+        "nameOfTheJournal": "Journal of Oriental Research, Madras, Vol. XCVI",
+        "sNo": "19",
+        "isbnIssnNo": "0022-3301",
         "remarks": "Published"
       }
     ],
@@ -417,9 +422,23 @@
         "organisers": "Rashtriya Sanskrit Vidyapeetha, Tirupati. 2nd- 4th June, 2010.",
         "titleOfThePaper": "Jñāṉakuṟaḷ – An Appraisal",
         "slNo": "26"
+      },
+      {
+        "monthAndYear": "Feb. 2025",
+        "theme": "National Seminar on Sanskrit Drama",
+        "organisers": "The Kuppuswami Sastri Research Institute, 14th – 15th Feb 2025.",
+        "titleOfThePaper": "Tripuradāha Ḍima – An Introduction",
+        "slNo": "27"
       }
     ],
-    "lectures": [],
+    "lectures": [
+      {
+        "monthAndYear": "Apr. 2025",
+        "organisers": "The Krishnamacharya Yoga Mandiram, 25th Apr – 24th May 2025",
+        "slNo": "1",
+        "titleOfTheTalk": "Prāṇa and its Functions according to Śivasvarodaya"
+      }
+    ],
     "awards": [
       {
         "organisation": "Sanskrit Academy, Osmania University, Hyderabad",
@@ -438,20 +457,20 @@
     ],
     "extensionActivities": [
       {
-        "description": "Have helped in the typesetting and aligning of many books that were published by KSRI.",
-        "monthAndYear": "2008-2017",
+        "description": "Have helped in edition and publication of books by the KSRI.",
+        "monthAndYear": "2008-Present",
         "title": "Assistance in Publications of KSRI",
         "slNo": "1"
       },
       {
-        "description": "Have helped in the typesetting and aligning of many books that were published by the Samskrita Academy.",
-        "monthAndYear": "2008-2013",
+        "description": "Have helped in edition and publication of books by the Samskrita Academy.",
+        "monthAndYear": "2008-Present",
         "title": "Assistance in other Publications",
         "slNo": "2"
       },
       {
-        "description": "1.\tNational Seminar on “Sanskrit and Tamil Nadu”, 16-17th Sep., 2016\n2.\tNational Seminar on “Environmental and Ecological awareness in Ancient India”, 8-9th July, 2016\n3.\tWorkshop on “Ancient Indian Mathematics and Astronomy”, 6-9th Jan., 2016.\n4.\tNational Seminar on “Tattvatraya”, 30-31st Oct., 2015.",
-        "monthAndYear": "2015-2016",
+        "description": "1.\tNational Seminar on “Sanskrit Drama”, 14-15th Feb., 2025 2.\tNational Workshop on “Ancient Indian Mathematics and Astronomy”, 26-27th Jul., 2024. 3.\tNational Workshop on “Sanskrit Literature”, 28-29th Jun., 2024 4.\tNational Seminar on “Bhakti Literature in Sanskrit and Tamil”, 24-25th Nov., 2023 5.\tNational Seminar on “Arts and Architecture”, 21-22nd Aug., 2023 6.\tNational Seminar on “Sanskrit and Tamil Nadu”, 16-17th Sep., 2016 7.\tNational Seminar on “Environmental and Ecological awareness in Ancient India”, 8-9th July, 2016 8.\tWorkshop on “Ancient Indian Mathematics and Astronomy”, 6-9th Jan., 2016. 9.\tNational Seminar on “Tattvatraya”, 30-31st Oct., 2015.",
+        "monthAndYear": "2023-2025; 2015-2016",
         "title": "Assistance and participation in Seminars/Workshops of the Institute",
         "slNo": "3"
       },
@@ -495,7 +514,7 @@
     "metadata": {
       "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:53:50.279Z",
-      "updated_at": "2025-02-07T09:53:21.040Z",
+      "updated_at": "2025-05-26T07:41:57.395Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -888,9 +907,9 @@
     ],
     "type": "ACADEMIC",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-01-02T18:53:50.279Z",
-      "updated_at": "2025-02-06T17:56:42.666Z",
+      "updated_at": "2025-05-26T11:19:57.018Z",
       "created_by": "admin"
     },
     "orderId": "1",
@@ -2608,31 +2627,6 @@
         "slNo": "2"
       }
     ],
-    "itemPublishStatus": "PUBLISHED"
-  },
-  {
-    "id": "01JGM5VST5HPBPC0YH6NNGEZV5",
-    "name": "Dr.V.Kameswari",
-    "designation": "Former Director",
-    "displayImage": [
-      "images/faculty-dr-v-kameswari.jpg"
-    ],
-    "subtitle": "Areas of Specialisation: Sahitya, Language and Literature, Scientific literature",
-    "description": "More than 40 years of teaching and research experience.\nGuided many Research Scholars to work on ancient sciences and varied fields of their interest.",
-    "educationalQualification": "B.A. (Economics), M.A. (Sanskrit), Ph.D.",
-    "mobile": " ",
-    "mail": " ",
-    "profile": [
-      "upload/media/Dr.V.Kameswari CV.docx"
-    ],
-    "type": "ACADEMIC",
-    "metadata": {
-      "updated_by": "dhara0622@gmail.com",
-      "created_at": "2025-01-02T18:53:50.278Z",
-      "updated_at": "2025-02-07T06:53:40.295Z",
-      "created_by": "admin"
-    },
-    "orderId": "1",
     "itemPublishStatus": "PUBLISHED"
   }
 ]

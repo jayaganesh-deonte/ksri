@@ -6,13 +6,13 @@
       "images/01JQ3XSRFNA67Q2REPAG3JJQ6A"
     ],
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "dhara0622@gmail.com",
       "created_at": "2025-03-24T11:15:04.318Z",
-      "updated_at": "2025-03-25T05:11:43.088Z",
+      "updated_at": "2025-06-03T04:59:49.413Z",
       "created_by": "ksriphd@gmail.com"
     },
     "itemPublishStatus": "PUBLISHED",
-    "titleText": " ",
+    "titleText": "  ",
     "descriptionText": " ",
     "buttonText1": " ",
     "buttonText1Route": " ",
@@ -78,5 +78,25 @@
     "buttonText1Route": "/ksri-publications/books",
     "buttonText2": "Journal",
     "buttonText2Route": "/ksri-publications/journals"
+  },
+  {
+    "id": "01JWR2XMWBBH8SAHEFDCCEBZD6",
+    "orderId": "5",
+    "image": [
+      "images/01JWR2WPT0845SQ6CEJRFBYEMA"
+    ],
+    "metadata": {
+      "updated_by": "dhara0622@gmail.com",
+      "created_at": "2025-06-02T10:27:44.651Z",
+      "updated_at": "2025-06-04T06:57:05.861Z",
+      "created_by": "dhara0622@gmail.com"
+    },
+    "itemPublishStatus": "PUBLISHED",
+    "titleText": "KSRI BROCHURE",
+    "descriptionText": " ",
+    "buttonText1": " ",
+    "buttonText1Route": " ",
+    "buttonText2": " ",
+    "buttonText2Route": " "
   }
 ]
