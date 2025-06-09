@@ -54,13 +54,13 @@ async function fetchAndSaveData(
 }
 
 const pageDetails = [
-  // {
-  //   endpoint: "/contribute/bankInfo",
-  //   outputFile: "../website/content//contribute/bankInfo.json",
-  //   // filter by itemPublishStatus =>"PUBLISHED"
-  //   filter: (data: any[]) =>
-  //     data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
-  // },
+  {
+    endpoint: "/contribute/bankInfo",
+    outputFile: "../website/content//contribute/bankInfo.json",
+    // filter by itemPublishStatus =>"PUBLISHED"
+    filter: (data: any[]) =>
+      data.filter((item) => item.itemPublishStatus === "PUBLISHED"),
+  },
   {
     endpoint: "/contribute/postalAddress",
     outputFile: "../website/content//contribute/bypost.json",
