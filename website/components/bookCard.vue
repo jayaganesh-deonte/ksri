@@ -93,6 +93,32 @@
               </v-chip>
             </div>
           </div>
+          <!-- icon to show if ebook is available -->
+          <div
+            class="text-start mt-5 d-flex justify-start"
+            data-aos-delay="300"
+            v-if="book.isEbookAvailable"
+          >
+            <v-btn
+              rounded="pill"
+              elevation="2"
+              class="d-flex align-center pa-2"
+              color="pageBackground"
+              :to="
+                '/ksri-publications/' +
+                (isBook ? 'books' : 'journals') +
+                '/' +
+                book.id
+              "
+            >
+              <v-icon color="primary" size="24" class="mr-2">
+                mdi-book-open-page-variant
+              </v-icon>
+              <span class="text-primary font-weight-bold">
+                Ebook is available
+              </span>
+            </v-btn>
+          </div>
         </v-col>
       </v-row>
 
@@ -100,6 +126,7 @@
       <div class="my-4 d-flex align-center">
         <div class="mx-1">
           <v-btn
+            v-if="!fromEbook"
             :color="isHovering ? 'secondary' : 'primary'"
             text
             :to="
@@ -108,6 +135,16 @@
               '/' +
               book.id
             "
+            rounded="pill"
+            data-aos-delay="200"
+          >
+            View Details
+          </v-btn>
+          <v-btn
+            v-if="fromEbook"
+            :color="isHovering ? 'secondary' : 'primary'"
+            text
+            :to="'/ebooks/' + (isBook ? 'books' : 'journals') + '/' + book.id"
             rounded="pill"
             data-aos-delay="200"
           >
@@ -142,6 +179,11 @@ export default {
       type: Boolean,
       required: true,
       default: true,
+    },
+    fromEbook: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   data() {

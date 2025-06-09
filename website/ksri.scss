@@ -23,6 +23,21 @@ cursive;
     font-family: $body-font-family !important;
 }
 
+:root,
+[data-amplify-authenticator] {
+    --amplify-components-authenticator-router-box-shadow: 0 0 16px var(--amplify-colors-overlay-10);
+    --amplify-components-authenticator-router-border-width: 0;
+    --amplify-components-authenticator-form-padding: var(--amplify-space-medium) var(--amplify-space-xl) var(--amplify-space-xl);
+    --amplify-components-button-primary-background-color: #09341C;
+    --amplify-components-fieldcontrol-focus-box-shadow: 0 0 0 2px var(--amplify-colors-purple-60);
+    --amplify-components-tabs-item-active-border-color: var(--amplify-colors-neutral-100);
+    --amplify-components-tabs-item-color: #BF641F;
+    --amplify-components-tabs-item-active-color: #09341C;
+    --amplify-components-button-link-color: var(--amplify-colors-purple-80);
+    --amplify-components-tabs-item-active-background-color: #F0F5F0;
+
+}
+
 .activeMenu {
     background-color: #bf641f !important;
     color: white !important;
@@ -288,4 +303,37 @@ cursive;
 .v-table tbody tr:nth-child(odd) {
     background-color: #f4f7f4 !important;
     font-size: medium !important;
+}
+
+
+.arrow {
+    color: #BF641F !important;
+    font-size: 6rem !important;
+    position: fixed !important;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+
+.tocButton {
+    background-color: #c9dfcb !important;
+    position: fixed !important;
+    top: 1rem;
+    right: 1rem;
+}
+
+.tocButtonBar {
+    background-color: #09341C !important;
+
+}
+
+.tocArea {
+    background-color: #c9dfcb !important;
+}
+
+.tocArea .tocAreaButton {
+    color: #09341C !important;
+
+    border-bottom: 1px solid #fff !important;
 }

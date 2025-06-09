@@ -75,6 +75,12 @@
         </v-row>
 
         <!-- book catalogue -->
+        <div v-if="filteJournalsBasedOnPublication('KSRI').length === 0">
+          <div class="text-center ma-4">
+            <v-icon size="64" color="primary">mdi-book-remove</v-icon>
+            <div class="text-h6">No results found</div>
+          </div>
+        </div>
         <div class="ma-4">
           <v-row>
             <v-col
@@ -230,6 +236,7 @@ const filteJournalsBasedOnPublication = (publicationName) => {
       journal.title.toLowerCase().includes(normalizedQuery) ||
       journal.subtitle?.toString().toLowerCase()?.includes(normalizedQuery) ||
       journal.details?.toString().toLowerCase()?.includes(normalizedQuery) ||
+      journal.keywords?.toString().toLowerCase()?.includes(normalizedQuery) ||
       journal.yearOfPublication
         ?.toString()
         .toLowerCase()

@@ -125,6 +125,33 @@ const bookFields = [
     type: "image",
     rules: [(v) => !!v || "Image URLs are required"],
   },
+  {
+    key: "isEbookAvailable",
+    label: "Ebook Available",
+    type: "auto-complete",
+    items: ["Yes", "No"],
+    rules: [(v) => !!v || "Ebook Available is required"],
+  },
+  {
+    key: "ebookPrice",
+    label: "Ebook Price in Rupees",
+    type: "number",
+    // rules: [(v) => !!v || "Ebook Price is required"],
+  },
+  {
+    key: "ebookUrl",
+    label: "Ebook",
+    type: "ebook",
+    isPreviewFile: false,
+    // rules: [],
+  },
+  {
+    key: "previewEbookUrl",
+    label: "Preview Ebook",
+    type: "ebook",
+    isPreviewFile: true,
+    // rules: [],
+  },
 ];
 
 const bookHeaders = [

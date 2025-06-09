@@ -241,7 +241,7 @@ const uploadFiles = async (e) => {
       const s3Key = `files/${ulid()}`;
 
       // Upload to S3
-      const uploadRes = await uploadToS3(file, s3Key);
+      const uploadRes = await uploadToS3(file, s3Key, "document");
 
       if (uploadRes.$metadata.httpStatusCode === 200) {
         const cloudfront_domain = import.meta.env.VITE_IMAGE_CLOUDFRONT;
@@ -323,7 +323,7 @@ const deleteFile = async (file) => {
     const s3Key = file.url.split("/").slice(3).join("/");
 
     // Delete from S3
-    const deleteRes = await deleteFromS3(s3Key);
+    const deleteRes = await deleteFromS3(s3Key, "image");
 
     // Remove from files array
     newFiles.value = newFiles.value.filter((f) => f.url !== file.url);

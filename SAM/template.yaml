@@ -17,10 +17,29 @@ Parameters:
   UiCustomDomain:
     Description: domain for ui distribution
     Type: String
+  WebsiteCustomDomain:
+    Description: domain for website distribution
+    Type: String
+  useCustomDomainForWebsite:
+    Type: String
+    AllowedValues:
+      - "true"
+      - "false"
+    Default: "true"
+  isProd:
+    Type: String
+    AllowedValues: [true, false]
+    Default: false
+    Description: Set to true for production environment with provisioned throughput
+
 Conditions:
   useCustomDomainForUiCondition: !Equals
     - !Ref useCustomDomainForUi
     - "true"
+  useCustomDomainForWebsiteCondition: !Equals
+    - !Ref useCustomDomainForWebsite
+    - "true"
+  IsProdEnvironment: !Equals [!Ref isProd, "true"]
 Resources:
   customEventBus:
     Type: AWS::Events::EventBus
@@ -68,6 +87,7 @@ Resources:
             - "*"
           AllowHeaders:
             - "*"
+
       ReservedConcurrentExecutions: 15
       Environment:
         Variables:
@@ -77,7 +97,10 @@ Resources:
           LOG_LEVEL: INFO
           USER_POOL_ID: !Ref CognitoUserPool
           CLIENT_ID: !Ref ProdCognitoUserPoolClient
-          BASE_URL: "https://ksri.in/"
+          BASE_URL: !If
+            - IsProdEnvironment
+            - "https://ksri.in/"
+            - "https://preview.ksri.in/"
           EMAIL_PARAM_NAME: "/loops/ksri/key"
           EVENT_BUS_NAME: !GetAtt customEventBus.Name
           CC_AVENUE_CREDS: "/ksri/ccavenue"
@@ -397,6 +420,10 @@ Resources:
           AttributeType: S
         - AttributeName: paymentDate
           AttributeType: S
+        - AttributeName: bookId
+          AttributeType: S
+        - AttributeName: email
+          AttributeType: S
       KeySchema:
         - AttributeName: PK
           KeyType: HASH
@@ -405,7 +432,12 @@ Resources:
       TimeToLiveSpecification:
         AttributeName: ttl
         Enabled: true
-      BillingMode: PAY_PER_REQUEST
+      BillingMode: !If [IsProdEnvironment, "PROVISIONED", "PAY_PER_REQUEST"]
+      ProvisionedThroughput: !If
+        - IsProdEnvironment
+        - ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+        - !Ref "AWS::NoValue"
       GlobalSecondaryIndexes:
         - IndexName: PkPublishedStatusIndex
           KeySchema:
@@ -415,6 +447,11 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
+          ProvisionedThroughput: !If
+            - IsProdEnvironment
+            - ReadCapacityUnits: 1
+              WriteCapacityUnits: 1
+            - !Ref "AWS::NoValue"
         - IndexName: PkProjectStatus
           KeySchema:
             - AttributeName: PK
@@ -423,6 +460,11 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
+          ProvisionedThroughput: !If
+            - IsProdEnvironment
+            - ReadCapacityUnits: 3
+              WriteCapacityUnits: 3
+            - !Ref "AWS::NoValue"
         - IndexName: CollectionSK
           KeySchema:
             - AttributeName: collection
@@ -431,6 +473,11 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
+          ProvisionedThroughput: !If
+            - IsProdEnvironment
+            - ReadCapacityUnits: 1
+              WriteCapacityUnits: 1
+            - !Ref "AWS::NoValue"
         - IndexName: PaymentDateIndex
           KeySchema:
             - AttributeName: PK
@@ -439,6 +486,24 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
+          ProvisionedThroughput: !If
+            - IsProdEnvironment
+            - ReadCapacityUnits: 3
+              WriteCapacityUnits: 3
+            - !Ref "AWS::NoValue"
+        - IndexName: email-BookIdIndex
+          KeySchema:
+            - AttributeName: email
+              KeyType: HASH
+            - AttributeName: bookId
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+          ProvisionedThroughput: !If
+            - IsProdEnvironment
+            - ReadCapacityUnits: 3
+              WriteCapacityUnits: 3
+            - !Ref "AWS::NoValue"
 
   S3Bucket:
     Type: AWS::S3::Bucket
@@ -520,6 +585,7 @@ Resources:
             - HEAD
             - OPTIONS
           TargetOriginId: myS3Origin
+          ResponseHeadersPolicyId: "5cc3b908-e619-4b99-88e5-2cf7f45965bd"
           ViewerProtocolPolicy: redirect-to-https
         PriceClass: PriceClass_200
         Logging:
@@ -534,6 +600,140 @@ Resources:
     Properties:
       OriginAccessControlConfig:
         Name: !GetAtt S3Bucket.DomainName
+        OriginAccessControlOriginType: s3
+        SigningBehavior: no-override
+        SigningProtocol: sigv4
+
+  # S3 For ebook
+  S3BucketForEbook:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: !Sub ${Prefix}-ebook-store
+      CorsConfiguration:
+        CorsRules:
+          - AllowedHeaders:
+              - "*"
+            AllowedMethods:
+              - PUT
+              - POST
+              - DELETE
+              - GET
+            AllowedOrigins:
+              - "*"
+            ExposedHeaders: []
+
+  # S3 Bucket Policy for ebook
+  S3BucketPolicyForEbook:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref S3BucketForEbook
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Action:
+              - s3:GetObject
+            Effect: Allow
+            Resource: !Join
+              - ""
+              - - "arn:aws:s3:::"
+                - !Ref S3BucketForEbook
+                - /*
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Condition:
+              StringEquals:
+                AWS:SourceArn: !Sub arn:aws:cloudfront::${AWS::AccountId}:distribution/${ebookDistribution}
+
+  S3BucketForLogsEbook:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: !Sub ${Prefix}-ebook-distribution-access-logs
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerPreferred
+      AccessControl: AwsExecRead
+      LifecycleConfiguration:
+        Rules:
+          - Id: DeleteOldObjects
+            Status: Enabled
+            ExpirationInDays: 365
+            Prefix: "" # Apply to all objects in the bucket
+
+  CloudFrontPublicKey:
+    Type: AWS::CloudFront::PublicKey
+    Properties:
+      PublicKeyConfig:
+        CallerReference: !Ref "AWS::StackName"
+        Name: !Sub EbookSigningKey-${Prefix}
+        EncodedKey: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzACEw1KnFCBQEQe5owUr
+          xHbiLx+09kmMCcladdz3mT1PGpe5+J/tIxiVP2QtZp0VloUJhR5HGV9I5wT/cx5c
+          yDzA+pjGGVYaab5vloowS6F+TC5KoV1vLEYDU+2NKBic6+/OM7FQFrpMQfN7pvn1
+          zYjrzliaxEE05FCe4FhxYMeDawHk2HhBEO9n1VWd/etuAPXu4huUxSZE0tQB9qRb
+          aYgdcI4qepRwBcHvjEkYGc5vMgc/6PMCJc18a3nKZ0XoNFcJtIwmPQRP4PLC1VZL
+          cXzF1YWnJK5WkwbDmRkE4FybJZ57af+cQZvxznJF4+pIX+JjIrltYGMkk61LGYc8
+          EQIDAQAB
+          -----END PUBLIC KEY-----
+
+  CloudFrontKeyGroup:
+    Type: AWS::CloudFront::KeyGroup
+    Properties:
+      KeyGroupConfig:
+        Items:
+          - !Ref CloudFrontPublicKey
+        Name: !Sub EbookKeyGroup-${Prefix}
+
+  # CloudFront Distribution with Signed URL configuration
+  ebookDistribution:
+    Type: AWS::CloudFront::Distribution
+    DependsOn:
+      - S3BucketForEbook
+      - S3BucketForLogsEbook
+    Properties:
+      DistributionConfig:
+        Origins:
+          - DomainName: !GetAtt S3BucketForEbook.DomainName
+            Id: myS3Origin
+            OriginAccessControlId: !Ref cloudfrontoriginaccessControlEbook
+            S3OriginConfig: {}
+        Enabled: "true"
+        Comment: !Sub ebook distribution for ${S3BucketForEbook}
+        HttpVersion: http2and3
+        DefaultCacheBehavior:
+          TrustedKeyGroups:
+            - !Ref CloudFrontKeyGroup
+          ForwardedValues:
+            QueryString: "false"
+            Cookies:
+              Forward: none
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          TargetOriginId: myS3Origin
+          Compress: false
+          CachePolicyId: "658327ea-f89d-4fab-a63d-7e88639e58f6"
+          ResponseHeadersPolicyId: "5cc3b908-e619-4b99-88e5-2cf7f45965bd"
+          ViewerProtocolPolicy: redirect-to-https
+          # LambdaFunctionAssociations:
+          #   - EventType: viewer-request
+          #     LambdaFunctionARN: !Sub arn:aws:lambda:us-east-1:${AWS::AccountId}:function:${Prefix}-request-inspection-edge:2
+        PriceClass: PriceClass_200
+        Logging:
+          IncludeCookies: "false"
+          Bucket: !GetAtt S3BucketForLogsEbook.DomainName
+          Prefix: cloudfront-access-logs/
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: "true"
+
+  cloudfrontoriginaccessControlEbook:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Name: !GetAtt S3BucketForEbook.DomainName
         OriginAccessControlOriginType: s3
         SigningBehavior: no-override
         SigningProtocol: sigv4
@@ -731,6 +931,8 @@ Resources:
                 Resource:
                   - !GetAtt S3Bucket.Arn
                   - !Sub ${S3Bucket.Arn}/*
+                  - !GetAtt S3BucketForEbook.Arn
+                  - !Sub ${S3BucketForEbook.Arn}/*
 
   AmplifyApp:
     Type: AWS::Amplify::App
@@ -1198,6 +1400,476 @@ Resources:
             }
           ]
         }
+
+  WebsiteUserPool:
+    Type: "AWS::Cognito::UserPool"
+    Properties:
+      UserPoolName: !Sub ${Prefix}_website_user_pool
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+          RequireUppercase: true
+          RequireLowercase: true
+          RequireNumbers: true
+          RequireSymbols: true
+          TemporaryPasswordValidityDays: 7
+      LambdaConfig: {}
+      Schema:
+        - Name: "name"
+          AttributeDataType: "String"
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Required: false
+          StringAttributeConstraints:
+            MinLength: "0"
+            MaxLength: "2048"
+        - Name: "preferred_username"
+          AttributeDataType: "String"
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Required: false
+          StringAttributeConstraints:
+            MinLength: "0"
+            MaxLength: "2048"
+        - Name: "email"
+          AttributeDataType: "String"
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Required: true
+          StringAttributeConstraints:
+            MinLength: "0"
+            MaxLength: "2048"
+        - Name: "email_verified"
+          AttributeDataType: "Boolean"
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Required: false
+      AutoVerifiedAttributes:
+        - "email"
+      UsernameAttributes:
+        - "email"
+      MfaConfiguration: "OFF"
+      EmailConfiguration:
+        EmailSendingAccount: "COGNITO_DEFAULT"
+      AdminCreateUserConfig:
+        AllowAdminCreateUserOnly: false
+      UserPoolTags: {}
+      AccountRecoverySetting:
+        RecoveryMechanisms:
+          - Priority: 1
+            Name: "verified_email"
+          - Priority: 2
+            Name: "verified_phone_number"
+      UsernameConfiguration:
+        CaseSensitive: false
+      VerificationMessageTemplate:
+        DefaultEmailOption: "CONFIRM_WITH_CODE"
+      EmailVerificationMessage: |
+        <p> Sir / Madam
+        <br/>
+        <br/>
+         We received your request for a confirmation code to create KSRI e-book account login.
+         <br/>
+         Your verification code is: <b>{####}</b>
+         <br/><br/>
+         Thanks
+         <br/>
+         The KSRI Team<p>
+      EmailVerificationSubject: KSRI E-book Login Verification Code
+      SmsVerificationMessage: Hello Sir/Ma'am, Your verification code to sign up to KSRI Website is {####}. Thanks!
+
+  CognitoUserPoolDomainForWebsite:
+    Type: AWS::Cognito::UserPoolDomain
+    Properties:
+      Domain: !Sub ${Prefix}-website
+      UserPoolId: !Ref WebsiteUserPool
+      ManagedLoginVersion: 2
+
+  # UserPoolClient
+  WebsiteUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: !Sub ${Prefix}_website_app_client
+      UserPoolId: !Ref WebsiteUserPool
+      CallbackURLs:
+        - !If
+          - useCustomDomainForWebsiteCondition
+          - !Ref WebsiteCustomDomain
+          - !Sub https://${UiDistribution.DomainName}/
+        # - !If
+        #   - useCustomDomainForWebsiteCondition
+        #   - !Sub "${WebsiteCustomDomain}user"
+        #   - !Sub https://${UiDistribution.DomainName}/user
+      LogoutURLs:
+        - !If
+          - useCustomDomainForWebsiteCondition
+          - !Ref WebsiteCustomDomain
+          - !Sub https://${UiDistribution.DomainName}/
+      AllowedOAuthFlowsUserPoolClient: true
+      AllowedOAuthScopes:
+        - email
+        - phone
+        - openid
+        - profile
+        - aws.cognito.signin.user.admin
+      AllowedOAuthFlows:
+        - code
+      SupportedIdentityProviders:
+        - COGNITO
+  # local web userpool client
+  WebsiteUserPoolClientLocal:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: !Sub ${Prefix}_website_app_client_local
+      UserPoolId: !Ref WebsiteUserPool
+      RefreshTokenValidity: 5
+      ExplicitAuthFlows:
+        - "ALLOW_REFRESH_TOKEN_AUTH"
+        - "ALLOW_USER_AUTH"
+        - "ALLOW_USER_SRP_AUTH"
+      PreventUserExistenceErrors: "ENABLED"
+      SupportedIdentityProviders:
+        - "COGNITO"
+      CallbackURLs:
+        - "http://localhost:8080/"
+        - "http://localhost:8080/user"
+      LogoutURLs:
+        - "http://localhost:8080/"
+      AllowedOAuthFlows:
+        - "code"
+      AllowedOAuthScopes:
+        - email
+        - phone
+        - openid
+        - profile
+        - aws.cognito.signin.user.admin
+      AllowedOAuthFlowsUserPoolClient: true
+      IdTokenValidity: 60
+      AccessTokenValidity: 60
+      TokenValidityUnits:
+        AccessToken: "minutes"
+        IdToken: "minutes"
+        RefreshToken: "days"
+
+  # Identity Pool
+  WebsiteIdentityPool:
+    Type: AWS::Cognito::IdentityPool
+    Properties:
+      IdentityPoolName: !Sub ${Prefix}_website_identity_pool
+      AllowUnauthenticatedIdentities: true
+      CognitoIdentityProviders:
+        - ClientId: !Ref WebsiteUserPoolClient
+          ProviderName: !GetAtt WebsiteUserPool.ProviderName
+        - ClientId: !Ref WebsiteUserPoolClientLocal
+          ProviderName: !GetAtt WebsiteUserPool.ProviderName
+
+  # IAM Roles for Authenticated Users
+  WebsiteCognitoAuthRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub ${Prefix}_website_CognitoAuthRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: cognito-identity.amazonaws.com
+            Action:
+              - sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                cognito-identity.amazonaws.com:aud: !Ref WebsiteIdentityPool
+      Policies:
+        - PolicyName: WebsiteCognitoAuthPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - mobileanalytics:PutEvents
+                  - cognito-sync:*
+                  - cognito-identity:*
+                Resource: "*"
+              - Effect: Allow
+                Action:
+                  - lambda:InvokeFunctionUrl
+                Resource: "*"
+
+  # Identity Pool Role Attachment
+  WebsiteIdentityPoolRoleAttachment:
+    Type: AWS::Cognito::IdentityPoolRoleAttachment
+    Properties:
+      IdentityPoolId: !Ref WebsiteIdentityPool
+      Roles:
+        authenticated: !GetAtt WebsiteCognitoAuthRole.Arn
+
+  ManagedLoginBranding:
+    Type: AWS::Cognito::ManagedLoginBranding
+    Properties:
+      UserPoolId: !Ref WebsiteUserPool
+      ClientId: !Ref WebsiteUserPoolClient
+      UseCognitoProvidedValues: true
+
+  ManagedLoginBrandingLocal:
+    Type: AWS::Cognito::ManagedLoginBranding
+    Properties:
+      UserPoolId: !Ref WebsiteUserPool
+      ClientId: !Ref WebsiteUserPoolClientLocal
+      UseCognitoProvidedValues: true
+  # #ebook api
+  # ebookAPI:
+  #   Type: AWS::Serverless::Api
+  #   Properties:
+  #     Name: !Sub ${Prefix}-ebook-api
+  #     StageName: !Sub ${Prefix}-ebook-api
+  #     EndpointConfiguration: REGIONAL
+  #     Cors:
+  #       AllowMethods: "'OPTIONS,GET,POST,PUT,DELETE'"
+  #       AllowHeaders: "'*'"
+  #       AllowOrigin: "'*'"
+  #       MaxAge: 3000
+  # Auth:
+  #   DefaultAuthorizer: MyCognitoAuthorizer
+  #   Authorizers:
+  #     MyCognitoAuthorizer:
+  #       UserPoolArn: !GetAtt WebsiteUserPool.Arn
+
+  # Domain:
+  #   DomainName: !Ref UiCustomDomain
+  #   CertificateArn: !Ref UiCertificateArn
+
+  # ebook api lambda
+  ebookExpressAPILambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${Prefix}_ebook_admin_api
+      CodeUri: ebook-api/
+      Handler: index.handler
+      Timeout: 30
+      MemorySize: 256
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      FunctionUrlConfig:
+        AuthType: AWS_IAM
+        Cors:
+          AllowOrigins:
+            - "*"
+          AllowMethods:
+            - "*"
+          AllowHeaders:
+            - "*"
+      ReservedConcurrentExecutions: 15
+      Environment:
+        Variables:
+          DDB_TABLE_NAME: !Ref masterTable
+          POWERTOOLS_SERVICE_NAME: express-api
+          POWERTOOLS_METRICS_NAMESPACE: ksriadmin
+          LOG_LEVEL: INFO
+          # USER_POOL_ID: !Ref CognitoUserPool
+          # CLIENT_ID: !Ref ProdCognitoUserPoolClient
+          # BASE_URL: "https://ksri.in/"
+          # EMAIL_PARAM_NAME: "/loops/ksri/key"
+          # EVENT_BUS_NAME: !GetAtt customEventBus.Name
+          CC_AVENUE_CREDS: "/ksri/ccavenue/purchase"
+          CLOUDFLARE_SECRET_KEY: "/cloudflare/trunstile"
+          S3_BUCKET_NAME: !Ref S3BucketForEbook
+          EBOOK_CLOUDFRONT: !Sub https://${ebookDistribution.DomainName}
+          REGION: !Sub ${AWS::Region}
+          USER_POOL_ID: !Ref WebsiteUserPool
+          CLIENT_ID: !Ref WebsiteUserPoolClient
+          CLOUDFRONT_PRIVATE_KEY_PARAM_NAME: /cloudfront/ebook/privateKey
+          CLOUDFRONT_KEY_PAIR_ID_PARAM_NAME: !Ref CloudFrontPublicKey
+          # ALLOWED_URL: !If
+          #   - useCustomDomainForUiCondition
+          #   - !Ref UiCustomDomain
+          #   - !Sub https://${UiDistribution.DomainName}
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref masterTable
+        - SSMParameterReadPolicy:
+            ParameterName: "*"
+        # event bridge publish permission
+        - Statement:
+            - Effect: Allow
+              Action:
+                - events:*
+              Resource: "*"
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - cognito-idp:*
+              Resource: "*"
+        - S3CrudPolicy:
+            BucketName: !Ref S3BucketForEbook
+      # Events:
+      #   Api:
+      #     Type: Api
+      #     Properties:
+      #       Path: /{proxy+}
+      #       Method: ANY
+      #       RestApiId: !Ref ebookAPI
+
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        EntryPoints:
+          - index.ts
+
+  # purchase api lambda
+  purchaseApiHandlerApi:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${Prefix}_purchase_api
+      CodeUri: purchase-api-handle-response/
+      Handler: index.handler
+      Timeout: 30
+      MemorySize: 256
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      FunctionUrlConfig:
+        AuthType: NONE
+        Cors:
+          AllowOrigins:
+            - "*"
+          AllowMethods:
+            - "*"
+          AllowHeaders:
+            - "*"
+      ReservedConcurrentExecutions: 15
+      Environment:
+        Variables:
+          DDB_TABLE_NAME: !Ref masterTable
+          POWERTOOLS_SERVICE_NAME: express-api
+          POWERTOOLS_METRICS_NAMESPACE: ksriadmin
+          LOG_LEVEL: INFO
+          # USER_POOL_ID: !Ref CognitoUserPool
+          # CLIENT_ID: !Ref ProdCognitoUserPoolClient
+          # BASE_URL: "https://ksri.in/"
+          # EMAIL_PARAM_NAME: "/loops/ksri/key"
+          EVENT_BUS_NAME: !GetAtt customEventBus.Name
+          CC_AVENUE_CREDS: "/ksri/ccavenue/purchase"
+          CLOUDFLARE_SECRET_KEY: "/cloudflare/trunstile"
+          S3_BUCKET_NAME: !Ref S3BucketForEbook
+          EBOOK_CLOUDFRONT: !Sub https://${ebookDistribution.DomainName}
+          REGION: !Sub ${AWS::Region}
+          USER_POOL_ID: !Ref WebsiteUserPool
+          CLIENT_ID: !Ref WebsiteUserPoolClient
+          # ALLOWED_URL: !If
+          #   - useCustomDomainForUiCondition
+          #   - !Ref UiCustomDomain
+          #   - !Sub https://${UiDistribution.DomainName}
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref masterTable
+        - SSMParameterReadPolicy:
+            ParameterName: "*"
+        # event bridge publish permission
+        - Statement:
+            - Effect: Allow
+              Action:
+                - events:*
+              Resource: "*"
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - cognito-idp:*
+              Resource: "*"
+        - S3CrudPolicy:
+            BucketName: !Ref S3BucketForEbook
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        EntryPoints:
+          - index.ts
+
+  # purchase email notification lambda
+  purchaseEMailNotificationHandler:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${Prefix}_purchase_email_notification
+      CodeUri: purchase_email_notification/
+      Handler: index.handler
+      Timeout: 30
+      MemorySize: 256
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      FunctionUrlConfig:
+        AuthType: NONE
+        Cors:
+          AllowOrigins:
+            - "*"
+          AllowMethods:
+            - "*"
+          AllowHeaders:
+            - "*"
+      ReservedConcurrentExecutions: 15
+      Environment:
+        Variables:
+          DDB_TABLE_NAME: !Ref masterTable
+          POWERTOOLS_SERVICE_NAME: express-api
+          POWERTOOLS_METRICS_NAMESPACE: ksriadmin
+          LOG_LEVEL: INFO
+          # USER_POOL_ID: !Ref CognitoUserPool
+          # CLIENT_ID: !Ref ProdCognitoUserPoolClient
+          BASE_URL: !If
+            - IsProdEnvironment
+            - "https://ksri.in/"
+            - "https://preview.ksri.in/"
+          EMAIL_PARAM_NAME: "/loops/ksri/key"
+          # EVENT_BUS_NAME: !GetAtt customEventBus.Name
+          CC_AVENUE_CREDS: "/ksri/ccavenue/purchase"
+          CLOUDFLARE_SECRET_KEY: "/cloudflare/trunstile"
+          S3_BUCKET_NAME: !Ref S3BucketForEbook
+          EBOOK_CLOUDFRONT: !Sub https://${ebookDistribution.DomainName}
+          REGION: !Sub ${AWS::Region}
+          USER_POOL_ID: !Ref WebsiteUserPool
+          CLIENT_ID: !Ref WebsiteUserPoolClient
+          KSRI_EMAIL: "ksrinst@gmail.com"
+          # ALLOWED_URL: !If
+          #   - useCustomDomainForUiCondition
+          #   - !Ref UiCustomDomain
+          #   - !Sub https://${UiDistribution.DomainName}
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref masterTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref masterTable
+        - SSMParameterReadPolicy:
+            ParameterName: "*"
+      Events:
+        PaymentCompletedEvent:
+          Type: EventBridgeRule
+          Properties:
+            EventBusName: !GetAtt customEventBus.Name
+            Pattern:
+              detail-type:
+                - payment.purchase.completed
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        EntryPoints:
+          - index.ts
 
 Outputs:
   UserPoolId:

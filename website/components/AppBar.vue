@@ -6,95 +6,98 @@
       rounded="0"
       elevation="0"
       class="d-flex flex-column"
-      style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        height: 210px;
-      "
+      style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000"
     >
-      <v-card
-        color="primary"
-        class="d-flex flex-column justify-end ma-2"
-        rounded="0"
-        elevation="0"
+      <div
+        id="appBarHeader"
+        :class="{ 'header-hidden': !showHeader }"
+        class="header-transition"
       >
         <v-card
-          rounded="0"
-          elevation="0"
-          class="d-flex justify-center align-center"
-          :class="`${$device.isMobile ? 'flex-column ' : 'flex-row '}`"
           color="primary"
-        >
-          <div>
-            <v-img
-              src="/img/ksri-logo-primary.png"
-              fit
-              :width="$device.isMobile ? 100 : 100"
-              :class="`${$device.isMobile ? '' : 'ml-auto mr-4'}`"
-            >
-            </v-img>
-          </div>
-          <div>
-            <v-card-item class="ma-0 pa-0">
-              <v-card-text
-                class="font-weight-bold defaultFont text-gold text-center"
-              >
-                <div
-                  class="font-weight-bold pa-0"
-                  :class="`${$device.isMobile ? 'text-h6' : 'text-h4'}`"
-                >
-                  THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE
-                </div>
-                <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
-                  (Regd. S.No. 32/1944-45, Dt. 24-2-1945)
-                </div>
-
-                <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
-                  No. 84, Thiru Vi Ka Road, Mylapore, Chennai - 600 004.
-                </div>
-                <div :class="$device.isMobile ? 'text-body-1' : 'text-body-1'">
-                  ksrinst@gmail.com | 044-24985320 / 044-29505320
-                </div>
-              </v-card-text>
-            </v-card-item>
-          </div>
-        </v-card>
-      </v-card>
-      <!-- style="position: absolute; right: 0; margin-top: 130px" -->
-      <div class="d-flex justify-end align-center mt-n12 mx-8">
-        <v-card
-          elevation="0"
+          class="d-flex flex-column justify-end ma-2"
           rounded="0"
-          class="ma-0 pa-0"
-          color="transparent"
-          width="20vw"
+          elevation="0"
         >
-          <search />
+          <v-card
+            rounded="0"
+            elevation="0"
+            class="d-flex justify-center align-center"
+            :class="`${$device.isMobile ? 'flex-column ' : 'flex-row '}`"
+            color="primary"
+          >
+            <div>
+              <v-img
+                src="/img/ksri-logo-primary.png"
+                fit
+                :width="$device.isMobile ? 100 : 100"
+                :class="`${$device.isMobile ? '' : 'ml-auto mr-4'}`"
+              >
+              </v-img>
+            </div>
+            <div>
+              <v-card-item class="ma-0 pa-0">
+                <v-card-text
+                  class="font-weight-bold defaultFont text-gold text-center"
+                >
+                  <div
+                    class="font-weight-bold pa-0"
+                    :class="`${$device.isMobile ? 'text-h6' : 'text-h4'}`"
+                  >
+                    THE KUPPUSWAMI SASTRI RESEARCH INSTITUTE
+                  </div>
+                  <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
+                    (Regd. S.No. 32/1944-45, Dt. 24-2-1945)
+                  </div>
+
+                  <div :class="$device.isMobile ? 'text-body-1' : 'text-h6'">
+                    No. 84, Thiru Vi Ka Road, Mylapore, Chennai - 600 004.
+                  </div>
+                  <div
+                    :class="$device.isMobile ? 'text-body-1' : 'text-body-1'"
+                  >
+                    ksrinst@gmail.com | 044-24985320 / 044-29505320
+                  </div>
+                </v-card-text>
+              </v-card-item>
+            </div>
+          </v-card>
         </v-card>
+        <!-- style="position: absolute; right: 0; margin-top: 130px" -->
+        <div class="d-flex justify-end align-center mt-n12 mx-8">
+          <v-card
+            elevation="0"
+            rounded="0"
+            class="ma-0 pa-0"
+            color="transparent"
+            width="15vw"
+          >
+            <search />
+          </v-card>
+          <!-- Add login button -->
+          <div class="d-flex justify-center align-center">
+            <UserLogin />
+          </div>
+        </div>
       </div>
-      <div class="d-flex mx-auto mt-0">
+      <div class="d-flex mx-auto mt-0 flex-wrap justify-center">
         <!-- add menu Options -->
         <div v-for="option in menuOptions" :key="option.name">
           <v-card
             :class="{
-              activeMenu: option.path === activeMenu.path || option.isActive,
+              activeMenu: option.path === activeMenu.path,
+              'menu-item-hover': hoveredMenu === option.name,
             }"
             rounded="0"
             elevation="0"
             height="65"
             color="transparent"
-            class="d-flex justify-center align-center mx-2 pa-2 appBarMenuItem"
-            @mouseover="
-              option.isActive = true;
-              option.showChildren = true;
-            "
-            @mouseleave="option.isActive = false"
+            class="d-flex justify-center align-center pa-0 appBarMenuItem compact-menu-item"
+            @mouseenter="handleMenuHover(option, true)"
+            @mouseleave="handleMenuHover(option, false)"
             @click="navigateWithOutChild(option)"
           >
-            <div class="ma-2 text-subtitle-1 appBarMenuItem">
+            <div class="ma-1 text-subtitle-1 appBarMenuItem">
               <nuxt-link
                 :to="option.path"
                 style="text-decoration: unset"
@@ -103,17 +106,22 @@
                 {{ option.name }}
               </nuxt-link>
 
-              <!-- open-on-hover -->
               <v-menu
                 v-else
-                open-on-click
-                open-on-hover
                 v-model="option.showChildren"
+                open-on-hover
+                open-on-click
+                :close-delay="200"
+                :open-delay="100"
+                offset-y
+                content-class="menu-content"
+                @click="toggleMenu(option)"
               >
                 <template v-slot:activator="{ props }">
                   <div
                     v-bind="props"
-                    class="d-flex align-center justify-center"
+                    class="d-flex align-center justify-center menu-activator"
+                    @click.stop="toggleMenu(option)"
                   >
                     {{ option.name }}
                     <v-icon size="x-small" class="mx-1">
@@ -121,7 +129,7 @@
                     >
                   </div>
                 </template>
-                <v-card width="95vw">
+                <v-card width="95vw" class="menu-dropdown">
                   <v-row class="ma-0 pa-0">
                     <v-col
                       v-for="child in option.children"
@@ -140,10 +148,10 @@
                         <v-card
                           height="100%"
                           elevation="0"
-                          class="ma-1 pa-2 defaultFont d-flex flex-column justify-space-between"
-                          :class="{ activeMenuChild: child.isActive === true }"
-                          @mouseover="child.isActive = true"
+                          class="ma-1 pa-2 defaultFont d-flex flex-column justify-space-between menu-child-item"
+                          @mouseenter="child.isActive = true"
                           @mouseleave="child.isActive = false"
+                          :class="{ activeMenuChild: child.isActive === true }"
                           color="greenBg"
                         >
                           <div>
@@ -151,7 +159,6 @@
                               <v-icon size="small" color="primary">
                                 mdi-book-open-blank-variant
                               </v-icon>
-                              <!-- if active set color -->
                               <div
                                 class="px-2 text-h6 defaultFont font-weight-bold"
                                 :class="`${
@@ -165,7 +172,6 @@
                               {{ child.description }}
                             </div>
                           </div>
-                          <!-- <v-divider class="my-2" /> -->
                         </v-card>
                       </nuxt-link>
                     </v-col>
@@ -178,7 +184,10 @@
       </div>
     </v-card>
     <!-- Spacer to prevent content from being hidden behind fixed app bar -->
-    <div class="fixed-app-bar-spacer" style="height: 210px"></div>
+    <div
+      class="fixed-app-bar-spacer"
+      :style="{ height: appBarHeight + 'px' }"
+    ></div>
   </div>
   <span v-else>
     <!-- nav drawer -->
@@ -243,6 +252,9 @@
               <search />
             </v-card>
           </div>
+          <div class="mx-auto">
+            <UserLogin />
+          </div>
         </v-row>
       </v-card>
     </v-app-bar>
@@ -292,6 +304,81 @@
 </template>
 
 <script setup>
+let appBarHeight = ref(210);
+let hoveredMenu = ref(null);
+
+let showHeader = ref(true);
+let lastScrollY = ref(0);
+let scrollTimer = ref(null);
+
+const handleScroll = () => {
+  const currentScrollY = window.scrollY;
+
+  // Show header only when at the very top (within 10px threshold)
+  if (currentScrollY <= 10) {
+    showHeader.value = true;
+  } else {
+    showHeader.value = false;
+  }
+
+  lastScrollY.value = currentScrollY;
+};
+
+// Add mouse move handler for top area
+// const handleMouseMove = (event) => {
+//   // Show header when mouse is in top 100px of viewport
+//   if (event.clientY < 100) {
+//     showHeader.value = true;
+//   }
+// };
+
+const calculateAppBarHeight = () => {
+  const appBarElement = document.getElementById("app-bar");
+  if (appBarElement) {
+    appBarHeight.value = appBarElement.offsetHeight;
+  }
+};
+
+onMounted(() => {
+  nextTick(() => {
+    calculateAppBarHeight();
+  });
+  window.addEventListener("resize", calculateAppBarHeight);
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  // window.addEventListener("mousemove", handleMouseMove, { passive: true });
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", calculateAppBarHeight);
+  window.removeEventListener("scroll", handleScroll);
+  // window.removeEventListener("mousemove", handleMouseMove);
+  if (scrollTimer.value) {
+    clearTimeout(scrollTimer.value);
+  }
+});
+
+const handleMenuHover = (option, isHovering) => {
+  if (isHovering) {
+    hoveredMenu.value = option.name;
+  } else {
+    hoveredMenu.value = null;
+  }
+};
+
+// New method to handle click toggle for menus
+const toggleMenu = (option) => {
+  if (option.children) {
+    option.showChildren = !option.showChildren;
+
+    // Close other menus when one is clicked
+    menuOptions.forEach((opt) => {
+      if (opt !== option && opt.children) {
+        opt.showChildren = false;
+      }
+    });
+  }
+};
+
 const menuOptions = reactive([
   {
     name: "Home",
@@ -411,6 +498,12 @@ const menuOptions = reactive([
   {
     name: "Publications",
     path: "/ksri-publications",
+    description:
+      "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.",
+  },
+  {
+    name: "eBooks",
+    path: "/ebooks",
     description:
       "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.",
   },
@@ -557,9 +650,103 @@ const openChildMenu = (option) => {
 </script>
 
 <style scoped>
+/* Compact menu items with reduced spacing */
+.compact-menu-item {
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  min-width: auto !important;
+}
+
+/* Responsive menu spacing for smaller screens */
+@media (max-width: 1400px) {
+  .compact-menu-item {
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  .compact-menu-item .text-subtitle-1 {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .compact-menu-item {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  .compact-menu-item .text-subtitle-1 {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Ensure menu container uses available space efficiently */
+.d-flex.mx-auto.mt-0.flex-wrap.justify-center {
+  max-width: 100%;
+  gap: 0;
+}
+
 /* active menu option */
 .activeMenuChild {
   background-color: #bf641f !important;
   color: white !important;
+}
+
+.menu-item-hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-activator {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.menu-activator:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-dropdown {
+  margin-top: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-child-item {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.menu-child-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-content {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.header-transition {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.header-hidden {
+  height: 0 !important;
+  min-height: 0 !important;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Add this to make the main app-bar adjust its height */
+.v-card {
+  transition: height 0.3s ease-in-out;
 }
 </style>

@@ -30,6 +30,10 @@ export interface Book {
   printStatus?: string;
   yearOfPublication: string;
   itemPublishStatus: string;
+  isEbookAvailable: boolean;
+  ebookPrice?: string;
+  ebookUrl?: string;
+  previewEbookUrl?: string;
 }
 
 export interface BookDDB {
@@ -51,6 +55,10 @@ export interface BookDDB {
   yearOfPublication: string;
   printStatus?: string;
   itemPublishStatus: string;
+  isEbookAvailable: boolean;
+  ebookPrice?: string;
+  ebookUrl?: string;
+  previewEbookUrl?: string;
 }
 
 export function validateBook(item: Book): boolean {
@@ -92,6 +100,10 @@ export function toDynamoDB(item: Book): BookDDB {
     yearOfPublication: item.yearOfPublication,
     printStatus: item.printStatus,
     itemPublishStatus: item.itemPublishStatus,
+    isEbookAvailable: item.isEbookAvailable,
+    ebookPrice: item.ebookPrice,
+    ebookUrl: item.ebookUrl,
+    previewEbookUrl: item.previewEbookUrl,
   };
 }
 
@@ -112,6 +124,10 @@ export function fromDynamoDB(item: BookDDB): Book {
     yearOfPublication: item.yearOfPublication,
     printStatus: item.printStatus,
     itemPublishStatus: item.itemPublishStatus,
+    isEbookAvailable: item.isEbookAvailable,
+    ebookPrice: item.ebookPrice,
+    ebookUrl: item.ebookUrl,
+    previewEbookUrl: item.previewEbookUrl,
   };
 }
 

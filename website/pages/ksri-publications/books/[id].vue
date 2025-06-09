@@ -125,6 +125,41 @@
                 </span>
               </div>
 
+              <!-- Ebook details -->
+
+              <div
+                class="text-h6 text-primary my-4 font-weight-bold"
+                data-aos="fade-left"
+                data-aos-delay="300"
+                v-if="bookInfo.isEbookAvailable == 'Yes'"
+              >
+                <div>
+                  E-book Price:
+                  <span class="text-secondary">
+                    ₹{{ bookInfo.ebookPrice }}
+                  </span>
+                </div>
+
+                <!-- button to preview ebook -->
+                <div class="mt-2">
+                  <!-- <v-btn
+                    rounded="pill"
+                    variant="flat"
+                    color="primary"
+                    :href="bookInfo.previewEbookUrl"
+                    target="_blank"
+                  >
+                    Preview E-book
+                  </v-btn> -->
+
+                  <PreviewBookReader :bookInfo="bookInfo" />
+
+                  <!-- buy ebook -->
+
+                  <bookReader :book-info="bookInfo" />
+                </div>
+              </div>
+
               <div
                 class="text-start pa-0 mt-5 text-danger"
                 v-if="bookInfo.available != 'Yes'"
@@ -143,6 +178,12 @@
               <!-- {{ bookInfo.details }} -->
               <div v-html="bookInfo.details"></div>
             </div>
+
+            <!-- keywords -->
+            <div>
+              <div class="text-h6 text-primary font-weight-bold">Keywords:</div>
+              <div class="text-body-1">{{ bookInfo.keywords }}</div>
+            </div>
           </v-col>
         </v-row>
       </div>
@@ -151,6 +192,15 @@
 </template>
 
 <script setup>
+import { userStore } from "~/stores/UserStore";
+import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
+import $toast from "~/utils/toast_notification";
+
+// definePageMeta({
+//   middleware: ["authenticated"],
+// });
+
 const additionalPublicationsData = await queryContent(
   "publications",
   "additionalpublications"
@@ -243,6 +293,12 @@ const getBookInfo = async () => {
     bookInfo.details = book.details;
     bookInfo.id = book.id; // This seems to be your internal ID
     bookInfo.available = book.available;
+    bookInfo.isEbookAvailable = book.isEbookAvailable;
+    bookInfo.ebookPrice = book.ebookPrice;
+    bookInfo.previewEbookUrl = book.previewEbookUrl;
+    bookInfo.ebookUrl = book.ebookUrl;
+    bookInfo.keywords = book.keywords;
+
     bookInfo.publication = book.publication; // Publisher name
     bookInfo.author = book.author; // Author name
     bookInfo.yearOfPublication = book.yearOfPublication; // Ensure YYYY or YYYY-MM-DD
@@ -256,7 +312,7 @@ const getBookInfo = async () => {
     // A more descriptive text for the book.
     // Prioritize a dedicated description field if available, then details, then subtitle.
     const bookDescription =
-      book.longDescription || book.details || book.subtitle;
+      book.details + " " + book.subtitle + " " + book.keywords;
 
     const bookSchemaData = {
       "@context": "https://schema.org",
@@ -372,6 +428,78 @@ const getBookInfo = async () => {
   bookInfoFetched.value = true;
   isAdditionalPublication.value = bookInfo.publication !== "KSRI"; // Assuming bookInfo.publication is set
 };
+
+const buyEbook = async (bookInfo) => {
+  try {
+    console.log("buyEbook", bookInfo);
+
+    const store = userStore();
+
+    // generate order id
+
+    // checkIfAddressIsAvailable
+    const isAddressAvailable = await store.checkIfAddressIsAvailable();
+
+    if (!isAddressAvailable) {
+      // show toast asking to update address
+
+      $toast.error("Address details are not updated", {
+        timeout: 5000,
+        position: "top-right",
+      });
+
+      // navigate to /user profile page
+      setTimeout(() => {
+        window.location.href = "/user";
+      }, 2000);
+
+      return;
+    }
+
+    const orderParams = {
+      billing_name: store.contactDetails.name,
+      billing_email: store.userEmail,
+      billing_tel: store.contactDetails.phoneNumber,
+      billing_address: store.contactDetails.address,
+      billing_city: store.contactDetails.city,
+      billing_state: store.contactDetails.state,
+      billing_zip: store.contactDetails.zipCode,
+      billing_country: store.contactDetails.country,
+      amount: bookInfo.ebookPrice,
+      currency: "INR",
+      language: "en",
+
+      merchant_param1: bookInfo.id,
+      merchant_param2: bookInfo.title,
+      merchant_param3: "",
+      merchant_param4: "",
+
+      order_id: uuidv4(),
+    };
+
+    const response = await store.invokeLambdaAPI(
+      "POST",
+      `/purchase/api/payments/initiatePayment`,
+      orderParams
+    );
+
+    console.log("response", response);
+    console.log("Payment initiated:", response.data);
+    // get encryptedUrl from the response
+    const paymentUrl = response.data.paymentUrl;
+
+    console.log("paymentUrl", paymentUrl);
+    // Redirect to the payment gateway
+    window.location.href = paymentUrl;
+    // open in new tab
+
+    // window.open(paymentUrl, "_blank");
+  } catch (error) {
+    console.error("Error initiating payment:", error);
+    // Handle error (e.g., show an error message to the user)
+  }
+};
+
 const getImageUrl = (url) => {
   const runtimeConfig = useRuntimeConfig();
   return runtimeConfig.public.ASSET_DOMAIN + url;
