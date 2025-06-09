@@ -145,13 +145,7 @@
 
         <!-- Hide toolbar button - positioned just below the toolbar and centered -->
         <div
-          style="
-            position: absolute;
-            top: 64px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-          "
+          style="position: absolute; top: 64px; right: 2px; z-index: 1000"
           v-if="displayToolBar"
         >
           <div
@@ -170,13 +164,7 @@
 
         <!-- Show toolbar button - positioned at the top center when toolbar is hidden -->
         <div
-          style="
-            position: absolute;
-            top: 0px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-          "
+          style="position: absolute; top: 0px; right: 2px; z-index: 1000"
           v-if="!displayToolBar"
         >
           <v-btn
@@ -374,18 +362,18 @@
         >
           <div class="d-flex">
             <!-- Left side: Navigation controls -->
-            <v-spacer />
+            <v-spacer v-if="$device.isDesktop" />
             <div
-              class="d-flex justify-center align-center pa-2"
+              class="d-flex justify-center align-center"
               style="flex: 1 1 auto; min-width: 0"
             >
               <div
                 class="d-flex justify-center align-center"
-                style="flex-wrap: nowrap; gap: 8px"
+                style="flex-wrap: nowrap"
               >
                 <v-btn
                   prepend-icon="mdi-arrow-left"
-                  variant="tonal"
+                  variant="text"
                   color="white"
                   :disabled="!canGoPrevious"
                   @click="goToPreviousPage"
@@ -430,14 +418,14 @@
                 </v-btn>
               </div>
             </div>
-            <v-spacer />
+            <v-spacer v-if="$device.isDesktop" />
 
             <!-- Right side: Zoom controls -->
             <div
-              class="d-flex justify-center align-center pa-2"
+              class="d-flex justify-center align-center"
               style="flex: 0 0 auto"
             >
-              <div class="d-flex align-center justify-center" style="gap: 4px">
+              <div class="d-flex align-center justify-center">
                 <!-- Zoom Controls Menu -->
                 <div class="d-flex align-center justify-center">
                   <v-btn
@@ -469,83 +457,9 @@
                     <v-icon size="small">mdi-magnify-plus</v-icon>
                   </v-btn>
                 </div>
-                <!-- <v-menu
-          class="mx-4"
-          :close-on-content-click="false"
-          persistent
-          v-model="zoomMenuOpen"
-        >
-          <template v-slot:activator="{ props }">
-            <div class="d-flex flex-column justify-center align-center">
-              <v-btn
-                icon
-                v-bind="props"
-                :disabled="!isLoaded"
-                variant="text"
-              >
-                <v-icon>mdi-magnify-plus</v-icon>
-              </v-btn>
-              <span class="mt-n2">zoom</span>
-            </div>
-          </template>
-          <v-card min-width="200" class="zoom-menu">
-            <v-card-text class="pa-3">
-              <div class="d-flex align-center justify-space-between">
-                <v-btn
-                  size="small"
-                  variant="outlined"
-                  @click.stop="resetZoom"
-                  :disabled="!isLoaded || zoom === 1"
-                  density="compact"
-                >
-                  Reset
-                </v-btn>
-
-                <v-btn
-                  icon
-                  size="small"
-                  @click="zoomMenuOpen = false"
-                  variant="text"
-                >
-                  <v-icon size="small">mdi-close</v-icon>
-                </v-btn>
-              </div>
-              <div class="d-flex align-center justify-center">
-                <v-btn
-                  icon
-                  variant="text"
-                  @click.stop="zoomOut"
-                  :disabled="!isLoaded || zoom <= 0.5"
-                  class="mr-2"
-                >
-                  <v-icon size="small">mdi-magnify-minus</v-icon>
-                </v-btn>
-
-                <div
-                  class="zoom-display mx-3 text-center"
-                  style="min-width: 60px"
-                >
-                  <span class="text-body-2"
-                    >{{ Math.round(zoom * 100) }}%</span
-                  >
-                </div>
-
-                <v-btn
-                  icon
-                  variant="text"
-                  @click.stop="zoomIn"
-                  :disabled="!isLoaded || zoom >= 2"
-                  class="ml-2"
-                >
-                  <v-icon size="small">mdi-magnify-plus</v-icon>
-                </v-btn>
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-menu> -->
               </div>
             </div>
-            <v-spacer />
+            <v-spacer v-if="$device.isDesktop" />
           </div>
         </v-card>
       </v-card>
