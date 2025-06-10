@@ -36,7 +36,7 @@ export default defineNuxtConfig({
       PURCHASE_API_URL: "https://ksri.in/e-v1",
       // PURCHASE_API_URL: "http://localhost:3002/e-v1",
       LAMBDA_URL_DOMAIN:
-        "4eex5bnwjectmzbnzcuccamf7a0ctqhx.lambda-url.ap-south-1.on.aws",
+        "pm5cmhqxv7v2mqtjctr74lfa4e0mrfkt.lambda-url.ap-south-1.on.aws",
       CLOUDFRONT_DOMAIN: "ksri.in",
       // CLOUDFRONT_DOMAIN: "localhost:3002",
       // API_URL: "http://localhost:3001/public",
