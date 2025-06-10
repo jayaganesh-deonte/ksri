@@ -615,10 +615,12 @@ const calculateFitToHeightZoom = () => {
     autoFitZoom.value = 0.7;
   }
 
+  zoom.value = 1;
+
   // Only set initial zoom if this is the first calculation and set min height as 100
-  if (!isAutoFitCalculated.value) {
-    zoom.value = autoFitZoom.value;
-  }
+  // if (!isAutoFitCalculated.value) {
+  //   zoom.value = autoFitZoom.value;
+  // }
 };
 
 // 4. Add method to get container height (only recalculates autoFitZoom, doesn't change current zoom)
