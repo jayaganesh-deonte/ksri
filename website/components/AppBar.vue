@@ -502,7 +502,7 @@ const menuOptions = reactive([
       "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.",
   },
   {
-    name: "eBooks",
+    name: "e-Books",
     path: "/ebooks",
     description:
       "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.",

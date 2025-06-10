@@ -8,15 +8,16 @@
         size="64"
       ></v-progress-circular>
     </div>
-    <div class="ma-6" v-if="!isLoading">
+    <div class="ma-6 mt-1" v-if="!isLoading">
       <div>
-        <section-title title="EBooks" />
-        <div class="sectionSubtitle2">
+        <section-title title="E-Books" />
+        <div class="sectionSubtitle2ForPublications">
           As a premier Institution in the field of research, KSRI has involved
           itself actively in the pursuit of excellence in its field of
           specialisation. In order to remain competitive and abreast of the
           requirement of Scholars, the books available in eBook format
         </div>
+        <DisclaimerForBooks />
       </div>
 
       <!-- selectedPublicationToDisplay -->

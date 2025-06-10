@@ -2,7 +2,7 @@
   <div>
     <div>
       <section-title title="KSRI PUBLICATIONS" />
-      <div class="sectionSubtitle2">
+      <div class="sectionSubtitle2ForPublications">
         As a premier Institution in the field of research, KSRI has involved
         itself actively in the pursuit of excellence in its field of
         specialisation. In order to remain competitive and abreast of the
@@ -11,6 +11,8 @@
         higher level.
       </div>
     </div>
+
+    <DisclaimerForBooks class="mx-8" />
     <div class="text-center my-8">
       <!-- display recent books in horizontal line -->
       <div class="sectionTitle3">BOOKS/MONOGRAPHS</div>
