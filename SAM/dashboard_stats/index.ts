@@ -8,118 +8,7 @@ const DDB_TABLE_NAME = process.env.DDB_TABLE_NAME;
 
 const S3_BUCKET_NAME = process.env.S3_BUCKET_NAME;
 
-let dashboardData = [
-  {
-    title: "Total Events",
-    total: 0,
-    icon: "mdi-calendar",
-    entityType: "ENTITYTYPE#EVENT",
-  },
-  {
-    // News
-    title: "News",
-    total: 0,
-    icon: "mdi-newspaper",
-    entityType: "ENTITYTYPE#NEWS",
-  },
-  {
-    title: "Books Published",
-    total: 0,
-    icon: "mdi-book-open-page-variant",
-    entityType: "ENTITYTYPE#BOOK",
-  },
-  // total ebooks
-  {
-    title: "Total Ebooks",
-    total: 0,
-    icon: "mdi-book-open-page-variant",
-    entityType: "ENTITYTYPE#BOOK",
-    filter: [
-      {
-        key: "isEbookAvailable",
-        value: "Yes",
-      },
-    ],
-  },
-  {
-    // Projects
-    title: "On-Going Projects",
-    total: 0,
-    icon: "mdi-folder-open",
-    entityType: "ENTITYTYPE#PROJECT",
-
-    filter: [
-      {
-        key: "status",
-        value: "On-Going",
-      },
-    ],
-  },
-  {
-    title: "Completed Projects",
-    total: 0,
-    icon: "mdi-folder",
-    entityType: "ENTITYTYPE#PROJECT",
-
-    filter: [
-      {
-        key: "status",
-        value: "Completed",
-      },
-    ],
-  },
-  // Research Articles
-  {
-    title: "Articles",
-    total: 0,
-    icon: "mdi-file-document",
-    entityType: "ENTITYTYPE#RESEARCHARTICLE",
-  },
-
-  // phd students
-  {
-    title: "PhD Students",
-    total: 0,
-    icon: "mdi-account-school",
-    entityType: "ENTITYTYPE#STUDENT",
-    filter: [
-      {
-        key: "course",
-        value: "Ph.D.",
-      },
-    ],
-  },
-  // Mphil Students
-  {
-    title: "MPhil Students",
-    total: 0,
-    icon: "mdi-account-school",
-    entityType: "ENTITYTYPE#STUDENT",
-    filter: [
-      {
-        key: "course",
-        value: "M.Phil",
-      },
-    ],
-  },
-
-  // Users for the system
-  {
-    title: "System Users",
-    total: 0,
-    icon: "mdi-account",
-    entityType: "ENTITYTYPE#USER",
-  },
-
-  // // total Ebooks sold
-  // {
-  //   title: "Ebooks Sold",
-  //   total: 0,
-  //   icon: "mdi-book-open-page-variant",
-  //   entityType: "ENTITYTYPE#EBOOK",
-
-  // },
-];
+let dashboardData = [];
 
 const query = async (entityType: any, filter: any) => {
   let params: any = {
@@ -175,13 +64,7 @@ const getEbookSoldCount = async () => {
   const ebooksSoldCount =
     data.Items && data.Items.length > 0 ? data.Items[0].orderId : 0;
 
-  dashboardData.push({
-    title: "Ebooks Sold",
-    total: ebooksSoldCount,
-    icon: "mdi-book-open-page-variant",
-    entityType: "ENTITYTYPE#PAYMENT#PURCHASE#EBOOK#CURRENT_ORDER_ID",
-    filter: [],
-  });
+  return ebooksSoldCount;
 };
 
 const getDashboardStats = async () => {
@@ -222,7 +105,22 @@ const getDashboardStats = async () => {
   });
 
   // get ebook sold count
-  await getEbookSoldCount();
+  const ebookCount = await getEbookSoldCount();
+
+  dashboardData.push({
+    title: "Ebooks Sold",
+    total: ebookCount,
+    icon: "mdi-book-open-page-variant",
+    entityType: "ENTITYTYPE#EBOOK",
+  });
+
+  // remove duplicate Ebooks Sold from dashboardData
+  // if any two records have the same title, remove the one with the lower total
+  dashboardData = dashboardData.filter(
+    (item, index, self) =>
+      index ===
+      self.findIndex((t) => t.title === item.title && t.total >= item.total)
+  );
 
   //   insert dashboardData into the ddb
   const params = {
@@ -242,6 +140,109 @@ const getDashboardStats = async () => {
 
 // create lambda handler
 export const handler = async () => {
+  dashboardData = [
+    {
+      title: "Total Events",
+      total: 0,
+      icon: "mdi-calendar",
+      entityType: "ENTITYTYPE#EVENT",
+    },
+    {
+      // News
+      title: "News",
+      total: 0,
+      icon: "mdi-newspaper",
+      entityType: "ENTITYTYPE#NEWS",
+    },
+    {
+      title: "Books Published",
+      total: 0,
+      icon: "mdi-book-open-page-variant",
+      entityType: "ENTITYTYPE#BOOK",
+    },
+    // total ebooks
+    {
+      title: "Total Ebooks",
+      total: 0,
+      icon: "mdi-book-open-page-variant",
+      entityType: "ENTITYTYPE#BOOK",
+      filter: [
+        {
+          key: "isEbookAvailable",
+          value: "Yes",
+        },
+      ],
+    },
+    {
+      // Projects
+      title: "On-Going Projects",
+      total: 0,
+      icon: "mdi-folder-open",
+      entityType: "ENTITYTYPE#PROJECT",
+
+      filter: [
+        {
+          key: "status",
+          value: "On-Going",
+        },
+      ],
+    },
+    {
+      title: "Completed Projects",
+      total: 0,
+      icon: "mdi-folder",
+      entityType: "ENTITYTYPE#PROJECT",
+
+      filter: [
+        {
+          key: "status",
+          value: "Completed",
+        },
+      ],
+    },
+    // Research Articles
+    {
+      title: "Articles",
+      total: 0,
+      icon: "mdi-file-document",
+      entityType: "ENTITYTYPE#RESEARCHARTICLE",
+    },
+
+    // phd students
+    {
+      title: "PhD Students",
+      total: 0,
+      icon: "mdi-account-school",
+      entityType: "ENTITYTYPE#STUDENT",
+      filter: [
+        {
+          key: "course",
+          value: "Ph.D.",
+        },
+      ],
+    },
+    // Mphil Students
+    {
+      title: "MPhil Students",
+      total: 0,
+      icon: "mdi-account-school",
+      entityType: "ENTITYTYPE#STUDENT",
+      filter: [
+        {
+          key: "course",
+          value: "M.Phil",
+        },
+      ],
+    },
+
+    // Users for the system
+    {
+      title: "System Users",
+      total: 0,
+      icon: "mdi-account",
+      entityType: "ENTITYTYPE#USER",
+    },
+  ];
   await getDashboardStats();
 };
 
