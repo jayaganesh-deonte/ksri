@@ -4,9 +4,10 @@ import { getS3ObjectCountAndTotalSize } from "./s3_summary";
 
 const documentClient = DynamoDBDocument.from(new DynamoDBClient());
 
-const DDB_TABLE_NAME = "ksri-prod_admin_master_table";
+const DDB_TABLE_NAME = process.env.DDB_TABLE_NAME;
 
-const S3_BUCKET_NAME = "ksri-prod-admin-store";
+const S3_BUCKET_NAME = process.env.S3_BUCKET_NAME;
+
 let dashboardData = [
   {
     title: "Total Events",
