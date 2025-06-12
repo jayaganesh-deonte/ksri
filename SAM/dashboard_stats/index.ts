@@ -28,6 +28,19 @@ let dashboardData = [
     icon: "mdi-book-open-page-variant",
     entityType: "ENTITYTYPE#BOOK",
   },
+  // total ebooks
+  {
+    title: "Total Ebooks",
+    total: 0,
+    icon: "mdi-book-open-page-variant",
+    entityType: "ENTITYTYPE#BOOK",
+    filter: [
+      {
+        key: "isEbookAvailable",
+        value: "Yes",
+      },
+    ],
+  },
   {
     // Projects
     title: "On-Going Projects",
@@ -97,9 +110,18 @@ let dashboardData = [
     icon: "mdi-account",
     entityType: "ENTITYTYPE#USER",
   },
+
+  // // total Ebooks sold
+  // {
+  //   title: "Ebooks Sold",
+  //   total: 0,
+  //   icon: "mdi-book-open-page-variant",
+  //   entityType: "ENTITYTYPE#EBOOK",
+
+  // },
 ];
 
-const query = async (entityType, filter) => {
+const query = async (entityType: any, filter: any) => {
   let params: any = {
     TableName: DDB_TABLE_NAME,
     //IndexName: "entityTypePK", // fd
@@ -121,9 +143,45 @@ const query = async (entityType, filter) => {
     }
   }
 
-  const data = await documentClient.query(params);
+  let totalCount = 0;
+  let lastEvaluatedKey = undefined;
 
-  return data.Count;
+  do {
+    if (lastEvaluatedKey) {
+      params.ExclusiveStartKey = lastEvaluatedKey;
+    }
+
+    const data = await documentClient.query(params);
+    totalCount += data.Count || 0;
+    lastEvaluatedKey = data.LastEvaluatedKey;
+  } while (lastEvaluatedKey);
+
+  return totalCount;
+};
+
+const getEbookSoldCount = async () => {
+  // PK and SK = ENTITYTYPE#PAYMENT#PURCHASE#EBOOK#CURRENT_ORDER_ID
+  const params = {
+    TableName: DDB_TABLE_NAME,
+    KeyConditionExpression: "PK = :pk and SK = :sk",
+    ExpressionAttributeValues: {
+      ":pk": "ENTITYTYPE#PAYMENT#PURCHASE#EBOOK#CURRENT_ORDER_ID",
+      ":sk": "ENTITYTYPE#PAYMENT#PURCHASE#EBOOK#CURRENT_ORDER_ID",
+    },
+  };
+
+  const data = await documentClient.query(params);
+  // returns one object with key orderId, return that
+  const ebooksSoldCount =
+    data.Items && data.Items.length > 0 ? data.Items[0].orderId : 0;
+
+  dashboardData.push({
+    title: "Ebooks Sold",
+    total: ebooksSoldCount,
+    icon: "mdi-book-open-page-variant",
+    entityType: "ENTITYTYPE#PAYMENT#PURCHASE#EBOOK#CURRENT_ORDER_ID",
+    filter: [],
+  });
 };
 
 const getDashboardStats = async () => {
@@ -163,6 +221,9 @@ const getDashboardStats = async () => {
     filter: [],
   });
 
+  // get ebook sold count
+  await getEbookSoldCount();
+
   //   insert dashboardData into the ddb
   const params = {
     TableName: DDB_TABLE_NAME,
@@ -183,3 +244,5 @@ const getDashboardStats = async () => {
 export const handler = async () => {
   await getDashboardStats();
 };
+
+handler();

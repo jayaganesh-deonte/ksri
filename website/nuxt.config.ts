@@ -24,30 +24,40 @@ export default defineNuxtConfig({
   // nitro: {
   //   preset: "static", // Specify the static preset for full static generation
   // },
+  env: {
+    REGION: process.env.VITE_APP_AWS_REGION,
+    TEST_REGION: "us-east-1",
+  },
   runtimeConfig: {
     WORKING_KEY: process.env.WORKING_KEY,
     ACCESS_CODE: process.env.ACCESS_CODE,
     MERCHANT_ID: process.env.MERCHANT_ID,
     CC_AVENUE_DOMAIN: process.env.CC_AVENUE_DOMAIN,
     REDIRECT_URL: process.env.REDIRECT_URL,
+    TEST_REGION: "us-east-1",
     public: {
-      REGION: "ap-south-1",
-      API_URL: "https://ksri.in/public",
-      PURCHASE_API_URL: "https://ksri.in/e-v1",
-      // PURCHASE_API_URL: "http://localhost:3002/e-v1",
-      LAMBDA_URL_DOMAIN:
-        "pm5cmhqxv7v2mqtjctr74lfa4e0mrfkt.lambda-url.ap-south-1.on.aws",
-      CLOUDFRONT_DOMAIN: "ksri.in",
-      // CLOUDFRONT_DOMAIN: "localhost:3002",
-      // API_URL: "http://localhost:3001/public",
-      CONTACT_US_URL:
-        "https://4fhxozuh262x5cgohmdstdvmfm0rvmef.lambda-url.ap-south-1.on.aws/",
-      ASSET_DOMAIN: "https://d1tkn0t59vli2s.cloudfront.net/",
+      REGION: process.env.VITE_APP_AWS_REGION,
+      API_URL: process.env.API_URL,
+      PURCHASE_API_URL: process.env.PURCHASE_API_URL,
+      LAMBDA_URL_DOMAIN: process.env.LAMBDA_URL_DOMAIN,
+      CLOUDFRONT_DOMAIN: process.env.CLOUDFRONT_DOMAIN,
+      CONTACT_US_URL: process.env.CONTACT_US_URL,
+      ASSET_DOMAIN: process.env.ASSET_DOMAIN,
       WORKING_KEY: process.env.WORKING_KEY,
       ACCESS_CODE: process.env.ACCESS_CODE,
       MERCHANT_ID: process.env.MERCHANT_ID,
       CC_AVENUE_DOMAIN: process.env.CC_AVENUE_DOMAIN,
       REDIRECT_URL: process.env.REDIRECT_URL,
+
+      aws_project_region: process.env.VITE_APP_AWS_REGION,
+      aws_cognito_identity_pool_id: process.env.VITE_APP_IDENTITY_POOL_ID,
+      aws_cognito_region: process.env.VITE_APP_AWS_REGION,
+      aws_user_pools_id: process.env.VITE_APP_USER_POOL_ID,
+      aws_user_pools_web_client_id: process.env.VITE_APP_APP_CLIENT_ID,
+      domain: process.env.VITE_APP_COGNITO_DOMAIN,
+      redirectSignIn: process.env.VITE_APP_REDIRECT_SIGN_IN_URL,
+      redirectSignOut: process.env.VITE_APP_REDIRECT_SIGN_OUT_URL,
+      TEST_REGION: "us-east-1",
     },
   },
   modules: [

@@ -49,6 +49,7 @@
             class="d-flex justify-center align-center fade-left"
             style="--delay: 1s"
             :class="`${$device.isMobile ? 'flex-column ' : 'flex-row'}`"
+            v-if="isTextPresent(buttonText1) || isTextPresent(buttonText2)"
           >
             <div :class="`${$device.isMobile ? 'mb-2' : 'mr-4'}`">
               <nuxt-link :to="buttonText1Route">

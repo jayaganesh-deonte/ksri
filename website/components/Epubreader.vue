@@ -26,6 +26,18 @@
         <div class="d-flex align-center w-100">
           <v-spacer />
 
+          <!-- full screen -->
+          <v-tooltip location="bottom" text="Toggle fullscreen">
+            <template v-slot:activator="{ props: tooltipProps }">
+              <div class="d-flex flex-column justify-center align-center mx-4">
+                <v-btn icon v-bind="tooltipProps" @click="fullscreen">
+                  <v-icon>mdi-fullscreen</v-icon>
+                </v-btn>
+                <span class="text-subtitle-2 mt-n2"> Fullscreen</span>
+              </div>
+            </template>
+          </v-tooltip>
+
           <!-- Bookmark current location button -->
           <v-tooltip
             location="bottom"
@@ -1411,6 +1423,14 @@ const handleKeyboardShortcuts = (e) => {
         e.preventDefault();
         return false;
     }
+  }
+};
+
+const fullscreen = () => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  } else {
+    document.documentElement.requestFullscreen();
   }
 };
 
