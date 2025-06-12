@@ -88,23 +88,23 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "CRITICAL EDITION OF SĀRASVATĪYA CITRAKARMA ŚĀSTRAM (A TEXT ON ANCIENT INDIAN ICONOGRAPHY) WITH ENGLISH TRANSLATION",
+    "title": "WELLNESS: ANCIENT INDIAN KNOWLEDGE  PERSPECTIVE",
     "subtitle": "",
     "price": "",
     "imageUrls": "",
     "details": "",
     "id": "01JRA3EQC6EYE9AB7FMH4N72MC",
     "publication": "KSRI",
-    "keywords": "keerti, malini, vasu",
+    "keywords": " ",
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-04-08T07:04:54.918Z",
-      "updated_at": "2025-06-02T11:08:05.724Z",
+      "updated_at": "2025-04-08T07:04:54.918Z",
       "created_by": "ksriphd@gmail.com"
     },
-    "author": "Dr. Vidyuta K.",
+    "author": "Dr. Vasumathi Rajaram",
     "yearOfPublication": "2025-12-01",
     "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
@@ -121,9 +121,9 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-04-08T07:05:03.750Z",
-      "updated_at": "2025-05-06T07:56:41.451Z",
+      "updated_at": "2025-04-08T07:05:03.750Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. Vasumathi Rajaram",
@@ -143,15 +143,33 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "contactus@deonte.in",
       "created_at": "2025-04-08T07:06:33.893Z",
-      "updated_at": "2025-04-08T07:06:33.893Z",
+      "updated_at": "2025-05-16T10:00:30.672Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. S. Annapurna",
     "yearOfPublication": "2025-12-01",
     "printStatus": "Upcoming",
-    "itemPublishStatus": "PUBLISHED"
+    "itemPublishStatus": "PUBLISHED",
+    "isEbookAvailable": "Yes",
+    "ebookPrice": "20",
+    "ebookUrl": [
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JVC8KEKD8TEKBBQ95VEZWV23.epub",
+        "encrypted": true,
+        "url": "s3://ksri-prod-ebook-store/files/01JVC8KEKD8TEKBBQ95VEZWV23.epub"
+      }
+    ],
+    "previewEbookUrl": [
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JVBQF0P3XBCAD7V19BEQYVJP.pdf",
+        "encrypted": false,
+        "url": "files/01JVBQF0P3XBCAD7V19BEQYVJP.pdf"
+      }
+    ]
   },
   {
     "title": "GAṆITASĀRA SAṄGRAHA OF MAHĀVĪRA",
@@ -165,15 +183,33 @@
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "contactus@deonte.in",
       "created_at": "2025-04-08T07:07:19.933Z",
-      "updated_at": "2025-04-08T07:07:19.933Z",
+      "updated_at": "2025-05-16T06:51:49.137Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. Sita Sundar Ram",
     "yearOfPublication": "2025-12-01",
     "printStatus": "Upcoming",
-    "itemPublishStatus": "PUBLISHED"
+    "itemPublishStatus": "PUBLISHED",
+    "isEbookAvailable": "Yes",
+    "ebookPrice": "20",
+    "ebookUrl": [
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JVBXT0DRR3756TVKCXRCBRM5.pdf",
+        "encrypted": true,
+        "url": "s3://ksri-prod-ebook-store/files/01JVBXT0DRR3756TVKCXRCBRM5.pdf"
+      }
+    ],
+    "previewEbookUrl": [
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JVBQEP7DATZBNCQESJ4Q9843.pdf",
+        "encrypted": false,
+        "url": "files/01JVBQEP7DATZBNCQESJ4Q9843.pdf"
+      }
+    ]
   },
   {
     "title": "AN ENCYCLOPAEDIC DICTIONARY OF SANSKRIT GEOGRAPHICAL TERMS",
@@ -183,35 +219,53 @@
     "details": "",
     "id": "01JRA3MST653DVAQ8YGD7K4WVV",
     "publication": "KSRI",
-    "keywords": " tag, check, keyword",
+    "keywords": " ",
     "available": "Yes",
     "copies": "",
     "metadata": {
-      "updated_by": "ksriphd@gmail.com",
+      "updated_by": "contactus@deonte.in",
       "created_at": "2025-04-08T07:08:14.022Z",
-      "updated_at": "2025-06-02T06:45:45.665Z",
+      "updated_at": "2025-05-16T06:51:36.784Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Prof. R. Parthasarathy, Dr. S. Muthulakshmi",
     "yearOfPublication": "2025-12-01",
     "printStatus": "Upcoming",
-    "itemPublishStatus": "PUBLISHED"
+    "itemPublishStatus": "PUBLISHED",
+    "isEbookAvailable": "Yes",
+    "ebookPrice": "20",
+    "ebookUrl": [
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JVBXSKV304RNGFJVKC40WX2M.epub",
+        "encrypted": true,
+        "url": "s3://ksri-prod-ebook-store/files/01JVBXSKV304RNGFJVKC40WX2M.epub"
+      }
+    ],
+    "previewEbookUrl": [
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JVBQEC83FV3N87X675CNQ6WQ.epub",
+        "encrypted": false,
+        "url": "files/01JVBQEC83FV3N87X675CNQ6WQ.epub"
+      }
+    ]
   },
   {
-    "title": "ARTHAŚĀSTRA VYĀKHYĀS  ",
-    "subtitle": "JAYAMAṆGALĀ AND CĀṆAKYAṬĪKĀ",
-    "price": "Rs. 400",
+    "title": "ARTHAŚĀSTRA OF KAUṬILYA  WITH   JAYAMAṆGALĀ AND CĀṆAKYAṬĪKĀ",
+    "subtitle": " REPRINT ",
+    "price": "Rs.300",
     "imageUrls": [],
-    "details": "<p>Revised Edition</p>",
+    "details": "",
     "id": "01JGNDQ25SRSYNST1BDPMK9WJP",
     "publication": "KSRI",
-    "keywords": " Arthaśāstra, Kautilya, Chanakya, Ancient Indian Polity, Rare Commentary on Arthaśāstra, Statecraft, Politics, Economic Policy, Military Strategy, Governance",
-    "available": "Yes",
+    "keywords": " Arthasastra, Kautilya, Chanakya",
+    "available": "No",
     "copies": "500",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-06-03T05:22:08.177Z",
+      "updated_at": "2025-04-08T06:58:21.510Z",
       "created_by": "admin"
     },
     "author": " Dr. V. Kameswari, Dr. T.V. Vasudeva",
@@ -220,53 +274,57 @@
     "itemPublishStatus": "PUBLISHED"
   },
   {
-    "title": "Dietitics ",
-    "subtitle": "As gleaned from Sanskrit texts",
-    "price": "Rs. 250",
-    "imageUrls": [],
+    "title": "Dietitics as gleaned from Sanskrit texts",
+    "subtitle": "",
+    "price": "Rs. 200",
+    "imageUrls": [
+      "images/01JRA1KC9BXY16Y1K9EPPZ5F0G"
+    ],
     "details": "",
     "id": "01JRA1MQCRM0WXADVTF82QJ96H",
     "publication": "KSRI",
-    "keywords": " Food, Health, Āyurveda",
+    "keywords": " ",
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-04-08T06:33:14.392Z",
-      "updated_at": "2025-06-03T05:25:30.457Z",
+      "updated_at": "2025-04-08T06:33:14.392Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. S. Anuradha",
     "yearOfPublication": "2025-05-01",
-    "printStatus": "Printed",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
     "title": "Amr̥tasiddhiyoga of Virūpākṣa",
-    "subtitle": "Edition and Study",
-    "price": "Rs. 250",
-    "imageUrls": [],
+    "subtitle": "Critical study and edition",
+    "price": "Rs.250",
+    "imageUrls": [
+      "images/01JRA20QN2R13NPR9YNM7XXC0V"
+    ],
     "details": "",
     "id": "01JRA20WSNQA6DKGECZY1WD0F8",
     "publication": "KSRI",
-    "keywords": " Ancient system of Haṭha Yoga, Nātha Yoga",
+    "keywords": " ",
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-04-08T06:39:53.141Z",
-      "updated_at": "2025-06-03T05:23:37.466Z",
+      "updated_at": "2025-04-08T06:39:53.141Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. S. Anuradha",
     "yearOfPublication": "2025-05-01",
-    "printStatus": "Printed",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
     "title": "JĪRṆODDHĀRADAŚAKA",
     "subtitle": "with the commentary of Nigamañanadesika",
-    "price": "Rs. 300",
+    "price": "",
     "imageUrls": [
       "images/01JQTM5PME8NM48SMNA3EB6DPR"
     ],
@@ -277,14 +335,14 @@
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "div.hor.88@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-04-02T06:49:22.239Z",
-      "updated_at": "2025-05-28T10:02:39.942Z",
+      "updated_at": "2025-04-08T06:22:52.486Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Dr. Nagarajan",
     "yearOfPublication": "2025-04-01",
-    "printStatus": "Printed",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -301,14 +359,14 @@
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "div.hor.88@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-04-02T07:27:20.285Z",
-      "updated_at": "2025-05-28T09:59:45.062Z",
+      "updated_at": "2025-04-08T06:27:00.743Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Mr. Sudarshan Krishna",
     "yearOfPublication": "2025-03-01",
-    "printStatus": "Printed",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -325,62 +383,62 @@
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "div.hor.88@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-04-02T07:29:45.321Z",
-      "updated_at": "2025-05-28T10:00:13.366Z",
+      "updated_at": "2025-04-08T06:27:13.055Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Mr. Sudarshan Krishna",
     "yearOfPublication": "2025-03-01",
-    "printStatus": "Printed",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
     "title": "Pūrva Mīmamsa Viṣaya Saṇgraha Dīpikā",
     "subtitle": "- Appayya Dīkṣita",
-    "price": " Rs. 100",
+    "price": " ",
     "imageUrls": [
       "images/01JQTPM9Q1Q30YG8PEVH0RZMM2"
     ],
-    "details": "<p><br></p>",
+    "details": "<p><strong>UPCOMING</strong><br></p>",
     "id": "01JQTPMCTRB5Y1S66GAT029HYA",
     "publication": "KSRI",
     "keywords": " ",
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "div.hor.88@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-04-02T07:32:12.760Z",
-      "updated_at": "2025-05-28T10:03:20.334Z",
+      "updated_at": "2025-04-08T06:28:09.207Z",
       "created_by": "ksriphd@gmail.com"
     },
     "author": "Sri Sudarshan Krishna",
     "yearOfPublication": "2025-03-01",
-    "printStatus": "Printed",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
     "title": "CITRAPAṬA",
     "subtitle": "- Appayya Dikṣita",
-    "price": " Rs. 200",
+    "price": " ",
     "imageUrls": [
-      "images/01JWT437EKW6FFDYT4QAXX92CF"
+      "images/01JQTPRZVB2QGSZS3RX5ZMZMPE"
     ],
-    "details": "<p>Revised Edition</p>",
+    "details": "<p><strong>UPCOMING</strong></p>",
     "id": "01JQTPS23R4Q0XBTA4NF2MNGE6",
     "publication": "KSRI",
-    "keywords": " Mīmāmsā, Indian Philosophy",
+    "keywords": " ",
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-04-02T07:34:45.624Z",
-      "updated_at": "2025-06-03T05:26:48.704Z",
+      "updated_at": "2025-04-08T06:29:04.975Z",
       "created_by": "ksriphd@gmail.com"
     },
-    "author": "Sri Sudarshan Krishna",
+    "author": "Mr. Sudarshan Krishna",
     "yearOfPublication": "2025-03-01",
-    "printStatus": "Printed",
+    "printStatus": "Upcoming",
     "itemPublishStatus": "PUBLISHED"
   },
   {
@@ -432,71 +490,48 @@
   {
     "title": "YOGA SAṄGRAHA",
     "subtitle": " This is a critical edition of this text based on three available Mss. in different scripts. ",
-    "price": "Rs. 250",
+    "price": "250",
     "imageUrls": [
       "images/Yogasangraha.JPG"
     ],
     "details": "<p>In about 200 verses, it contains lot of interesting details which are not found in other Yogic texts.</p>",
     "id": "01JGXKQXH67MTRRH8M7YAQFJYY",
     "publication": "KSRI",
-    "keywords": "Yoga, Physiology, Philosophy",
+    "keywords": "Yoga",
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-01-06T10:49:32.966Z",
-      "updated_at": "2025-06-06T10:38:24.969Z",
+      "updated_at": "2025-01-25T08:20:36.647Z",
       "created_by": "demo"
     },
     "author": "Dr. R Muthulakshmi, Dr. K.S. Balasubramanian, Dr. T.V. Vasudeva",
     "yearOfPublication": "2023-12-01",
-    "printStatus": "Printed",
     "itemPublishStatus": "PUBLISHED"
   },
   {
     "title": "ŚIVA SVARODAYA ",
     "subtitle": "(Text in Devanagari and Roman script with English translation and notes)",
-    "price": "Rs. 250",
+    "price": "250",
     "imageUrls": [
-      "images/01JX2D6HS474ZAYN02XT659QSM",
-      "images/01JX2D743XJJWC77G1FH8ZZG6E",
-      "images/01JX2D782RAHSDCNES4X1EMYYK",
-      "images/01JX2D79DW71Z4DBZPCFH7FWFZ"
+      "images/Sivasvarodaya.JPG"
     ],
-    "details": "<p><strong>&nbsp;</strong>This contains 395 verses in the form of Lord Siva's instruction to goddess Parvati on the greatness of Svara science of Yoga, how this science is useful in prognostication of future events in one's life by observing one's breathing patterns and many more interesting things.</p><p><br></p>",
+    "details": "<p class=\"ql-align-justify\"><strong>&nbsp;</strong>This contains 395 verses in the form of Lord Siva's instruction to goddess Parvati on the greatness of Svara science of Yoga, how this science is useful in prognostication of future events in one's life by observing one's breathing patterns and many more interesting things.</p><p><br></p>",
     "id": "01JGXKGQPJQDF901ZCD92YKEVP",
     "publication": "KSRI",
-    "keywords": "Svara Yoga, Breathing, Prognostication ",
+    "keywords": "Yoga",
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-01-06T10:45:37.618Z",
-      "updated_at": "2025-06-09T11:32:15.993Z",
+      "updated_at": "2025-01-06T10:45:37.618Z",
       "created_by": "demo"
     },
-    "author": "Dr. K.S. Balasubramanian, Dr. T.V.Vasudeva, Dr. K Vidyuta",
+    "author": "Dr. K.S. Balasubramanian. Dr. T.V.Vasudeva, Dr. K Vidyuta",
     "yearOfPublication": "2023-01-01",
-    "printStatus": "Printed",
-    "itemPublishStatus": "PUBLISHED",
-    "isEbookAvailable": "Yes",
-    "ebookPrice": "10",
-    "ebookUrl": [
-      {
-        "s3Folder": "ebook",
-        "s3Key": "files/01JXA792NCA2NM7PP7AC8KXVMJ.pdf",
-        "encrypted": true,
-        "url": "s3://ksri-ebook-store/files/01JXA792NCA2NM7PP7AC8KXVMJ.pdf"
-      }
-    ],
-    "previewEbookUrl": [
-      {
-        "s3Folder": "preview",
-        "s3Key": "files/01JXA7CH85JS4W85RAPEX1RXKS.pdf",
-        "encrypted": false,
-        "url": "files/01JXA7CH85JS4W85RAPEX1RXKS.pdf"
-      }
-    ]
+    "itemPublishStatus": "PUBLISHED"
   },
   {
     "title": "GORAKṢA SAMHITĀ ",
@@ -597,21 +632,40 @@
     "imageUrls": [
       "images/Surgical Instruments.JPG"
     ],
-    "details": "",
+    "details": "<p>From Vedic time, references to  different surgeries have been recorded in our texts, especially in the Ayurvedic texts by Susruta, Charaka and Vagbhata. This book gives a glimpse of various surgical instruments used hundreds of years ago ( with illustrations) by our ancients.<br></p>",
     "id": "01JGXMDY4ZKEX6NHJ918X75VHK",
     "publication": "KSRI",
     "keywords": "Surgical Instruments, Surgry, Ancient Indian surgery, Charaka, Sushruta",
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "demo",
+      "updated_by": "contactus@deonte.in",
       "created_at": "2025-01-06T11:01:34.496Z",
-      "updated_at": "2025-01-06T11:01:34.496Z",
+      "updated_at": "2025-05-16T10:16:31.236Z",
       "created_by": "demo"
     },
     "author": "Dr. S. Gopalan",
     "yearOfPublication": "2023-01-01",
-    "itemPublishStatus": "PUBLISHED"
+    "printStatus": "Printed",
+    "itemPublishStatus": "PUBLISHED",
+    "isEbookAvailable": "Yes",
+    "ebookPrice": "50",
+    "ebookUrl": [
+      {
+        "s3Folder": "ebook",
+        "s3Key": "files/01JVC9EZ2CEYNFN0VAQYWVAAER.epub",
+        "encrypted": true,
+        "url": "s3://ksri-prod-ebook-store/files/01JVC9EZ2CEYNFN0VAQYWVAAER.epub"
+      }
+    ],
+    "previewEbookUrl": [
+      {
+        "s3Folder": "preview",
+        "s3Key": "files/01JVC9FCTVM1EKGYMJ99MSV9ZS.epub",
+        "encrypted": false,
+        "url": "files/01JVC9FCTVM1EKGYMJ99MSV9ZS.epub"
+      }
+    ]
   },
   {
     "title": "VAḌAVĀGNI ",
@@ -742,9 +796,9 @@
     "available": "Yes",
     "copies": "500",
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-06T11:27:21.473Z",
-      "updated_at": "2025-04-22T07:04:28.594Z",
+      "updated_at": "2025-03-29T06:53:32.353Z",
       "created_by": "demo"
     },
     "author": "-",
@@ -1885,9 +1939,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.043Z",
-      "updated_at": "2025-04-22T07:05:50.379Z",
+      "updated_at": "2025-03-25T05:58:08.953Z",
       "created_by": "admin"
     },
     "author": "Dr. S S Janaki",
@@ -1908,9 +1962,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-04-22T07:06:57.609Z",
+      "updated_at": "2025-01-25T07:35:23.722Z",
       "created_by": "admin"
     },
     "author": "General Editor: S S Janaki",
@@ -1954,9 +2008,9 @@
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-04-22T07:07:51.490Z",
+      "updated_at": "2025-03-24T09:19:46.675Z",
       "created_by": "admin"
     },
     "author": "Ed. by Dr. S.S. Janaki",
@@ -2000,9 +2054,9 @@
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-04-22T07:07:36.041Z",
+      "updated_at": "2025-04-03T07:09:00.420Z",
       "created_by": "admin"
     },
     "author": "Ed. by Dr. S.S. Janaki",
@@ -2069,9 +2123,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.041Z",
-      "updated_at": "2025-04-22T07:08:26.607Z",
+      "updated_at": "2025-01-25T07:36:22.071Z",
       "created_by": "admin"
     },
     "author": "Mm. Sri Lakshmana Suri",
@@ -2092,9 +2146,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.042Z",
-      "updated_at": "2025-04-22T07:08:47.509Z",
+      "updated_at": "2025-01-25T07:36:31.656Z",
       "created_by": "admin"
     },
     "author": "David Pingree",
@@ -2115,9 +2169,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-04-22T07:09:33.964Z",
+      "updated_at": "2025-01-25T07:36:53.797Z",
       "created_by": "admin"
     },
     "author": "Sri K V Sarma ",
@@ -2138,9 +2192,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-04-22T07:09:11.658Z",
+      "updated_at": "2025-01-25T07:36:42.528Z",
       "created_by": "admin"
     },
     "author": "T.S. Kuppanna Sastri & K.V Sarma",
@@ -2184,9 +2238,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.044Z",
-      "updated_at": "2025-04-22T07:10:03.057Z",
+      "updated_at": "2025-01-25T07:37:14.025Z",
       "created_by": "admin"
     },
     "author": "Edited by D.D. Kosambi",
@@ -2207,9 +2261,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-04-22T07:10:26.118Z",
+      "updated_at": "2025-01-25T07:37:23.057Z",
       "created_by": "admin"
     },
     "author": "Mm. Prof. S. Kuppuswami Sastri",
@@ -2230,9 +2284,9 @@
     "available": "No",
     "copies": 0,
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "demo",
       "created_at": "2025-01-03T06:30:18.046Z",
-      "updated_at": "2025-04-22T07:10:50.497Z",
+      "updated_at": "2025-01-25T07:37:33.605Z",
       "created_by": "admin"
     },
     "author": "Edited by Mm. Kuppuswami Sastri",
@@ -2342,14 +2396,13 @@
     "available": "Yes",
     "copies": 10,
     "metadata": {
-      "updated_by": "dhara0622@gmail.com",
+      "updated_by": "ksriphd@gmail.com",
       "created_at": "2025-01-03T06:30:18.045Z",
-      "updated_at": "2025-05-08T10:16:31.419Z",
+      "updated_at": "2025-03-24T09:18:12.156Z",
       "created_by": "admin"
     },
     "author": "",
     "yearOfPublication": "",
-    "printStatus": "Printed",
     "itemPublishStatus": "PUBLISHED"
   },
   {

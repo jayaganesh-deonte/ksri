@@ -7,17 +7,26 @@
       <div class="text-h6">
         Something went wrong with your payment. Please try again or contact us.
       </div>
-      <v-btn color="primary" @click="$router.push('/ksri-publications')"
-        >All Publications</v-btn
-      >
+      <v-btn color="primary" @click="$router.push(ebookUrl)">View Book</v-btn>
     </v-card>
   </v-container>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      ebookUrl: "/ksri-publications",
+    };
+  },
   mounted() {
     console.log("Payment failure data:", this.$route.query);
+
+    // get ebookPage from localStorage
+    const ebookPage = localStorage.getItem("ebookPage");
+    if (ebookPage) {
+      this.ebookUrl = ebookPage;
+    }
   },
 };
 </script>

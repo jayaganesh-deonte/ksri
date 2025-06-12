@@ -253,6 +253,10 @@ const buyEbook = async () => {
     const paymentUrl = response.data.paymentUrl;
 
     console.log("paymentUrl", paymentUrl);
+    // set current page to local storage for redirection
+    const currentUrlPage = window.location.pathname;
+    localStorage.setItem("ebookPage", currentUrlPage);
+
     // Redirect to the payment gateway
     window.location.href = paymentUrl;
   } catch (error) {

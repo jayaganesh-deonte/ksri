@@ -27,6 +27,19 @@ let dashboardData = [
     icon: "mdi-book-open-page-variant",
     entityType: "ENTITYTYPE#BOOK",
   },
+  // total ebooks
+  {
+    title: "Total Ebooks",
+    total: 0,
+    icon: "mdi-book-open-page-variant",
+    entityType: "ENTITYTYPE#BOOK",
+    filter: [
+      {
+        key: "isEbookAvailable",
+        value: "Yes",
+      },
+    ],
+  },
   {
     // Projects
     title: "On-Going Projects",
@@ -129,9 +142,20 @@ const query = async (entityType: any, filter: any) => {
     }
   }
 
-  const data = await documentClient.query(params);
+  let totalCount = 0;
+  let lastEvaluatedKey = undefined;
 
-  return data.Count;
+  do {
+    if (lastEvaluatedKey) {
+      params.ExclusiveStartKey = lastEvaluatedKey;
+    }
+
+    const data = await documentClient.query(params);
+    totalCount += data.Count || 0;
+    lastEvaluatedKey = data.LastEvaluatedKey;
+  } while (lastEvaluatedKey);
+
+  return totalCount;
 };
 
 const getEbookSoldCount = async () => {
