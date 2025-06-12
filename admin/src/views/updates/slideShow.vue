@@ -22,37 +22,31 @@ const eventsFields = [
     key: "titleText",
     label: "Title Text",
     type: "text",
-    rules: [(v) => !!v || "titleText is required"],
   },
   {
     key: "descriptionText",
     label: "Description Text",
     type: "text",
-    rules: [(v) => !!v || "Description Text is required"],
   },
   {
     key: "buttonText1",
     label: "Button 1 Text",
     type: "text",
-    rules: [(v) => !!v || "Button 1 Text is required"],
   },
   {
     key: "buttonText1Route",
     label: "Button 1 Route",
     type: "text",
-    rules: [(v) => !!v || "Button 1 Route is required"],
   },
   {
     key: "buttonText2",
     label: "Button 2 Text",
     type: "text",
-    rules: [(v) => !!v || "Button 2 Text is required"],
   },
   {
     key: "buttonText2Route",
     label: "Button 2 Route",
     type: "text",
-    rules: [(v) => !!v || "Button 2 Route is required"],
   },
   {
     key: "itemPublishStatus",
