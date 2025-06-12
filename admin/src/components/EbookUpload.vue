@@ -385,18 +385,6 @@ const uploadFiles = async (e) => {
   const files = inputElement.files;
 
   for (let file of files) {
-    // Validate file size
-    if (file.size > props.maxFileSize) {
-      $toast.open({
-        type: "error",
-        position: "top-right",
-        message: `File ${file.name} exceeds maximum size limit of ${
-          props.maxFileSize / (1024 * 1024)
-        }MB`,
-      });
-      continue;
-    }
-
     // Validate file type
     const isAllowedType = props.allowedFileTypes.some(
       (type) =>

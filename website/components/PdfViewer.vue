@@ -17,7 +17,7 @@
       transition="dialog-bottom-transition"
       :retain-focus="false"
     >
-      <v-card class="pdf-reader-card">
+      <v-card class="pdf-reader-card" height="100%">
         <v-toolbar color="primary" v-if="displayToolBar">
           <v-spacer></v-spacer>
 
@@ -41,6 +41,17 @@
             </template>
           </v-tooltip>
 
+          <!-- full screen -->
+          <v-tooltip location="bottom" text="Toggle fullscreen">
+            <template v-slot:activator="{ props: tooltipProps }">
+              <div class="d-flex flex-column justify-center align-center mx-4">
+                <v-btn icon v-bind="tooltipProps" @click="fullscreen">
+                  <v-icon>mdi-fullscreen</v-icon>
+                </v-btn>
+                <span class="text-subtitle-2 mt-n2"> Fullscreen</span>
+              </div>
+            </template>
+          </v-tooltip>
           <!-- Bookmark current page button -->
           <v-tooltip
             location="bottom"
@@ -388,7 +399,7 @@
                   type="number"
                   density="compact"
                   class="page-input"
-                  style="width: 60px; min-width: 60px; flex-shrink: 0"
+                  style="min-width: 60px; flex-shrink: 0"
                   @blur="goToPage"
                   @keyup.enter="goToPage"
                   :min="1"
@@ -612,15 +623,11 @@ const calculateFitToHeightZoom = () => {
 
   // if less than 0.7 set it to 0.7
   if (autoFitZoom.value < 0.7) {
-    autoFitZoom.value = 0.7;
+    autoFitZoom.value = 1;
   }
 
-  zoom.value = 1;
-
-  // Only set initial zoom if this is the first calculation and set min height as 100
-  // if (!isAutoFitCalculated.value) {
-  //   zoom.value = autoFitZoom.value;
-  // }
+  // Set zoom to fit screen height
+  zoom.value = autoFitZoom.value;
 };
 
 // 4. Add method to get container height (only recalculates autoFitZoom, doesn't change current zoom)
@@ -671,6 +678,14 @@ const goToNextPage = () => {
     page.value = Math.min(pages.value, page.value + 2);
   } else {
     page.value = Math.min(pages.value, page.value + 1);
+  }
+};
+
+const fullscreen = () => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  } else {
+    document.documentElement.requestFullscreen();
   }
 };
 
@@ -1065,6 +1080,25 @@ watch(dialogVisible, (isVisible) => {
   }
 });
 
+function handleKeydown(event) {
+  if (event.key === "ArrowLeft") {
+    console.log("Left arrow pressed");
+    goToPreviousPage();
+  } else if (event.key === "ArrowRight") {
+    console.log("Right arrow pressed");
+    goToNextPage();
+  }
+}
+
+function handleLeft() {
+  // navigate to the previous page
+  goToPreviousPage();
+}
+
+function handleRight() {
+  goToNextPage();
+}
+
 onMounted(() => {
   // Add the event listener for the entire document when the component is mounted
   document.addEventListener("contextmenu", preventContextMenu);
@@ -1084,6 +1118,8 @@ onMounted(() => {
 
   // Store observer for cleanup
   window.pdfResizeObserver = resizeObserver;
+
+  window.addEventListener("keydown", handleKeydown);
 });
 
 onUnmounted(() => {
@@ -1096,6 +1132,8 @@ onUnmounted(() => {
   if (window.pdfResizeObserver) {
     window.pdfResizeObserver.disconnect();
   }
+
+  window.removeEventListener("keydown", handleKeydown);
 });
 </script>
 

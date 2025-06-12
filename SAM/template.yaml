@@ -432,12 +432,7 @@ Resources:
       TimeToLiveSpecification:
         AttributeName: ttl
         Enabled: true
-      BillingMode: !If [IsProdEnvironment, "PROVISIONED", "PAY_PER_REQUEST"]
-      ProvisionedThroughput: !If
-        - IsProdEnvironment
-        - ReadCapacityUnits: 5
-          WriteCapacityUnits: 5
-        - !Ref "AWS::NoValue"
+      BillingMode: "PAY_PER_REQUEST"
       GlobalSecondaryIndexes:
         - IndexName: PkPublishedStatusIndex
           KeySchema:
@@ -447,11 +442,6 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
-          ProvisionedThroughput: !If
-            - IsProdEnvironment
-            - ReadCapacityUnits: 1
-              WriteCapacityUnits: 1
-            - !Ref "AWS::NoValue"
         - IndexName: PkProjectStatus
           KeySchema:
             - AttributeName: PK
@@ -460,11 +450,6 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
-          ProvisionedThroughput: !If
-            - IsProdEnvironment
-            - ReadCapacityUnits: 3
-              WriteCapacityUnits: 3
-            - !Ref "AWS::NoValue"
         - IndexName: CollectionSK
           KeySchema:
             - AttributeName: collection
@@ -473,11 +458,6 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
-          ProvisionedThroughput: !If
-            - IsProdEnvironment
-            - ReadCapacityUnits: 1
-              WriteCapacityUnits: 1
-            - !Ref "AWS::NoValue"
         - IndexName: PaymentDateIndex
           KeySchema:
             - AttributeName: PK
@@ -486,11 +466,6 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
-          ProvisionedThroughput: !If
-            - IsProdEnvironment
-            - ReadCapacityUnits: 3
-              WriteCapacityUnits: 3
-            - !Ref "AWS::NoValue"
         - IndexName: email-BookIdIndex
           KeySchema:
             - AttributeName: email
@@ -499,11 +474,6 @@ Resources:
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
-          ProvisionedThroughput: !If
-            - IsProdEnvironment
-            - ReadCapacityUnits: 3
-              WriteCapacityUnits: 3
-            - !Ref "AWS::NoValue"
 
   S3Bucket:
     Type: AWS::S3::Bucket

@@ -50,51 +50,34 @@ const myCustomTheme = {
 
 
 
-const awsconfig = {
-  aws_project_region: "ap-south-1",
-  aws_cognito_identity_pool_id: "ap-south-1:572b720d-e2fb-4af9-b6a4-95c4093e0168",
-  aws_cognito_region: "ap-south-1",
-  aws_user_pools_id: "ap-south-1_vgB2ttQrp",
-  aws_user_pools_web_client_id: "4oeqhreo5k22f7ge8s77ps4vd8",
-  oauth: {
-    domain: "ksri-website.auth.ap-south-1.amazoncognito.com",
-    scope: [
-      "phone",
-      "email",
-      "openid",
-      "profile",
-      "aws.cognito.signin.user.admin",
-    ],
-    redirectSignIn: "https://preview.ksri.in/",
-    redirectSignOut: "https://preview.ksri.in/",
-    responseType: "code",
-  },
-};
-
-// const awsconfig = {
-//   aws_project_region: "ap-south-1",
-//   aws_cognito_identity_pool_id: "ap-south-1:6e0bcba1-da71-4b4b-ade8-7b3714cd5d43",
-//   aws_cognito_region: "ap-south-1",
-//   aws_user_pools_id: "ap-south-1_9X5anLVhL",
-//   aws_user_pools_web_client_id: "2iluhbeefse6k71haooc4ejm95",
-//   oauth: {
-//     domain: "ksri-prod-website.auth.ap-south-1.amazoncognito.com",
-//     scope: [
-//       "phone",
-//       "email",
-//       "openid",
-//       "profile",
-//       "aws.cognito.signin.user.admin",
-//     ],
-//     redirectSignIn: "http://localhost:8080/",
-//     redirectSignOut: "http://localhost:8080/",
-//     responseType: "code",
-//   },
-// };
-
-Amplify.configure(awsconfig);
-
 export default defineNuxtPlugin((nuxtApp) => {
+
+  const config = useRuntimeConfig()
+
+  const awsconfig = {
+    aws_project_region: config.public.aws_project_region,
+    aws_cognito_identity_pool_id: config.public.aws_cognito_identity_pool_id,
+    aws_cognito_region: config.public.aws_cognito_region,
+    aws_user_pools_id: config.public.aws_user_pools_id,
+    aws_user_pools_web_client_id: config.public.aws_user_pools_web_client_id,
+    oauth: {
+      domain: config.public.domain,
+      scope: [
+        "phone",
+        "email",
+        "openid",
+        "profile",
+        "aws.cognito.signin.user.admin",
+      ],
+      redirectSignIn: config.public.redirectSignIn,
+      redirectSignOut: config.public.redirectSignOut,
+      responseType: "code",
+    },
+  };
+
+
+  Amplify.configure(awsconfig);
+
   const vuetify = createVuetify({
     components,
     directives,
