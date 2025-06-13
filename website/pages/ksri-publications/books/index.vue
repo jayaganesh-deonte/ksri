@@ -131,7 +131,15 @@
                     {{ selectedBook.name }}
                   </div>
                   <div class="text-h6">{{ selectedBook.subtitle }}</div>
-                  <div class="text-h6 text-secondary">
+                  <div
+                    class="text-h6 text-secondary"
+                    v-if="
+                      selectedBook.price &&
+                      selectedBook.price != '' &&
+                      selectedBook.price != '0' &&
+                      selectedBook.price != '0.00'
+                    "
+                  >
                     Price: {{ selectedBook.price }}
                   </div>
                 </div>

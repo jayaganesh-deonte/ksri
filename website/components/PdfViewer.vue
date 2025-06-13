@@ -149,7 +149,7 @@
             </v-card>
           </v-menu>
 
-          <v-btn icon @click="dialogVisible = false">
+          <v-btn icon @click="closeReader">
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-toolbar>
@@ -540,6 +540,16 @@ let displayToolBar = ref(true);
 const zoomMenuOpen = ref(false);
 const resetZoom = () => {
   zoom.value = 1;
+};
+
+const closeReader = () => {
+  dialogVisible.value = false;
+
+  // exit from fullscreen mode if active
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  }
+  resetIframeStyles(); // Reset styles when closing
 };
 
 // Add animation state

@@ -153,7 +153,7 @@
           <!-- Close dialog -->
           <v-btn
             icon
-            @click="showReader = false"
+            @click="closeReader"
             :size="buttonSize"
             :loading="loading"
           >
@@ -413,6 +413,15 @@ const zoomMenuOpen = ref(false);
 let displayToolBar = ref(true);
 
 let isFixedLayout = ref(false);
+
+const closeReader = () => {
+  showReader.value = false;
+  // exit from fullscreen mode if active
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  }
+  resetIframeStyles(); // Reset styles when closing
+};
 
 // Bookmark related state
 const bookmarks = ref([]);

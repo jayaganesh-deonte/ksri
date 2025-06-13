@@ -88,6 +88,12 @@
                 class="text-h6 text-primary my-4 font-weight-bold"
                 data-aos="fade-left"
                 data-aos-delay="300"
+                v-if="
+                  journalInfo.price &&
+                  journalInfo.price != '' &&
+                  journalInfo.price != '0' &&
+                  journalInfo.price != '0.00'
+                "
               >
                 Price:
                 <span class="text-secondary">

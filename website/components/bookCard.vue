@@ -63,6 +63,12 @@
           <div
             class="text-start pa-0 mt-5 text-primary font-weight-bold"
             data-aos-delay="300"
+            v-if="
+              book.price &&
+              book.price != '' &&
+              book.price != '0' &&
+              book.price != '0.00'
+            "
           >
             Price:
             <span class="text-secondary font-weight-bold">

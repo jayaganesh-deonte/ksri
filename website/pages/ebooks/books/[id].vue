@@ -98,6 +98,12 @@
                 class="text-h6 text-secondary font-weight-bold"
                 data-aos="fade-left"
                 data-aos-delay="300"
+                v-if="
+                  bookInfo.price &&
+                  bookInfo.price != '' &&
+                  bookInfo.price != '0' &&
+                  bookInfo.price != '0.00'
+                "
               >
                 Price: {{ bookInfo.price }}
               </div>
@@ -133,7 +139,14 @@
                 data-aos-delay="300"
                 v-if="bookInfo.isEbookAvailable == 'Yes'"
               >
-                <div>
+                <div
+                  v-if="
+                    bookInfo.ebookPrice &&
+                    bookInfo.ebookPrice != '' &&
+                    bookInfo.ebookPrice != '0' &&
+                    bookInfo.ebookPrice != '0.00'
+                  "
+                >
                   E-book Price:
                   <span class="text-secondary">
                     ₹{{ bookInfo.ebookPrice }}
