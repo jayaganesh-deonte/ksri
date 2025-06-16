@@ -60,20 +60,40 @@
             {{ book.subtitle }}
           </div>
           <!-- price -->
-          <div
-            class="text-start pa-0 mt-5 text-primary font-weight-bold"
-            data-aos-delay="300"
-            v-if="
-              book.price &&
-              book.price != '' &&
-              book.price != '0' &&
-              book.price != '0.00'
-            "
-          >
-            Price:
-            <span class="text-secondary font-weight-bold">
-              {{ book.price }}
-            </span>
+
+          <div v-if="!fromEbook">
+            <div
+              class="text-start pa-0 mt-5 text-primary font-weight-bold"
+              data-aos-delay="300"
+              v-if="
+                book.price &&
+                book.price != '' &&
+                book.price != '0' &&
+                book.price != '0.00'
+              "
+            >
+              Price:
+              <span class="text-secondary font-weight-bold">
+                {{ book.price }}
+              </span>
+            </div>
+          </div>
+          <div v-if="fromEbook">
+            <div
+              class="text-start pa-0 mt-5 text-primary font-weight-bold"
+              data-aos-delay="300"
+              v-if="
+                book.ebookPrice &&
+                book.ebookPrice != '' &&
+                book.ebookPrice != '0' &&
+                book.ebookPrice != '0.00'
+              "
+            >
+              E-book Price:
+              <span class="text-secondary font-weight-bold">
+                ₹ {{ book.ebookPrice }}
+              </span>
+            </div>
           </div>
 
           <div class="d-flex align-center justify-space-between mr-1">

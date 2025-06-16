@@ -206,6 +206,12 @@ export default {
           path: "/ksri-team/advisoryCommittee",
         },
         {
+          name: "e-books",
+          description:
+            "As a premier Institution in the field of research, KSRI has involved itself actively in the pursuit of excellence in its field of specialisation. In order to remain competitive and abreast of the requirement of Scholars, the books available in eBook format.",
+          path: "/ebooks",
+        },
+        {
           name: "Publications",
           description:
             "KSRI has been publishing the Journal of Oriental Research periodically from its inception till date and it is internationally well known.",
