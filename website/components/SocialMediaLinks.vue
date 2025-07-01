@@ -47,6 +47,11 @@ const socialMediaLinks = [
     url: "mailto:ksrinst@gmail.com",
     icon: "mdi-email",
   },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/the-kuppuswami-sastri-research-institute/",
+    icon: "mdi-linkedin",
+  },
 ];
 
 // on hover
